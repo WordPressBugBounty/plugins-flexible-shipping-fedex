@@ -31,7 +31,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property Commodity[] $Commodities
  * @property ShipperConveyanceDetail $ConveyanceDetail
  */
-class RequestedPackageLineItem extends \FedExVendor\FedEx\AbstractComplexType
+class RequestedPackageLineItem extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -78,7 +78,7 @@ class RequestedPackageLineItem extends \FedExVendor\FedEx\AbstractComplexType
      * @param PackageStatusDetail $statusDetail
      * @return $this
      */
-    public function setStatusDetail(\FedExVendor\FedEx\UploadDocumentService\ComplexType\PackageStatusDetail $statusDetail)
+    public function setStatusDetail(PackageStatusDetail $statusDetail)
     {
         $this->values['StatusDetail'] = $statusDetail;
         return $this;
@@ -100,7 +100,7 @@ class RequestedPackageLineItem extends \FedExVendor\FedEx\AbstractComplexType
      * @param VariableHandlingChargeDetail $variableHandlingChargeDetail
      * @return $this
      */
-    public function setVariableHandlingChargeDetail(\FedExVendor\FedEx\UploadDocumentService\ComplexType\VariableHandlingChargeDetail $variableHandlingChargeDetail)
+    public function setVariableHandlingChargeDetail(VariableHandlingChargeDetail $variableHandlingChargeDetail)
     {
         $this->values['VariableHandlingChargeDetail'] = $variableHandlingChargeDetail;
         return $this;
@@ -111,7 +111,7 @@ class RequestedPackageLineItem extends \FedExVendor\FedEx\AbstractComplexType
      * @param Money $insuredValue
      * @return $this
      */
-    public function setInsuredValue(\FedExVendor\FedEx\UploadDocumentService\ComplexType\Money $insuredValue)
+    public function setInsuredValue(Money $insuredValue)
     {
         $this->values['InsuredValue'] = $insuredValue;
         return $this;
@@ -122,7 +122,7 @@ class RequestedPackageLineItem extends \FedExVendor\FedEx\AbstractComplexType
      * @param Weight $weight
      * @return $this
      */
-    public function setWeight(\FedExVendor\FedEx\UploadDocumentService\ComplexType\Weight $weight)
+    public function setWeight(Weight $weight)
     {
         $this->values['Weight'] = $weight;
         return $this;
@@ -144,7 +144,7 @@ class RequestedPackageLineItem extends \FedExVendor\FedEx\AbstractComplexType
      * @param Dimensions $dimensions
      * @return $this
      */
-    public function setDimensions(\FedExVendor\FedEx\UploadDocumentService\ComplexType\Dimensions $dimensions)
+    public function setDimensions(Dimensions $dimensions)
     {
         $this->values['Dimensions'] = $dimensions;
         return $this;
@@ -210,7 +210,7 @@ class RequestedPackageLineItem extends \FedExVendor\FedEx\AbstractComplexType
      * @param PackageSpecialServicesRequested $specialServicesRequested
      * @return $this
      */
-    public function setSpecialServicesRequested(\FedExVendor\FedEx\UploadDocumentService\ComplexType\PackageSpecialServicesRequested $specialServicesRequested)
+    public function setSpecialServicesRequested(PackageSpecialServicesRequested $specialServicesRequested)
     {
         $this->values['SpecialServicesRequested'] = $specialServicesRequested;
         return $this;
@@ -221,7 +221,7 @@ class RequestedPackageLineItem extends \FedExVendor\FedEx\AbstractComplexType
      * @param PackageSpecialHandlingDetail $specialHandlingDetail
      * @return $this
      */
-    public function setSpecialHandlingDetail(\FedExVendor\FedEx\UploadDocumentService\ComplexType\PackageSpecialHandlingDetail $specialHandlingDetail)
+    public function setSpecialHandlingDetail(PackageSpecialHandlingDetail $specialHandlingDetail)
     {
         $this->values['SpecialHandlingDetail'] = $specialHandlingDetail;
         return $this;
@@ -254,7 +254,7 @@ class RequestedPackageLineItem extends \FedExVendor\FedEx\AbstractComplexType
      * @param ShipperConveyanceDetail $conveyanceDetail
      * @return $this
      */
-    public function setConveyanceDetail(\FedExVendor\FedEx\UploadDocumentService\ComplexType\ShipperConveyanceDetail $conveyanceDetail)
+    public function setConveyanceDetail(ShipperConveyanceDetail $conveyanceDetail)
     {
         $this->values['ConveyanceDetail'] = $conveyanceDetail;
         return $this;

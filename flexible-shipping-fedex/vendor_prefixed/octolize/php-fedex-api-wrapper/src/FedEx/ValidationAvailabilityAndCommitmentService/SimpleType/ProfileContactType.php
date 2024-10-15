@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Validation Availability And Commitment Service Service
  */
-class ProfileContactType extends \FedExVendor\FedEx\AbstractSimpleType
+class ProfileContactType extends AbstractSimpleType
 {
     const _AFTER_HOURS = 'AFTER_HOURS';
     const _ALIAS = 'ALIAS';

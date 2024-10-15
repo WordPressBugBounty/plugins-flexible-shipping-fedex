@@ -19,7 +19,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property CompletedDangerousGoodsShipmentDetail $CompletedShipmentDetail
  * @property CompletedDangerousGoodsHandlingUnitGroup[] $CompletedHandlingUnitGroups
  */
-class UploadDangerousGoodsReply extends \FedExVendor\FedEx\AbstractComplexType
+class UploadDangerousGoodsReply extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -55,7 +55,7 @@ class UploadDangerousGoodsReply extends \FedExVendor\FedEx\AbstractComplexType
      * @param TransactionDetail $transactionDetail
      * @return $this
      */
-    public function setTransactionDetail(\FedExVendor\FedEx\DGDSService\ComplexType\TransactionDetail $transactionDetail)
+    public function setTransactionDetail(TransactionDetail $transactionDetail)
     {
         $this->values['TransactionDetail'] = $transactionDetail;
         return $this;
@@ -66,7 +66,7 @@ class UploadDangerousGoodsReply extends \FedExVendor\FedEx\AbstractComplexType
      * @param VersionId $version
      * @return $this
      */
-    public function setVersion(\FedExVendor\FedEx\DGDSService\ComplexType\VersionId $version)
+    public function setVersion(VersionId $version)
     {
         $this->values['Version'] = $version;
         return $this;
@@ -88,7 +88,7 @@ class UploadDangerousGoodsReply extends \FedExVendor\FedEx\AbstractComplexType
      * @param TrackingId $masterTrackingId
      * @return $this
      */
-    public function setMasterTrackingId(\FedExVendor\FedEx\DGDSService\ComplexType\TrackingId $masterTrackingId)
+    public function setMasterTrackingId(TrackingId $masterTrackingId)
     {
         $this->values['MasterTrackingId'] = $masterTrackingId;
         return $this;
@@ -99,7 +99,7 @@ class UploadDangerousGoodsReply extends \FedExVendor\FedEx\AbstractComplexType
      * @param CompletedDangerousGoodsShipmentDetail $completedShipmentDetail
      * @return $this
      */
-    public function setCompletedShipmentDetail(\FedExVendor\FedEx\DGDSService\ComplexType\CompletedDangerousGoodsShipmentDetail $completedShipmentDetail)
+    public function setCompletedShipmentDetail(CompletedDangerousGoodsShipmentDetail $completedShipmentDetail)
     {
         $this->values['CompletedShipmentDetail'] = $completedShipmentDetail;
         return $this;

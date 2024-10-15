@@ -18,7 +18,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $RecipientLocationId
  * @property RequestedPickupPackageDetail[] $PackageDetails
  */
-class RequestedPickupShipmentDetail extends \FedExVendor\FedEx\AbstractComplexType
+class RequestedPickupShipmentDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -65,7 +65,7 @@ class RequestedPickupShipmentDetail extends \FedExVendor\FedEx\AbstractComplexTy
      * @param PickupShipmentSpecialServicesRequested $shipmentSpecialServices
      * @return $this
      */
-    public function setShipmentSpecialServices(\FedExVendor\FedEx\PickupService\ComplexType\PickupShipmentSpecialServicesRequested $shipmentSpecialServices)
+    public function setShipmentSpecialServices(PickupShipmentSpecialServicesRequested $shipmentSpecialServices)
     {
         $this->values['ShipmentSpecialServices'] = $shipmentSpecialServices;
         return $this;
@@ -76,7 +76,7 @@ class RequestedPickupShipmentDetail extends \FedExVendor\FedEx\AbstractComplexTy
      * @param Address $recipientAddress
      * @return $this
      */
-    public function setRecipientAddress(\FedExVendor\FedEx\PickupService\ComplexType\Address $recipientAddress)
+    public function setRecipientAddress(Address $recipientAddress)
     {
         $this->values['RecipientAddress'] = $recipientAddress;
         return $this;

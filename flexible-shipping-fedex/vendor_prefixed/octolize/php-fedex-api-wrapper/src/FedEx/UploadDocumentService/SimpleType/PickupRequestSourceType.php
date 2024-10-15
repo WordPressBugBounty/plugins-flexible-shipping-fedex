@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Upload Document Service
  */
-class PickupRequestSourceType extends \FedExVendor\FedEx\AbstractSimpleType
+class PickupRequestSourceType extends AbstractSimpleType
 {
     const _AUTOMATION = 'AUTOMATION';
     const _CUSTOMER_SERVICE = 'CUSTOMER_SERVICE';

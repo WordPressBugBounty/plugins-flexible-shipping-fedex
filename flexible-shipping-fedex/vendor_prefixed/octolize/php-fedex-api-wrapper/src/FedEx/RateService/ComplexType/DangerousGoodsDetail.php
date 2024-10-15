@@ -25,7 +25,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $AdditionalHandling
  * @property RadioactivityDetail $RadioactivityDetail
  */
-class DangerousGoodsDetail extends \FedExVendor\FedEx\AbstractComplexType
+class DangerousGoodsDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -116,7 +116,7 @@ class DangerousGoodsDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param HazardousCommodityPackagingDetail $packaging
      * @return $this
      */
-    public function setPackaging(\FedExVendor\FedEx\RateService\ComplexType\HazardousCommodityPackagingDetail $packaging)
+    public function setPackaging(HazardousCommodityPackagingDetail $packaging)
     {
         $this->values['Packaging'] = $packaging;
         return $this;
@@ -127,7 +127,7 @@ class DangerousGoodsDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param DangerousGoodsSignatory $signatory
      * @return $this
      */
-    public function setSignatory(\FedExVendor\FedEx\RateService\ComplexType\DangerousGoodsSignatory $signatory)
+    public function setSignatory(DangerousGoodsSignatory $signatory)
     {
         $this->values['Signatory'] = $signatory;
         return $this;
@@ -160,7 +160,7 @@ class DangerousGoodsDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param Contact $infectiousSubstanceResponsibleContact
      * @return $this
      */
-    public function setInfectiousSubstanceResponsibleContact(\FedExVendor\FedEx\RateService\ComplexType\Contact $infectiousSubstanceResponsibleContact)
+    public function setInfectiousSubstanceResponsibleContact(Contact $infectiousSubstanceResponsibleContact)
     {
         $this->values['InfectiousSubstanceResponsibleContact'] = $infectiousSubstanceResponsibleContact;
         return $this;
@@ -182,7 +182,7 @@ class DangerousGoodsDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param RadioactivityDetail $radioactivityDetail
      * @return $this
      */
-    public function setRadioactivityDetail(\FedExVendor\FedEx\RateService\ComplexType\RadioactivityDetail $radioactivityDetail)
+    public function setRadioactivityDetail(RadioactivityDetail $radioactivityDetail)
     {
         $this->values['RadioactivityDetail'] = $radioactivityDetail;
         return $this;

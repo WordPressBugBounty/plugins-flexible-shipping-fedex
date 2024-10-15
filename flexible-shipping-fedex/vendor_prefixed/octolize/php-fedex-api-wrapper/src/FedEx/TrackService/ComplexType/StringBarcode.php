@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property \FedEx\TrackService\SimpleType\StringBarcodeType|string $Type
  * @property string $Value
  */
-class StringBarcode extends \FedExVendor\FedEx\AbstractComplexType
+class StringBarcode extends AbstractComplexType
 {
     /**
      * Name of this complex type

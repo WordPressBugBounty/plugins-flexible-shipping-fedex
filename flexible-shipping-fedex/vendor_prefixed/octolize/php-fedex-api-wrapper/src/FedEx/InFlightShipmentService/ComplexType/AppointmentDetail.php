@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $Date
  * @property AppointmentTimeDetail[] $WindowDetails
  */
-class AppointmentDetail extends \FedExVendor\FedEx\AbstractComplexType
+class AppointmentDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

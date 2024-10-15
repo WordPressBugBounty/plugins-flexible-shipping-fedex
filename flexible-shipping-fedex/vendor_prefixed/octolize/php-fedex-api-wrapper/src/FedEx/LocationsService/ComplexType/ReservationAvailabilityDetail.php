@@ -12,7 +12,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  *
  * @property \FedEx\LocationsService\SimpleType\ReservationAttributesType|string[] $Attributes
  */
-class ReservationAvailabilityDetail extends \FedExVendor\FedEx\AbstractComplexType
+class ReservationAvailabilityDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

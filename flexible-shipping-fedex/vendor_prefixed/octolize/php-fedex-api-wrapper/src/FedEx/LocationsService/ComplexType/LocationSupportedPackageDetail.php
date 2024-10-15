@@ -14,7 +14,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property Dimensions $Dimensions
  * @property string[] $ServiceOptions
  */
-class LocationSupportedPackageDetail extends \FedExVendor\FedEx\AbstractComplexType
+class LocationSupportedPackageDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -28,7 +28,7 @@ class LocationSupportedPackageDetail extends \FedExVendor\FedEx\AbstractComplexT
      * @param Weight $weight
      * @return $this
      */
-    public function setWeight(\FedExVendor\FedEx\LocationsService\ComplexType\Weight $weight)
+    public function setWeight(Weight $weight)
     {
         $this->values['Weight'] = $weight;
         return $this;
@@ -39,7 +39,7 @@ class LocationSupportedPackageDetail extends \FedExVendor\FedEx\AbstractComplexT
      * @param Dimensions $dimensions
      * @return $this
      */
-    public function setDimensions(\FedExVendor\FedEx\LocationsService\ComplexType\Dimensions $dimensions)
+    public function setDimensions(Dimensions $dimensions)
     {
         $this->values['Dimensions'] = $dimensions;
         return $this;

@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Validation Availability And Commitment Service Service
  */
-class CustomerBillingSettlementLevelType extends \FedExVendor\FedEx\AbstractSimpleType
+class CustomerBillingSettlementLevelType extends AbstractSimpleType
 {
     const _INVOICE = 'INVOICE';
     const _LINE_ITEM = 'LINE_ITEM';

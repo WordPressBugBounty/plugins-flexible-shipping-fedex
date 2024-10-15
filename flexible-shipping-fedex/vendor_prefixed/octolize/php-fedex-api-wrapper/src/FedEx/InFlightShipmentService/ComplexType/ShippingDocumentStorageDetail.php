@@ -14,7 +14,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property \FedEx\InFlightShipmentService\SimpleType\ShippingDocumentNamingType|string $FileNaming
  * @property string $FileSuffix
  */
-class ShippingDocumentStorageDetail extends \FedExVendor\FedEx\AbstractComplexType
+class ShippingDocumentStorageDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

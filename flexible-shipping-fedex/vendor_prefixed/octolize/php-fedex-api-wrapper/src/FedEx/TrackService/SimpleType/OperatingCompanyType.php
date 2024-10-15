@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Package Movement Information Service
  */
-class OperatingCompanyType extends \FedExVendor\FedEx\AbstractSimpleType
+class OperatingCompanyType extends AbstractSimpleType
 {
     const _FEDEX_CARGO = 'FEDEX_CARGO';
     const _FEDEX_CORPORATE_SERVICES = 'FEDEX_CORPORATE_SERVICES';

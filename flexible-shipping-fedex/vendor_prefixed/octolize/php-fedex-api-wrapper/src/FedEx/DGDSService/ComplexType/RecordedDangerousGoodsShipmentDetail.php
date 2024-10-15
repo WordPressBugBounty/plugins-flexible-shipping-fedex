@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property UploadedDangerousGoodsShipmentDetail $UploadedShipmentDetail
  * @property CompletedDangerousGoodsShipmentDetail $CompletedShipmentDetail
  */
-class RecordedDangerousGoodsShipmentDetail extends \FedExVendor\FedEx\AbstractComplexType
+class RecordedDangerousGoodsShipmentDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -27,7 +27,7 @@ class RecordedDangerousGoodsShipmentDetail extends \FedExVendor\FedEx\AbstractCo
      * @param UploadedDangerousGoodsShipmentDetail $uploadedShipmentDetail
      * @return $this
      */
-    public function setUploadedShipmentDetail(\FedExVendor\FedEx\DGDSService\ComplexType\UploadedDangerousGoodsShipmentDetail $uploadedShipmentDetail)
+    public function setUploadedShipmentDetail(UploadedDangerousGoodsShipmentDetail $uploadedShipmentDetail)
     {
         $this->values['UploadedShipmentDetail'] = $uploadedShipmentDetail;
         return $this;
@@ -38,7 +38,7 @@ class RecordedDangerousGoodsShipmentDetail extends \FedExVendor\FedEx\AbstractCo
      * @param CompletedDangerousGoodsShipmentDetail $completedShipmentDetail
      * @return $this
      */
-    public function setCompletedShipmentDetail(\FedExVendor\FedEx\DGDSService\ComplexType\CompletedDangerousGoodsShipmentDetail $completedShipmentDetail)
+    public function setCompletedShipmentDetail(CompletedDangerousGoodsShipmentDetail $completedShipmentDetail)
     {
         $this->values['CompletedShipmentDetail'] = $completedShipmentDetail;
         return $this;

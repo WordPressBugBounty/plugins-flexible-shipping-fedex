@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property \FedEx\OpenShipService\SimpleType\FreightGuaranteeType|string $Type
  * @property string $Date
  */
-class FreightGuaranteeDetail extends \FedExVendor\FedEx\AbstractComplexType
+class FreightGuaranteeDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

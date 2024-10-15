@@ -19,7 +19,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property \FedEx\ValidationAvailabilityAndCommitmentService\SimpleType\SmartPostIndiciaType|string[] $AllowedIndicia
  * @property \FedEx\ValidationAvailabilityAndCommitmentService\SimpleType\SmartPostAccountFeatureType|string[] $Features
  */
-class SmartPostAccountDetail extends \FedExVendor\FedEx\AbstractComplexType
+class SmartPostAccountDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

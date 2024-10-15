@@ -14,7 +14,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property \FedEx\UploadDocumentService\SimpleType\BatteryPackingType|string $Packing
  * @property \FedEx\UploadDocumentService\SimpleType\BatteryRegulatorySubType|string $RegulatorySubType
  */
-class BatteryClassificationDetail extends \FedExVendor\FedEx\AbstractComplexType
+class BatteryClassificationDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

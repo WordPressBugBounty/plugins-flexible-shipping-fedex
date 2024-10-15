@@ -8,7 +8,7 @@ use FedExVendor\Illuminate\Support\Traits\Macroable;
 use FedExVendor\Illuminate\Support\Traits\Tappable;
 use JsonSerializable;
 use FedExVendor\Symfony\Component\VarDumper\VarDumper;
-class Stringable implements \JsonSerializable
+class Stringable implements JsonSerializable
 {
     use Conditionable, Macroable, Tappable;
     /**
@@ -35,7 +35,7 @@ class Stringable implements \JsonSerializable
      */
     public function after($search)
     {
-        return new static(\FedExVendor\Illuminate\Support\Str::after($this->value, $search));
+        return new static(Str::after($this->value, $search));
     }
     /**
      * Return the remainder of a string after the last occurrence of a given value.
@@ -45,7 +45,7 @@ class Stringable implements \JsonSerializable
      */
     public function afterLast($search)
     {
-        return new static(\FedExVendor\Illuminate\Support\Str::afterLast($this->value, $search));
+        return new static(Str::afterLast($this->value, $search));
     }
     /**
      * Append the given values to the string.
@@ -55,7 +55,7 @@ class Stringable implements \JsonSerializable
      */
     public function append(...$values)
     {
-        return new static($this->value . \implode('', $values));
+        return new static($this->value . implode('', $values));
     }
     /**
      * Transliterate a UTF-8 value to ASCII.
@@ -65,7 +65,7 @@ class Stringable implements \JsonSerializable
      */
     public function ascii($language = 'en')
     {
-        return new static(\FedExVendor\Illuminate\Support\Str::ascii($this->value, $language));
+        return new static(Str::ascii($this->value, $language));
     }
     /**
      * Get the trailing name component of the path.
@@ -75,7 +75,7 @@ class Stringable implements \JsonSerializable
      */
     public function basename($suffix = '')
     {
-        return new static(\basename($this->value, $suffix));
+        return new static(basename($this->value, $suffix));
     }
     /**
      * Get the basename of the class path.
@@ -94,7 +94,7 @@ class Stringable implements \JsonSerializable
      */
     public function before($search)
     {
-        return new static(\FedExVendor\Illuminate\Support\Str::before($this->value, $search));
+        return new static(Str::before($this->value, $search));
     }
     /**
      * Get the portion of a string before the last occurrence of a given value.
@@ -104,7 +104,7 @@ class Stringable implements \JsonSerializable
      */
     public function beforeLast($search)
     {
-        return new static(\FedExVendor\Illuminate\Support\Str::beforeLast($this->value, $search));
+        return new static(Str::beforeLast($this->value, $search));
     }
     /**
      * Get the portion of a string between two given values.
@@ -115,7 +115,7 @@ class Stringable implements \JsonSerializable
      */
     public function between($from, $to)
     {
-        return new static(\FedExVendor\Illuminate\Support\Str::between($this->value, $from, $to));
+        return new static(Str::between($this->value, $from, $to));
     }
     /**
      * Convert a value to camel case.
@@ -124,7 +124,7 @@ class Stringable implements \JsonSerializable
      */
     public function camel()
     {
-        return new static(\FedExVendor\Illuminate\Support\Str::camel($this->value));
+        return new static(Str::camel($this->value));
     }
     /**
      * Determine if a given string contains a given substring.
@@ -134,7 +134,7 @@ class Stringable implements \JsonSerializable
      */
     public function contains($needles)
     {
-        return \FedExVendor\Illuminate\Support\Str::contains($this->value, $needles);
+        return Str::contains($this->value, $needles);
     }
     /**
      * Determine if a given string contains all array values.
@@ -144,7 +144,7 @@ class Stringable implements \JsonSerializable
      */
     public function containsAll(array $needles)
     {
-        return \FedExVendor\Illuminate\Support\Str::containsAll($this->value, $needles);
+        return Str::containsAll($this->value, $needles);
     }
     /**
      * Get the parent directory's path.
@@ -154,7 +154,7 @@ class Stringable implements \JsonSerializable
      */
     public function dirname($levels = 1)
     {
-        return new static(\dirname($this->value, $levels));
+        return new static(dirname($this->value, $levels));
     }
     /**
      * Determine if a given string ends with a given substring.
@@ -164,7 +164,7 @@ class Stringable implements \JsonSerializable
      */
     public function endsWith($needles)
     {
-        return \FedExVendor\Illuminate\Support\Str::endsWith($this->value, $needles);
+        return Str::endsWith($this->value, $needles);
     }
     /**
      * Determine if the string is an exact match with the given value.
@@ -185,7 +185,7 @@ class Stringable implements \JsonSerializable
      */
     public function explode($delimiter, $limit = \PHP_INT_MAX)
     {
-        return collect(\explode($delimiter, $this->value, $limit));
+        return collect(explode($delimiter, $this->value, $limit));
     }
     /**
      * Split a string using a regular expression or by length.
@@ -197,10 +197,10 @@ class Stringable implements \JsonSerializable
      */
     public function split($pattern, $limit = -1, $flags = 0)
     {
-        if (\filter_var($pattern, \FILTER_VALIDATE_INT) !== \false) {
-            return collect(\mb_str_split($this->value, $pattern));
+        if (filter_var($pattern, \FILTER_VALIDATE_INT) !== \false) {
+            return collect(mb_str_split($this->value, $pattern));
         }
-        $segments = \preg_split($pattern, $this->value, $limit, $flags);
+        $segments = preg_split($pattern, $this->value, $limit, $flags);
         return !empty($segments) ? collect($segments) : collect();
     }
     /**
@@ -211,7 +211,7 @@ class Stringable implements \JsonSerializable
      */
     public function finish($cap)
     {
-        return new static(\FedExVendor\Illuminate\Support\Str::finish($this->value, $cap));
+        return new static(Str::finish($this->value, $cap));
     }
     /**
      * Determine if a given string matches a given pattern.
@@ -221,7 +221,7 @@ class Stringable implements \JsonSerializable
      */
     public function is($pattern)
     {
-        return \FedExVendor\Illuminate\Support\Str::is($pattern, $this->value);
+        return Str::is($pattern, $this->value);
     }
     /**
      * Determine if a given string is 7 bit ASCII.
@@ -230,7 +230,7 @@ class Stringable implements \JsonSerializable
      */
     public function isAscii()
     {
-        return \FedExVendor\Illuminate\Support\Str::isAscii($this->value);
+        return Str::isAscii($this->value);
     }
     /**
      * Determine if a given string is a valid UUID.
@@ -239,7 +239,7 @@ class Stringable implements \JsonSerializable
      */
     public function isUuid()
     {
-        return \FedExVendor\Illuminate\Support\Str::isUuid($this->value);
+        return Str::isUuid($this->value);
     }
     /**
      * Determine if the given string is empty.
@@ -266,7 +266,7 @@ class Stringable implements \JsonSerializable
      */
     public function kebab()
     {
-        return new static(\FedExVendor\Illuminate\Support\Str::kebab($this->value));
+        return new static(Str::kebab($this->value));
     }
     /**
      * Return the length of the given string.
@@ -276,7 +276,7 @@ class Stringable implements \JsonSerializable
      */
     public function length($encoding = null)
     {
-        return \FedExVendor\Illuminate\Support\Str::length($this->value, $encoding);
+        return Str::length($this->value, $encoding);
     }
     /**
      * Limit the number of characters in a string.
@@ -287,7 +287,7 @@ class Stringable implements \JsonSerializable
      */
     public function limit($limit = 100, $end = '...')
     {
-        return new static(\FedExVendor\Illuminate\Support\Str::limit($this->value, $limit, $end));
+        return new static(Str::limit($this->value, $limit, $end));
     }
     /**
      * Convert the given string to lower-case.
@@ -296,7 +296,7 @@ class Stringable implements \JsonSerializable
      */
     public function lower()
     {
-        return new static(\FedExVendor\Illuminate\Support\Str::lower($this->value));
+        return new static(Str::lower($this->value));
     }
     /**
      * Convert GitHub flavored Markdown into HTML.
@@ -306,7 +306,7 @@ class Stringable implements \JsonSerializable
      */
     public function markdown(array $options = [])
     {
-        return new static(\FedExVendor\Illuminate\Support\Str::markdown($this->value, $options));
+        return new static(Str::markdown($this->value, $options));
     }
     /**
      * Masks a portion of a string with a repeated character.
@@ -319,7 +319,7 @@ class Stringable implements \JsonSerializable
      */
     public function mask($character, $index, $length = null, $encoding = 'UTF-8')
     {
-        return new static(\FedExVendor\Illuminate\Support\Str::mask($this->value, $character, $index, $length, $encoding));
+        return new static(Str::mask($this->value, $character, $index, $length, $encoding));
     }
     /**
      * Get the string matching the given pattern.
@@ -329,7 +329,7 @@ class Stringable implements \JsonSerializable
      */
     public function match($pattern)
     {
-        return new static(\FedExVendor\Illuminate\Support\Str::match($pattern, $this->value));
+        return new static(Str::match($pattern, $this->value));
     }
     /**
      * Get the string matching the given pattern.
@@ -339,7 +339,7 @@ class Stringable implements \JsonSerializable
      */
     public function matchAll($pattern)
     {
-        return \FedExVendor\Illuminate\Support\Str::matchAll($pattern, $this->value);
+        return Str::matchAll($pattern, $this->value);
     }
     /**
      * Determine if the string matches the given pattern.
@@ -360,7 +360,7 @@ class Stringable implements \JsonSerializable
      */
     public function padBoth($length, $pad = ' ')
     {
-        return new static(\FedExVendor\Illuminate\Support\Str::padBoth($this->value, $length, $pad));
+        return new static(Str::padBoth($this->value, $length, $pad));
     }
     /**
      * Pad the left side of the string with another.
@@ -371,7 +371,7 @@ class Stringable implements \JsonSerializable
      */
     public function padLeft($length, $pad = ' ')
     {
-        return new static(\FedExVendor\Illuminate\Support\Str::padLeft($this->value, $length, $pad));
+        return new static(Str::padLeft($this->value, $length, $pad));
     }
     /**
      * Pad the right side of the string with another.
@@ -382,7 +382,7 @@ class Stringable implements \JsonSerializable
      */
     public function padRight($length, $pad = ' ')
     {
-        return new static(\FedExVendor\Illuminate\Support\Str::padRight($this->value, $length, $pad));
+        return new static(Str::padRight($this->value, $length, $pad));
     }
     /**
      * Parse a Class@method style callback into class and method.
@@ -392,7 +392,7 @@ class Stringable implements \JsonSerializable
      */
     public function parseCallback($default = null)
     {
-        return \FedExVendor\Illuminate\Support\Str::parseCallback($this->value, $default);
+        return Str::parseCallback($this->value, $default);
     }
     /**
      * Call the given callback and return a new string.
@@ -402,7 +402,7 @@ class Stringable implements \JsonSerializable
      */
     public function pipe(callable $callback)
     {
-        return new static(\call_user_func($callback, $this));
+        return new static(call_user_func($callback, $this));
     }
     /**
      * Get the plural form of an English word.
@@ -412,7 +412,7 @@ class Stringable implements \JsonSerializable
      */
     public function plural($count = 2)
     {
-        return new static(\FedExVendor\Illuminate\Support\Str::plural($this->value, $count));
+        return new static(Str::plural($this->value, $count));
     }
     /**
      * Pluralize the last word of an English, studly caps case string.
@@ -422,7 +422,7 @@ class Stringable implements \JsonSerializable
      */
     public function pluralStudly($count = 2)
     {
-        return new static(\FedExVendor\Illuminate\Support\Str::pluralStudly($this->value, $count));
+        return new static(Str::pluralStudly($this->value, $count));
     }
     /**
      * Prepend the given values to the string.
@@ -432,7 +432,7 @@ class Stringable implements \JsonSerializable
      */
     public function prepend(...$values)
     {
-        return new static(\implode('', $values) . $this->value);
+        return new static(implode('', $values) . $this->value);
     }
     /**
      * Remove any occurrence of the given string in the subject.
@@ -443,7 +443,7 @@ class Stringable implements \JsonSerializable
      */
     public function remove($search, $caseSensitive = \true)
     {
-        return new static(\FedExVendor\Illuminate\Support\Str::remove($search, $this->value, $caseSensitive));
+        return new static(Str::remove($search, $this->value, $caseSensitive));
     }
     /**
      * Reverse the string.
@@ -452,7 +452,7 @@ class Stringable implements \JsonSerializable
      */
     public function reverse()
     {
-        return new static(\FedExVendor\Illuminate\Support\Str::reverse($this->value));
+        return new static(Str::reverse($this->value));
     }
     /**
      * Repeat the string.
@@ -462,7 +462,7 @@ class Stringable implements \JsonSerializable
      */
     public function repeat(int $times)
     {
-        return new static(\FedExVendor\Illuminate\Support\Str::repeat($this->value, $times));
+        return new static(Str::repeat($this->value, $times));
     }
     /**
      * Replace the given value in the given string.
@@ -473,7 +473,7 @@ class Stringable implements \JsonSerializable
      */
     public function replace($search, $replace)
     {
-        return new static(\FedExVendor\Illuminate\Support\Str::replace($search, $replace, $this->value));
+        return new static(Str::replace($search, $replace, $this->value));
     }
     /**
      * Replace a given value in the string sequentially with an array.
@@ -484,7 +484,7 @@ class Stringable implements \JsonSerializable
      */
     public function replaceArray($search, array $replace)
     {
-        return new static(\FedExVendor\Illuminate\Support\Str::replaceArray($search, $replace, $this->value));
+        return new static(Str::replaceArray($search, $replace, $this->value));
     }
     /**
      * Replace the first occurrence of a given value in the string.
@@ -495,7 +495,7 @@ class Stringable implements \JsonSerializable
      */
     public function replaceFirst($search, $replace)
     {
-        return new static(\FedExVendor\Illuminate\Support\Str::replaceFirst($search, $replace, $this->value));
+        return new static(Str::replaceFirst($search, $replace, $this->value));
     }
     /**
      * Replace the last occurrence of a given value in the string.
@@ -506,7 +506,7 @@ class Stringable implements \JsonSerializable
      */
     public function replaceLast($search, $replace)
     {
-        return new static(\FedExVendor\Illuminate\Support\Str::replaceLast($search, $replace, $this->value));
+        return new static(Str::replaceLast($search, $replace, $this->value));
     }
     /**
      * Replace the patterns matching the given regular expression.
@@ -518,10 +518,10 @@ class Stringable implements \JsonSerializable
      */
     public function replaceMatches($pattern, $replace, $limit = -1)
     {
-        if ($replace instanceof \Closure) {
-            return new static(\preg_replace_callback($pattern, $replace, $this->value, $limit));
+        if ($replace instanceof Closure) {
+            return new static(preg_replace_callback($pattern, $replace, $this->value, $limit));
         }
-        return new static(\preg_replace($pattern, $replace, $this->value, $limit));
+        return new static(preg_replace($pattern, $replace, $this->value, $limit));
     }
     /**
      * Parse input from a string to a collection, according to a format.
@@ -531,7 +531,7 @@ class Stringable implements \JsonSerializable
      */
     public function scan($format)
     {
-        return collect(\sscanf($this->value, $format));
+        return collect(sscanf($this->value, $format));
     }
     /**
      * Begin a string with a single instance of a given value.
@@ -541,7 +541,7 @@ class Stringable implements \JsonSerializable
      */
     public function start($prefix)
     {
-        return new static(\FedExVendor\Illuminate\Support\Str::start($this->value, $prefix));
+        return new static(Str::start($this->value, $prefix));
     }
     /**
      * Strip HTML and PHP tags from the given string.
@@ -551,7 +551,7 @@ class Stringable implements \JsonSerializable
      */
     public function stripTags($allowedTags = null)
     {
-        return new static(\strip_tags($this->value, $allowedTags));
+        return new static(strip_tags($this->value, $allowedTags));
     }
     /**
      * Convert the given string to upper-case.
@@ -560,7 +560,7 @@ class Stringable implements \JsonSerializable
      */
     public function upper()
     {
-        return new static(\FedExVendor\Illuminate\Support\Str::upper($this->value));
+        return new static(Str::upper($this->value));
     }
     /**
      * Convert the given string to title case.
@@ -569,7 +569,7 @@ class Stringable implements \JsonSerializable
      */
     public function title()
     {
-        return new static(\FedExVendor\Illuminate\Support\Str::title($this->value));
+        return new static(Str::title($this->value));
     }
     /**
      * Convert the given string to title case for each word.
@@ -578,7 +578,7 @@ class Stringable implements \JsonSerializable
      */
     public function headline()
     {
-        return new static(\FedExVendor\Illuminate\Support\Str::headline($this->value));
+        return new static(Str::headline($this->value));
     }
     /**
      * Get the singular form of an English word.
@@ -587,7 +587,7 @@ class Stringable implements \JsonSerializable
      */
     public function singular()
     {
-        return new static(\FedExVendor\Illuminate\Support\Str::singular($this->value));
+        return new static(Str::singular($this->value));
     }
     /**
      * Generate a URL friendly "slug" from a given string.
@@ -598,7 +598,7 @@ class Stringable implements \JsonSerializable
      */
     public function slug($separator = '-', $language = 'en')
     {
-        return new static(\FedExVendor\Illuminate\Support\Str::slug($this->value, $separator, $language));
+        return new static(Str::slug($this->value, $separator, $language));
     }
     /**
      * Convert a string to snake case.
@@ -608,7 +608,7 @@ class Stringable implements \JsonSerializable
      */
     public function snake($delimiter = '_')
     {
-        return new static(\FedExVendor\Illuminate\Support\Str::snake($this->value, $delimiter));
+        return new static(Str::snake($this->value, $delimiter));
     }
     /**
      * Determine if a given string starts with a given substring.
@@ -618,7 +618,7 @@ class Stringable implements \JsonSerializable
      */
     public function startsWith($needles)
     {
-        return \FedExVendor\Illuminate\Support\Str::startsWith($this->value, $needles);
+        return Str::startsWith($this->value, $needles);
     }
     /**
      * Convert a value to studly caps case.
@@ -627,7 +627,7 @@ class Stringable implements \JsonSerializable
      */
     public function studly()
     {
-        return new static(\FedExVendor\Illuminate\Support\Str::studly($this->value));
+        return new static(Str::studly($this->value));
     }
     /**
      * Returns the portion of the string specified by the start and length parameters.
@@ -638,7 +638,7 @@ class Stringable implements \JsonSerializable
      */
     public function substr($start, $length = null)
     {
-        return new static(\FedExVendor\Illuminate\Support\Str::substr($this->value, $start, $length));
+        return new static(Str::substr($this->value, $start, $length));
     }
     /**
      * Returns the number of substring occurrences.
@@ -650,7 +650,7 @@ class Stringable implements \JsonSerializable
      */
     public function substrCount($needle, $offset = null, $length = null)
     {
-        return \FedExVendor\Illuminate\Support\Str::substrCount($this->value, $needle, $offset ?? 0, $length);
+        return Str::substrCount($this->value, $needle, $offset ?? 0, $length);
     }
     /**
      * Replace text within a portion of a string.
@@ -662,7 +662,7 @@ class Stringable implements \JsonSerializable
      */
     public function substrReplace($replace, $offset = 0, $length = null)
     {
-        return new static(\FedExVendor\Illuminate\Support\Str::substrReplace($this->value, $replace, $offset, $length));
+        return new static(Str::substrReplace($this->value, $replace, $offset, $length));
     }
     /**
      * Swap multiple keywords in a string with other keywords.
@@ -672,7 +672,7 @@ class Stringable implements \JsonSerializable
      */
     public function swap(array $map)
     {
-        return new static(\strtr($this->value, $map));
+        return new static(strtr($this->value, $map));
     }
     /**
      * Trim the string of the given characters.
@@ -682,7 +682,7 @@ class Stringable implements \JsonSerializable
      */
     public function trim($characters = null)
     {
-        return new static(\trim(...\array_merge([$this->value], \func_get_args())));
+        return new static(trim(...array_merge([$this->value], func_get_args())));
     }
     /**
      * Left trim the string of the given characters.
@@ -692,7 +692,7 @@ class Stringable implements \JsonSerializable
      */
     public function ltrim($characters = null)
     {
-        return new static(\ltrim(...\array_merge([$this->value], \func_get_args())));
+        return new static(ltrim(...array_merge([$this->value], func_get_args())));
     }
     /**
      * Right trim the string of the given characters.
@@ -702,7 +702,7 @@ class Stringable implements \JsonSerializable
      */
     public function rtrim($characters = null)
     {
-        return new static(\rtrim(...\array_merge([$this->value], \func_get_args())));
+        return new static(rtrim(...array_merge([$this->value], func_get_args())));
     }
     /**
      * Make a string's first character uppercase.
@@ -711,7 +711,7 @@ class Stringable implements \JsonSerializable
      */
     public function ucfirst()
     {
-        return new static(\FedExVendor\Illuminate\Support\Str::ucfirst($this->value));
+        return new static(Str::ucfirst($this->value));
     }
     /**
      * Split a string by uppercase characters.
@@ -720,7 +720,7 @@ class Stringable implements \JsonSerializable
      */
     public function ucsplit()
     {
-        return collect(\FedExVendor\Illuminate\Support\Str::ucsplit($this->value));
+        return collect(Str::ucsplit($this->value));
     }
     /**
      * Execute the given callback if the string contains a given substring.
@@ -859,7 +859,7 @@ class Stringable implements \JsonSerializable
      */
     public function words($words = 100, $end = '...')
     {
-        return new static(\FedExVendor\Illuminate\Support\Str::words($this->value, $words, $end));
+        return new static(Str::words($this->value, $words, $end));
     }
     /**
      * Get the number of words a string contains.
@@ -868,7 +868,7 @@ class Stringable implements \JsonSerializable
      */
     public function wordCount()
     {
-        return \str_word_count($this->value);
+        return str_word_count($this->value);
     }
     /**
      * Convert the string into a `HtmlString` instance.
@@ -877,7 +877,7 @@ class Stringable implements \JsonSerializable
      */
     public function toHtmlString()
     {
-        return new \FedExVendor\Illuminate\Support\HtmlString($this->value);
+        return new HtmlString($this->value);
     }
     /**
      * Dump the string.
@@ -886,7 +886,7 @@ class Stringable implements \JsonSerializable
      */
     public function dump()
     {
-        \FedExVendor\Symfony\Component\VarDumper\VarDumper::dump($this->value);
+        VarDumper::dump($this->value);
         return $this;
     }
     /**

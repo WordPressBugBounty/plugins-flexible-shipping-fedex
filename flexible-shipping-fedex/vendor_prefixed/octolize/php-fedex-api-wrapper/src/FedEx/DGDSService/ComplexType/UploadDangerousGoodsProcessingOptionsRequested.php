@@ -12,7 +12,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  *
  * @property \FedEx\DGDSService\SimpleType\UploadDangerousGoodsProcessingOptionType|string[] $Options
  */
-class UploadDangerousGoodsProcessingOptionsRequested extends \FedExVendor\FedEx\AbstractComplexType
+class UploadDangerousGoodsProcessingOptionsRequested extends AbstractComplexType
 {
     /**
      * Name of this complex type

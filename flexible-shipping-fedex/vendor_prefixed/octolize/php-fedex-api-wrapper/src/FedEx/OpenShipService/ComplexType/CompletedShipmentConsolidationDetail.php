@@ -15,7 +15,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property CompletedTransborderDistributionDetail $CompletedTransborderDistributionDetail
  * @property AssociatedTrackingId[] $AssociatedTrackingIds
  */
-class CompletedShipmentConsolidationDetail extends \FedExVendor\FedEx\AbstractComplexType
+class CompletedShipmentConsolidationDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -51,7 +51,7 @@ class CompletedShipmentConsolidationDetail extends \FedExVendor\FedEx\AbstractCo
      * @param CompletedTransborderDistributionDetail $completedTransborderDistributionDetail
      * @return $this
      */
-    public function setCompletedTransborderDistributionDetail(\FedExVendor\FedEx\OpenShipService\ComplexType\CompletedTransborderDistributionDetail $completedTransborderDistributionDetail)
+    public function setCompletedTransborderDistributionDetail(CompletedTransborderDistributionDetail $completedTransborderDistributionDetail)
     {
         $this->values['CompletedTransborderDistributionDetail'] = $completedTransborderDistributionDetail;
         return $this;

@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $PlatformId
  * @property string $UserId
  */
-class SocialMediaDetail extends \FedExVendor\FedEx\AbstractComplexType
+class SocialMediaDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

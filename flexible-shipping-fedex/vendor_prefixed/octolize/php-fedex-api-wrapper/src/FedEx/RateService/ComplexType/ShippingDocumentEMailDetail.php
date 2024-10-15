@@ -14,7 +14,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property \FedEx\RateService\SimpleType\ShippingDocumentEMailGroupingType|string $Grouping
  * @property Localization $Localization
  */
-class ShippingDocumentEMailDetail extends \FedExVendor\FedEx\AbstractComplexType
+class ShippingDocumentEMailDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -50,7 +50,7 @@ class ShippingDocumentEMailDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param Localization $localization
      * @return $this
      */
-    public function setLocalization(\FedExVendor\FedEx\RateService\ComplexType\Localization $localization)
+    public function setLocalization(Localization $localization)
     {
         $this->values['Localization'] = $localization;
         return $this;

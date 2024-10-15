@@ -15,7 +15,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property \FedEx\OpenShipService\SimpleType\FedExLocationType|string $LocationType
  * @property string $LocationId
  */
-class HoldAtLocationDetail extends \FedExVendor\FedEx\AbstractComplexType
+class HoldAtLocationDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -40,7 +40,7 @@ class HoldAtLocationDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param ContactAndAddress $locationContactAndAddress
      * @return $this
      */
-    public function setLocationContactAndAddress(\FedExVendor\FedEx\OpenShipService\ComplexType\ContactAndAddress $locationContactAndAddress)
+    public function setLocationContactAndAddress(ContactAndAddress $locationContactAndAddress)
     {
         $this->values['LocationContactAndAddress'] = $locationContactAndAddress;
         return $this;

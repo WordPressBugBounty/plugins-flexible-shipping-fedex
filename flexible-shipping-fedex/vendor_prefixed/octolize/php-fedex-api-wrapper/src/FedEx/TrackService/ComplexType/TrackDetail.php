@@ -88,7 +88,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property DeliveryOptionEligibilityDetail[] $DeliveryOptionEligibilityDetails
  * @property TrackEvent[] $Events
  */
-class TrackDetail extends \FedExVendor\FedEx\AbstractComplexType
+class TrackDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -102,7 +102,7 @@ class TrackDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param Notification $notification
      * @return $this
      */
-    public function setNotification(\FedExVendor\FedEx\TrackService\ComplexType\Notification $notification)
+    public function setNotification(Notification $notification)
     {
         $this->values['Notification'] = $notification;
         return $this;
@@ -124,7 +124,7 @@ class TrackDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param StringBarcode $barcode
      * @return $this
      */
-    public function setBarcode(\FedExVendor\FedEx\TrackService\ComplexType\StringBarcode $barcode)
+    public function setBarcode(StringBarcode $barcode)
     {
         $this->values['Barcode'] = $barcode;
         return $this;
@@ -146,7 +146,7 @@ class TrackDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param TrackStatusDetail $statusDetail
      * @return $this
      */
-    public function setStatusDetail(\FedExVendor\FedEx\TrackService\ComplexType\TrackStatusDetail $statusDetail)
+    public function setStatusDetail(TrackStatusDetail $statusDetail)
     {
         $this->values['StatusDetail'] = $statusDetail;
         return $this;
@@ -179,7 +179,7 @@ class TrackDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param TrackReconciliation $reconciliation
      * @return $this
      */
-    public function setReconciliation(\FedExVendor\FedEx\TrackService\ComplexType\TrackReconciliation $reconciliation)
+    public function setReconciliation(TrackReconciliation $reconciliation)
     {
         $this->values['Reconciliation'] = $reconciliation;
         return $this;
@@ -267,7 +267,7 @@ class TrackDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param ContactAndAddress $productionLocationContactAndAddress
      * @return $this
      */
-    public function setProductionLocationContactAndAddress(\FedExVendor\FedEx\TrackService\ComplexType\ContactAndAddress $productionLocationContactAndAddress)
+    public function setProductionLocationContactAndAddress(ContactAndAddress $productionLocationContactAndAddress)
     {
         $this->values['ProductionLocationContactAndAddress'] = $productionLocationContactAndAddress;
         return $this;
@@ -300,7 +300,7 @@ class TrackDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param TrackServiceDescriptionDetail $service
      * @return $this
      */
-    public function setService(\FedExVendor\FedEx\TrackService\ComplexType\TrackServiceDescriptionDetail $service)
+    public function setService(TrackServiceDescriptionDetail $service)
     {
         $this->values['Service'] = $service;
         return $this;
@@ -311,7 +311,7 @@ class TrackDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param Weight $packageWeight
      * @return $this
      */
-    public function setPackageWeight(\FedExVendor\FedEx\TrackService\ComplexType\Weight $packageWeight)
+    public function setPackageWeight(Weight $packageWeight)
     {
         $this->values['PackageWeight'] = $packageWeight;
         return $this;
@@ -322,7 +322,7 @@ class TrackDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param Dimensions $packageDimensions
      * @return $this
      */
-    public function setPackageDimensions(\FedExVendor\FedEx\TrackService\ComplexType\Dimensions $packageDimensions)
+    public function setPackageDimensions(Dimensions $packageDimensions)
     {
         $this->values['PackageDimensions'] = $packageDimensions;
         return $this;
@@ -333,7 +333,7 @@ class TrackDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param Weight $packageDimensionalWeight
      * @return $this
      */
-    public function setPackageDimensionalWeight(\FedExVendor\FedEx\TrackService\ComplexType\Weight $packageDimensionalWeight)
+    public function setPackageDimensionalWeight(Weight $packageDimensionalWeight)
     {
         $this->values['PackageDimensionalWeight'] = $packageDimensionalWeight;
         return $this;
@@ -344,7 +344,7 @@ class TrackDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param Weight $shipmentWeight
      * @return $this
      */
-    public function setShipmentWeight(\FedExVendor\FedEx\TrackService\ComplexType\Weight $shipmentWeight)
+    public function setShipmentWeight(Weight $shipmentWeight)
     {
         $this->values['ShipmentWeight'] = $shipmentWeight;
         return $this;
@@ -355,7 +355,7 @@ class TrackDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param TrackPackagingDescriptionDetail $packaging
      * @return $this
      */
-    public function setPackaging(\FedExVendor\FedEx\TrackService\ComplexType\TrackPackagingDescriptionDetail $packaging)
+    public function setPackaging(TrackPackagingDescriptionDetail $packaging)
     {
         $this->values['Packaging'] = $packaging;
         return $this;
@@ -531,7 +531,7 @@ class TrackDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param TrackReturnDetail $returnDetail
      * @return $this
      */
-    public function setReturnDetail(\FedExVendor\FedEx\TrackService\ComplexType\TrackReturnDetail $returnDetail)
+    public function setReturnDetail(TrackReturnDetail $returnDetail)
     {
         $this->values['ReturnDetail'] = $returnDetail;
         return $this;
@@ -553,7 +553,7 @@ class TrackDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param TrackAdvanceNotificationDetail $advanceNotificationDetail
      * @return $this
      */
-    public function setAdvanceNotificationDetail(\FedExVendor\FedEx\TrackService\ComplexType\TrackAdvanceNotificationDetail $advanceNotificationDetail)
+    public function setAdvanceNotificationDetail(TrackAdvanceNotificationDetail $advanceNotificationDetail)
     {
         $this->values['AdvanceNotificationDetail'] = $advanceNotificationDetail;
         return $this;
@@ -586,7 +586,7 @@ class TrackDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param EPaymentDetail $ePayment
      * @return $this
      */
-    public function setEPayment(\FedExVendor\FedEx\TrackService\ComplexType\EPaymentDetail $ePayment)
+    public function setEPayment(EPaymentDetail $ePayment)
     {
         $this->values['EPayment'] = $ePayment;
         return $this;
@@ -597,7 +597,7 @@ class TrackDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param Contact $shipper
      * @return $this
      */
-    public function setShipper(\FedExVendor\FedEx\TrackService\ComplexType\Contact $shipper)
+    public function setShipper(Contact $shipper)
     {
         $this->values['Shipper'] = $shipper;
         return $this;
@@ -619,7 +619,7 @@ class TrackDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param Address $shipperAddress
      * @return $this
      */
-    public function setShipperAddress(\FedExVendor\FedEx\TrackService\ComplexType\Address $shipperAddress)
+    public function setShipperAddress(Address $shipperAddress)
     {
         $this->values['ShipperAddress'] = $shipperAddress;
         return $this;
@@ -630,7 +630,7 @@ class TrackDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param Address $originLocationAddress
      * @return $this
      */
-    public function setOriginLocationAddress(\FedExVendor\FedEx\TrackService\ComplexType\Address $originLocationAddress)
+    public function setOriginLocationAddress(Address $originLocationAddress)
     {
         $this->values['OriginLocationAddress'] = $originLocationAddress;
         return $this;
@@ -663,7 +663,7 @@ class TrackDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param Distance $totalTransitDistance
      * @return $this
      */
-    public function setTotalTransitDistance(\FedExVendor\FedEx\TrackService\ComplexType\Distance $totalTransitDistance)
+    public function setTotalTransitDistance(Distance $totalTransitDistance)
     {
         $this->values['TotalTransitDistance'] = $totalTransitDistance;
         return $this;
@@ -674,7 +674,7 @@ class TrackDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param Distance $distanceToDestination
      * @return $this
      */
-    public function setDistanceToDestination(\FedExVendor\FedEx\TrackService\ComplexType\Distance $distanceToDestination)
+    public function setDistanceToDestination(Distance $distanceToDestination)
     {
         $this->values['DistanceToDestination'] = $distanceToDestination;
         return $this;
@@ -696,7 +696,7 @@ class TrackDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param Contact $recipient
      * @return $this
      */
-    public function setRecipient(\FedExVendor\FedEx\TrackService\ComplexType\Contact $recipient)
+    public function setRecipient(Contact $recipient)
     {
         $this->values['Recipient'] = $recipient;
         return $this;
@@ -707,7 +707,7 @@ class TrackDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param Address $lastUpdatedDestinationAddress
      * @return $this
      */
-    public function setLastUpdatedDestinationAddress(\FedExVendor\FedEx\TrackService\ComplexType\Address $lastUpdatedDestinationAddress)
+    public function setLastUpdatedDestinationAddress(Address $lastUpdatedDestinationAddress)
     {
         $this->values['LastUpdatedDestinationAddress'] = $lastUpdatedDestinationAddress;
         return $this;
@@ -718,7 +718,7 @@ class TrackDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param Address $destinationAddress
      * @return $this
      */
-    public function setDestinationAddress(\FedExVendor\FedEx\TrackService\ComplexType\Address $destinationAddress)
+    public function setDestinationAddress(Address $destinationAddress)
     {
         $this->values['DestinationAddress'] = $destinationAddress;
         return $this;
@@ -729,7 +729,7 @@ class TrackDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param Contact $holdAtLocationContact
      * @return $this
      */
-    public function setHoldAtLocationContact(\FedExVendor\FedEx\TrackService\ComplexType\Contact $holdAtLocationContact)
+    public function setHoldAtLocationContact(Contact $holdAtLocationContact)
     {
         $this->values['HoldAtLocationContact'] = $holdAtLocationContact;
         return $this;
@@ -740,7 +740,7 @@ class TrackDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param Address $holdAtLocationAddress
      * @return $this
      */
-    public function setHoldAtLocationAddress(\FedExVendor\FedEx\TrackService\ComplexType\Address $holdAtLocationAddress)
+    public function setHoldAtLocationAddress(Address $holdAtLocationAddress)
     {
         $this->values['HoldAtLocationAddress'] = $holdAtLocationAddress;
         return $this;
@@ -762,7 +762,7 @@ class TrackDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param Address $destinationLocationAddress
      * @return $this
      */
-    public function setDestinationLocationAddress(\FedExVendor\FedEx\TrackService\ComplexType\Address $destinationLocationAddress)
+    public function setDestinationLocationAddress(Address $destinationLocationAddress)
     {
         $this->values['DestinationLocationAddress'] = $destinationLocationAddress;
         return $this;
@@ -795,7 +795,7 @@ class TrackDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param Address $actualDeliveryAddress
      * @return $this
      */
-    public function setActualDeliveryAddress(\FedExVendor\FedEx\TrackService\ComplexType\Address $actualDeliveryAddress)
+    public function setActualDeliveryAddress(Address $actualDeliveryAddress)
     {
         $this->values['ActualDeliveryAddress'] = $actualDeliveryAddress;
         return $this;
@@ -894,7 +894,7 @@ class TrackDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param SignatureImageDetail $signature
      * @return $this
      */
-    public function setSignature(\FedExVendor\FedEx\TrackService\ComplexType\SignatureImageDetail $signature)
+    public function setSignature(SignatureImageDetail $signature)
     {
         $this->values['Signature'] = $signature;
         return $this;

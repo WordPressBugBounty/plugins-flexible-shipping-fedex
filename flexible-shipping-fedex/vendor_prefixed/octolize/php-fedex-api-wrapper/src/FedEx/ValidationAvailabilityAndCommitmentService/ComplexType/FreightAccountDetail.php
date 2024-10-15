@@ -16,7 +16,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property \FedEx\ValidationAvailabilityAndCommitmentService\SimpleType\FreightTariffType|string $Tariff
  * @property \FedEx\ValidationAvailabilityAndCommitmentService\SimpleType\FreightAccountStatusType|string $Status
  */
-class FreightAccountDetail extends \FedExVendor\FedEx\AbstractComplexType
+class FreightAccountDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

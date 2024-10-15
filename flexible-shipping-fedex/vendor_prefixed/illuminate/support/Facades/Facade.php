@@ -26,13 +26,13 @@ abstract class Facade
      * @param  \Closure  $callback
      * @return void
      */
-    public static function resolved(\Closure $callback)
+    public static function resolved(Closure $callback)
     {
         $accessor = static::getFacadeAccessor();
         if (static::$app->resolved($accessor) === \true) {
             $callback(static::getFacadeRoot());
         }
-        static::$app->afterResolving($accessor, function ($service) use($callback) {
+        static::$app->afterResolving($accessor, function ($service) use ($callback) {
             $callback($service);
         });
     }
@@ -45,7 +45,7 @@ abstract class Facade
     {
         if (!static::isMock()) {
             $class = static::getMockableClass();
-            return tap($class ? \FedExVendor\Mockery::spy($class) : \FedExVendor\Mockery::spy(), function ($spy) {
+            return tap($class ? Mockery::spy($class) : Mockery::spy(), function ($spy) {
                 static::swap($spy);
             });
         }
@@ -70,7 +70,7 @@ abstract class Facade
     {
         $name = static::getFacadeAccessor();
         $mock = static::isMock() ? static::$resolvedInstance[$name] : static::createFreshMockInstance();
-        return $mock->shouldReceive(...\func_get_args());
+        return $mock->shouldReceive(...func_get_args());
     }
     /**
      * Create a fresh mock instance for the given class.
@@ -92,7 +92,7 @@ abstract class Facade
     protected static function createMock()
     {
         $class = static::getMockableClass();
-        return $class ? \FedExVendor\Mockery::mock($class) : \FedExVendor\Mockery::mock();
+        return $class ? Mockery::mock($class) : Mockery::mock();
     }
     /**
      * Determines whether a mock is set as the instance of the facade.
@@ -102,7 +102,7 @@ abstract class Facade
     protected static function isMock()
     {
         $name = static::getFacadeAccessor();
-        return isset(static::$resolvedInstance[$name]) && static::$resolvedInstance[$name] instanceof \FedExVendor\Mockery\LegacyMockInterface;
+        return isset(static::$resolvedInstance[$name]) && static::$resolvedInstance[$name] instanceof LegacyMockInterface;
     }
     /**
      * Get the mockable class for the bound instance.
@@ -112,7 +112,7 @@ abstract class Facade
     protected static function getMockableClass()
     {
         if ($root = static::getFacadeRoot()) {
-            return \get_class($root);
+            return get_class($root);
         }
     }
     /**
@@ -146,7 +146,7 @@ abstract class Facade
      */
     protected static function getFacadeAccessor()
     {
-        throw new \RuntimeException('Facade does not implement getFacadeAccessor method.');
+        throw new RuntimeException('Facade does not implement getFacadeAccessor method.');
     }
     /**
      * Resolve the facade root instance from the container.
@@ -156,7 +156,7 @@ abstract class Facade
      */
     protected static function resolveFacadeInstance($name)
     {
-        if (\is_object($name)) {
+        if (is_object($name)) {
             return $name;
         }
         if (isset(static::$resolvedInstance[$name])) {
@@ -217,7 +217,7 @@ abstract class Facade
     {
         $instance = static::getFacadeRoot();
         if (!$instance) {
-            throw new \RuntimeException('A facade root has not been set.');
+            throw new RuntimeException('A facade root has not been set.');
         }
         return $instance->{$method}(...$args);
     }

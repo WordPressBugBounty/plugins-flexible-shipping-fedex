@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  In Flight Shipment Service
  */
-class RescheduleDeliveryType extends \FedExVendor\FedEx\AbstractSimpleType
+class RescheduleDeliveryType extends AbstractSimpleType
 {
     const _APPOINTMENT = 'APPOINTMENT';
     const _DATE_CERTAIN = 'DATE_CERTAIN';

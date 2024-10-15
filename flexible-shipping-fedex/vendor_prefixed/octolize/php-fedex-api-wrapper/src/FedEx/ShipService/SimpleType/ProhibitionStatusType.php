@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
  */
-class ProhibitionStatusType extends \FedExVendor\FedEx\AbstractSimpleType
+class ProhibitionStatusType extends AbstractSimpleType
 {
     const _PROHIBITED = 'PROHIBITED';
     const _WAIVED = 'WAIVED';

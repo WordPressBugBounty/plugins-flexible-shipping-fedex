@@ -15,7 +15,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property \FedEx\LocationsService\SimpleType\SupportedRedirectToHoldServiceType|string[] $SupportedRedirectToHoldServices
  * @property LocationDetail $LocationDetail
  */
-class DistanceAndLocationDetail extends \FedExVendor\FedEx\AbstractComplexType
+class DistanceAndLocationDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -29,7 +29,7 @@ class DistanceAndLocationDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param Distance $distance
      * @return $this
      */
-    public function setDistance(\FedExVendor\FedEx\LocationsService\ComplexType\Distance $distance)
+    public function setDistance(Distance $distance)
     {
         $this->values['Distance'] = $distance;
         return $this;
@@ -40,7 +40,7 @@ class DistanceAndLocationDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param ReservationAvailabilityDetail $reservationAvailabilityDetail
      * @return $this
      */
-    public function setReservationAvailabilityDetail(\FedExVendor\FedEx\LocationsService\ComplexType\ReservationAvailabilityDetail $reservationAvailabilityDetail)
+    public function setReservationAvailabilityDetail(ReservationAvailabilityDetail $reservationAvailabilityDetail)
     {
         $this->values['ReservationAvailabilityDetail'] = $reservationAvailabilityDetail;
         return $this;
@@ -62,7 +62,7 @@ class DistanceAndLocationDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param LocationDetail $locationDetail
      * @return $this
      */
-    public function setLocationDetail(\FedExVendor\FedEx\LocationsService\ComplexType\LocationDetail $locationDetail)
+    public function setLocationDetail(LocationDetail $locationDetail)
     {
         $this->values['LocationDetail'] = $locationDetail;
         return $this;

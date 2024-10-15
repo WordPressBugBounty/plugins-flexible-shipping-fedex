@@ -12,7 +12,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  *
  * @property CloseDocumentFormat $Format
  */
-class HazardousMaterialsCertificationDetail extends \FedExVendor\FedEx\AbstractComplexType
+class HazardousMaterialsCertificationDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -26,7 +26,7 @@ class HazardousMaterialsCertificationDetail extends \FedExVendor\FedEx\AbstractC
      * @param CloseDocumentFormat $format
      * @return $this
      */
-    public function setFormat(\FedExVendor\FedEx\CloseService\ComplexType\CloseDocumentFormat $format)
+    public function setFormat(CloseDocumentFormat $format)
     {
         $this->values['Format'] = $format;
         return $this;

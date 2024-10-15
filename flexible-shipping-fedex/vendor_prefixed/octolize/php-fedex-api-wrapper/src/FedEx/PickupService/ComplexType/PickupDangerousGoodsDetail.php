@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property \FedEx\PickupService\SimpleType\HazardousCommodityRegulationType|string $Regulation
  * @property \FedEx\PickupService\SimpleType\HazardousCommodityOptionType|string[] $Options
  */
-class PickupDangerousGoodsDetail extends \FedExVendor\FedEx\AbstractComplexType
+class PickupDangerousGoodsDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

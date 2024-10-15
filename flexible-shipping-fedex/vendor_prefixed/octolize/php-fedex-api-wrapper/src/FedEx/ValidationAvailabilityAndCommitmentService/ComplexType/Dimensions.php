@@ -15,7 +15,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property int $Height
  * @property \FedEx\ValidationAvailabilityAndCommitmentService\SimpleType\LinearUnits|string $Units
  */
-class Dimensions extends \FedExVendor\FedEx\AbstractComplexType
+class Dimensions extends AbstractComplexType
 {
     /**
      * Name of this complex type

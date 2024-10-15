@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Locations Service
  */
-class ReservationAttributesType extends \FedExVendor\FedEx\AbstractSimpleType
+class ReservationAttributesType extends AbstractSimpleType
 {
     const _RESERVATION_AVAILABLE = 'RESERVATION_AVAILABLE';
 }

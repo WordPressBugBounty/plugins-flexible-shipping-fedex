@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  OpenShip Service
  */
-class RateDimensionalDivisorType extends \FedExVendor\FedEx\AbstractSimpleType
+class RateDimensionalDivisorType extends AbstractSimpleType
 {
     const _COUNTRY = 'COUNTRY';
     const _CUSTOMER = 'CUSTOMER';

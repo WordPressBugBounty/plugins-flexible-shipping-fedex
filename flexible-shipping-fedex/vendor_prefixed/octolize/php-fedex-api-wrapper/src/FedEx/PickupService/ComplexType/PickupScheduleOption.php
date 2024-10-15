@@ -20,7 +20,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property boolean $ResidentialAvailable
  * @property \FedEx\PickupService\SimpleType\CountryRelationshipType|string $CountryRelationship
  */
-class PickupScheduleOption extends \FedExVendor\FedEx\AbstractComplexType
+class PickupScheduleOption extends AbstractComplexType
 {
     /**
      * Name of this complex type

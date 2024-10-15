@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property int $DocumentPartSequenceNumber
  * @property string $Image
  */
-class OperationalDocumentPart extends \FedExVendor\FedEx\AbstractComplexType
+class OperationalDocumentPart extends AbstractComplexType
 {
     /**
      * Name of this complex type

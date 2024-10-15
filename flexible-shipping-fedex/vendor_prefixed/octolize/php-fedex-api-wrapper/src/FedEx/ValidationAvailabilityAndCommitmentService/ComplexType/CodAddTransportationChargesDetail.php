@@ -15,7 +15,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property \FedEx\ValidationAvailabilityAndCommitmentService\SimpleType\ChargeBasisLevelType|string $ChargeBasisLevel
  * @property \FedEx\ValidationAvailabilityAndCommitmentService\SimpleType\RateLevelBasisType|string $RateLevelBasis
  */
-class CodAddTransportationChargesDetail extends \FedExVendor\FedEx\AbstractComplexType
+class CodAddTransportationChargesDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

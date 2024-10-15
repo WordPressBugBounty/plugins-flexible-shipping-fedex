@@ -14,7 +14,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $ReasonCode
  * @property \FedEx\ValidationAvailabilityAndCommitmentService\SimpleType\PermissionType|string $RestorationPermission
  */
-class CustomerProfileArchiveDetail extends \FedExVendor\FedEx\AbstractComplexType
+class CustomerProfileArchiveDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

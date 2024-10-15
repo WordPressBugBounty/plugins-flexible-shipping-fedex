@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  OpenShip Service
  */
-class MinimumChargeType extends \FedExVendor\FedEx\AbstractSimpleType
+class MinimumChargeType extends AbstractSimpleType
 {
     const _CUSTOMER = 'CUSTOMER';
     const _CUSTOMER_FREIGHT_WEIGHT = 'CUSTOMER_FREIGHT_WEIGHT';

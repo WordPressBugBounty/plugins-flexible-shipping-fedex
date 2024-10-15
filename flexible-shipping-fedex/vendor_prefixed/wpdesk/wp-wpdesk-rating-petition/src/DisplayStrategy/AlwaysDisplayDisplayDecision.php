@@ -5,14 +5,14 @@ namespace FedExVendor\WPDesk\RepositoryRating\DisplayStrategy;
 /**
  * DisplayDecision - always display.
  */
-class AlwaysDisplayDisplayDecision implements \FedExVendor\WPDesk\RepositoryRating\DisplayStrategy\DisplayDecision
+class AlwaysDisplayDisplayDecision implements DisplayDecision
 {
     /**
      * Should display?
      *
      * @return bool
      */
-    public function should_display() : bool
+    public function should_display(): bool
     {
         return \true;
     }

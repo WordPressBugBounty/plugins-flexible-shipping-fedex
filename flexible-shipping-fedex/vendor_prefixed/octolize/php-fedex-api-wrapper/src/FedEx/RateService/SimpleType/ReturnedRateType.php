@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
  */
-class ReturnedRateType extends \FedExVendor\FedEx\AbstractSimpleType
+class ReturnedRateType extends AbstractSimpleType
 {
     const _NEGOTIATED = 'NEGOTIATED';
     const _PAYOR_ACCOUNT_PACKAGE = 'PAYOR_ACCOUNT_PACKAGE';

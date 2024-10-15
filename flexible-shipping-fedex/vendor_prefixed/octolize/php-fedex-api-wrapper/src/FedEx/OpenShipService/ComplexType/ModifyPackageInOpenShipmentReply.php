@@ -18,7 +18,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property CompletedShipmentDetail $CompletedShipmentDetail
  * @property ShippingDocument[] $ErrorLabels
  */
-class ModifyPackageInOpenShipmentReply extends \FedExVendor\FedEx\AbstractComplexType
+class ModifyPackageInOpenShipmentReply extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -54,7 +54,7 @@ class ModifyPackageInOpenShipmentReply extends \FedExVendor\FedEx\AbstractComple
      * @param TransactionDetail $transactionDetail
      * @return $this
      */
-    public function setTransactionDetail(\FedExVendor\FedEx\OpenShipService\ComplexType\TransactionDetail $transactionDetail)
+    public function setTransactionDetail(TransactionDetail $transactionDetail)
     {
         $this->values['TransactionDetail'] = $transactionDetail;
         return $this;
@@ -65,7 +65,7 @@ class ModifyPackageInOpenShipmentReply extends \FedExVendor\FedEx\AbstractComple
      * @param VersionId $version
      * @return $this
      */
-    public function setVersion(\FedExVendor\FedEx\OpenShipService\ComplexType\VersionId $version)
+    public function setVersion(VersionId $version)
     {
         $this->values['Version'] = $version;
         return $this;
@@ -87,7 +87,7 @@ class ModifyPackageInOpenShipmentReply extends \FedExVendor\FedEx\AbstractComple
      * @param CompletedShipmentDetail $completedShipmentDetail
      * @return $this
      */
-    public function setCompletedShipmentDetail(\FedExVendor\FedEx\OpenShipService\ComplexType\CompletedShipmentDetail $completedShipmentDetail)
+    public function setCompletedShipmentDetail(CompletedShipmentDetail $completedShipmentDetail)
     {
         $this->values['CompletedShipmentDetail'] = $completedShipmentDetail;
         return $this;

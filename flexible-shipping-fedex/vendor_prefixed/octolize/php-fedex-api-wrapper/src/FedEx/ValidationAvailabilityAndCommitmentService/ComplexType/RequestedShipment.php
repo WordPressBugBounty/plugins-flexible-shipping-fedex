@@ -52,7 +52,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property ShipmentConfigurationData $ConfigurationData
  * @property RequestedPackageLineItem[] $RequestedPackageLineItems
  */
-class RequestedShipment extends \FedExVendor\FedEx\AbstractComplexType
+class RequestedShipment extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -121,7 +121,7 @@ class RequestedShipment extends \FedExVendor\FedEx\AbstractComplexType
      * @param ShipmentManifestDetail $manifestDetail
      * @return $this
      */
-    public function setManifestDetail(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\ShipmentManifestDetail $manifestDetail)
+    public function setManifestDetail(ShipmentManifestDetail $manifestDetail)
     {
         $this->values['ManifestDetail'] = $manifestDetail;
         return $this;
@@ -143,7 +143,7 @@ class RequestedShipment extends \FedExVendor\FedEx\AbstractComplexType
      * @param Weight $totalWeight
      * @return $this
      */
-    public function setTotalWeight(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\Weight $totalWeight)
+    public function setTotalWeight(Weight $totalWeight)
     {
         $this->values['TotalWeight'] = $totalWeight;
         return $this;
@@ -154,7 +154,7 @@ class RequestedShipment extends \FedExVendor\FedEx\AbstractComplexType
      * @param Money $totalInsuredValue
      * @return $this
      */
-    public function setTotalInsuredValue(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\Money $totalInsuredValue)
+    public function setTotalInsuredValue(Money $totalInsuredValue)
     {
         $this->values['TotalInsuredValue'] = $totalInsuredValue;
         return $this;
@@ -165,7 +165,7 @@ class RequestedShipment extends \FedExVendor\FedEx\AbstractComplexType
      * @param Dimensions $totalDimensions
      * @return $this
      */
-    public function setTotalDimensions(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\Dimensions $totalDimensions)
+    public function setTotalDimensions(Dimensions $totalDimensions)
     {
         $this->values['TotalDimensions'] = $totalDimensions;
         return $this;
@@ -187,7 +187,7 @@ class RequestedShipment extends \FedExVendor\FedEx\AbstractComplexType
      * @param ShipmentAuthorizationDetail $shipmentAuthorizationDetail
      * @return $this
      */
-    public function setShipmentAuthorizationDetail(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\ShipmentAuthorizationDetail $shipmentAuthorizationDetail)
+    public function setShipmentAuthorizationDetail(ShipmentAuthorizationDetail $shipmentAuthorizationDetail)
     {
         $this->values['ShipmentAuthorizationDetail'] = $shipmentAuthorizationDetail;
         return $this;
@@ -198,7 +198,7 @@ class RequestedShipment extends \FedExVendor\FedEx\AbstractComplexType
      * @param Party $shipper
      * @return $this
      */
-    public function setShipper(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\Party $shipper)
+    public function setShipper(Party $shipper)
     {
         $this->values['Shipper'] = $shipper;
         return $this;
@@ -209,7 +209,7 @@ class RequestedShipment extends \FedExVendor\FedEx\AbstractComplexType
      * @param Party $recipient
      * @return $this
      */
-    public function setRecipient(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\Party $recipient)
+    public function setRecipient(Party $recipient)
     {
         $this->values['Recipient'] = $recipient;
         return $this;
@@ -231,7 +231,7 @@ class RequestedShipment extends \FedExVendor\FedEx\AbstractComplexType
      * @param ContactAndAddress $origin
      * @return $this
      */
-    public function setOrigin(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\ContactAndAddress $origin)
+    public function setOrigin(ContactAndAddress $origin)
     {
         $this->values['Origin'] = $origin;
         return $this;
@@ -242,7 +242,7 @@ class RequestedShipment extends \FedExVendor\FedEx\AbstractComplexType
      * @param Party $soldTo
      * @return $this
      */
-    public function setSoldTo(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\Party $soldTo)
+    public function setSoldTo(Party $soldTo)
     {
         $this->values['SoldTo'] = $soldTo;
         return $this;
@@ -253,7 +253,7 @@ class RequestedShipment extends \FedExVendor\FedEx\AbstractComplexType
      * @param Payment $shippingChargesPayment
      * @return $this
      */
-    public function setShippingChargesPayment(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\Payment $shippingChargesPayment)
+    public function setShippingChargesPayment(Payment $shippingChargesPayment)
     {
         $this->values['ShippingChargesPayment'] = $shippingChargesPayment;
         return $this;
@@ -264,7 +264,7 @@ class RequestedShipment extends \FedExVendor\FedEx\AbstractComplexType
      * @param ShipmentSpecialServicesRequested $specialServicesRequested
      * @return $this
      */
-    public function setSpecialServicesRequested(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\ShipmentSpecialServicesRequested $specialServicesRequested)
+    public function setSpecialServicesRequested(ShipmentSpecialServicesRequested $specialServicesRequested)
     {
         $this->values['SpecialServicesRequested'] = $specialServicesRequested;
         return $this;
@@ -275,7 +275,7 @@ class RequestedShipment extends \FedExVendor\FedEx\AbstractComplexType
      * @param ShipmentProcessingOptionsRequested $processingOptionsRequested
      * @return $this
      */
-    public function setProcessingOptionsRequested(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\ShipmentProcessingOptionsRequested $processingOptionsRequested)
+    public function setProcessingOptionsRequested(ShipmentProcessingOptionsRequested $processingOptionsRequested)
     {
         $this->values['ProcessingOptionsRequested'] = $processingOptionsRequested;
         return $this;
@@ -286,7 +286,7 @@ class RequestedShipment extends \FedExVendor\FedEx\AbstractComplexType
      * @param ExpressFreightDetail $expressFreightDetail
      * @return $this
      */
-    public function setExpressFreightDetail(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\ExpressFreightDetail $expressFreightDetail)
+    public function setExpressFreightDetail(ExpressFreightDetail $expressFreightDetail)
     {
         $this->values['ExpressFreightDetail'] = $expressFreightDetail;
         return $this;
@@ -297,7 +297,7 @@ class RequestedShipment extends \FedExVendor\FedEx\AbstractComplexType
      * @param FreightShipmentDetail $freightShipmentDetail
      * @return $this
      */
-    public function setFreightShipmentDetail(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\FreightShipmentDetail $freightShipmentDetail)
+    public function setFreightShipmentDetail(FreightShipmentDetail $freightShipmentDetail)
     {
         $this->values['FreightShipmentDetail'] = $freightShipmentDetail;
         return $this;
@@ -308,7 +308,7 @@ class RequestedShipment extends \FedExVendor\FedEx\AbstractComplexType
      * @param ShipmentConsolidationDetail $consolidationDetail
      * @return $this
      */
-    public function setConsolidationDetail(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\ShipmentConsolidationDetail $consolidationDetail)
+    public function setConsolidationDetail(ShipmentConsolidationDetail $consolidationDetail)
     {
         $this->values['ConsolidationDetail'] = $consolidationDetail;
         return $this;
@@ -330,7 +330,7 @@ class RequestedShipment extends \FedExVendor\FedEx\AbstractComplexType
      * @param VariableHandlingChargeDetail $variableHandlingChargeDetail
      * @return $this
      */
-    public function setVariableHandlingChargeDetail(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\VariableHandlingChargeDetail $variableHandlingChargeDetail)
+    public function setVariableHandlingChargeDetail(VariableHandlingChargeDetail $variableHandlingChargeDetail)
     {
         $this->values['VariableHandlingChargeDetail'] = $variableHandlingChargeDetail;
         return $this;
@@ -341,7 +341,7 @@ class RequestedShipment extends \FedExVendor\FedEx\AbstractComplexType
      * @param CustomsClearanceDetail $customsClearanceDetail
      * @return $this
      */
-    public function setCustomsClearanceDetail(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\CustomsClearanceDetail $customsClearanceDetail)
+    public function setCustomsClearanceDetail(CustomsClearanceDetail $customsClearanceDetail)
     {
         $this->values['CustomsClearanceDetail'] = $customsClearanceDetail;
         return $this;
@@ -352,7 +352,7 @@ class RequestedShipment extends \FedExVendor\FedEx\AbstractComplexType
      * @param PickupDetail $pickupDetail
      * @return $this
      */
-    public function setPickupDetail(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\PickupDetail $pickupDetail)
+    public function setPickupDetail(PickupDetail $pickupDetail)
     {
         $this->values['PickupDetail'] = $pickupDetail;
         return $this;
@@ -363,7 +363,7 @@ class RequestedShipment extends \FedExVendor\FedEx\AbstractComplexType
      * @param SmartPostShipmentDetail $smartPostDetail
      * @return $this
      */
-    public function setSmartPostDetail(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\SmartPostShipmentDetail $smartPostDetail)
+    public function setSmartPostDetail(SmartPostShipmentDetail $smartPostDetail)
     {
         $this->values['SmartPostDetail'] = $smartPostDetail;
         return $this;
@@ -396,7 +396,7 @@ class RequestedShipment extends \FedExVendor\FedEx\AbstractComplexType
      * @param LabelSpecification $labelSpecification
      * @return $this
      */
-    public function setLabelSpecification(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\LabelSpecification $labelSpecification)
+    public function setLabelSpecification(LabelSpecification $labelSpecification)
     {
         $this->values['LabelSpecification'] = $labelSpecification;
         return $this;
@@ -407,7 +407,7 @@ class RequestedShipment extends \FedExVendor\FedEx\AbstractComplexType
      * @param ShippingDocumentSpecification $shippingDocumentSpecification
      * @return $this
      */
-    public function setShippingDocumentSpecification(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\ShippingDocumentSpecification $shippingDocumentSpecification)
+    public function setShippingDocumentSpecification(ShippingDocumentSpecification $shippingDocumentSpecification)
     {
         $this->values['ShippingDocumentSpecification'] = $shippingDocumentSpecification;
         return $this;
@@ -451,7 +451,7 @@ class RequestedShipment extends \FedExVendor\FedEx\AbstractComplexType
      * @param CustomRatingOptionDetail $customRatingOptionDetail
      * @return $this
      */
-    public function setCustomRatingOptionDetail(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\CustomRatingOptionDetail $customRatingOptionDetail)
+    public function setCustomRatingOptionDetail(CustomRatingOptionDetail $customRatingOptionDetail)
     {
         $this->values['CustomRatingOptionDetail'] = $customRatingOptionDetail;
         return $this;
@@ -462,7 +462,7 @@ class RequestedShipment extends \FedExVendor\FedEx\AbstractComplexType
      * @param TrackingId $masterTrackingId
      * @return $this
      */
-    public function setMasterTrackingId(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\TrackingId $masterTrackingId)
+    public function setMasterTrackingId(TrackingId $masterTrackingId)
     {
         $this->values['MasterTrackingId'] = $masterTrackingId;
         return $this;
@@ -495,7 +495,7 @@ class RequestedShipment extends \FedExVendor\FedEx\AbstractComplexType
      * @param ShipmentConfigurationData $configurationData
      * @return $this
      */
-    public function setConfigurationData(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\ShipmentConfigurationData $configurationData)
+    public function setConfigurationData(ShipmentConfigurationData $configurationData)
     {
         $this->values['ConfigurationData'] = $configurationData;
         return $this;

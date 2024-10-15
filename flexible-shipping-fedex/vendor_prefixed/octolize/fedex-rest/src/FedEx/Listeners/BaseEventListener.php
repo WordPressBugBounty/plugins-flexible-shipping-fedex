@@ -10,7 +10,7 @@ use FedExVendor\Psr\Log\LoggerInterface;
  */
 abstract class BaseEventListener
 {
-    protected function getLogger() : ?\FedExVendor\Psr\Log\LoggerInterface
+    protected function getLogger(): ?LoggerInterface
     {
         return app()->make('fedex-rest-logger');
     }

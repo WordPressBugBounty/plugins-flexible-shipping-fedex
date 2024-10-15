@@ -23,7 +23,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $CourierRemarks
  * @property string $CommodityDescription
  */
-class CourierDispatchRequest extends \FedExVendor\FedEx\AbstractComplexType
+class CourierDispatchRequest extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -37,7 +37,7 @@ class CourierDispatchRequest extends \FedExVendor\FedEx\AbstractComplexType
      * @param WebAuthenticationDetail $webAuthenticationDetail
      * @return $this
      */
-    public function setWebAuthenticationDetail(\FedExVendor\FedEx\CourierDispatchService\ComplexType\WebAuthenticationDetail $webAuthenticationDetail)
+    public function setWebAuthenticationDetail(WebAuthenticationDetail $webAuthenticationDetail)
     {
         $this->values['WebAuthenticationDetail'] = $webAuthenticationDetail;
         return $this;
@@ -48,7 +48,7 @@ class CourierDispatchRequest extends \FedExVendor\FedEx\AbstractComplexType
      * @param ClientDetail $clientDetail
      * @return $this
      */
-    public function setClientDetail(\FedExVendor\FedEx\CourierDispatchService\ComplexType\ClientDetail $clientDetail)
+    public function setClientDetail(ClientDetail $clientDetail)
     {
         $this->values['ClientDetail'] = $clientDetail;
         return $this;
@@ -59,7 +59,7 @@ class CourierDispatchRequest extends \FedExVendor\FedEx\AbstractComplexType
      * @param TransactionDetail $transactionDetail
      * @return $this
      */
-    public function setTransactionDetail(\FedExVendor\FedEx\CourierDispatchService\ComplexType\TransactionDetail $transactionDetail)
+    public function setTransactionDetail(TransactionDetail $transactionDetail)
     {
         $this->values['TransactionDetail'] = $transactionDetail;
         return $this;
@@ -70,7 +70,7 @@ class CourierDispatchRequest extends \FedExVendor\FedEx\AbstractComplexType
      * @param VersionId $version
      * @return $this
      */
-    public function setVersion(\FedExVendor\FedEx\CourierDispatchService\ComplexType\VersionId $version)
+    public function setVersion(VersionId $version)
     {
         $this->values['Version'] = $version;
         return $this;
@@ -81,7 +81,7 @@ class CourierDispatchRequest extends \FedExVendor\FedEx\AbstractComplexType
      * @param CourierDispatchOriginDetail $originDetail
      * @return $this
      */
-    public function setOriginDetail(\FedExVendor\FedEx\CourierDispatchService\ComplexType\CourierDispatchOriginDetail $originDetail)
+    public function setOriginDetail(CourierDispatchOriginDetail $originDetail)
     {
         $this->values['OriginDetail'] = $originDetail;
         return $this;
@@ -92,7 +92,7 @@ class CourierDispatchRequest extends \FedExVendor\FedEx\AbstractComplexType
      * @param CourierDispatchFreightDetail $freightDetail
      * @return $this
      */
-    public function setFreightDetail(\FedExVendor\FedEx\CourierDispatchService\ComplexType\CourierDispatchFreightDetail $freightDetail)
+    public function setFreightDetail(CourierDispatchFreightDetail $freightDetail)
     {
         $this->values['FreightDetail'] = $freightDetail;
         return $this;
@@ -114,7 +114,7 @@ class CourierDispatchRequest extends \FedExVendor\FedEx\AbstractComplexType
      * @param Weight $totalWeight
      * @return $this
      */
-    public function setTotalWeight(\FedExVendor\FedEx\CourierDispatchService\ComplexType\Weight $totalWeight)
+    public function setTotalWeight(Weight $totalWeight)
     {
         $this->values['TotalWeight'] = $totalWeight;
         return $this;

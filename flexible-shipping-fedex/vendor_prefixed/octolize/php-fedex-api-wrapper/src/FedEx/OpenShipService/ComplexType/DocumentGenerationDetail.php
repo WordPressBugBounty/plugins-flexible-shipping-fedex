@@ -15,7 +15,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property \FedEx\OpenShipService\SimpleType\RequirementType|string $Letterhead
  * @property \FedEx\OpenShipService\SimpleType\RequirementType|string $ElectronicSignature
  */
-class DocumentGenerationDetail extends \FedExVendor\FedEx\AbstractComplexType
+class DocumentGenerationDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

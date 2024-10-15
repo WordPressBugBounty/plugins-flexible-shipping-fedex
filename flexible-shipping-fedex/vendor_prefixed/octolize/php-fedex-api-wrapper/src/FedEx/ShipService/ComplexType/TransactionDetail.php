@@ -17,7 +17,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property \FedEx\ShipService\SimpleType\TransactionSourceFormat|string $SourceFormat
  * @property \FedEx\ShipService\SimpleType\WebServiceEnvironment|string $Environment
  */
-class TransactionDetail extends \FedExVendor\FedEx\AbstractComplexType
+class TransactionDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -42,7 +42,7 @@ class TransactionDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param Localization $localization
      * @return $this
      */
-    public function setLocalization(\FedExVendor\FedEx\ShipService\ComplexType\Localization $localization)
+    public function setLocalization(Localization $localization)
     {
         $this->values['Localization'] = $localization;
         return $this;

@@ -19,7 +19,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property \FedEx\ReturnTagService\SimpleType\ServiceType|string $Service
  * @property \FedEx\ReturnTagService\SimpleType\PackagingType|string $Packaging
  */
-class ExpressTagAvailabilityRequest extends \FedExVendor\FedEx\AbstractComplexType
+class ExpressTagAvailabilityRequest extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -33,7 +33,7 @@ class ExpressTagAvailabilityRequest extends \FedExVendor\FedEx\AbstractComplexTy
      * @param WebAuthenticationDetail $webAuthenticationDetail
      * @return $this
      */
-    public function setWebAuthenticationDetail(\FedExVendor\FedEx\ReturnTagService\ComplexType\WebAuthenticationDetail $webAuthenticationDetail)
+    public function setWebAuthenticationDetail(WebAuthenticationDetail $webAuthenticationDetail)
     {
         $this->values['WebAuthenticationDetail'] = $webAuthenticationDetail;
         return $this;
@@ -44,7 +44,7 @@ class ExpressTagAvailabilityRequest extends \FedExVendor\FedEx\AbstractComplexTy
      * @param ClientDetail $clientDetail
      * @return $this
      */
-    public function setClientDetail(\FedExVendor\FedEx\ReturnTagService\ComplexType\ClientDetail $clientDetail)
+    public function setClientDetail(ClientDetail $clientDetail)
     {
         $this->values['ClientDetail'] = $clientDetail;
         return $this;
@@ -55,7 +55,7 @@ class ExpressTagAvailabilityRequest extends \FedExVendor\FedEx\AbstractComplexTy
      * @param TransactionDetail $transactionDetail
      * @return $this
      */
-    public function setTransactionDetail(\FedExVendor\FedEx\ReturnTagService\ComplexType\TransactionDetail $transactionDetail)
+    public function setTransactionDetail(TransactionDetail $transactionDetail)
     {
         $this->values['TransactionDetail'] = $transactionDetail;
         return $this;
@@ -66,7 +66,7 @@ class ExpressTagAvailabilityRequest extends \FedExVendor\FedEx\AbstractComplexTy
      * @param VersionId $version
      * @return $this
      */
-    public function setVersion(\FedExVendor\FedEx\ReturnTagService\ComplexType\VersionId $version)
+    public function setVersion(VersionId $version)
     {
         $this->values['Version'] = $version;
         return $this;
@@ -88,7 +88,7 @@ class ExpressTagAvailabilityRequest extends \FedExVendor\FedEx\AbstractComplexTy
      * @param Address $originAddress
      * @return $this
      */
-    public function setOriginAddress(\FedExVendor\FedEx\ReturnTagService\ComplexType\Address $originAddress)
+    public function setOriginAddress(Address $originAddress)
     {
         $this->values['OriginAddress'] = $originAddress;
         return $this;

@@ -12,7 +12,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  *
  * @property LicenseOrPermitDetail $LicenseOrPermitDetail
  */
-class AdrLicenseDetail extends \FedExVendor\FedEx\AbstractComplexType
+class AdrLicenseDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -26,7 +26,7 @@ class AdrLicenseDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param LicenseOrPermitDetail $licenseOrPermitDetail
      * @return $this
      */
-    public function setLicenseOrPermitDetail(\FedExVendor\FedEx\ShipService\ComplexType\LicenseOrPermitDetail $licenseOrPermitDetail)
+    public function setLicenseOrPermitDetail(LicenseOrPermitDetail $licenseOrPermitDetail)
     {
         $this->values['LicenseOrPermitDetail'] = $licenseOrPermitDetail;
         return $this;

@@ -12,7 +12,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  *
  * @property \FedEx\ValidationAvailabilityAndCommitmentService\SimpleType\NotificationContentType|string[] $Exclusions
  */
-class NotificationContentSpecification extends \FedExVendor\FedEx\AbstractComplexType
+class NotificationContentSpecification extends AbstractComplexType
 {
     /**
      * Name of this complex type

@@ -27,7 +27,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property CustomerCommunicationDetail $CommunicationDetail
  * @property string $CustomerReference
  */
-class ProfileContact extends \FedExVendor\FedEx\AbstractComplexType
+class ProfileContact extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -74,7 +74,7 @@ class ProfileContact extends \FedExVendor\FedEx\AbstractComplexType
      * @param ParsedPersonName $name
      * @return $this
      */
-    public function setName(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\ParsedPersonName $name)
+    public function setName(ParsedPersonName $name)
     {
         $this->values['Name'] = $name;
         return $this;
@@ -162,7 +162,7 @@ class ProfileContact extends \FedExVendor\FedEx\AbstractComplexType
      * @param Address $address
      * @return $this
      */
-    public function setAddress(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\Address $address)
+    public function setAddress(Address $address)
     {
         $this->values['Address'] = $address;
         return $this;
@@ -173,7 +173,7 @@ class ProfileContact extends \FedExVendor\FedEx\AbstractComplexType
      * @param AddressAncillaryDetail $addressAncillaryDetail
      * @return $this
      */
-    public function setAddressAncillaryDetail(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\AddressAncillaryDetail $addressAncillaryDetail)
+    public function setAddressAncillaryDetail(AddressAncillaryDetail $addressAncillaryDetail)
     {
         $this->values['AddressAncillaryDetail'] = $addressAncillaryDetail;
         return $this;
@@ -195,7 +195,7 @@ class ProfileContact extends \FedExVendor\FedEx\AbstractComplexType
      * @param CustomerCommunicationDetail $communicationDetail
      * @return $this
      */
-    public function setCommunicationDetail(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\CustomerCommunicationDetail $communicationDetail)
+    public function setCommunicationDetail(CustomerCommunicationDetail $communicationDetail)
     {
         $this->values['CommunicationDetail'] = $communicationDetail;
         return $this;

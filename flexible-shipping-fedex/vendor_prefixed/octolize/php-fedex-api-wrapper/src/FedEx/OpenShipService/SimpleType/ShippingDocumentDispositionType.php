@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  OpenShip Service
  */
-class ShippingDocumentDispositionType extends \FedExVendor\FedEx\AbstractSimpleType
+class ShippingDocumentDispositionType extends AbstractSimpleType
 {
     const _DEFERRED_STORED = 'DEFERRED_STORED';
     const _EMAILED = 'EMAILED';

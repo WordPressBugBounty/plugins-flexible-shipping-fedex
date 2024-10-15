@@ -16,7 +16,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $VerificationCode
  * @property ParsedContactAndAddress $CreditCardHolder
  */
-class CreditCard extends \FedExVendor\FedEx\AbstractComplexType
+class CreditCard extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -74,7 +74,7 @@ class CreditCard extends \FedExVendor\FedEx\AbstractComplexType
      * @param ParsedContactAndAddress $creditCardHolder
      * @return $this
      */
-    public function setCreditCardHolder(\FedExVendor\FedEx\ShipService\ComplexType\ParsedContactAndAddress $creditCardHolder)
+    public function setCreditCardHolder(ParsedContactAndAddress $creditCardHolder)
     {
         $this->values['CreditCardHolder'] = $creditCardHolder;
         return $this;

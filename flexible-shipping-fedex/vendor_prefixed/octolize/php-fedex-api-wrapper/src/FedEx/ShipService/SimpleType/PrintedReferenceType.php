@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
  */
-class PrintedReferenceType extends \FedExVendor\FedEx\AbstractSimpleType
+class PrintedReferenceType extends AbstractSimpleType
 {
     const _BILL_OF_LADING = 'BILL_OF_LADING';
     const _CONSIGNEE_ID_NUMBER = 'CONSIGNEE_ID_NUMBER';

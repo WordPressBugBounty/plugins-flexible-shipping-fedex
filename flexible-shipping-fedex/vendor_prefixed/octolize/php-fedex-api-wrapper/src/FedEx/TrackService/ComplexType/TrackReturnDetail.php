@@ -15,7 +15,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $Description
  * @property string $AuthorizationName
  */
-class TrackReturnDetail extends \FedExVendor\FedEx\AbstractComplexType
+class TrackReturnDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

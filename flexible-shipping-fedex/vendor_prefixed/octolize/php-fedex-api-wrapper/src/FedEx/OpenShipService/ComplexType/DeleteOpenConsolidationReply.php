@@ -15,7 +15,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property TransactionDetail $TransactionDetail
  * @property VersionId $Version
  */
-class DeleteOpenConsolidationReply extends \FedExVendor\FedEx\AbstractComplexType
+class DeleteOpenConsolidationReply extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -51,7 +51,7 @@ class DeleteOpenConsolidationReply extends \FedExVendor\FedEx\AbstractComplexTyp
      * @param TransactionDetail $transactionDetail
      * @return $this
      */
-    public function setTransactionDetail(\FedExVendor\FedEx\OpenShipService\ComplexType\TransactionDetail $transactionDetail)
+    public function setTransactionDetail(TransactionDetail $transactionDetail)
     {
         $this->values['TransactionDetail'] = $transactionDetail;
         return $this;
@@ -62,7 +62,7 @@ class DeleteOpenConsolidationReply extends \FedExVendor\FedEx\AbstractComplexTyp
      * @param VersionId $version
      * @return $this
      */
-    public function setVersion(\FedExVendor\FedEx\OpenShipService\ComplexType\VersionId $version)
+    public function setVersion(VersionId $version)
     {
         $this->values['Version'] = $version;
         return $this;

@@ -9,8 +9,8 @@ class FedEx
     {
         $this->config = $config;
     }
-    public function shipment() : \FedExVendor\CageA80\FedEx\Shipment
+    public function shipment(): Shipment
     {
-        return new \FedExVendor\CageA80\FedEx\Shipment($this->config);
+        return new Shipment($this->config);
     }
 }

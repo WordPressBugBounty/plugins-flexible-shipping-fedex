@@ -12,7 +12,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  *
  * @property string $Reason
  */
-class Rma extends \FedExVendor\FedEx\AbstractComplexType
+class Rma extends AbstractComplexType
 {
     /**
      * Name of this complex type

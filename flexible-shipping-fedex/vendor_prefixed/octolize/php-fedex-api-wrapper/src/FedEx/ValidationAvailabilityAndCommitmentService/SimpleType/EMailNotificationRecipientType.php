@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Validation Availability And Commitment Service Service
  */
-class EMailNotificationRecipientType extends \FedExVendor\FedEx\AbstractSimpleType
+class EMailNotificationRecipientType extends AbstractSimpleType
 {
     const _BROKER = 'BROKER';
     const _OTHER = 'OTHER';

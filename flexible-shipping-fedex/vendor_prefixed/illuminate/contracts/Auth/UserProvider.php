@@ -26,7 +26,7 @@ interface UserProvider
      * @param  string  $token
      * @return void
      */
-    public function updateRememberToken(\FedExVendor\Illuminate\Contracts\Auth\Authenticatable $user, $token);
+    public function updateRememberToken(Authenticatable $user, $token);
     /**
      * Retrieve a user by the given credentials.
      *
@@ -41,5 +41,5 @@ interface UserProvider
      * @param  array  $credentials
      * @return bool
      */
-    public function validateCredentials(\FedExVendor\Illuminate\Contracts\Auth\Authenticatable $user, array $credentials);
+    public function validateCredentials(Authenticatable $user, array $credentials);
 }

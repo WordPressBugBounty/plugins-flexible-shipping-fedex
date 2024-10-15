@@ -21,7 +21,7 @@ use FedExVendor\Illuminate\Contracts\Routing\ResponseFactory as ResponseFactoryC
  *
  * @see \Illuminate\Contracts\Routing\ResponseFactory
  */
-class Response extends \FedExVendor\Illuminate\Support\Facades\Facade
+class Response extends Facade
 {
     /**
      * Get the registered name of the component.
@@ -30,6 +30,6 @@ class Response extends \FedExVendor\Illuminate\Support\Facades\Facade
      */
     protected static function getFacadeAccessor()
     {
-        return \FedExVendor\Illuminate\Contracts\Routing\ResponseFactory::class;
+        return ResponseFactoryContract::class;
     }
 }

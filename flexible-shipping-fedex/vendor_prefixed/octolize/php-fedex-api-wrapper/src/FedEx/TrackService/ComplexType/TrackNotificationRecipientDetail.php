@@ -12,7 +12,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  *
  * @property \FedEx\TrackService\SimpleType\NotificationEventType|string[] $NotificationEventsAvailable
  */
-class TrackNotificationRecipientDetail extends \FedExVendor\FedEx\AbstractComplexType
+class TrackNotificationRecipientDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

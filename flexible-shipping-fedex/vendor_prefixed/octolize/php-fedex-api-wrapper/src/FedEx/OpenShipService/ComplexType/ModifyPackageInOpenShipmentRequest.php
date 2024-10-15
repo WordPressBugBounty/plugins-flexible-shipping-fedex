@@ -19,7 +19,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property TrackingId $TrackingId
  * @property RequestedPackageLineItem $RequestedPackageLineItem
  */
-class ModifyPackageInOpenShipmentRequest extends \FedExVendor\FedEx\AbstractComplexType
+class ModifyPackageInOpenShipmentRequest extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -33,7 +33,7 @@ class ModifyPackageInOpenShipmentRequest extends \FedExVendor\FedEx\AbstractComp
      * @param WebAuthenticationDetail $webAuthenticationDetail
      * @return $this
      */
-    public function setWebAuthenticationDetail(\FedExVendor\FedEx\OpenShipService\ComplexType\WebAuthenticationDetail $webAuthenticationDetail)
+    public function setWebAuthenticationDetail(WebAuthenticationDetail $webAuthenticationDetail)
     {
         $this->values['WebAuthenticationDetail'] = $webAuthenticationDetail;
         return $this;
@@ -44,7 +44,7 @@ class ModifyPackageInOpenShipmentRequest extends \FedExVendor\FedEx\AbstractComp
      * @param ClientDetail $clientDetail
      * @return $this
      */
-    public function setClientDetail(\FedExVendor\FedEx\OpenShipService\ComplexType\ClientDetail $clientDetail)
+    public function setClientDetail(ClientDetail $clientDetail)
     {
         $this->values['ClientDetail'] = $clientDetail;
         return $this;
@@ -55,7 +55,7 @@ class ModifyPackageInOpenShipmentRequest extends \FedExVendor\FedEx\AbstractComp
      * @param TransactionDetail $transactionDetail
      * @return $this
      */
-    public function setTransactionDetail(\FedExVendor\FedEx\OpenShipService\ComplexType\TransactionDetail $transactionDetail)
+    public function setTransactionDetail(TransactionDetail $transactionDetail)
     {
         $this->values['TransactionDetail'] = $transactionDetail;
         return $this;
@@ -66,7 +66,7 @@ class ModifyPackageInOpenShipmentRequest extends \FedExVendor\FedEx\AbstractComp
      * @param VersionId $version
      * @return $this
      */
-    public function setVersion(\FedExVendor\FedEx\OpenShipService\ComplexType\VersionId $version)
+    public function setVersion(VersionId $version)
     {
         $this->values['Version'] = $version;
         return $this;
@@ -99,7 +99,7 @@ class ModifyPackageInOpenShipmentRequest extends \FedExVendor\FedEx\AbstractComp
      * @param TrackingId $trackingId
      * @return $this
      */
-    public function setTrackingId(\FedExVendor\FedEx\OpenShipService\ComplexType\TrackingId $trackingId)
+    public function setTrackingId(TrackingId $trackingId)
     {
         $this->values['TrackingId'] = $trackingId;
         return $this;
@@ -110,7 +110,7 @@ class ModifyPackageInOpenShipmentRequest extends \FedExVendor\FedEx\AbstractComp
      * @param RequestedPackageLineItem $requestedPackageLineItem
      * @return $this
      */
-    public function setRequestedPackageLineItem(\FedExVendor\FedEx\OpenShipService\ComplexType\RequestedPackageLineItem $requestedPackageLineItem)
+    public function setRequestedPackageLineItem(RequestedPackageLineItem $requestedPackageLineItem)
     {
         $this->values['RequestedPackageLineItem'] = $requestedPackageLineItem;
         return $this;

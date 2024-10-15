@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
  */
-class NotificationFormatType extends \FedExVendor\FedEx\AbstractSimpleType
+class NotificationFormatType extends AbstractSimpleType
 {
     const _HTML = 'HTML';
     const _TEXT = 'TEXT';

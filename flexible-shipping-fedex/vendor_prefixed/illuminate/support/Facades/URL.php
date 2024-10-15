@@ -24,7 +24,7 @@ namespace FedExVendor\Illuminate\Support\Facades;
  *
  * @see \Illuminate\Routing\UrlGenerator
  */
-class URL extends \FedExVendor\Illuminate\Support\Facades\Facade
+class URL extends Facade
 {
     /**
      * Get the registered name of the component.

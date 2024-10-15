@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Validation Availability And Commitment Service Service
  */
-class RecommendedDocumentType extends \FedExVendor\FedEx\AbstractSimpleType
+class RecommendedDocumentType extends AbstractSimpleType
 {
     const _ANTIQUE_STATEMENT_EUROPEAN_UNION = 'ANTIQUE_STATEMENT_EUROPEAN_UNION';
     const _ANTIQUE_STATEMENT_UNITED_STATES = 'ANTIQUE_STATEMENT_UNITED_STATES';

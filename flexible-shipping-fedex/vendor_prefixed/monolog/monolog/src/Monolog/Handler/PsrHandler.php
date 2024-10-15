@@ -23,7 +23,7 @@ use FedExVendor\Monolog\Formatter\FormatterInterface;
  *
  * @author Michael Moussa <michael.moussa@gmail.com>
  */
-class PsrHandler extends \FedExVendor\Monolog\Handler\AbstractHandler implements \FedExVendor\Monolog\Handler\FormattableHandlerInterface
+class PsrHandler extends AbstractHandler implements FormattableHandlerInterface
 {
     /**
      * PSR-3 compliant logger
@@ -38,7 +38,7 @@ class PsrHandler extends \FedExVendor\Monolog\Handler\AbstractHandler implements
     /**
      * @param LoggerInterface $logger The underlying PSR-3 compliant logger to which messages will be proxied
      */
-    public function __construct(\FedExVendor\Psr\Log\LoggerInterface $logger, $level = \FedExVendor\Monolog\Logger::DEBUG, bool $bubble = \true)
+    public function __construct(LoggerInterface $logger, $level = Logger::DEBUG, bool $bubble = \true)
     {
         parent::__construct($level, $bubble);
         $this->logger = $logger;
@@ -46,16 +46,16 @@ class PsrHandler extends \FedExVendor\Monolog\Handler\AbstractHandler implements
     /**
      * {@inheritDoc}
      */
-    public function handle(array $record) : bool
+    public function handle(array $record): bool
     {
         if (!$this->isHandling($record)) {
             return \false;
         }
         if ($this->formatter) {
             $formatted = $this->formatter->format($record);
-            $this->logger->log(\strtolower($record['level_name']), (string) $formatted, $record['context']);
+            $this->logger->log(strtolower($record['level_name']), (string) $formatted, $record['context']);
         } else {
-            $this->logger->log(\strtolower($record['level_name']), $record['message'], $record['context']);
+            $this->logger->log(strtolower($record['level_name']), $record['message'], $record['context']);
         }
         return \false === $this->bubble;
     }
@@ -64,7 +64,7 @@ class PsrHandler extends \FedExVendor\Monolog\Handler\AbstractHandler implements
      *
      * @param FormatterInterface $formatter
      */
-    public function setFormatter(\FedExVendor\Monolog\Formatter\FormatterInterface $formatter) : \FedExVendor\Monolog\Handler\HandlerInterface
+    public function setFormatter(FormatterInterface $formatter): HandlerInterface
     {
         $this->formatter = $formatter;
         return $this;
@@ -74,7 +74,7 @@ class PsrHandler extends \FedExVendor\Monolog\Handler\AbstractHandler implements
      *
      * @return FormatterInterface
      */
-    public function getFormatter() : \FedExVendor\Monolog\Formatter\FormatterInterface
+    public function getFormatter(): FormatterInterface
     {
         if (!$this->formatter) {
             throw new \LogicException('No formatter has been set and this handler does not have a default formatter');

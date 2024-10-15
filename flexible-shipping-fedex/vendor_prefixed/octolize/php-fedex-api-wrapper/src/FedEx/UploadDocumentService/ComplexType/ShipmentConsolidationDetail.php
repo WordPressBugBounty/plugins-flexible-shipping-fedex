@@ -20,7 +20,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property ShipmentTransborderDistributionDetail $TransborderDistributionDetail
  * @property RequestedDistributionLocation[] $DistributionLocations
  */
-class ShipmentConsolidationDetail extends \FedExVendor\FedEx\AbstractComplexType
+class ShipmentConsolidationDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -78,7 +78,7 @@ class ShipmentConsolidationDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param ConsolidationSpecialServicesRequested $specialServicesRequested
      * @return $this
      */
-    public function setSpecialServicesRequested(\FedExVendor\FedEx\UploadDocumentService\ComplexType\ConsolidationSpecialServicesRequested $specialServicesRequested)
+    public function setSpecialServicesRequested(ConsolidationSpecialServicesRequested $specialServicesRequested)
     {
         $this->values['SpecialServicesRequested'] = $specialServicesRequested;
         return $this;
@@ -89,7 +89,7 @@ class ShipmentConsolidationDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param Address $consolidationOriginAddress
      * @return $this
      */
-    public function setConsolidationOriginAddress(\FedExVendor\FedEx\UploadDocumentService\ComplexType\Address $consolidationOriginAddress)
+    public function setConsolidationOriginAddress(Address $consolidationOriginAddress)
     {
         $this->values['ConsolidationOriginAddress'] = $consolidationOriginAddress;
         return $this;
@@ -100,7 +100,7 @@ class ShipmentConsolidationDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param ShipmentInternationalDistributionDetail $internationalDistributionDetail
      * @return $this
      */
-    public function setInternationalDistributionDetail(\FedExVendor\FedEx\UploadDocumentService\ComplexType\ShipmentInternationalDistributionDetail $internationalDistributionDetail)
+    public function setInternationalDistributionDetail(ShipmentInternationalDistributionDetail $internationalDistributionDetail)
     {
         $this->values['InternationalDistributionDetail'] = $internationalDistributionDetail;
         return $this;
@@ -111,7 +111,7 @@ class ShipmentConsolidationDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param ShipmentTransborderDistributionDetail $transborderDistributionDetail
      * @return $this
      */
-    public function setTransborderDistributionDetail(\FedExVendor\FedEx\UploadDocumentService\ComplexType\ShipmentTransborderDistributionDetail $transborderDistributionDetail)
+    public function setTransborderDistributionDetail(ShipmentTransborderDistributionDetail $transborderDistributionDetail)
     {
         $this->values['TransborderDistributionDetail'] = $transborderDistributionDetail;
         return $this;

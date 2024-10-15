@@ -16,7 +16,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property \FedEx\ValidationAvailabilityAndCommitmentService\SimpleType\PermissionType|string $CallPermission
  * @property \FedEx\ValidationAvailabilityAndCommitmentService\SimpleType\PermissionType|string $TextMessagePermission
  */
-class ParsedPhoneNumberDetail extends \FedExVendor\FedEx\AbstractComplexType
+class ParsedPhoneNumberDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -52,7 +52,7 @@ class ParsedPhoneNumberDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param ParsedPhoneNumber $phoneNumber
      * @return $this
      */
-    public function setPhoneNumber(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\ParsedPhoneNumber $phoneNumber)
+    public function setPhoneNumber(ParsedPhoneNumber $phoneNumber)
     {
         $this->values['PhoneNumber'] = $phoneNumber;
         return $this;

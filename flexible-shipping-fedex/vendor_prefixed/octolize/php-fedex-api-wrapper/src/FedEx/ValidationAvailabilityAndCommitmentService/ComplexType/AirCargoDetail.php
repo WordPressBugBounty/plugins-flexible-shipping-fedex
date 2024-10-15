@@ -19,7 +19,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $AssociatedAirportId
  * @property string $BillingInstructions
  */
-class AirCargoDetail extends \FedExVendor\FedEx\AbstractComplexType
+class AirCargoDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

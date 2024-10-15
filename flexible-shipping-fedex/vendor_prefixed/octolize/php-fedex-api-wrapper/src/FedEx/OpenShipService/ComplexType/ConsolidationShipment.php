@@ -14,7 +14,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property RequestedShipment $RequestedShipment
  * @property CompletedShipmentDetail $CompletedShipmentDetail
  */
-class ConsolidationShipment extends \FedExVendor\FedEx\AbstractComplexType
+class ConsolidationShipment extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -39,7 +39,7 @@ class ConsolidationShipment extends \FedExVendor\FedEx\AbstractComplexType
      * @param RequestedShipment $requestedShipment
      * @return $this
      */
-    public function setRequestedShipment(\FedExVendor\FedEx\OpenShipService\ComplexType\RequestedShipment $requestedShipment)
+    public function setRequestedShipment(RequestedShipment $requestedShipment)
     {
         $this->values['RequestedShipment'] = $requestedShipment;
         return $this;
@@ -50,7 +50,7 @@ class ConsolidationShipment extends \FedExVendor\FedEx\AbstractComplexType
      * @param CompletedShipmentDetail $completedShipmentDetail
      * @return $this
      */
-    public function setCompletedShipmentDetail(\FedExVendor\FedEx\OpenShipService\ComplexType\CompletedShipmentDetail $completedShipmentDetail)
+    public function setCompletedShipmentDetail(CompletedShipmentDetail $completedShipmentDetail)
     {
         $this->values['CompletedShipmentDetail'] = $completedShipmentDetail;
         return $this;

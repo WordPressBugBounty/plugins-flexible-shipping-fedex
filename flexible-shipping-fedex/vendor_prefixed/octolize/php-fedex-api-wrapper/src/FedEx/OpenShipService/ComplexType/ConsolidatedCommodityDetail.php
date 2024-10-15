@@ -15,7 +15,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property Money $SubtotalCustomsValue
  * @property ConsolidatedCommodity[] $Commodities
  */
-class ConsolidatedCommodityDetail extends \FedExVendor\FedEx\AbstractComplexType
+class ConsolidatedCommodityDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -51,7 +51,7 @@ class ConsolidatedCommodityDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param Money $subtotalCustomsValue
      * @return $this
      */
-    public function setSubtotalCustomsValue(\FedExVendor\FedEx\OpenShipService\ComplexType\Money $subtotalCustomsValue)
+    public function setSubtotalCustomsValue(Money $subtotalCustomsValue)
     {
         $this->values['SubtotalCustomsValue'] = $subtotalCustomsValue;
         return $this;

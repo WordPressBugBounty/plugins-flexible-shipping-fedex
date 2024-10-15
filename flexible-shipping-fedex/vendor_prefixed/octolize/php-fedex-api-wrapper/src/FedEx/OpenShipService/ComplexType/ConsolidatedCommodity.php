@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property ConsolidatedCommodityDestinationDetail $DestinationDetail
  * @property Commodity $Commodity
  */
-class ConsolidatedCommodity extends \FedExVendor\FedEx\AbstractComplexType
+class ConsolidatedCommodity extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -27,7 +27,7 @@ class ConsolidatedCommodity extends \FedExVendor\FedEx\AbstractComplexType
      * @param ConsolidatedCommodityDestinationDetail $destinationDetail
      * @return $this
      */
-    public function setDestinationDetail(\FedExVendor\FedEx\OpenShipService\ComplexType\ConsolidatedCommodityDestinationDetail $destinationDetail)
+    public function setDestinationDetail(ConsolidatedCommodityDestinationDetail $destinationDetail)
     {
         $this->values['DestinationDetail'] = $destinationDetail;
         return $this;
@@ -38,7 +38,7 @@ class ConsolidatedCommodity extends \FedExVendor\FedEx\AbstractComplexType
      * @param Commodity $commodity
      * @return $this
      */
-    public function setCommodity(\FedExVendor\FedEx\OpenShipService\ComplexType\Commodity $commodity)
+    public function setCommodity(Commodity $commodity)
     {
         $this->values['Commodity'] = $commodity;
         return $this;

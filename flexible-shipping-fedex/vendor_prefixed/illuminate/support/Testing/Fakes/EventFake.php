@@ -9,7 +9,7 @@ use FedExVendor\Illuminate\Support\Str;
 use FedExVendor\Illuminate\Support\Traits\ReflectsClosures;
 use FedExVendor\PHPUnit\Framework\Assert as PHPUnit;
 use ReflectionFunction;
-class EventFake implements \FedExVendor\Illuminate\Contracts\Events\Dispatcher
+class EventFake implements Dispatcher
 {
     use ReflectsClosures;
     /**
@@ -37,10 +37,10 @@ class EventFake implements \FedExVendor\Illuminate\Contracts\Events\Dispatcher
      * @param  array|string  $eventsToFake
      * @return void
      */
-    public function __construct(\FedExVendor\Illuminate\Contracts\Events\Dispatcher $dispatcher, $eventsToFake = [])
+    public function __construct(Dispatcher $dispatcher, $eventsToFake = [])
     {
         $this->dispatcher = $dispatcher;
-        $this->eventsToFake = \FedExVendor\Illuminate\Support\Arr::wrap($eventsToFake);
+        $this->eventsToFake = Arr::wrap($eventsToFake);
     }
     /**
      * Assert if an event has a listener attached to it.
@@ -52,16 +52,16 @@ class EventFake implements \FedExVendor\Illuminate\Contracts\Events\Dispatcher
     public function assertListening($expectedEvent, $expectedListener)
     {
         foreach ($this->dispatcher->getListeners($expectedEvent) as $listenerClosure) {
-            $actualListener = (new \ReflectionFunction($listenerClosure))->getStaticVariables()['listener'];
-            if (\is_string($actualListener) && \FedExVendor\Illuminate\Support\Str::endsWith($actualListener, '@handle')) {
-                $actualListener = \FedExVendor\Illuminate\Support\Str::parseCallback($actualListener)[0];
+            $actualListener = (new ReflectionFunction($listenerClosure))->getStaticVariables()['listener'];
+            if (is_string($actualListener) && Str::endsWith($actualListener, '@handle')) {
+                $actualListener = Str::parseCallback($actualListener)[0];
             }
-            if ($actualListener === $expectedListener || $actualListener instanceof \Closure && $expectedListener === \Closure::class) {
-                \FedExVendor\PHPUnit\Framework\Assert::assertTrue(\true);
+            if ($actualListener === $expectedListener || $actualListener instanceof Closure && $expectedListener === Closure::class) {
+                PHPUnit::assertTrue(\true);
                 return;
             }
         }
-        \FedExVendor\PHPUnit\Framework\Assert::assertTrue(\false, \sprintf('Event [%s] does not have the [%s] listener attached to it', $expectedEvent, \print_r($expectedListener, \true)));
+        PHPUnit::assertTrue(\false, sprintf('Event [%s] does not have the [%s] listener attached to it', $expectedEvent, print_r($expectedListener, \true)));
     }
     /**
      * Assert if an event was dispatched based on a truth-test callback.
@@ -72,13 +72,13 @@ class EventFake implements \FedExVendor\Illuminate\Contracts\Events\Dispatcher
      */
     public function assertDispatched($event, $callback = null)
     {
-        if ($event instanceof \Closure) {
+        if ($event instanceof Closure) {
             [$event, $callback] = [$this->firstClosureParameterType($event), $event];
         }
-        if (\is_int($callback)) {
+        if (is_int($callback)) {
             return $this->assertDispatchedTimes($event, $callback);
         }
-        \FedExVendor\PHPUnit\Framework\Assert::assertTrue($this->dispatched($event, $callback)->count() > 0, "The expected [{$event}] event was not dispatched.");
+        PHPUnit::assertTrue($this->dispatched($event, $callback)->count() > 0, "The expected [{$event}] event was not dispatched.");
     }
     /**
      * Assert if an event was dispatched a number of times.
@@ -90,7 +90,7 @@ class EventFake implements \FedExVendor\Illuminate\Contracts\Events\Dispatcher
     public function assertDispatchedTimes($event, $times = 1)
     {
         $count = $this->dispatched($event)->count();
-        \FedExVendor\PHPUnit\Framework\Assert::assertSame($times, $count, "The expected [{$event}] event was dispatched {$count} times instead of {$times} times.");
+        PHPUnit::assertSame($times, $count, "The expected [{$event}] event was dispatched {$count} times instead of {$times} times.");
     }
     /**
      * Determine if an event was dispatched based on a truth-test callback.
@@ -101,10 +101,10 @@ class EventFake implements \FedExVendor\Illuminate\Contracts\Events\Dispatcher
      */
     public function assertNotDispatched($event, $callback = null)
     {
-        if ($event instanceof \Closure) {
+        if ($event instanceof Closure) {
             [$event, $callback] = [$this->firstClosureParameterType($event), $event];
         }
-        \FedExVendor\PHPUnit\Framework\Assert::assertCount(0, $this->dispatched($event, $callback), "The unexpected [{$event}] event was dispatched.");
+        PHPUnit::assertCount(0, $this->dispatched($event, $callback), "The unexpected [{$event}] event was dispatched.");
     }
     /**
      * Assert that no events were dispatched.
@@ -113,8 +113,8 @@ class EventFake implements \FedExVendor\Illuminate\Contracts\Events\Dispatcher
      */
     public function assertNothingDispatched()
     {
-        $count = \count(\FedExVendor\Illuminate\Support\Arr::flatten($this->events));
-        \FedExVendor\PHPUnit\Framework\Assert::assertSame(0, $count, "{$count} unexpected events were dispatched.");
+        $count = count(Arr::flatten($this->events));
+        PHPUnit::assertSame(0, $count, "{$count} unexpected events were dispatched.");
     }
     /**
      * Get all of the events matching a truth-test callback.
@@ -131,7 +131,7 @@ class EventFake implements \FedExVendor\Illuminate\Contracts\Events\Dispatcher
         $callback = $callback ?: function () {
             return \true;
         };
-        return collect($this->events[$event])->filter(function ($arguments) use($callback) {
+        return collect($this->events[$event])->filter(function ($arguments) use ($callback) {
             return $callback(...$arguments);
         });
     }
@@ -207,9 +207,9 @@ class EventFake implements \FedExVendor\Illuminate\Contracts\Events\Dispatcher
      */
     public function dispatch($event, $payload = [], $halt = \false)
     {
-        $name = \is_object($event) ? \get_class($event) : (string) $event;
+        $name = is_object($event) ? get_class($event) : (string) $event;
         if ($this->shouldFakeEvent($name, $payload)) {
-            $this->events[$name][] = \func_get_args();
+            $this->events[$name][] = func_get_args();
         } else {
             return $this->dispatcher->dispatch($event, $payload, $halt);
         }
@@ -226,8 +226,8 @@ class EventFake implements \FedExVendor\Illuminate\Contracts\Events\Dispatcher
         if (empty($this->eventsToFake)) {
             return \true;
         }
-        return collect($this->eventsToFake)->filter(function ($event) use($eventName, $payload) {
-            return $event instanceof \Closure ? $event($eventName, $payload) : $event === $eventName;
+        return collect($this->eventsToFake)->filter(function ($event) use ($eventName, $payload) {
+            return $event instanceof Closure ? $event($eventName, $payload) : $event === $eventName;
         })->isNotEmpty();
     }
     /**

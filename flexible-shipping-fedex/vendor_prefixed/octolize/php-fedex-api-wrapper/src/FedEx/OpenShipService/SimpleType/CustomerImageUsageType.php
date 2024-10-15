@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  OpenShip Service
  */
-class CustomerImageUsageType extends \FedExVendor\FedEx\AbstractSimpleType
+class CustomerImageUsageType extends AbstractSimpleType
 {
     const _LETTER_HEAD = 'LETTER_HEAD';
     const _SIGNATURE = 'SIGNATURE';

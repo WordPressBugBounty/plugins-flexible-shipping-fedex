@@ -16,5 +16,5 @@ interface FieldsDataReceiver
      *
      * @return void
      */
-    public function update_fields_data(\FedExVendor\Psr\Container\ContainerInterface $data);
+    public function update_fields_data(ContainerInterface $data);
 }

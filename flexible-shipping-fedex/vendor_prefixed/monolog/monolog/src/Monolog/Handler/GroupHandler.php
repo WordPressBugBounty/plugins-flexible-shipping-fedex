@@ -20,7 +20,7 @@ use FedExVendor\Monolog\ResettableInterface;
  *
  * @phpstan-import-type Record from \Monolog\Logger
  */
-class GroupHandler extends \FedExVendor\Monolog\Handler\Handler implements \FedExVendor\Monolog\Handler\ProcessableHandlerInterface, \FedExVendor\Monolog\ResettableInterface
+class GroupHandler extends Handler implements ProcessableHandlerInterface, ResettableInterface
 {
     use ProcessableHandlerTrait;
     /** @var HandlerInterface[] */
@@ -34,7 +34,7 @@ class GroupHandler extends \FedExVendor\Monolog\Handler\Handler implements \FedE
     public function __construct(array $handlers, bool $bubble = \true)
     {
         foreach ($handlers as $handler) {
-            if (!$handler instanceof \FedExVendor\Monolog\Handler\HandlerInterface) {
+            if (!$handler instanceof HandlerInterface) {
                 throw new \InvalidArgumentException('The first argument of the GroupHandler must be an array of HandlerInterface instances.');
             }
         }
@@ -44,7 +44,7 @@ class GroupHandler extends \FedExVendor\Monolog\Handler\Handler implements \FedE
     /**
      * {@inheritDoc}
      */
-    public function isHandling(array $record) : bool
+    public function isHandling(array $record): bool
     {
         foreach ($this->handlers as $handler) {
             if ($handler->isHandling($record)) {
@@ -56,7 +56,7 @@ class GroupHandler extends \FedExVendor\Monolog\Handler\Handler implements \FedE
     /**
      * {@inheritDoc}
      */
-    public function handle(array $record) : bool
+    public function handle(array $record): bool
     {
         if ($this->processors) {
             /** @var Record $record */
@@ -70,7 +70,7 @@ class GroupHandler extends \FedExVendor\Monolog\Handler\Handler implements \FedE
     /**
      * {@inheritDoc}
      */
-    public function handleBatch(array $records) : void
+    public function handleBatch(array $records): void
     {
         if ($this->processors) {
             $processed = [];
@@ -88,12 +88,12 @@ class GroupHandler extends \FedExVendor\Monolog\Handler\Handler implements \FedE
     {
         $this->resetProcessors();
         foreach ($this->handlers as $handler) {
-            if ($handler instanceof \FedExVendor\Monolog\ResettableInterface) {
+            if ($handler instanceof ResettableInterface) {
                 $handler->reset();
             }
         }
     }
-    public function close() : void
+    public function close(): void
     {
         parent::close();
         foreach ($this->handlers as $handler) {
@@ -103,10 +103,10 @@ class GroupHandler extends \FedExVendor\Monolog\Handler\Handler implements \FedE
     /**
      * {@inheritDoc}
      */
-    public function setFormatter(\FedExVendor\Monolog\Formatter\FormatterInterface $formatter) : \FedExVendor\Monolog\Handler\HandlerInterface
+    public function setFormatter(FormatterInterface $formatter): HandlerInterface
     {
         foreach ($this->handlers as $handler) {
-            if ($handler instanceof \FedExVendor\Monolog\Handler\FormattableHandlerInterface) {
+            if ($handler instanceof FormattableHandlerInterface) {
                 $handler->setFormatter($formatter);
             }
         }

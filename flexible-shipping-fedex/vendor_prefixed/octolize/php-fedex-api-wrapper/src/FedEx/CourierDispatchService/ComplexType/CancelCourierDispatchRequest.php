@@ -20,7 +20,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $Location
  * @property string $CourierRemarks
  */
-class CancelCourierDispatchRequest extends \FedExVendor\FedEx\AbstractComplexType
+class CancelCourierDispatchRequest extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -34,7 +34,7 @@ class CancelCourierDispatchRequest extends \FedExVendor\FedEx\AbstractComplexTyp
      * @param WebAuthenticationDetail $webAuthenticationDetail
      * @return $this
      */
-    public function setWebAuthenticationDetail(\FedExVendor\FedEx\CourierDispatchService\ComplexType\WebAuthenticationDetail $webAuthenticationDetail)
+    public function setWebAuthenticationDetail(WebAuthenticationDetail $webAuthenticationDetail)
     {
         $this->values['WebAuthenticationDetail'] = $webAuthenticationDetail;
         return $this;
@@ -45,7 +45,7 @@ class CancelCourierDispatchRequest extends \FedExVendor\FedEx\AbstractComplexTyp
      * @param ClientDetail $clientDetail
      * @return $this
      */
-    public function setClientDetail(\FedExVendor\FedEx\CourierDispatchService\ComplexType\ClientDetail $clientDetail)
+    public function setClientDetail(ClientDetail $clientDetail)
     {
         $this->values['ClientDetail'] = $clientDetail;
         return $this;
@@ -56,7 +56,7 @@ class CancelCourierDispatchRequest extends \FedExVendor\FedEx\AbstractComplexTyp
      * @param TransactionDetail $transactionDetail
      * @return $this
      */
-    public function setTransactionDetail(\FedExVendor\FedEx\CourierDispatchService\ComplexType\TransactionDetail $transactionDetail)
+    public function setTransactionDetail(TransactionDetail $transactionDetail)
     {
         $this->values['TransactionDetail'] = $transactionDetail;
         return $this;
@@ -67,7 +67,7 @@ class CancelCourierDispatchRequest extends \FedExVendor\FedEx\AbstractComplexTyp
      * @param VersionId $version
      * @return $this
      */
-    public function setVersion(\FedExVendor\FedEx\CourierDispatchService\ComplexType\VersionId $version)
+    public function setVersion(VersionId $version)
     {
         $this->values['Version'] = $version;
         return $this;

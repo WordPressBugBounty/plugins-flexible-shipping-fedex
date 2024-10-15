@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Validation Availability And Commitment Service Service
  */
-class LinearUnits extends \FedExVendor\FedEx\AbstractSimpleType
+class LinearUnits extends AbstractSimpleType
 {
     const _CM = 'CM';
     const _IN = 'IN';

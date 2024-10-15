@@ -3,7 +3,7 @@
 namespace FedExVendor\CageA80\FedEx\Facades;
 
 use FedExVendor\Illuminate\Support\Facades\Facade;
-class FedExFacade extends \FedExVendor\Illuminate\Support\Facades\Facade
+class FedExFacade extends Facade
 {
     /**
      * Get the registered name of the component.

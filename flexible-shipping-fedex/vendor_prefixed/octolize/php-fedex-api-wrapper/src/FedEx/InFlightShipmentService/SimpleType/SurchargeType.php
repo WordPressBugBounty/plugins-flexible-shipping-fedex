@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  In Flight Shipment Service
  */
-class SurchargeType extends \FedExVendor\FedEx\AbstractSimpleType
+class SurchargeType extends AbstractSimpleType
 {
     const _ADDITIONAL_HANDLING = 'ADDITIONAL_HANDLING';
     const _ANCILLARY_FEE = 'ANCILLARY_FEE';

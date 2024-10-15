@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Package Movement Information Service
  */
-class TrackDeliveryOptionType extends \FedExVendor\FedEx\AbstractSimpleType
+class TrackDeliveryOptionType extends AbstractSimpleType
 {
     const _APPOINTMENT = 'APPOINTMENT';
     const _DATE_CERTAIN = 'DATE_CERTAIN';

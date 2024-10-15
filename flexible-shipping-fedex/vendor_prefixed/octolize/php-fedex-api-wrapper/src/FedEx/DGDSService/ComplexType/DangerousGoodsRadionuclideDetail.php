@@ -15,7 +15,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property \FedEx\DGDSService\SimpleType\PhysicalFormType|string $PhysicalForm
  * @property string $ChemicalForm
  */
-class DangerousGoodsRadionuclideDetail extends \FedExVendor\FedEx\AbstractComplexType
+class DangerousGoodsRadionuclideDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -40,7 +40,7 @@ class DangerousGoodsRadionuclideDetail extends \FedExVendor\FedEx\AbstractComple
      * @param DangerousGoodsRadionuclideActivity $activity
      * @return $this
      */
-    public function setActivity(\FedExVendor\FedEx\DGDSService\ComplexType\DangerousGoodsRadionuclideActivity $activity)
+    public function setActivity(DangerousGoodsRadionuclideActivity $activity)
     {
         $this->values['Activity'] = $activity;
         return $this;

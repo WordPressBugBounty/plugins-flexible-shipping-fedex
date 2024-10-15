@@ -12,7 +12,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  *
  * @property string[] $Content
  */
-class InitiativeManifest extends \FedExVendor\FedEx\AbstractComplexType
+class InitiativeManifest extends AbstractComplexType
 {
     /**
      * Name of this complex type

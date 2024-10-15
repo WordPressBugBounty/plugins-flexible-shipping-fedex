@@ -14,7 +14,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $SmartPostHubId
  * @property \FedEx\ValidationAvailabilityAndCommitmentService\SimpleType\SmartPostIndiciaType|string $SmartPostIndicia
  */
-class ServiceSubOptionDetail extends \FedExVendor\FedEx\AbstractComplexType
+class ServiceSubOptionDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

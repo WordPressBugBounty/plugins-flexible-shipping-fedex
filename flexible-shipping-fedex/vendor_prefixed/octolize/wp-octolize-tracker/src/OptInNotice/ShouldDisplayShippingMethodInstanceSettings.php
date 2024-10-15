@@ -5,7 +5,7 @@ namespace FedExVendor\Octolize\Tracker\OptInNotice;
 /**
  * Should display shipping method settings page.
  */
-class ShouldDisplayShippingMethodInstanceSettings implements \FedExVendor\Octolize\Tracker\OptInNotice\ShouldDisplay
+class ShouldDisplayShippingMethodInstanceSettings implements ShouldDisplay
 {
     /**
      * @var string

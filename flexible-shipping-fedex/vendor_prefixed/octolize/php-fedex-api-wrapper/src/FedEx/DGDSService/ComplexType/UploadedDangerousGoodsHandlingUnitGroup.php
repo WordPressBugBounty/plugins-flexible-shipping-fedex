@@ -16,7 +16,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property TrackingNumberUnit[] $TrackingNumberUnits
  * @property UploadedDangerousGoodsHandlingUnit $HandlingUnit
  */
-class UploadedDangerousGoodsHandlingUnitGroup extends \FedExVendor\FedEx\AbstractComplexType
+class UploadedDangerousGoodsHandlingUnitGroup extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -74,7 +74,7 @@ class UploadedDangerousGoodsHandlingUnitGroup extends \FedExVendor\FedEx\Abstrac
      * @param UploadedDangerousGoodsHandlingUnit $handlingUnit
      * @return $this
      */
-    public function setHandlingUnit(\FedExVendor\FedEx\DGDSService\ComplexType\UploadedDangerousGoodsHandlingUnit $handlingUnit)
+    public function setHandlingUnit(UploadedDangerousGoodsHandlingUnit $handlingUnit)
     {
         $this->values['HandlingUnit'] = $handlingUnit;
         return $this;

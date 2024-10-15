@@ -20,7 +20,7 @@ use FedExVendor\Psr\Http\Message\RequestInterface;
  *
  * @final
  */
-class Pool implements \FedExVendor\GuzzleHttp\Promise\PromisorInterface
+class Pool implements PromisorInterface
 {
     /**
      * @var EachPromise
@@ -36,7 +36,7 @@ class Pool implements \FedExVendor\GuzzleHttp\Promise\PromisorInterface
      *                                  - fulfilled: (callable) Function to invoke when a request completes.
      *                                  - rejected: (callable) Function to invoke when a request is rejected.
      */
-    public function __construct(\FedExVendor\GuzzleHttp\ClientInterface $client, $requests, array $config = [])
+    public function __construct(ClientInterface $client, $requests, array $config = [])
     {
         if (!isset($config['concurrency'])) {
             $config['concurrency'] = 25;
@@ -47,24 +47,24 @@ class Pool implements \FedExVendor\GuzzleHttp\Promise\PromisorInterface
         } else {
             $opts = [];
         }
-        $iterable = \FedExVendor\GuzzleHttp\Promise\Create::iterFor($requests);
-        $requests = static function () use($iterable, $client, $opts) {
+        $iterable = P\Create::iterFor($requests);
+        $requests = static function () use ($iterable, $client, $opts) {
             foreach ($iterable as $key => $rfn) {
-                if ($rfn instanceof \FedExVendor\Psr\Http\Message\RequestInterface) {
-                    (yield $key => $client->sendAsync($rfn, $opts));
+                if ($rfn instanceof RequestInterface) {
+                    yield $key => $client->sendAsync($rfn, $opts);
                 } elseif (\is_callable($rfn)) {
-                    (yield $key => $rfn($opts));
+                    yield $key => $rfn($opts);
                 } else {
-                    throw new \InvalidArgumentException('Each value yielded by the iterator must be a Psr7\\Http\\Message\\RequestInterface or a callable that returns a promise that fulfills with a Psr7\\Message\\Http\\ResponseInterface object.');
+                    throw new \InvalidArgumentException('Each value yielded by the iterator must be a Psr7\Http\Message\RequestInterface or a callable that returns a promise that fulfills with a Psr7\Message\Http\ResponseInterface object.');
                 }
             }
         };
-        $this->each = new \FedExVendor\GuzzleHttp\Promise\EachPromise($requests(), $config);
+        $this->each = new EachPromise($requests(), $config);
     }
     /**
      * Get promise
      */
-    public function promise() : \FedExVendor\GuzzleHttp\Promise\PromiseInterface
+    public function promise(): PromiseInterface
     {
         return $this->each->promise();
     }
@@ -86,7 +86,7 @@ class Pool implements \FedExVendor\GuzzleHttp\Promise\PromisorInterface
      *
      * @throws \InvalidArgumentException if the event format is incorrect.
      */
-    public static function batch(\FedExVendor\GuzzleHttp\ClientInterface $client, $requests, array $options = []) : array
+    public static function batch(ClientInterface $client, $requests, array $options = []): array
     {
         $res = [];
         self::cmpCallback($options, 'fulfilled', $res);
@@ -99,15 +99,15 @@ class Pool implements \FedExVendor\GuzzleHttp\Promise\PromisorInterface
     /**
      * Execute callback(s)
      */
-    private static function cmpCallback(array &$options, string $name, array &$results) : void
+    private static function cmpCallback(array &$options, string $name, array &$results): void
     {
         if (!isset($options[$name])) {
-            $options[$name] = static function ($v, $k) use(&$results) {
+            $options[$name] = static function ($v, $k) use (&$results) {
                 $results[$k] = $v;
             };
         } else {
             $currentFn = $options[$name];
-            $options[$name] = static function ($v, $k) use(&$results, $currentFn) {
+            $options[$name] = static function ($v, $k) use (&$results, $currentFn) {
                 $currentFn($v, $k);
                 $results[$k] = $v;
             };

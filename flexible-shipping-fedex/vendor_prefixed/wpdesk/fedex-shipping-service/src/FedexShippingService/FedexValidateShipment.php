@@ -21,7 +21,7 @@ class FedexValidateShipment
      *
      * @var array
      */
-    const FEDEX_MAX_WEIGHTS = [\FedExVendor\WPDesk\AbstractShipping\Shipment\Weight::WEIGHT_UNIT_G => 68000, \FedExVendor\WPDesk\AbstractShipping\Shipment\Weight::WEIGHT_UNIT_KG => 68, \FedExVendor\WPDesk\AbstractShipping\Shipment\Weight::WEIGHT_UNIT_LB => 150, \FedExVendor\WPDesk\AbstractShipping\Shipment\Weight::WEIGHT_UNIT_OZ => 2433];
+    const FEDEX_MAX_WEIGHTS = [Weight::WEIGHT_UNIT_G => 68000, Weight::WEIGHT_UNIT_KG => 68, Weight::WEIGHT_UNIT_LB => 150, Weight::WEIGHT_UNIT_OZ => 2433];
     /**
      * Shipment.
      *
@@ -40,7 +40,7 @@ class FedexValidateShipment
      * @param \WPDesk\AbstractShipping\Shipment\Shipment $shipment Shipment.
      * @param \Psr\Log\LoggerInterface $logger Logger.
      */
-    public function __construct(\FedExVendor\WPDesk\AbstractShipping\Shipment\Shipment $shipment, \FedExVendor\Psr\Log\LoggerInterface $logger)
+    public function __construct(Shipment $shipment, LoggerInterface $logger)
     {
         $this->shipment = $shipment;
         $this->logger = $logger;
@@ -51,12 +51,12 @@ class FedexValidateShipment
      * @return float
      * @throws UnitConversionException
      */
-    private function calculate_package_weight(\FedExVendor\WPDesk\AbstractShipping\Shipment\Package $package)
+    private function calculate_package_weight(Package $package)
     {
         $package_weight = 0.0;
         foreach ($package->items as $item) {
-            $item_unit = \FedExVendor\WPDesk\FedexShippingService\FedexApi\FedexRequestManipulation::convert_weight_unit($item->weight->weight_unit);
-            $package_weight += (new \FedExVendor\WPDesk\AbstractShipping\UnitConversion\UniversalWeight($item->weight->weight, $item_unit))->as_unit_rounded(\FedExVendor\WPDesk\AbstractShipping\Shipment\Weight::WEIGHT_UNIT_KG);
+            $item_unit = FedexRequestManipulation::convert_weight_unit($item->weight->weight_unit);
+            $package_weight += (new UniversalWeight($item->weight->weight, $item_unit))->as_unit_rounded(Weight::WEIGHT_UNIT_KG);
         }
         return $package_weight;
     }
@@ -65,11 +65,11 @@ class FedexValidateShipment
      *
      * @return string
      */
-    private function get_package_weight_unit(\FedExVendor\WPDesk\AbstractShipping\Shipment\Package $package)
+    private function get_package_weight_unit(Package $package)
     {
-        $package_weight_unit = \FedExVendor\WPDesk\AbstractShipping\Shipment\Weight::WEIGHT_UNIT_KG;
+        $package_weight_unit = Weight::WEIGHT_UNIT_KG;
         foreach ($package->items as $item) {
-            $package_weight_unit = \FedExVendor\WPDesk\FedexShippingService\FedexApi\FedexRequestManipulation::convert_weight_unit($item->weight->weight_unit);
+            $package_weight_unit = FedexRequestManipulation::convert_weight_unit($item->weight->weight_unit);
         }
         return $package_weight_unit;
     }
@@ -81,13 +81,13 @@ class FedexValidateShipment
      * @return bool
      * @throws UnitConversionException
      */
-    private function is_package_weight_exceeded(\FedExVendor\WPDesk\AbstractShipping\Shipment\Package $package)
+    private function is_package_weight_exceeded(Package $package)
     {
-        if ($this->calculate_package_weight($package) > self::FEDEX_MAX_WEIGHTS[\FedExVendor\WPDesk\AbstractShipping\Shipment\Weight::WEIGHT_UNIT_KG]) {
+        if ($this->calculate_package_weight($package) > self::FEDEX_MAX_WEIGHTS[Weight::WEIGHT_UNIT_KG]) {
             $item_unit = $this->get_package_weight_unit($package);
-            $notice = \sprintf(
+            $notice = sprintf(
                 // translators: %1$s weight unit. %2$s number of max weight in kg or lb.
-                \__('The maximum package weight has been exceeded. Maximum package weight is: %1$s %2$s.', 'flexible-shipping-fedex'),
+                __('The maximum package weight has been exceeded. Maximum package weight is: %1$s %2$s.', 'flexible-shipping-fedex'),
                 self::FEDEX_MAX_WEIGHTS[$item_unit],
                 $item_unit
             );

@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property \FedEx\TrackService\SimpleType\SpecialInstructionsStatusCode|string $Status
  * @property string $StatusCreateTime
  */
-class SpecialInstructionStatusDetail extends \FedExVendor\FedEx\AbstractComplexType
+class SpecialInstructionStatusDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

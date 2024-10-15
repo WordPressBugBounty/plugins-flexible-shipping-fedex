@@ -24,7 +24,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property \FedEx\RateService\SimpleType\HazardousCommodityDescriptionProcessingOptionType|string[] $ProcessingOptions
  * @property string $Authorization
  */
-class HazardousCommodityDescription extends \FedExVendor\FedEx\AbstractComplexType
+class HazardousCommodityDescription extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -71,7 +71,7 @@ class HazardousCommodityDescription extends \FedExVendor\FedEx\AbstractComplexTy
      * @param HazardousCommodityPackingDetail $packingDetails
      * @return $this
      */
-    public function setPackingDetails(\FedExVendor\FedEx\RateService\ComplexType\HazardousCommodityPackingDetail $packingDetails)
+    public function setPackingDetails(HazardousCommodityPackingDetail $packingDetails)
     {
         $this->values['PackingDetails'] = $packingDetails;
         return $this;

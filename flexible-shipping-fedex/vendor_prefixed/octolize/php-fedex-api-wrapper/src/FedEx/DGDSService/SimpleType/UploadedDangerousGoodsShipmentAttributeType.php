@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Dangerous Goods Data Service
  */
-class UploadedDangerousGoodsShipmentAttributeType extends \FedExVendor\FedEx\AbstractSimpleType
+class UploadedDangerousGoodsShipmentAttributeType extends AbstractSimpleType
 {
     const _MANUAL_SHIPPING_LABEL = 'MANUAL_SHIPPING_LABEL';
 }

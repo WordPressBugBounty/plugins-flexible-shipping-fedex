@@ -22,7 +22,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property \FedEx\CourierDispatchService\SimpleType\CarrierCodeType|string[] $Carriers
  * @property PickupShipmentAttributes $ShipmentAttributes
  */
-class PickupAvailabilityRequest extends \FedExVendor\FedEx\AbstractComplexType
+class PickupAvailabilityRequest extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -36,7 +36,7 @@ class PickupAvailabilityRequest extends \FedExVendor\FedEx\AbstractComplexType
      * @param WebAuthenticationDetail $webAuthenticationDetail
      * @return $this
      */
-    public function setWebAuthenticationDetail(\FedExVendor\FedEx\CourierDispatchService\ComplexType\WebAuthenticationDetail $webAuthenticationDetail)
+    public function setWebAuthenticationDetail(WebAuthenticationDetail $webAuthenticationDetail)
     {
         $this->values['WebAuthenticationDetail'] = $webAuthenticationDetail;
         return $this;
@@ -47,7 +47,7 @@ class PickupAvailabilityRequest extends \FedExVendor\FedEx\AbstractComplexType
      * @param ClientDetail $clientDetail
      * @return $this
      */
-    public function setClientDetail(\FedExVendor\FedEx\CourierDispatchService\ComplexType\ClientDetail $clientDetail)
+    public function setClientDetail(ClientDetail $clientDetail)
     {
         $this->values['ClientDetail'] = $clientDetail;
         return $this;
@@ -58,7 +58,7 @@ class PickupAvailabilityRequest extends \FedExVendor\FedEx\AbstractComplexType
      * @param TransactionDetail $transactionDetail
      * @return $this
      */
-    public function setTransactionDetail(\FedExVendor\FedEx\CourierDispatchService\ComplexType\TransactionDetail $transactionDetail)
+    public function setTransactionDetail(TransactionDetail $transactionDetail)
     {
         $this->values['TransactionDetail'] = $transactionDetail;
         return $this;
@@ -69,7 +69,7 @@ class PickupAvailabilityRequest extends \FedExVendor\FedEx\AbstractComplexType
      * @param VersionId $version
      * @return $this
      */
-    public function setVersion(\FedExVendor\FedEx\CourierDispatchService\ComplexType\VersionId $version)
+    public function setVersion(VersionId $version)
     {
         $this->values['Version'] = $version;
         return $this;
@@ -80,7 +80,7 @@ class PickupAvailabilityRequest extends \FedExVendor\FedEx\AbstractComplexType
      * @param Address $pickupAddress
      * @return $this
      */
-    public function setPickupAddress(\FedExVendor\FedEx\CourierDispatchService\ComplexType\Address $pickupAddress)
+    public function setPickupAddress(Address $pickupAddress)
     {
         $this->values['PickupAddress'] = $pickupAddress;
         return $this;
@@ -147,7 +147,7 @@ class PickupAvailabilityRequest extends \FedExVendor\FedEx\AbstractComplexType
      * @param PickupShipmentAttributes $shipmentAttributes
      * @return $this
      */
-    public function setShipmentAttributes(\FedExVendor\FedEx\CourierDispatchService\ComplexType\PickupShipmentAttributes $shipmentAttributes)
+    public function setShipmentAttributes(PickupShipmentAttributes $shipmentAttributes)
     {
         $this->values['ShipmentAttributes'] = $shipmentAttributes;
         return $this;

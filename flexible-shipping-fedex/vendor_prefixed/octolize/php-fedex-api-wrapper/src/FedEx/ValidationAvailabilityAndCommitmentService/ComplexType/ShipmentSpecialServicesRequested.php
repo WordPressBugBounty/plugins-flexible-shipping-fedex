@@ -37,7 +37,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property WeighingDetail $WeighingDetail
  * @property CustomDeliveryWindowDetail $CustomDeliveryWindowDetail
  */
-class ShipmentSpecialServicesRequested extends \FedExVendor\FedEx\AbstractComplexType
+class ShipmentSpecialServicesRequested extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -62,7 +62,7 @@ class ShipmentSpecialServicesRequested extends \FedExVendor\FedEx\AbstractComple
      * @param CodDetail $codDetail
      * @return $this
      */
-    public function setCodDetail(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\CodDetail $codDetail)
+    public function setCodDetail(CodDetail $codDetail)
     {
         $this->values['CodDetail'] = $codDetail;
         return $this;
@@ -73,7 +73,7 @@ class ShipmentSpecialServicesRequested extends \FedExVendor\FedEx\AbstractComple
      * @param DeliveryOnInvoiceAcceptanceDetail $deliveryOnInvoiceAcceptanceDetail
      * @return $this
      */
-    public function setDeliveryOnInvoiceAcceptanceDetail(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\DeliveryOnInvoiceAcceptanceDetail $deliveryOnInvoiceAcceptanceDetail)
+    public function setDeliveryOnInvoiceAcceptanceDetail(DeliveryOnInvoiceAcceptanceDetail $deliveryOnInvoiceAcceptanceDetail)
     {
         $this->values['DeliveryOnInvoiceAcceptanceDetail'] = $deliveryOnInvoiceAcceptanceDetail;
         return $this;
@@ -84,7 +84,7 @@ class ShipmentSpecialServicesRequested extends \FedExVendor\FedEx\AbstractComple
      * @param HoldAtLocationDetail $holdAtLocationDetail
      * @return $this
      */
-    public function setHoldAtLocationDetail(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\HoldAtLocationDetail $holdAtLocationDetail)
+    public function setHoldAtLocationDetail(HoldAtLocationDetail $holdAtLocationDetail)
     {
         $this->values['HoldAtLocationDetail'] = $holdAtLocationDetail;
         return $this;
@@ -95,7 +95,7 @@ class ShipmentSpecialServicesRequested extends \FedExVendor\FedEx\AbstractComple
      * @param ShipmentEventNotificationDetail $eventNotificationDetail
      * @return $this
      */
-    public function setEventNotificationDetail(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\ShipmentEventNotificationDetail $eventNotificationDetail)
+    public function setEventNotificationDetail(ShipmentEventNotificationDetail $eventNotificationDetail)
     {
         $this->values['EventNotificationDetail'] = $eventNotificationDetail;
         return $this;
@@ -106,7 +106,7 @@ class ShipmentSpecialServicesRequested extends \FedExVendor\FedEx\AbstractComple
      * @param ReturnShipmentDetail $returnShipmentDetail
      * @return $this
      */
-    public function setReturnShipmentDetail(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\ReturnShipmentDetail $returnShipmentDetail)
+    public function setReturnShipmentDetail(ReturnShipmentDetail $returnShipmentDetail)
     {
         $this->values['ReturnShipmentDetail'] = $returnShipmentDetail;
         return $this;
@@ -117,7 +117,7 @@ class ShipmentSpecialServicesRequested extends \FedExVendor\FedEx\AbstractComple
      * @param PendingShipmentDetail $pendingShipmentDetail
      * @return $this
      */
-    public function setPendingShipmentDetail(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\PendingShipmentDetail $pendingShipmentDetail)
+    public function setPendingShipmentDetail(PendingShipmentDetail $pendingShipmentDetail)
     {
         $this->values['PendingShipmentDetail'] = $pendingShipmentDetail;
         return $this;
@@ -128,7 +128,7 @@ class ShipmentSpecialServicesRequested extends \FedExVendor\FedEx\AbstractComple
      * @param InternationalControlledExportDetail $internationalControlledExportDetail
      * @return $this
      */
-    public function setInternationalControlledExportDetail(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\InternationalControlledExportDetail $internationalControlledExportDetail)
+    public function setInternationalControlledExportDetail(InternationalControlledExportDetail $internationalControlledExportDetail)
     {
         $this->values['InternationalControlledExportDetail'] = $internationalControlledExportDetail;
         return $this;
@@ -139,7 +139,7 @@ class ShipmentSpecialServicesRequested extends \FedExVendor\FedEx\AbstractComple
      * @param InternationalTrafficInArmsRegulationsDetail $internationalTrafficInArmsRegulationsDetail
      * @return $this
      */
-    public function setInternationalTrafficInArmsRegulationsDetail(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\InternationalTrafficInArmsRegulationsDetail $internationalTrafficInArmsRegulationsDetail)
+    public function setInternationalTrafficInArmsRegulationsDetail(InternationalTrafficInArmsRegulationsDetail $internationalTrafficInArmsRegulationsDetail)
     {
         $this->values['InternationalTrafficInArmsRegulationsDetail'] = $internationalTrafficInArmsRegulationsDetail;
         return $this;
@@ -150,7 +150,7 @@ class ShipmentSpecialServicesRequested extends \FedExVendor\FedEx\AbstractComple
      * @param ShipmentDryIceDetail $shipmentDryIceDetail
      * @return $this
      */
-    public function setShipmentDryIceDetail(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\ShipmentDryIceDetail $shipmentDryIceDetail)
+    public function setShipmentDryIceDetail(ShipmentDryIceDetail $shipmentDryIceDetail)
     {
         $this->values['ShipmentDryIceDetail'] = $shipmentDryIceDetail;
         return $this;
@@ -161,7 +161,7 @@ class ShipmentSpecialServicesRequested extends \FedExVendor\FedEx\AbstractComple
      * @param HomeDeliveryPremiumDetail $homeDeliveryPremiumDetail
      * @return $this
      */
-    public function setHomeDeliveryPremiumDetail(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\HomeDeliveryPremiumDetail $homeDeliveryPremiumDetail)
+    public function setHomeDeliveryPremiumDetail(HomeDeliveryPremiumDetail $homeDeliveryPremiumDetail)
     {
         $this->values['HomeDeliveryPremiumDetail'] = $homeDeliveryPremiumDetail;
         return $this;
@@ -172,7 +172,7 @@ class ShipmentSpecialServicesRequested extends \FedExVendor\FedEx\AbstractComple
      * @param FlatbedTrailerDetail $flatbedTrailerDetail
      * @return $this
      */
-    public function setFlatbedTrailerDetail(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\FlatbedTrailerDetail $flatbedTrailerDetail)
+    public function setFlatbedTrailerDetail(FlatbedTrailerDetail $flatbedTrailerDetail)
     {
         $this->values['FlatbedTrailerDetail'] = $flatbedTrailerDetail;
         return $this;
@@ -183,7 +183,7 @@ class ShipmentSpecialServicesRequested extends \FedExVendor\FedEx\AbstractComple
      * @param FreightGuaranteeDetail $freightGuaranteeDetail
      * @return $this
      */
-    public function setFreightGuaranteeDetail(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\FreightGuaranteeDetail $freightGuaranteeDetail)
+    public function setFreightGuaranteeDetail(FreightGuaranteeDetail $freightGuaranteeDetail)
     {
         $this->values['FreightGuaranteeDetail'] = $freightGuaranteeDetail;
         return $this;
@@ -194,7 +194,7 @@ class ShipmentSpecialServicesRequested extends \FedExVendor\FedEx\AbstractComple
      * @param EtdDetail $etdDetail
      * @return $this
      */
-    public function setEtdDetail(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\EtdDetail $etdDetail)
+    public function setEtdDetail(EtdDetail $etdDetail)
     {
         $this->values['EtdDetail'] = $etdDetail;
         return $this;
@@ -205,7 +205,7 @@ class ShipmentSpecialServicesRequested extends \FedExVendor\FedEx\AbstractComple
      * @param ExtraLaborDetail $extraLaborDetail
      * @return $this
      */
-    public function setExtraLaborDetail(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\ExtraLaborDetail $extraLaborDetail)
+    public function setExtraLaborDetail(ExtraLaborDetail $extraLaborDetail)
     {
         $this->values['ExtraLaborDetail'] = $extraLaborDetail;
         return $this;
@@ -216,7 +216,7 @@ class ShipmentSpecialServicesRequested extends \FedExVendor\FedEx\AbstractComple
      * @param PalletShrinkwrapDetail $palletShrinkwrapDetail
      * @return $this
      */
-    public function setPalletShrinkwrapDetail(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\PalletShrinkwrapDetail $palletShrinkwrapDetail)
+    public function setPalletShrinkwrapDetail(PalletShrinkwrapDetail $palletShrinkwrapDetail)
     {
         $this->values['PalletShrinkwrapDetail'] = $palletShrinkwrapDetail;
         return $this;
@@ -227,7 +227,7 @@ class ShipmentSpecialServicesRequested extends \FedExVendor\FedEx\AbstractComple
      * @param PalletsProvidedDetail $palletsProvidedDetail
      * @return $this
      */
-    public function setPalletsProvidedDetail(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\PalletsProvidedDetail $palletsProvidedDetail)
+    public function setPalletsProvidedDetail(PalletsProvidedDetail $palletsProvidedDetail)
     {
         $this->values['PalletsProvidedDetail'] = $palletsProvidedDetail;
         return $this;
@@ -238,7 +238,7 @@ class ShipmentSpecialServicesRequested extends \FedExVendor\FedEx\AbstractComple
      * @param DetentionDetail $detentionDetail
      * @return $this
      */
-    public function setDetentionDetail(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\DetentionDetail $detentionDetail)
+    public function setDetentionDetail(DetentionDetail $detentionDetail)
     {
         $this->values['DetentionDetail'] = $detentionDetail;
         return $this;
@@ -249,7 +249,7 @@ class ShipmentSpecialServicesRequested extends \FedExVendor\FedEx\AbstractComple
      * @param MarkingOrTaggingDetail $markingOrTaggingDetail
      * @return $this
      */
-    public function setMarkingOrTaggingDetail(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\MarkingOrTaggingDetail $markingOrTaggingDetail)
+    public function setMarkingOrTaggingDetail(MarkingOrTaggingDetail $markingOrTaggingDetail)
     {
         $this->values['MarkingOrTaggingDetail'] = $markingOrTaggingDetail;
         return $this;
@@ -260,7 +260,7 @@ class ShipmentSpecialServicesRequested extends \FedExVendor\FedEx\AbstractComple
      * @param NonBusinessTimeDetail $nonBusinessTimeDetail
      * @return $this
      */
-    public function setNonBusinessTimeDetail(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\NonBusinessTimeDetail $nonBusinessTimeDetail)
+    public function setNonBusinessTimeDetail(NonBusinessTimeDetail $nonBusinessTimeDetail)
     {
         $this->values['NonBusinessTimeDetail'] = $nonBusinessTimeDetail;
         return $this;
@@ -271,7 +271,7 @@ class ShipmentSpecialServicesRequested extends \FedExVendor\FedEx\AbstractComple
      * @param ShipmentAssemblyDetail $shipmentAssemblyDetail
      * @return $this
      */
-    public function setShipmentAssemblyDetail(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\ShipmentAssemblyDetail $shipmentAssemblyDetail)
+    public function setShipmentAssemblyDetail(ShipmentAssemblyDetail $shipmentAssemblyDetail)
     {
         $this->values['ShipmentAssemblyDetail'] = $shipmentAssemblyDetail;
         return $this;
@@ -282,7 +282,7 @@ class ShipmentSpecialServicesRequested extends \FedExVendor\FedEx\AbstractComple
      * @param SortAndSegregateDetail $sortAndSegregateDetail
      * @return $this
      */
-    public function setSortAndSegregateDetail(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\SortAndSegregateDetail $sortAndSegregateDetail)
+    public function setSortAndSegregateDetail(SortAndSegregateDetail $sortAndSegregateDetail)
     {
         $this->values['SortAndSegregateDetail'] = $sortAndSegregateDetail;
         return $this;
@@ -293,7 +293,7 @@ class ShipmentSpecialServicesRequested extends \FedExVendor\FedEx\AbstractComple
      * @param SpecialEquipmentDetail $specialEquipmentDetail
      * @return $this
      */
-    public function setSpecialEquipmentDetail(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\SpecialEquipmentDetail $specialEquipmentDetail)
+    public function setSpecialEquipmentDetail(SpecialEquipmentDetail $specialEquipmentDetail)
     {
         $this->values['SpecialEquipmentDetail'] = $specialEquipmentDetail;
         return $this;
@@ -304,7 +304,7 @@ class ShipmentSpecialServicesRequested extends \FedExVendor\FedEx\AbstractComple
      * @param StorageDetail $storageDetail
      * @return $this
      */
-    public function setStorageDetail(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\StorageDetail $storageDetail)
+    public function setStorageDetail(StorageDetail $storageDetail)
     {
         $this->values['StorageDetail'] = $storageDetail;
         return $this;
@@ -315,7 +315,7 @@ class ShipmentSpecialServicesRequested extends \FedExVendor\FedEx\AbstractComple
      * @param WeighingDetail $weighingDetail
      * @return $this
      */
-    public function setWeighingDetail(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\WeighingDetail $weighingDetail)
+    public function setWeighingDetail(WeighingDetail $weighingDetail)
     {
         $this->values['WeighingDetail'] = $weighingDetail;
         return $this;
@@ -326,7 +326,7 @@ class ShipmentSpecialServicesRequested extends \FedExVendor\FedEx\AbstractComple
      * @param CustomDeliveryWindowDetail $customDeliveryWindowDetail
      * @return $this
      */
-    public function setCustomDeliveryWindowDetail(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\CustomDeliveryWindowDetail $customDeliveryWindowDetail)
+    public function setCustomDeliveryWindowDetail(CustomDeliveryWindowDetail $customDeliveryWindowDetail)
     {
         $this->values['CustomDeliveryWindowDetail'] = $customDeliveryWindowDetail;
         return $this;

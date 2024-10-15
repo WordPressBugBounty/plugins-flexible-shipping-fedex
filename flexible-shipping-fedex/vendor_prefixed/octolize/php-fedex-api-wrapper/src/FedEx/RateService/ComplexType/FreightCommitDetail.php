@@ -14,7 +14,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property FreightServiceCenterDetail $DestinationDetail
  * @property Distance $TotalDistance
  */
-class FreightCommitDetail extends \FedExVendor\FedEx\AbstractComplexType
+class FreightCommitDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -28,7 +28,7 @@ class FreightCommitDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param FreightServiceCenterDetail $originDetail
      * @return $this
      */
-    public function setOriginDetail(\FedExVendor\FedEx\RateService\ComplexType\FreightServiceCenterDetail $originDetail)
+    public function setOriginDetail(FreightServiceCenterDetail $originDetail)
     {
         $this->values['OriginDetail'] = $originDetail;
         return $this;
@@ -39,7 +39,7 @@ class FreightCommitDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param FreightServiceCenterDetail $destinationDetail
      * @return $this
      */
-    public function setDestinationDetail(\FedExVendor\FedEx\RateService\ComplexType\FreightServiceCenterDetail $destinationDetail)
+    public function setDestinationDetail(FreightServiceCenterDetail $destinationDetail)
     {
         $this->values['DestinationDetail'] = $destinationDetail;
         return $this;
@@ -50,7 +50,7 @@ class FreightCommitDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param Distance $totalDistance
      * @return $this
      */
-    public function setTotalDistance(\FedExVendor\FedEx\RateService\ComplexType\Distance $totalDistance)
+    public function setTotalDistance(Distance $totalDistance)
     {
         $this->values['TotalDistance'] = $totalDistance;
         return $this;

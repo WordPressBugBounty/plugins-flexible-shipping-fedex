@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  */
-class PickupBuildingLocationType extends \FedExVendor\FedEx\AbstractSimpleType
+class PickupBuildingLocationType extends AbstractSimpleType
 {
     const _FRONT = 'FRONT';
     const _NONE = 'NONE';

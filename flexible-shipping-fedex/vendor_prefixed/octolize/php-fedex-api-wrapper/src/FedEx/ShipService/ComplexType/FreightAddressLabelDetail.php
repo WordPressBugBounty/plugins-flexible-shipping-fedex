@@ -17,7 +17,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property \FedEx\ShipService\SimpleType\RelativeVerticalPositionType|string $CustomContentPosition
  * @property CustomLabelDetail $CustomContent
  */
-class FreightAddressLabelDetail extends \FedExVendor\FedEx\AbstractComplexType
+class FreightAddressLabelDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -31,7 +31,7 @@ class FreightAddressLabelDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param ShippingDocumentFormat $format
      * @return $this
      */
-    public function setFormat(\FedExVendor\FedEx\ShipService\ComplexType\ShippingDocumentFormat $format)
+    public function setFormat(ShippingDocumentFormat $format)
     {
         $this->values['Format'] = $format;
         return $this;
@@ -64,7 +64,7 @@ class FreightAddressLabelDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param DocTabContent $docTabContent
      * @return $this
      */
-    public function setDocTabContent(\FedExVendor\FedEx\ShipService\ComplexType\DocTabContent $docTabContent)
+    public function setDocTabContent(DocTabContent $docTabContent)
     {
         $this->values['DocTabContent'] = $docTabContent;
         return $this;
@@ -86,7 +86,7 @@ class FreightAddressLabelDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param CustomLabelDetail $customContent
      * @return $this
      */
-    public function setCustomContent(\FedExVendor\FedEx\ShipService\ComplexType\CustomLabelDetail $customContent)
+    public function setCustomContent(CustomLabelDetail $customContent)
     {
         $this->values['CustomContent'] = $customContent;
         return $this;

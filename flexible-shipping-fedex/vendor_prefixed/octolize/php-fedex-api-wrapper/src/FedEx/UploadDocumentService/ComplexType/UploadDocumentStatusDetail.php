@@ -21,7 +21,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $DocumentId
  * @property \FedEx\UploadDocumentService\SimpleType\UploadDocumentIdProducer|string $DocumentIdProducer
  */
-class UploadDocumentStatusDetail extends \FedExVendor\FedEx\AbstractComplexType
+class UploadDocumentStatusDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

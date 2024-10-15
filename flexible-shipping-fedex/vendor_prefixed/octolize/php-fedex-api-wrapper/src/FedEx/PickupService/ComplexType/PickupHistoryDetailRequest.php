@@ -26,7 +26,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $CountryCode
  * @property string $PostalCode
  */
-class PickupHistoryDetailRequest extends \FedExVendor\FedEx\AbstractComplexType
+class PickupHistoryDetailRequest extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -40,7 +40,7 @@ class PickupHistoryDetailRequest extends \FedExVendor\FedEx\AbstractComplexType
      * @param WebAuthenticationDetail $webAuthenticationDetail
      * @return $this
      */
-    public function setWebAuthenticationDetail(\FedExVendor\FedEx\PickupService\ComplexType\WebAuthenticationDetail $webAuthenticationDetail)
+    public function setWebAuthenticationDetail(WebAuthenticationDetail $webAuthenticationDetail)
     {
         $this->values['WebAuthenticationDetail'] = $webAuthenticationDetail;
         return $this;
@@ -51,7 +51,7 @@ class PickupHistoryDetailRequest extends \FedExVendor\FedEx\AbstractComplexType
      * @param ClientDetail $clientDetail
      * @return $this
      */
-    public function setClientDetail(\FedExVendor\FedEx\PickupService\ComplexType\ClientDetail $clientDetail)
+    public function setClientDetail(ClientDetail $clientDetail)
     {
         $this->values['ClientDetail'] = $clientDetail;
         return $this;
@@ -62,7 +62,7 @@ class PickupHistoryDetailRequest extends \FedExVendor\FedEx\AbstractComplexType
      * @param UserDetail $userDetail
      * @return $this
      */
-    public function setUserDetail(\FedExVendor\FedEx\PickupService\ComplexType\UserDetail $userDetail)
+    public function setUserDetail(UserDetail $userDetail)
     {
         $this->values['UserDetail'] = $userDetail;
         return $this;
@@ -73,7 +73,7 @@ class PickupHistoryDetailRequest extends \FedExVendor\FedEx\AbstractComplexType
      * @param TransactionDetail $transactionDetail
      * @return $this
      */
-    public function setTransactionDetail(\FedExVendor\FedEx\PickupService\ComplexType\TransactionDetail $transactionDetail)
+    public function setTransactionDetail(TransactionDetail $transactionDetail)
     {
         $this->values['TransactionDetail'] = $transactionDetail;
         return $this;
@@ -84,7 +84,7 @@ class PickupHistoryDetailRequest extends \FedExVendor\FedEx\AbstractComplexType
      * @param VersionId $version
      * @return $this
      */
-    public function setVersion(\FedExVendor\FedEx\PickupService\ComplexType\VersionId $version)
+    public function setVersion(VersionId $version)
     {
         $this->values['Version'] = $version;
         return $this;
@@ -117,7 +117,7 @@ class PickupHistoryDetailRequest extends \FedExVendor\FedEx\AbstractComplexType
      * @param AssociatedAccount $associatedAccountNumber
      * @return $this
      */
-    public function setAssociatedAccountNumber(\FedExVendor\FedEx\PickupService\ComplexType\AssociatedAccount $associatedAccountNumber)
+    public function setAssociatedAccountNumber(AssociatedAccount $associatedAccountNumber)
     {
         $this->values['AssociatedAccountNumber'] = $associatedAccountNumber;
         return $this;

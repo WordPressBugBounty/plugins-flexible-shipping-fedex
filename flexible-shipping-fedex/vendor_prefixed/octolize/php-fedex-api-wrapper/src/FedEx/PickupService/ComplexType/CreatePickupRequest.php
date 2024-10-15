@@ -35,7 +35,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property \FedEx\PickupService\SimpleType\CountryRelationshipType|string $CountryRelationship
  * @property RestrictionsAndPrivilegesPolicyDetail $RestrictionsAndPrivileges
  */
-class CreatePickupRequest extends \FedExVendor\FedEx\AbstractComplexType
+class CreatePickupRequest extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -49,7 +49,7 @@ class CreatePickupRequest extends \FedExVendor\FedEx\AbstractComplexType
      * @param WebAuthenticationDetail $webAuthenticationDetail
      * @return $this
      */
-    public function setWebAuthenticationDetail(\FedExVendor\FedEx\PickupService\ComplexType\WebAuthenticationDetail $webAuthenticationDetail)
+    public function setWebAuthenticationDetail(WebAuthenticationDetail $webAuthenticationDetail)
     {
         $this->values['WebAuthenticationDetail'] = $webAuthenticationDetail;
         return $this;
@@ -60,7 +60,7 @@ class CreatePickupRequest extends \FedExVendor\FedEx\AbstractComplexType
      * @param ClientDetail $clientDetail
      * @return $this
      */
-    public function setClientDetail(\FedExVendor\FedEx\PickupService\ComplexType\ClientDetail $clientDetail)
+    public function setClientDetail(ClientDetail $clientDetail)
     {
         $this->values['ClientDetail'] = $clientDetail;
         return $this;
@@ -71,7 +71,7 @@ class CreatePickupRequest extends \FedExVendor\FedEx\AbstractComplexType
      * @param UserDetail $userDetail
      * @return $this
      */
-    public function setUserDetail(\FedExVendor\FedEx\PickupService\ComplexType\UserDetail $userDetail)
+    public function setUserDetail(UserDetail $userDetail)
     {
         $this->values['UserDetail'] = $userDetail;
         return $this;
@@ -82,7 +82,7 @@ class CreatePickupRequest extends \FedExVendor\FedEx\AbstractComplexType
      * @param TransactionDetail $transactionDetail
      * @return $this
      */
-    public function setTransactionDetail(\FedExVendor\FedEx\PickupService\ComplexType\TransactionDetail $transactionDetail)
+    public function setTransactionDetail(TransactionDetail $transactionDetail)
     {
         $this->values['TransactionDetail'] = $transactionDetail;
         return $this;
@@ -93,7 +93,7 @@ class CreatePickupRequest extends \FedExVendor\FedEx\AbstractComplexType
      * @param VersionId $version
      * @return $this
      */
-    public function setVersion(\FedExVendor\FedEx\PickupService\ComplexType\VersionId $version)
+    public function setVersion(VersionId $version)
     {
         $this->values['Version'] = $version;
         return $this;
@@ -137,7 +137,7 @@ class CreatePickupRequest extends \FedExVendor\FedEx\AbstractComplexType
      * @param AssociatedAccount $associatedAccountNumber
      * @return $this
      */
-    public function setAssociatedAccountNumber(\FedExVendor\FedEx\PickupService\ComplexType\AssociatedAccount $associatedAccountNumber)
+    public function setAssociatedAccountNumber(AssociatedAccount $associatedAccountNumber)
     {
         $this->values['AssociatedAccountNumber'] = $associatedAccountNumber;
         return $this;
@@ -159,7 +159,7 @@ class CreatePickupRequest extends \FedExVendor\FedEx\AbstractComplexType
      * @param PickupOriginDetail $originDetail
      * @return $this
      */
-    public function setOriginDetail(\FedExVendor\FedEx\PickupService\ComplexType\PickupOriginDetail $originDetail)
+    public function setOriginDetail(PickupOriginDetail $originDetail)
     {
         $this->values['OriginDetail'] = $originDetail;
         return $this;
@@ -181,7 +181,7 @@ class CreatePickupRequest extends \FedExVendor\FedEx\AbstractComplexType
      * @param FreightPickupDetail $freightPickupDetail
      * @return $this
      */
-    public function setFreightPickupDetail(\FedExVendor\FedEx\PickupService\ComplexType\FreightPickupDetail $freightPickupDetail)
+    public function setFreightPickupDetail(FreightPickupDetail $freightPickupDetail)
     {
         $this->values['FreightPickupDetail'] = $freightPickupDetail;
         return $this;
@@ -192,7 +192,7 @@ class CreatePickupRequest extends \FedExVendor\FedEx\AbstractComplexType
      * @param ExpressFreightPickupDetail $expressFreightDetail
      * @return $this
      */
-    public function setExpressFreightDetail(\FedExVendor\FedEx\PickupService\ComplexType\ExpressFreightPickupDetail $expressFreightDetail)
+    public function setExpressFreightDetail(ExpressFreightPickupDetail $expressFreightDetail)
     {
         $this->values['ExpressFreightDetail'] = $expressFreightDetail;
         return $this;
@@ -236,7 +236,7 @@ class CreatePickupRequest extends \FedExVendor\FedEx\AbstractComplexType
      * @param Weight $totalWeight
      * @return $this
      */
-    public function setTotalWeight(\FedExVendor\FedEx\PickupService\ComplexType\Weight $totalWeight)
+    public function setTotalWeight(Weight $totalWeight)
     {
         $this->values['TotalWeight'] = $totalWeight;
         return $this;
@@ -302,7 +302,7 @@ class CreatePickupRequest extends \FedExVendor\FedEx\AbstractComplexType
      * @param RestrictionsAndPrivilegesPolicyDetail $restrictionsAndPrivileges
      * @return $this
      */
-    public function setRestrictionsAndPrivileges(\FedExVendor\FedEx\PickupService\ComplexType\RestrictionsAndPrivilegesPolicyDetail $restrictionsAndPrivileges)
+    public function setRestrictionsAndPrivileges(RestrictionsAndPrivilegesPolicyDetail $restrictionsAndPrivileges)
     {
         $this->values['RestrictionsAndPrivileges'] = $restrictionsAndPrivileges;
         return $this;

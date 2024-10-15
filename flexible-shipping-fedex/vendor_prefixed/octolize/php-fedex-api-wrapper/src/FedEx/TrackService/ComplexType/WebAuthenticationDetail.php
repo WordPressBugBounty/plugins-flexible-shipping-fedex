@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property WebAuthenticationCredential $ParentCredential
  * @property WebAuthenticationCredential $UserCredential
  */
-class WebAuthenticationDetail extends \FedExVendor\FedEx\AbstractComplexType
+class WebAuthenticationDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -27,7 +27,7 @@ class WebAuthenticationDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param WebAuthenticationCredential $parentCredential
      * @return $this
      */
-    public function setParentCredential(\FedExVendor\FedEx\TrackService\ComplexType\WebAuthenticationCredential $parentCredential)
+    public function setParentCredential(WebAuthenticationCredential $parentCredential)
     {
         $this->values['ParentCredential'] = $parentCredential;
         return $this;
@@ -38,7 +38,7 @@ class WebAuthenticationDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param WebAuthenticationCredential $userCredential
      * @return $this
      */
-    public function setUserCredential(\FedExVendor\FedEx\TrackService\ComplexType\WebAuthenticationCredential $userCredential)
+    public function setUserCredential(WebAuthenticationCredential $userCredential)
     {
         $this->values['UserCredential'] = $userCredential;
         return $this;

@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Upload Document Service
  */
-class GroundDeliveryEligibilityType extends \FedExVendor\FedEx\AbstractSimpleType
+class GroundDeliveryEligibilityType extends AbstractSimpleType
 {
     const _ALTERNATE_DAY_SERVICE = 'ALTERNATE_DAY_SERVICE';
     const _CARTAGE_AGENT_DELIVERY = 'CARTAGE_AGENT_DELIVERY';

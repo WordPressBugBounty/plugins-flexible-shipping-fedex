@@ -14,7 +14,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property Address $Address
  * @property AddressAncillaryDetail $AddressAncillaryDetail
  */
-class LocationContactAndAddress extends \FedExVendor\FedEx\AbstractComplexType
+class LocationContactAndAddress extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -28,7 +28,7 @@ class LocationContactAndAddress extends \FedExVendor\FedEx\AbstractComplexType
      * @param Contact $contact
      * @return $this
      */
-    public function setContact(\FedExVendor\FedEx\LocationsService\ComplexType\Contact $contact)
+    public function setContact(Contact $contact)
     {
         $this->values['Contact'] = $contact;
         return $this;
@@ -39,7 +39,7 @@ class LocationContactAndAddress extends \FedExVendor\FedEx\AbstractComplexType
      * @param Address $address
      * @return $this
      */
-    public function setAddress(\FedExVendor\FedEx\LocationsService\ComplexType\Address $address)
+    public function setAddress(Address $address)
     {
         $this->values['Address'] = $address;
         return $this;
@@ -50,7 +50,7 @@ class LocationContactAndAddress extends \FedExVendor\FedEx\AbstractComplexType
      * @param AddressAncillaryDetail $addressAncillaryDetail
      * @return $this
      */
-    public function setAddressAncillaryDetail(\FedExVendor\FedEx\LocationsService\ComplexType\AddressAncillaryDetail $addressAncillaryDetail)
+    public function setAddressAncillaryDetail(AddressAncillaryDetail $addressAncillaryDetail)
     {
         $this->values['AddressAncillaryDetail'] = $addressAncillaryDetail;
         return $this;

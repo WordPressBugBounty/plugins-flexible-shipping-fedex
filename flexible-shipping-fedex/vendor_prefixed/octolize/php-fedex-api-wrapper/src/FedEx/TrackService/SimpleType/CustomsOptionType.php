@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Package Movement Information Service
  */
-class CustomsOptionType extends \FedExVendor\FedEx\AbstractSimpleType
+class CustomsOptionType extends AbstractSimpleType
 {
     const _COURTESY_RETURN_LABEL = 'COURTESY_RETURN_LABEL';
     const _EXHIBITION_TRADE_SHOW = 'EXHIBITION_TRADE_SHOW';

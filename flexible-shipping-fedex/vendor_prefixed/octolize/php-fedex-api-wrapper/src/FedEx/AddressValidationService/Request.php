@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractRequest;
  * @package     PHP FedEx API wrapper
  * @subpackage  Address Validation Service
  */
-class Request extends \FedExVendor\FedEx\AbstractRequest
+class Request extends AbstractRequest
 {
     const PRODUCTION_URL = 'https://ws.fedex.com:443/web-services/addressvalidation';
     const TESTING_URL = 'https://wsbeta.fedex.com:443/web-services/addressvalidation';
@@ -22,13 +22,13 @@ class Request extends \FedExVendor\FedEx\AbstractRequest
      * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
      * @return ComplexType\AddressValidationReply|stdClass
      */
-    public function getAddressValidationReply(\FedExVendor\FedEx\AddressValidationService\ComplexType\AddressValidationRequest $addressValidationRequest, $returnStdClass = \false)
+    public function getAddressValidationReply(ComplexType\AddressValidationRequest $addressValidationRequest, $returnStdClass = \false)
     {
         $response = $this->getSoapClient()->addressValidation($addressValidationRequest->toArray());
         if ($returnStdClass) {
             return $response;
         }
-        $addressValidationReply = new \FedExVendor\FedEx\AddressValidationService\ComplexType\AddressValidationReply();
+        $addressValidationReply = new ComplexType\AddressValidationReply();
         $addressValidationReply->populateFromStdClass($response);
         return $addressValidationReply;
     }

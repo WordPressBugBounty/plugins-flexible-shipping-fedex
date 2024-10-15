@@ -17,7 +17,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property ClearanceCountryDetail[] $ClearanceCountries
  * @property string $ClearanceRoutingCode
  */
-class ClearanceLocationDetail extends \FedExVendor\FedEx\AbstractComplexType
+class ClearanceLocationDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

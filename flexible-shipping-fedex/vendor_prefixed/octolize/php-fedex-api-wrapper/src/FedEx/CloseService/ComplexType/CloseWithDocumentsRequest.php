@@ -23,7 +23,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property CloseSmartPostDetail $SmartPostDetail
  * @property CloseDocumentSpecification $CloseDocumentSpecification
  */
-class CloseWithDocumentsRequest extends \FedExVendor\FedEx\AbstractComplexType
+class CloseWithDocumentsRequest extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -37,7 +37,7 @@ class CloseWithDocumentsRequest extends \FedExVendor\FedEx\AbstractComplexType
      * @param WebAuthenticationDetail $webAuthenticationDetail
      * @return $this
      */
-    public function setWebAuthenticationDetail(\FedExVendor\FedEx\CloseService\ComplexType\WebAuthenticationDetail $webAuthenticationDetail)
+    public function setWebAuthenticationDetail(WebAuthenticationDetail $webAuthenticationDetail)
     {
         $this->values['WebAuthenticationDetail'] = $webAuthenticationDetail;
         return $this;
@@ -48,7 +48,7 @@ class CloseWithDocumentsRequest extends \FedExVendor\FedEx\AbstractComplexType
      * @param ClientDetail $clientDetail
      * @return $this
      */
-    public function setClientDetail(\FedExVendor\FedEx\CloseService\ComplexType\ClientDetail $clientDetail)
+    public function setClientDetail(ClientDetail $clientDetail)
     {
         $this->values['ClientDetail'] = $clientDetail;
         return $this;
@@ -59,7 +59,7 @@ class CloseWithDocumentsRequest extends \FedExVendor\FedEx\AbstractComplexType
      * @param TransactionDetail $transactionDetail
      * @return $this
      */
-    public function setTransactionDetail(\FedExVendor\FedEx\CloseService\ComplexType\TransactionDetail $transactionDetail)
+    public function setTransactionDetail(TransactionDetail $transactionDetail)
     {
         $this->values['TransactionDetail'] = $transactionDetail;
         return $this;
@@ -70,7 +70,7 @@ class CloseWithDocumentsRequest extends \FedExVendor\FedEx\AbstractComplexType
      * @param VersionId $version
      * @return $this
      */
-    public function setVersion(\FedExVendor\FedEx\CloseService\ComplexType\VersionId $version)
+    public function setVersion(VersionId $version)
     {
         $this->values['Version'] = $version;
         return $this;
@@ -92,7 +92,7 @@ class CloseWithDocumentsRequest extends \FedExVendor\FedEx\AbstractComplexType
      * @param CloseWithDocumentsProcessingOptionsRequested $processingOptions
      * @return $this
      */
-    public function setProcessingOptions(\FedExVendor\FedEx\CloseService\ComplexType\CloseWithDocumentsProcessingOptionsRequested $processingOptions)
+    public function setProcessingOptions(CloseWithDocumentsProcessingOptionsRequested $processingOptions)
     {
         $this->values['ProcessingOptions'] = $processingOptions;
         return $this;
@@ -136,7 +136,7 @@ class CloseWithDocumentsRequest extends \FedExVendor\FedEx\AbstractComplexType
      * @param CloseManifestReferenceDetail $manifestReferenceDetail
      * @return $this
      */
-    public function setManifestReferenceDetail(\FedExVendor\FedEx\CloseService\ComplexType\CloseManifestReferenceDetail $manifestReferenceDetail)
+    public function setManifestReferenceDetail(CloseManifestReferenceDetail $manifestReferenceDetail)
     {
         $this->values['ManifestReferenceDetail'] = $manifestReferenceDetail;
         return $this;
@@ -147,7 +147,7 @@ class CloseWithDocumentsRequest extends \FedExVendor\FedEx\AbstractComplexType
      * @param CloseSmartPostDetail $smartPostDetail
      * @return $this
      */
-    public function setSmartPostDetail(\FedExVendor\FedEx\CloseService\ComplexType\CloseSmartPostDetail $smartPostDetail)
+    public function setSmartPostDetail(CloseSmartPostDetail $smartPostDetail)
     {
         $this->values['SmartPostDetail'] = $smartPostDetail;
         return $this;
@@ -158,7 +158,7 @@ class CloseWithDocumentsRequest extends \FedExVendor\FedEx\AbstractComplexType
      * @param CloseDocumentSpecification $closeDocumentSpecification
      * @return $this
      */
-    public function setCloseDocumentSpecification(\FedExVendor\FedEx\CloseService\ComplexType\CloseDocumentSpecification $closeDocumentSpecification)
+    public function setCloseDocumentSpecification(CloseDocumentSpecification $closeDocumentSpecification)
     {
         $this->values['CloseDocumentSpecification'] = $closeDocumentSpecification;
         return $this;

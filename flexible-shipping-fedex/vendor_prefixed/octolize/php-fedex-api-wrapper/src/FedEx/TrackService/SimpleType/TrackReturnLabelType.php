@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Package Movement Information Service
  */
-class TrackReturnLabelType extends \FedExVendor\FedEx\AbstractSimpleType
+class TrackReturnLabelType extends AbstractSimpleType
 {
     const _EMAIL = 'EMAIL';
     const _PRINT = 'PRINT';

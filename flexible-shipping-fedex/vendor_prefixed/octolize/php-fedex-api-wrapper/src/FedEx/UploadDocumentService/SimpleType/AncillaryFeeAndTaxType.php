@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Upload Document Service
  */
-class AncillaryFeeAndTaxType extends \FedExVendor\FedEx\AbstractSimpleType
+class AncillaryFeeAndTaxType extends AbstractSimpleType
 {
     const _CLEARANCE_ENTRY_FEE = 'CLEARANCE_ENTRY_FEE';
     const _GOODS_AND_SERVICES_TAX = 'GOODS_AND_SERVICES_TAX';

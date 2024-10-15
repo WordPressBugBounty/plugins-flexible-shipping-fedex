@@ -16,7 +16,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property VersionId $Version
  * @property TrackingDocument[] $Documents
  */
-class GetTrackingDocumentsReply extends \FedExVendor\FedEx\AbstractComplexType
+class GetTrackingDocumentsReply extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -52,7 +52,7 @@ class GetTrackingDocumentsReply extends \FedExVendor\FedEx\AbstractComplexType
      * @param TransactionDetail $transactionDetail
      * @return $this
      */
-    public function setTransactionDetail(\FedExVendor\FedEx\TrackService\ComplexType\TransactionDetail $transactionDetail)
+    public function setTransactionDetail(TransactionDetail $transactionDetail)
     {
         $this->values['TransactionDetail'] = $transactionDetail;
         return $this;
@@ -63,7 +63,7 @@ class GetTrackingDocumentsReply extends \FedExVendor\FedEx\AbstractComplexType
      * @param VersionId $version
      * @return $this
      */
-    public function setVersion(\FedExVendor\FedEx\TrackService\ComplexType\VersionId $version)
+    public function setVersion(VersionId $version)
     {
         $this->values['Version'] = $version;
         return $this;

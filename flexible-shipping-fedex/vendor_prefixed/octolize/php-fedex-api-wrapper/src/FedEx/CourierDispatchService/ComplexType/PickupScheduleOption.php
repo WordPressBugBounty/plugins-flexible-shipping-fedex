@@ -22,7 +22,7 @@ would occur on a date prior to the PickupDate).
  * @property string $AccessTime
  * @property boolean $ResidentialAvailable
 */
-class PickupScheduleOption extends \FedExVendor\FedEx\AbstractComplexType
+class PickupScheduleOption extends AbstractComplexType
 {
     /**
      * Name of this complex type

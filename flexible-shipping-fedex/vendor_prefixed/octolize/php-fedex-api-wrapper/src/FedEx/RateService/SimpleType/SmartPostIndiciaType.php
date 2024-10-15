@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
  */
-class SmartPostIndiciaType extends \FedExVendor\FedEx\AbstractSimpleType
+class SmartPostIndiciaType extends AbstractSimpleType
 {
     const _MEDIA_MAIL = 'MEDIA_MAIL';
     const _PARCEL_RETURN = 'PARCEL_RETURN';

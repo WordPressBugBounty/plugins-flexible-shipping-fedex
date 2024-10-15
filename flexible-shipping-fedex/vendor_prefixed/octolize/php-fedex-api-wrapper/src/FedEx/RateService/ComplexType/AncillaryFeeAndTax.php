@@ -14,7 +14,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $Description
  * @property Money $Amount
  */
-class AncillaryFeeAndTax extends \FedExVendor\FedEx\AbstractComplexType
+class AncillaryFeeAndTax extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -50,7 +50,7 @@ class AncillaryFeeAndTax extends \FedExVendor\FedEx\AbstractComplexType
      * @param Money $amount
      * @return $this
      */
-    public function setAmount(\FedExVendor\FedEx\RateService\ComplexType\Money $amount)
+    public function setAmount(Money $amount)
     {
         $this->values['Amount'] = $amount;
         return $this;

@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
  */
-class ReturnType extends \FedExVendor\FedEx\AbstractSimpleType
+class ReturnType extends AbstractSimpleType
 {
     const _FEDEX_TAG = 'FEDEX_TAG';
     const _NET_RETURN = 'NET_RETURN';

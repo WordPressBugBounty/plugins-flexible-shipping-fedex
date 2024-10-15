@@ -25,7 +25,7 @@ use FedExVendor\Illuminate\Contracts\Auth\Access\Gate as GateContract;
  *
  * @see \Illuminate\Contracts\Auth\Access\Gate
  */
-class Gate extends \FedExVendor\Illuminate\Support\Facades\Facade
+class Gate extends Facade
 {
     /**
      * Get the registered name of the component.
@@ -34,6 +34,6 @@ class Gate extends \FedExVendor\Illuminate\Support\Facades\Facade
      */
     protected static function getFacadeAccessor()
     {
-        return \FedExVendor\Illuminate\Contracts\Auth\Access\Gate::class;
+        return GateContract::class;
     }
 }

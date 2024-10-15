@@ -22,7 +22,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $Index
  * @property ShipmentAdvisoryDetail $AdvisoryDetail
  */
-class CreateOpenShipmentReply extends \FedExVendor\FedEx\AbstractComplexType
+class CreateOpenShipmentReply extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -58,7 +58,7 @@ class CreateOpenShipmentReply extends \FedExVendor\FedEx\AbstractComplexType
      * @param TransactionDetail $transactionDetail
      * @return $this
      */
-    public function setTransactionDetail(\FedExVendor\FedEx\OpenShipService\ComplexType\TransactionDetail $transactionDetail)
+    public function setTransactionDetail(TransactionDetail $transactionDetail)
     {
         $this->values['TransactionDetail'] = $transactionDetail;
         return $this;
@@ -69,7 +69,7 @@ class CreateOpenShipmentReply extends \FedExVendor\FedEx\AbstractComplexType
      * @param VersionId $version
      * @return $this
      */
-    public function setVersion(\FedExVendor\FedEx\OpenShipService\ComplexType\VersionId $version)
+    public function setVersion(VersionId $version)
     {
         $this->values['Version'] = $version;
         return $this;
@@ -91,7 +91,7 @@ class CreateOpenShipmentReply extends \FedExVendor\FedEx\AbstractComplexType
      * @param AsynchronousProcessingResultsDetail $asynchronousProcessingResults
      * @return $this
      */
-    public function setAsynchronousProcessingResults(\FedExVendor\FedEx\OpenShipService\ComplexType\AsynchronousProcessingResultsDetail $asynchronousProcessingResults)
+    public function setAsynchronousProcessingResults(AsynchronousProcessingResultsDetail $asynchronousProcessingResults)
     {
         $this->values['AsynchronousProcessingResults'] = $asynchronousProcessingResults;
         return $this;
@@ -113,7 +113,7 @@ class CreateOpenShipmentReply extends \FedExVendor\FedEx\AbstractComplexType
      * @param CompletedShipmentDetail $completedShipmentDetail
      * @return $this
      */
-    public function setCompletedShipmentDetail(\FedExVendor\FedEx\OpenShipService\ComplexType\CompletedShipmentDetail $completedShipmentDetail)
+    public function setCompletedShipmentDetail(CompletedShipmentDetail $completedShipmentDetail)
     {
         $this->values['CompletedShipmentDetail'] = $completedShipmentDetail;
         return $this;
@@ -146,7 +146,7 @@ class CreateOpenShipmentReply extends \FedExVendor\FedEx\AbstractComplexType
      * @param ShipmentAdvisoryDetail $advisoryDetail
      * @return $this
      */
-    public function setAdvisoryDetail(\FedExVendor\FedEx\OpenShipService\ComplexType\ShipmentAdvisoryDetail $advisoryDetail)
+    public function setAdvisoryDetail(ShipmentAdvisoryDetail $advisoryDetail)
     {
         $this->values['AdvisoryDetail'] = $advisoryDetail;
         return $this;

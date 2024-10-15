@@ -26,7 +26,7 @@ class HigherOrderWhenProxy
      * @param  bool  $condition
      * @return void
      */
-    public function __construct(\FedExVendor\Illuminate\Support\Enumerable $collection, $condition)
+    public function __construct(Enumerable $collection, $condition)
     {
         $this->condition = $condition;
         $this->collection = $collection;

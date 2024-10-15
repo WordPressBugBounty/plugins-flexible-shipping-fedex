@@ -20,7 +20,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property boolean $Residential
  * @property string $GeographicCoordinates
  */
-class Address extends \FedExVendor\FedEx\AbstractComplexType
+class Address extends AbstractComplexType
 {
     /**
      * Name of this complex type

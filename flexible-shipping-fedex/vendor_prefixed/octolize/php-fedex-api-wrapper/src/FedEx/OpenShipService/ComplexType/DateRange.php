@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $Begins
  * @property string $Ends
  */
-class DateRange extends \FedExVendor\FedEx\AbstractComplexType
+class DateRange extends AbstractComplexType
 {
     /**
      * Name of this complex type

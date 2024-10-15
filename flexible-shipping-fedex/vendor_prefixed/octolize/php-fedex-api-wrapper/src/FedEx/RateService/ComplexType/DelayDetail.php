@@ -17,7 +17,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property \FedEx\RateService\SimpleType\CommitmentDelayType|string $Type
  * @property string $Description
  */
-class DelayDetail extends \FedExVendor\FedEx\AbstractComplexType
+class DelayDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

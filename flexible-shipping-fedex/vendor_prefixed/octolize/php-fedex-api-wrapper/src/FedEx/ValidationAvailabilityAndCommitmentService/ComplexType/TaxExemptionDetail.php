@@ -15,7 +15,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $Id
  * @property GeoPoliticalEntityDetail $GeoPoliticalEntity
  */
-class TaxExemptionDetail extends \FedExVendor\FedEx\AbstractComplexType
+class TaxExemptionDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -62,7 +62,7 @@ class TaxExemptionDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param GeoPoliticalEntityDetail $geoPoliticalEntity
      * @return $this
      */
-    public function setGeoPoliticalEntity(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\GeoPoliticalEntityDetail $geoPoliticalEntity)
+    public function setGeoPoliticalEntity(GeoPoliticalEntityDetail $geoPoliticalEntity)
     {
         $this->values['GeoPoliticalEntity'] = $geoPoliticalEntity;
         return $this;

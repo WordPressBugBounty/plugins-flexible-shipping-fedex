@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  */
-class CloseTimeType extends \FedExVendor\FedEx\AbstractSimpleType
+class CloseTimeType extends AbstractSimpleType
 {
     const _CUSTOMER_SPECIFIED = 'CUSTOMER_SPECIFIED';
     const _DEFAULT = 'DEFAULT';

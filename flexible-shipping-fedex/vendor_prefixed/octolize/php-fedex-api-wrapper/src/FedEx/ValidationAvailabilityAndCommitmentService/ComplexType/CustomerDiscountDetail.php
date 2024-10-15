@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property boolean $DiscountsApplied
  * @property DateOrTimeRange $EffectiveRange
  */
-class CustomerDiscountDetail extends \FedExVendor\FedEx\AbstractComplexType
+class CustomerDiscountDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -38,7 +38,7 @@ class CustomerDiscountDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param DateOrTimeRange $effectiveRange
      * @return $this
      */
-    public function setEffectiveRange(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\DateOrTimeRange $effectiveRange)
+    public function setEffectiveRange(DateOrTimeRange $effectiveRange)
     {
         $this->values['EffectiveRange'] = $effectiveRange;
         return $this;

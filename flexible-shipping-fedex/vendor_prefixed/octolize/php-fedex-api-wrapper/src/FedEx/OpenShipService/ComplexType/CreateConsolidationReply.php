@@ -18,7 +18,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property TrackingId[] $TrackingIds
  * @property RequestedDistributionLocation[] $EffectiveDistributionLocations
  */
-class CreateConsolidationReply extends \FedExVendor\FedEx\AbstractComplexType
+class CreateConsolidationReply extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -54,7 +54,7 @@ class CreateConsolidationReply extends \FedExVendor\FedEx\AbstractComplexType
      * @param TransactionDetail $transactionDetail
      * @return $this
      */
-    public function setTransactionDetail(\FedExVendor\FedEx\OpenShipService\ComplexType\TransactionDetail $transactionDetail)
+    public function setTransactionDetail(TransactionDetail $transactionDetail)
     {
         $this->values['TransactionDetail'] = $transactionDetail;
         return $this;
@@ -65,7 +65,7 @@ class CreateConsolidationReply extends \FedExVendor\FedEx\AbstractComplexType
      * @param VersionId $version
      * @return $this
      */
-    public function setVersion(\FedExVendor\FedEx\OpenShipService\ComplexType\VersionId $version)
+    public function setVersion(VersionId $version)
     {
         $this->values['Version'] = $version;
         return $this;
@@ -76,7 +76,7 @@ class CreateConsolidationReply extends \FedExVendor\FedEx\AbstractComplexType
      * @param ConsolidationKey $consolidationKey
      * @return $this
      */
-    public function setConsolidationKey(\FedExVendor\FedEx\OpenShipService\ComplexType\ConsolidationKey $consolidationKey)
+    public function setConsolidationKey(ConsolidationKey $consolidationKey)
     {
         $this->values['ConsolidationKey'] = $consolidationKey;
         return $this;

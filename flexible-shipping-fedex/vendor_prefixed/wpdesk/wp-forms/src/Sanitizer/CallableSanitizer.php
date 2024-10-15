@@ -3,7 +3,7 @@
 namespace FedExVendor\WPDesk\Forms\Sanitizer;
 
 use FedExVendor\WPDesk\Forms\Sanitizer;
-class CallableSanitizer implements \FedExVendor\WPDesk\Forms\Sanitizer
+class CallableSanitizer implements Sanitizer
 {
     /** @var callable */
     private $callable;
@@ -11,8 +11,8 @@ class CallableSanitizer implements \FedExVendor\WPDesk\Forms\Sanitizer
     {
         $this->callable = $callable;
     }
-    public function sanitize($value) : string
+    public function sanitize($value): string
     {
-        return \call_user_func($this->callable, $value);
+        return call_user_func($this->callable, $value);
     }
 }

@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Validation Availability And Commitment Service Service
  */
-class LocationAccessibilityType extends \FedExVendor\FedEx\AbstractSimpleType
+class LocationAccessibilityType extends AbstractSimpleType
 {
     const _INSIDE = 'INSIDE';
     const _OUTSIDE = 'OUTSIDE';

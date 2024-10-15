@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property int $Count
  * @property string $Units
  */
-class HazardousCommodityPackagingDetail extends \FedExVendor\FedEx\AbstractComplexType
+class HazardousCommodityPackagingDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

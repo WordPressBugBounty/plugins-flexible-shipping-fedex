@@ -15,7 +15,7 @@ use FedExVendor\WPDesk\FedexShippingService\FedexApi\FedexRequestManipulation;
  *
  * @package WPDesk\FedexShippingService\FedexApi
  */
-class FedexSoapRateReplyInterpretation implements \FedExVendor\WPDesk\AbstractShipping\Rate\ShipmentRating
+class FedexSoapRateReplyInterpretation implements ShipmentRating
 {
     /**
      * Is tax enabled.
@@ -42,7 +42,7 @@ class FedexSoapRateReplyInterpretation implements \FedExVendor\WPDesk\AbstractSh
      * @param bool $is_tax_enabled Is tax enabled.
      * @param string $rate_type Setting value of FedexSettingsDefinition::FIELD_REQUEST_TYPE
      */
-    public function __construct(\FedExVendor\FedEx\RateService\ComplexType\RateReply $reply, $is_tax_enabled, $rate_type)
+    public function __construct(RateReply $reply, $is_tax_enabled, $rate_type)
     {
         $this->reply = $reply;
         $this->is_tax_enabled = $is_tax_enabled;
@@ -55,7 +55,7 @@ class FedexSoapRateReplyInterpretation implements \FedExVendor\WPDesk\AbstractSh
      *
      * @return bool
      */
-    public static function has_reply_error(\FedExVendor\FedEx\RateService\ComplexType\RateReply $reply)
+    public static function has_reply_error(RateReply $reply)
     {
         try {
             return 'ERROR' === $reply->HighestSeverity || 'FAILURE' === $reply->HighestSeverity;
@@ -73,11 +73,11 @@ class FedexSoapRateReplyInterpretation implements \FedExVendor\WPDesk\AbstractSh
      *
      * @return mixed|string
      */
-    public static function get_reply_message(\FedExVendor\FedEx\RateService\ComplexType\RateReply $reply)
+    public static function get_reply_message(RateReply $reply)
     {
         try {
             $notification = $reply->Notifications[0];
-            if (\is_string($notification)) {
+            if (is_string($notification)) {
                 return $notification;
             }
             return $notification->Message;
@@ -95,7 +95,7 @@ class FedexSoapRateReplyInterpretation implements \FedExVendor\WPDesk\AbstractSh
      *
      * @return bool
      */
-    public static function has_reply_warning(\FedExVendor\FedEx\RateService\ComplexType\RateReply $reply)
+    public static function has_reply_warning(RateReply $reply)
     {
         return 'WARNING' === $reply->HighestSeverity;
     }
@@ -107,15 +107,15 @@ class FedexSoapRateReplyInterpretation implements \FedExVendor\WPDesk\AbstractSh
      *
      * @return SingleRate
      */
-    protected function get_single_rate(\FedExVendor\FedEx\RateService\ComplexType\RatedShipmentDetail $rated_shipment_detail, \FedExVendor\FedEx\RateService\ComplexType\RateReplyDetail $reply_detail)
+    protected function get_single_rate(RatedShipmentDetail $rated_shipment_detail, RateReplyDetail $reply_detail)
     {
-        $rate = new \FedExVendor\WPDesk\AbstractShipping\Rate\SingleRate();
-        $money = new \FedExVendor\WPDesk\AbstractShipping\Rate\Money();
+        $rate = new SingleRate();
+        $money = new Money();
         if ($this->is_tax_enabled) {
-            $money->currency = \FedExVendor\WPDesk\FedexShippingService\FedexApi\FedexRequestManipulation::convert_currency_from_fedex($rated_shipment_detail->ShipmentRateDetail->TotalNetFedExCharge->Currency);
+            $money->currency = FedexRequestManipulation::convert_currency_from_fedex($rated_shipment_detail->ShipmentRateDetail->TotalNetFedExCharge->Currency);
             $money->amount = $rated_shipment_detail->ShipmentRateDetail->TotalNetFedExCharge->Amount;
         } else {
-            $money->currency = \FedExVendor\WPDesk\FedexShippingService\FedexApi\FedexRequestManipulation::convert_currency_from_fedex($rated_shipment_detail->ShipmentRateDetail->TotalNetCharge->Currency);
+            $money->currency = FedexRequestManipulation::convert_currency_from_fedex($rated_shipment_detail->ShipmentRateDetail->TotalNetCharge->Currency);
             $money->amount = $rated_shipment_detail->ShipmentRateDetail->TotalNetCharge->Amount;
         }
         $rate->total_charge = $money;
@@ -144,7 +144,7 @@ class FedexSoapRateReplyInterpretation implements \FedExVendor\WPDesk\AbstractSh
             foreach ($reply->RateReplyDetails as $reply_detail) {
                 if (!empty($reply_detail->RatedShipmentDetails)) {
                     foreach ($reply_detail->RatedShipmentDetails as $rated_shipment_detail) {
-                        if ($this->rate_type === \FedExVendor\FedEx\RateService\SimpleType\RateTypeBasisType::_LIST && \false === \strpos($rated_shipment_detail->ShipmentRateDetail->RateType, 'PAYOR_LIST')) {
+                        if ($this->rate_type === RateTypeBasisType::_LIST && \false === strpos($rated_shipment_detail->ShipmentRateDetail->RateType, 'PAYOR_LIST')) {
                             continue;
                         }
                         if (!empty($reply_detail->ServiceType)) {

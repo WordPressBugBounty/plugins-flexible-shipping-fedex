@@ -14,7 +14,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $Time
  * @property LatestDropoffOverlayDetail[] $Overlays
  */
-class LatestDropOffDetail extends \FedExVendor\FedEx\AbstractComplexType
+class LatestDropOffDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

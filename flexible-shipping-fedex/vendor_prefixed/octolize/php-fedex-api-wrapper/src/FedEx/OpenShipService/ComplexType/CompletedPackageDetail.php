@@ -24,7 +24,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property Weight $DryIceWeight
  * @property CompletedHazardousPackageDetail $HazardousPackageDetail
  */
-class CompletedPackageDetail extends \FedExVendor\FedEx\AbstractComplexType
+class CompletedPackageDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -82,7 +82,7 @@ class CompletedPackageDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param PackageRating $packageRating
      * @return $this
      */
-    public function setPackageRating(\FedExVendor\FedEx\OpenShipService\ComplexType\PackageRating $packageRating)
+    public function setPackageRating(PackageRating $packageRating)
     {
         $this->values['PackageRating'] = $packageRating;
         return $this;
@@ -104,7 +104,7 @@ class CompletedPackageDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param PackageOperationalDetail $operationalDetail
      * @return $this
      */
-    public function setOperationalDetail(\FedExVendor\FedEx\OpenShipService\ComplexType\PackageOperationalDetail $operationalDetail)
+    public function setOperationalDetail(PackageOperationalDetail $operationalDetail)
     {
         $this->values['OperationalDetail'] = $operationalDetail;
         return $this;
@@ -115,7 +115,7 @@ class CompletedPackageDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param ShippingDocument $label
      * @return $this
      */
-    public function setLabel(\FedExVendor\FedEx\OpenShipService\ComplexType\ShippingDocument $label)
+    public function setLabel(ShippingDocument $label)
     {
         $this->values['Label'] = $label;
         return $this;
@@ -137,7 +137,7 @@ class CompletedPackageDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param CodReturnPackageDetail $codReturnDetail
      * @return $this
      */
-    public function setCodReturnDetail(\FedExVendor\FedEx\OpenShipService\ComplexType\CodReturnPackageDetail $codReturnDetail)
+    public function setCodReturnDetail(CodReturnPackageDetail $codReturnDetail)
     {
         $this->values['CodReturnDetail'] = $codReturnDetail;
         return $this;
@@ -159,7 +159,7 @@ class CompletedPackageDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param Weight $dryIceWeight
      * @return $this
      */
-    public function setDryIceWeight(\FedExVendor\FedEx\OpenShipService\ComplexType\Weight $dryIceWeight)
+    public function setDryIceWeight(Weight $dryIceWeight)
     {
         $this->values['DryIceWeight'] = $dryIceWeight;
         return $this;
@@ -170,7 +170,7 @@ class CompletedPackageDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param CompletedHazardousPackageDetail $hazardousPackageDetail
      * @return $this
      */
-    public function setHazardousPackageDetail(\FedExVendor\FedEx\OpenShipService\ComplexType\CompletedHazardousPackageDetail $hazardousPackageDetail)
+    public function setHazardousPackageDetail(CompletedHazardousPackageDetail $hazardousPackageDetail)
     {
         $this->values['HazardousPackageDetail'] = $hazardousPackageDetail;
         return $this;

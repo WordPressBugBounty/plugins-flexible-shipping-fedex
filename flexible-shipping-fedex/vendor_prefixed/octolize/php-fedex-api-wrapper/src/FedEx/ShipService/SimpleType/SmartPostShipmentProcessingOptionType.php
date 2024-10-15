@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
  */
-class SmartPostShipmentProcessingOptionType extends \FedExVendor\FedEx\AbstractSimpleType
+class SmartPostShipmentProcessingOptionType extends AbstractSimpleType
 {
     const _GROUND_TRACKING_NUMBER_REQUESTED = 'GROUND_TRACKING_NUMBER_REQUESTED';
 }

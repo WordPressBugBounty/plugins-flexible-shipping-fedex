@@ -18,7 +18,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property int $FontSize
  * @property \FedEx\UploadDocumentService\SimpleType\RotationType|string $Rotation
  */
-class CustomLabelTextEntry extends \FedExVendor\FedEx\AbstractComplexType
+class CustomLabelTextEntry extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -32,7 +32,7 @@ class CustomLabelTextEntry extends \FedExVendor\FedEx\AbstractComplexType
      * @param CustomLabelPosition $position
      * @return $this
      */
-    public function setPosition(\FedExVendor\FedEx\UploadDocumentService\ComplexType\CustomLabelPosition $position)
+    public function setPosition(CustomLabelPosition $position)
     {
         $this->values['Position'] = $position;
         return $this;

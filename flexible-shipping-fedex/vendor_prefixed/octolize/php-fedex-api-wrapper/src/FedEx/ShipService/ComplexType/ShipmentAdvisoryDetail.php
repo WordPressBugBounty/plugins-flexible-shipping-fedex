@@ -12,7 +12,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  *
  * @property RegulatoryAdvisoryDetail $RegulatoryAdvisory
  */
-class ShipmentAdvisoryDetail extends \FedExVendor\FedEx\AbstractComplexType
+class ShipmentAdvisoryDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -26,7 +26,7 @@ class ShipmentAdvisoryDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param RegulatoryAdvisoryDetail $regulatoryAdvisory
      * @return $this
      */
-    public function setRegulatoryAdvisory(\FedExVendor\FedEx\ShipService\ComplexType\RegulatoryAdvisoryDetail $regulatoryAdvisory)
+    public function setRegulatoryAdvisory(RegulatoryAdvisoryDetail $regulatoryAdvisory)
     {
         $this->values['RegulatoryAdvisory'] = $regulatoryAdvisory;
         return $this;

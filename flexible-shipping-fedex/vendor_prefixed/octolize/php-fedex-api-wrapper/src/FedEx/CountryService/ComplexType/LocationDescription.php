@@ -21,7 +21,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property \FedEx\CountryService\SimpleType\ShipmentSpecialServiceType|string[] $RestrictedShipmentSpecialServices
  * @property boolean $FedExEuropeFirstOrigin
  */
-class LocationDescription extends \FedExVendor\FedEx\AbstractComplexType
+class LocationDescription extends AbstractComplexType
 {
     /**
      * Name of this complex type

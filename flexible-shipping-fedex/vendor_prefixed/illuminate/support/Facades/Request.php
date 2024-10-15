@@ -89,7 +89,7 @@ namespace FedExVendor\Illuminate\Support\Facades;
  *
  * @see \Illuminate\Http\Request
  */
-class Request extends \FedExVendor\Illuminate\Support\Facades\Facade
+class Request extends Facade
 {
     /**
      * Get the registered name of the component.

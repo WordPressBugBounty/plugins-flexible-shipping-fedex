@@ -12,7 +12,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  *
  * @property WebAuthenticationCredential $UserCredential
  */
-class WebAuthenticationDetail extends \FedExVendor\FedEx\AbstractComplexType
+class WebAuthenticationDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -26,7 +26,7 @@ class WebAuthenticationDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param WebAuthenticationCredential $userCredential
      * @return $this
      */
-    public function setUserCredential(\FedExVendor\FedEx\PackageMovementInformationService\ComplexType\WebAuthenticationCredential $userCredential)
+    public function setUserCredential(WebAuthenticationCredential $userCredential)
     {
         $this->values['UserCredential'] = $userCredential;
         return $this;

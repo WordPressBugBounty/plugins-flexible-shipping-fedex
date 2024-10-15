@@ -14,7 +14,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property \FedEx\LocationsService\SimpleType\OperationalHoursType|string $OperationalHours
  * @property TimeRange[] $Hours
  */
-class LocationHours extends \FedExVendor\FedEx\AbstractComplexType
+class LocationHours extends AbstractComplexType
 {
     /**
      * Name of this complex type

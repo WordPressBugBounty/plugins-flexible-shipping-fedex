@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  OpenShip Service
  */
-class RegulatoryControlType extends \FedExVendor\FedEx\AbstractSimpleType
+class RegulatoryControlType extends AbstractSimpleType
 {
     const _FOOD_OR_PERISHABLE = 'FOOD_OR_PERISHABLE';
     const _NOT_APPLICABLE_FOR_LOW_CUSTOMS_VALUE_EXCEPTION = 'NOT_APPLICABLE_FOR_LOW_CUSTOMS_VALUE_EXCEPTION';

@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
  */
-class FreightGuaranteeType extends \FedExVendor\FedEx\AbstractSimpleType
+class FreightGuaranteeType extends AbstractSimpleType
 {
     const _GUARANTEED_DATE = 'GUARANTEED_DATE';
     const _GUARANTEED_MORNING = 'GUARANTEED_MORNING';

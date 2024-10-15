@@ -22,7 +22,7 @@ namespace FedExVendor\Illuminate\Support\Facades;
  *
  * @see \Illuminate\Log\Logger
  */
-class Log extends \FedExVendor\Illuminate\Support\Facades\Facade
+class Log extends Facade
 {
     /**
      * Get the registered name of the component.

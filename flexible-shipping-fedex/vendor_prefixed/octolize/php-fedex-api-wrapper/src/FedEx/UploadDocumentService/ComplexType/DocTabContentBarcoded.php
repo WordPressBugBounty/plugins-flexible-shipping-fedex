@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property \FedEx\UploadDocumentService\SimpleType\BarcodeSymbologyType|string $Symbology
  * @property DocTabZoneSpecification $Specification
  */
-class DocTabContentBarcoded extends \FedExVendor\FedEx\AbstractComplexType
+class DocTabContentBarcoded extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -38,7 +38,7 @@ class DocTabContentBarcoded extends \FedExVendor\FedEx\AbstractComplexType
      * @param DocTabZoneSpecification $specification
      * @return $this
      */
-    public function setSpecification(\FedExVendor\FedEx\UploadDocumentService\ComplexType\DocTabZoneSpecification $specification)
+    public function setSpecification(DocTabZoneSpecification $specification)
     {
         $this->values['Specification'] = $specification;
         return $this;

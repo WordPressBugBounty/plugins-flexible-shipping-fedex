@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
  */
-class ShipmentDryIceProcessingOptionType extends \FedExVendor\FedEx\AbstractSimpleType
+class ShipmentDryIceProcessingOptionType extends AbstractSimpleType
 {
     const _SHIPMENT_LEVEL_DRY_ICE_ONLY = 'SHIPMENT_LEVEL_DRY_ICE_ONLY';
 }

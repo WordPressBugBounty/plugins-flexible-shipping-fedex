@@ -17,7 +17,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property \FedEx\AsyncService\SimpleType\ExpressRegionCode|string $Region
  * @property Localization $Localization
  */
-class ClientDetail extends \FedExVendor\FedEx\AbstractComplexType
+class ClientDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -86,7 +86,7 @@ class ClientDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param Localization $localization
      * @return $this
      */
-    public function setLocalization(\FedExVendor\FedEx\AsyncService\ComplexType\Localization $localization)
+    public function setLocalization(Localization $localization)
     {
         $this->values['Localization'] = $localization;
         return $this;

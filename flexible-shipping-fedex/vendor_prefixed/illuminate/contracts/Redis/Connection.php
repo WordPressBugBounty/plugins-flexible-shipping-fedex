@@ -12,7 +12,7 @@ interface Connection
      * @param  \Closure  $callback
      * @return void
      */
-    public function subscribe($channels, \Closure $callback);
+    public function subscribe($channels, Closure $callback);
     /**
      * Subscribe to a set of given channels with wildcards.
      *
@@ -20,7 +20,7 @@ interface Connection
      * @param  \Closure  $callback
      * @return void
      */
-    public function psubscribe($channels, \Closure $callback);
+    public function psubscribe($channels, Closure $callback);
     /**
      * Run a command against the Redis database.
      *

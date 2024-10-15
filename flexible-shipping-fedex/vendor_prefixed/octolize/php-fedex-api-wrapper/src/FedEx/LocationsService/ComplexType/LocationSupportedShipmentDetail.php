@@ -12,7 +12,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  *
  * @property LocationSupportedPackageDetail[] $PackageDetails
  */
-class LocationSupportedShipmentDetail extends \FedExVendor\FedEx\AbstractComplexType
+class LocationSupportedShipmentDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

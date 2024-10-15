@@ -14,7 +14,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $EffectiveDate
  * @property string $ExpirationDate
  */
-class AccountGroupMembershipDetail extends \FedExVendor\FedEx\AbstractComplexType
+class AccountGroupMembershipDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -28,7 +28,7 @@ class AccountGroupMembershipDetail extends \FedExVendor\FedEx\AbstractComplexTyp
      * @param AccountGroupDetail $accountGroup
      * @return $this
      */
-    public function setAccountGroup(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\AccountGroupDetail $accountGroup)
+    public function setAccountGroup(AccountGroupDetail $accountGroup)
     {
         $this->values['AccountGroup'] = $accountGroup;
         return $this;

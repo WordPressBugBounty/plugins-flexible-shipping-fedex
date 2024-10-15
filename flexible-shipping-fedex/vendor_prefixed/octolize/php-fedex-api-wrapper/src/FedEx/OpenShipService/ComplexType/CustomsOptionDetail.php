@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property \FedEx\OpenShipService\SimpleType\CustomsOptionType|string $Type
  * @property string $Description
  */
-class CustomsOptionDetail extends \FedExVendor\FedEx\AbstractComplexType
+class CustomsOptionDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

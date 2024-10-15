@@ -3,6 +3,6 @@
 namespace FedExVendor\Illuminate\Support;
 
 use RuntimeException;
-class ItemNotFoundException extends \RuntimeException
+class ItemNotFoundException extends RuntimeException
 {
 }

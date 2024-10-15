@@ -7,7 +7,7 @@ use FedExVendor\Illuminate\Contracts\Support\Arrayable;
 use FedExVendor\Illuminate\Contracts\Support\Jsonable;
 use IteratorAggregate;
 use JsonSerializable;
-interface Enumerable extends \FedExVendor\Illuminate\Contracts\Support\Arrayable, \Countable, \IteratorAggregate, \FedExVendor\Illuminate\Contracts\Support\Jsonable, \JsonSerializable
+interface Enumerable extends Arrayable, Countable, IteratorAggregate, Jsonable, JsonSerializable
 {
     /**
      * Create a new collection instance if the value isn't one already.

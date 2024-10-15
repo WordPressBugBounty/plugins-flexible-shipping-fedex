@@ -12,25 +12,25 @@ class RatesResponse
         $this->data = $data;
         $this->config = $config;
     }
-    public function details(string $type = null) : array
+    public function details(string $type = null): array
     {
-        return \array_map(function (array $service) use($type) {
-            $price = \FedExVendor\Illuminate\Support\Arr::first($service['ratedShipmentDetails'], function (array $details) use($type) {
+        return array_map(function (array $service) use ($type) {
+            $price = Arr::first($service['ratedShipmentDetails'], function (array $details) use ($type) {
                 return !$type || $details['rateType'] == $type;
             });
-            return \array_merge(['serviceType' => $service['serviceType'], 'serviceName' => $service['serviceName'], 'rateType' => $price['rateType'], 'charges' => ['base' => $price['totalBaseCharge'], 'surcharge' => \FedExVendor\Illuminate\Support\Arr::get($price, 'shipmentRateDetail.totalSurcharges'), 'discounts' => $price['totalDiscounts'], 'total' => $price['totalNetCharge'], 'currency' => $price['currency']], 'shipmentDetails' => $price], \FedExVendor\Illuminate\Support\Arr::get($this->config, 'ratesRaw', \false) ? ['raw' => $service] : [], isset($service['commit']) ? ['transitTime' => $service['commit']] : []);
+            return array_merge(['serviceType' => $service['serviceType'], 'serviceName' => $service['serviceName'], 'rateType' => $price['rateType'], 'charges' => ['base' => $price['totalBaseCharge'], 'surcharge' => Arr::get($price, 'shipmentRateDetail.totalSurcharges'), 'discounts' => $price['totalDiscounts'], 'total' => $price['totalNetCharge'], 'currency' => $price['currency']], 'shipmentDetails' => $price], Arr::get($this->config, 'ratesRaw', \false) ? ['raw' => $service] : [], isset($service['commit']) ? ['transitTime' => $service['commit']] : []);
         }, $this->getRateReplyDetails());
     }
-    public function alerts() : array
+    public function alerts(): array
     {
-        return \FedExVendor\Illuminate\Support\Arr::get($this->data, 'output.alerts', []);
+        return Arr::get($this->data, 'output.alerts', []);
     }
-    public function getData() : array
+    public function getData(): array
     {
         return $this->data;
     }
-    public function getRateReplyDetails() : array
+    public function getRateReplyDetails(): array
     {
-        return \FedExVendor\Illuminate\Support\Arr::get($this->data, 'output.rateReplyDetails', []);
+        return Arr::get($this->data, 'output.rateReplyDetails', []);
     }
 }

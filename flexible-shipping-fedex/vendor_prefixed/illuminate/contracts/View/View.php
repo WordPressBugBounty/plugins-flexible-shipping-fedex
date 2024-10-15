@@ -3,7 +3,7 @@
 namespace FedExVendor\Illuminate\Contracts\View;
 
 use FedExVendor\Illuminate\Contracts\Support\Renderable;
-interface View extends \FedExVendor\Illuminate\Contracts\Support\Renderable
+interface View extends Renderable
 {
     /**
      * Get the name of the view.

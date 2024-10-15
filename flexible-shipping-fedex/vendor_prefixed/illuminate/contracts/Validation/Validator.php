@@ -3,7 +3,7 @@
 namespace FedExVendor\Illuminate\Contracts\Validation;
 
 use FedExVendor\Illuminate\Contracts\Support\MessageProvider;
-interface Validator extends \FedExVendor\Illuminate\Contracts\Support\MessageProvider
+interface Validator extends MessageProvider
 {
     /**
      * Run the validator's rules against its data.

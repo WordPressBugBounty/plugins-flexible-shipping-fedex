@@ -16,7 +16,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property UploadDocumentDetail[] $Documents
  * @property UploadDocumentReferenceDetail[] $DocumentReferences
  */
-class EtdDetail extends \FedExVendor\FedEx\AbstractComplexType
+class EtdDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

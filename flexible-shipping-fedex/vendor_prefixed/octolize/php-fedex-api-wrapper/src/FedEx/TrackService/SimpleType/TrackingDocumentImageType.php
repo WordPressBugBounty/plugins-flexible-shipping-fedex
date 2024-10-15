@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Package Movement Information Service
  */
-class TrackingDocumentImageType extends \FedExVendor\FedEx\AbstractSimpleType
+class TrackingDocumentImageType extends AbstractSimpleType
 {
     const _PDF = 'PDF';
     const _PNG = 'PNG';

@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property \FedEx\ValidationAvailabilityAndCommitmentService\SimpleType\PackageLineItemStatusType|string[] $Status
  * @property DeletionDetail $DeletionDetail
  */
-class PackageStatusDetail extends \FedExVendor\FedEx\AbstractComplexType
+class PackageStatusDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -38,7 +38,7 @@ class PackageStatusDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param DeletionDetail $deletionDetail
      * @return $this
      */
-    public function setDeletionDetail(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\DeletionDetail $deletionDetail)
+    public function setDeletionDetail(DeletionDetail $deletionDetail)
     {
         $this->values['DeletionDetail'] = $deletionDetail;
         return $this;

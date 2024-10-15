@@ -12,7 +12,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  *
  * @property DateOrTimeRange[] $ApplicableDateTimeRanges
  */
-class EnterpriseCustomerDiscountDetail extends \FedExVendor\FedEx\AbstractComplexType
+class EnterpriseCustomerDiscountDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

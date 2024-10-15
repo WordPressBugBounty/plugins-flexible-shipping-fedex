@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property \FedEx\OpenShipService\SimpleType\ConsolidationDataType|string $Field
  * @property \FedEx\OpenShipService\SimpleType\ConsolidationDataSourceType|string $Source
  */
-class ConsolidationDataSource extends \FedExVendor\FedEx\AbstractComplexType
+class ConsolidationDataSource extends AbstractComplexType
 {
     /**
      * Name of this complex type

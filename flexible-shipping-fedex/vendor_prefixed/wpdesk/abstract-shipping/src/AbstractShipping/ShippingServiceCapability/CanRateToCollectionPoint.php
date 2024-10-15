@@ -25,7 +25,7 @@ interface CanRateToCollectionPoint
      *
      * @return ShipmentRating
      */
-    public function rate_shipment_to_collection_point(\FedExVendor\WPDesk\AbstractShipping\Settings\SettingsValues $settings, \FedExVendor\WPDesk\AbstractShipping\Shipment\Shipment $shipment, \FedExVendor\WPDesk\AbstractShipping\CollectionPoints\CollectionPoint $collection_point);
+    public function rate_shipment_to_collection_point(SettingsValues $settings, Shipment $shipment, CollectionPoint $collection_point);
     /**
      * Is rate to collection point enabled?
      *
@@ -33,5 +33,5 @@ interface CanRateToCollectionPoint
      *
      * @return mixed
      */
-    public function is_rate_to_collection_point_enabled(\FedExVendor\WPDesk\AbstractShipping\Settings\SettingsValues $settings);
+    public function is_rate_to_collection_point_enabled(SettingsValues $settings);
 }

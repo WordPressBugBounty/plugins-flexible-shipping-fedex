@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Package Movement Information Service
  */
-class TrackDeliveryLocationType extends \FedExVendor\FedEx\AbstractSimpleType
+class TrackDeliveryLocationType extends AbstractSimpleType
 {
     const _APARTMENT_OFFICE = 'APARTMENT_OFFICE';
     const _FEDEX_LOCATION = 'FEDEX_LOCATION';

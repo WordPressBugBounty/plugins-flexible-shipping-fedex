@@ -15,7 +15,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $StatusDescription
  * @property string $CreateTime
  */
-class CustomerExceptionRequestDetail extends \FedExVendor\FedEx\AbstractComplexType
+class CustomerExceptionRequestDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

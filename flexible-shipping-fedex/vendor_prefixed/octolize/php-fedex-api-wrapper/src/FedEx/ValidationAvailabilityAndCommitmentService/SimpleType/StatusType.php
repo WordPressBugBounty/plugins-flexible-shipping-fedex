@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Validation Availability And Commitment Service Service
  */
-class StatusType extends \FedExVendor\FedEx\AbstractSimpleType
+class StatusType extends AbstractSimpleType
 {
     const _ACTIVE = 'ACTIVE';
     const _EXPIRED = 'EXPIRED';

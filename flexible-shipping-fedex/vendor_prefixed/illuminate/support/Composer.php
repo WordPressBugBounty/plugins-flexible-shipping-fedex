@@ -26,7 +26,7 @@ class Composer
      * @param  string|null  $workingPath
      * @return void
      */
-    public function __construct(\FedExVendor\Illuminate\Filesystem\Filesystem $files, $workingPath = null)
+    public function __construct(Filesystem $files, $workingPath = null)
     {
         $this->files = $files;
         $this->workingPath = $workingPath;
@@ -40,7 +40,7 @@ class Composer
     public function dumpAutoloads($extra = '')
     {
         $extra = $extra ? (array) $extra : [];
-        $command = \array_merge($this->findComposer(), ['dump-autoload'], $extra);
+        $command = array_merge($this->findComposer(), ['dump-autoload'], $extra);
         return $this->getProcess($command)->run();
     }
     /**
@@ -71,7 +71,7 @@ class Composer
      */
     protected function phpBinary()
     {
-        return \FedExVendor\Illuminate\Support\ProcessUtils::escapeArgument((new \FedExVendor\Symfony\Component\Process\PhpExecutableFinder())->find(\false));
+        return ProcessUtils::escapeArgument((new PhpExecutableFinder())->find(\false));
     }
     /**
      * Get a new Symfony process instance.
@@ -81,7 +81,7 @@ class Composer
      */
     protected function getProcess(array $command)
     {
-        return (new \FedExVendor\Symfony\Component\Process\Process($command, $this->workingPath))->setTimeout(null);
+        return (new Process($command, $this->workingPath))->setTimeout(null);
     }
     /**
      * Set the working path used by the class.
@@ -91,7 +91,7 @@ class Composer
      */
     public function setWorkingPath($path)
     {
-        $this->workingPath = \realpath($path);
+        $this->workingPath = realpath($path);
         return $this;
     }
 }

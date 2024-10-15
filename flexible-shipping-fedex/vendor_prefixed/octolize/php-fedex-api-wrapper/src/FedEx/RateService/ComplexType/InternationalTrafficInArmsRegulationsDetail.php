@@ -12,7 +12,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  *
  * @property string $LicenseOrExemptionNumber
  */
-class InternationalTrafficInArmsRegulationsDetail extends \FedExVendor\FedEx\AbstractComplexType
+class InternationalTrafficInArmsRegulationsDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

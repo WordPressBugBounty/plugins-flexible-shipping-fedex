@@ -26,7 +26,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property Dimensions $Dimensions
  * @property Volume $Volume
  */
-class FreightShipmentLineItem extends \FedExVendor\FedEx\AbstractComplexType
+class FreightShipmentLineItem extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -84,7 +84,7 @@ class FreightShipmentLineItem extends \FedExVendor\FedEx\AbstractComplexType
      * @param LiabilityCoverageDetail $liabilityCoverageDetail
      * @return $this
      */
-    public function setLiabilityCoverageDetail(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\LiabilityCoverageDetail $liabilityCoverageDetail)
+    public function setLiabilityCoverageDetail(LiabilityCoverageDetail $liabilityCoverageDetail)
     {
         $this->values['LiabilityCoverageDetail'] = $liabilityCoverageDetail;
         return $this;
@@ -172,7 +172,7 @@ class FreightShipmentLineItem extends \FedExVendor\FedEx\AbstractComplexType
      * @param Weight $weight
      * @return $this
      */
-    public function setWeight(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\Weight $weight)
+    public function setWeight(Weight $weight)
     {
         $this->values['Weight'] = $weight;
         return $this;
@@ -183,7 +183,7 @@ class FreightShipmentLineItem extends \FedExVendor\FedEx\AbstractComplexType
      * @param Dimensions $dimensions
      * @return $this
      */
-    public function setDimensions(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\Dimensions $dimensions)
+    public function setDimensions(Dimensions $dimensions)
     {
         $this->values['Dimensions'] = $dimensions;
         return $this;
@@ -194,7 +194,7 @@ class FreightShipmentLineItem extends \FedExVendor\FedEx\AbstractComplexType
      * @param Volume $volume
      * @return $this
      */
-    public function setVolume(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\Volume $volume)
+    public function setVolume(Volume $volume)
     {
         $this->values['Volume'] = $volume;
         return $this;

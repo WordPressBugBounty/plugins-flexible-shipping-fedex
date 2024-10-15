@@ -22,7 +22,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $Packaging
  * @property int $PackageCount
  */
-class ServiceAvailabilityRequest extends \FedExVendor\FedEx\AbstractComplexType
+class ServiceAvailabilityRequest extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -36,7 +36,7 @@ class ServiceAvailabilityRequest extends \FedExVendor\FedEx\AbstractComplexType
      * @param WebAuthenticationDetail $webAuthenticationDetail
      * @return $this
      */
-    public function setWebAuthenticationDetail(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\WebAuthenticationDetail $webAuthenticationDetail)
+    public function setWebAuthenticationDetail(WebAuthenticationDetail $webAuthenticationDetail)
     {
         $this->values['WebAuthenticationDetail'] = $webAuthenticationDetail;
         return $this;
@@ -47,7 +47,7 @@ class ServiceAvailabilityRequest extends \FedExVendor\FedEx\AbstractComplexType
      * @param ClientDetail $clientDetail
      * @return $this
      */
-    public function setClientDetail(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\ClientDetail $clientDetail)
+    public function setClientDetail(ClientDetail $clientDetail)
     {
         $this->values['ClientDetail'] = $clientDetail;
         return $this;
@@ -58,7 +58,7 @@ class ServiceAvailabilityRequest extends \FedExVendor\FedEx\AbstractComplexType
      * @param TransactionDetail $transactionDetail
      * @return $this
      */
-    public function setTransactionDetail(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\TransactionDetail $transactionDetail)
+    public function setTransactionDetail(TransactionDetail $transactionDetail)
     {
         $this->values['TransactionDetail'] = $transactionDetail;
         return $this;
@@ -69,7 +69,7 @@ class ServiceAvailabilityRequest extends \FedExVendor\FedEx\AbstractComplexType
      * @param VersionId $version
      * @return $this
      */
-    public function setVersion(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\VersionId $version)
+    public function setVersion(VersionId $version)
     {
         $this->values['Version'] = $version;
         return $this;
@@ -80,7 +80,7 @@ class ServiceAvailabilityRequest extends \FedExVendor\FedEx\AbstractComplexType
      * @param Address $origin
      * @return $this
      */
-    public function setOrigin(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\Address $origin)
+    public function setOrigin(Address $origin)
     {
         $this->values['Origin'] = $origin;
         return $this;
@@ -91,7 +91,7 @@ class ServiceAvailabilityRequest extends \FedExVendor\FedEx\AbstractComplexType
      * @param Address $destination
      * @return $this
      */
-    public function setDestination(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\Address $destination)
+    public function setDestination(Address $destination)
     {
         $this->values['Destination'] = $destination;
         return $this;

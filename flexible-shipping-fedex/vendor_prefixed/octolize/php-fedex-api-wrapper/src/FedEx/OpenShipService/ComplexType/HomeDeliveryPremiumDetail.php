@@ -14,7 +14,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $Date
  * @property string $PhoneNumber
  */
-class HomeDeliveryPremiumDetail extends \FedExVendor\FedEx\AbstractComplexType
+class HomeDeliveryPremiumDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

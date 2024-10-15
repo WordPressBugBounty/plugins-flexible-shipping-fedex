@@ -12,7 +12,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  *
  * @property \FedEx\InFlightShipmentService\SimpleType\DocumentFormatOptionType|string[] $Options
  */
-class DocumentFormatOptionsRequested extends \FedExVendor\FedEx\AbstractComplexType
+class DocumentFormatOptionsRequested extends AbstractComplexType
 {
     /**
      * Name of this complex type

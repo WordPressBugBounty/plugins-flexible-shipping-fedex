@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Package Movement Information Service
  */
-class DistanceUnits extends \FedExVendor\FedEx\AbstractSimpleType
+class DistanceUnits extends AbstractSimpleType
 {
     const _KM = 'KM';
     const _MI = 'MI';

@@ -15,7 +15,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $LocalizedText
  * @property MessageParameter[] $Parameters
  */
-class Message extends \FedExVendor\FedEx\AbstractComplexType
+class Message extends AbstractComplexType
 {
     /**
      * Name of this complex type

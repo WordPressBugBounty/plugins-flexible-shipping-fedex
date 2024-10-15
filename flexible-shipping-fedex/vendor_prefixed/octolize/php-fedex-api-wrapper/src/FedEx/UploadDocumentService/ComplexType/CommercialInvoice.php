@@ -25,7 +25,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $OriginatorName
  * @property string $TermsOfSale
  */
-class CommercialInvoice extends \FedExVendor\FedEx\AbstractComplexType
+class CommercialInvoice extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -50,7 +50,7 @@ class CommercialInvoice extends \FedExVendor\FedEx\AbstractComplexType
      * @param Money $freightCharge
      * @return $this
      */
-    public function setFreightCharge(\FedExVendor\FedEx\UploadDocumentService\ComplexType\Money $freightCharge)
+    public function setFreightCharge(Money $freightCharge)
     {
         $this->values['FreightCharge'] = $freightCharge;
         return $this;
@@ -61,7 +61,7 @@ class CommercialInvoice extends \FedExVendor\FedEx\AbstractComplexType
      * @param Money $taxesOrMiscellaneousCharge
      * @return $this
      */
-    public function setTaxesOrMiscellaneousCharge(\FedExVendor\FedEx\UploadDocumentService\ComplexType\Money $taxesOrMiscellaneousCharge)
+    public function setTaxesOrMiscellaneousCharge(Money $taxesOrMiscellaneousCharge)
     {
         $this->values['TaxesOrMiscellaneousCharge'] = $taxesOrMiscellaneousCharge;
         return $this;
@@ -83,7 +83,7 @@ class CommercialInvoice extends \FedExVendor\FedEx\AbstractComplexType
      * @param Money $packingCosts
      * @return $this
      */
-    public function setPackingCosts(\FedExVendor\FedEx\UploadDocumentService\ComplexType\Money $packingCosts)
+    public function setPackingCosts(Money $packingCosts)
     {
         $this->values['PackingCosts'] = $packingCosts;
         return $this;
@@ -94,7 +94,7 @@ class CommercialInvoice extends \FedExVendor\FedEx\AbstractComplexType
      * @param Money $handlingCosts
      * @return $this
      */
-    public function setHandlingCosts(\FedExVendor\FedEx\UploadDocumentService\ComplexType\Money $handlingCosts)
+    public function setHandlingCosts(Money $handlingCosts)
     {
         $this->values['HandlingCosts'] = $handlingCosts;
         return $this;

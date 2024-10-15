@@ -12,7 +12,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  *
  * @property \FedEx\ShipService\SimpleType\CustomsDeclarationStatementType|string[] $Types
  */
-class CustomsDeclarationStatementDetail extends \FedExVendor\FedEx\AbstractComplexType
+class CustomsDeclarationStatementDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

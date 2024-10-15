@@ -37,7 +37,7 @@ abstract class Manager
      * @param  \Illuminate\Contracts\Container\Container  $container
      * @return void
      */
-    public function __construct(\FedExVendor\Illuminate\Contracts\Container\Container $container)
+    public function __construct(Container $container)
     {
         $this->container = $container;
         $this->config = $container->make('config');
@@ -47,7 +47,7 @@ abstract class Manager
      *
      * @return string
      */
-    public abstract function getDefaultDriver();
+    abstract public function getDefaultDriver();
     /**
      * Get a driver instance.
      *
@@ -59,8 +59,8 @@ abstract class Manager
     public function driver($driver = null)
     {
         $driver = $driver ?: $this->getDefaultDriver();
-        if (\is_null($driver)) {
-            throw new \InvalidArgumentException(\sprintf('Unable to resolve NULL driver for [%s].', static::class));
+        if (is_null($driver)) {
+            throw new InvalidArgumentException(sprintf('Unable to resolve NULL driver for [%s].', static::class));
         }
         // If the given driver has not been created before, we will create the instances
         // here and cache it so we can return it next time very quickly. If there is
@@ -86,12 +86,12 @@ abstract class Manager
         if (isset($this->customCreators[$driver])) {
             return $this->callCustomCreator($driver);
         } else {
-            $method = 'create' . \FedExVendor\Illuminate\Support\Str::studly($driver) . 'Driver';
-            if (\method_exists($this, $method)) {
+            $method = 'create' . Str::studly($driver) . 'Driver';
+            if (method_exists($this, $method)) {
                 return $this->{$method}();
             }
         }
-        throw new \InvalidArgumentException("Driver [{$driver}] not supported.");
+        throw new InvalidArgumentException("Driver [{$driver}] not supported.");
     }
     /**
      * Call a custom driver creator.
@@ -110,7 +110,7 @@ abstract class Manager
      * @param  \Closure  $callback
      * @return $this
      */
-    public function extend($driver, \Closure $callback)
+    public function extend($driver, Closure $callback)
     {
         $this->customCreators[$driver] = $callback;
         return $this;
@@ -139,7 +139,7 @@ abstract class Manager
      * @param  \Illuminate\Contracts\Container\Container  $container
      * @return $this
      */
-    public function setContainer(\FedExVendor\Illuminate\Contracts\Container\Container $container)
+    public function setContainer(Container $container)
     {
         $this->container = $container;
         return $this;

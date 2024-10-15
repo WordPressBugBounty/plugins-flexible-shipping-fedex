@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $LanguageCode
  * @property string $LocaleCode
  */
-class Localization extends \FedExVendor\FedEx\AbstractComplexType
+class Localization extends AbstractComplexType
 {
     /**
      * Name of this complex type

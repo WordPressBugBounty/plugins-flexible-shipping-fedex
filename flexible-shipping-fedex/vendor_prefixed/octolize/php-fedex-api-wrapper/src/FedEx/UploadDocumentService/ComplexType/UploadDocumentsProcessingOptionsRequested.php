@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property \FedEx\UploadDocumentService\SimpleType\UploadDocumentsProcessingOptionType|string[] $Options
  * @property PostShipmentUploadDetail $PostShipmentUploadDetail
  */
-class UploadDocumentsProcessingOptionsRequested extends \FedExVendor\FedEx\AbstractComplexType
+class UploadDocumentsProcessingOptionsRequested extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -38,7 +38,7 @@ class UploadDocumentsProcessingOptionsRequested extends \FedExVendor\FedEx\Abstr
      * @param PostShipmentUploadDetail $postShipmentUploadDetail
      * @return $this
      */
-    public function setPostShipmentUploadDetail(\FedExVendor\FedEx\UploadDocumentService\ComplexType\PostShipmentUploadDetail $postShipmentUploadDetail)
+    public function setPostShipmentUploadDetail(PostShipmentUploadDetail $postShipmentUploadDetail)
     {
         $this->values['PostShipmentUploadDetail'] = $postShipmentUploadDetail;
         return $this;

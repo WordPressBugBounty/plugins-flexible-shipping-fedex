@@ -17,7 +17,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $Index
  * @property TrackingId[] $TrackingIds
  */
-class DeletePackagesFromOpenShipmentRequest extends \FedExVendor\FedEx\AbstractComplexType
+class DeletePackagesFromOpenShipmentRequest extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -31,7 +31,7 @@ class DeletePackagesFromOpenShipmentRequest extends \FedExVendor\FedEx\AbstractC
      * @param WebAuthenticationDetail $webAuthenticationDetail
      * @return $this
      */
-    public function setWebAuthenticationDetail(\FedExVendor\FedEx\OpenShipService\ComplexType\WebAuthenticationDetail $webAuthenticationDetail)
+    public function setWebAuthenticationDetail(WebAuthenticationDetail $webAuthenticationDetail)
     {
         $this->values['WebAuthenticationDetail'] = $webAuthenticationDetail;
         return $this;
@@ -42,7 +42,7 @@ class DeletePackagesFromOpenShipmentRequest extends \FedExVendor\FedEx\AbstractC
      * @param ClientDetail $clientDetail
      * @return $this
      */
-    public function setClientDetail(\FedExVendor\FedEx\OpenShipService\ComplexType\ClientDetail $clientDetail)
+    public function setClientDetail(ClientDetail $clientDetail)
     {
         $this->values['ClientDetail'] = $clientDetail;
         return $this;
@@ -53,7 +53,7 @@ class DeletePackagesFromOpenShipmentRequest extends \FedExVendor\FedEx\AbstractC
      * @param TransactionDetail $transactionDetail
      * @return $this
      */
-    public function setTransactionDetail(\FedExVendor\FedEx\OpenShipService\ComplexType\TransactionDetail $transactionDetail)
+    public function setTransactionDetail(TransactionDetail $transactionDetail)
     {
         $this->values['TransactionDetail'] = $transactionDetail;
         return $this;
@@ -64,7 +64,7 @@ class DeletePackagesFromOpenShipmentRequest extends \FedExVendor\FedEx\AbstractC
      * @param VersionId $version
      * @return $this
      */
-    public function setVersion(\FedExVendor\FedEx\OpenShipService\ComplexType\VersionId $version)
+    public function setVersion(VersionId $version)
     {
         $this->values['Version'] = $version;
         return $this;

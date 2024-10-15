@@ -16,7 +16,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property VersionId $Version
  * @property ConsolidationKey $ConsolidationKey
  */
-class RetrieveConsolidationRequest extends \FedExVendor\FedEx\AbstractComplexType
+class RetrieveConsolidationRequest extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -30,7 +30,7 @@ class RetrieveConsolidationRequest extends \FedExVendor\FedEx\AbstractComplexTyp
      * @param WebAuthenticationDetail $webAuthenticationDetail
      * @return $this
      */
-    public function setWebAuthenticationDetail(\FedExVendor\FedEx\OpenShipService\ComplexType\WebAuthenticationDetail $webAuthenticationDetail)
+    public function setWebAuthenticationDetail(WebAuthenticationDetail $webAuthenticationDetail)
     {
         $this->values['WebAuthenticationDetail'] = $webAuthenticationDetail;
         return $this;
@@ -41,7 +41,7 @@ class RetrieveConsolidationRequest extends \FedExVendor\FedEx\AbstractComplexTyp
      * @param ClientDetail $clientDetail
      * @return $this
      */
-    public function setClientDetail(\FedExVendor\FedEx\OpenShipService\ComplexType\ClientDetail $clientDetail)
+    public function setClientDetail(ClientDetail $clientDetail)
     {
         $this->values['ClientDetail'] = $clientDetail;
         return $this;
@@ -52,7 +52,7 @@ class RetrieveConsolidationRequest extends \FedExVendor\FedEx\AbstractComplexTyp
      * @param TransactionDetail $transactionDetail
      * @return $this
      */
-    public function setTransactionDetail(\FedExVendor\FedEx\OpenShipService\ComplexType\TransactionDetail $transactionDetail)
+    public function setTransactionDetail(TransactionDetail $transactionDetail)
     {
         $this->values['TransactionDetail'] = $transactionDetail;
         return $this;
@@ -63,7 +63,7 @@ class RetrieveConsolidationRequest extends \FedExVendor\FedEx\AbstractComplexTyp
      * @param VersionId $version
      * @return $this
      */
-    public function setVersion(\FedExVendor\FedEx\OpenShipService\ComplexType\VersionId $version)
+    public function setVersion(VersionId $version)
     {
         $this->values['Version'] = $version;
         return $this;
@@ -74,7 +74,7 @@ class RetrieveConsolidationRequest extends \FedExVendor\FedEx\AbstractComplexTyp
      * @param ConsolidationKey $consolidationKey
      * @return $this
      */
-    public function setConsolidationKey(\FedExVendor\FedEx\OpenShipService\ComplexType\ConsolidationKey $consolidationKey)
+    public function setConsolidationKey(ConsolidationKey $consolidationKey)
     {
         $this->values['ConsolidationKey'] = $consolidationKey;
         return $this;

@@ -4,7 +4,7 @@ namespace FedExVendor\Illuminate\Support\Testing\Fakes;
 
 use FedExVendor\Illuminate\Bus\PendingBatch;
 use FedExVendor\Illuminate\Support\Collection;
-class PendingBatchFake extends \FedExVendor\Illuminate\Bus\PendingBatch
+class PendingBatchFake extends PendingBatch
 {
     /**
      * The fake bus instance.
@@ -19,7 +19,7 @@ class PendingBatchFake extends \FedExVendor\Illuminate\Bus\PendingBatch
      * @param  \Illuminate\Support\Collection  $jobs
      * @return void
      */
-    public function __construct(\FedExVendor\Illuminate\Support\Testing\Fakes\BusFake $bus, \FedExVendor\Illuminate\Support\Collection $jobs)
+    public function __construct(BusFake $bus, Collection $jobs)
     {
         $this->bus = $bus;
         $this->jobs = $jobs;

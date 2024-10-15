@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  In Flight Shipment Service
  */
-class CreditCardAuthorizationType extends \FedExVendor\FedEx\AbstractSimpleType
+class CreditCardAuthorizationType extends AbstractSimpleType
 {
     const _AUTHORIZE_NON_ACCOUNT = 'AUTHORIZE_NON_ACCOUNT';
     const _AUTHORIZE_WITH_ACCOUNT = 'AUTHORIZE_WITH_ACCOUNT';

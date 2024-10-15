@@ -22,7 +22,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property Address $DestinationAddress
  * @property DeliveryRequestDetail $DeliveryRequestDetail
  */
-class ValidateDeliveryRequest extends \FedExVendor\FedEx\AbstractComplexType
+class ValidateDeliveryRequest extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -36,7 +36,7 @@ class ValidateDeliveryRequest extends \FedExVendor\FedEx\AbstractComplexType
      * @param WebAuthenticationDetail $webAuthenticationDetail
      * @return $this
      */
-    public function setWebAuthenticationDetail(\FedExVendor\FedEx\InFlightShipmentService\ComplexType\WebAuthenticationDetail $webAuthenticationDetail)
+    public function setWebAuthenticationDetail(WebAuthenticationDetail $webAuthenticationDetail)
     {
         $this->values['WebAuthenticationDetail'] = $webAuthenticationDetail;
         return $this;
@@ -47,7 +47,7 @@ class ValidateDeliveryRequest extends \FedExVendor\FedEx\AbstractComplexType
      * @param ClientDetail $clientDetail
      * @return $this
      */
-    public function setClientDetail(\FedExVendor\FedEx\InFlightShipmentService\ComplexType\ClientDetail $clientDetail)
+    public function setClientDetail(ClientDetail $clientDetail)
     {
         $this->values['ClientDetail'] = $clientDetail;
         return $this;
@@ -58,7 +58,7 @@ class ValidateDeliveryRequest extends \FedExVendor\FedEx\AbstractComplexType
      * @param UserDetail $userDetail
      * @return $this
      */
-    public function setUserDetail(\FedExVendor\FedEx\InFlightShipmentService\ComplexType\UserDetail $userDetail)
+    public function setUserDetail(UserDetail $userDetail)
     {
         $this->values['UserDetail'] = $userDetail;
         return $this;
@@ -69,7 +69,7 @@ class ValidateDeliveryRequest extends \FedExVendor\FedEx\AbstractComplexType
      * @param TransactionDetail $transactionDetail
      * @return $this
      */
-    public function setTransactionDetail(\FedExVendor\FedEx\InFlightShipmentService\ComplexType\TransactionDetail $transactionDetail)
+    public function setTransactionDetail(TransactionDetail $transactionDetail)
     {
         $this->values['TransactionDetail'] = $transactionDetail;
         return $this;
@@ -80,7 +80,7 @@ class ValidateDeliveryRequest extends \FedExVendor\FedEx\AbstractComplexType
      * @param VersionId $version
      * @return $this
      */
-    public function setVersion(\FedExVendor\FedEx\InFlightShipmentService\ComplexType\VersionId $version)
+    public function setVersion(VersionId $version)
     {
         $this->values['Version'] = $version;
         return $this;
@@ -113,7 +113,7 @@ class ValidateDeliveryRequest extends \FedExVendor\FedEx\AbstractComplexType
      * @param UniqueTrackingNumber $uniqueTrackingNumber
      * @return $this
      */
-    public function setUniqueTrackingNumber(\FedExVendor\FedEx\InFlightShipmentService\ComplexType\UniqueTrackingNumber $uniqueTrackingNumber)
+    public function setUniqueTrackingNumber(UniqueTrackingNumber $uniqueTrackingNumber)
     {
         $this->values['UniqueTrackingNumber'] = $uniqueTrackingNumber;
         return $this;
@@ -124,7 +124,7 @@ class ValidateDeliveryRequest extends \FedExVendor\FedEx\AbstractComplexType
      * @param Contact $recipientContact
      * @return $this
      */
-    public function setRecipientContact(\FedExVendor\FedEx\InFlightShipmentService\ComplexType\Contact $recipientContact)
+    public function setRecipientContact(Contact $recipientContact)
     {
         $this->values['RecipientContact'] = $recipientContact;
         return $this;
@@ -135,7 +135,7 @@ class ValidateDeliveryRequest extends \FedExVendor\FedEx\AbstractComplexType
      * @param Address $destinationAddress
      * @return $this
      */
-    public function setDestinationAddress(\FedExVendor\FedEx\InFlightShipmentService\ComplexType\Address $destinationAddress)
+    public function setDestinationAddress(Address $destinationAddress)
     {
         $this->values['DestinationAddress'] = $destinationAddress;
         return $this;
@@ -146,7 +146,7 @@ class ValidateDeliveryRequest extends \FedExVendor\FedEx\AbstractComplexType
      * @param DeliveryRequestDetail $deliveryRequestDetail
      * @return $this
      */
-    public function setDeliveryRequestDetail(\FedExVendor\FedEx\InFlightShipmentService\ComplexType\DeliveryRequestDetail $deliveryRequestDetail)
+    public function setDeliveryRequestDetail(DeliveryRequestDetail $deliveryRequestDetail)
     {
         $this->values['DeliveryRequestDetail'] = $deliveryRequestDetail;
         return $this;

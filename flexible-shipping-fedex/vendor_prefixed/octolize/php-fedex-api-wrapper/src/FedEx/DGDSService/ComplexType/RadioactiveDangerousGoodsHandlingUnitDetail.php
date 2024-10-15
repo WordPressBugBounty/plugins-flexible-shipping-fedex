@@ -15,7 +15,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property float $CriticalitySafetyIndex
  * @property \FedEx\DGDSService\SimpleType\RadioactiveLabelType|string $LabelType
  */
-class RadioactiveDangerousGoodsHandlingUnitDetail extends \FedExVendor\FedEx\AbstractComplexType
+class RadioactiveDangerousGoodsHandlingUnitDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

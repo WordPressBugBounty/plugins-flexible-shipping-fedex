@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $IpAddress
  * @property boolean $ClientCookiesEnabled
  */
-class CreditFraudDetectionDetail extends \FedExVendor\FedEx\AbstractComplexType
+class CreditFraudDetectionDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

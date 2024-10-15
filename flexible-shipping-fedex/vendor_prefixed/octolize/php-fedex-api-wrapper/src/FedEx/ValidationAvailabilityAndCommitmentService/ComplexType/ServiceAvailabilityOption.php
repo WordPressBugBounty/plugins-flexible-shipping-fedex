@@ -17,7 +17,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $DestinationAirportId
  * @property \FedEx\ValidationAvailabilityAndCommitmentService\SimpleType\TransitTimeType|string $TransitTime
  */
-class ServiceAvailabilityOption extends \FedExVendor\FedEx\AbstractComplexType
+class ServiceAvailabilityOption extends AbstractComplexType
 {
     /**
      * Name of this complex type

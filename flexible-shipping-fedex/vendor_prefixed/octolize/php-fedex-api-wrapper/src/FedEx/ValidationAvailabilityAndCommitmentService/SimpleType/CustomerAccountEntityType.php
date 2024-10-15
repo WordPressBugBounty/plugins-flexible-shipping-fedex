@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Validation Availability And Commitment Service Service
  */
-class CustomerAccountEntityType extends \FedExVendor\FedEx\AbstractSimpleType
+class CustomerAccountEntityType extends AbstractSimpleType
 {
     const _BUSINESS = 'BUSINESS';
     const _INDIVIDUAL = 'INDIVIDUAL';

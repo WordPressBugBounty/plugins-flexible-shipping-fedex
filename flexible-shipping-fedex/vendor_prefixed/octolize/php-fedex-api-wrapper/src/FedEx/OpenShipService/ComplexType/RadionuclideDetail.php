@@ -16,7 +16,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property \FedEx\OpenShipService\SimpleType\PhysicalFormType|string $PhysicalForm
  * @property string $ChemicalForm
  */
-class RadionuclideDetail extends \FedExVendor\FedEx\AbstractComplexType
+class RadionuclideDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -41,7 +41,7 @@ class RadionuclideDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param RadionuclideActivity $activity
      * @return $this
      */
-    public function setActivity(\FedExVendor\FedEx\OpenShipService\ComplexType\RadionuclideActivity $activity)
+    public function setActivity(RadionuclideActivity $activity)
     {
         $this->values['Activity'] = $activity;
         return $this;

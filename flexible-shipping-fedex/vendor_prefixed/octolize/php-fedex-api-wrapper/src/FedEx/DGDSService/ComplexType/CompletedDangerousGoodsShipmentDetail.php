@@ -20,7 +20,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property ShipmentDryIceDetail $ShipmentDryIceDetail
  * @property string $ExpirationDate
  */
-class CompletedDangerousGoodsShipmentDetail extends \FedExVendor\FedEx\AbstractComplexType
+class CompletedDangerousGoodsShipmentDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -111,7 +111,7 @@ class CompletedDangerousGoodsShipmentDetail extends \FedExVendor\FedEx\AbstractC
      * @param ShipmentDryIceDetail $shipmentDryIceDetail
      * @return $this
      */
-    public function setShipmentDryIceDetail(\FedExVendor\FedEx\DGDSService\ComplexType\ShipmentDryIceDetail $shipmentDryIceDetail)
+    public function setShipmentDryIceDetail(ShipmentDryIceDetail $shipmentDryIceDetail)
     {
         $this->values['ShipmentDryIceDetail'] = $shipmentDryIceDetail;
         return $this;

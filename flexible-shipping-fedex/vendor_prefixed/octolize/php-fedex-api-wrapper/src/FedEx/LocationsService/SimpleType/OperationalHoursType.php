@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Locations Service
  */
-class OperationalHoursType extends \FedExVendor\FedEx\AbstractSimpleType
+class OperationalHoursType extends AbstractSimpleType
 {
     const _CLOSED_ALL_DAY = 'CLOSED_ALL_DAY';
     const _OPEN_ALL_DAY = 'OPEN_ALL_DAY';

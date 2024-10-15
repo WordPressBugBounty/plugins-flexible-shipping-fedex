@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property OfferingIdentifierDetail $Identifier
  * @property ProductName[] $Names
  */
-class SpecialServiceDescription extends \FedExVendor\FedEx\AbstractComplexType
+class SpecialServiceDescription extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -27,7 +27,7 @@ class SpecialServiceDescription extends \FedExVendor\FedEx\AbstractComplexType
      * @param OfferingIdentifierDetail $identifier
      * @return $this
      */
-    public function setIdentifier(\FedExVendor\FedEx\OpenShipService\ComplexType\OfferingIdentifierDetail $identifier)
+    public function setIdentifier(OfferingIdentifierDetail $identifier)
     {
         $this->values['Identifier'] = $identifier;
         return $this;

@@ -2,9 +2,9 @@
 
 namespace FedExVendor\WPDesk\Forms\Field;
 
-class ImageInputField extends \FedExVendor\WPDesk\Forms\Field\BasicField
+class ImageInputField extends BasicField
 {
-    public function get_template_name() : string
+    public function get_template_name(): string
     {
         return 'input-image';
     }

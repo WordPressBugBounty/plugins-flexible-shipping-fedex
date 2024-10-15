@@ -14,7 +14,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $Date
  * @property string $Time
  */
-class FreightGuaranteeDetail extends \FedExVendor\FedEx\AbstractComplexType
+class FreightGuaranteeDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

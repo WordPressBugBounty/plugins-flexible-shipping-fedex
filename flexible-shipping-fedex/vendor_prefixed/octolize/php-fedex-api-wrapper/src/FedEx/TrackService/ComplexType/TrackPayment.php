@@ -15,7 +15,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $Description
  * @property string $PayorAccountNumber
  */
-class TrackPayment extends \FedExVendor\FedEx\AbstractComplexType
+class TrackPayment extends AbstractComplexType
 {
     /**
      * Name of this complex type

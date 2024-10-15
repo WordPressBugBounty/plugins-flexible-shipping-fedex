@@ -18,7 +18,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property int $TrackDetailsCount
  * @property TrackDetail[] $TrackDetails
  */
-class CompletedTrackDetail extends \FedExVendor\FedEx\AbstractComplexType
+class CompletedTrackDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

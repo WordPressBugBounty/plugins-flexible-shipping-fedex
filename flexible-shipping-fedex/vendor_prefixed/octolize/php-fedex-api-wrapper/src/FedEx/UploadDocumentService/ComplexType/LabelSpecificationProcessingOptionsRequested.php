@@ -12,7 +12,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  *
  * @property \FedEx\UploadDocumentService\SimpleType\LabelSpecificationProcessingOptionType|string[] $Options
  */
-class LabelSpecificationProcessingOptionsRequested extends \FedExVendor\FedEx\AbstractComplexType
+class LabelSpecificationProcessingOptionsRequested extends AbstractComplexType
 {
     /**
      * Name of this complex type

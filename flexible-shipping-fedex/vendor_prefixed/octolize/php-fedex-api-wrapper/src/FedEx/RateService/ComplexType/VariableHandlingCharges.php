@@ -15,7 +15,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property Money $PercentVariableHandlingCharge
  * @property Money $TotalCustomerCharge
  */
-class VariableHandlingCharges extends \FedExVendor\FedEx\AbstractComplexType
+class VariableHandlingCharges extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -29,7 +29,7 @@ class VariableHandlingCharges extends \FedExVendor\FedEx\AbstractComplexType
      * @param Money $variableHandlingCharge
      * @return $this
      */
-    public function setVariableHandlingCharge(\FedExVendor\FedEx\RateService\ComplexType\Money $variableHandlingCharge)
+    public function setVariableHandlingCharge(Money $variableHandlingCharge)
     {
         $this->values['VariableHandlingCharge'] = $variableHandlingCharge;
         return $this;
@@ -40,7 +40,7 @@ class VariableHandlingCharges extends \FedExVendor\FedEx\AbstractComplexType
      * @param Money $fixedVariableHandlingCharge
      * @return $this
      */
-    public function setFixedVariableHandlingCharge(\FedExVendor\FedEx\RateService\ComplexType\Money $fixedVariableHandlingCharge)
+    public function setFixedVariableHandlingCharge(Money $fixedVariableHandlingCharge)
     {
         $this->values['FixedVariableHandlingCharge'] = $fixedVariableHandlingCharge;
         return $this;
@@ -51,7 +51,7 @@ class VariableHandlingCharges extends \FedExVendor\FedEx\AbstractComplexType
      * @param Money $percentVariableHandlingCharge
      * @return $this
      */
-    public function setPercentVariableHandlingCharge(\FedExVendor\FedEx\RateService\ComplexType\Money $percentVariableHandlingCharge)
+    public function setPercentVariableHandlingCharge(Money $percentVariableHandlingCharge)
     {
         $this->values['PercentVariableHandlingCharge'] = $percentVariableHandlingCharge;
         return $this;
@@ -62,7 +62,7 @@ class VariableHandlingCharges extends \FedExVendor\FedEx\AbstractComplexType
      * @param Money $totalCustomerCharge
      * @return $this
      */
-    public function setTotalCustomerCharge(\FedExVendor\FedEx\RateService\ComplexType\Money $totalCustomerCharge)
+    public function setTotalCustomerCharge(Money $totalCustomerCharge)
     {
         $this->values['TotalCustomerCharge'] = $totalCustomerCharge;
         return $this;

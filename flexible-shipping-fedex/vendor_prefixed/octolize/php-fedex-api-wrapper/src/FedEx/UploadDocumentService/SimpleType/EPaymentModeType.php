@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Upload Document Service
  */
-class EPaymentModeType extends \FedExVendor\FedEx\AbstractSimpleType
+class EPaymentModeType extends AbstractSimpleType
 {
     const _APPLE_PAY = 'APPLE_PAY';
     const _CASH = 'CASH';

@@ -12,7 +12,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  *
  * @property HazardousCommodityQuantityDetail $Quantity
  */
-class HazardousCommodityInnerReceptacleDetail extends \FedExVendor\FedEx\AbstractComplexType
+class HazardousCommodityInnerReceptacleDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -26,7 +26,7 @@ class HazardousCommodityInnerReceptacleDetail extends \FedExVendor\FedEx\Abstrac
      * @param HazardousCommodityQuantityDetail $quantity
      * @return $this
      */
-    public function setQuantity(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\HazardousCommodityQuantityDetail $quantity)
+    public function setQuantity(HazardousCommodityQuantityDetail $quantity)
     {
         $this->values['Quantity'] = $quantity;
         return $this;

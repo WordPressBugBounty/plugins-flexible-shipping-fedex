@@ -10,7 +10,7 @@ namespace FedExVendor\WPDesk\WooCommerceShipping\HandlingFees;
 /**
  * Can apply fixed value to price.
  */
-class PriceAdjustmentFixed implements \FedExVendor\WPDesk\WooCommerceShipping\HandlingFees\PriceAdjustment
+class PriceAdjustmentFixed implements PriceAdjustment
 {
     const ADJUSTMENT_TYPE = 'fixed';
     /**
@@ -43,6 +43,6 @@ class PriceAdjustmentFixed implements \FedExVendor\WPDesk\WooCommerceShipping\Ha
      */
     public function apply_on_price($price)
     {
-        return \round($price + $this->adjustment_value, $this->rounding);
+        return round($price + $this->adjustment_value, $this->rounding);
     }
 }

@@ -18,7 +18,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property DocumentFormatOptionsRequested $OptionsRequested
  * @property Localization $Localization
  */
-class ShippingDocumentFormat extends \FedExVendor\FedEx\AbstractComplexType
+class ShippingDocumentFormat extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -43,7 +43,7 @@ class ShippingDocumentFormat extends \FedExVendor\FedEx\AbstractComplexType
      * @param LinearMeasure $topOfPageOffset
      * @return $this
      */
-    public function setTopOfPageOffset(\FedExVendor\FedEx\RateService\ComplexType\LinearMeasure $topOfPageOffset)
+    public function setTopOfPageOffset(LinearMeasure $topOfPageOffset)
     {
         $this->values['TopOfPageOffset'] = $topOfPageOffset;
         return $this;
@@ -87,7 +87,7 @@ class ShippingDocumentFormat extends \FedExVendor\FedEx\AbstractComplexType
      * @param DocumentFormatOptionsRequested $optionsRequested
      * @return $this
      */
-    public function setOptionsRequested(\FedExVendor\FedEx\RateService\ComplexType\DocumentFormatOptionsRequested $optionsRequested)
+    public function setOptionsRequested(DocumentFormatOptionsRequested $optionsRequested)
     {
         $this->values['OptionsRequested'] = $optionsRequested;
         return $this;
@@ -98,7 +98,7 @@ class ShippingDocumentFormat extends \FedExVendor\FedEx\AbstractComplexType
      * @param Localization $localization
      * @return $this
      */
-    public function setLocalization(\FedExVendor\FedEx\RateService\ComplexType\Localization $localization)
+    public function setLocalization(Localization $localization)
     {
         $this->values['Localization'] = $localization;
         return $this;

@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Validation Availability And Commitment Service Service
  */
-class CorrespondenceType extends \FedExVendor\FedEx\AbstractSimpleType
+class CorrespondenceType extends AbstractSimpleType
 {
     const _CHAT = 'CHAT';
     const _DIRECT_MAIL = 'DIRECT_MAIL';

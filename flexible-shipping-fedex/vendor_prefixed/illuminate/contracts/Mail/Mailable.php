@@ -18,7 +18,7 @@ interface Mailable
      * @param  \Illuminate\Contracts\Queue\Factory  $queue
      * @return mixed
      */
-    public function queue(\FedExVendor\Illuminate\Contracts\Queue\Factory $queue);
+    public function queue(Queue $queue);
     /**
      * Deliver the queued message after the given delay.
      *
@@ -26,7 +26,7 @@ interface Mailable
      * @param  \Illuminate\Contracts\Queue\Factory  $queue
      * @return mixed
      */
-    public function later($delay, \FedExVendor\Illuminate\Contracts\Queue\Factory $queue);
+    public function later($delay, Queue $queue);
     /**
      * Set the recipients of the message.
      *

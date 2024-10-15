@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Validation Availability And Commitment Service Service
  */
-class UploadDocumentIdProducer extends \FedExVendor\FedEx\AbstractSimpleType
+class UploadDocumentIdProducer extends AbstractSimpleType
 {
     const _CUSTOMER = 'CUSTOMER';
     const _FEDEX_CAFE = 'FEDEX_CAFE';

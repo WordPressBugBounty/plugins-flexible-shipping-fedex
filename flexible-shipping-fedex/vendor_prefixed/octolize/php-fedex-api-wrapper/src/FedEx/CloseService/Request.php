@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractRequest;
  * @package     PHP FedEx API wrapper
  * @subpackage  Close Service
  */
-class Request extends \FedExVendor\FedEx\AbstractRequest
+class Request extends AbstractRequest
 {
     const PRODUCTION_URL = 'https://ws.fedex.com:443/web-services/close';
     const TESTING_URL = 'https://wsbeta.fedex.com:443/web-services/close';
@@ -22,13 +22,13 @@ class Request extends \FedExVendor\FedEx\AbstractRequest
      * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
      * @return ComplexType\CloseWithDocumentsReply|stdClass
      */
-    public function getCloseWithDocumentsReply(\FedExVendor\FedEx\CloseService\ComplexType\CloseWithDocumentsRequest $closeWithDocumentsRequest, $returnStdClass = \false)
+    public function getCloseWithDocumentsReply(ComplexType\CloseWithDocumentsRequest $closeWithDocumentsRequest, $returnStdClass = \false)
     {
         $response = $this->getSoapClient()->closeWithDocuments($closeWithDocumentsRequest->toArray());
         if ($returnStdClass) {
             return $response;
         }
-        $closeWithDocumentsReply = new \FedExVendor\FedEx\CloseService\ComplexType\CloseWithDocumentsReply();
+        $closeWithDocumentsReply = new ComplexType\CloseWithDocumentsReply();
         $closeWithDocumentsReply->populateFromStdClass($response);
         return $closeWithDocumentsReply;
     }
@@ -39,13 +39,13 @@ class Request extends \FedExVendor\FedEx\AbstractRequest
      * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
      * @return ComplexType\SmartPostCloseReply|stdClass
      */
-    public function getSmartPostCloseReply(\FedExVendor\FedEx\CloseService\ComplexType\SmartPostCloseRequest $smartPostCloseRequest, $returnStdClass = \false)
+    public function getSmartPostCloseReply(ComplexType\SmartPostCloseRequest $smartPostCloseRequest, $returnStdClass = \false)
     {
         $response = $this->getSoapClient()->smartPostClose($smartPostCloseRequest->toArray());
         if ($returnStdClass) {
             return $response;
         }
-        $smartPostCloseReply = new \FedExVendor\FedEx\CloseService\ComplexType\SmartPostCloseReply();
+        $smartPostCloseReply = new ComplexType\SmartPostCloseReply();
         $smartPostCloseReply->populateFromStdClass($response);
         return $smartPostCloseReply;
     }
@@ -56,13 +56,13 @@ class Request extends \FedExVendor\FedEx\AbstractRequest
      * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
      * @return ComplexType\GroundCloseReply|stdClass
      */
-    public function getGroundCloseReply(\FedExVendor\FedEx\CloseService\ComplexType\GroundCloseRequest $groundCloseRequest, $returnStdClass = \false)
+    public function getGroundCloseReply(ComplexType\GroundCloseRequest $groundCloseRequest, $returnStdClass = \false)
     {
         $response = $this->getSoapClient()->groundClose($groundCloseRequest->toArray());
         if ($returnStdClass) {
             return $response;
         }
-        $groundCloseReply = new \FedExVendor\FedEx\CloseService\ComplexType\GroundCloseReply();
+        $groundCloseReply = new ComplexType\GroundCloseReply();
         $groundCloseReply->populateFromStdClass($response);
         return $groundCloseReply;
     }
@@ -73,13 +73,13 @@ class Request extends \FedExVendor\FedEx\AbstractRequest
      * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
      * @return ComplexType\GroundCloseDocumentsReply|stdClass
      */
-    public function getGroundCloseWithDocumentsReply(\FedExVendor\FedEx\CloseService\ComplexType\GroundCloseWithDocumentsRequest $groundCloseWithDocumentsRequest, $returnStdClass = \false)
+    public function getGroundCloseWithDocumentsReply(ComplexType\GroundCloseWithDocumentsRequest $groundCloseWithDocumentsRequest, $returnStdClass = \false)
     {
         $response = $this->getSoapClient()->groundCloseWithDocuments($groundCloseWithDocumentsRequest->toArray());
         if ($returnStdClass) {
             return $response;
         }
-        $groundCloseDocumentsReply = new \FedExVendor\FedEx\CloseService\ComplexType\GroundCloseDocumentsReply();
+        $groundCloseDocumentsReply = new ComplexType\GroundCloseDocumentsReply();
         $groundCloseDocumentsReply->populateFromStdClass($response);
         return $groundCloseDocumentsReply;
     }
@@ -90,13 +90,13 @@ class Request extends \FedExVendor\FedEx\AbstractRequest
      * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
      * @return ComplexType\GroundCloseDocumentsReply|stdClass
      */
-    public function getReprintGroundCloseDocumentsReply(\FedExVendor\FedEx\CloseService\ComplexType\ReprintGroundCloseDocumentsRequest $reprintGroundCloseDocumentsRequest, $returnStdClass = \false)
+    public function getReprintGroundCloseDocumentsReply(ComplexType\ReprintGroundCloseDocumentsRequest $reprintGroundCloseDocumentsRequest, $returnStdClass = \false)
     {
         $response = $this->getSoapClient()->reprintGroundCloseDocuments($reprintGroundCloseDocumentsRequest->toArray());
         if ($returnStdClass) {
             return $response;
         }
-        $groundCloseDocumentsReply = new \FedExVendor\FedEx\CloseService\ComplexType\GroundCloseDocumentsReply();
+        $groundCloseDocumentsReply = new ComplexType\GroundCloseDocumentsReply();
         $groundCloseDocumentsReply->populateFromStdClass($response);
         return $groundCloseDocumentsReply;
     }
@@ -107,13 +107,13 @@ class Request extends \FedExVendor\FedEx\AbstractRequest
      * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
      * @return ComplexType\GroundCloseReportsReprintReply|stdClass
      */
-    public function getGroundCloseReportsReprintReply(\FedExVendor\FedEx\CloseService\ComplexType\GroundCloseReportsReprintRequest $groundCloseReportsReprintRequest, $returnStdClass = \false)
+    public function getGroundCloseReportsReprintReply(ComplexType\GroundCloseReportsReprintRequest $groundCloseReportsReprintRequest, $returnStdClass = \false)
     {
         $response = $this->getSoapClient()->groundCloseReportsReprint($groundCloseReportsReprintRequest->toArray());
         if ($returnStdClass) {
             return $response;
         }
-        $groundCloseReportsReprintReply = new \FedExVendor\FedEx\CloseService\ComplexType\GroundCloseReportsReprintReply();
+        $groundCloseReportsReprintReply = new ComplexType\GroundCloseReportsReprintReply();
         $groundCloseReportsReprintReply->populateFromStdClass($response);
         return $groundCloseReportsReprintReply;
     }

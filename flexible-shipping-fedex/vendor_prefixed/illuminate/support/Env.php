@@ -47,9 +47,9 @@ class Env
     public static function getRepository()
     {
         if (static::$repository === null) {
-            $builder = \FedExVendor\Dotenv\Repository\RepositoryBuilder::createWithDefaultAdapters();
+            $builder = RepositoryBuilder::createWithDefaultAdapters();
             if (static::$putenv) {
-                $builder = $builder->addAdapter(\FedExVendor\Dotenv\Repository\Adapter\PutenvAdapter::class);
+                $builder = $builder->addAdapter(PutenvAdapter::class);
             }
             static::$repository = $builder->immutable()->make();
         }
@@ -64,8 +64,8 @@ class Env
      */
     public static function get($key, $default = null)
     {
-        return \FedExVendor\PhpOption\Option::fromValue(static::getRepository()->get($key))->map(function ($value) {
-            switch (\strtolower($value)) {
+        return Option::fromValue(static::getRepository()->get($key))->map(function ($value) {
+            switch (strtolower($value)) {
                 case 'true':
                 case '(true)':
                     return \true;
@@ -79,11 +79,11 @@ class Env
                 case '(null)':
                     return;
             }
-            if (\preg_match('/\\A([\'"])(.*)\\1\\z/', $value, $matches)) {
+            if (preg_match('/\A([\'"])(.*)\1\z/', $value, $matches)) {
                 return $matches[2];
             }
             return $value;
-        })->getOrCall(function () use($default) {
+        })->getOrCall(function () use ($default) {
             return value($default);
         });
     }

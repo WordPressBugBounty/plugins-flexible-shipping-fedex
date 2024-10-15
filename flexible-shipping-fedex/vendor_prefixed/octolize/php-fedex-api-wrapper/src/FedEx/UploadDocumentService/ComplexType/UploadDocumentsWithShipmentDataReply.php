@@ -17,7 +17,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property UploadDocumentStatusDetail[] $DocumentStatuses
  * @property UploadDocumentStatusDetail[] $DocumentReferenceStatuses
  */
-class UploadDocumentsWithShipmentDataReply extends \FedExVendor\FedEx\AbstractComplexType
+class UploadDocumentsWithShipmentDataReply extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -53,7 +53,7 @@ class UploadDocumentsWithShipmentDataReply extends \FedExVendor\FedEx\AbstractCo
      * @param TransactionDetail $transactionDetail
      * @return $this
      */
-    public function setTransactionDetail(\FedExVendor\FedEx\UploadDocumentService\ComplexType\TransactionDetail $transactionDetail)
+    public function setTransactionDetail(TransactionDetail $transactionDetail)
     {
         $this->values['TransactionDetail'] = $transactionDetail;
         return $this;
@@ -64,7 +64,7 @@ class UploadDocumentsWithShipmentDataReply extends \FedExVendor\FedEx\AbstractCo
      * @param VersionId $version
      * @return $this
      */
-    public function setVersion(\FedExVendor\FedEx\UploadDocumentService\ComplexType\VersionId $version)
+    public function setVersion(VersionId $version)
     {
         $this->values['Version'] = $version;
         return $this;

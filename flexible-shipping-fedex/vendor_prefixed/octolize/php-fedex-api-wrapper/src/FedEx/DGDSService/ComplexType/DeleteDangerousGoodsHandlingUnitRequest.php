@@ -18,7 +18,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $HandlingUnitGroupId
  * @property string[] $TrackingNumbers
  */
-class DeleteDangerousGoodsHandlingUnitRequest extends \FedExVendor\FedEx\AbstractComplexType
+class DeleteDangerousGoodsHandlingUnitRequest extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -32,7 +32,7 @@ class DeleteDangerousGoodsHandlingUnitRequest extends \FedExVendor\FedEx\Abstrac
      * @param WebAuthenticationDetail $webAuthenticationDetail
      * @return $this
      */
-    public function setWebAuthenticationDetail(\FedExVendor\FedEx\DGDSService\ComplexType\WebAuthenticationDetail $webAuthenticationDetail)
+    public function setWebAuthenticationDetail(WebAuthenticationDetail $webAuthenticationDetail)
     {
         $this->values['WebAuthenticationDetail'] = $webAuthenticationDetail;
         return $this;
@@ -43,7 +43,7 @@ class DeleteDangerousGoodsHandlingUnitRequest extends \FedExVendor\FedEx\Abstrac
      * @param ClientDetail $clientDetail
      * @return $this
      */
-    public function setClientDetail(\FedExVendor\FedEx\DGDSService\ComplexType\ClientDetail $clientDetail)
+    public function setClientDetail(ClientDetail $clientDetail)
     {
         $this->values['ClientDetail'] = $clientDetail;
         return $this;
@@ -54,7 +54,7 @@ class DeleteDangerousGoodsHandlingUnitRequest extends \FedExVendor\FedEx\Abstrac
      * @param TransactionDetail $transactionDetail
      * @return $this
      */
-    public function setTransactionDetail(\FedExVendor\FedEx\DGDSService\ComplexType\TransactionDetail $transactionDetail)
+    public function setTransactionDetail(TransactionDetail $transactionDetail)
     {
         $this->values['TransactionDetail'] = $transactionDetail;
         return $this;
@@ -65,7 +65,7 @@ class DeleteDangerousGoodsHandlingUnitRequest extends \FedExVendor\FedEx\Abstrac
      * @param VersionId $version
      * @return $this
      */
-    public function setVersion(\FedExVendor\FedEx\DGDSService\ComplexType\VersionId $version)
+    public function setVersion(VersionId $version)
     {
         $this->values['Version'] = $version;
         return $this;

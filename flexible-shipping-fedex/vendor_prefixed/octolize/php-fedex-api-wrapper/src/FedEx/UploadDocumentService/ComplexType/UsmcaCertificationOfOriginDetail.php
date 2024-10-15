@@ -18,7 +18,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property Party $Producer
  * @property CustomerImageUsage[] $CustomerImageUsages
  */
-class UsmcaCertificationOfOriginDetail extends \FedExVendor\FedEx\AbstractComplexType
+class UsmcaCertificationOfOriginDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -32,7 +32,7 @@ class UsmcaCertificationOfOriginDetail extends \FedExVendor\FedEx\AbstractComple
      * @param ShippingDocumentFormat $format
      * @return $this
      */
-    public function setFormat(\FedExVendor\FedEx\UploadDocumentService\ComplexType\ShippingDocumentFormat $format)
+    public function setFormat(ShippingDocumentFormat $format)
     {
         $this->values['Format'] = $format;
         return $this;
@@ -43,7 +43,7 @@ class UsmcaCertificationOfOriginDetail extends \FedExVendor\FedEx\AbstractComple
      * @param DateRange $blanketPeriod
      * @return $this
      */
-    public function setBlanketPeriod(\FedExVendor\FedEx\UploadDocumentService\ComplexType\DateRange $blanketPeriod)
+    public function setBlanketPeriod(DateRange $blanketPeriod)
     {
         $this->values['BlanketPeriod'] = $blanketPeriod;
         return $this;
@@ -87,7 +87,7 @@ class UsmcaCertificationOfOriginDetail extends \FedExVendor\FedEx\AbstractComple
      * @param Party $producer
      * @return $this
      */
-    public function setProducer(\FedExVendor\FedEx\UploadDocumentService\ComplexType\Party $producer)
+    public function setProducer(Party $producer)
     {
         $this->values['Producer'] = $producer;
         return $this;

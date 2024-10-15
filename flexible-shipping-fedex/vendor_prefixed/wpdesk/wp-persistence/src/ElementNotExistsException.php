@@ -6,6 +6,6 @@ use FedExVendor\Psr\Container\NotFoundExceptionInterface;
 /**
  * @package WPDesk\Persistence
  */
-class ElementNotExistsException extends \RuntimeException implements \FedExVendor\Psr\Container\NotFoundExceptionInterface
+class ElementNotExistsException extends \RuntimeException implements NotFoundExceptionInterface
 {
 }

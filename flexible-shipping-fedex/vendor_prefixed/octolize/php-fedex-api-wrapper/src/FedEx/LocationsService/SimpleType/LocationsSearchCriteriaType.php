@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Locations Service
  */
-class LocationsSearchCriteriaType extends \FedExVendor\FedEx\AbstractSimpleType
+class LocationsSearchCriteriaType extends AbstractSimpleType
 {
     const _ADDRESS = 'ADDRESS';
     const _GEOGRAPHIC_COORDINATES = 'GEOGRAPHIC_COORDINATES';

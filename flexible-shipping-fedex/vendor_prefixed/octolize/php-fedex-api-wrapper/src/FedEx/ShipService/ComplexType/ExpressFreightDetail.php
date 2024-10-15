@@ -17,7 +17,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property ExpressFreightDetailContact $BeforeDeliveryContact
  * @property ExpressFreightDetailContact $UndeliverableContact
  */
-class ExpressFreightDetail extends \FedExVendor\FedEx\AbstractComplexType
+class ExpressFreightDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -75,7 +75,7 @@ class ExpressFreightDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param ExpressFreightDetailContact $beforeDeliveryContact
      * @return $this
      */
-    public function setBeforeDeliveryContact(\FedExVendor\FedEx\ShipService\ComplexType\ExpressFreightDetailContact $beforeDeliveryContact)
+    public function setBeforeDeliveryContact(ExpressFreightDetailContact $beforeDeliveryContact)
     {
         $this->values['BeforeDeliveryContact'] = $beforeDeliveryContact;
         return $this;
@@ -86,7 +86,7 @@ class ExpressFreightDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param ExpressFreightDetailContact $undeliverableContact
      * @return $this
      */
-    public function setUndeliverableContact(\FedExVendor\FedEx\ShipService\ComplexType\ExpressFreightDetailContact $undeliverableContact)
+    public function setUndeliverableContact(ExpressFreightDetailContact $undeliverableContact)
     {
         $this->values['UndeliverableContact'] = $undeliverableContact;
         return $this;

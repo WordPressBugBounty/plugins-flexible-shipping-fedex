@@ -40,21 +40,21 @@ abstract class MultipleInstanceManager
      *
      * @return string
      */
-    public abstract function getDefaultInstance();
+    abstract public function getDefaultInstance();
     /**
      * Set the default instance name.
      *
      * @param  string  $name
      * @return void
      */
-    public abstract function setDefaultInstance($name);
+    abstract public function setDefaultInstance($name);
     /**
      * Get the instance specific configuration.
      *
      * @param  string  $name
      * @return array
      */
-    public abstract function getInstanceConfig($name);
+    abstract public function getInstanceConfig($name);
     /**
      * Get an instance instance by name.
      *
@@ -87,20 +87,20 @@ abstract class MultipleInstanceManager
     protected function resolve($name)
     {
         $config = $this->getInstanceConfig($name);
-        if (\is_null($config)) {
-            throw new \InvalidArgumentException("Instance [{$name}] is not defined.");
+        if (is_null($config)) {
+            throw new InvalidArgumentException("Instance [{$name}] is not defined.");
         }
-        if (!\array_key_exists('driver', $config)) {
-            throw new \RuntimeException("Instance [{$name}] does not specify a driver.");
+        if (!array_key_exists('driver', $config)) {
+            throw new RuntimeException("Instance [{$name}] does not specify a driver.");
         }
         if (isset($this->customCreators[$config['driver']])) {
             return $this->callCustomCreator($config);
         } else {
-            $driverMethod = 'create' . \ucfirst($config['driver']) . 'Driver';
-            if (\method_exists($this, $driverMethod)) {
+            $driverMethod = 'create' . ucfirst($config['driver']) . 'Driver';
+            if (method_exists($this, $driverMethod)) {
                 return $this->{$driverMethod}($config);
             } else {
-                throw new \InvalidArgumentException("Instance driver [{$config['driver']}] is not supported.");
+                throw new InvalidArgumentException("Instance driver [{$config['driver']}] is not supported.");
             }
         }
     }
@@ -148,7 +148,7 @@ abstract class MultipleInstanceManager
      * @param  \Closure  $callback
      * @return $this
      */
-    public function extend($name, \Closure $callback)
+    public function extend($name, Closure $callback)
     {
         $this->customCreators[$name] = $callback->bindTo($this, $this);
         return $this;

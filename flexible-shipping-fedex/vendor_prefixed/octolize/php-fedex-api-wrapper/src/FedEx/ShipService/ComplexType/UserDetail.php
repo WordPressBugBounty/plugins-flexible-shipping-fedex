@@ -14,7 +14,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $Password
  * @property string $UniqueUserId
  */
-class UserDetail extends \FedExVendor\FedEx\AbstractComplexType
+class UserDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

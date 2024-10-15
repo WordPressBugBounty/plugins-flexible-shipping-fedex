@@ -52,7 +52,7 @@ use FedExVendor\Illuminate\Http\Client\Factory;
  *
  * @see \Illuminate\Http\Client\Factory
  */
-class Http extends \FedExVendor\Illuminate\Support\Facades\Facade
+class Http extends Facade
 {
     /**
      * Get the registered name of the component.
@@ -61,6 +61,6 @@ class Http extends \FedExVendor\Illuminate\Support\Facades\Facade
      */
     protected static function getFacadeAccessor()
     {
-        return \FedExVendor\Illuminate\Http\Client\Factory::class;
+        return Factory::class;
     }
 }

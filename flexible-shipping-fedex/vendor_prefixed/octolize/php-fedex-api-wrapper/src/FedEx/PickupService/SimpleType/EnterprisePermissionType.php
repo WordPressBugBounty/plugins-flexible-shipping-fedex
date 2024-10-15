@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  */
-class EnterprisePermissionType extends \FedExVendor\FedEx\AbstractSimpleType
+class EnterprisePermissionType extends AbstractSimpleType
 {
     const _ALLOWED = 'ALLOWED';
     const _ALLOWED_BY_EXCEPTION = 'ALLOWED_BY_EXCEPTION';

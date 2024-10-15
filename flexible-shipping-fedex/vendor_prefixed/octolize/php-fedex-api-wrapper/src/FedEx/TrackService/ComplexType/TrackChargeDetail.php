@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property \FedEx\TrackService\SimpleType\TrackChargeDetailType|string $Type
  * @property Money $ChargeAmount
  */
-class TrackChargeDetail extends \FedExVendor\FedEx\AbstractComplexType
+class TrackChargeDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -38,7 +38,7 @@ class TrackChargeDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param Money $chargeAmount
      * @return $this
      */
-    public function setChargeAmount(\FedExVendor\FedEx\TrackService\ComplexType\Money $chargeAmount)
+    public function setChargeAmount(Money $chargeAmount)
     {
         $this->values['ChargeAmount'] = $chargeAmount;
         return $this;

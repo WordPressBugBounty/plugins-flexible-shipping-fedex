@@ -38,7 +38,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property \FedEx\RateService\SimpleType\RequiredShippingDocumentType|string[] $RequiredDocuments
  * @property FreightCommitDetail $FreightCommitDetail
  */
-class CommitDetail extends \FedExVendor\FedEx\AbstractComplexType
+class CommitDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -74,7 +74,7 @@ class CommitDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param ServiceDescription $serviceDescription
      * @return $this
      */
-    public function setServiceDescription(\FedExVendor\FedEx\RateService\ComplexType\ServiceDescription $serviceDescription)
+    public function setServiceDescription(ServiceDescription $serviceDescription)
     {
         $this->values['ServiceDescription'] = $serviceDescription;
         return $this;
@@ -96,7 +96,7 @@ class CommitDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param ServiceSubOptionDetail $appliedSubOptions
      * @return $this
      */
-    public function setAppliedSubOptions(\FedExVendor\FedEx\RateService\ComplexType\ServiceSubOptionDetail $appliedSubOptions)
+    public function setAppliedSubOptions(ServiceSubOptionDetail $appliedSubOptions)
     {
         $this->values['AppliedSubOptions'] = $appliedSubOptions;
         return $this;
@@ -107,7 +107,7 @@ class CommitDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param SignatureOptionDetail $derivedShipmentSignatureOption
      * @return $this
      */
-    public function setDerivedShipmentSignatureOption(\FedExVendor\FedEx\RateService\ComplexType\SignatureOptionDetail $derivedShipmentSignatureOption)
+    public function setDerivedShipmentSignatureOption(SignatureOptionDetail $derivedShipmentSignatureOption)
     {
         $this->values['DerivedShipmentSignatureOption'] = $derivedShipmentSignatureOption;
         return $this;
@@ -129,7 +129,7 @@ class CommitDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param CleansedAddressAndLocationDetail $derivedOriginDetail
      * @return $this
      */
-    public function setDerivedOriginDetail(\FedExVendor\FedEx\RateService\ComplexType\CleansedAddressAndLocationDetail $derivedOriginDetail)
+    public function setDerivedOriginDetail(CleansedAddressAndLocationDetail $derivedOriginDetail)
     {
         $this->values['DerivedOriginDetail'] = $derivedOriginDetail;
         return $this;
@@ -140,7 +140,7 @@ class CommitDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param CleansedAddressAndLocationDetail $derivedDestinationDetail
      * @return $this
      */
-    public function setDerivedDestinationDetail(\FedExVendor\FedEx\RateService\ComplexType\CleansedAddressAndLocationDetail $derivedDestinationDetail)
+    public function setDerivedDestinationDetail(CleansedAddressAndLocationDetail $derivedDestinationDetail)
     {
         $this->values['DerivedDestinationDetail'] = $derivedDestinationDetail;
         return $this;
@@ -206,7 +206,7 @@ class CommitDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param Address $brokerAddress
      * @return $this
      */
-    public function setBrokerAddress(\FedExVendor\FedEx\RateService\ComplexType\Address $brokerAddress)
+    public function setBrokerAddress(Address $brokerAddress)
     {
         $this->values['BrokerAddress'] = $brokerAddress;
         return $this;
@@ -338,7 +338,7 @@ class CommitDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param FreightCommitDetail $freightCommitDetail
      * @return $this
      */
-    public function setFreightCommitDetail(\FedExVendor\FedEx\RateService\ComplexType\FreightCommitDetail $freightCommitDetail)
+    public function setFreightCommitDetail(FreightCommitDetail $freightCommitDetail)
     {
         $this->values['FreightCommitDetail'] = $freightCommitDetail;
         return $this;

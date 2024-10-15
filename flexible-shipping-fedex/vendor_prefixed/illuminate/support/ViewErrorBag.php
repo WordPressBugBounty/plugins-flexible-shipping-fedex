@@ -7,7 +7,7 @@ use FedExVendor\Illuminate\Contracts\Support\MessageBag as MessageBagContract;
 /**
  * @mixin \Illuminate\Contracts\Support\MessageBag
  */
-class ViewErrorBag implements \Countable
+class ViewErrorBag implements Countable
 {
     /**
      * The array of the view error bags.
@@ -33,7 +33,7 @@ class ViewErrorBag implements \Countable
      */
     public function getBag($key)
     {
-        return \FedExVendor\Illuminate\Support\Arr::get($this->bags, $key) ?: new \FedExVendor\Illuminate\Support\MessageBag();
+        return Arr::get($this->bags, $key) ?: new MessageBag();
     }
     /**
      * Get all the bags.
@@ -51,7 +51,7 @@ class ViewErrorBag implements \Countable
      * @param  \Illuminate\Contracts\Support\MessageBag  $bag
      * @return $this
      */
-    public function put($key, \FedExVendor\Illuminate\Contracts\Support\MessageBag $bag)
+    public function put($key, MessageBagContract $bag)
     {
         $this->bags[$key] = $bag;
         return $this;

@@ -12,7 +12,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  *
  * @property \FedEx\PickupService\SimpleType\EmailOptionType|string[] $Options
  */
-class EmailOptionsRequested extends \FedExVendor\FedEx\AbstractComplexType
+class EmailOptionsRequested extends AbstractComplexType
 {
     /**
      * Name of this complex type

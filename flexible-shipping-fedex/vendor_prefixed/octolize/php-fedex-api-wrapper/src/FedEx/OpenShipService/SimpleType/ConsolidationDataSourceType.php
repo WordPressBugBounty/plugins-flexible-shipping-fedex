@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  OpenShip Service
  */
-class ConsolidationDataSourceType extends \FedExVendor\FedEx\AbstractSimpleType
+class ConsolidationDataSourceType extends AbstractSimpleType
 {
     const _ACCUMULATED = 'ACCUMULATED';
     const _CLIENT = 'CLIENT';

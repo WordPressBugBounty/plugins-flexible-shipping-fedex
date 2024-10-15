@@ -12,16 +12,16 @@ class ShippingZoneMethods implements \FedExVendor\WPDesk\PluginBuilder\Plugin\Ho
      */
     public function hooks()
     {
-        \add_filter('woocommerce_shipping_zone_shipping_methods', [$this, 'remove_fedex_shipping_methods']);
+        add_filter('woocommerce_shipping_zone_shipping_methods', [$this, 'remove_fedex_shipping_methods']);
     }
     /**
      * @param array $methods .
      */
     public function remove_fedex_shipping_methods($methods)
     {
-        if (\is_array($methods)) {
+        if (is_array($methods)) {
             foreach ($methods as $key => $method) {
-                if ($method->id === \FedExVendor\WPDesk\WooCommerceShipping\Fedex\FedexShippingMethod::UNIQUE_ID) {
+                if ($method->id === FedexShippingMethod::UNIQUE_ID) {
                     unset($methods[$key]);
                 }
             }

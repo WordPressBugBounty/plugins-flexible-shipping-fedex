@@ -17,7 +17,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property RadionuclideDetail $RadionuclideDetail
  * @property NetExplosiveDetail $NetExplosiveDetail
  */
-class HazardousCommodityContent extends \FedExVendor\FedEx\AbstractComplexType
+class HazardousCommodityContent extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -31,7 +31,7 @@ class HazardousCommodityContent extends \FedExVendor\FedEx\AbstractComplexType
      * @param HazardousCommodityDescription $description
      * @return $this
      */
-    public function setDescription(\FedExVendor\FedEx\RateService\ComplexType\HazardousCommodityDescription $description)
+    public function setDescription(HazardousCommodityDescription $description)
     {
         $this->values['Description'] = $description;
         return $this;
@@ -42,7 +42,7 @@ class HazardousCommodityContent extends \FedExVendor\FedEx\AbstractComplexType
      * @param HazardousCommodityQuantityDetail $quantity
      * @return $this
      */
-    public function setQuantity(\FedExVendor\FedEx\RateService\ComplexType\HazardousCommodityQuantityDetail $quantity)
+    public function setQuantity(HazardousCommodityQuantityDetail $quantity)
     {
         $this->values['Quantity'] = $quantity;
         return $this;
@@ -64,7 +64,7 @@ class HazardousCommodityContent extends \FedExVendor\FedEx\AbstractComplexType
      * @param HazardousCommodityOptionDetail $options
      * @return $this
      */
-    public function setOptions(\FedExVendor\FedEx\RateService\ComplexType\HazardousCommodityOptionDetail $options)
+    public function setOptions(HazardousCommodityOptionDetail $options)
     {
         $this->values['Options'] = $options;
         return $this;
@@ -75,7 +75,7 @@ class HazardousCommodityContent extends \FedExVendor\FedEx\AbstractComplexType
      * @param RadionuclideDetail $radionuclideDetail
      * @return $this
      */
-    public function setRadionuclideDetail(\FedExVendor\FedEx\RateService\ComplexType\RadionuclideDetail $radionuclideDetail)
+    public function setRadionuclideDetail(RadionuclideDetail $radionuclideDetail)
     {
         $this->values['RadionuclideDetail'] = $radionuclideDetail;
         return $this;
@@ -86,7 +86,7 @@ class HazardousCommodityContent extends \FedExVendor\FedEx\AbstractComplexType
      * @param NetExplosiveDetail $netExplosiveDetail
      * @return $this
      */
-    public function setNetExplosiveDetail(\FedExVendor\FedEx\RateService\ComplexType\NetExplosiveDetail $netExplosiveDetail)
+    public function setNetExplosiveDetail(NetExplosiveDetail $netExplosiveDetail)
     {
         $this->values['NetExplosiveDetail'] = $netExplosiveDetail;
         return $this;

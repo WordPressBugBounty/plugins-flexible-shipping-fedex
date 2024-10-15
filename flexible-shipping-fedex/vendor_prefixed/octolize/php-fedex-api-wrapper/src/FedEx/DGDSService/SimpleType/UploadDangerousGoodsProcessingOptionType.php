@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Dangerous Goods Data Service
  */
-class UploadDangerousGoodsProcessingOptionType extends \FedExVendor\FedEx\AbstractSimpleType
+class UploadDangerousGoodsProcessingOptionType extends AbstractSimpleType
 {
     const _VALIDATION_ERRORS_AS_WARNINGS = 'VALIDATION_ERRORS_AS_WARNINGS';
 }

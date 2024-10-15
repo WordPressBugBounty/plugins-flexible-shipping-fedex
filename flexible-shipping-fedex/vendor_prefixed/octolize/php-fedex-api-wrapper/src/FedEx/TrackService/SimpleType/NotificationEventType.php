@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Package Movement Information Service
  */
-class NotificationEventType extends \FedExVendor\FedEx\AbstractSimpleType
+class NotificationEventType extends AbstractSimpleType
 {
     const _ON_DELIVERY = 'ON_DELIVERY';
     const _ON_ESTIMATED_DELIVERY = 'ON_ESTIMATED_DELIVERY';

@@ -14,7 +14,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $Description
  * @property \FedEx\TrackService\SimpleType\TrackPaymentType|string $PaymentType
  */
-class TrackSpecialHandling extends \FedExVendor\FedEx\AbstractComplexType
+class TrackSpecialHandling extends AbstractComplexType
 {
     /**
      * Name of this complex type

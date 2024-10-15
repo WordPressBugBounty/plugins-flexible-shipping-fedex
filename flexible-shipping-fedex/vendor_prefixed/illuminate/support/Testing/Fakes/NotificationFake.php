@@ -13,7 +13,7 @@ use FedExVendor\Illuminate\Support\Str;
 use FedExVendor\Illuminate\Support\Traits\Macroable;
 use FedExVendor\Illuminate\Support\Traits\ReflectsClosures;
 use FedExVendor\PHPUnit\Framework\Assert as PHPUnit;
-class NotificationFake implements \FedExVendor\Illuminate\Contracts\Notifications\Dispatcher, \FedExVendor\Illuminate\Contracts\Notifications\Factory
+class NotificationFake implements NotificationDispatcher, NotificationFactory
 {
     use Macroable, ReflectsClosures;
     /**
@@ -39,7 +39,7 @@ class NotificationFake implements \FedExVendor\Illuminate\Contracts\Notification
      */
     public function assertSentOnDemand($notification, $callback = null)
     {
-        $this->assertSentTo(new \FedExVendor\Illuminate\Notifications\AnonymousNotifiable(), $notification, $callback);
+        $this->assertSentTo(new AnonymousNotifiable(), $notification, $callback);
     }
     /**
      * Assert if a notification was sent based on a truth-test callback.
@@ -53,22 +53,22 @@ class NotificationFake implements \FedExVendor\Illuminate\Contracts\Notification
      */
     public function assertSentTo($notifiable, $notification, $callback = null)
     {
-        if (\is_array($notifiable) || $notifiable instanceof \FedExVendor\Illuminate\Support\Collection) {
-            if (\count($notifiable) === 0) {
-                throw new \Exception('No notifiable given.');
+        if (is_array($notifiable) || $notifiable instanceof Collection) {
+            if (count($notifiable) === 0) {
+                throw new Exception('No notifiable given.');
             }
             foreach ($notifiable as $singleNotifiable) {
                 $this->assertSentTo($singleNotifiable, $notification, $callback);
             }
             return;
         }
-        if ($notification instanceof \Closure) {
+        if ($notification instanceof Closure) {
             [$notification, $callback] = [$this->firstClosureParameterType($notification), $notification];
         }
-        if (\is_numeric($callback)) {
+        if (is_numeric($callback)) {
             return $this->assertSentToTimes($notifiable, $notification, $callback);
         }
-        \FedExVendor\PHPUnit\Framework\Assert::assertTrue($this->sent($notifiable, $notification, $callback)->count() > 0, "The expected [{$notification}] notification was not sent.");
+        PHPUnit::assertTrue($this->sent($notifiable, $notification, $callback)->count() > 0, "The expected [{$notification}] notification was not sent.");
     }
     /**
      * Assert if a notification was sent on-demand a number of times.
@@ -79,7 +79,7 @@ class NotificationFake implements \FedExVendor\Illuminate\Contracts\Notification
      */
     public function assertSentOnDemandTimes($notification, $times = 1)
     {
-        return $this->assertSentToTimes(new \FedExVendor\Illuminate\Notifications\AnonymousNotifiable(), $notification, $times);
+        return $this->assertSentToTimes(new AnonymousNotifiable(), $notification, $times);
     }
     /**
      * Assert if a notification was sent a number of times.
@@ -92,7 +92,7 @@ class NotificationFake implements \FedExVendor\Illuminate\Contracts\Notification
     public function assertSentToTimes($notifiable, $notification, $times = 1)
     {
         $count = $this->sent($notifiable, $notification)->count();
-        \FedExVendor\PHPUnit\Framework\Assert::assertSame($times, $count, "Expected [{$notification}] to be sent {$times} times, but was sent {$count} times.");
+        PHPUnit::assertSame($times, $count, "Expected [{$notification}] to be sent {$times} times, but was sent {$count} times.");
     }
     /**
      * Determine if a notification was sent based on a truth-test callback.
@@ -106,19 +106,19 @@ class NotificationFake implements \FedExVendor\Illuminate\Contracts\Notification
      */
     public function assertNotSentTo($notifiable, $notification, $callback = null)
     {
-        if (\is_array($notifiable) || $notifiable instanceof \FedExVendor\Illuminate\Support\Collection) {
-            if (\count($notifiable) === 0) {
-                throw new \Exception('No notifiable given.');
+        if (is_array($notifiable) || $notifiable instanceof Collection) {
+            if (count($notifiable) === 0) {
+                throw new Exception('No notifiable given.');
             }
             foreach ($notifiable as $singleNotifiable) {
                 $this->assertNotSentTo($singleNotifiable, $notification, $callback);
             }
             return;
         }
-        if ($notification instanceof \Closure) {
+        if ($notification instanceof Closure) {
             [$notification, $callback] = [$this->firstClosureParameterType($notification), $notification];
         }
-        \FedExVendor\PHPUnit\Framework\Assert::assertCount(0, $this->sent($notifiable, $notification, $callback), "The unexpected [{$notification}] notification was sent.");
+        PHPUnit::assertCount(0, $this->sent($notifiable, $notification, $callback), "The unexpected [{$notification}] notification was sent.");
     }
     /**
      * Assert that no notifications were sent.
@@ -127,7 +127,7 @@ class NotificationFake implements \FedExVendor\Illuminate\Contracts\Notification
      */
     public function assertNothingSent()
     {
-        \FedExVendor\PHPUnit\Framework\Assert::assertEmpty($this->notifications, 'Notifications were sent unexpectedly.');
+        PHPUnit::assertEmpty($this->notifications, 'Notifications were sent unexpectedly.');
     }
     /**
      * Assert the total amount of times a notification was sent.
@@ -138,10 +138,10 @@ class NotificationFake implements \FedExVendor\Illuminate\Contracts\Notification
      */
     public function assertSentTimes($notification, $expectedCount)
     {
-        $actualCount = collect($this->notifications)->flatten(1)->reduce(function ($count, $sent) use($notification) {
-            return $count + \count($sent[$notification] ?? []);
+        $actualCount = collect($this->notifications)->flatten(1)->reduce(function ($count, $sent) use ($notification) {
+            return $count + count($sent[$notification] ?? []);
         }, 0);
-        \FedExVendor\PHPUnit\Framework\Assert::assertSame($expectedCount, $actualCount, "Expected [{$notification}] to be sent {$expectedCount} times, but was sent {$actualCount} times.");
+        PHPUnit::assertSame($expectedCount, $actualCount, "Expected [{$notification}] to be sent {$expectedCount} times, but was sent {$actualCount} times.");
     }
     /**
      * Assert the total amount of times a notification was sent.
@@ -173,8 +173,8 @@ class NotificationFake implements \FedExVendor\Illuminate\Contracts\Notification
             return \true;
         };
         $notifications = collect($this->notificationsFor($notifiable, $notification));
-        return $notifications->filter(function ($arguments) use($callback) {
-            return $callback(...\array_values($arguments));
+        return $notifications->filter(function ($arguments) use ($callback) {
+            return $callback(...array_values($arguments));
         })->pluck('notification');
     }
     /**
@@ -197,7 +197,7 @@ class NotificationFake implements \FedExVendor\Illuminate\Contracts\Notification
      */
     protected function notificationsFor($notifiable, $notification)
     {
-        return $this->notifications[\get_class($notifiable)][$notifiable->getKey()][$notification] ?? [];
+        return $this->notifications[get_class($notifiable)][$notifiable->getKey()][$notification] ?? [];
     }
     /**
      * Send the given notification to the given notifiable entities.
@@ -220,24 +220,24 @@ class NotificationFake implements \FedExVendor\Illuminate\Contracts\Notification
      */
     public function sendNow($notifiables, $notification, array $channels = null)
     {
-        if (!$notifiables instanceof \FedExVendor\Illuminate\Support\Collection && !\is_array($notifiables)) {
+        if (!$notifiables instanceof Collection && !is_array($notifiables)) {
             $notifiables = [$notifiables];
         }
         foreach ($notifiables as $notifiable) {
             if (!$notification->id) {
-                $notification->id = \FedExVendor\Illuminate\Support\Str::uuid()->toString();
+                $notification->id = Str::uuid()->toString();
             }
             $notifiableChannels = $channels ?: $notification->via($notifiable);
-            if (\method_exists($notification, 'shouldSend')) {
-                $notifiableChannels = \array_filter($notifiableChannels, function ($channel) use($notification, $notifiable) {
+            if (method_exists($notification, 'shouldSend')) {
+                $notifiableChannels = array_filter($notifiableChannels, function ($channel) use ($notification, $notifiable) {
                     return $notification->shouldSend($notifiable, $channel) !== \false;
                 });
                 if (empty($notifiableChannels)) {
                     continue;
                 }
             }
-            $this->notifications[\get_class($notifiable)][$notifiable->getKey()][\get_class($notification)][] = ['notification' => $notification, 'channels' => $notifiableChannels, 'notifiable' => $notifiable, 'locale' => $notification->locale ?? $this->locale ?? value(function () use($notifiable) {
-                if ($notifiable instanceof \FedExVendor\Illuminate\Contracts\Translation\HasLocalePreference) {
+            $this->notifications[get_class($notifiable)][$notifiable->getKey()][get_class($notification)][] = ['notification' => $notification, 'channels' => $notifiableChannels, 'notifiable' => $notifiable, 'locale' => $notification->locale ?? $this->locale ?? value(function () use ($notifiable) {
+                if ($notifiable instanceof HasLocalePreference) {
                     return $notifiable->preferredLocale();
                 }
             })];

@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property Contact $Contact
  * @property Address $Address
  */
-class ContactAndAddress extends \FedExVendor\FedEx\AbstractComplexType
+class ContactAndAddress extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -27,7 +27,7 @@ class ContactAndAddress extends \FedExVendor\FedEx\AbstractComplexType
      * @param Contact $contact
      * @return $this
      */
-    public function setContact(\FedExVendor\FedEx\RateService\ComplexType\Contact $contact)
+    public function setContact(Contact $contact)
     {
         $this->values['Contact'] = $contact;
         return $this;
@@ -38,7 +38,7 @@ class ContactAndAddress extends \FedExVendor\FedEx\AbstractComplexType
      * @param Address $address
      * @return $this
      */
-    public function setAddress(\FedExVendor\FedEx\RateService\ComplexType\Address $address)
+    public function setAddress(Address $address)
     {
         $this->values['Address'] = $address;
         return $this;

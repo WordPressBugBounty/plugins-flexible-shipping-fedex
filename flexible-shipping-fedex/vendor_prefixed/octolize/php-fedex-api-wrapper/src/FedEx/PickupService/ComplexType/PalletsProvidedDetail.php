@@ -12,7 +12,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  *
  * @property int $PalletCount
  */
-class PalletsProvidedDetail extends \FedExVendor\FedEx\AbstractComplexType
+class PalletsProvidedDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

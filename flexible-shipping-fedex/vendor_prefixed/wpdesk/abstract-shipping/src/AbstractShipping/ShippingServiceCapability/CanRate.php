@@ -25,7 +25,7 @@ interface CanRate
      *
      * @return ShipmentRating
      */
-    public function rate_shipment(\FedExVendor\WPDesk\AbstractShipping\Settings\SettingsValues $settings, \FedExVendor\WPDesk\AbstractShipping\Shipment\Shipment $shipment);
+    public function rate_shipment(SettingsValues $settings, Shipment $shipment);
     /**
      * Is rate enabled?
      *
@@ -33,5 +33,5 @@ interface CanRate
      *
      * @return bool
      */
-    public function is_rate_enabled(\FedExVendor\WPDesk\AbstractShipping\Settings\SettingsValues $settings);
+    public function is_rate_enabled(SettingsValues $settings);
 }

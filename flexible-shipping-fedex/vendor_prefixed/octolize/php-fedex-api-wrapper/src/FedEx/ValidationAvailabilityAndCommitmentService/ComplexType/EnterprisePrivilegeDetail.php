@@ -15,7 +15,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property \FedEx\ValidationAvailabilityAndCommitmentService\SimpleType\CarrierCodeType|string $CarrierCode
  * @property DateRange $EffectiveDateRange
  */
-class EnterprisePrivilegeDetail extends \FedExVendor\FedEx\AbstractComplexType
+class EnterprisePrivilegeDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -62,7 +62,7 @@ class EnterprisePrivilegeDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param DateRange $effectiveDateRange
      * @return $this
      */
-    public function setEffectiveDateRange(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\DateRange $effectiveDateRange)
+    public function setEffectiveDateRange(DateRange $effectiveDateRange)
     {
         $this->values['EffectiveDateRange'] = $effectiveDateRange;
         return $this;

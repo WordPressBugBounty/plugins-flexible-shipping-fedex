@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Locations Service
  */
-class LatestDropOffOverlayType extends \FedExVendor\FedEx\AbstractSimpleType
+class LatestDropOffOverlayType extends AbstractSimpleType
 {
     const _US_WEST_COAST = 'US_WEST_COAST';
 }

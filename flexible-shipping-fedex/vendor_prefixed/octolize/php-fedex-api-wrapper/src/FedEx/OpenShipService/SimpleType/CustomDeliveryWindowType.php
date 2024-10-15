@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  OpenShip Service
  */
-class CustomDeliveryWindowType extends \FedExVendor\FedEx\AbstractSimpleType
+class CustomDeliveryWindowType extends AbstractSimpleType
 {
     const _AFTER = 'AFTER';
     const _BEFORE = 'BEFORE';

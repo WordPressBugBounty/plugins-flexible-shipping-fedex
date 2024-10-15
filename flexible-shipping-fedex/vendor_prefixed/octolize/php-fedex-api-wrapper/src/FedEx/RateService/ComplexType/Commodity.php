@@ -29,7 +29,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $PartNumber
  * @property UsmcaCommodityDetail $UsmcaDetail
  */
-class Commodity extends \FedExVendor\FedEx\AbstractComplexType
+class Commodity extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -109,7 +109,7 @@ class Commodity extends \FedExVendor\FedEx\AbstractComplexType
      * @param Weight $weight
      * @return $this
      */
-    public function setWeight(\FedExVendor\FedEx\RateService\ComplexType\Weight $weight)
+    public function setWeight(Weight $weight)
     {
         $this->values['Weight'] = $weight;
         return $this;
@@ -153,7 +153,7 @@ class Commodity extends \FedExVendor\FedEx\AbstractComplexType
      * @param Money $unitPrice
      * @return $this
      */
-    public function setUnitPrice(\FedExVendor\FedEx\RateService\ComplexType\Money $unitPrice)
+    public function setUnitPrice(Money $unitPrice)
     {
         $this->values['UnitPrice'] = $unitPrice;
         return $this;
@@ -164,7 +164,7 @@ class Commodity extends \FedExVendor\FedEx\AbstractComplexType
      * @param Money $customsValue
      * @return $this
      */
-    public function setCustomsValue(\FedExVendor\FedEx\RateService\ComplexType\Money $customsValue)
+    public function setCustomsValue(Money $customsValue)
     {
         $this->values['CustomsValue'] = $customsValue;
         return $this;
@@ -230,7 +230,7 @@ class Commodity extends \FedExVendor\FedEx\AbstractComplexType
      * @param UsmcaCommodityDetail $usmcaDetail
      * @return $this
      */
-    public function setUsmcaDetail(\FedExVendor\FedEx\RateService\ComplexType\UsmcaCommodityDetail $usmcaDetail)
+    public function setUsmcaDetail(UsmcaCommodityDetail $usmcaDetail)
     {
         $this->values['UsmcaDetail'] = $usmcaDetail;
         return $this;

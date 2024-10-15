@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Validation Availability And Commitment Service Service
  */
-class GetAllSpecialServicesProcessingOptionType extends \FedExVendor\FedEx\AbstractSimpleType
+class GetAllSpecialServicesProcessingOptionType extends AbstractSimpleType
 {
     const _EXCLUDE_ACCOUNT_ENABLEMENTS = 'EXCLUDE_ACCOUNT_ENABLEMENTS';
     const _EXCLUDE_CHANNEL_RESTRICTIONS = 'EXCLUDE_CHANNEL_RESTRICTIONS';

@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Upload Document Service
  */
-class DestinationControlStatementType extends \FedExVendor\FedEx\AbstractSimpleType
+class DestinationControlStatementType extends AbstractSimpleType
 {
     const _DEPARTMENT_OF_COMMERCE = 'DEPARTMENT_OF_COMMERCE';
     const _DEPARTMENT_OF_STATE = 'DEPARTMENT_OF_STATE';

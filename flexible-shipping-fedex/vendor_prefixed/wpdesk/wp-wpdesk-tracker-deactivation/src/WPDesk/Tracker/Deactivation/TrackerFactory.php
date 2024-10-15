@@ -18,7 +18,7 @@ class TrackerFactory
      */
     public static function createDefaultTracker($plugin_slug, $plugin_file, $plugin_title)
     {
-        $plugin_data = new \FedExVendor\WPDesk\Tracker\Deactivation\PluginData($plugin_slug, $plugin_file, $plugin_title);
+        $plugin_data = new PluginData($plugin_slug, $plugin_file, $plugin_title);
         return self::createCustomTracker($plugin_data);
     }
     /**
@@ -28,7 +28,7 @@ class TrackerFactory
      *
      * @return Tracker
      */
-    public static function createDefaultTrackerFromPluginData(\FedExVendor\WPDesk\Tracker\Deactivation\PluginData $plugin_data)
+    public static function createDefaultTrackerFromPluginData(PluginData $plugin_data)
     {
         return self::createCustomTracker($plugin_data);
     }
@@ -42,21 +42,21 @@ class TrackerFactory
      *
      * @return Tracker
      */
-    public static function createCustomTracker(\FedExVendor\WPDesk\Tracker\Deactivation\PluginData $plugin_data, $scripts = null, $thickbox = null, $ajax = null, \FedExVendor\WPDesk\Tracker\Deactivation\ReasonsFactory $reasons_factory = null)
+    public static function createCustomTracker(PluginData $plugin_data, $scripts = null, $thickbox = null, $ajax = null, ReasonsFactory $reasons_factory = null)
     {
-        $reasons_factory = $reasons_factory ?? new \FedExVendor\WPDesk\Tracker\Deactivation\DefaultReasonsFactory();
+        $reasons_factory = $reasons_factory ?? new DefaultReasonsFactory();
         if (empty($scripts)) {
-            $scripts = new \FedExVendor\WPDesk\Tracker\Deactivation\Scripts($plugin_data, $reasons_factory);
+            $scripts = new Scripts($plugin_data, $reasons_factory);
         }
         if (empty($thickbox)) {
-            $thickbox = new \FedExVendor\WPDesk\Tracker\Deactivation\Thickbox($plugin_data, $reasons_factory);
+            $thickbox = new Thickbox($plugin_data, $reasons_factory);
         }
         if (empty($ajax)) {
-            $sender = \apply_filters('wpdesk/tracker/sender/' . $plugin_data->getPluginSlug(), new \FedExVendor\WPDesk_Tracker_Sender_Wordpress_To_WPDesk());
+            $sender = apply_filters('wpdesk/tracker/sender/' . $plugin_data->getPluginSlug(), new \FedExVendor\WPDesk_Tracker_Sender_Wordpress_To_WPDesk());
             $sender = new \FedExVendor\WPDesk_Tracker_Sender_Logged($sender instanceof \WPDesk_Tracker_Sender ? $sender : new \FedExVendor\WPDesk_Tracker_Sender_Wordpress_To_WPDesk());
             $sender = new \FedExVendor\WPDesk_Tracker_Sender_Logged($sender);
-            $ajax = new \FedExVendor\WPDesk\Tracker\Deactivation\AjaxDeactivationDataHandler($plugin_data, $sender);
+            $ajax = new AjaxDeactivationDataHandler($plugin_data, $sender);
         }
-        return new \FedExVendor\WPDesk\Tracker\Deactivation\Tracker($plugin_data, $scripts, $thickbox, $ajax);
+        return new Tracker($plugin_data, $scripts, $thickbox, $ajax);
     }
 }

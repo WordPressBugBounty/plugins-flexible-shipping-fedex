@@ -19,7 +19,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property CustomerImageUsage[] $CustomerImageUsages
  * @property string $SignatureName
  */
-class CustomConsolidationDocumentDetail extends \FedExVendor\FedEx\AbstractComplexType
+class CustomConsolidationDocumentDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -33,7 +33,7 @@ class CustomConsolidationDocumentDetail extends \FedExVendor\FedEx\AbstractCompl
      * @param ShippingDocumentFormat $format
      * @return $this
      */
-    public function setFormat(\FedExVendor\FedEx\OpenShipService\ComplexType\ShippingDocumentFormat $format)
+    public function setFormat(ShippingDocumentFormat $format)
     {
         $this->values['Format'] = $format;
         return $this;
@@ -88,7 +88,7 @@ class CustomConsolidationDocumentDetail extends \FedExVendor\FedEx\AbstractCompl
      * @param DocTabContent $docTabContent
      * @return $this
      */
-    public function setDocTabContent(\FedExVendor\FedEx\OpenShipService\ComplexType\DocTabContent $docTabContent)
+    public function setDocTabContent(DocTabContent $docTabContent)
     {
         $this->values['DocTabContent'] = $docTabContent;
         return $this;

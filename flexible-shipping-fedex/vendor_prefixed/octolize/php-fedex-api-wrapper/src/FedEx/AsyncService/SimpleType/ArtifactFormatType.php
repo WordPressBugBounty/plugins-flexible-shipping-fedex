@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  ASync Service
  */
-class ArtifactFormatType extends \FedExVendor\FedEx\AbstractSimpleType
+class ArtifactFormatType extends AbstractSimpleType
 {
     const _BINARY = 'BINARY';
     const _DOC = 'DOC';

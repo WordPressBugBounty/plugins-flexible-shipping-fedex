@@ -17,7 +17,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property int $ThinBarWidth
  * @property \FedEx\ShipService\SimpleType\BarcodeSymbologyType|string $BarcodeSymbology
  */
-class CustomLabelBarcodeEntry extends \FedExVendor\FedEx\AbstractComplexType
+class CustomLabelBarcodeEntry extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -31,7 +31,7 @@ class CustomLabelBarcodeEntry extends \FedExVendor\FedEx\AbstractComplexType
      * @param CustomLabelPosition $position
      * @return $this
      */
-    public function setPosition(\FedExVendor\FedEx\ShipService\ComplexType\CustomLabelPosition $position)
+    public function setPosition(CustomLabelPosition $position)
     {
         $this->values['Position'] = $position;
         return $this;

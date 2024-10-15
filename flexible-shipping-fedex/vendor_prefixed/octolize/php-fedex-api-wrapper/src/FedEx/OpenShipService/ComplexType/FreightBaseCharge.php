@@ -19,7 +19,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property \FedEx\OpenShipService\SimpleType\FreightChargeBasisType|string $ChargeBasis
  * @property Money $ExtendedAmount
  */
-class FreightBaseCharge extends \FedExVendor\FedEx\AbstractComplexType
+class FreightBaseCharge extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -77,7 +77,7 @@ class FreightBaseCharge extends \FedExVendor\FedEx\AbstractComplexType
      * @param Weight $weight
      * @return $this
      */
-    public function setWeight(\FedExVendor\FedEx\OpenShipService\ComplexType\Weight $weight)
+    public function setWeight(Weight $weight)
     {
         $this->values['Weight'] = $weight;
         return $this;
@@ -88,7 +88,7 @@ class FreightBaseCharge extends \FedExVendor\FedEx\AbstractComplexType
      * @param Money $chargeRate
      * @return $this
      */
-    public function setChargeRate(\FedExVendor\FedEx\OpenShipService\ComplexType\Money $chargeRate)
+    public function setChargeRate(Money $chargeRate)
     {
         $this->values['ChargeRate'] = $chargeRate;
         return $this;
@@ -110,7 +110,7 @@ class FreightBaseCharge extends \FedExVendor\FedEx\AbstractComplexType
      * @param Money $extendedAmount
      * @return $this
      */
-    public function setExtendedAmount(\FedExVendor\FedEx\OpenShipService\ComplexType\Money $extendedAmount)
+    public function setExtendedAmount(Money $extendedAmount)
     {
         $this->values['ExtendedAmount'] = $extendedAmount;
         return $this;

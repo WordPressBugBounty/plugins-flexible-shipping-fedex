@@ -23,7 +23,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $ExpirationReason
  * @property string $CreationDate
  */
-class RecipientProfile extends \FedExVendor\FedEx\AbstractComplexType
+class RecipientProfile extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -59,7 +59,7 @@ class RecipientProfile extends \FedExVendor\FedEx\AbstractComplexType
      * @param ParsedPersonName $authorizedName
      * @return $this
      */
-    public function setAuthorizedName(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\ParsedPersonName $authorizedName)
+    public function setAuthorizedName(ParsedPersonName $authorizedName)
     {
         $this->values['AuthorizedName'] = $authorizedName;
         return $this;
@@ -92,7 +92,7 @@ class RecipientProfile extends \FedExVendor\FedEx\AbstractComplexType
      * @param CreditCard $creditCard
      * @return $this
      */
-    public function setCreditCard(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\CreditCard $creditCard)
+    public function setCreditCard(CreditCard $creditCard)
     {
         $this->values['CreditCard'] = $creditCard;
         return $this;

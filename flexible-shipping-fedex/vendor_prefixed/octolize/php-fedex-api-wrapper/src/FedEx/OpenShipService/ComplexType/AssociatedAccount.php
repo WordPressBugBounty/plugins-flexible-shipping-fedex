@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property \FedEx\OpenShipService\SimpleType\AssociatedAccountNumberType|string $Type
  * @property string $AccountNumber
  */
-class AssociatedAccount extends \FedExVendor\FedEx\AbstractComplexType
+class AssociatedAccount extends AbstractComplexType
 {
     /**
      * Name of this complex type

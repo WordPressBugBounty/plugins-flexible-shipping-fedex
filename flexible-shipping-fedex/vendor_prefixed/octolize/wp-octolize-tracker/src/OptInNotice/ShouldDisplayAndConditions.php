@@ -5,7 +5,7 @@ namespace FedExVendor\Octolize\Tracker\OptInNotice;
 /**
  * Should display AND conditions.
  */
-class ShouldDisplayAndConditions implements \FedExVendor\Octolize\Tracker\OptInNotice\ShouldDisplay
+class ShouldDisplayAndConditions implements ShouldDisplay
 {
     /**
      * @var ShouldDisplay[]
@@ -16,7 +16,7 @@ class ShouldDisplayAndConditions implements \FedExVendor\Octolize\Tracker\OptInN
      *
      * @return void
      */
-    public function add_should_diaplay_condition(\FedExVendor\Octolize\Tracker\OptInNotice\ShouldDisplay $should_display)
+    public function add_should_diaplay_condition(ShouldDisplay $should_display)
     {
         $this->conditions[] = $should_display;
     }

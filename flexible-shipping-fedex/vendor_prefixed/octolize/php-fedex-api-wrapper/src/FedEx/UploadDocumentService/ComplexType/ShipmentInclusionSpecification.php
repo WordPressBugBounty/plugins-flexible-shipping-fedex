@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property \FedEx\UploadDocumentService\SimpleType\CarrierCodeType|string $CarrierCode
  * @property \FedEx\UploadDocumentService\SimpleType\ServiceCategoryType|string $ServiceCategory
  */
-class ShipmentInclusionSpecification extends \FedExVendor\FedEx\AbstractComplexType
+class ShipmentInclusionSpecification extends AbstractComplexType
 {
     /**
      * Name of this complex type

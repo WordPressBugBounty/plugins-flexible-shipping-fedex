@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  OpenShip Service
  */
-class SurchargeType extends \FedExVendor\FedEx\AbstractSimpleType
+class SurchargeType extends AbstractSimpleType
 {
     const _ACCOUNT_NUMBER_PROCESSING_FEE = 'ACCOUNT_NUMBER_PROCESSING_FEE';
     const _ADDITIONAL_HANDLING = 'ADDITIONAL_HANDLING';

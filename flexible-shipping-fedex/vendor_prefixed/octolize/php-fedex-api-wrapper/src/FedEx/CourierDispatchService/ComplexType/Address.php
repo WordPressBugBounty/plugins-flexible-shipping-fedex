@@ -18,7 +18,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $CountryCode
  * @property boolean $Residential
  */
-class Address extends \FedExVendor\FedEx\AbstractComplexType
+class Address extends AbstractComplexType
 {
     /**
      * Name of this complex type

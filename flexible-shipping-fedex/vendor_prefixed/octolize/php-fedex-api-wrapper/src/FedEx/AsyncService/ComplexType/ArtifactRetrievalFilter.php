@@ -14,7 +14,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property \FedEx\AsyncService\SimpleType\ArtifactType|string $Type
  * @property string $ReferenceId
  */
-class ArtifactRetrievalFilter extends \FedExVendor\FedEx\AbstractComplexType
+class ArtifactRetrievalFilter extends AbstractComplexType
 {
     /**
      * Name of this complex type

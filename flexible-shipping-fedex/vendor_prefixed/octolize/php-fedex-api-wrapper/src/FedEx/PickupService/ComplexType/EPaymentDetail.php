@@ -17,7 +17,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $CreditCardExpirationDate
  * @property Money $Amount
  */
-class EPaymentDetail extends \FedExVendor\FedEx\AbstractComplexType
+class EPaymentDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -86,7 +86,7 @@ class EPaymentDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param Money $amount
      * @return $this
      */
-    public function setAmount(\FedExVendor\FedEx\PickupService\ComplexType\Money $amount)
+    public function setAmount(Money $amount)
     {
         $this->values['Amount'] = $amount;
         return $this;

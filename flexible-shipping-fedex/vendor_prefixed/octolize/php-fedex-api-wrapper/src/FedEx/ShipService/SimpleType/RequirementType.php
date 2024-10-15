@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
  */
-class RequirementType extends \FedExVendor\FedEx\AbstractSimpleType
+class RequirementType extends AbstractSimpleType
 {
     const _OPTIONAL = 'OPTIONAL';
     const _PROHIBITED = 'PROHIBITED';

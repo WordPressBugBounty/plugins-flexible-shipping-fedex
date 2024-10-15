@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property \FedEx\ShipService\SimpleType\BrokerType|string $Type
  * @property Party $Broker
  */
-class BrokerDetail extends \FedExVendor\FedEx\AbstractComplexType
+class BrokerDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -38,7 +38,7 @@ class BrokerDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param Party $broker
      * @return $this
      */
-    public function setBroker(\FedExVendor\FedEx\ShipService\ComplexType\Party $broker)
+    public function setBroker(Party $broker)
     {
         $this->values['Broker'] = $broker;
         return $this;

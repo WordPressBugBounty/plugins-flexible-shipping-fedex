@@ -15,7 +15,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property \FedEx\ValidationAvailabilityAndCommitmentService\SimpleType\OperatingCompanyType|string $OperatingCompany
  * @property string $CallCenterAssignedTo
  */
-class FedExEmployee extends \FedExVendor\FedEx\AbstractComplexType
+class FedExEmployee extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -40,7 +40,7 @@ class FedExEmployee extends \FedExVendor\FedEx\AbstractComplexType
      * @param Contact $contact
      * @return $this
      */
-    public function setContact(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\Contact $contact)
+    public function setContact(Contact $contact)
     {
         $this->values['Contact'] = $contact;
         return $this;

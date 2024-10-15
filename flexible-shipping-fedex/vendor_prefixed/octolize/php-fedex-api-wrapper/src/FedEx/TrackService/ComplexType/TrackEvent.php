@@ -21,7 +21,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $StationId
  * @property \FedEx\TrackService\SimpleType\ArrivalLocationType|string $ArrivalLocation
  */
-class TrackEvent extends \FedExVendor\FedEx\AbstractComplexType
+class TrackEvent extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -90,7 +90,7 @@ class TrackEvent extends \FedExVendor\FedEx\AbstractComplexType
      * @param TrackDelayDetail $delayDetail
      * @return $this
      */
-    public function setDelayDetail(\FedExVendor\FedEx\TrackService\ComplexType\TrackDelayDetail $delayDetail)
+    public function setDelayDetail(TrackDelayDetail $delayDetail)
     {
         $this->values['DelayDetail'] = $delayDetail;
         return $this;
@@ -112,7 +112,7 @@ class TrackEvent extends \FedExVendor\FedEx\AbstractComplexType
      * @param Address $address
      * @return $this
      */
-    public function setAddress(\FedExVendor\FedEx\TrackService\ComplexType\Address $address)
+    public function setAddress(Address $address)
     {
         $this->values['Address'] = $address;
         return $this;

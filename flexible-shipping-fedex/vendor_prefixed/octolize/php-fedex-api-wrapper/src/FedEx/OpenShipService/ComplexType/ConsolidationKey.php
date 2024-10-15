@@ -14,7 +14,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $Index
  * @property string $Date
  */
-class ConsolidationKey extends \FedExVendor\FedEx\AbstractComplexType
+class ConsolidationKey extends AbstractComplexType
 {
     /**
      * Name of this complex type

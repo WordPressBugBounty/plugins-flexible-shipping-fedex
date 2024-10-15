@@ -24,7 +24,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property Dimensions $Dimensions
  * @property Volume $Volume
  */
-class FreightShipmentLineItem extends \FedExVendor\FedEx\AbstractComplexType
+class FreightShipmentLineItem extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -148,7 +148,7 @@ class FreightShipmentLineItem extends \FedExVendor\FedEx\AbstractComplexType
      * @param Weight $weight
      * @return $this
      */
-    public function setWeight(\FedExVendor\FedEx\OpenShipService\ComplexType\Weight $weight)
+    public function setWeight(Weight $weight)
     {
         $this->values['Weight'] = $weight;
         return $this;
@@ -159,7 +159,7 @@ class FreightShipmentLineItem extends \FedExVendor\FedEx\AbstractComplexType
      * @param Dimensions $dimensions
      * @return $this
      */
-    public function setDimensions(\FedExVendor\FedEx\OpenShipService\ComplexType\Dimensions $dimensions)
+    public function setDimensions(Dimensions $dimensions)
     {
         $this->values['Dimensions'] = $dimensions;
         return $this;
@@ -170,7 +170,7 @@ class FreightShipmentLineItem extends \FedExVendor\FedEx\AbstractComplexType
      * @param Volume $volume
      * @return $this
      */
-    public function setVolume(\FedExVendor\FedEx\OpenShipService\ComplexType\Volume $volume)
+    public function setVolume(Volume $volume)
     {
         $this->values['Volume'] = $volume;
         return $this;

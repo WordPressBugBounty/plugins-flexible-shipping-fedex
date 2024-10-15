@@ -14,7 +14,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $FormId
  * @property string $TrackingNumber
  */
-class TrackingId extends \FedExVendor\FedEx\AbstractComplexType
+class TrackingId extends AbstractComplexType
 {
     /**
      * Name of this complex type

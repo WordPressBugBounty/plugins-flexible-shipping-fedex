@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Validation Availability And Commitment Service Service
  */
-class EnterpriseProfileAttributeType extends \FedExVendor\FedEx\AbstractSimpleType
+class EnterpriseProfileAttributeType extends AbstractSimpleType
 {
     const _CREDIT_CARD_ELIGIBLE = 'CREDIT_CARD_ELIGIBLE';
     const _DO_NOT_LINK_ACCOUNTS = 'DO_NOT_LINK_ACCOUNTS';

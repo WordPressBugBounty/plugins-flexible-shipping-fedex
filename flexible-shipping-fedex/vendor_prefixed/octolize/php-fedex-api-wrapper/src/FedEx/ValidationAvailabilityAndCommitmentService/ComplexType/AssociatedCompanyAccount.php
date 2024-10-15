@@ -14,7 +14,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $AccountNumber
  * @property KeyValueDetail[] $AccountDetails
  */
-class AssociatedCompanyAccount extends \FedExVendor\FedEx\AbstractComplexType
+class AssociatedCompanyAccount extends AbstractComplexType
 {
     /**
      * Name of this complex type

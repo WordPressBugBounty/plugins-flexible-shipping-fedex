@@ -18,5 +18,5 @@ interface Sender
      *
      * @return RateReply
      */
-    public function send(\FedExVendor\FedEx\RateService\ComplexType\RateRequest $request);
+    public function send(RateRequest $request);
 }

@@ -24,7 +24,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $AdditionalHandling
  * @property TrackingId $MasterTrackingId
  */
-class UploadedDangerousGoodsShipmentDetail extends \FedExVendor\FedEx\AbstractComplexType
+class UploadedDangerousGoodsShipmentDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -49,7 +49,7 @@ class UploadedDangerousGoodsShipmentDetail extends \FedExVendor\FedEx\AbstractCo
      * @param Address $origin
      * @return $this
      */
-    public function setOrigin(\FedExVendor\FedEx\DGDSService\ComplexType\Address $origin)
+    public function setOrigin(Address $origin)
     {
         $this->values['Origin'] = $origin;
         return $this;
@@ -60,7 +60,7 @@ class UploadedDangerousGoodsShipmentDetail extends \FedExVendor\FedEx\AbstractCo
      * @param Address $destination
      * @return $this
      */
-    public function setDestination(\FedExVendor\FedEx\DGDSService\ComplexType\Address $destination)
+    public function setDestination(Address $destination)
     {
         $this->values['Destination'] = $destination;
         return $this;
@@ -115,7 +115,7 @@ class UploadedDangerousGoodsShipmentDetail extends \FedExVendor\FedEx\AbstractCo
      * @param DangerousGoodsSignatory $signatory
      * @return $this
      */
-    public function setSignatory(\FedExVendor\FedEx\DGDSService\ComplexType\DangerousGoodsSignatory $signatory)
+    public function setSignatory(DangerousGoodsSignatory $signatory)
     {
         $this->values['Signatory'] = $signatory;
         return $this;
@@ -126,7 +126,7 @@ class UploadedDangerousGoodsShipmentDetail extends \FedExVendor\FedEx\AbstractCo
      * @param Contact $infectiousSubstanceResponsibleContact
      * @return $this
      */
-    public function setInfectiousSubstanceResponsibleContact(\FedExVendor\FedEx\DGDSService\ComplexType\Contact $infectiousSubstanceResponsibleContact)
+    public function setInfectiousSubstanceResponsibleContact(Contact $infectiousSubstanceResponsibleContact)
     {
         $this->values['InfectiousSubstanceResponsibleContact'] = $infectiousSubstanceResponsibleContact;
         return $this;
@@ -170,7 +170,7 @@ class UploadedDangerousGoodsShipmentDetail extends \FedExVendor\FedEx\AbstractCo
      * @param TrackingId $masterTrackingId
      * @return $this
      */
-    public function setMasterTrackingId(\FedExVendor\FedEx\DGDSService\ComplexType\TrackingId $masterTrackingId)
+    public function setMasterTrackingId(TrackingId $masterTrackingId)
     {
         $this->values['MasterTrackingId'] = $masterTrackingId;
         return $this;

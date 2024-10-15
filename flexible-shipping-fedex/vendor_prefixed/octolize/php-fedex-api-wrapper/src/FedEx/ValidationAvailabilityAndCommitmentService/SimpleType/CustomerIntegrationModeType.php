@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Validation Availability And Commitment Service Service
  */
-class CustomerIntegrationModeType extends \FedExVendor\FedEx\AbstractSimpleType
+class CustomerIntegrationModeType extends AbstractSimpleType
 {
     const _CUSTOM = 'CUSTOM';
     const _STANDARD = 'STANDARD';

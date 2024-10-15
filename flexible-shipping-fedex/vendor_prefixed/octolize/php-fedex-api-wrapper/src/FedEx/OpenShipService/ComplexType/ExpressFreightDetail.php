@@ -14,7 +14,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property int $ShippersLoadAndCount
  * @property string $BookingConfirmationNumber
  */
-class ExpressFreightDetail extends \FedExVendor\FedEx\AbstractComplexType
+class ExpressFreightDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

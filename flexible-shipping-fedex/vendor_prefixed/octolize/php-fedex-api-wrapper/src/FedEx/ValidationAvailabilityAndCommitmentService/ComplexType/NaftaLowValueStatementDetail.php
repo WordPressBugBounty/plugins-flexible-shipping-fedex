@@ -12,7 +12,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  *
  * @property \FedEx\ValidationAvailabilityAndCommitmentService\SimpleType\CustomsRoleType|string $Role
  */
-class NaftaLowValueStatementDetail extends \FedExVendor\FedEx\AbstractComplexType
+class NaftaLowValueStatementDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

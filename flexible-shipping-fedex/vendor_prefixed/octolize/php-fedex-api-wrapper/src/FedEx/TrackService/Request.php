@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractRequest;
  * @package     PHP FedEx API wrapper
  * @subpackage  Track Service
  */
-class Request extends \FedExVendor\FedEx\AbstractRequest
+class Request extends AbstractRequest
 {
     const PRODUCTION_URL = 'https://ws.fedex.com:443/web-services/track';
     const TESTING_URL = 'https://wsbeta.fedex.com:443/web-services/track';
@@ -22,13 +22,13 @@ class Request extends \FedExVendor\FedEx\AbstractRequest
      * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
      * @return ComplexType\TrackReply|stdClass
      */
-    public function getTrackReply(\FedExVendor\FedEx\TrackService\ComplexType\TrackRequest $trackRequest, $returnStdClass = \false)
+    public function getTrackReply(ComplexType\TrackRequest $trackRequest, $returnStdClass = \false)
     {
         $response = $this->getSoapClient()->track($trackRequest->toArray());
         if ($returnStdClass) {
             return $response;
         }
-        $trackReply = new \FedExVendor\FedEx\TrackService\ComplexType\TrackReply();
+        $trackReply = new ComplexType\TrackReply();
         $trackReply->populateFromStdClass($response);
         return $trackReply;
     }
@@ -39,13 +39,13 @@ class Request extends \FedExVendor\FedEx\AbstractRequest
      * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
      * @return ComplexType\GetTrackingDocumentsReply|stdClass
      */
-    public function getGetTrackingDocumentsReply(\FedExVendor\FedEx\TrackService\ComplexType\GetTrackingDocumentsRequest $getTrackingDocumentsRequest, $returnStdClass = \false)
+    public function getGetTrackingDocumentsReply(ComplexType\GetTrackingDocumentsRequest $getTrackingDocumentsRequest, $returnStdClass = \false)
     {
         $response = $this->getSoapClient()->getTrackingDocuments($getTrackingDocumentsRequest->toArray());
         if ($returnStdClass) {
             return $response;
         }
-        $getTrackingDocumentsReply = new \FedExVendor\FedEx\TrackService\ComplexType\GetTrackingDocumentsReply();
+        $getTrackingDocumentsReply = new ComplexType\GetTrackingDocumentsReply();
         $getTrackingDocumentsReply->populateFromStdClass($response);
         return $getTrackingDocumentsReply;
     }
@@ -56,13 +56,13 @@ class Request extends \FedExVendor\FedEx\AbstractRequest
      * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
      * @return ComplexType\SendNotificationsReply|stdClass
      */
-    public function getSendNotificationsReply(\FedExVendor\FedEx\TrackService\ComplexType\SendNotificationsRequest $sendNotificationsRequest, $returnStdClass = \false)
+    public function getSendNotificationsReply(ComplexType\SendNotificationsRequest $sendNotificationsRequest, $returnStdClass = \false)
     {
         $response = $this->getSoapClient()->sendNotifications($sendNotificationsRequest->toArray());
         if ($returnStdClass) {
             return $response;
         }
-        $sendNotificationsReply = new \FedExVendor\FedEx\TrackService\ComplexType\SendNotificationsReply();
+        $sendNotificationsReply = new ComplexType\SendNotificationsReply();
         $sendNotificationsReply->populateFromStdClass($response);
         return $sendNotificationsReply;
     }

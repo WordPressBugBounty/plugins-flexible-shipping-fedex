@@ -12,7 +12,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  *
  * @property string[] $CountryCodes
  */
-class CustomerAccountFranchiseeDetail extends \FedExVendor\FedEx\AbstractComplexType
+class CustomerAccountFranchiseeDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

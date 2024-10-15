@@ -22,7 +22,7 @@ interface CanTestSettings
      * @param LoggerInterface $logger .
      * @return string
      */
-    public function check_connection(\FedExVendor\WPDesk\AbstractShipping\Settings\SettingsValues $settings, \FedExVendor\Psr\Log\LoggerInterface $logger);
+    public function check_connection(SettingsValues $settings, LoggerInterface $logger);
     /**
      * Returns field ID after which API Status field should be added.
      *

@@ -12,7 +12,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  *
  * @property string $Id
  */
-class AssociatedFreightLineItemDetail extends \FedExVendor\FedEx\AbstractComplexType
+class AssociatedFreightLineItemDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

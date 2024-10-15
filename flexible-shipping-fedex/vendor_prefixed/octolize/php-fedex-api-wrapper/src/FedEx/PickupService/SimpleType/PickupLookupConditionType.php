@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  */
-class PickupLookupConditionType extends \FedExVendor\FedEx\AbstractSimpleType
+class PickupLookupConditionType extends AbstractSimpleType
 {
     const _ACCOUNT_NUMBER = 'ACCOUNT_NUMBER';
     const _BEGIN_DATE = 'BEGIN_DATE';

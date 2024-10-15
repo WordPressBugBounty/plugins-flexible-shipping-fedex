@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  */
-class CreatePickupRequestProcessingOptionType extends \FedExVendor\FedEx\AbstractSimpleType
+class CreatePickupRequestProcessingOptionType extends AbstractSimpleType
 {
     const _ALLOW_RESTRICTIONS_WITH_EXCEPTIONS = 'ALLOW_RESTRICTIONS_WITH_EXCEPTIONS';
     const _INELIGIBLE_FOR_HOME_DELIVERY = 'INELIGIBLE_FOR_HOME_DELIVERY';

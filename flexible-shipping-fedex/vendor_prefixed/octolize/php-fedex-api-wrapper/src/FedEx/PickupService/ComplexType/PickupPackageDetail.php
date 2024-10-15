@@ -17,7 +17,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $Description
  * @property CustomerReference[] $CustomerReferences
  */
-class PickupPackageDetail extends \FedExVendor\FedEx\AbstractComplexType
+class PickupPackageDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -42,7 +42,7 @@ class PickupPackageDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param SignatureOptionDetail $signatureOptionDetail
      * @return $this
      */
-    public function setSignatureOptionDetail(\FedExVendor\FedEx\PickupService\ComplexType\SignatureOptionDetail $signatureOptionDetail)
+    public function setSignatureOptionDetail(SignatureOptionDetail $signatureOptionDetail)
     {
         $this->values['SignatureOptionDetail'] = $signatureOptionDetail;
         return $this;
@@ -53,7 +53,7 @@ class PickupPackageDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param Weight $weight
      * @return $this
      */
-    public function setWeight(\FedExVendor\FedEx\PickupService\ComplexType\Weight $weight)
+    public function setWeight(Weight $weight)
     {
         $this->values['Weight'] = $weight;
         return $this;
@@ -64,7 +64,7 @@ class PickupPackageDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param Money $insuredValue
      * @return $this
      */
-    public function setInsuredValue(\FedExVendor\FedEx\PickupService\ComplexType\Money $insuredValue)
+    public function setInsuredValue(Money $insuredValue)
     {
         $this->values['InsuredValue'] = $insuredValue;
         return $this;

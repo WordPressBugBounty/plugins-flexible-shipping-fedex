@@ -15,7 +15,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property ShippingDocumentEMailDetail $EMailDetail
  * @property ShippingDocumentPrintDetail $PrintDetail
  */
-class ShippingDocumentDispositionDetail extends \FedExVendor\FedEx\AbstractComplexType
+class ShippingDocumentDispositionDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -51,7 +51,7 @@ class ShippingDocumentDispositionDetail extends \FedExVendor\FedEx\AbstractCompl
      * @param ShippingDocumentEMailDetail $eMailDetail
      * @return $this
      */
-    public function setEMailDetail(\FedExVendor\FedEx\RateService\ComplexType\ShippingDocumentEMailDetail $eMailDetail)
+    public function setEMailDetail(ShippingDocumentEMailDetail $eMailDetail)
     {
         $this->values['EMailDetail'] = $eMailDetail;
         return $this;
@@ -62,7 +62,7 @@ class ShippingDocumentDispositionDetail extends \FedExVendor\FedEx\AbstractCompl
      * @param ShippingDocumentPrintDetail $printDetail
      * @return $this
      */
-    public function setPrintDetail(\FedExVendor\FedEx\RateService\ComplexType\ShippingDocumentPrintDetail $printDetail)
+    public function setPrintDetail(ShippingDocumentPrintDetail $printDetail)
     {
         $this->values['PrintDetail'] = $printDetail;
         return $this;

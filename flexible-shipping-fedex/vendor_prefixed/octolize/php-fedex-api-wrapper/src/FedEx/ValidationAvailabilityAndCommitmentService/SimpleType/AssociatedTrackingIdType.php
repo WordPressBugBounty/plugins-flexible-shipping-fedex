@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Validation Availability And Commitment Service Service
  */
-class AssociatedTrackingIdType extends \FedExVendor\FedEx\AbstractSimpleType
+class AssociatedTrackingIdType extends AbstractSimpleType
 {
     const _COD_AND_DELIVERY_ON_INVOICE_ACCEPTANCE_RETURN = 'COD_AND_DELIVERY_ON_INVOICE_ACCEPTANCE_RETURN';
     const _COD_RETURN = 'COD_RETURN';

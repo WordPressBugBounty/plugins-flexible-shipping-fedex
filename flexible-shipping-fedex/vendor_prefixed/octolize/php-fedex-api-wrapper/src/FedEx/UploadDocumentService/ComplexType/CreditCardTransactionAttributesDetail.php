@@ -12,7 +12,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  *
  * @property \FedEx\UploadDocumentService\SimpleType\CreditCardTransactionAttributeType|string[] $Types
  */
-class CreditCardTransactionAttributesDetail extends \FedExVendor\FedEx\AbstractComplexType
+class CreditCardTransactionAttributesDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

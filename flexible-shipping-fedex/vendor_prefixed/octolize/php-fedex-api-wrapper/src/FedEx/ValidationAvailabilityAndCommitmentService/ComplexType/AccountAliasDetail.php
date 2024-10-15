@@ -15,7 +15,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property ProfileContact $Contact
  * @property \FedEx\ValidationAvailabilityAndCommitmentService\SimpleType\AccountAliasAttributeType|string[] $Attributes
  */
-class AccountAliasDetail extends \FedExVendor\FedEx\AbstractComplexType
+class AccountAliasDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -51,7 +51,7 @@ class AccountAliasDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param ProfileContact $contact
      * @return $this
      */
-    public function setContact(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\ProfileContact $contact)
+    public function setContact(ProfileContact $contact)
     {
         $this->values['Contact'] = $contact;
         return $this;

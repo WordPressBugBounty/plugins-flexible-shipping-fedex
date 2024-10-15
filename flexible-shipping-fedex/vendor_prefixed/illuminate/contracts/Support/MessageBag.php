@@ -3,7 +3,7 @@
 namespace FedExVendor\Illuminate\Contracts\Support;
 
 use Countable;
-interface MessageBag extends \FedExVendor\Illuminate\Contracts\Support\Arrayable, \Countable
+interface MessageBag extends Arrayable, Countable
 {
     /**
      * Get the keys present in the message bag.

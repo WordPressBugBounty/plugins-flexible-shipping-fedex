@@ -12,7 +12,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  *
  * @property string $PrinterId
  */
-class ShippingDocumentPrintDetail extends \FedExVendor\FedEx\AbstractComplexType
+class ShippingDocumentPrintDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractRequest;
  * @package     PHP FedEx API wrapper
  * @subpackage  Locations Service
  */
-class Request extends \FedExVendor\FedEx\AbstractRequest
+class Request extends AbstractRequest
 {
     const PRODUCTION_URL = 'https://ws.fedex.com:443/web-services/locs';
     const TESTING_URL = 'https://wsbeta.fedex.com:443/web-services/locs';
@@ -22,13 +22,13 @@ class Request extends \FedExVendor\FedEx\AbstractRequest
      * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
      * @return ComplexType\SearchLocationsReply|stdClass
      */
-    public function getSearchLocationsReply(\FedExVendor\FedEx\LocationsService\ComplexType\SearchLocationsRequest $searchLocationsRequest, $returnStdClass = \false)
+    public function getSearchLocationsReply(ComplexType\SearchLocationsRequest $searchLocationsRequest, $returnStdClass = \false)
     {
         $response = $this->getSoapClient()->searchLocations($searchLocationsRequest->toArray());
         if ($returnStdClass) {
             return $response;
         }
-        $searchLocationsReply = new \FedExVendor\FedEx\LocationsService\ComplexType\SearchLocationsReply();
+        $searchLocationsReply = new ComplexType\SearchLocationsReply();
         $searchLocationsReply->populateFromStdClass($response);
         return $searchLocationsReply;
     }

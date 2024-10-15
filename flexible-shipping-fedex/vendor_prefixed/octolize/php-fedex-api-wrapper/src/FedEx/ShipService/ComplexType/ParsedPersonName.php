@@ -14,7 +14,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $MiddleName
  * @property string $LastName
  */
-class ParsedPersonName extends \FedExVendor\FedEx\AbstractComplexType
+class ParsedPersonName extends AbstractComplexType
 {
     /**
      * Name of this complex type

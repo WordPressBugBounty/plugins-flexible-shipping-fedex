@@ -12,10 +12,10 @@ use FedExVendor\WPDesk\FedexShippingService\FedexApi\FedexRequestManipulation;
  *
  * @package WPDesk\FedexShippingService\FedexApi
  */
-class FedexRestApiRateReplyInterpretation implements \FedExVendor\WPDesk\AbstractShipping\Rate\ShipmentRating
+class FedexRestApiRateReplyInterpretation implements ShipmentRating
 {
     private bool $is_tax_enabled;
-    private \FedExVendor\CageA80\FedEx\Services\Rates\RatesResponse $rates_response;
+    private RatesResponse $rates_response;
     private string $rate_type;
     /**
      * FedexResponse constructor.
@@ -24,7 +24,7 @@ class FedexRestApiRateReplyInterpretation implements \FedExVendor\WPDesk\Abstrac
      * @param bool $is_tax_enabled Is tax enabled.
      * @param string $rate_type Setting value of FedexSettingsDefinition::FIELD_REQUEST_TYPE
      */
-    public function __construct(\FedExVendor\CageA80\FedEx\Services\Rates\RatesResponse $rates_response, bool $is_tax_enabled, string $rate_type)
+    public function __construct(RatesResponse $rates_response, bool $is_tax_enabled, string $rate_type)
     {
         $this->rates_response = $rates_response;
         $this->is_tax_enabled = $is_tax_enabled;
@@ -37,7 +37,7 @@ class FedexRestApiRateReplyInterpretation implements \FedExVendor\WPDesk\Abstrac
      *
      * @return array
      */
-    public static function get_reply_messages(\FedExVendor\CageA80\FedEx\Services\Rates\RatesResponse $rates_response) : array
+    public static function get_reply_messages(RatesResponse $rates_response): array
     {
         return $rates_response->alerts();
     }
@@ -48,9 +48,9 @@ class FedexRestApiRateReplyInterpretation implements \FedExVendor\WPDesk\Abstrac
      *
      * @return bool
      */
-    public static function has_reply_warning(\FedExVendor\CageA80\FedEx\Services\Rates\RatesResponse $rates_response) : bool
+    public static function has_reply_warning(RatesResponse $rates_response): bool
     {
-        return \count($rates_response->alerts()) > 0;
+        return count($rates_response->alerts()) > 0;
     }
     /**
      * Get single rate.
@@ -60,11 +60,11 @@ class FedexRestApiRateReplyInterpretation implements \FedExVendor\WPDesk\Abstrac
      *
      * @return SingleRate
      */
-    protected function get_single_rate(array $rate_detail, array $rated_shipment_detail) : \FedExVendor\WPDesk\AbstractShipping\Rate\SingleRate
+    protected function get_single_rate(array $rate_detail, array $rated_shipment_detail): SingleRate
     {
-        $rate = new \FedExVendor\WPDesk\AbstractShipping\Rate\SingleRate();
-        $money = new \FedExVendor\WPDesk\AbstractShipping\Rate\Money();
-        $money->currency = \FedExVendor\WPDesk\FedexShippingService\FedexApi\FedexRequestManipulation::convert_currency_from_fedex($rated_shipment_detail['currency']);
+        $rate = new SingleRate();
+        $money = new Money();
+        $money->currency = FedexRequestManipulation::convert_currency_from_fedex($rated_shipment_detail['currency']);
         if ($this->is_tax_enabled) {
             $money->amount = $rated_shipment_detail['totalNetFedExCharge'];
         } else {
@@ -78,7 +78,7 @@ class FedexRestApiRateReplyInterpretation implements \FedExVendor\WPDesk\Abstrac
     /**
      * @return RatesResponse
      */
-    public function get_rates_response() : \FedExVendor\CageA80\FedEx\Services\Rates\RatesResponse
+    public function get_rates_response(): RatesResponse
     {
         return $this->rates_response;
     }
@@ -87,7 +87,7 @@ class FedexRestApiRateReplyInterpretation implements \FedExVendor\WPDesk\Abstrac
      *
      * @return SingleRate[]
      */
-    public function get_ratings() : array
+    public function get_ratings(): array
     {
         $rate_response = $this->get_rates_response();
         if (empty($rate_response->details())) {

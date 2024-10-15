@@ -23,7 +23,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property ShipmentDryIceDetail $DryIceDetail
  * @property \FedEx\OpenShipService\SimpleType\DangerousGoodsAccessibilityType|string $DangerousGoodsAccessibility
  */
-class InternationalDistributionSummaryDetail extends \FedExVendor\FedEx\AbstractComplexType
+class InternationalDistributionSummaryDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -37,7 +37,7 @@ class InternationalDistributionSummaryDetail extends \FedExVendor\FedEx\Abstract
      * @param Weight $totalWeight
      * @return $this
      */
-    public function setTotalWeight(\FedExVendor\FedEx\OpenShipService\ComplexType\Weight $totalWeight)
+    public function setTotalWeight(Weight $totalWeight)
     {
         $this->values['TotalWeight'] = $totalWeight;
         return $this;
@@ -70,7 +70,7 @@ class InternationalDistributionSummaryDetail extends \FedExVendor\FedEx\Abstract
      * @param Money $totalCustomsValue
      * @return $this
      */
-    public function setTotalCustomsValue(\FedExVendor\FedEx\OpenShipService\ComplexType\Money $totalCustomsValue)
+    public function setTotalCustomsValue(Money $totalCustomsValue)
     {
         $this->values['TotalCustomsValue'] = $totalCustomsValue;
         return $this;
@@ -81,7 +81,7 @@ class InternationalDistributionSummaryDetail extends \FedExVendor\FedEx\Abstract
      * @param Money $totalInsuredValue
      * @return $this
      */
-    public function setTotalInsuredValue(\FedExVendor\FedEx\OpenShipService\ComplexType\Money $totalInsuredValue)
+    public function setTotalInsuredValue(Money $totalInsuredValue)
     {
         $this->values['TotalInsuredValue'] = $totalInsuredValue;
         return $this;
@@ -92,7 +92,7 @@ class InternationalDistributionSummaryDetail extends \FedExVendor\FedEx\Abstract
      * @param Money $totalFreightCharges
      * @return $this
      */
-    public function setTotalFreightCharges(\FedExVendor\FedEx\OpenShipService\ComplexType\Money $totalFreightCharges)
+    public function setTotalFreightCharges(Money $totalFreightCharges)
     {
         $this->values['TotalFreightCharges'] = $totalFreightCharges;
         return $this;
@@ -103,7 +103,7 @@ class InternationalDistributionSummaryDetail extends \FedExVendor\FedEx\Abstract
      * @param Money $totalInsuranceCharges
      * @return $this
      */
-    public function setTotalInsuranceCharges(\FedExVendor\FedEx\OpenShipService\ComplexType\Money $totalInsuranceCharges)
+    public function setTotalInsuranceCharges(Money $totalInsuranceCharges)
     {
         $this->values['TotalInsuranceCharges'] = $totalInsuranceCharges;
         return $this;
@@ -114,7 +114,7 @@ class InternationalDistributionSummaryDetail extends \FedExVendor\FedEx\Abstract
      * @param Money $totalTaxesOrMiscellaneousCharges
      * @return $this
      */
-    public function setTotalTaxesOrMiscellaneousCharges(\FedExVendor\FedEx\OpenShipService\ComplexType\Money $totalTaxesOrMiscellaneousCharges)
+    public function setTotalTaxesOrMiscellaneousCharges(Money $totalTaxesOrMiscellaneousCharges)
     {
         $this->values['TotalTaxesOrMiscellaneousCharges'] = $totalTaxesOrMiscellaneousCharges;
         return $this;
@@ -125,7 +125,7 @@ class InternationalDistributionSummaryDetail extends \FedExVendor\FedEx\Abstract
      * @param Money $totalHandlingCosts
      * @return $this
      */
-    public function setTotalHandlingCosts(\FedExVendor\FedEx\OpenShipService\ComplexType\Money $totalHandlingCosts)
+    public function setTotalHandlingCosts(Money $totalHandlingCosts)
     {
         $this->values['TotalHandlingCosts'] = $totalHandlingCosts;
         return $this;
@@ -136,7 +136,7 @@ class InternationalDistributionSummaryDetail extends \FedExVendor\FedEx\Abstract
      * @param Money $totalPackingCosts
      * @return $this
      */
-    public function setTotalPackingCosts(\FedExVendor\FedEx\OpenShipService\ComplexType\Money $totalPackingCosts)
+    public function setTotalPackingCosts(Money $totalPackingCosts)
     {
         $this->values['TotalPackingCosts'] = $totalPackingCosts;
         return $this;
@@ -147,7 +147,7 @@ class InternationalDistributionSummaryDetail extends \FedExVendor\FedEx\Abstract
      * @param ShipmentDryIceDetail $dryIceDetail
      * @return $this
      */
-    public function setDryIceDetail(\FedExVendor\FedEx\OpenShipService\ComplexType\ShipmentDryIceDetail $dryIceDetail)
+    public function setDryIceDetail(ShipmentDryIceDetail $dryIceDetail)
     {
         $this->values['DryIceDetail'] = $dryIceDetail;
         return $this;

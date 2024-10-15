@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  OpenShip Service
  */
-class ShipmentRuleType extends \FedExVendor\FedEx\AbstractSimpleType
+class ShipmentRuleType extends AbstractSimpleType
 {
     const _EXPORT = 'EXPORT';
     const _GENERAL = 'GENERAL';

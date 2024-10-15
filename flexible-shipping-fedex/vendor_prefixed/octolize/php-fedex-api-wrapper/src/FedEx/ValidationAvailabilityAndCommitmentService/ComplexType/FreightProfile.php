@@ -27,7 +27,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property TaxExemptionDetail[] $TaxExemptionDetails
  * @property CustomerProfileArchiveDetail $ArchiveDetail
  */
-class FreightProfile extends \FedExVendor\FedEx\AbstractComplexType
+class FreightProfile extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -118,7 +118,7 @@ class FreightProfile extends \FedExVendor\FedEx\AbstractComplexType
      * @param CustomerRevenueDetail $revenueDetail
      * @return $this
      */
-    public function setRevenueDetail(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\CustomerRevenueDetail $revenueDetail)
+    public function setRevenueDetail(CustomerRevenueDetail $revenueDetail)
     {
         $this->values['RevenueDetail'] = $revenueDetail;
         return $this;
@@ -129,7 +129,7 @@ class FreightProfile extends \FedExVendor\FedEx\AbstractComplexType
      * @param FreightAccountDetail $freightAccountDetail
      * @return $this
      */
-    public function setFreightAccountDetail(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\FreightAccountDetail $freightAccountDetail)
+    public function setFreightAccountDetail(FreightAccountDetail $freightAccountDetail)
     {
         $this->values['FreightAccountDetail'] = $freightAccountDetail;
         return $this;
@@ -140,7 +140,7 @@ class FreightProfile extends \FedExVendor\FedEx\AbstractComplexType
      * @param Money $creditLimit
      * @return $this
      */
-    public function setCreditLimit(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\Money $creditLimit)
+    public function setCreditLimit(Money $creditLimit)
     {
         $this->values['CreditLimit'] = $creditLimit;
         return $this;
@@ -151,7 +151,7 @@ class FreightProfile extends \FedExVendor\FedEx\AbstractComplexType
      * @param ProfileCreditStatusDetail $creditStatusDetail
      * @return $this
      */
-    public function setCreditStatusDetail(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\ProfileCreditStatusDetail $creditStatusDetail)
+    public function setCreditStatusDetail(ProfileCreditStatusDetail $creditStatusDetail)
     {
         $this->values['CreditStatusDetail'] = $creditStatusDetail;
         return $this;
@@ -206,7 +206,7 @@ class FreightProfile extends \FedExVendor\FedEx\AbstractComplexType
      * @param CustomerProfileArchiveDetail $archiveDetail
      * @return $this
      */
-    public function setArchiveDetail(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\CustomerProfileArchiveDetail $archiveDetail)
+    public function setArchiveDetail(CustomerProfileArchiveDetail $archiveDetail)
     {
         $this->values['ArchiveDetail'] = $archiveDetail;
         return $this;

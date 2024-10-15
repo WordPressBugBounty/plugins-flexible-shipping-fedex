@@ -33,7 +33,7 @@ use RuntimeException;
  * @see \Illuminate\Contracts\Auth\Guard
  * @see \Illuminate\Contracts\Auth\StatefulGuard
  */
-class Auth extends \FedExVendor\Illuminate\Support\Facades\Facade
+class Auth extends Facade
 {
     /**
      * Get the registered name of the component.
@@ -54,8 +54,8 @@ class Auth extends \FedExVendor\Illuminate\Support\Facades\Facade
      */
     public static function routes(array $options = [])
     {
-        if (!static::$app->providerIsLoaded(\FedExVendor\Laravel\Ui\UiServiceProvider::class)) {
-            throw new \RuntimeException('In order to use the Auth::routes() method, please install the laravel/ui package.');
+        if (!static::$app->providerIsLoaded(UiServiceProvider::class)) {
+            throw new RuntimeException('In order to use the Auth::routes() method, please install the laravel/ui package.');
         }
         static::$app->make('router')->auth($options);
     }

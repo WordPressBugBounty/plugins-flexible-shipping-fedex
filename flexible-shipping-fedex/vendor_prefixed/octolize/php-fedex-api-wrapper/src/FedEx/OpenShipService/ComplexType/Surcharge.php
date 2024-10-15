@@ -15,7 +15,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $Description
  * @property Money $Amount
  */
-class Surcharge extends \FedExVendor\FedEx\AbstractComplexType
+class Surcharge extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -62,7 +62,7 @@ class Surcharge extends \FedExVendor\FedEx\AbstractComplexType
      * @param Money $amount
      * @return $this
      */
-    public function setAmount(\FedExVendor\FedEx\OpenShipService\ComplexType\Money $amount)
+    public function setAmount(Money $amount)
     {
         $this->values['Amount'] = $amount;
         return $this;

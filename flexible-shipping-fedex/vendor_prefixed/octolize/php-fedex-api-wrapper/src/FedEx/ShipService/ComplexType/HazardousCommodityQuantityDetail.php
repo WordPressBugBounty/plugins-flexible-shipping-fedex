@@ -14,7 +14,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $Units
  * @property \FedEx\ShipService\SimpleType\HazardousCommodityQuantityType|string $QuantityType
  */
-class HazardousCommodityQuantityDetail extends \FedExVendor\FedEx\AbstractComplexType
+class HazardousCommodityQuantityDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

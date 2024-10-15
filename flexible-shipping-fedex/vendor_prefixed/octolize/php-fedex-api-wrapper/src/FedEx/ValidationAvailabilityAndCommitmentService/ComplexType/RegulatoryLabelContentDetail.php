@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property \FedEx\ValidationAvailabilityAndCommitmentService\SimpleType\RegulatoryLabelType|string $Type
  * @property \FedEx\ValidationAvailabilityAndCommitmentService\SimpleType\CustomerSpecifiedLabelGenerationOptionType|string[] $GenerationOptions
  */
-class RegulatoryLabelContentDetail extends \FedExVendor\FedEx\AbstractComplexType
+class RegulatoryLabelContentDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

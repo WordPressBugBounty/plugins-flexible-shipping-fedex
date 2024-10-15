@@ -12,7 +12,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  *
  * @property \FedEx\ValidationAvailabilityAndCommitmentService\SimpleType\RateDiscountType|string[] $ExcludedTypes
  */
-class CustomDiscountExclusionDetail extends \FedExVendor\FedEx\AbstractComplexType
+class CustomDiscountExclusionDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

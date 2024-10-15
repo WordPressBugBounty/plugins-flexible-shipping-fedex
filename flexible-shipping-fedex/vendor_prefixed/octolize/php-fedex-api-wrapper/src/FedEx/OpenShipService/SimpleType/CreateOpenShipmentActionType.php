@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  OpenShip Service
  */
-class CreateOpenShipmentActionType extends \FedExVendor\FedEx\AbstractSimpleType
+class CreateOpenShipmentActionType extends AbstractSimpleType
 {
     const _CONFIRM = 'CONFIRM';
     const _CREATE_PACKAGE = 'CREATE_PACKAGE';

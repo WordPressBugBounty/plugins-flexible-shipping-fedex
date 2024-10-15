@@ -13,7 +13,7 @@ use FedExVendor\WPDesk\WooCommerceShipping\ShippingMethod\RateMethod\Fallback\Fa
 /**
  * Can interpret Fallback meta data from WooCommerce order shipping on admin.
  */
-class FallbackAdminMetaDataInterpreter implements \FedExVendor\WPDesk\WooCommerceShipping\OrderMetaData\SingleAdminOrderMetaDataInterpreter
+class FallbackAdminMetaDataInterpreter implements SingleAdminOrderMetaDataInterpreter
 {
     use AdminMetaDataUnchangedTrait;
     /**
@@ -28,7 +28,7 @@ class FallbackAdminMetaDataInterpreter implements \FedExVendor\WPDesk\WooCommerc
     public function get_display_key($display_key, $meta, $order_item)
     {
         if ($this->is_supported_key_on_admin($display_key)) {
-            return \__('Fallback reason', 'flexible-shipping-fedex');
+            return __('Fallback reason', 'flexible-shipping-fedex');
         }
         return $display_key;
     }
@@ -41,6 +41,6 @@ class FallbackAdminMetaDataInterpreter implements \FedExVendor\WPDesk\WooCommerc
      */
     public function is_supported_key_on_admin($display_key)
     {
-        return $display_key === \FedExVendor\WPDesk\WooCommerceShipping\ShippingMethod\RateMethod\Fallback\FallbackRateMethod::META_DATA_KEY;
+        return $display_key === FallbackRateMethod::META_DATA_KEY;
     }
 }

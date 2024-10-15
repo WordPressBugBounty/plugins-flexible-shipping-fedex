@@ -11,7 +11,7 @@ namespace FedExVendor\Illuminate\Support\Facades;
  *
  * @see \Illuminate\Hashing\HashManager
  */
-class Hash extends \FedExVendor\Illuminate\Support\Facades\Facade
+class Hash extends Facade
 {
     /**
      * Get the registered name of the component.

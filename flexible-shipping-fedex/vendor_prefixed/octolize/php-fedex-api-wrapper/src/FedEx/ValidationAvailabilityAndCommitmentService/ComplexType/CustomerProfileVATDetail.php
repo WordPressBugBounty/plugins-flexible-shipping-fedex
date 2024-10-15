@@ -12,7 +12,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  *
  * @property string $ResponseCode
  */
-class CustomerProfileVATDetail extends \FedExVendor\FedEx\AbstractComplexType
+class CustomerProfileVATDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

@@ -8,9 +8,9 @@ namespace FedExVendor\Octolize\Onboarding;
 /**
  * Never display strategy.
  */
-class OnboardingShouldShowNeverStrategy implements \FedExVendor\Octolize\Onboarding\OnboardingShouldShowStrategy
+class OnboardingShouldShowNeverStrategy implements OnboardingShouldShowStrategy
 {
-    public function should_display() : bool
+    public function should_display(): bool
     {
         return \false;
     }

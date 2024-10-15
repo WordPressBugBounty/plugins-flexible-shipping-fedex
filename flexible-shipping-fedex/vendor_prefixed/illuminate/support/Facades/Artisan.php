@@ -14,7 +14,7 @@ use FedExVendor\Illuminate\Contracts\Console\Kernel as ConsoleKernelContract;
  *
  * @see \Illuminate\Contracts\Console\Kernel
  */
-class Artisan extends \FedExVendor\Illuminate\Support\Facades\Facade
+class Artisan extends Facade
 {
     /**
      * Get the registered name of the component.
@@ -23,6 +23,6 @@ class Artisan extends \FedExVendor\Illuminate\Support\Facades\Facade
      */
     protected static function getFacadeAccessor()
     {
-        return \FedExVendor\Illuminate\Contracts\Console\Kernel::class;
+        return ConsoleKernelContract::class;
     }
 }

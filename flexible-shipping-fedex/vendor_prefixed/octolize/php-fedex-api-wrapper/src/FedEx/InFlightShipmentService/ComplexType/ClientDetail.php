@@ -30,7 +30,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property InitiativeManifest $InitiativeManifest
  * @property Localization $Localization
  */
-class ClientDetail extends \FedExVendor\FedEx\AbstractComplexType
+class ClientDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -231,7 +231,7 @@ class ClientDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param InitiativeManifest $initiativeManifest
      * @return $this
      */
-    public function setInitiativeManifest(\FedExVendor\FedEx\InFlightShipmentService\ComplexType\InitiativeManifest $initiativeManifest)
+    public function setInitiativeManifest(InitiativeManifest $initiativeManifest)
     {
         $this->values['InitiativeManifest'] = $initiativeManifest;
         return $this;
@@ -242,7 +242,7 @@ class ClientDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param Localization $localization
      * @return $this
      */
-    public function setLocalization(\FedExVendor\FedEx\InFlightShipmentService\ComplexType\Localization $localization)
+    public function setLocalization(Localization $localization)
     {
         $this->values['Localization'] = $localization;
         return $this;

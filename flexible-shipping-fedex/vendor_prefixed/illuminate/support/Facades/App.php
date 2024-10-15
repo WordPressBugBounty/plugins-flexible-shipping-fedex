@@ -50,7 +50,7 @@ namespace FedExVendor\Illuminate\Support\Facades;
  *
  * @see \Illuminate\Contracts\Foundation\Application
  */
-class App extends \FedExVendor\Illuminate\Support\Facades\Facade
+class App extends Facade
 {
     /**
      * Get the registered name of the component.

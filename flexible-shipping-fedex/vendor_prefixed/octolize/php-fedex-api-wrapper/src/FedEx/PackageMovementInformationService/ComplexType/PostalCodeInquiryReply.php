@@ -18,7 +18,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property PostalCodeServiceAreaDescription $ExpressDescription
  * @property PostalCodeServiceAreaDescription $ExpressFreightDescription
  */
-class PostalCodeInquiryReply extends \FedExVendor\FedEx\AbstractComplexType
+class PostalCodeInquiryReply extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -54,7 +54,7 @@ class PostalCodeInquiryReply extends \FedExVendor\FedEx\AbstractComplexType
      * @param TransactionDetail $transactionDetail
      * @return $this
      */
-    public function setTransactionDetail(\FedExVendor\FedEx\PackageMovementInformationService\ComplexType\TransactionDetail $transactionDetail)
+    public function setTransactionDetail(TransactionDetail $transactionDetail)
     {
         $this->values['TransactionDetail'] = $transactionDetail;
         return $this;
@@ -65,7 +65,7 @@ class PostalCodeInquiryReply extends \FedExVendor\FedEx\AbstractComplexType
      * @param VersionId $version
      * @return $this
      */
-    public function setVersion(\FedExVendor\FedEx\PackageMovementInformationService\ComplexType\VersionId $version)
+    public function setVersion(VersionId $version)
     {
         $this->values['Version'] = $version;
         return $this;
@@ -87,7 +87,7 @@ class PostalCodeInquiryReply extends \FedExVendor\FedEx\AbstractComplexType
      * @param PostalCodeServiceAreaDescription $expressDescription
      * @return $this
      */
-    public function setExpressDescription(\FedExVendor\FedEx\PackageMovementInformationService\ComplexType\PostalCodeServiceAreaDescription $expressDescription)
+    public function setExpressDescription(PostalCodeServiceAreaDescription $expressDescription)
     {
         $this->values['ExpressDescription'] = $expressDescription;
         return $this;
@@ -98,7 +98,7 @@ class PostalCodeInquiryReply extends \FedExVendor\FedEx\AbstractComplexType
      * @param PostalCodeServiceAreaDescription $expressFreightDescription
      * @return $this
      */
-    public function setExpressFreightDescription(\FedExVendor\FedEx\PackageMovementInformationService\ComplexType\PostalCodeServiceAreaDescription $expressFreightDescription)
+    public function setExpressFreightDescription(PostalCodeServiceAreaDescription $expressFreightDescription)
     {
         $this->values['ExpressFreightDescription'] = $expressFreightDescription;
         return $this;

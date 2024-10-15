@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $Category
  * @property string $Value
  */
-class EdtExciseCondition extends \FedExVendor\FedEx\AbstractComplexType
+class EdtExciseCondition extends AbstractComplexType
 {
     /**
      * Name of this complex type

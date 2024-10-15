@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $Id
  * @property string $Value
  */
-class MessageParameter extends \FedExVendor\FedEx\AbstractComplexType
+class MessageParameter extends AbstractComplexType
 {
     /**
      * Name of this complex type

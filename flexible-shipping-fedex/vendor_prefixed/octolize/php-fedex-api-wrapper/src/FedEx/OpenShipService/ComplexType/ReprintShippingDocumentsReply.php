@@ -18,7 +18,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property ShippingDocument[] $ShipmentDocuments
  * @property PackageDocument[] $PackageDocuments
  */
-class ReprintShippingDocumentsReply extends \FedExVendor\FedEx\AbstractComplexType
+class ReprintShippingDocumentsReply extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -54,7 +54,7 @@ class ReprintShippingDocumentsReply extends \FedExVendor\FedEx\AbstractComplexTy
      * @param TransactionDetail $transactionDetail
      * @return $this
      */
-    public function setTransactionDetail(\FedExVendor\FedEx\OpenShipService\ComplexType\TransactionDetail $transactionDetail)
+    public function setTransactionDetail(TransactionDetail $transactionDetail)
     {
         $this->values['TransactionDetail'] = $transactionDetail;
         return $this;
@@ -65,7 +65,7 @@ class ReprintShippingDocumentsReply extends \FedExVendor\FedEx\AbstractComplexTy
      * @param VersionId $version
      * @return $this
      */
-    public function setVersion(\FedExVendor\FedEx\OpenShipService\ComplexType\VersionId $version)
+    public function setVersion(VersionId $version)
     {
         $this->values['Version'] = $version;
         return $this;

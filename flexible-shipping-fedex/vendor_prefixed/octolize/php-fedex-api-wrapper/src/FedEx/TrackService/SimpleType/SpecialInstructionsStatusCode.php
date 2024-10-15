@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Package Movement Information Service
  */
-class SpecialInstructionsStatusCode extends \FedExVendor\FedEx\AbstractSimpleType
+class SpecialInstructionsStatusCode extends AbstractSimpleType
 {
     const _ACCEPTED = 'ACCEPTED';
     const _CANCELLED = 'CANCELLED';

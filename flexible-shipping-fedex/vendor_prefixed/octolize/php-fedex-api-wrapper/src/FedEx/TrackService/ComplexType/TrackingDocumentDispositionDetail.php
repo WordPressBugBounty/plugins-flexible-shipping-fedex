@@ -14,7 +14,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property TrackingDocumentEmailDetail $EMailDetail
  * @property FaxDetail[] $FaxDetails
  */
-class TrackingDocumentDispositionDetail extends \FedExVendor\FedEx\AbstractComplexType
+class TrackingDocumentDispositionDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -39,7 +39,7 @@ class TrackingDocumentDispositionDetail extends \FedExVendor\FedEx\AbstractCompl
      * @param TrackingDocumentEmailDetail $eMailDetail
      * @return $this
      */
-    public function setEMailDetail(\FedExVendor\FedEx\TrackService\ComplexType\TrackingDocumentEmailDetail $eMailDetail)
+    public function setEMailDetail(TrackingDocumentEmailDetail $eMailDetail)
     {
         $this->values['EMailDetail'] = $eMailDetail;
         return $this;

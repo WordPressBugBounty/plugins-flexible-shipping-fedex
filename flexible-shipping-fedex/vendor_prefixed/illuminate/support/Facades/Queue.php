@@ -24,7 +24,7 @@ use FedExVendor\Illuminate\Support\Testing\Fakes\QueueFake;
  * @see \Illuminate\Queue\QueueManager
  * @see \Illuminate\Queue\Queue
  */
-class Queue extends \FedExVendor\Illuminate\Support\Facades\Facade
+class Queue extends Facade
 {
     /**
      * Register a callback to be executed to pick jobs.
@@ -35,7 +35,7 @@ class Queue extends \FedExVendor\Illuminate\Support\Facades\Facade
      */
     public static function popUsing($workerName, $callback)
     {
-        return \FedExVendor\Illuminate\Queue\Worker::popUsing($workerName, $callback);
+        return Worker::popUsing($workerName, $callback);
     }
     /**
      * Replace the bound instance with a fake.
@@ -44,7 +44,7 @@ class Queue extends \FedExVendor\Illuminate\Support\Facades\Facade
      */
     public static function fake()
     {
-        static::swap($fake = new \FedExVendor\Illuminate\Support\Testing\Fakes\QueueFake(static::getFacadeApplication()));
+        static::swap($fake = new QueueFake(static::getFacadeApplication()));
         return $fake;
     }
     /**

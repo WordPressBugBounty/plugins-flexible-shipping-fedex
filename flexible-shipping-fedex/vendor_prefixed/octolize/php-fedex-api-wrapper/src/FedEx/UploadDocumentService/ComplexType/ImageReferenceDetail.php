@@ -14,7 +14,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $InternalId
  * @property \FedEx\UploadDocumentService\SimpleType\InternalImageType|string $InternalImageType
  */
-class ImageReferenceDetail extends \FedExVendor\FedEx\AbstractComplexType
+class ImageReferenceDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

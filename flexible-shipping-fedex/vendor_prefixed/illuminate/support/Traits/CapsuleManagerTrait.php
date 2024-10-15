@@ -24,11 +24,11 @@ trait CapsuleManagerTrait
      * @param  \Illuminate\Contracts\Container\Container  $container
      * @return void
      */
-    protected function setupContainer(\FedExVendor\Illuminate\Contracts\Container\Container $container)
+    protected function setupContainer(Container $container)
     {
         $this->container = $container;
         if (!$this->container->bound('config')) {
-            $this->container->instance('config', new \FedExVendor\Illuminate\Support\Fluent());
+            $this->container->instance('config', new Fluent());
         }
     }
     /**
@@ -55,7 +55,7 @@ trait CapsuleManagerTrait
      * @param  \Illuminate\Contracts\Container\Container  $container
      * @return void
      */
-    public function setContainer(\FedExVendor\Illuminate\Contracts\Container\Container $container)
+    public function setContainer(Container $container)
     {
         $this->container = $container;
     }

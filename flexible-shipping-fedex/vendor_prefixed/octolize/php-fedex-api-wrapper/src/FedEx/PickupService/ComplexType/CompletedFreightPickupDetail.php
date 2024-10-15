@@ -17,7 +17,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property int $TotalHandlingUnits
  * @property \FedEx\PickupService\SimpleType\PickupEventType|string $Status
  */
-class CompletedFreightPickupDetail extends \FedExVendor\FedEx\AbstractComplexType
+class CompletedFreightPickupDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -31,7 +31,7 @@ class CompletedFreightPickupDetail extends \FedExVendor\FedEx\AbstractComplexTyp
      * @param FreightServiceCenterDetail $origin
      * @return $this
      */
-    public function setOrigin(\FedExVendor\FedEx\PickupService\ComplexType\FreightServiceCenterDetail $origin)
+    public function setOrigin(FreightServiceCenterDetail $origin)
     {
         $this->values['Origin'] = $origin;
         return $this;
@@ -64,7 +64,7 @@ class CompletedFreightPickupDetail extends \FedExVendor\FedEx\AbstractComplexTyp
      * @param Weight $totalWeight
      * @return $this
      */
-    public function setTotalWeight(\FedExVendor\FedEx\PickupService\ComplexType\Weight $totalWeight)
+    public function setTotalWeight(Weight $totalWeight)
     {
         $this->values['TotalWeight'] = $totalWeight;
         return $this;

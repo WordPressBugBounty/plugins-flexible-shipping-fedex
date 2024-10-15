@@ -26,7 +26,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property ExportDetail $ExportDetail
  * @property \FedEx\RateService\SimpleType\RegulatoryControlType|string[] $RegulatoryControls
  */
-class CustomsClearanceDetail extends \FedExVendor\FedEx\AbstractComplexType
+class CustomsClearanceDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -62,7 +62,7 @@ class CustomsClearanceDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param CustomsOptionDetail $customsOptions
      * @return $this
      */
-    public function setCustomsOptions(\FedExVendor\FedEx\RateService\ComplexType\CustomsOptionDetail $customsOptions)
+    public function setCustomsOptions(CustomsOptionDetail $customsOptions)
     {
         $this->values['CustomsOptions'] = $customsOptions;
         return $this;
@@ -73,7 +73,7 @@ class CustomsClearanceDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param Party $importerOfRecord
      * @return $this
      */
-    public function setImporterOfRecord(\FedExVendor\FedEx\RateService\ComplexType\Party $importerOfRecord)
+    public function setImporterOfRecord(Party $importerOfRecord)
     {
         $this->values['ImporterOfRecord'] = $importerOfRecord;
         return $this;
@@ -84,7 +84,7 @@ class CustomsClearanceDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param RecipientCustomsId $recipientCustomsId
      * @return $this
      */
-    public function setRecipientCustomsId(\FedExVendor\FedEx\RateService\ComplexType\RecipientCustomsId $recipientCustomsId)
+    public function setRecipientCustomsId(RecipientCustomsId $recipientCustomsId)
     {
         $this->values['RecipientCustomsId'] = $recipientCustomsId;
         return $this;
@@ -95,7 +95,7 @@ class CustomsClearanceDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param Payment $dutiesPayment
      * @return $this
      */
-    public function setDutiesPayment(\FedExVendor\FedEx\RateService\ComplexType\Payment $dutiesPayment)
+    public function setDutiesPayment(Payment $dutiesPayment)
     {
         $this->values['DutiesPayment'] = $dutiesPayment;
         return $this;
@@ -117,7 +117,7 @@ class CustomsClearanceDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param Money $customsValue
      * @return $this
      */
-    public function setCustomsValue(\FedExVendor\FedEx\RateService\ComplexType\Money $customsValue)
+    public function setCustomsValue(Money $customsValue)
     {
         $this->values['CustomsValue'] = $customsValue;
         return $this;
@@ -139,7 +139,7 @@ class CustomsClearanceDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param Money $insuranceCharges
      * @return $this
      */
-    public function setInsuranceCharges(\FedExVendor\FedEx\RateService\ComplexType\Money $insuranceCharges)
+    public function setInsuranceCharges(Money $insuranceCharges)
     {
         $this->values['InsuranceCharges'] = $insuranceCharges;
         return $this;
@@ -161,7 +161,7 @@ class CustomsClearanceDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param CommercialInvoice $commercialInvoice
      * @return $this
      */
-    public function setCommercialInvoice(\FedExVendor\FedEx\RateService\ComplexType\CommercialInvoice $commercialInvoice)
+    public function setCommercialInvoice(CommercialInvoice $commercialInvoice)
     {
         $this->values['CommercialInvoice'] = $commercialInvoice;
         return $this;
@@ -183,7 +183,7 @@ class CustomsClearanceDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param ExportDetail $exportDetail
      * @return $this
      */
-    public function setExportDetail(\FedExVendor\FedEx\RateService\ComplexType\ExportDetail $exportDetail)
+    public function setExportDetail(ExportDetail $exportDetail)
     {
         $this->values['ExportDetail'] = $exportDetail;
         return $this;

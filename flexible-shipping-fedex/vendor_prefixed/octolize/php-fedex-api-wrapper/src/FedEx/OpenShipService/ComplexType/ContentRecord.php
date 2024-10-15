@@ -15,7 +15,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property int $ReceivedQuantity
  * @property string $Description
  */
-class ContentRecord extends \FedExVendor\FedEx\AbstractComplexType
+class ContentRecord extends AbstractComplexType
 {
     /**
      * Name of this complex type

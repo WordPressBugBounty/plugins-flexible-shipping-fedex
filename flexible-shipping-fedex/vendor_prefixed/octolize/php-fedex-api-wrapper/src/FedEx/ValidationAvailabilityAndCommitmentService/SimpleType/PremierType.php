@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Validation Availability And Commitment Service Service
  */
-class PremierType extends \FedExVendor\FedEx\AbstractSimpleType
+class PremierType extends AbstractSimpleType
 {
     const _BRONZE_ACCOUNT = 'BRONZE_ACCOUNT';
     const _FEDEX_ONE_CALL_CUSTOMER = 'FEDEX_ONE_CALL_CUSTOMER';

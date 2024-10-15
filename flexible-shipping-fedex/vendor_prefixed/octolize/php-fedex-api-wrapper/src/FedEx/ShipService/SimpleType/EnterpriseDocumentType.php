@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
  */
-class EnterpriseDocumentType extends \FedExVendor\FedEx\AbstractSimpleType
+class EnterpriseDocumentType extends AbstractSimpleType
 {
     const _AIR_WAYBILL = 'AIR_WAYBILL';
     const _CERTIFICATE_OF_ORIGIN = 'CERTIFICATE_OF_ORIGIN';

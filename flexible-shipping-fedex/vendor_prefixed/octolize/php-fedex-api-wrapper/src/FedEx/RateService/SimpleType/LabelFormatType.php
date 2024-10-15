@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
  */
-class LabelFormatType extends \FedExVendor\FedEx\AbstractSimpleType
+class LabelFormatType extends AbstractSimpleType
 {
     const _COMMON2D = 'COMMON2D';
     const _LABEL_DATA_ONLY = 'LABEL_DATA_ONLY';

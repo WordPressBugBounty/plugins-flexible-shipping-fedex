@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property Money $CollectionAmount
  * @property \FedEx\ShipService\SimpleType\CodAdjustmentType|string $AdjustmentType
  */
-class CompletedCodDetail extends \FedExVendor\FedEx\AbstractComplexType
+class CompletedCodDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -27,7 +27,7 @@ class CompletedCodDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param Money $collectionAmount
      * @return $this
      */
-    public function setCollectionAmount(\FedExVendor\FedEx\ShipService\ComplexType\Money $collectionAmount)
+    public function setCollectionAmount(Money $collectionAmount)
     {
         $this->values['CollectionAmount'] = $collectionAmount;
         return $this;

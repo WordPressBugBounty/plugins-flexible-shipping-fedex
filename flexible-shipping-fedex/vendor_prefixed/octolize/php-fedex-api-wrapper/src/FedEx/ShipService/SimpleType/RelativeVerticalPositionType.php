@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
  */
-class RelativeVerticalPositionType extends \FedExVendor\FedEx\AbstractSimpleType
+class RelativeVerticalPositionType extends AbstractSimpleType
 {
     const _ABOVE = 'ABOVE';
     const _BELOW = 'BELOW';

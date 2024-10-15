@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property \FedEx\ShipService\SimpleType\CustomRatingOptionType|string[] $Options
  * @property CustomDiscountExclusionDetail $CustomDiscountExclusionDetail
  */
-class CustomRatingOptionDetail extends \FedExVendor\FedEx\AbstractComplexType
+class CustomRatingOptionDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -38,7 +38,7 @@ class CustomRatingOptionDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param CustomDiscountExclusionDetail $customDiscountExclusionDetail
      * @return $this
      */
-    public function setCustomDiscountExclusionDetail(\FedExVendor\FedEx\ShipService\ComplexType\CustomDiscountExclusionDetail $customDiscountExclusionDetail)
+    public function setCustomDiscountExclusionDetail(CustomDiscountExclusionDetail $customDiscountExclusionDetail)
     {
         $this->values['CustomDiscountExclusionDetail'] = $customDiscountExclusionDetail;
         return $this;

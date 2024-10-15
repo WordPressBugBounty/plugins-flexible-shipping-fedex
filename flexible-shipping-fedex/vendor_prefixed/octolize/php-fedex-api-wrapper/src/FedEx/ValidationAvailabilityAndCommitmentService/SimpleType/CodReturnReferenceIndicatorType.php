@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Validation Availability And Commitment Service Service
  */
-class CodReturnReferenceIndicatorType extends \FedExVendor\FedEx\AbstractSimpleType
+class CodReturnReferenceIndicatorType extends AbstractSimpleType
 {
     const _INVOICE = 'INVOICE';
     const _PO = 'PO';

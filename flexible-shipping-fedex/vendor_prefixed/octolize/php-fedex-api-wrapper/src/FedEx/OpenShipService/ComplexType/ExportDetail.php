@@ -15,7 +15,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $PermitNumber
  * @property DestinationControlDetail $DestinationControlDetail
  */
-class ExportDetail extends \FedExVendor\FedEx\AbstractComplexType
+class ExportDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -62,7 +62,7 @@ class ExportDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param DestinationControlDetail $destinationControlDetail
      * @return $this
      */
-    public function setDestinationControlDetail(\FedExVendor\FedEx\OpenShipService\ComplexType\DestinationControlDetail $destinationControlDetail)
+    public function setDestinationControlDetail(DestinationControlDetail $destinationControlDetail)
     {
         $this->values['DestinationControlDetail'] = $destinationControlDetail;
         return $this;

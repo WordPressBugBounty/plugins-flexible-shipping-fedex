@@ -23,7 +23,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property \FedEx\ValidationAvailabilityAndCommitmentService\SimpleType\CarrierCodeType|string[] $CarrierCodes
  * @property RequestedShipment $RequestedShipment
  */
-class GetAllSpecialServicesRequest extends \FedExVendor\FedEx\AbstractComplexType
+class GetAllSpecialServicesRequest extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -37,7 +37,7 @@ class GetAllSpecialServicesRequest extends \FedExVendor\FedEx\AbstractComplexTyp
      * @param WebAuthenticationDetail $webAuthenticationDetail
      * @return $this
      */
-    public function setWebAuthenticationDetail(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\WebAuthenticationDetail $webAuthenticationDetail)
+    public function setWebAuthenticationDetail(WebAuthenticationDetail $webAuthenticationDetail)
     {
         $this->values['WebAuthenticationDetail'] = $webAuthenticationDetail;
         return $this;
@@ -48,7 +48,7 @@ class GetAllSpecialServicesRequest extends \FedExVendor\FedEx\AbstractComplexTyp
      * @param ClientDetail $clientDetail
      * @return $this
      */
-    public function setClientDetail(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\ClientDetail $clientDetail)
+    public function setClientDetail(ClientDetail $clientDetail)
     {
         $this->values['ClientDetail'] = $clientDetail;
         return $this;
@@ -59,7 +59,7 @@ class GetAllSpecialServicesRequest extends \FedExVendor\FedEx\AbstractComplexTyp
      * @param TransactionDetail $transactionDetail
      * @return $this
      */
-    public function setTransactionDetail(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\TransactionDetail $transactionDetail)
+    public function setTransactionDetail(TransactionDetail $transactionDetail)
     {
         $this->values['TransactionDetail'] = $transactionDetail;
         return $this;
@@ -70,7 +70,7 @@ class GetAllSpecialServicesRequest extends \FedExVendor\FedEx\AbstractComplexTyp
      * @param VersionId $version
      * @return $this
      */
-    public function setVersion(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\VersionId $version)
+    public function setVersion(VersionId $version)
     {
         $this->values['Version'] = $version;
         return $this;
@@ -81,7 +81,7 @@ class GetAllSpecialServicesRequest extends \FedExVendor\FedEx\AbstractComplexTyp
      * @param GetAllSpecialServicesProcessingOptionsRequested $processingOptions
      * @return $this
      */
-    public function setProcessingOptions(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\GetAllSpecialServicesProcessingOptionsRequested $processingOptions)
+    public function setProcessingOptions(GetAllSpecialServicesProcessingOptionsRequested $processingOptions)
     {
         $this->values['ProcessingOptions'] = $processingOptions;
         return $this;
@@ -92,7 +92,7 @@ class GetAllSpecialServicesRequest extends \FedExVendor\FedEx\AbstractComplexTyp
      * @param EnterpriseCustomer $customer
      * @return $this
      */
-    public function setCustomer(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\EnterpriseCustomer $customer)
+    public function setCustomer(EnterpriseCustomer $customer)
     {
         $this->values['Customer'] = $customer;
         return $this;
@@ -103,7 +103,7 @@ class GetAllSpecialServicesRequest extends \FedExVendor\FedEx\AbstractComplexTyp
      * @param RestrictionsAndPrivilegesPolicyDetail $restrictionsAndPrivileges
      * @return $this
      */
-    public function setRestrictionsAndPrivileges(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\RestrictionsAndPrivilegesPolicyDetail $restrictionsAndPrivileges)
+    public function setRestrictionsAndPrivileges(RestrictionsAndPrivilegesPolicyDetail $restrictionsAndPrivileges)
     {
         $this->values['RestrictionsAndPrivileges'] = $restrictionsAndPrivileges;
         return $this;
@@ -158,7 +158,7 @@ class GetAllSpecialServicesRequest extends \FedExVendor\FedEx\AbstractComplexTyp
      * @param RequestedShipment $requestedShipment
      * @return $this
      */
-    public function setRequestedShipment(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\RequestedShipment $requestedShipment)
+    public function setRequestedShipment(RequestedShipment $requestedShipment)
     {
         $this->values['RequestedShipment'] = $requestedShipment;
         return $this;

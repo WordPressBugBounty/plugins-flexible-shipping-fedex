@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Validation Availability And Commitment Service Service
  */
-class PaymentType extends \FedExVendor\FedEx\AbstractSimpleType
+class PaymentType extends AbstractSimpleType
 {
     const _ACCOUNT = 'ACCOUNT';
     const _CASH = 'CASH';

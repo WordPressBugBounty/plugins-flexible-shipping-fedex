@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Package Movement Information Service
  */
-class NaftaNetCostMethodCode extends \FedExVendor\FedEx\AbstractSimpleType
+class NaftaNetCostMethodCode extends AbstractSimpleType
 {
     const _NC = 'NC';
     const _NO = 'NO';

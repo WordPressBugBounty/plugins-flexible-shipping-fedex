@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Locations Service
  */
-class LocationTransferOfPossessionType extends \FedExVendor\FedEx\AbstractSimpleType
+class LocationTransferOfPossessionType extends AbstractSimpleType
 {
     const _DROPOFF = 'DROPOFF';
     const _HOLD_AT_LOCATION = 'HOLD_AT_LOCATION';

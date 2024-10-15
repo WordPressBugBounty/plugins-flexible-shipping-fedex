@@ -3,8 +3,8 @@
 Contributors: octolize,grola,sebastianpisula
 Tags: fedex, fedex shipping, fedex shipping rates, fedex api, woocommerce fedex
 Requires at least: 4.5
-Tested up to: 6.6
-Stable tag: 3.0.5
+Tested up to: 6.7
+Stable tag: 3.1.0
 Requires PHP: 7.4
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -134,6 +134,13 @@ Please mind that even if you decide to use the **Custom Services** option and ch
 3. FedEx Live Rates shipping methods in the checkout.
 
 == Changelog ==
+
+= 3.1.0 - 2024-10-15 =
+* Added support for WordPress 6.7
+* Added support for WooCommerce 9.4
+
+= 3.0.6 - 2024-09-01 =
+* Added support for WooCommerce 9.3
 
 = 3.0.5 - 2024-08-04 =
 * Added support for WooCommerce 9.2

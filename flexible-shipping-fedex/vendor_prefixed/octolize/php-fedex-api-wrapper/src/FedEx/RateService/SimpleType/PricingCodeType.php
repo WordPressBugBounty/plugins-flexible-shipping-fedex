@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
  */
-class PricingCodeType extends \FedExVendor\FedEx\AbstractSimpleType
+class PricingCodeType extends AbstractSimpleType
 {
     const _ACTUAL = 'ACTUAL';
     const _ALTERNATE = 'ALTERNATE';

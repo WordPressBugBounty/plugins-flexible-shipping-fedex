@@ -29,7 +29,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property \FedEx\RateService\SimpleType\ReturnedRateType|string $ActualRateType
  * @property RatedShipmentDetail[] $RatedShipmentDetails
  */
-class RateReplyDetail extends \FedExVendor\FedEx\AbstractComplexType
+class RateReplyDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -54,7 +54,7 @@ class RateReplyDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param ServiceDescription $serviceDescription
      * @return $this
      */
-    public function setServiceDescription(\FedExVendor\FedEx\RateService\ComplexType\ServiceDescription $serviceDescription)
+    public function setServiceDescription(ServiceDescription $serviceDescription)
     {
         $this->values['ServiceDescription'] = $serviceDescription;
         return $this;
@@ -87,7 +87,7 @@ class RateReplyDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param ServiceSubOptionDetail $appliedSubOptions
      * @return $this
      */
-    public function setAppliedSubOptions(\FedExVendor\FedEx\RateService\ComplexType\ServiceSubOptionDetail $appliedSubOptions)
+    public function setAppliedSubOptions(ServiceSubOptionDetail $appliedSubOptions)
     {
         $this->values['AppliedSubOptions'] = $appliedSubOptions;
         return $this;

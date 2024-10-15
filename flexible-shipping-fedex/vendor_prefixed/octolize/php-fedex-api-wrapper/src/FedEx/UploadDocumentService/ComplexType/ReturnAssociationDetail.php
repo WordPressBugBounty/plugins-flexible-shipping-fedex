@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $TrackingNumber
  * @property string $ShipDate
  */
-class ReturnAssociationDetail extends \FedExVendor\FedEx\AbstractComplexType
+class ReturnAssociationDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

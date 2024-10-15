@@ -15,7 +15,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property \FedEx\UploadDocumentService\SimpleType\UploadImageStatusInfoType|string $StatusInfo
  * @property string $Message
  */
-class ImageUploadStatusDetail extends \FedExVendor\FedEx\AbstractComplexType
+class ImageUploadStatusDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

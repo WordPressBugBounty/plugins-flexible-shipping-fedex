@@ -14,7 +14,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $TrackingNumberUniqueIdentifier
  * @property \FedEx\TrackService\SimpleType\CarrierCodeType|string $CarrierCode
  */
-class TrackOtherIdentifierDetail extends \FedExVendor\FedEx\AbstractComplexType
+class TrackOtherIdentifierDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -28,7 +28,7 @@ class TrackOtherIdentifierDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param TrackPackageIdentifier $packageIdentifier
      * @return $this
      */
-    public function setPackageIdentifier(\FedExVendor\FedEx\TrackService\ComplexType\TrackPackageIdentifier $packageIdentifier)
+    public function setPackageIdentifier(TrackPackageIdentifier $packageIdentifier)
     {
         $this->values['PackageIdentifier'] = $packageIdentifier;
         return $this;

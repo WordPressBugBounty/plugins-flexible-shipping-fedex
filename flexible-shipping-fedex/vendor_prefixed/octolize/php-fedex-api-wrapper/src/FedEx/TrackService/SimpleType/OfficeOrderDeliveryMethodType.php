@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Package Movement Information Service
  */
-class OfficeOrderDeliveryMethodType extends \FedExVendor\FedEx\AbstractSimpleType
+class OfficeOrderDeliveryMethodType extends AbstractSimpleType
 {
     const _COURIER = 'COURIER';
     const _OTHER = 'OTHER';

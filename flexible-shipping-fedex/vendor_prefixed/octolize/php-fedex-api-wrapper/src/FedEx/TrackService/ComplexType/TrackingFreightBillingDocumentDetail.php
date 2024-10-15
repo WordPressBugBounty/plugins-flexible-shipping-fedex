@@ -12,7 +12,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  *
  * @property TrackingDocumentFormat $DocumentFormat
  */
-class TrackingFreightBillingDocumentDetail extends \FedExVendor\FedEx\AbstractComplexType
+class TrackingFreightBillingDocumentDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -26,7 +26,7 @@ class TrackingFreightBillingDocumentDetail extends \FedExVendor\FedEx\AbstractCo
      * @param TrackingDocumentFormat $documentFormat
      * @return $this
      */
-    public function setDocumentFormat(\FedExVendor\FedEx\TrackService\ComplexType\TrackingDocumentFormat $documentFormat)
+    public function setDocumentFormat(TrackingDocumentFormat $documentFormat)
     {
         $this->values['DocumentFormat'] = $documentFormat;
         return $this;

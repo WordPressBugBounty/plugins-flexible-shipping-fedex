@@ -12,7 +12,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  *
  * @property \FedEx\UploadDocumentService\SimpleType\WeighingScaleType|string $Type
  */
-class WeighingDetail extends \FedExVendor\FedEx\AbstractComplexType
+class WeighingDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

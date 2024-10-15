@@ -17,7 +17,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property \FedEx\ValidationAvailabilityAndCommitmentService\SimpleType\UsmcaProducerSpecificationType|string $ProducerSpecification
  * @property Party $Producer
  */
-class UsmcaCommercialInvoiceCertificationOfOriginDetail extends \FedExVendor\FedEx\AbstractComplexType
+class UsmcaCommercialInvoiceCertificationOfOriginDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -31,7 +31,7 @@ class UsmcaCommercialInvoiceCertificationOfOriginDetail extends \FedExVendor\Fed
      * @param ShippingDocumentFormat $format
      * @return $this
      */
-    public function setFormat(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\ShippingDocumentFormat $format)
+    public function setFormat(ShippingDocumentFormat $format)
     {
         $this->values['Format'] = $format;
         return $this;
@@ -86,7 +86,7 @@ class UsmcaCommercialInvoiceCertificationOfOriginDetail extends \FedExVendor\Fed
      * @param Party $producer
      * @return $this
      */
-    public function setProducer(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\Party $producer)
+    public function setProducer(Party $producer)
     {
         $this->values['Producer'] = $producer;
         return $this;

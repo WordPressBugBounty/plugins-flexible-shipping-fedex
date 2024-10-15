@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  In Flight Shipment Service
  */
-class OperationalDocumentType extends \FedExVendor\FedEx\AbstractSimpleType
+class OperationalDocumentType extends AbstractSimpleType
 {
     const _SIGNATURE_RELEASE_DOCUMENT = 'SIGNATURE_RELEASE_DOCUMENT';
 }

@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
  */
-class ShippingDocumentImageType extends \FedExVendor\FedEx\AbstractSimpleType
+class ShippingDocumentImageType extends AbstractSimpleType
 {
     const _EPL2 = 'EPL2';
     const _PDF = 'PDF';

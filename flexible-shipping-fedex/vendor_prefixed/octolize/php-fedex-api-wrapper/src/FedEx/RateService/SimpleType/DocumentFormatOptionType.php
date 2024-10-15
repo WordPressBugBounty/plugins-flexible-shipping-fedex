@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
  */
-class DocumentFormatOptionType extends \FedExVendor\FedEx\AbstractSimpleType
+class DocumentFormatOptionType extends AbstractSimpleType
 {
     const _SUPPRESS_ADDITIONAL_LANGUAGES = 'SUPPRESS_ADDITIONAL_LANGUAGES';
 }

@@ -24,7 +24,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property FreightAddressLabelDetail $FreightAddressLabelDetail
  * @property ReturnInstructionsDetail $ReturnInstructionsDetail
  */
-class ShippingDocumentSpecification extends \FedExVendor\FedEx\AbstractComplexType
+class ShippingDocumentSpecification extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -49,7 +49,7 @@ class ShippingDocumentSpecification extends \FedExVendor\FedEx\AbstractComplexTy
      * @param CertificateOfOriginDetail $certificateOfOrigin
      * @return $this
      */
-    public function setCertificateOfOrigin(\FedExVendor\FedEx\RateService\ComplexType\CertificateOfOriginDetail $certificateOfOrigin)
+    public function setCertificateOfOrigin(CertificateOfOriginDetail $certificateOfOrigin)
     {
         $this->values['CertificateOfOrigin'] = $certificateOfOrigin;
         return $this;
@@ -60,7 +60,7 @@ class ShippingDocumentSpecification extends \FedExVendor\FedEx\AbstractComplexTy
      * @param CommercialInvoiceDetail $commercialInvoiceDetail
      * @return $this
      */
-    public function setCommercialInvoiceDetail(\FedExVendor\FedEx\RateService\ComplexType\CommercialInvoiceDetail $commercialInvoiceDetail)
+    public function setCommercialInvoiceDetail(CommercialInvoiceDetail $commercialInvoiceDetail)
     {
         $this->values['CommercialInvoiceDetail'] = $commercialInvoiceDetail;
         return $this;
@@ -71,7 +71,7 @@ class ShippingDocumentSpecification extends \FedExVendor\FedEx\AbstractComplexTy
      * @param UsmcaCommercialInvoiceCertificationOfOriginDetail $usmcaCommercialInvoiceCertificationOfOriginDetail
      * @return $this
      */
-    public function setUsmcaCommercialInvoiceCertificationOfOriginDetail(\FedExVendor\FedEx\RateService\ComplexType\UsmcaCommercialInvoiceCertificationOfOriginDetail $usmcaCommercialInvoiceCertificationOfOriginDetail)
+    public function setUsmcaCommercialInvoiceCertificationOfOriginDetail(UsmcaCommercialInvoiceCertificationOfOriginDetail $usmcaCommercialInvoiceCertificationOfOriginDetail)
     {
         $this->values['UsmcaCommercialInvoiceCertificationOfOriginDetail'] = $usmcaCommercialInvoiceCertificationOfOriginDetail;
         return $this;
@@ -104,7 +104,7 @@ class ShippingDocumentSpecification extends \FedExVendor\FedEx\AbstractComplexTy
      * @param ExportDeclarationDetail $exportDeclarationDetail
      * @return $this
      */
-    public function setExportDeclarationDetail(\FedExVendor\FedEx\RateService\ComplexType\ExportDeclarationDetail $exportDeclarationDetail)
+    public function setExportDeclarationDetail(ExportDeclarationDetail $exportDeclarationDetail)
     {
         $this->values['ExportDeclarationDetail'] = $exportDeclarationDetail;
         return $this;
@@ -115,7 +115,7 @@ class ShippingDocumentSpecification extends \FedExVendor\FedEx\AbstractComplexTy
      * @param GeneralAgencyAgreementDetail $generalAgencyAgreementDetail
      * @return $this
      */
-    public function setGeneralAgencyAgreementDetail(\FedExVendor\FedEx\RateService\ComplexType\GeneralAgencyAgreementDetail $generalAgencyAgreementDetail)
+    public function setGeneralAgencyAgreementDetail(GeneralAgencyAgreementDetail $generalAgencyAgreementDetail)
     {
         $this->values['GeneralAgencyAgreementDetail'] = $generalAgencyAgreementDetail;
         return $this;
@@ -126,7 +126,7 @@ class ShippingDocumentSpecification extends \FedExVendor\FedEx\AbstractComplexTy
      * @param UsmcaCertificationOfOriginDetail $usmcaCertificationOfOriginDetail
      * @return $this
      */
-    public function setUsmcaCertificationOfOriginDetail(\FedExVendor\FedEx\RateService\ComplexType\UsmcaCertificationOfOriginDetail $usmcaCertificationOfOriginDetail)
+    public function setUsmcaCertificationOfOriginDetail(UsmcaCertificationOfOriginDetail $usmcaCertificationOfOriginDetail)
     {
         $this->values['UsmcaCertificationOfOriginDetail'] = $usmcaCertificationOfOriginDetail;
         return $this;
@@ -137,7 +137,7 @@ class ShippingDocumentSpecification extends \FedExVendor\FedEx\AbstractComplexTy
      * @param Op900Detail $op900Detail
      * @return $this
      */
-    public function setOp900Detail(\FedExVendor\FedEx\RateService\ComplexType\Op900Detail $op900Detail)
+    public function setOp900Detail(Op900Detail $op900Detail)
     {
         $this->values['Op900Detail'] = $op900Detail;
         return $this;
@@ -148,7 +148,7 @@ class ShippingDocumentSpecification extends \FedExVendor\FedEx\AbstractComplexTy
      * @param DangerousGoodsShippersDeclarationDetail $dangerousGoodsShippersDeclarationDetail
      * @return $this
      */
-    public function setDangerousGoodsShippersDeclarationDetail(\FedExVendor\FedEx\RateService\ComplexType\DangerousGoodsShippersDeclarationDetail $dangerousGoodsShippersDeclarationDetail)
+    public function setDangerousGoodsShippersDeclarationDetail(DangerousGoodsShippersDeclarationDetail $dangerousGoodsShippersDeclarationDetail)
     {
         $this->values['DangerousGoodsShippersDeclarationDetail'] = $dangerousGoodsShippersDeclarationDetail;
         return $this;
@@ -159,7 +159,7 @@ class ShippingDocumentSpecification extends \FedExVendor\FedEx\AbstractComplexTy
      * @param FreightAddressLabelDetail $freightAddressLabelDetail
      * @return $this
      */
-    public function setFreightAddressLabelDetail(\FedExVendor\FedEx\RateService\ComplexType\FreightAddressLabelDetail $freightAddressLabelDetail)
+    public function setFreightAddressLabelDetail(FreightAddressLabelDetail $freightAddressLabelDetail)
     {
         $this->values['FreightAddressLabelDetail'] = $freightAddressLabelDetail;
         return $this;
@@ -170,7 +170,7 @@ class ShippingDocumentSpecification extends \FedExVendor\FedEx\AbstractComplexTy
      * @param ReturnInstructionsDetail $returnInstructionsDetail
      * @return $this
      */
-    public function setReturnInstructionsDetail(\FedExVendor\FedEx\RateService\ComplexType\ReturnInstructionsDetail $returnInstructionsDetail)
+    public function setReturnInstructionsDetail(ReturnInstructionsDetail $returnInstructionsDetail)
     {
         $this->values['ReturnInstructionsDetail'] = $returnInstructionsDetail;
         return $this;

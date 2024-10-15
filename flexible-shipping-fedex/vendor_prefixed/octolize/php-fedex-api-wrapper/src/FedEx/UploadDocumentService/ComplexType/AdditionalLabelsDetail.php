@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property \FedEx\UploadDocumentService\SimpleType\AdditionalLabelsType|string $Type
  * @property int $Count
  */
-class AdditionalLabelsDetail extends \FedExVendor\FedEx\AbstractComplexType
+class AdditionalLabelsDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

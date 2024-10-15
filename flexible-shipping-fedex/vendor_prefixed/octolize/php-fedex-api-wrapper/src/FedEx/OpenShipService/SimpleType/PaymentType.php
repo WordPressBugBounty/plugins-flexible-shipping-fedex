@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  OpenShip Service
  */
-class PaymentType extends \FedExVendor\FedEx\AbstractSimpleType
+class PaymentType extends AbstractSimpleType
 {
     const _ACCOUNT = 'ACCOUNT';
     const _COLLECT = 'COLLECT';

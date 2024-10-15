@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Validation Availability And Commitment Service Service
  */
-class CreditCardType extends \FedExVendor\FedEx\AbstractSimpleType
+class CreditCardType extends AbstractSimpleType
 {
     const _AMEX = 'AMEX';
     const _DANKORT = 'DANKORT';

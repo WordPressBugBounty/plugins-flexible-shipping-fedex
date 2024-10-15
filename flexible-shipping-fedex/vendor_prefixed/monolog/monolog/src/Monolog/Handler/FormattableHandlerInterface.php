@@ -25,11 +25,11 @@ interface FormattableHandlerInterface
      * @param  FormatterInterface $formatter
      * @return HandlerInterface   self
      */
-    public function setFormatter(\FedExVendor\Monolog\Formatter\FormatterInterface $formatter) : \FedExVendor\Monolog\Handler\HandlerInterface;
+    public function setFormatter(FormatterInterface $formatter): HandlerInterface;
     /**
      * Gets the formatter.
      *
      * @return FormatterInterface
      */
-    public function getFormatter() : \FedExVendor\Monolog\Formatter\FormatterInterface;
+    public function getFormatter(): FormatterInterface;
 }

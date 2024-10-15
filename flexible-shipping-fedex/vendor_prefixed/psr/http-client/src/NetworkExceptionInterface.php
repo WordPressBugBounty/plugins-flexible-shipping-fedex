@@ -10,7 +10,7 @@ use FedExVendor\Psr\Http\Message\RequestInterface;
  *
  * Example: the target host name can not be resolved or the connection failed.
  */
-interface NetworkExceptionInterface extends \FedExVendor\Psr\Http\Client\ClientExceptionInterface
+interface NetworkExceptionInterface extends ClientExceptionInterface
 {
     /**
      * Returns the request.
@@ -19,5 +19,5 @@ interface NetworkExceptionInterface extends \FedExVendor\Psr\Http\Client\ClientE
      *
      * @return RequestInterface
      */
-    public function getRequest() : \FedExVendor\Psr\Http\Message\RequestInterface;
+    public function getRequest(): RequestInterface;
 }

@@ -17,7 +17,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property CustomLabelTextBoxEntry[] $TextBoxEntries
  * @property CustomLabelBarcodeEntry[] $BarcodeEntries
  */
-class CustomLabelDetail extends \FedExVendor\FedEx\AbstractComplexType
+class CustomLabelDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

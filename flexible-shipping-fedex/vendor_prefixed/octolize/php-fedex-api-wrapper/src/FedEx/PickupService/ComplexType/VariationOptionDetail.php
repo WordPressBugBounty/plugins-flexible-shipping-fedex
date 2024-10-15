@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $Id
  * @property string[] $Values
  */
-class VariationOptionDetail extends \FedExVendor\FedEx\AbstractComplexType
+class VariationOptionDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

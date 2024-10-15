@@ -17,7 +17,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property ShipmentSpecialServiceDescription[] $ValidShipmentSpecialServices
  * @property PackageSpecialServiceDescription[] $ValidPackageSpecialServices
  */
-class GetAllSpecialServicesReply extends \FedExVendor\FedEx\AbstractComplexType
+class GetAllSpecialServicesReply extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -53,7 +53,7 @@ class GetAllSpecialServicesReply extends \FedExVendor\FedEx\AbstractComplexType
      * @param TransactionDetail $transactionDetail
      * @return $this
      */
-    public function setTransactionDetail(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\TransactionDetail $transactionDetail)
+    public function setTransactionDetail(TransactionDetail $transactionDetail)
     {
         $this->values['TransactionDetail'] = $transactionDetail;
         return $this;
@@ -64,7 +64,7 @@ class GetAllSpecialServicesReply extends \FedExVendor\FedEx\AbstractComplexType
      * @param VersionId $version
      * @return $this
      */
-    public function setVersion(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\VersionId $version)
+    public function setVersion(VersionId $version)
     {
         $this->values['Version'] = $version;
         return $this;

@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  OpenShip Service
  */
-class ReturnedConsolidationDocumentType extends \FedExVendor\FedEx\AbstractSimpleType
+class ReturnedConsolidationDocumentType extends AbstractSimpleType
 {
     const _COMMODITIES_BY_TRACKING_NUMBER_REPORT = 'COMMODITIES_BY_TRACKING_NUMBER_REPORT';
     const _CONDENSED_CRN_REPORT = 'CONDENSED_CRN_REPORT';

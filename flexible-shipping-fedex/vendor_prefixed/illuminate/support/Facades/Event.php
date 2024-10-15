@@ -26,7 +26,7 @@ use FedExVendor\Illuminate\Support\Testing\Fakes\EventFake;
  *
  * @see \Illuminate\Events\Dispatcher
  */
-class Event extends \FedExVendor\Illuminate\Support\Facades\Facade
+class Event extends Facade
 {
     /**
      * Replace the bound instance with a fake.
@@ -36,9 +36,9 @@ class Event extends \FedExVendor\Illuminate\Support\Facades\Facade
      */
     public static function fake($eventsToFake = [])
     {
-        static::swap($fake = new \FedExVendor\Illuminate\Support\Testing\Fakes\EventFake(static::getFacadeRoot(), $eventsToFake));
-        \FedExVendor\Illuminate\Database\Eloquent\Model::setEventDispatcher($fake);
-        \FedExVendor\Illuminate\Support\Facades\Cache::refreshEventDispatcher();
+        static::swap($fake = new EventFake(static::getFacadeRoot(), $eventsToFake));
+        Model::setEventDispatcher($fake);
+        Cache::refreshEventDispatcher();
         return $fake;
     }
     /**
@@ -49,8 +49,8 @@ class Event extends \FedExVendor\Illuminate\Support\Facades\Facade
      */
     public static function fakeExcept($eventsToAllow)
     {
-        return static::fake([function ($eventName) use($eventsToAllow) {
-            return !\in_array($eventName, (array) $eventsToAllow);
+        return static::fake([function ($eventName) use ($eventsToAllow) {
+            return !in_array($eventName, (array) $eventsToAllow);
         }]);
     }
     /**
@@ -64,10 +64,10 @@ class Event extends \FedExVendor\Illuminate\Support\Facades\Facade
     {
         $originalDispatcher = static::getFacadeRoot();
         static::fake($eventsToFake);
-        return tap($callable(), function () use($originalDispatcher) {
+        return tap($callable(), function () use ($originalDispatcher) {
             static::swap($originalDispatcher);
-            \FedExVendor\Illuminate\Database\Eloquent\Model::setEventDispatcher($originalDispatcher);
-            \FedExVendor\Illuminate\Support\Facades\Cache::refreshEventDispatcher();
+            Model::setEventDispatcher($originalDispatcher);
+            Cache::refreshEventDispatcher();
         });
     }
     /**
@@ -81,10 +81,10 @@ class Event extends \FedExVendor\Illuminate\Support\Facades\Facade
     {
         $originalDispatcher = static::getFacadeRoot();
         static::fakeExcept($eventsToAllow);
-        return tap($callable(), function () use($originalDispatcher) {
+        return tap($callable(), function () use ($originalDispatcher) {
             static::swap($originalDispatcher);
-            \FedExVendor\Illuminate\Database\Eloquent\Model::setEventDispatcher($originalDispatcher);
-            \FedExVendor\Illuminate\Support\Facades\Cache::refreshEventDispatcher();
+            Model::setEventDispatcher($originalDispatcher);
+            Cache::refreshEventDispatcher();
         });
     }
     /**

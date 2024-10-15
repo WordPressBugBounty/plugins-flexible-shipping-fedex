@@ -15,7 +15,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property EmailOptionsRequested $OptionsRequested
  * @property Localization $Localization
  */
-class EMailRecipient extends \FedExVendor\FedEx\AbstractComplexType
+class EMailRecipient extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -51,7 +51,7 @@ class EMailRecipient extends \FedExVendor\FedEx\AbstractComplexType
      * @param EmailOptionsRequested $optionsRequested
      * @return $this
      */
-    public function setOptionsRequested(\FedExVendor\FedEx\UploadDocumentService\ComplexType\EmailOptionsRequested $optionsRequested)
+    public function setOptionsRequested(EmailOptionsRequested $optionsRequested)
     {
         $this->values['OptionsRequested'] = $optionsRequested;
         return $this;
@@ -62,7 +62,7 @@ class EMailRecipient extends \FedExVendor\FedEx\AbstractComplexType
      * @param Localization $localization
      * @return $this
      */
-    public function setLocalization(\FedExVendor\FedEx\UploadDocumentService\ComplexType\Localization $localization)
+    public function setLocalization(Localization $localization)
     {
         $this->values['Localization'] = $localization;
         return $this;

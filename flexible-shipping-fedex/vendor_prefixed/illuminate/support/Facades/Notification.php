@@ -22,7 +22,7 @@ use FedExVendor\Illuminate\Support\Testing\Fakes\NotificationFake;
  *
  * @see \Illuminate\Notifications\ChannelManager
  */
-class Notification extends \FedExVendor\Illuminate\Support\Facades\Facade
+class Notification extends Facade
 {
     /**
      * Replace the bound instance with a fake.
@@ -31,7 +31,7 @@ class Notification extends \FedExVendor\Illuminate\Support\Facades\Facade
      */
     public static function fake()
     {
-        static::swap($fake = new \FedExVendor\Illuminate\Support\Testing\Fakes\NotificationFake());
+        static::swap($fake = new NotificationFake());
         return $fake;
     }
     /**
@@ -43,7 +43,7 @@ class Notification extends \FedExVendor\Illuminate\Support\Facades\Facade
      */
     public static function route($channel, $route)
     {
-        return (new \FedExVendor\Illuminate\Notifications\AnonymousNotifiable())->route($channel, $route);
+        return (new AnonymousNotifiable())->route($channel, $route);
     }
     /**
      * Get the registered name of the component.
@@ -52,6 +52,6 @@ class Notification extends \FedExVendor\Illuminate\Support\Facades\Facade
      */
     protected static function getFacadeAccessor()
     {
-        return \FedExVendor\Illuminate\Notifications\ChannelManager::class;
+        return ChannelManager::class;
     }
 }

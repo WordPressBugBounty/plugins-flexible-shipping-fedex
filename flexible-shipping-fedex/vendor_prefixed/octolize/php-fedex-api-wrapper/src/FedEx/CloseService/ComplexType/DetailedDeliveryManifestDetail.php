@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property CloseDocumentFormat $Format
  * @property string $ClientTimeZoneOffset
  */
-class DetailedDeliveryManifestDetail extends \FedExVendor\FedEx\AbstractComplexType
+class DetailedDeliveryManifestDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -27,7 +27,7 @@ class DetailedDeliveryManifestDetail extends \FedExVendor\FedEx\AbstractComplexT
      * @param CloseDocumentFormat $format
      * @return $this
      */
-    public function setFormat(\FedExVendor\FedEx\CloseService\ComplexType\CloseDocumentFormat $format)
+    public function setFormat(CloseDocumentFormat $format)
     {
         $this->values['Format'] = $format;
         return $this;

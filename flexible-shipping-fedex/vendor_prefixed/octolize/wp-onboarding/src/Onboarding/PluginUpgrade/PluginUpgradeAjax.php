@@ -7,7 +7,7 @@ use FedExVendor\Octolize\Onboarding\OnboardingOption;
 /**
  * Can handle plugin upgrade onboarding Ajax actions.
  */
-class PluginUpgradeAjax extends \FedExVendor\Octolize\Onboarding\OnboardingAjax
+class PluginUpgradeAjax extends OnboardingAjax
 {
     /**
      * @var string
@@ -16,7 +16,7 @@ class PluginUpgradeAjax extends \FedExVendor\Octolize\Onboarding\OnboardingAjax
     /**
      * @param string $plugin_version
      */
-    public function __construct(\FedExVendor\Octolize\Onboarding\OnboardingOption $onboarding_option, string $plugin_version)
+    public function __construct(OnboardingOption $onboarding_option, string $plugin_version)
     {
         parent::__construct($onboarding_option);
         $this->plugin_version = $plugin_version;

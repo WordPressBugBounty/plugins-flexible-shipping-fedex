@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Dangerous Goods Data Service
  */
-class DangerousGoodsContainerAttributeType extends \FedExVendor\FedEx\AbstractSimpleType
+class DangerousGoodsContainerAttributeType extends AbstractSimpleType
 {
     const _ALL_PACKED_IN_ONE = 'ALL_PACKED_IN_ONE';
 }

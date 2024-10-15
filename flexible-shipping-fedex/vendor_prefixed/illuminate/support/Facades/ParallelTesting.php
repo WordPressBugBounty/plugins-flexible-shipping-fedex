@@ -12,7 +12,7 @@ namespace FedExVendor\Illuminate\Support\Facades;
  *
  * @see \Illuminate\Testing\ParallelTesting
  */
-class ParallelTesting extends \FedExVendor\Illuminate\Support\Facades\Facade
+class ParallelTesting extends Facade
 {
     /**
      * Get the registered name of the component.

@@ -18,7 +18,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property \FedEx\ShipService\SimpleType\RadioactiveLabelType|string $LabelType
  * @property ValidatedHazardousContainer[] $Containers
  */
-class CompletedHazardousPackageDetail extends \FedExVendor\FedEx\AbstractComplexType
+class CompletedHazardousPackageDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

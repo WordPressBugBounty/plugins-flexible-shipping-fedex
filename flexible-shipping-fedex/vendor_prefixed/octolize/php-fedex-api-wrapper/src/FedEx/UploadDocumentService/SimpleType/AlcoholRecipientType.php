@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Upload Document Service
  */
-class AlcoholRecipientType extends \FedExVendor\FedEx\AbstractSimpleType
+class AlcoholRecipientType extends AbstractSimpleType
 {
     const _CONSUMER = 'CONSUMER';
     const _LICENSEE = 'LICENSEE';

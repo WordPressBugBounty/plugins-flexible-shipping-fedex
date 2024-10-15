@@ -2,7 +2,7 @@
 
 namespace FedExVendor\Illuminate\Contracts\Bus;
 
-interface QueueingDispatcher extends \FedExVendor\Illuminate\Contracts\Bus\Dispatcher
+interface QueueingDispatcher extends Dispatcher
 {
     /**
      * Attempt to find the batch with the given ID.

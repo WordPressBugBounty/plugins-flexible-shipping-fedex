@@ -15,7 +15,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property \FedEx\RateService\SimpleType\RateElementBasisType|string $RateElementBasis
  * @property \FedEx\RateService\SimpleType\RateTypeBasisType|string $RateTypeBasis
  */
-class VariableHandlingChargeDetail extends \FedExVendor\FedEx\AbstractComplexType
+class VariableHandlingChargeDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -29,7 +29,7 @@ class VariableHandlingChargeDetail extends \FedExVendor\FedEx\AbstractComplexTyp
      * @param Money $fixedValue
      * @return $this
      */
-    public function setFixedValue(\FedExVendor\FedEx\RateService\ComplexType\Money $fixedValue)
+    public function setFixedValue(Money $fixedValue)
     {
         $this->values['FixedValue'] = $fixedValue;
         return $this;

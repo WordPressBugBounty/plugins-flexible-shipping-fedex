@@ -23,7 +23,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $CreationDate
  * @property AssociatedCompanyAccount[] $AssociatedAccounts
  */
-class EnterpriseProfile extends \FedExVendor\FedEx\AbstractComplexType
+class EnterpriseProfile extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -114,7 +114,7 @@ class EnterpriseProfile extends \FedExVendor\FedEx\AbstractComplexType
      * @param WelcomeKitDetail $welcomeKit
      * @return $this
      */
-    public function setWelcomeKit(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\WelcomeKitDetail $welcomeKit)
+    public function setWelcomeKit(WelcomeKitDetail $welcomeKit)
     {
         $this->values['WelcomeKit'] = $welcomeKit;
         return $this;

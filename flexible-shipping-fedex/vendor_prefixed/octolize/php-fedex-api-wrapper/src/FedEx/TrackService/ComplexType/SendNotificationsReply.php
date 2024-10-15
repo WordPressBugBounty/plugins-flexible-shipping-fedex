@@ -19,7 +19,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $PagingToken
  * @property TrackNotificationPackage[] $Packages
  */
-class SendNotificationsReply extends \FedExVendor\FedEx\AbstractComplexType
+class SendNotificationsReply extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -55,7 +55,7 @@ class SendNotificationsReply extends \FedExVendor\FedEx\AbstractComplexType
      * @param TransactionDetail $transactionDetail
      * @return $this
      */
-    public function setTransactionDetail(\FedExVendor\FedEx\TrackService\ComplexType\TransactionDetail $transactionDetail)
+    public function setTransactionDetail(TransactionDetail $transactionDetail)
     {
         $this->values['TransactionDetail'] = $transactionDetail;
         return $this;
@@ -66,7 +66,7 @@ class SendNotificationsReply extends \FedExVendor\FedEx\AbstractComplexType
      * @param VersionId $version
      * @return $this
      */
-    public function setVersion(\FedExVendor\FedEx\TrackService\ComplexType\VersionId $version)
+    public function setVersion(VersionId $version)
     {
         $this->values['Version'] = $version;
         return $this;

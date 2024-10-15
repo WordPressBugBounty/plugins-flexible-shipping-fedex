@@ -13,7 +13,7 @@ namespace FedExVendor\Illuminate\Support\Facades;
  *
  * @see \Illuminate\Encryption\Encrypter
  */
-class Crypt extends \FedExVendor\Illuminate\Support\Facades\Facade
+class Crypt extends Facade
 {
     /**
      * Get the registered name of the component.

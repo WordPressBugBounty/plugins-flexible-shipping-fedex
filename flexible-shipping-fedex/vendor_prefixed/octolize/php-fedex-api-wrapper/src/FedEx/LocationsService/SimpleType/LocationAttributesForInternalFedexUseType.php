@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Locations Service
  */
-class LocationAttributesForInternalFedexUseType extends \FedExVendor\FedEx\AbstractSimpleType
+class LocationAttributesForInternalFedexUseType extends AbstractSimpleType
 {
     const _FAMIS_LOCATION = 'FAMIS_LOCATION';
 }

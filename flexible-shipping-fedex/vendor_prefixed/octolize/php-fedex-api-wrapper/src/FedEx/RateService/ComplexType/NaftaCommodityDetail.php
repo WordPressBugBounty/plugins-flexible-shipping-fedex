@@ -16,7 +16,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property \FedEx\RateService\SimpleType\NaftaNetCostMethodCode|string $NetCostMethod
  * @property DateRange $NetCostDateRange
  */
-class NaftaCommodityDetail extends \FedExVendor\FedEx\AbstractComplexType
+class NaftaCommodityDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -74,7 +74,7 @@ class NaftaCommodityDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param DateRange $netCostDateRange
      * @return $this
      */
-    public function setNetCostDateRange(\FedExVendor\FedEx\RateService\ComplexType\DateRange $netCostDateRange)
+    public function setNetCostDateRange(DateRange $netCostDateRange)
     {
         $this->values['NetCostDateRange'] = $netCostDateRange;
         return $this;

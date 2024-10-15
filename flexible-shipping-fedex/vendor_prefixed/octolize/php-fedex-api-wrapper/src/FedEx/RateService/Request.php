@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractRequest;
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
  */
-class Request extends \FedExVendor\FedEx\AbstractRequest
+class Request extends AbstractRequest
 {
     const PRODUCTION_URL = 'https://ws.fedex.com:443/web-services/rate';
     const TESTING_URL = 'https://wsbeta.fedex.com:443/web-services/rate';
@@ -22,13 +22,13 @@ class Request extends \FedExVendor\FedEx\AbstractRequest
      * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
      * @return ComplexType\RateReply|stdClass
      */
-    public function getGetRatesReply(\FedExVendor\FedEx\RateService\ComplexType\RateRequest $rateRequest, $returnStdClass = \false)
+    public function getGetRatesReply(ComplexType\RateRequest $rateRequest, $returnStdClass = \false)
     {
         $response = $this->getSoapClient()->getRates($rateRequest->toArray());
         if ($returnStdClass) {
             return $response;
         }
-        $rateReply = new \FedExVendor\FedEx\RateService\ComplexType\RateReply();
+        $rateReply = new ComplexType\RateReply();
         $rateReply->populateFromStdClass($response);
         return $rateReply;
     }

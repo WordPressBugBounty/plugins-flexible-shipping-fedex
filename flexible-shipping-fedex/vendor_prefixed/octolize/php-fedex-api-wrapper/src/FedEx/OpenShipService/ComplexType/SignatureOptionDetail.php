@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property \FedEx\OpenShipService\SimpleType\SignatureOptionType|string $OptionType
  * @property string $SignatureReleaseNumber
  */
-class SignatureOptionDetail extends \FedExVendor\FedEx\AbstractComplexType
+class SignatureOptionDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

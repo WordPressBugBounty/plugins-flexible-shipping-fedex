@@ -15,38 +15,38 @@ use FedExVendor\Illuminate\Contracts\Auth\PasswordBroker;
  *
  * @see \Illuminate\Auth\Passwords\PasswordBroker
  */
-class Password extends \FedExVendor\Illuminate\Support\Facades\Facade
+class Password extends Facade
 {
     /**
      * Constant representing a successfully sent reminder.
      *
      * @var string
      */
-    const RESET_LINK_SENT = \FedExVendor\Illuminate\Contracts\Auth\PasswordBroker::RESET_LINK_SENT;
+    const RESET_LINK_SENT = PasswordBroker::RESET_LINK_SENT;
     /**
      * Constant representing a successfully reset password.
      *
      * @var string
      */
-    const PASSWORD_RESET = \FedExVendor\Illuminate\Contracts\Auth\PasswordBroker::PASSWORD_RESET;
+    const PASSWORD_RESET = PasswordBroker::PASSWORD_RESET;
     /**
      * Constant representing the user not found response.
      *
      * @var string
      */
-    const INVALID_USER = \FedExVendor\Illuminate\Contracts\Auth\PasswordBroker::INVALID_USER;
+    const INVALID_USER = PasswordBroker::INVALID_USER;
     /**
      * Constant representing an invalid token.
      *
      * @var string
      */
-    const INVALID_TOKEN = \FedExVendor\Illuminate\Contracts\Auth\PasswordBroker::INVALID_TOKEN;
+    const INVALID_TOKEN = PasswordBroker::INVALID_TOKEN;
     /**
      * Constant representing a throttled reset attempt.
      *
      * @var string
      */
-    const RESET_THROTTLED = \FedExVendor\Illuminate\Contracts\Auth\PasswordBroker::RESET_THROTTLED;
+    const RESET_THROTTLED = PasswordBroker::RESET_THROTTLED;
     /**
      * Get the registered name of the component.
      *

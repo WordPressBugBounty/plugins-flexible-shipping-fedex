@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  OpenShip Service
  */
-class TransitTimeType extends \FedExVendor\FedEx\AbstractSimpleType
+class TransitTimeType extends AbstractSimpleType
 {
     const _EIGHTEEN_DAYS = 'EIGHTEEN_DAYS';
     const _EIGHT_DAYS = 'EIGHT_DAYS';

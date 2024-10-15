@@ -5,7 +5,7 @@ namespace FedExVendor\Illuminate\Support;
 use ArrayAccess;
 use ArrayObject;
 use FedExVendor\Illuminate\Support\Traits\Macroable;
-class Optional implements \ArrayAccess
+class Optional implements ArrayAccess
 {
     use Macroable {
         __call as macroCall;
@@ -34,7 +34,7 @@ class Optional implements \ArrayAccess
      */
     public function __get($key)
     {
-        if (\is_object($this->value)) {
+        if (is_object($this->value)) {
             return $this->value->{$key} ?? null;
         }
     }
@@ -46,10 +46,10 @@ class Optional implements \ArrayAccess
      */
     public function __isset($name)
     {
-        if (\is_object($this->value)) {
+        if (is_object($this->value)) {
             return isset($this->value->{$name});
         }
-        if (\is_array($this->value) || $this->value instanceof \ArrayObject) {
+        if (is_array($this->value) || $this->value instanceof ArrayObject) {
             return isset($this->value[$name]);
         }
         return \false;
@@ -63,7 +63,7 @@ class Optional implements \ArrayAccess
     #[\ReturnTypeWillChange]
     public function offsetExists($key)
     {
-        return \FedExVendor\Illuminate\Support\Arr::accessible($this->value) && \FedExVendor\Illuminate\Support\Arr::exists($this->value, $key);
+        return Arr::accessible($this->value) && Arr::exists($this->value, $key);
     }
     /**
      * Get an item at a given offset.
@@ -74,7 +74,7 @@ class Optional implements \ArrayAccess
     #[\ReturnTypeWillChange]
     public function offsetGet($key)
     {
-        return \FedExVendor\Illuminate\Support\Arr::get($this->value, $key);
+        return Arr::get($this->value, $key);
     }
     /**
      * Set the item at a given offset.
@@ -86,7 +86,7 @@ class Optional implements \ArrayAccess
     #[\ReturnTypeWillChange]
     public function offsetSet($key, $value)
     {
-        if (\FedExVendor\Illuminate\Support\Arr::accessible($this->value)) {
+        if (Arr::accessible($this->value)) {
             $this->value[$key] = $value;
         }
     }
@@ -99,7 +99,7 @@ class Optional implements \ArrayAccess
     #[\ReturnTypeWillChange]
     public function offsetUnset($key)
     {
-        if (\FedExVendor\Illuminate\Support\Arr::accessible($this->value)) {
+        if (Arr::accessible($this->value)) {
             unset($this->value[$key]);
         }
     }
@@ -115,7 +115,7 @@ class Optional implements \ArrayAccess
         if (static::hasMacro($method)) {
             return $this->macroCall($method, $parameters);
         }
-        if (\is_object($this->value)) {
+        if (is_object($this->value)) {
             return $this->value->{$method}(...$parameters);
         }
     }

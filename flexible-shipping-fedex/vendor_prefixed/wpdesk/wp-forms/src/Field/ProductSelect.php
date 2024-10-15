@@ -4,21 +4,21 @@ namespace FedExVendor\WPDesk\Forms\Field;
 
 use FedExVendor\WPDesk\Forms\Serializer\ProductSelectSerializer;
 use FedExVendor\WPDesk\Forms\Serializer;
-class ProductSelect extends \FedExVendor\WPDesk\Forms\Field\SelectField
+class ProductSelect extends SelectField
 {
     public function __construct()
     {
         $this->set_multiple();
     }
-    public function has_serializer() : bool
+    public function has_serializer(): bool
     {
         return \true;
     }
-    public function get_serializer() : \FedExVendor\WPDesk\Forms\Serializer
+    public function get_serializer(): Serializer
     {
-        return new \FedExVendor\WPDesk\Forms\Serializer\ProductSelectSerializer();
+        return new ProductSelectSerializer();
     }
-    public function get_template_name() : string
+    public function get_template_name(): string
     {
         return 'product-select';
     }

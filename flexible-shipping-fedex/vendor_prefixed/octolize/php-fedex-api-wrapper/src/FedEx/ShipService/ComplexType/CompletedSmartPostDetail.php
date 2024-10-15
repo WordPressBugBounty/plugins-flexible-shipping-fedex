@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property \FedEx\ShipService\SimpleType\CarrierCodeType|string $PickUpCarrier
  * @property boolean $Machinable
  */
-class CompletedSmartPostDetail extends \FedExVendor\FedEx\AbstractComplexType
+class CompletedSmartPostDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

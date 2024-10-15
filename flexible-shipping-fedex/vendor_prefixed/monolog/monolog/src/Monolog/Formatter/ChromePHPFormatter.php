@@ -17,14 +17,14 @@ use FedExVendor\Monolog\Logger;
  *
  * @author Christophe Coevoet <stof@notk.org>
  */
-class ChromePHPFormatter implements \FedExVendor\Monolog\Formatter\FormatterInterface
+class ChromePHPFormatter implements FormatterInterface
 {
     /**
      * Translates Monolog log levels to Wildfire levels.
      *
      * @var array<int, 'log'|'info'|'warn'|'error'>
      */
-    private $logLevels = [\FedExVendor\Monolog\Logger::DEBUG => 'log', \FedExVendor\Monolog\Logger::INFO => 'info', \FedExVendor\Monolog\Logger::NOTICE => 'info', \FedExVendor\Monolog\Logger::WARNING => 'warn', \FedExVendor\Monolog\Logger::ERROR => 'error', \FedExVendor\Monolog\Logger::CRITICAL => 'error', \FedExVendor\Monolog\Logger::ALERT => 'error', \FedExVendor\Monolog\Logger::EMERGENCY => 'error'];
+    private $logLevels = [Logger::DEBUG => 'log', Logger::INFO => 'info', Logger::NOTICE => 'info', Logger::WARNING => 'warn', Logger::ERROR => 'error', Logger::CRITICAL => 'error', Logger::ALERT => 'error', Logger::EMERGENCY => 'error'];
     /**
      * {@inheritDoc}
      */
@@ -43,8 +43,8 @@ class ChromePHPFormatter implements \FedExVendor\Monolog\Formatter\FormatterInte
         if ($record['extra']) {
             $message['extra'] = $record['extra'];
         }
-        if (\count($message) === 1) {
-            $message = \reset($message);
+        if (count($message) === 1) {
+            $message = reset($message);
         }
         return [$record['channel'], $message, $backtrace, $this->logLevels[$record['level']]];
     }

@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
  */
-class ShipmentOnlyFieldsType extends \FedExVendor\FedEx\AbstractSimpleType
+class ShipmentOnlyFieldsType extends AbstractSimpleType
 {
     const _DIMENSIONS = 'DIMENSIONS';
     const _INSURED_VALUE = 'INSURED_VALUE';

@@ -13,7 +13,7 @@ use FedExVendor\WPDesk\AbstractShipping\Shipment\Address;
  *
  * @package WPDesk\ShippingBuilder\Address
  */
-class WooCommerceAddressReceiver implements \FedExVendor\WPDesk\WooCommerceShipping\ShippingBuilder\AddressProvider
+class WooCommerceAddressReceiver implements AddressProvider
 {
     /**
      * Package data.
@@ -52,7 +52,7 @@ class WooCommerceAddressReceiver implements \FedExVendor\WPDesk\WooCommerceShipp
      */
     public function get_address()
     {
-        $address = new \FedExVendor\WPDesk\AbstractShipping\Shipment\Address();
+        $address = new Address();
         $address->address_line1 = $this->get_destination_value('address');
         $address->address_line2 = $this->get_destination_value('address2');
         $address->city = $this->get_destination_value('city');

@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $Name
  * @property string $Phone
  */
-class ExpressFreightDetailContact extends \FedExVendor\FedEx\AbstractComplexType
+class ExpressFreightDetailContact extends AbstractComplexType
 {
     /**
      * Name of this complex type

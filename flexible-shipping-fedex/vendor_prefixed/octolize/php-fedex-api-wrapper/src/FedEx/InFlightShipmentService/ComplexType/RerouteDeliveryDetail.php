@@ -15,7 +15,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $CommitmentDate
  * @property string $CommitmentTime
  */
-class RerouteDeliveryDetail extends \FedExVendor\FedEx\AbstractComplexType
+class RerouteDeliveryDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

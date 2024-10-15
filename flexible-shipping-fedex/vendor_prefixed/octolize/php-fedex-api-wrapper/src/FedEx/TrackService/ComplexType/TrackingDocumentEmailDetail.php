@@ -15,7 +15,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property Localization $Localization
  * @property string $PersonalMessage
  */
-class TrackingDocumentEmailDetail extends \FedExVendor\FedEx\AbstractComplexType
+class TrackingDocumentEmailDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -40,7 +40,7 @@ class TrackingDocumentEmailDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param EMailDetail $sender
      * @return $this
      */
-    public function setSender(\FedExVendor\FedEx\TrackService\ComplexType\EMailDetail $sender)
+    public function setSender(EMailDetail $sender)
     {
         $this->values['Sender'] = $sender;
         return $this;
@@ -51,7 +51,7 @@ class TrackingDocumentEmailDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param Localization $localization
      * @return $this
      */
-    public function setLocalization(\FedExVendor\FedEx\TrackService\ComplexType\Localization $localization)
+    public function setLocalization(Localization $localization)
     {
         $this->values['Localization'] = $localization;
         return $this;

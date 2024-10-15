@@ -17,7 +17,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $AttentionToName
  * @property SocialMediaDetail[] $SocialMediaDetails
  */
-class CustomerCommunicationDetail extends \FedExVendor\FedEx\AbstractComplexType
+class CustomerCommunicationDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -42,7 +42,7 @@ class CustomerCommunicationDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param Localization $localization
      * @return $this
      */
-    public function setLocalization(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\Localization $localization)
+    public function setLocalization(Localization $localization)
     {
         $this->values['Localization'] = $localization;
         return $this;

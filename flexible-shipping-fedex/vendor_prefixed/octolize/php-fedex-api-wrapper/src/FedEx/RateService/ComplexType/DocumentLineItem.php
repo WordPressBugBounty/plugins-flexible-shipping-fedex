@@ -12,7 +12,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  *
  * @property KeyValueDetail[] $Values
  */
-class DocumentLineItem extends \FedExVendor\FedEx\AbstractComplexType
+class DocumentLineItem extends AbstractComplexType
 {
     /**
      * Name of this complex type

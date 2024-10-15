@@ -17,7 +17,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property \FedEx\PickupService\SimpleType\TruckType|string $TruckType
  * @property \FedEx\PickupService\SimpleType\TrailerSizeType|string $TrailerSize
  */
-class ExpressFreightPickupDetail extends \FedExVendor\FedEx\AbstractComplexType
+class ExpressFreightPickupDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -64,7 +64,7 @@ class ExpressFreightPickupDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param Dimensions $dimensions
      * @return $this
      */
-    public function setDimensions(\FedExVendor\FedEx\PickupService\ComplexType\Dimensions $dimensions)
+    public function setDimensions(Dimensions $dimensions)
     {
         $this->values['Dimensions'] = $dimensions;
         return $this;

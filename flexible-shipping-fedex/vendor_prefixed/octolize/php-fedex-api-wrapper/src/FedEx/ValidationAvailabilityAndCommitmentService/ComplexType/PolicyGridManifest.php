@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $GridId
  * @property string[] $Contents
  */
-class PolicyGridManifest extends \FedExVendor\FedEx\AbstractComplexType
+class PolicyGridManifest extends AbstractComplexType
 {
     /**
      * Name of this complex type

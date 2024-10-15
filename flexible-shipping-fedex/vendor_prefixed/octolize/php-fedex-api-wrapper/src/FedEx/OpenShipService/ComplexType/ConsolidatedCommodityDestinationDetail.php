@@ -14,7 +14,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $StateOrProvinceCode
  * @property boolean $Residential
  */
-class ConsolidatedCommodityDestinationDetail extends \FedExVendor\FedEx\AbstractComplexType
+class ConsolidatedCommodityDestinationDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

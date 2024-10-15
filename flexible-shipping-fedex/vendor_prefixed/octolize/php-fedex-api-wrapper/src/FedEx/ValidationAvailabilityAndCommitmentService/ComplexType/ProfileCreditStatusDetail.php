@@ -16,7 +16,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $CashReasonCode
  * @property string $CreditRatingCode
  */
-class ProfileCreditStatusDetail extends \FedExVendor\FedEx\AbstractComplexType
+class ProfileCreditStatusDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

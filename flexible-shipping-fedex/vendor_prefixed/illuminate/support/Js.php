@@ -6,7 +6,7 @@ use FedExVendor\Illuminate\Contracts\Support\Arrayable;
 use FedExVendor\Illuminate\Contracts\Support\Htmlable;
 use FedExVendor\Illuminate\Contracts\Support\Jsonable;
 use JsonSerializable;
-class Js implements \FedExVendor\Illuminate\Contracts\Support\Htmlable
+class Js implements Htmlable
 {
     /**
      * The JavaScript string.
@@ -64,8 +64,8 @@ class Js implements \FedExVendor\Illuminate\Contracts\Support\Htmlable
             return $data->toHtml();
         }
         $json = $this->jsonEncode($data, $flags, $depth);
-        if (\is_string($data)) {
-            return "'" . \substr($json, 1, -1) . "'";
+        if (is_string($data)) {
+            return "'" . substr($json, 1, -1) . "'";
         }
         return $this->convertJsonToJavaScriptExpression($json, $flags);
     }
@@ -81,13 +81,13 @@ class Js implements \FedExVendor\Illuminate\Contracts\Support\Htmlable
      */
     protected function jsonEncode($data, $flags = 0, $depth = 512)
     {
-        if ($data instanceof \FedExVendor\Illuminate\Contracts\Support\Jsonable) {
+        if ($data instanceof Jsonable) {
             return $data->toJson($flags | static::REQUIRED_FLAGS);
         }
-        if ($data instanceof \FedExVendor\Illuminate\Contracts\Support\Arrayable && !$data instanceof \JsonSerializable) {
+        if ($data instanceof Arrayable && !$data instanceof JsonSerializable) {
             $data = $data->toArray();
         }
-        return \json_encode($data, $flags | static::REQUIRED_FLAGS, $depth);
+        return json_encode($data, $flags | static::REQUIRED_FLAGS, $depth);
     }
     /**
      * Convert the given JSON to a JavaScript expression.
@@ -103,8 +103,8 @@ class Js implements \FedExVendor\Illuminate\Contracts\Support\Htmlable
         if ('[]' === $json || '{}' === $json) {
             return $json;
         }
-        if (\FedExVendor\Illuminate\Support\Str::startsWith($json, ['"', '{', '['])) {
-            return "JSON.parse('" . \substr(\json_encode($json, $flags | static::REQUIRED_FLAGS), 1, -1) . "')";
+        if (Str::startsWith($json, ['"', '{', '['])) {
+            return "JSON.parse('" . substr(json_encode($json, $flags | static::REQUIRED_FLAGS), 1, -1) . "')";
         }
         return $json;
     }

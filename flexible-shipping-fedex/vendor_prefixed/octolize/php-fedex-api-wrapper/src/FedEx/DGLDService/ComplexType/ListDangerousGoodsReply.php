@@ -19,7 +19,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property \FedEx\DGLDService\SimpleType\HazardousCommodityOptionType|string[] $Options
  * @property ListDangerousGoodsDetail[] $Details
  */
-class ListDangerousGoodsReply extends \FedExVendor\FedEx\AbstractComplexType
+class ListDangerousGoodsReply extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -55,7 +55,7 @@ class ListDangerousGoodsReply extends \FedExVendor\FedEx\AbstractComplexType
      * @param TransactionDetail $transactionDetail
      * @return $this
      */
-    public function setTransactionDetail(\FedExVendor\FedEx\DGLDService\ComplexType\TransactionDetail $transactionDetail)
+    public function setTransactionDetail(TransactionDetail $transactionDetail)
     {
         $this->values['TransactionDetail'] = $transactionDetail;
         return $this;
@@ -66,7 +66,7 @@ class ListDangerousGoodsReply extends \FedExVendor\FedEx\AbstractComplexType
      * @param VersionId $version
      * @return $this
      */
-    public function setVersion(\FedExVendor\FedEx\DGLDService\ComplexType\VersionId $version)
+    public function setVersion(VersionId $version)
     {
         $this->values['Version'] = $version;
         return $this;

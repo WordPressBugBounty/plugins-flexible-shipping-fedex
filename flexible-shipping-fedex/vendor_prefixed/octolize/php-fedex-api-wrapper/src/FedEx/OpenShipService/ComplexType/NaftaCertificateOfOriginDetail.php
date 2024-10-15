@@ -18,7 +18,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property NaftaProducer[] $Producers
  * @property CustomerImageUsage[] $CustomerImageUsages
  */
-class NaftaCertificateOfOriginDetail extends \FedExVendor\FedEx\AbstractComplexType
+class NaftaCertificateOfOriginDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -32,7 +32,7 @@ class NaftaCertificateOfOriginDetail extends \FedExVendor\FedEx\AbstractComplexT
      * @param ShippingDocumentFormat $format
      * @return $this
      */
-    public function setFormat(\FedExVendor\FedEx\OpenShipService\ComplexType\ShippingDocumentFormat $format)
+    public function setFormat(ShippingDocumentFormat $format)
     {
         $this->values['Format'] = $format;
         return $this;
@@ -43,7 +43,7 @@ class NaftaCertificateOfOriginDetail extends \FedExVendor\FedEx\AbstractComplexT
      * @param DateRange $blanketPeriod
      * @return $this
      */
-    public function setBlanketPeriod(\FedExVendor\FedEx\OpenShipService\ComplexType\DateRange $blanketPeriod)
+    public function setBlanketPeriod(DateRange $blanketPeriod)
     {
         $this->values['BlanketPeriod'] = $blanketPeriod;
         return $this;
@@ -65,7 +65,7 @@ class NaftaCertificateOfOriginDetail extends \FedExVendor\FedEx\AbstractComplexT
      * @param Contact $signatureContact
      * @return $this
      */
-    public function setSignatureContact(\FedExVendor\FedEx\OpenShipService\ComplexType\Contact $signatureContact)
+    public function setSignatureContact(Contact $signatureContact)
     {
         $this->values['SignatureContact'] = $signatureContact;
         return $this;

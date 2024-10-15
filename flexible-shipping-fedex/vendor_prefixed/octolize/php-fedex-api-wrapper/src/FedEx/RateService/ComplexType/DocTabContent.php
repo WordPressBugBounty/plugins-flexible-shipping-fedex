@@ -14,7 +14,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property DocTabContentZone001 $Zone001
  * @property DocTabContentBarcoded $Barcoded
  */
-class DocTabContent extends \FedExVendor\FedEx\AbstractComplexType
+class DocTabContent extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -39,7 +39,7 @@ class DocTabContent extends \FedExVendor\FedEx\AbstractComplexType
      * @param DocTabContentZone001 $zone001
      * @return $this
      */
-    public function setZone001(\FedExVendor\FedEx\RateService\ComplexType\DocTabContentZone001 $zone001)
+    public function setZone001(DocTabContentZone001 $zone001)
     {
         $this->values['Zone001'] = $zone001;
         return $this;
@@ -50,7 +50,7 @@ class DocTabContent extends \FedExVendor\FedEx\AbstractComplexType
      * @param DocTabContentBarcoded $barcoded
      * @return $this
      */
-    public function setBarcoded(\FedExVendor\FedEx\RateService\ComplexType\DocTabContentBarcoded $barcoded)
+    public function setBarcoded(DocTabContentBarcoded $barcoded)
     {
         $this->values['Barcoded'] = $barcoded;
         return $this;

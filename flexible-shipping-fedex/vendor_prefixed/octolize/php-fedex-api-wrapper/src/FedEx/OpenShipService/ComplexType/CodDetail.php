@@ -18,7 +18,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $RemitToName
  * @property \FedEx\OpenShipService\SimpleType\CodReturnReferenceIndicatorType|string $ReferenceIndicator
  */
-class CodDetail extends \FedExVendor\FedEx\AbstractComplexType
+class CodDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -32,7 +32,7 @@ class CodDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param Money $codCollectionAmount
      * @return $this
      */
-    public function setCodCollectionAmount(\FedExVendor\FedEx\OpenShipService\ComplexType\Money $codCollectionAmount)
+    public function setCodCollectionAmount(Money $codCollectionAmount)
     {
         $this->values['CodCollectionAmount'] = $codCollectionAmount;
         return $this;
@@ -43,7 +43,7 @@ class CodDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param CodAddTransportationChargesDetail $addTransportationChargesDetail
      * @return $this
      */
-    public function setAddTransportationChargesDetail(\FedExVendor\FedEx\OpenShipService\ComplexType\CodAddTransportationChargesDetail $addTransportationChargesDetail)
+    public function setAddTransportationChargesDetail(CodAddTransportationChargesDetail $addTransportationChargesDetail)
     {
         $this->values['AddTransportationChargesDetail'] = $addTransportationChargesDetail;
         return $this;
@@ -65,7 +65,7 @@ class CodDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param Party $codRecipient
      * @return $this
      */
-    public function setCodRecipient(\FedExVendor\FedEx\OpenShipService\ComplexType\Party $codRecipient)
+    public function setCodRecipient(Party $codRecipient)
     {
         $this->values['CodRecipient'] = $codRecipient;
         return $this;
@@ -76,7 +76,7 @@ class CodDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param ContactAndAddress $financialInstitutionContactAndAddress
      * @return $this
      */
-    public function setFinancialInstitutionContactAndAddress(\FedExVendor\FedEx\OpenShipService\ComplexType\ContactAndAddress $financialInstitutionContactAndAddress)
+    public function setFinancialInstitutionContactAndAddress(ContactAndAddress $financialInstitutionContactAndAddress)
     {
         $this->values['FinancialInstitutionContactAndAddress'] = $financialInstitutionContactAndAddress;
         return $this;

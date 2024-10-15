@@ -16,14 +16,14 @@ class Reflection
         if ($reflectionParamaterType instanceof \ReflectionNamedType && $reflectionParamaterType->getName() !== 'array') {
             return null;
         }
-        \preg_match('/@param\\s+([^\\s]+)/', $reflectionParameter->getDeclaringFunction()->getDocComment(), $matches);
+        preg_match('/@param\s+([^\s]+)/', $reflectionParameter->getDeclaringFunction()->getDocComment(), $matches);
         if (isset($matches[1])) {
-            if (\stristr($matches[1], 'SimpleType')) {
-                return \str_replace('[]', '', \explode('|', $matches[1])[0]);
+            if (stristr($matches[1], 'SimpleType')) {
+                return str_replace('[]', '', explode('|', $matches[1])[0]);
             } else {
-                $namespaceParts = \explode('\\', $reflectionParameter->getDeclaringClass()->name);
-                \array_pop($namespaceParts);
-                return \join('\\', $namespaceParts) . '\\' . \str_replace('[]', '', $matches[1]);
+                $namespaceParts = explode('\\', $reflectionParameter->getDeclaringClass()->name);
+                array_pop($namespaceParts);
+                return join('\\', $namespaceParts) . '\\' . str_replace('[]', '', $matches[1]);
             }
         }
     }
@@ -42,13 +42,13 @@ class Reflection
         //        if ($reflectionParameter->isArray() || ($reflectionParameter->getClass() instanceof \ReflectionClass)) {
         //            return null;
         //        }
-        \preg_match('/@param\\s+([^\\s]+)/', $reflectionParameter->getDeclaringFunction()->getDocComment(), $matches);
+        preg_match('/@param\s+([^\s]+)/', $reflectionParameter->getDeclaringFunction()->getDocComment(), $matches);
         if (!isset($matches[1])) {
             return null;
         }
         $match = $matches[1];
-        if (\preg_match('/(.*)\\|string$/', $match, $matches)) {
-            if (isset($matches[1]) && \class_exists($matches[1])) {
+        if (preg_match('/(.*)\|string$/', $match, $matches)) {
+            if (isset($matches[1]) && class_exists($matches[1])) {
                 return $matches[1];
             }
         }
@@ -62,7 +62,7 @@ class Reflection
      */
     public static function isClassNameSimpleType($fullyQualifiedClassName)
     {
-        if (\preg_match('/SimpleType/', $fullyQualifiedClassName)) {
+        if (preg_match('/SimpleType/', $fullyQualifiedClassName)) {
             return \true;
         }
         return \false;

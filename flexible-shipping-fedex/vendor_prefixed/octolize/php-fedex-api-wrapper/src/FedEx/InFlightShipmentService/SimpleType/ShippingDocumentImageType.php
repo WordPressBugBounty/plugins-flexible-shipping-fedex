@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  In Flight Shipment Service
  */
-class ShippingDocumentImageType extends \FedExVendor\FedEx\AbstractSimpleType
+class ShippingDocumentImageType extends AbstractSimpleType
 {
     const _DIB = 'DIB';
     const _DOC = 'DOC';

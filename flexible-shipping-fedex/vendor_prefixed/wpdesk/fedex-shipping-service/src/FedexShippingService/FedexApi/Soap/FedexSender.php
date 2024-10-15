@@ -12,7 +12,7 @@ use FedExVendor\WPDesk\AbstractShipping\Exception\RateException;
  *
  * @package WPDesk\FedexShippingService\FedexApi
  */
-class FedexSender implements \FedExVendor\WPDesk\FedexShippingService\FedexApi\Soap\Sender
+class FedexSender implements Sender
 {
     /**
      * Logger
@@ -32,7 +32,7 @@ class FedexSender implements \FedExVendor\WPDesk\FedexShippingService\FedexApi\S
      * @param LoggerInterface $logger Logger.
      * @param bool $is_testing Is testing?.
      */
-    public function __construct(\FedExVendor\Psr\Log\LoggerInterface $logger, $is_testing = \true)
+    public function __construct(LoggerInterface $logger, $is_testing = \true)
     {
         $this->logger = $logger;
         $this->is_testing = $is_testing;
@@ -44,7 +44,7 @@ class FedexSender implements \FedExVendor\WPDesk\FedexShippingService\FedexApi\S
      */
     private function get_fedex_url()
     {
-        return $this->is_testing ? \FedExVendor\FedEx\RateService\Request::TESTING_URL : \FedExVendor\FedEx\RateService\Request::PRODUCTION_URL;
+        return $this->is_testing ? Request::TESTING_URL : Request::PRODUCTION_URL;
     }
     /**
      * Formats XML.
@@ -67,7 +67,7 @@ class FedexSender implements \FedExVendor\WPDesk\FedexShippingService\FedexApi\S
      * @param Request $rate_service_request .
      * @param string  $url .
      */
-    private function log_request_and_response(\FedExVendor\FedEx\RateService\Request $rate_service_request, $url)
+    private function log_request_and_response(Request $rate_service_request, $url)
     {
         $this->logger->info('API request', array('content' => $this->format_xml($rate_service_request->getSoapClient()->__getLastRequest()), 'url' => $url, 'headers' => $rate_service_request->getSoapClient()->__getLastRequestHeaders()));
         $this->logger->info('API response', array('content' => $this->format_xml($rate_service_request->getSoapClient()->__getLastResponse()), 'url' => $url, 'headers' => $rate_service_request->getSoapClient()->__getLastResponseHeaders()));
@@ -81,15 +81,15 @@ class FedexSender implements \FedExVendor\WPDesk\FedexShippingService\FedexApi\S
      *
      * @throws RateException Rate exception.
      */
-    public function send(\FedExVendor\FedEx\RateService\ComplexType\RateRequest $request)
+    public function send(RateRequest $request)
     {
-        $rate_service_request = new \FedExVendor\FedEx\RateService\Request();
+        $rate_service_request = new Request();
         $url = $this->get_fedex_url();
         $rate_service_request->getSoapClient()->__setLocation($url);
         $reply = $rate_service_request->getGetRatesReply($request);
         $this->log_request_and_response($rate_service_request, $url);
-        if (\FedExVendor\WPDesk\FedexShippingService\FedexApi\Soap\FedexSoapRateReplyInterpretation::has_reply_error($reply)) {
-            throw new \FedExVendor\WPDesk\AbstractShipping\Exception\RateException(\FedExVendor\WPDesk\FedexShippingService\FedexApi\Soap\FedexSoapRateReplyInterpretation::get_reply_message($reply), ['response' => $reply]);
+        if (FedexSoapRateReplyInterpretation::has_reply_error($reply)) {
+            throw new RateException(FedexSoapRateReplyInterpretation::get_reply_message($reply), ['response' => $reply]);
             //phpcs:ignore
         }
         return $reply;

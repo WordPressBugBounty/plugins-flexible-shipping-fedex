@@ -18,7 +18,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $ClearanceNumber
  * @property ShipmentInclusionSpecification[] $InclusionSpecifications
  */
-class RequestedDistributionLocation extends \FedExVendor\FedEx\AbstractComplexType
+class RequestedDistributionLocation extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -76,7 +76,7 @@ class RequestedDistributionLocation extends \FedExVendor\FedEx\AbstractComplexTy
      * @param ContactAndAddress $locationContactAndAddress
      * @return $this
      */
-    public function setLocationContactAndAddress(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\ContactAndAddress $locationContactAndAddress)
+    public function setLocationContactAndAddress(ContactAndAddress $locationContactAndAddress)
     {
         $this->values['LocationContactAndAddress'] = $locationContactAndAddress;
         return $this;

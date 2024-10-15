@@ -32,7 +32,7 @@ abstract class AbstractComplexType
      */
     public function __construct(array $options = null)
     {
-        if (\is_array($options)) {
+        if (is_array($options)) {
             foreach ($options as $name => $value) {
                 $this->{$name} = $value;
             }
@@ -47,7 +47,7 @@ abstract class AbstractComplexType
     public function __set($name, $value)
     {
         $setValueMethod = "set{$name}";
-        if (\method_exists($this, $setValueMethod)) {
+        if (method_exists($this, $setValueMethod)) {
             $this->{$setValueMethod}($value);
         }
     }
@@ -64,13 +64,13 @@ abstract class AbstractComplexType
             return $this->values[$name];
         }
         $setterMethodName = "set{$name}";
-        $reflectionClass = new \ReflectionClass($this);
+        $reflectionClass = new ReflectionClass($this);
         if ($reflectionClass->hasMethod($setterMethodName)) {
             $reflectionNamedType = $reflectionClass->getMethod($setterMethodName)->getParameters()[0]->getType();
             /* @var $reflectionNamedType ReflectionNamedType */
             if ($reflectionNamedType !== NULL) {
                 $parameterClassName = $reflectionNamedType->getName();
-                if (\class_exists($parameterClassName)) {
+                if (class_exists($parameterClassName)) {
                     $this->{$setterMethodName}(new $parameterClassName());
                     return $this->values[$name];
                 }
@@ -100,12 +100,10 @@ abstract class AbstractComplexType
         foreach ($arrayValues as $key => $value) {
             if ($value instanceof self) {
                 $returnArray[$key] = $value->toArray();
+            } else if (is_array($value)) {
+                $returnArray[$key] = $this->convertToArray($value);
             } else {
-                if (\is_array($value)) {
-                    $returnArray[$key] = $this->convertToArray($value);
-                } else {
-                    $returnArray[$key] = (string) $value;
-                }
+                $returnArray[$key] = (string) $value;
             }
         }
         return $returnArray;
@@ -133,25 +131,25 @@ abstract class AbstractComplexType
      */
     public function populateFromStdClass(\stdClass $stdClass)
     {
-        $reflectionClass = new \ReflectionClass($this);
-        $setterMethods = \array_filter($reflectionClass->getMethods(\ReflectionMethod::IS_PUBLIC), function ($reflectionMethod) {
-            return \preg_match('/^set.*$/', $reflectionMethod->name);
+        $reflectionClass = new ReflectionClass($this);
+        $setterMethods = array_filter($reflectionClass->getMethods(ReflectionMethod::IS_PUBLIC), function ($reflectionMethod) {
+            return preg_match('/^set.*$/', $reflectionMethod->name);
         });
         foreach ($setterMethods as $reflectionMethod) {
             /* @var $reflectionMethod ReflectionMethod */
             $methodName = $reflectionMethod->name;
-            $stdPropertyName = \str_replace('set', '', $methodName);
+            $stdPropertyName = str_replace('set', '', $methodName);
             $parameterValue = null;
             $reflectionParameter = $reflectionMethod->getParameters()[0];
             $reflectionParameterType = $reflectionParameter->getType();
-            if ($reflectionParameterType instanceof \ReflectionNamedType) {
+            if ($reflectionParameterType instanceof ReflectionNamedType) {
                 if ($reflectionParameterType->getName() === 'array') {
                     // array
-                    $arrayType = \FedExVendor\FedEx\Reflection::getAbstractClassSetterMethodArrayType($reflectionParameter);
-                    if (!\FedExVendor\FedEx\Reflection::isClassNameSimpleType($arrayType)) {
+                    $arrayType = Reflection::getAbstractClassSetterMethodArrayType($reflectionParameter);
+                    if (!Reflection::isClassNameSimpleType($arrayType)) {
                         if (isset($stdClass->{$stdPropertyName})) {
                             $parameterValue = [];
-                            if (\is_array($stdClass->{$stdPropertyName})) {
+                            if (is_array($stdClass->{$stdPropertyName})) {
                                 foreach ($stdClass->{$stdPropertyName} as $property) {
                                     $class = new $arrayType();
                                     $parameterValue[] = $class;
@@ -172,11 +170,8 @@ abstract class AbstractComplexType
                         $parameterValue->populateFromStdClass($stdClass->{$stdPropertyName});
                     }
                 }
-            } else {
-                // is scalar type
-                if (isset($stdClass->{$stdPropertyName})) {
-                    $parameterValue = $stdClass->{$stdPropertyName};
-                }
+            } else if (isset($stdClass->{$stdPropertyName})) {
+                $parameterValue = $stdClass->{$stdPropertyName};
             }
             if (isset($parameterValue, $stdClass->{$stdPropertyName})) {
                 $this->{$methodName}($parameterValue);

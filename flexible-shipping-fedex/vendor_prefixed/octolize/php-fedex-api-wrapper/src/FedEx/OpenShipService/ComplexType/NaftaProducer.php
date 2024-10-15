@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $Id
  * @property Party $Producer
  */
-class NaftaProducer extends \FedExVendor\FedEx\AbstractComplexType
+class NaftaProducer extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -38,7 +38,7 @@ class NaftaProducer extends \FedExVendor\FedEx\AbstractComplexType
      * @param Party $producer
      * @return $this
      */
-    public function setProducer(\FedExVendor\FedEx\OpenShipService\ComplexType\Party $producer)
+    public function setProducer(Party $producer)
     {
         $this->values['Producer'] = $producer;
         return $this;

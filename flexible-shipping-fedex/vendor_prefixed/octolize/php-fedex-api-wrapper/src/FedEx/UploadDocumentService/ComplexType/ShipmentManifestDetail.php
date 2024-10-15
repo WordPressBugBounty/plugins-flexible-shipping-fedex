@@ -12,7 +12,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  *
  * @property \FedEx\UploadDocumentService\SimpleType\CustomerReferenceType|string $ManifestReferenceType
  */
-class ShipmentManifestDetail extends \FedExVendor\FedEx\AbstractComplexType
+class ShipmentManifestDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

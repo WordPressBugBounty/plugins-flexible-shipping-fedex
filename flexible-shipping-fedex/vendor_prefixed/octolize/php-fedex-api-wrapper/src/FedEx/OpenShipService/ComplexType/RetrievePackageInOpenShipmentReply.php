@@ -16,7 +16,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property VersionId $Version
  * @property RequestedPackageLineItem $RequestedPackageLineItem
  */
-class RetrievePackageInOpenShipmentReply extends \FedExVendor\FedEx\AbstractComplexType
+class RetrievePackageInOpenShipmentReply extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -52,7 +52,7 @@ class RetrievePackageInOpenShipmentReply extends \FedExVendor\FedEx\AbstractComp
      * @param TransactionDetail $transactionDetail
      * @return $this
      */
-    public function setTransactionDetail(\FedExVendor\FedEx\OpenShipService\ComplexType\TransactionDetail $transactionDetail)
+    public function setTransactionDetail(TransactionDetail $transactionDetail)
     {
         $this->values['TransactionDetail'] = $transactionDetail;
         return $this;
@@ -63,7 +63,7 @@ class RetrievePackageInOpenShipmentReply extends \FedExVendor\FedEx\AbstractComp
      * @param VersionId $version
      * @return $this
      */
-    public function setVersion(\FedExVendor\FedEx\OpenShipService\ComplexType\VersionId $version)
+    public function setVersion(VersionId $version)
     {
         $this->values['Version'] = $version;
         return $this;
@@ -74,7 +74,7 @@ class RetrievePackageInOpenShipmentReply extends \FedExVendor\FedEx\AbstractComp
      * @param RequestedPackageLineItem $requestedPackageLineItem
      * @return $this
      */
-    public function setRequestedPackageLineItem(\FedExVendor\FedEx\OpenShipService\ComplexType\RequestedPackageLineItem $requestedPackageLineItem)
+    public function setRequestedPackageLineItem(RequestedPackageLineItem $requestedPackageLineItem)
     {
         $this->values['RequestedPackageLineItem'] = $requestedPackageLineItem;
         return $this;

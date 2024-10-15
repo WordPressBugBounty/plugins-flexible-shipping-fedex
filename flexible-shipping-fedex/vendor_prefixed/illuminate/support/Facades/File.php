@@ -48,7 +48,7 @@ namespace FedExVendor\Illuminate\Support\Facades;
  *
  * @see \Illuminate\Filesystem\Filesystem
  */
-class File extends \FedExVendor\Illuminate\Support\Facades\Facade
+class File extends Facade
 {
     /**
      * Get the registered name of the component.

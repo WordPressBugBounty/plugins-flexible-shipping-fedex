@@ -2,7 +2,7 @@
 
 namespace FedExVendor\Illuminate\Contracts\Pagination;
 
-interface LengthAwarePaginator extends \FedExVendor\Illuminate\Contracts\Pagination\Paginator
+interface LengthAwarePaginator extends Paginator
 {
     /**
      * Create a range of pagination URLs.

@@ -16,7 +16,7 @@ namespace FedExVendor\Illuminate\Support\Facades;
  *
  * @see \Illuminate\Cache\RateLimiter
  */
-class RateLimiter extends \FedExVendor\Illuminate\Support\Facades\Facade
+class RateLimiter extends Facade
 {
     /**
      * Get the registered name of the component.
@@ -25,6 +25,6 @@ class RateLimiter extends \FedExVendor\Illuminate\Support\Facades\Facade
      */
     protected static function getFacadeAccessor()
     {
-        return 'FedExVendor\\Illuminate\\Cache\\RateLimiter';
+        return 'FedExVendor\Illuminate\Cache\RateLimiter';
     }
 }

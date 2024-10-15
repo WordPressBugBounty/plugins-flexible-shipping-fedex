@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  OpenShip Service
  */
-class WeightUnits extends \FedExVendor\FedEx\AbstractSimpleType
+class WeightUnits extends AbstractSimpleType
 {
     const _KG = 'KG';
     const _LB = 'LB';

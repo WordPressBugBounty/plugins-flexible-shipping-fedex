@@ -12,7 +12,7 @@ namespace FedExVendor\WPDesk\AbstractShipping\Rate;
  *
  * @package WPDesk\AbstractShipping
  */
-class ShipmentRatingImplementation implements \FedExVendor\WPDesk\AbstractShipping\Rate\ShipmentRating
+class ShipmentRatingImplementation implements ShipmentRating
 {
     /**
      * Rates.

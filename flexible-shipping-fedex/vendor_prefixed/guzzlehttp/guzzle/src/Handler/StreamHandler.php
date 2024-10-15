@@ -31,13 +31,17 @@ class StreamHandler
      * @param RequestInterface $request Request to send.
      * @param array            $options Request transfer options.
      */
-    public function __invoke(\FedExVendor\Psr\Http\Message\RequestInterface $request, array $options) : \FedExVendor\GuzzleHttp\Promise\PromiseInterface
+    public function __invoke(RequestInterface $request, array $options): PromiseInterface
     {
         // Sleep if there is a delay specified.
         if (isset($options['delay'])) {
             \usleep($options['delay'] * 1000);
         }
-        $startTime = isset($options['on_stats']) ? \FedExVendor\GuzzleHttp\Utils::currentTime() : null;
+        $protocolVersion = $request->getProtocolVersion();
+        if ('1.0' !== $protocolVersion && '1.1' !== $protocolVersion) {
+            throw new ConnectException(sprintf('HTTP/%s is not supported by the stream handler.', $protocolVersion), $request);
+        }
+        $startTime = isset($options['on_stats']) ? Utils::currentTime() : null;
         try {
             // Does not support the expect header.
             $request = $request->withoutHeader('Expect');
@@ -54,49 +58,49 @@ class StreamHandler
             $message = $e->getMessage();
             // This list can probably get more comprehensive.
             if (\false !== \strpos($message, 'getaddrinfo') || \false !== \strpos($message, 'Connection refused') || \false !== \strpos($message, "couldn't connect to host") || \false !== \strpos($message, 'connection attempt failed')) {
-                $e = new \FedExVendor\GuzzleHttp\Exception\ConnectException($e->getMessage(), $request, $e);
+                $e = new ConnectException($e->getMessage(), $request, $e);
             } else {
-                $e = \FedExVendor\GuzzleHttp\Exception\RequestException::wrapException($request, $e);
+                $e = RequestException::wrapException($request, $e);
             }
             $this->invokeStats($options, $request, $startTime, null, $e);
-            return \FedExVendor\GuzzleHttp\Promise\Create::rejectionFor($e);
+            return P\Create::rejectionFor($e);
         }
     }
-    private function invokeStats(array $options, \FedExVendor\Psr\Http\Message\RequestInterface $request, ?float $startTime, \FedExVendor\Psr\Http\Message\ResponseInterface $response = null, \Throwable $error = null) : void
+    private function invokeStats(array $options, RequestInterface $request, ?float $startTime, ?ResponseInterface $response = null, ?\Throwable $error = null): void
     {
         if (isset($options['on_stats'])) {
-            $stats = new \FedExVendor\GuzzleHttp\TransferStats($request, $response, \FedExVendor\GuzzleHttp\Utils::currentTime() - $startTime, $error, []);
+            $stats = new TransferStats($request, $response, Utils::currentTime() - $startTime, $error, []);
             $options['on_stats']($stats);
         }
     }
     /**
      * @param resource $stream
      */
-    private function createResponse(\FedExVendor\Psr\Http\Message\RequestInterface $request, array $options, $stream, ?float $startTime) : \FedExVendor\GuzzleHttp\Promise\PromiseInterface
+    private function createResponse(RequestInterface $request, array $options, $stream, ?float $startTime): PromiseInterface
     {
         $hdrs = $this->lastHeaders;
         $this->lastHeaders = [];
         try {
-            [$ver, $status, $reason, $headers] = \FedExVendor\GuzzleHttp\Handler\HeaderProcessor::parseHeaders($hdrs);
+            [$ver, $status, $reason, $headers] = HeaderProcessor::parseHeaders($hdrs);
         } catch (\Exception $e) {
-            return \FedExVendor\GuzzleHttp\Promise\Create::rejectionFor(new \FedExVendor\GuzzleHttp\Exception\RequestException('An error was encountered while creating the response', $request, null, $e));
+            return P\Create::rejectionFor(new RequestException('An error was encountered while creating the response', $request, null, $e));
         }
         [$stream, $headers] = $this->checkDecode($options, $headers, $stream);
-        $stream = \FedExVendor\GuzzleHttp\Psr7\Utils::streamFor($stream);
+        $stream = Psr7\Utils::streamFor($stream);
         $sink = $stream;
         if (\strcasecmp('HEAD', $request->getMethod())) {
             $sink = $this->createSink($stream, $options);
         }
         try {
-            $response = new \FedExVendor\GuzzleHttp\Psr7\Response($status, $headers, $sink, $ver, $reason);
+            $response = new Psr7\Response($status, $headers, $sink, $ver, $reason);
         } catch (\Exception $e) {
-            return \FedExVendor\GuzzleHttp\Promise\Create::rejectionFor(new \FedExVendor\GuzzleHttp\Exception\RequestException('An error was encountered while creating the response', $request, null, $e));
+            return P\Create::rejectionFor(new RequestException('An error was encountered while creating the response', $request, null, $e));
         }
         if (isset($options['on_headers'])) {
             try {
                 $options['on_headers']($response);
             } catch (\Exception $e) {
-                return \FedExVendor\GuzzleHttp\Promise\Create::rejectionFor(new \FedExVendor\GuzzleHttp\Exception\RequestException('An error was encountered during the on_headers event', $request, $response, $e));
+                return P\Create::rejectionFor(new RequestException('An error was encountered during the on_headers event', $request, $response, $e));
             }
         }
         // Do not drain when the request is a HEAD request because they have
@@ -105,28 +109,28 @@ class StreamHandler
             $this->drain($stream, $sink, $response->getHeaderLine('Content-Length'));
         }
         $this->invokeStats($options, $request, $startTime, $response, null);
-        return new \FedExVendor\GuzzleHttp\Promise\FulfilledPromise($response);
+        return new FulfilledPromise($response);
     }
-    private function createSink(\FedExVendor\Psr\Http\Message\StreamInterface $stream, array $options) : \FedExVendor\Psr\Http\Message\StreamInterface
+    private function createSink(StreamInterface $stream, array $options): StreamInterface
     {
         if (!empty($options['stream'])) {
             return $stream;
         }
-        $sink = $options['sink'] ?? \FedExVendor\GuzzleHttp\Psr7\Utils::tryFopen('php://temp', 'r+');
-        return \is_string($sink) ? new \FedExVendor\GuzzleHttp\Psr7\LazyOpenStream($sink, 'w+') : \FedExVendor\GuzzleHttp\Psr7\Utils::streamFor($sink);
+        $sink = $options['sink'] ?? Psr7\Utils::tryFopen('php://temp', 'r+');
+        return \is_string($sink) ? new Psr7\LazyOpenStream($sink, 'w+') : Psr7\Utils::streamFor($sink);
     }
     /**
      * @param resource $stream
      */
-    private function checkDecode(array $options, array $headers, $stream) : array
+    private function checkDecode(array $options, array $headers, $stream): array
     {
         // Automatically decode responses when instructed.
         if (!empty($options['decode_content'])) {
-            $normalizedKeys = \FedExVendor\GuzzleHttp\Utils::normalizeHeaderKeys($headers);
+            $normalizedKeys = Utils::normalizeHeaderKeys($headers);
             if (isset($normalizedKeys['content-encoding'])) {
                 $encoding = $headers[$normalizedKeys['content-encoding']];
                 if ($encoding[0] === 'gzip' || $encoding[0] === 'deflate') {
-                    $stream = new \FedExVendor\GuzzleHttp\Psr7\InflateStream(\FedExVendor\GuzzleHttp\Psr7\Utils::streamFor($stream));
+                    $stream = new Psr7\InflateStream(Psr7\Utils::streamFor($stream));
                     $headers['x-encoded-content-encoding'] = $headers[$normalizedKeys['content-encoding']];
                     // Remove content-encoding header
                     unset($headers[$normalizedKeys['content-encoding']]);
@@ -153,13 +157,13 @@ class StreamHandler
      *
      * @throws \RuntimeException when the sink option is invalid.
      */
-    private function drain(\FedExVendor\Psr\Http\Message\StreamInterface $source, \FedExVendor\Psr\Http\Message\StreamInterface $sink, string $contentLength) : \FedExVendor\Psr\Http\Message\StreamInterface
+    private function drain(StreamInterface $source, StreamInterface $sink, string $contentLength): StreamInterface
     {
         // If a content-length header is provided, then stop reading once
         // that number of bytes has been read. This can prevent infinitely
         // reading from a stream when dealing with servers that do not honor
         // Connection: Close headers.
-        \FedExVendor\GuzzleHttp\Psr7\Utils::copyToStream($source, $sink, \strlen($contentLength) > 0 && (int) $contentLength > 0 ? (int) $contentLength : -1);
+        Psr7\Utils::copyToStream($source, $sink, \strlen($contentLength) > 0 && (int) $contentLength > 0 ? (int) $contentLength : -1);
         $sink->seek(0);
         $source->close();
         return $sink;
@@ -176,7 +180,7 @@ class StreamHandler
     private function createResource(callable $callback)
     {
         $errors = [];
-        \set_error_handler(static function ($_, $msg, $file, $line) use(&$errors) : bool {
+        \set_error_handler(static function ($_, $msg, $file, $line) use (&$errors): bool {
             $errors[] = ['message' => $msg, 'file' => $file, 'line' => $line];
             return \true;
         });
@@ -199,18 +203,18 @@ class StreamHandler
     /**
      * @return resource
      */
-    private function createStream(\FedExVendor\Psr\Http\Message\RequestInterface $request, array $options)
+    private function createStream(RequestInterface $request, array $options)
     {
         static $methods;
         if (!$methods) {
             $methods = \array_flip(\get_class_methods(__CLASS__));
         }
         if (!\in_array($request->getUri()->getScheme(), ['http', 'https'])) {
-            throw new \FedExVendor\GuzzleHttp\Exception\RequestException(\sprintf("The scheme '%s' is not supported.", $request->getUri()->getScheme()), $request);
+            throw new RequestException(\sprintf("The scheme '%s' is not supported.", $request->getUri()->getScheme()), $request);
         }
         // HTTP/1.1 streams using the PHP stream wrapper require a
         // Connection: close header
-        if ($request->getProtocolVersion() == '1.1' && !$request->hasHeader('Connection')) {
+        if ($request->getProtocolVersion() === '1.1' && !$request->hasHeader('Connection')) {
             $request = $request->withHeader('Connection', 'close');
         }
         // Ensure SSL is verified by default
@@ -241,14 +245,14 @@ class StreamHandler
             throw new \InvalidArgumentException('Microsoft NTLM authentication only supported with curl handler');
         }
         $uri = $this->resolveHost($request, $options);
-        $contextResource = $this->createResource(static function () use($context, $params) {
+        $contextResource = $this->createResource(static function () use ($context, $params) {
             return \stream_context_create($context, $params);
         });
-        return $this->createResource(function () use($uri, &$http_response_header, $contextResource, $context, $options, $request) {
+        return $this->createResource(function () use ($uri, &$http_response_header, $contextResource, $context, $options, $request) {
             $resource = @\fopen((string) $uri, 'r', \false, $contextResource);
             $this->lastHeaders = $http_response_header ?? [];
             if (\false === $resource) {
-                throw new \FedExVendor\GuzzleHttp\Exception\ConnectException(\sprintf('Connection refused for URI %s', $uri), $request, null, $context);
+                throw new ConnectException(sprintf('Connection refused for URI %s', $uri), $request, null, $context);
             }
             if (isset($options['read_timeout'])) {
                 $readTimeout = $options['read_timeout'];
@@ -259,28 +263,28 @@ class StreamHandler
             return $resource;
         });
     }
-    private function resolveHost(\FedExVendor\Psr\Http\Message\RequestInterface $request, array $options) : \FedExVendor\Psr\Http\Message\UriInterface
+    private function resolveHost(RequestInterface $request, array $options): UriInterface
     {
         $uri = $request->getUri();
         if (isset($options['force_ip_resolve']) && !\filter_var($uri->getHost(), \FILTER_VALIDATE_IP)) {
             if ('v4' === $options['force_ip_resolve']) {
                 $records = \dns_get_record($uri->getHost(), \DNS_A);
                 if (\false === $records || !isset($records[0]['ip'])) {
-                    throw new \FedExVendor\GuzzleHttp\Exception\ConnectException(\sprintf("Could not resolve IPv4 address for host '%s'", $uri->getHost()), $request);
+                    throw new ConnectException(\sprintf("Could not resolve IPv4 address for host '%s'", $uri->getHost()), $request);
                 }
                 return $uri->withHost($records[0]['ip']);
             }
             if ('v6' === $options['force_ip_resolve']) {
                 $records = \dns_get_record($uri->getHost(), \DNS_AAAA);
                 if (\false === $records || !isset($records[0]['ipv6'])) {
-                    throw new \FedExVendor\GuzzleHttp\Exception\ConnectException(\sprintf("Could not resolve IPv6 address for host '%s'", $uri->getHost()), $request);
+                    throw new ConnectException(\sprintf("Could not resolve IPv6 address for host '%s'", $uri->getHost()), $request);
                 }
                 return $uri->withHost('[' . $records[0]['ipv6'] . ']');
             }
         }
         return $uri;
     }
-    private function getDefaultContext(\FedExVendor\Psr\Http\Message\RequestInterface $request) : array
+    private function getDefaultContext(RequestInterface $request): array
     {
         $headers = '';
         foreach ($request->getHeaders() as $name => $value) {
@@ -303,7 +307,7 @@ class StreamHandler
     /**
      * @param mixed $value as passed via Request transfer options.
      */
-    private function add_proxy(\FedExVendor\Psr\Http\Message\RequestInterface $request, array &$options, $value, array &$params) : void
+    private function add_proxy(RequestInterface $request, array &$options, $value, array &$params): void
     {
         $uri = null;
         if (!\is_array($value)) {
@@ -311,7 +315,7 @@ class StreamHandler
         } else {
             $scheme = $request->getUri()->getScheme();
             if (isset($value[$scheme])) {
-                if (!isset($value['no']) || !\FedExVendor\GuzzleHttp\Utils::isHostInNoProxy($request->getUri()->getHost(), $value['no'])) {
+                if (!isset($value['no']) || !Utils::isHostInNoProxy($request->getUri()->getHost(), $value['no'])) {
                     $uri = $value[$scheme];
                 }
             }
@@ -331,7 +335,7 @@ class StreamHandler
     /**
      * Parses the given proxy URL to make it compatible with the format PHP's stream context expects.
      */
-    private function parse_proxy(string $url) : array
+    private function parse_proxy(string $url): array
     {
         $parsed = \parse_url($url);
         if ($parsed !== \false && isset($parsed['scheme']) && $parsed['scheme'] === 'http') {
@@ -349,7 +353,7 @@ class StreamHandler
     /**
      * @param mixed $value as passed via Request transfer options.
      */
-    private function add_timeout(\FedExVendor\Psr\Http\Message\RequestInterface $request, array &$options, $value, array &$params) : void
+    private function add_timeout(RequestInterface $request, array &$options, $value, array &$params): void
     {
         if ($value > 0) {
             $options['http']['timeout'] = $value;
@@ -358,9 +362,9 @@ class StreamHandler
     /**
      * @param mixed $value as passed via Request transfer options.
      */
-    private function add_crypto_method(\FedExVendor\Psr\Http\Message\RequestInterface $request, array &$options, $value, array &$params) : void
+    private function add_crypto_method(RequestInterface $request, array &$options, $value, array &$params): void
     {
-        if ($value === \STREAM_CRYPTO_METHOD_TLSv1_0_CLIENT || $value === \STREAM_CRYPTO_METHOD_TLSv1_1_CLIENT || $value === \STREAM_CRYPTO_METHOD_TLSv1_2_CLIENT || \defined('STREAM_CRYPTO_METHOD_TLSv1_3_CLIENT') && $value === \STREAM_CRYPTO_METHOD_TLSv1_3_CLIENT) {
+        if ($value === \STREAM_CRYPTO_METHOD_TLSv1_0_CLIENT || $value === \STREAM_CRYPTO_METHOD_TLSv1_1_CLIENT || $value === \STREAM_CRYPTO_METHOD_TLSv1_2_CLIENT || defined('STREAM_CRYPTO_METHOD_TLSv1_3_CLIENT') && $value === \STREAM_CRYPTO_METHOD_TLSv1_3_CLIENT) {
             $options['http']['crypto_method'] = $value;
             return;
         }
@@ -369,7 +373,7 @@ class StreamHandler
     /**
      * @param mixed $value as passed via Request transfer options.
      */
-    private function add_verify(\FedExVendor\Psr\Http\Message\RequestInterface $request, array &$options, $value, array &$params) : void
+    private function add_verify(RequestInterface $request, array &$options, $value, array &$params): void
     {
         if ($value === \false) {
             $options['ssl']['verify_peer'] = \false;
@@ -391,7 +395,7 @@ class StreamHandler
     /**
      * @param mixed $value as passed via Request transfer options.
      */
-    private function add_cert(\FedExVendor\Psr\Http\Message\RequestInterface $request, array &$options, $value, array &$params) : void
+    private function add_cert(RequestInterface $request, array &$options, $value, array &$params): void
     {
         if (\is_array($value)) {
             $options['ssl']['passphrase'] = $value[1];
@@ -405,9 +409,9 @@ class StreamHandler
     /**
      * @param mixed $value as passed via Request transfer options.
      */
-    private function add_progress(\FedExVendor\Psr\Http\Message\RequestInterface $request, array &$options, $value, array &$params) : void
+    private function add_progress(RequestInterface $request, array &$options, $value, array &$params): void
     {
-        self::addNotification($params, static function ($code, $a, $b, $c, $transferred, $total) use($value) {
+        self::addNotification($params, static function ($code, $a, $b, $c, $transferred, $total) use ($value) {
             if ($code == \STREAM_NOTIFY_PROGRESS) {
                 // The upload progress cannot be determined. Use 0 for cURL compatibility:
                 // https://curl.se/libcurl/c/CURLOPT_PROGRESSFUNCTION.html
@@ -418,16 +422,16 @@ class StreamHandler
     /**
      * @param mixed $value as passed via Request transfer options.
      */
-    private function add_debug(\FedExVendor\Psr\Http\Message\RequestInterface $request, array &$options, $value, array &$params) : void
+    private function add_debug(RequestInterface $request, array &$options, $value, array &$params): void
     {
         if ($value === \false) {
             return;
         }
         static $map = [\STREAM_NOTIFY_CONNECT => 'CONNECT', \STREAM_NOTIFY_AUTH_REQUIRED => 'AUTH_REQUIRED', \STREAM_NOTIFY_AUTH_RESULT => 'AUTH_RESULT', \STREAM_NOTIFY_MIME_TYPE_IS => 'MIME_TYPE_IS', \STREAM_NOTIFY_FILE_SIZE_IS => 'FILE_SIZE_IS', \STREAM_NOTIFY_REDIRECTED => 'REDIRECTED', \STREAM_NOTIFY_PROGRESS => 'PROGRESS', \STREAM_NOTIFY_FAILURE => 'FAILURE', \STREAM_NOTIFY_COMPLETED => 'COMPLETED', \STREAM_NOTIFY_RESOLVE => 'RESOLVE'];
         static $args = ['severity', 'message', 'message_code', 'bytes_transferred', 'bytes_max'];
-        $value = \FedExVendor\GuzzleHttp\Utils::debugResource($value);
+        $value = Utils::debugResource($value);
         $ident = $request->getMethod() . ' ' . $request->getUri()->withFragment('');
-        self::addNotification($params, static function (int $code, ...$passed) use($ident, $value, $map, $args) : void {
+        self::addNotification($params, static function (int $code, ...$passed) use ($ident, $value, $map, $args): void {
             \fprintf($value, '<%s> [%s] ', $ident, $map[$code]);
             foreach (\array_filter($passed) as $i => $v) {
                 \fwrite($value, $args[$i] . ': "' . $v . '" ');
@@ -435,7 +439,7 @@ class StreamHandler
             \fwrite($value, "\n");
         });
     }
-    private static function addNotification(array &$params, callable $notify) : void
+    private static function addNotification(array &$params, callable $notify): void
     {
         // Wrap the existing function if needed.
         if (!isset($params['notification'])) {
@@ -444,9 +448,9 @@ class StreamHandler
             $params['notification'] = self::callArray([$params['notification'], $notify]);
         }
     }
-    private static function callArray(array $functions) : callable
+    private static function callArray(array $functions): callable
     {
-        return static function (...$args) use($functions) {
+        return static function (...$args) use ($functions) {
             foreach ($functions as $fn) {
                 $fn(...$args);
             }

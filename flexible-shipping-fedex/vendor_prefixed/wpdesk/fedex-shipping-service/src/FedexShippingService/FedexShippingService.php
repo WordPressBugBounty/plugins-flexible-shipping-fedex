@@ -35,7 +35,7 @@ use FedExVendor\WPDesk\FedexShippingService\FedexApi\Soap\Sender;
  *
  * @package WPDesk\FedexShippingService
  */
-class FedexShippingService extends \FedExVendor\WPDesk\AbstractShipping\ShippingService implements \FedExVendor\WPDesk\AbstractShipping\ShippingServiceCapability\HasSettings, \FedExVendor\WPDesk\AbstractShipping\ShippingServiceCapability\CanRate, \FedExVendor\WPDesk\AbstractShipping\ShippingServiceCapability\CanInsure, \FedExVendor\WPDesk\AbstractShipping\ShippingServiceCapability\CanPack, \FedExVendor\WPDesk\AbstractShipping\ShippingServiceCapability\CanTestSettings
+class FedexShippingService extends ShippingService implements HasSettings, CanRate, CanInsure, CanPack, CanTestSettings
 {
     /** Logger.
      *
@@ -69,14 +69,14 @@ class FedexShippingService extends \FedExVendor\WPDesk\AbstractShipping\Shipping
      * @param ShopSettings $helper Helper.
      * @param string|null $auth_provider_class .
      */
-    public function __construct(\FedExVendor\Psr\Log\LoggerInterface $logger, \FedExVendor\WPDesk\AbstractShipping\Shop\ShopSettings $helper, $auth_provider_class = null)
+    public function __construct(LoggerInterface $logger, ShopSettings $helper, $auth_provider_class = null)
     {
         $this->logger = $logger;
         $this->shop_settings = $helper;
         $this->auth_provider_class = $auth_provider_class;
         $this->rate_request_control_parameters = null;
     }
-    public function is_rate_enabled(\FedExVendor\WPDesk\AbstractShipping\Settings\SettingsValues $settings)
+    public function is_rate_enabled(SettingsValues $settings)
     {
         return \true;
     }
@@ -85,7 +85,7 @@ class FedexShippingService extends \FedExVendor\WPDesk\AbstractShipping\Shipping
      *
      * @param LoggerInterface $logger Logger.
      */
-    public function setLogger(\FedExVendor\Psr\Log\LoggerInterface $logger)
+    public function setLogger(LoggerInterface $logger)
     {
         $this->logger = $logger;
     }
@@ -94,7 +94,7 @@ class FedexShippingService extends \FedExVendor\WPDesk\AbstractShipping\Shipping
      *
      * @param Sender $sender Sender.
      */
-    public function set_sender(\FedExVendor\WPDesk\FedexShippingService\FedexApi\Soap\Sender $sender)
+    public function set_sender(Sender $sender)
     {
         $this->sender = $sender;
     }
@@ -116,9 +116,9 @@ class FedexShippingService extends \FedExVendor\WPDesk\AbstractShipping\Shipping
      *
      * @return FedexSoapRateReplyInterpretation
      */
-    protected function create_soap_reply_interpretation(\FedExVendor\FedEx\RateService\ComplexType\RateReply $rate_reply, $shop_settings, $settings)
+    protected function create_soap_reply_interpretation(RateReply $rate_reply, $shop_settings, $settings)
     {
-        return new \FedExVendor\WPDesk\FedexShippingService\FedexApi\Soap\FedexSoapRateReplyInterpretation($rate_reply, $shop_settings->is_tax_enabled(), $settings->get_value(\FedExVendor\WPDesk\FedexShippingService\FedexSettingsDefinition::FIELD_REQUEST_TYPE, \FedExVendor\WPDesk\FedexShippingService\FedexSettingsDefinition::FIELD_REQUEST_TYPE_VALUE_ALL));
+        return new FedexSoapRateReplyInterpretation($rate_reply, $shop_settings->is_tax_enabled(), $settings->get_value(FedexSettingsDefinition::FIELD_REQUEST_TYPE, FedexSettingsDefinition::FIELD_REQUEST_TYPE_VALUE_ALL));
     }
     /**
      * Create reply interpretation.
@@ -129,9 +129,9 @@ class FedexShippingService extends \FedExVendor\WPDesk\AbstractShipping\Shipping
      *
      * @return FedexRestApiRateReplyInterpretation
      */
-    protected function create_rest_api_reply_interpretation(\FedExVendor\CageA80\FedEx\Services\Rates\RatesResponse $rates_response, $shop_settings, $settings)
+    protected function create_rest_api_reply_interpretation(RatesResponse $rates_response, $shop_settings, $settings)
     {
-        return new \FedExVendor\WPDesk\FedexShippingService\FedexApi\RestApi\FedexRestApiRateReplyInterpretation($rates_response, $shop_settings->is_tax_enabled(), $settings->get_value(\FedExVendor\WPDesk\FedexShippingService\FedexSettingsDefinition::FIELD_REQUEST_TYPE, \FedExVendor\WPDesk\FedexShippingService\FedexSettingsDefinition::FIELD_REQUEST_TYPE_VALUE_ALL));
+        return new FedexRestApiRateReplyInterpretation($rates_response, $shop_settings->is_tax_enabled(), $settings->get_value(FedexSettingsDefinition::FIELD_REQUEST_TYPE, FedexSettingsDefinition::FIELD_REQUEST_TYPE_VALUE_ALL));
     }
     /**
      * Rate shipment.
@@ -144,17 +144,17 @@ class FedexShippingService extends \FedExVendor\WPDesk\AbstractShipping\Shipping
      * @throws RateException RateException.
      * @throws UnitConversionException Weight exception.
      */
-    public function rate_shipment(\FedExVendor\WPDesk\AbstractShipping\Settings\SettingsValues $settings, \FedExVendor\WPDesk\AbstractShipping\Shipment\Shipment $shipment)
+    public function rate_shipment(SettingsValues $settings, Shipment $shipment)
     {
         if (!$this->get_settings_definition()->validate_settings($settings)) {
-            throw new \FedExVendor\WPDesk\AbstractShipping\Exception\InvalidSettingsException();
+            throw new InvalidSettingsException();
         }
-        $validate_shipment = new \FedExVendor\WPDesk\FedexShippingService\FedexValidateShipment($shipment, $this->logger);
+        $validate_shipment = new FedexValidateShipment($shipment, $this->logger);
         $this->verify_currency($this->shop_settings->get_default_currency(), $this->shop_settings->get_currency());
         if ($validate_shipment->is_weight_exceeded()) {
-            return new \FedExVendor\WPDesk\AbstractShipping\Rate\ShipmentRatingImplementation([]);
+            return new ShipmentRatingImplementation([]);
         }
-        if ($settings->get_value(\FedExVendor\WPDesk\FedexShippingService\FedexSettingsDefinition::API_TYPE, \FedExVendor\WPDesk\FedexShippingService\FedexSettingsDefinition::API_TYPE_SOAP) === \FedExVendor\WPDesk\FedexShippingService\FedexSettingsDefinition::API_TYPE_REST) {
+        if ($settings->get_value(FedexSettingsDefinition::API_TYPE, FedexSettingsDefinition::API_TYPE_SOAP) === FedexSettingsDefinition::API_TYPE_REST) {
             $request_builder = $this->create_rest_api_rate_request_builder($settings, $shipment, $this->shop_settings);
             $api_shipment = $request_builder->build_api_shipment();
             $rates = $api_shipment->getRates($this->rate_request_control_parameters);
@@ -167,14 +167,14 @@ class FedexShippingService extends \FedExVendor\WPDesk\AbstractShipping\Shipping
         } else {
             $request_builder = $this->create_soap_rate_request_builder($settings, $shipment, $this->shop_settings);
             $request = $request_builder->build_request();
-            $this->set_sender(new \FedExVendor\WPDesk\FedexShippingService\FedexApi\Soap\FedexSender($this->logger, $this->is_testing($settings)));
+            $this->set_sender(new FedexSender($this->logger, $this->is_testing($settings)));
             $response = $this->get_sender()->send($request);
             $reply = $this->create_soap_reply_interpretation($response, $this->shop_settings, $settings);
             if ($reply::has_reply_warning($response)) {
                 $this->logger->info($reply::get_reply_message($response));
             }
         }
-        return new \FedExVendor\WPDesk\FedexShippingService\FedexApi\FedexRateCustomServicesFilter($this->create_filter_rates_by_currency($reply), $settings);
+        return new FedexRateCustomServicesFilter($this->create_filter_rates_by_currency($reply), $settings);
     }
     /**
      * Create rest api rate request builder.
@@ -185,9 +185,9 @@ class FedexShippingService extends \FedExVendor\WPDesk\AbstractShipping\Shipping
      *
      * @return FedexRestApiRateRequestBuilder
      */
-    protected function create_rest_api_rate_request_builder(\FedExVendor\WPDesk\AbstractShipping\Settings\SettingsValues $settings, \FedExVendor\WPDesk\AbstractShipping\Shipment\Shipment $shipment, \FedExVendor\WPDesk\AbstractShipping\Shop\ShopSettings $shop_settings)
+    protected function create_rest_api_rate_request_builder(SettingsValues $settings, Shipment $shipment, ShopSettings $shop_settings)
     {
-        return new \FedExVendor\WPDesk\FedexShippingService\FedexApi\RestApi\FedexRestApiRateRequestBuilder($settings, $shipment, $shop_settings, $this->logger, $this->auth_provider_class);
+        return new FedexRestApiRateRequestBuilder($settings, $shipment, $shop_settings, $this->logger, $this->auth_provider_class);
     }
     /**
      * Create soap rate request builder.
@@ -198,9 +198,9 @@ class FedexShippingService extends \FedExVendor\WPDesk\AbstractShipping\Shipping
      *
      * @return FedexSoapRateRequestBuilder
      */
-    protected function create_soap_rate_request_builder(\FedExVendor\WPDesk\AbstractShipping\Settings\SettingsValues $settings, \FedExVendor\WPDesk\AbstractShipping\Shipment\Shipment $shipment, \FedExVendor\WPDesk\AbstractShipping\Shop\ShopSettings $shop_settings)
+    protected function create_soap_rate_request_builder(SettingsValues $settings, Shipment $shipment, ShopSettings $shop_settings)
     {
-        return new \FedExVendor\WPDesk\FedexShippingService\FedexApi\Soap\FedexSoapRateRequestBuilder($settings, $shipment, $shop_settings);
+        return new FedexSoapRateRequestBuilder($settings, $shipment, $shop_settings);
     }
     /**
      * Creates rate filter by currency.
@@ -209,9 +209,9 @@ class FedexShippingService extends \FedExVendor\WPDesk\AbstractShipping\Shipping
      *
      * @return FedexRateCurrencyFilter .
      */
-    protected function create_filter_rates_by_currency(\FedExVendor\WPDesk\AbstractShipping\Rate\ShipmentRating $rating)
+    protected function create_filter_rates_by_currency(ShipmentRating $rating)
     {
-        return new \FedExVendor\WPDesk\FedexShippingService\FedexApi\FedexRateCurrencyFilter($rating, $this->shop_settings);
+        return new FedexRateCurrencyFilter($rating, $this->shop_settings);
     }
     /**
      * Verify currency.
@@ -225,7 +225,7 @@ class FedexShippingService extends \FedExVendor\WPDesk\AbstractShipping\Shipping
     protected function verify_currency($default_shop_currency, $checkout_currency)
     {
         if ($default_shop_currency !== $checkout_currency) {
-            throw new \FedExVendor\WPDesk\FedexShippingService\Exception\CurrencySwitcherException($this->shop_settings);
+            throw new CurrencySwitcherException($this->shop_settings);
         }
     }
     /**
@@ -235,7 +235,7 @@ class FedexShippingService extends \FedExVendor\WPDesk\AbstractShipping\Shipping
      *
      * @return bool
      */
-    public function is_testing(\FedExVendor\WPDesk\AbstractShipping\Settings\SettingsValues $settings)
+    public function is_testing(SettingsValues $settings)
     {
         $testing = \false;
         if ($settings->has_value('testing') && $this->shop_settings->is_testing()) {
@@ -250,7 +250,7 @@ class FedexShippingService extends \FedExVendor\WPDesk\AbstractShipping\Shipping
      */
     public function get_settings_definition()
     {
-        return new \FedExVendor\WPDesk\FedexShippingService\FedexSettingsDefinition($this->shop_settings);
+        return new FedexSettingsDefinition($this->shop_settings);
     }
     /**
      * Get unique ID.
@@ -268,7 +268,7 @@ class FedexShippingService extends \FedExVendor\WPDesk\AbstractShipping\Shipping
      */
     public function get_name()
     {
-        return \__('FedEx Live Rates', 'flexible-shipping-fedex');
+        return __('FedEx Live Rates', 'flexible-shipping-fedex');
     }
     /**
      * Get description.
@@ -278,7 +278,7 @@ class FedexShippingService extends \FedExVendor\WPDesk\AbstractShipping\Shipping
     public function get_description()
     {
         $link = $this->shop_settings->get_locale() === 'pl_PL' ? 'https://octol.io/fedex-settings-docs-pl' : 'https://octol.io/fedex-setting-docs';
-        return \sprintf(\__('Dynamically calculated FedEx live rates based on the established FedEx API connection. %1$sLearn more →%2$s', 'flexible-shipping-fedex'), '<a href="' . $link . '" target="_blank">', '</a>');
+        return sprintf(__('Dynamically calculated FedEx live rates based on the established FedEx API connection. %1$sLearn more →%2$s', 'flexible-shipping-fedex'), '<a href="' . $link . '" target="_blank">', '</a>');
     }
     /**
      * Pings API.
@@ -288,10 +288,10 @@ class FedexShippingService extends \FedExVendor\WPDesk\AbstractShipping\Shipping
      * @param LoggerInterface $logger .
      * @return string
      */
-    public function check_connection(\FedExVendor\WPDesk\AbstractShipping\Settings\SettingsValues $settings, \FedExVendor\Psr\Log\LoggerInterface $logger)
+    public function check_connection(SettingsValues $settings, LoggerInterface $logger)
     {
         try {
-            $connection_checker = new \FedExVendor\WPDesk\FedexShippingService\FedexApi\ConnectionChecker($settings, $logger, $this->is_testing($settings), $this->auth_provider_class);
+            $connection_checker = new ConnectionChecker($settings, $logger, $this->is_testing($settings), $this->auth_provider_class);
             $connection_checker->check_connection();
             return '';
         } catch (\Exception $e) {
@@ -305,6 +305,6 @@ class FedexShippingService extends \FedExVendor\WPDesk\AbstractShipping\Shipping
      */
     public function get_field_before_api_status_field()
     {
-        return \FedExVendor\WPDesk\FedexShippingService\FedexSettingsDefinition::FIELD_API_PASSWORD;
+        return FedexSettingsDefinition::FIELD_API_PASSWORD;
     }
 }

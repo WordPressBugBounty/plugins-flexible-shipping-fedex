@@ -8,7 +8,7 @@ use FedExVendor\Psr\Http\Message\StreamInterface;
  * Stream that when read returns bytes for a streaming multipart or
  * multipart/form-data stream.
  */
-final class MultipartStream implements \FedExVendor\Psr\Http\Message\StreamInterface
+final class MultipartStream implements StreamInterface
 {
     use StreamDecoratorTrait;
     /** @var string */
@@ -27,16 +27,16 @@ final class MultipartStream implements \FedExVendor\Psr\Http\Message\StreamInter
      *
      * @throws \InvalidArgumentException
      */
-    public function __construct(array $elements = [], string $boundary = null)
+    public function __construct(array $elements = [], ?string $boundary = null)
     {
-        $this->boundary = $boundary ?: \bin2hex(\random_bytes(20));
+        $this->boundary = $boundary ?: bin2hex(random_bytes(20));
         $this->stream = $this->createStream($elements);
     }
-    public function getBoundary() : string
+    public function getBoundary(): string
     {
         return $this->boundary;
     }
-    public function isWritable() : bool
+    public function isWritable(): bool
     {
         return \false;
     }
@@ -45,38 +45,38 @@ final class MultipartStream implements \FedExVendor\Psr\Http\Message\StreamInter
      *
      * @param string[] $headers
      */
-    private function getHeaders(array $headers) : string
+    private function getHeaders(array $headers): string
     {
         $str = '';
         foreach ($headers as $key => $value) {
             $str .= "{$key}: {$value}\r\n";
         }
-        return "--{$this->boundary}\r\n" . \trim($str) . "\r\n\r\n";
+        return "--{$this->boundary}\r\n" . trim($str) . "\r\n\r\n";
     }
     /**
      * Create the aggregate stream that will be used to upload the POST data
      */
-    protected function createStream(array $elements = []) : \FedExVendor\Psr\Http\Message\StreamInterface
+    protected function createStream(array $elements = []): StreamInterface
     {
-        $stream = new \FedExVendor\GuzzleHttp\Psr7\AppendStream();
+        $stream = new AppendStream();
         foreach ($elements as $element) {
-            if (!\is_array($element)) {
+            if (!is_array($element)) {
                 throw new \UnexpectedValueException('An array is expected');
             }
             $this->addElement($stream, $element);
         }
         // Add the trailing boundary with CRLF
-        $stream->addStream(\FedExVendor\GuzzleHttp\Psr7\Utils::streamFor("--{$this->boundary}--\r\n"));
+        $stream->addStream(Utils::streamFor("--{$this->boundary}--\r\n"));
         return $stream;
     }
-    private function addElement(\FedExVendor\GuzzleHttp\Psr7\AppendStream $stream, array $element) : void
+    private function addElement(AppendStream $stream, array $element): void
     {
         foreach (['contents', 'name'] as $key) {
-            if (!\array_key_exists($key, $element)) {
+            if (!array_key_exists($key, $element)) {
                 throw new \InvalidArgumentException("A '{$key}' key is required");
             }
         }
-        $element['contents'] = \FedExVendor\GuzzleHttp\Psr7\Utils::streamFor($element['contents']);
+        $element['contents'] = Utils::streamFor($element['contents']);
         if (empty($element['filename'])) {
             $uri = $element['contents']->getMetadata('uri');
             if ($uri && \is_string($uri) && \substr($uri, 0, 6) !== 'php://' && \substr($uri, 0, 7) !== 'data://') {
@@ -84,21 +84,21 @@ final class MultipartStream implements \FedExVendor\Psr\Http\Message\StreamInter
             }
         }
         [$body, $headers] = $this->createElement($element['name'], $element['contents'], $element['filename'] ?? null, $element['headers'] ?? []);
-        $stream->addStream(\FedExVendor\GuzzleHttp\Psr7\Utils::streamFor($this->getHeaders($headers)));
+        $stream->addStream(Utils::streamFor($this->getHeaders($headers)));
         $stream->addStream($body);
-        $stream->addStream(\FedExVendor\GuzzleHttp\Psr7\Utils::streamFor("\r\n"));
+        $stream->addStream(Utils::streamFor("\r\n"));
     }
     /**
      * @param string[] $headers
      *
      * @return array{0: StreamInterface, 1: string[]}
      */
-    private function createElement(string $name, \FedExVendor\Psr\Http\Message\StreamInterface $stream, ?string $filename, array $headers) : array
+    private function createElement(string $name, StreamInterface $stream, ?string $filename, array $headers): array
     {
         // Set a default content-disposition header if one was no provided
         $disposition = self::getHeader($headers, 'content-disposition');
         if (!$disposition) {
-            $headers['Content-Disposition'] = $filename === '0' || $filename ? \sprintf('form-data; name="%s"; filename="%s"', $name, \basename($filename)) : "form-data; name=\"{$name}\"";
+            $headers['Content-Disposition'] = $filename === '0' || $filename ? sprintf('form-data; name="%s"; filename="%s"', $name, basename($filename)) : "form-data; name=\"{$name}\"";
         }
         // Set a default content-length header if one was no provided
         $length = self::getHeader($headers, 'content-length');
@@ -110,18 +110,18 @@ final class MultipartStream implements \FedExVendor\Psr\Http\Message\StreamInter
         // Set a default Content-Type if one was not supplied
         $type = self::getHeader($headers, 'content-type');
         if (!$type && ($filename === '0' || $filename)) {
-            $headers['Content-Type'] = \FedExVendor\GuzzleHttp\Psr7\MimeType::fromFilename($filename) ?? 'application/octet-stream';
+            $headers['Content-Type'] = MimeType::fromFilename($filename) ?? 'application/octet-stream';
         }
         return [$stream, $headers];
     }
     /**
      * @param string[] $headers
      */
-    private static function getHeader(array $headers, string $key) : ?string
+    private static function getHeader(array $headers, string $key): ?string
     {
-        $lowercaseHeader = \strtolower($key);
+        $lowercaseHeader = strtolower($key);
         foreach ($headers as $k => $v) {
-            if (\strtolower((string) $k) === $lowercaseHeader) {
+            if (strtolower((string) $k) === $lowercaseHeader) {
                 return $v;
             }
         }

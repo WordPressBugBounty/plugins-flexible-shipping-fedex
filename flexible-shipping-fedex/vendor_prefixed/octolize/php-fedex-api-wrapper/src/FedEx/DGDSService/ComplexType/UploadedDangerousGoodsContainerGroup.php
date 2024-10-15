@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property int $NumberOfIdenticalContainers
  * @property UploadedDangerousGoodsContainer $Container
  */
-class UploadedDangerousGoodsContainerGroup extends \FedExVendor\FedEx\AbstractComplexType
+class UploadedDangerousGoodsContainerGroup extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -38,7 +38,7 @@ class UploadedDangerousGoodsContainerGroup extends \FedExVendor\FedEx\AbstractCo
      * @param UploadedDangerousGoodsContainer $container
      * @return $this
      */
-    public function setContainer(\FedExVendor\FedEx\DGDSService\ComplexType\UploadedDangerousGoodsContainer $container)
+    public function setContainer(UploadedDangerousGoodsContainer $container)
     {
         $this->values['Container'] = $container;
         return $this;

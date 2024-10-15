@@ -14,7 +14,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property boolean $ClientCookiesEnabled
  * @property string $DevicePrint
  */
-class CreditFraudDetectionDetail extends \FedExVendor\FedEx\AbstractComplexType
+class CreditFraudDetectionDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

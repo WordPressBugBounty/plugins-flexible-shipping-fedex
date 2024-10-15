@@ -11,7 +11,7 @@ use FedExVendor\WPDesk\FedexShippingService\Exception\NoRatesInCurrencyInRatings
  *
  * @package WPDesk\FedexShippingService\FedexApi
  */
-class FedexRateCurrencyFilter implements \FedExVendor\WPDesk\AbstractShipping\Rate\ShipmentRating
+class FedexRateCurrencyFilter implements ShipmentRating
 {
     /** @var ShipmentRating */
     private $rating;
@@ -26,7 +26,7 @@ class FedexRateCurrencyFilter implements \FedExVendor\WPDesk\AbstractShipping\Ra
      * @param ShipmentRating $rating .
      * @param ShopSettings $shop_settings .
      */
-    public function __construct(\FedExVendor\WPDesk\AbstractShipping\Rate\ShipmentRating $rating, \FedExVendor\WPDesk\AbstractShipping\Shop\ShopSettings $shop_settings)
+    public function __construct(ShipmentRating $rating, ShopSettings $shop_settings)
     {
         $this->rating = $rating;
         $this->shop_settings = $shop_settings;
@@ -45,8 +45,8 @@ class FedexRateCurrencyFilter implements \FedExVendor\WPDesk\AbstractShipping\Ra
                 $rates[$key] = $rate;
             }
         }
-        if (0 !== \count($ratings) && 0 === \count($rates)) {
-            throw new \FedExVendor\WPDesk\FedexShippingService\Exception\NoRatesInCurrencyInRatingsException($this->shop_settings);
+        if (0 !== count($ratings) && 0 === count($rates)) {
+            throw new NoRatesInCurrencyInRatingsException($this->shop_settings);
         }
         return $rates;
     }

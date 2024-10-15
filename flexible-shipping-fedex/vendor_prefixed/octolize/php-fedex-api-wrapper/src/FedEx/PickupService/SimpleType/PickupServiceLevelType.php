@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  */
-class PickupServiceLevelType extends \FedExVendor\FedEx\AbstractSimpleType
+class PickupServiceLevelType extends AbstractSimpleType
 {
     const _EXTERNAL_EDITS = 'EXTERNAL_EDITS';
     const _INTERNAL_EDITS = 'INTERNAL_EDITS';

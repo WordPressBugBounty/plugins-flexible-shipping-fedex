@@ -14,7 +14,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $Title
  * @property string $Place
  */
-class DangerousGoodsSignatory extends \FedExVendor\FedEx\AbstractComplexType
+class DangerousGoodsSignatory extends AbstractComplexType
 {
     /**
      * Name of this complex type

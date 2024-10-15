@@ -12,7 +12,7 @@ use FedExVendor\Illuminate\Contracts\Broadcasting\Factory as BroadcastingFactory
  *
  * @see \Illuminate\Contracts\Broadcasting\Factory
  */
-class Broadcast extends \FedExVendor\Illuminate\Support\Facades\Facade
+class Broadcast extends Facade
 {
     /**
      * Get the registered name of the component.
@@ -21,6 +21,6 @@ class Broadcast extends \FedExVendor\Illuminate\Support\Facades\Facade
      */
     protected static function getFacadeAccessor()
     {
-        return \FedExVendor\Illuminate\Contracts\Broadcasting\Factory::class;
+        return BroadcastingFactoryContract::class;
     }
 }

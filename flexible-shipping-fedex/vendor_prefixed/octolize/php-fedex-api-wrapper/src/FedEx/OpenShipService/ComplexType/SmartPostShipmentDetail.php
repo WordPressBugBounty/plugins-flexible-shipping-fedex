@@ -16,7 +16,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $HubId
  * @property string $CustomerManifestId
  */
-class SmartPostShipmentDetail extends \FedExVendor\FedEx\AbstractComplexType
+class SmartPostShipmentDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -30,7 +30,7 @@ class SmartPostShipmentDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param SmartPostShipmentProcessingOptionsRequested $processingOptionsRequested
      * @return $this
      */
-    public function setProcessingOptionsRequested(\FedExVendor\FedEx\OpenShipService\ComplexType\SmartPostShipmentProcessingOptionsRequested $processingOptionsRequested)
+    public function setProcessingOptionsRequested(SmartPostShipmentProcessingOptionsRequested $processingOptionsRequested)
     {
         $this->values['ProcessingOptionsRequested'] = $processingOptionsRequested;
         return $this;

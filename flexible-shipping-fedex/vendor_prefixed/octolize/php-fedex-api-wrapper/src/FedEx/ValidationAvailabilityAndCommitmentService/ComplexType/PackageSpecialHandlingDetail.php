@@ -14,7 +14,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property \FedEx\ValidationAvailabilityAndCommitmentService\SimpleType\DamageStatusType|string $DamageKnown
  * @property \FedEx\ValidationAvailabilityAndCommitmentService\SimpleType\InspectionStatusType|string $InspectionStatus
  */
-class PackageSpecialHandlingDetail extends \FedExVendor\FedEx\AbstractComplexType
+class PackageSpecialHandlingDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

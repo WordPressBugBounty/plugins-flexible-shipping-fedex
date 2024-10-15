@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property \FedEx\PickupService\SimpleType\PickupLookupConditionType|string $ConditionType
  * @property string $Value
  */
-class PickupLookupCondition extends \FedExVendor\FedEx\AbstractComplexType
+class PickupLookupCondition extends AbstractComplexType
 {
     /**
      * Name of this complex type

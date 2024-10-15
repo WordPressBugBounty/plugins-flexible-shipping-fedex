@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property \FedEx\LocationsService\SimpleType\LatestDropOffOverlayType|string $Type
  * @property string $Time
  */
-class LatestDropoffOverlayDetail extends \FedExVendor\FedEx\AbstractComplexType
+class LatestDropoffOverlayDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

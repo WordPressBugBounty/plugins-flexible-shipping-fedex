@@ -19,7 +19,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property ManifestFile $Manifest
  * @property string $MultiweightReport
  */
-class GroundCloseReply extends \FedExVendor\FedEx\AbstractComplexType
+class GroundCloseReply extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -55,7 +55,7 @@ class GroundCloseReply extends \FedExVendor\FedEx\AbstractComplexType
      * @param TransactionDetail $transactionDetail
      * @return $this
      */
-    public function setTransactionDetail(\FedExVendor\FedEx\CloseService\ComplexType\TransactionDetail $transactionDetail)
+    public function setTransactionDetail(TransactionDetail $transactionDetail)
     {
         $this->values['TransactionDetail'] = $transactionDetail;
         return $this;
@@ -66,7 +66,7 @@ class GroundCloseReply extends \FedExVendor\FedEx\AbstractComplexType
      * @param VersionId $version
      * @return $this
      */
-    public function setVersion(\FedExVendor\FedEx\CloseService\ComplexType\VersionId $version)
+    public function setVersion(VersionId $version)
     {
         $this->values['Version'] = $version;
         return $this;
@@ -99,7 +99,7 @@ class GroundCloseReply extends \FedExVendor\FedEx\AbstractComplexType
      * @param ManifestFile $manifest
      * @return $this
      */
-    public function setManifest(\FedExVendor\FedEx\CloseService\ComplexType\ManifestFile $manifest)
+    public function setManifest(ManifestFile $manifest)
     {
         $this->values['Manifest'] = $manifest;
         return $this;

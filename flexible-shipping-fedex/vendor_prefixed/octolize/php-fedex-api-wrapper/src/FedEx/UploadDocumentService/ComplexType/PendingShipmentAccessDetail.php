@@ -12,7 +12,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  *
  * @property PendingShipmentAccessorDetail[] $AccessorDetails
  */
-class PendingShipmentAccessDetail extends \FedExVendor\FedEx\AbstractComplexType
+class PendingShipmentAccessDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

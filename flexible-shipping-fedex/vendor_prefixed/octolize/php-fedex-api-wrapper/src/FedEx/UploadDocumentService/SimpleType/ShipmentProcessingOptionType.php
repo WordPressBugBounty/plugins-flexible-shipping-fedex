@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Upload Document Service
  */
-class ShipmentProcessingOptionType extends \FedExVendor\FedEx\AbstractSimpleType
+class ShipmentProcessingOptionType extends AbstractSimpleType
 {
     const _ALLOW_PREVIOUS_SHIP_DATE = 'ALLOW_PREVIOUS_SHIP_DATE';
     const _CONVENIENCE_MULTIPLE_PACKAGES = 'CONVENIENCE_MULTIPLE_PACKAGES';

@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property \FedEx\LocationsService\SimpleType\LocationSortCriteriaType|string $Criterion
  * @property \FedEx\LocationsService\SimpleType\LocationSortOrderType|string $Order
  */
-class LocationSortDetail extends \FedExVendor\FedEx\AbstractComplexType
+class LocationSortDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

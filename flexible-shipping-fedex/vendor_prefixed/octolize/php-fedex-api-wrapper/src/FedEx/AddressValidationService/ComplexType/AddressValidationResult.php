@@ -18,7 +18,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property ParsedAddressPartsDetail $ParsedAddressPartsDetail
  * @property AddressAttribute[] $Attributes
  */
-class AddressValidationResult extends \FedExVendor\FedEx\AbstractComplexType
+class AddressValidationResult extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -65,7 +65,7 @@ class AddressValidationResult extends \FedExVendor\FedEx\AbstractComplexType
      * @param Contact $effectiveContact
      * @return $this
      */
-    public function setEffectiveContact(\FedExVendor\FedEx\AddressValidationService\ComplexType\Contact $effectiveContact)
+    public function setEffectiveContact(Contact $effectiveContact)
     {
         $this->values['EffectiveContact'] = $effectiveContact;
         return $this;
@@ -76,7 +76,7 @@ class AddressValidationResult extends \FedExVendor\FedEx\AbstractComplexType
      * @param Address $effectiveAddress
      * @return $this
      */
-    public function setEffectiveAddress(\FedExVendor\FedEx\AddressValidationService\ComplexType\Address $effectiveAddress)
+    public function setEffectiveAddress(Address $effectiveAddress)
     {
         $this->values['EffectiveAddress'] = $effectiveAddress;
         return $this;
@@ -87,7 +87,7 @@ class AddressValidationResult extends \FedExVendor\FedEx\AbstractComplexType
      * @param ParsedAddressPartsDetail $parsedAddressPartsDetail
      * @return $this
      */
-    public function setParsedAddressPartsDetail(\FedExVendor\FedEx\AddressValidationService\ComplexType\ParsedAddressPartsDetail $parsedAddressPartsDetail)
+    public function setParsedAddressPartsDetail(ParsedAddressPartsDetail $parsedAddressPartsDetail)
     {
         $this->values['ParsedAddressPartsDetail'] = $parsedAddressPartsDetail;
         return $this;

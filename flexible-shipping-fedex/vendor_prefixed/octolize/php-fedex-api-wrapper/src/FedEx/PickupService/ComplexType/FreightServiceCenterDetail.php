@@ -22,7 +22,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $Location
  * @property ContactAndAddress $ContactAndAddress
  */
-class FreightServiceCenterDetail extends \FedExVendor\FedEx\AbstractComplexType
+class FreightServiceCenterDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -80,7 +80,7 @@ class FreightServiceCenterDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param Distance $localDistance
      * @return $this
      */
-    public function setLocalDistance(\FedExVendor\FedEx\PickupService\ComplexType\Distance $localDistance)
+    public function setLocalDistance(Distance $localDistance)
     {
         $this->values['LocalDistance'] = $localDistance;
         return $this;
@@ -146,7 +146,7 @@ class FreightServiceCenterDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param ContactAndAddress $contactAndAddress
      * @return $this
      */
-    public function setContactAndAddress(\FedExVendor\FedEx\PickupService\ComplexType\ContactAndAddress $contactAndAddress)
+    public function setContactAndAddress(ContactAndAddress $contactAndAddress)
     {
         $this->values['ContactAndAddress'] = $contactAndAddress;
         return $this;

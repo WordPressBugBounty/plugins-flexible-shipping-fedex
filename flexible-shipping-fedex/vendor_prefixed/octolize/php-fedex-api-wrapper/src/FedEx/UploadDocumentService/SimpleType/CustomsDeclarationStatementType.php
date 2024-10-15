@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Upload Document Service
  */
-class CustomsDeclarationStatementType extends \FedExVendor\FedEx\AbstractSimpleType
+class CustomsDeclarationStatementType extends AbstractSimpleType
 {
     const _USMCA_LOW_VALUE = 'USMCA_LOW_VALUE';
 }

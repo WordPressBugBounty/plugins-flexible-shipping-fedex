@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $MerchantPhoneNumber
  * @property \FedEx\OpenShipService\SimpleType\ReturnEMailAllowedSpecialServiceType|string[] $AllowedSpecialServices
  */
-class ReturnEMailDetail extends \FedExVendor\FedEx\AbstractComplexType
+class ReturnEMailDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

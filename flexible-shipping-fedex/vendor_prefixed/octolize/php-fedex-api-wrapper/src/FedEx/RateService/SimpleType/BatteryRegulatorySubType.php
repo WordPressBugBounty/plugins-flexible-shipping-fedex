@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
  */
-class BatteryRegulatorySubType extends \FedExVendor\FedEx\AbstractSimpleType
+class BatteryRegulatorySubType extends AbstractSimpleType
 {
     const _IATA_SECTION_II = 'IATA_SECTION_II';
 }

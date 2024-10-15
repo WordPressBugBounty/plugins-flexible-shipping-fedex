@@ -17,7 +17,7 @@ trait Localizable
         if (!$locale) {
             return $callback();
         }
-        $app = \FedExVendor\Illuminate\Container\Container::getInstance();
+        $app = Container::getInstance();
         $original = $app->getLocale();
         try {
             $app->setLocale($locale);

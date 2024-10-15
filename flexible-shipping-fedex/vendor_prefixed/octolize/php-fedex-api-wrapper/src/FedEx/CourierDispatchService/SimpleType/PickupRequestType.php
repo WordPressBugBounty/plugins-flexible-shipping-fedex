@@ -12,7 +12,7 @@ SAME_DAY means that the dispatch is to occur on the date on which it is created.
 * @package     PHP FedEx API wrapper
 * @subpackage  Courier Dispatch Service
 */
-class PickupRequestType extends \FedExVendor\FedEx\AbstractSimpleType
+class PickupRequestType extends AbstractSimpleType
 {
     const _FUTURE_DAY = 'FUTURE_DAY';
     const _SAME_DAY = 'SAME_DAY';

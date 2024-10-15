@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
  */
-class RateElementBasisType extends \FedExVendor\FedEx\AbstractSimpleType
+class RateElementBasisType extends AbstractSimpleType
 {
     const _BASE_CHARGE = 'BASE_CHARGE';
     const _NET_CHARGE = 'NET_CHARGE';

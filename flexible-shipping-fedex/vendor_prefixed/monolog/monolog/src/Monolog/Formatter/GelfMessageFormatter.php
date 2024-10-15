@@ -22,7 +22,7 @@ use FedExVendor\Monolog\Utils;
  *
  * @phpstan-import-type Level from \Monolog\Logger
  */
-class GelfMessageFormatter extends \FedExVendor\Monolog\Formatter\NormalizerFormatter
+class GelfMessageFormatter extends NormalizerFormatter
 {
     protected const DEFAULT_MAX_LENGTH = 32766;
     /**
@@ -52,25 +52,25 @@ class GelfMessageFormatter extends \FedExVendor\Monolog\Formatter\NormalizerForm
      *
      * @phpstan-var array<Level, int>
      */
-    private $logLevels = [\FedExVendor\Monolog\Logger::DEBUG => 7, \FedExVendor\Monolog\Logger::INFO => 6, \FedExVendor\Monolog\Logger::NOTICE => 5, \FedExVendor\Monolog\Logger::WARNING => 4, \FedExVendor\Monolog\Logger::ERROR => 3, \FedExVendor\Monolog\Logger::CRITICAL => 2, \FedExVendor\Monolog\Logger::ALERT => 1, \FedExVendor\Monolog\Logger::EMERGENCY => 0];
+    private $logLevels = [Logger::DEBUG => 7, Logger::INFO => 6, Logger::NOTICE => 5, Logger::WARNING => 4, Logger::ERROR => 3, Logger::CRITICAL => 2, Logger::ALERT => 1, Logger::EMERGENCY => 0];
     public function __construct(?string $systemName = null, ?string $extraPrefix = null, string $contextPrefix = 'ctxt_', ?int $maxLength = null)
     {
-        if (!\class_exists(\FedExVendor\Gelf\Message::class)) {
+        if (!class_exists(Message::class)) {
             throw new \RuntimeException('Composer package graylog2/gelf-php is required to use Monolog\'s GelfMessageFormatter');
         }
         parent::__construct('U.u');
-        $this->systemName = \is_null($systemName) || $systemName === '' ? (string) \gethostname() : $systemName;
-        $this->extraPrefix = \is_null($extraPrefix) ? '' : $extraPrefix;
+        $this->systemName = is_null($systemName) || $systemName === '' ? (string) gethostname() : $systemName;
+        $this->extraPrefix = is_null($extraPrefix) ? '' : $extraPrefix;
         $this->contextPrefix = $contextPrefix;
-        $this->maxLength = \is_null($maxLength) ? self::DEFAULT_MAX_LENGTH : $maxLength;
-        if (\method_exists(\FedExVendor\Gelf\Message::class, 'setFacility')) {
+        $this->maxLength = is_null($maxLength) ? self::DEFAULT_MAX_LENGTH : $maxLength;
+        if (method_exists(Message::class, 'setFacility')) {
             $this->gelfVersion = 1;
         }
     }
     /**
      * {@inheritDoc}
      */
-    public function format(array $record) : \FedExVendor\Gelf\Message
+    public function format(array $record): Message
     {
         $context = $extra = [];
         if (isset($record['context'])) {
@@ -82,14 +82,14 @@ class GelfMessageFormatter extends \FedExVendor\Monolog\Formatter\NormalizerForm
             $extra = parent::normalize($record['extra']);
         }
         if (!isset($record['datetime'], $record['message'], $record['level'])) {
-            throw new \InvalidArgumentException('The record should at least contain datetime, message and level keys, ' . \var_export($record, \true) . ' given');
+            throw new \InvalidArgumentException('The record should at least contain datetime, message and level keys, ' . var_export($record, \true) . ' given');
         }
-        $message = new \FedExVendor\Gelf\Message();
+        $message = new Message();
         $message->setTimestamp($record['datetime'])->setShortMessage((string) $record['message'])->setHost($this->systemName)->setLevel($this->logLevels[$record['level']]);
         // message length + system name length + 200 for padding / metadata
-        $len = 200 + \strlen((string) $record['message']) + \strlen($this->systemName);
+        $len = 200 + strlen((string) $record['message']) + strlen($this->systemName);
         if ($len > $this->maxLength) {
-            $message->setShortMessage(\FedExVendor\Monolog\Utils::substr($record['message'], 0, $this->maxLength));
+            $message->setShortMessage(Utils::substr($record['message'], 0, $this->maxLength));
         }
         if ($this->gelfVersion === 1) {
             if (isset($record['channel'])) {
@@ -107,19 +107,19 @@ class GelfMessageFormatter extends \FedExVendor\Monolog\Formatter\NormalizerForm
             $message->setAdditional('facility', $record['channel']);
         }
         foreach ($extra as $key => $val) {
-            $val = \is_scalar($val) || null === $val ? $val : $this->toJson($val);
-            $len = \strlen($this->extraPrefix . $key . $val);
+            $val = is_scalar($val) || null === $val ? $val : $this->toJson($val);
+            $len = strlen($this->extraPrefix . $key . $val);
             if ($len > $this->maxLength) {
-                $message->setAdditional($this->extraPrefix . $key, \FedExVendor\Monolog\Utils::substr((string) $val, 0, $this->maxLength));
+                $message->setAdditional($this->extraPrefix . $key, Utils::substr((string) $val, 0, $this->maxLength));
                 continue;
             }
             $message->setAdditional($this->extraPrefix . $key, $val);
         }
         foreach ($context as $key => $val) {
-            $val = \is_scalar($val) || null === $val ? $val : $this->toJson($val);
-            $len = \strlen($this->contextPrefix . $key . $val);
+            $val = is_scalar($val) || null === $val ? $val : $this->toJson($val);
+            $len = strlen($this->contextPrefix . $key . $val);
             if ($len > $this->maxLength) {
-                $message->setAdditional($this->contextPrefix . $key, \FedExVendor\Monolog\Utils::substr((string) $val, 0, $this->maxLength));
+                $message->setAdditional($this->contextPrefix . $key, Utils::substr((string) $val, 0, $this->maxLength));
                 continue;
             }
             $message->setAdditional($this->contextPrefix . $key, $val);
@@ -127,7 +127,7 @@ class GelfMessageFormatter extends \FedExVendor\Monolog\Formatter\NormalizerForm
         if ($this->gelfVersion === 1) {
             /** @phpstan-ignore-next-line */
             if (null === $message->getFile() && isset($context['exception']['file'])) {
-                if (\preg_match("/^(.+):([0-9]+)\$/", $context['exception']['file'], $matches)) {
+                if (preg_match("/^(.+):([0-9]+)\$/", $context['exception']['file'], $matches)) {
                     $message->setFile($matches[1]);
                     $message->setLine($matches[2]);
                 }

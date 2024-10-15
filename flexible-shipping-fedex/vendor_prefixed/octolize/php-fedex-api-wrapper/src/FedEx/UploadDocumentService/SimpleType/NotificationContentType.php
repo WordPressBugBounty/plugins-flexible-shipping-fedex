@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Upload Document Service
  */
-class NotificationContentType extends \FedExVendor\FedEx\AbstractSimpleType
+class NotificationContentType extends AbstractSimpleType
 {
     const _SCHEDULE_PICKUP_SUGGESTION = 'SCHEDULE_PICKUP_SUGGESTION';
 }

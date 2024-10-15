@@ -22,7 +22,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property ContactAndAddress $PrintedLabelOrigin
  * @property CustomerSpecifiedLabelDetail $CustomerSpecifiedDetail
  */
-class LabelSpecification extends \FedExVendor\FedEx\AbstractComplexType
+class LabelSpecification extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -36,7 +36,7 @@ class LabelSpecification extends \FedExVendor\FedEx\AbstractComplexType
      * @param LabelSpecificationProcessingOptionsRequested $processingOptionsRequested
      * @return $this
      */
-    public function setProcessingOptionsRequested(\FedExVendor\FedEx\UploadDocumentService\ComplexType\LabelSpecificationProcessingOptionsRequested $processingOptionsRequested)
+    public function setProcessingOptionsRequested(LabelSpecificationProcessingOptionsRequested $processingOptionsRequested)
     {
         $this->values['ProcessingOptionsRequested'] = $processingOptionsRequested;
         return $this;
@@ -124,7 +124,7 @@ class LabelSpecification extends \FedExVendor\FedEx\AbstractComplexType
      * @param Localization $localization
      * @return $this
      */
-    public function setLocalization(\FedExVendor\FedEx\UploadDocumentService\ComplexType\Localization $localization)
+    public function setLocalization(Localization $localization)
     {
         $this->values['Localization'] = $localization;
         return $this;
@@ -135,7 +135,7 @@ class LabelSpecification extends \FedExVendor\FedEx\AbstractComplexType
      * @param ContactAndAddress $printedLabelOrigin
      * @return $this
      */
-    public function setPrintedLabelOrigin(\FedExVendor\FedEx\UploadDocumentService\ComplexType\ContactAndAddress $printedLabelOrigin)
+    public function setPrintedLabelOrigin(ContactAndAddress $printedLabelOrigin)
     {
         $this->values['PrintedLabelOrigin'] = $printedLabelOrigin;
         return $this;
@@ -146,7 +146,7 @@ class LabelSpecification extends \FedExVendor\FedEx\AbstractComplexType
      * @param CustomerSpecifiedLabelDetail $customerSpecifiedDetail
      * @return $this
      */
-    public function setCustomerSpecifiedDetail(\FedExVendor\FedEx\UploadDocumentService\ComplexType\CustomerSpecifiedLabelDetail $customerSpecifiedDetail)
+    public function setCustomerSpecifiedDetail(CustomerSpecifiedLabelDetail $customerSpecifiedDetail)
     {
         $this->values['CustomerSpecifiedDetail'] = $customerSpecifiedDetail;
         return $this;

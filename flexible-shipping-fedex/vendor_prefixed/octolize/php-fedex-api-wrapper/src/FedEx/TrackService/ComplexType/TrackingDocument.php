@@ -16,7 +16,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property int $Resolution
  * @property DocumentPart[] $Parts
  */
-class TrackingDocument extends \FedExVendor\FedEx\AbstractComplexType
+class TrackingDocument extends AbstractComplexType
 {
     /**
      * Name of this complex type

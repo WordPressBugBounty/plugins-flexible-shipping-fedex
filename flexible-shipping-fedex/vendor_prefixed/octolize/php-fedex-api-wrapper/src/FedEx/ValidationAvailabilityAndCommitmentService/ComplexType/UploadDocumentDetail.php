@@ -18,7 +18,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $DocumentContent
  * @property string $ExpirationDate
  */
-class UploadDocumentDetail extends \FedExVendor\FedEx\AbstractComplexType
+class UploadDocumentDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

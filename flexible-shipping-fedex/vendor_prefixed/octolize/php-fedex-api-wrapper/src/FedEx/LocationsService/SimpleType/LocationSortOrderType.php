@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Locations Service
  */
-class LocationSortOrderType extends \FedExVendor\FedEx\AbstractSimpleType
+class LocationSortOrderType extends AbstractSimpleType
 {
     const _HIGHEST_TO_LOWEST = 'HIGHEST_TO_LOWEST';
     const _LOWEST_TO_HIGHEST = 'LOWEST_TO_HIGHEST';

@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Package Movement Information Service
  */
-class TrackAdvanceNotificationStatusType extends \FedExVendor\FedEx\AbstractSimpleType
+class TrackAdvanceNotificationStatusType extends AbstractSimpleType
 {
     const _BACK_ON_TRACK = 'BACK_ON_TRACK';
     const _FAIL = 'FAIL';

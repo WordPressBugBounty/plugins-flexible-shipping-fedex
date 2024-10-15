@@ -14,7 +14,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $MatchedAddressGeographicCoordinates
  * @property DistanceAndLocationDetail[] $DistanceAndLocationDetails
  */
-class AddressToLocationRelationshipDetail extends \FedExVendor\FedEx\AbstractComplexType
+class AddressToLocationRelationshipDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -28,7 +28,7 @@ class AddressToLocationRelationshipDetail extends \FedExVendor\FedEx\AbstractCom
      * @param Address $matchedAddress
      * @return $this
      */
-    public function setMatchedAddress(\FedExVendor\FedEx\LocationsService\ComplexType\Address $matchedAddress)
+    public function setMatchedAddress(Address $matchedAddress)
     {
         $this->values['MatchedAddress'] = $matchedAddress;
         return $this;

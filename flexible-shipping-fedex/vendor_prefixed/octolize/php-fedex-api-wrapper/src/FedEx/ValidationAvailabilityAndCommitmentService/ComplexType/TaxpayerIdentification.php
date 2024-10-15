@@ -16,7 +16,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $EffectiveDate
  * @property string $ExpirationDate
  */
-class TaxpayerIdentification extends \FedExVendor\FedEx\AbstractComplexType
+class TaxpayerIdentification extends AbstractComplexType
 {
     /**
      * Name of this complex type

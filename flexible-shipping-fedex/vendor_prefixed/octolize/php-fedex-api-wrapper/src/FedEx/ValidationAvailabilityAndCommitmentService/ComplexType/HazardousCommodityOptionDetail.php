@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property \FedEx\ValidationAvailabilityAndCommitmentService\SimpleType\HazardousCommodityLabelTextOptionType|string $LabelTextOption
  * @property string $CustomerSuppliedLabelText
  */
-class HazardousCommodityOptionDetail extends \FedExVendor\FedEx\AbstractComplexType
+class HazardousCommodityOptionDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

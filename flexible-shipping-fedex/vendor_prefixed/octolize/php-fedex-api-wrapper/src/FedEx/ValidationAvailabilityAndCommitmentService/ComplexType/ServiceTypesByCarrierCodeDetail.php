@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property \FedEx\ValidationAvailabilityAndCommitmentService\SimpleType\CarrierCodeType|string $CarrierCode
  * @property string[] $Services
  */
-class ServiceTypesByCarrierCodeDetail extends \FedExVendor\FedEx\AbstractComplexType
+class ServiceTypesByCarrierCodeDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

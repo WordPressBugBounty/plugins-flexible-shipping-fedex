@@ -48,7 +48,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $CreationDate
  * @property CustomerProfileArchiveDetail $ArchiveDetail
  */
-class ExpressProfile extends \FedExVendor\FedEx\AbstractComplexType
+class ExpressProfile extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -194,7 +194,7 @@ class ExpressProfile extends \FedExVendor\FedEx\AbstractComplexType
      * @param CreditCard $creditCard
      * @return $this
      */
-    public function setCreditCard(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\CreditCard $creditCard)
+    public function setCreditCard(CreditCard $creditCard)
     {
         $this->values['CreditCard'] = $creditCard;
         return $this;
@@ -216,7 +216,7 @@ class ExpressProfile extends \FedExVendor\FedEx\AbstractComplexType
      * @param Money $creditLimit
      * @return $this
      */
-    public function setCreditLimit(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\Money $creditLimit)
+    public function setCreditLimit(Money $creditLimit)
     {
         $this->values['CreditLimit'] = $creditLimit;
         return $this;
@@ -227,7 +227,7 @@ class ExpressProfile extends \FedExVendor\FedEx\AbstractComplexType
      * @param ProfileCreditStatusDetail $creditStatusDetail
      * @return $this
      */
-    public function setCreditStatusDetail(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\ProfileCreditStatusDetail $creditStatusDetail)
+    public function setCreditStatusDetail(ProfileCreditStatusDetail $creditStatusDetail)
     {
         $this->values['CreditStatusDetail'] = $creditStatusDetail;
         return $this;
@@ -238,7 +238,7 @@ class ExpressProfile extends \FedExVendor\FedEx\AbstractComplexType
      * @param EDIMasterDetail $ediMasterDetail
      * @return $this
      */
-    public function setEdiMasterDetail(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\EDIMasterDetail $ediMasterDetail)
+    public function setEdiMasterDetail(EDIMasterDetail $ediMasterDetail)
     {
         $this->values['EdiMasterDetail'] = $ediMasterDetail;
         return $this;
@@ -271,7 +271,7 @@ class ExpressProfile extends \FedExVendor\FedEx\AbstractComplexType
      * @param GroundProfile $groundProfile
      * @return $this
      */
-    public function setGroundProfile(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\GroundProfile $groundProfile)
+    public function setGroundProfile(GroundProfile $groundProfile)
     {
         $this->values['GroundProfile'] = $groundProfile;
         return $this;
@@ -282,7 +282,7 @@ class ExpressProfile extends \FedExVendor\FedEx\AbstractComplexType
      * @param CustomerShippingVolumeDetail $shippingVolumeDetail
      * @return $this
      */
-    public function setShippingVolumeDetail(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\CustomerShippingVolumeDetail $shippingVolumeDetail)
+    public function setShippingVolumeDetail(CustomerShippingVolumeDetail $shippingVolumeDetail)
     {
         $this->values['ShippingVolumeDetail'] = $shippingVolumeDetail;
         return $this;
@@ -293,7 +293,7 @@ class ExpressProfile extends \FedExVendor\FedEx\AbstractComplexType
      * @param CustomerSuppliesDetail $suppliesDetail
      * @return $this
      */
-    public function setSuppliesDetail(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\CustomerSuppliesDetail $suppliesDetail)
+    public function setSuppliesDetail(CustomerSuppliesDetail $suppliesDetail)
     {
         $this->values['SuppliesDetail'] = $suppliesDetail;
         return $this;
@@ -326,7 +326,7 @@ class ExpressProfile extends \FedExVendor\FedEx\AbstractComplexType
      * @param AirCargoDetail $airCargoDetail
      * @return $this
      */
-    public function setAirCargoDetail(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\AirCargoDetail $airCargoDetail)
+    public function setAirCargoDetail(AirCargoDetail $airCargoDetail)
     {
         $this->values['AirCargoDetail'] = $airCargoDetail;
         return $this;
@@ -370,7 +370,7 @@ class ExpressProfile extends \FedExVendor\FedEx\AbstractComplexType
      * @param InterlineCustomerDetail $interlineDetail
      * @return $this
      */
-    public function setInterlineDetail(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\InterlineCustomerDetail $interlineDetail)
+    public function setInterlineDetail(InterlineCustomerDetail $interlineDetail)
     {
         $this->values['InterlineDetail'] = $interlineDetail;
         return $this;
@@ -381,7 +381,7 @@ class ExpressProfile extends \FedExVendor\FedEx\AbstractComplexType
      * @param CustomerRevenueDetail $revenueDetail
      * @return $this
      */
-    public function setRevenueDetail(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\CustomerRevenueDetail $revenueDetail)
+    public function setRevenueDetail(CustomerRevenueDetail $revenueDetail)
     {
         $this->values['RevenueDetail'] = $revenueDetail;
         return $this;
@@ -392,7 +392,7 @@ class ExpressProfile extends \FedExVendor\FedEx\AbstractComplexType
      * @param EnterpriseCustomerDiscountDetail $discountDetail
      * @return $this
      */
-    public function setDiscountDetail(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\EnterpriseCustomerDiscountDetail $discountDetail)
+    public function setDiscountDetail(EnterpriseCustomerDiscountDetail $discountDetail)
     {
         $this->values['DiscountDetail'] = $discountDetail;
         return $this;
@@ -414,7 +414,7 @@ class ExpressProfile extends \FedExVendor\FedEx\AbstractComplexType
      * @param FedExEmployee $salesContact
      * @return $this
      */
-    public function setSalesContact(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\FedExEmployee $salesContact)
+    public function setSalesContact(FedExEmployee $salesContact)
     {
         $this->values['SalesContact'] = $salesContact;
         return $this;
@@ -425,7 +425,7 @@ class ExpressProfile extends \FedExVendor\FedEx\AbstractComplexType
      * @param SmartPostAccountDetail $smartPostAccountDetail
      * @return $this
      */
-    public function setSmartPostAccountDetail(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\SmartPostAccountDetail $smartPostAccountDetail)
+    public function setSmartPostAccountDetail(SmartPostAccountDetail $smartPostAccountDetail)
     {
         $this->values['SmartPostAccountDetail'] = $smartPostAccountDetail;
         return $this;
@@ -436,7 +436,7 @@ class ExpressProfile extends \FedExVendor\FedEx\AbstractComplexType
      * @param CustomerAccountFranchiseeDetail $franchiseeDetail
      * @return $this
      */
-    public function setFranchiseeDetail(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\CustomerAccountFranchiseeDetail $franchiseeDetail)
+    public function setFranchiseeDetail(CustomerAccountFranchiseeDetail $franchiseeDetail)
     {
         $this->values['FranchiseeDetail'] = $franchiseeDetail;
         return $this;
@@ -458,7 +458,7 @@ class ExpressProfile extends \FedExVendor\FedEx\AbstractComplexType
      * @param CustomerProfileArchiveDetail $archiveDetail
      * @return $this
      */
-    public function setArchiveDetail(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\CustomerProfileArchiveDetail $archiveDetail)
+    public function setArchiveDetail(CustomerProfileArchiveDetail $archiveDetail)
     {
         $this->values['ArchiveDetail'] = $archiveDetail;
         return $this;

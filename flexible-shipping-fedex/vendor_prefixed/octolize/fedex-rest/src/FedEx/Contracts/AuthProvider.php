@@ -10,9 +10,9 @@ interface AuthProvider
      *
      * @return string
      */
-    public function getToken() : string;
+    public function getToken(): string;
     /**
      * Clear cached token
      */
-    public function flush() : void;
+    public function flush(): void;
 }

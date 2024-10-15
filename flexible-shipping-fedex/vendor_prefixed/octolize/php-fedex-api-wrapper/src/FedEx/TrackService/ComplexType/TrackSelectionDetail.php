@@ -23,7 +23,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property PagingDetail $PagingDetail
  * @property int $CustomerSpecifiedTimeOutValueInMilliseconds
  */
-class TrackSelectionDetail extends \FedExVendor\FedEx\AbstractComplexType
+class TrackSelectionDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -59,7 +59,7 @@ class TrackSelectionDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param TrackPackageIdentifier $packageIdentifier
      * @return $this
      */
-    public function setPackageIdentifier(\FedExVendor\FedEx\TrackService\ComplexType\TrackPackageIdentifier $packageIdentifier)
+    public function setPackageIdentifier(TrackPackageIdentifier $packageIdentifier)
     {
         $this->values['PackageIdentifier'] = $packageIdentifier;
         return $this;
@@ -136,7 +136,7 @@ class TrackSelectionDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param Address $destination
      * @return $this
      */
-    public function setDestination(\FedExVendor\FedEx\TrackService\ComplexType\Address $destination)
+    public function setDestination(Address $destination)
     {
         $this->values['Destination'] = $destination;
         return $this;
@@ -147,7 +147,7 @@ class TrackSelectionDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param PagingDetail $pagingDetail
      * @return $this
      */
-    public function setPagingDetail(\FedExVendor\FedEx\TrackService\ComplexType\PagingDetail $pagingDetail)
+    public function setPagingDetail(PagingDetail $pagingDetail)
     {
         $this->values['PagingDetail'] = $pagingDetail;
         return $this;

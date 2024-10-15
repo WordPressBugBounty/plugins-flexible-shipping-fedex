@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property CustomLabelPosition $TopLeftCorner
  * @property CustomLabelPosition $BottomRightCorner
  */
-class CustomLabelBoxEntry extends \FedExVendor\FedEx\AbstractComplexType
+class CustomLabelBoxEntry extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -27,7 +27,7 @@ class CustomLabelBoxEntry extends \FedExVendor\FedEx\AbstractComplexType
      * @param CustomLabelPosition $topLeftCorner
      * @return $this
      */
-    public function setTopLeftCorner(\FedExVendor\FedEx\OpenShipService\ComplexType\CustomLabelPosition $topLeftCorner)
+    public function setTopLeftCorner(CustomLabelPosition $topLeftCorner)
     {
         $this->values['TopLeftCorner'] = $topLeftCorner;
         return $this;
@@ -38,7 +38,7 @@ class CustomLabelBoxEntry extends \FedExVendor\FedEx\AbstractComplexType
      * @param CustomLabelPosition $bottomRightCorner
      * @return $this
      */
-    public function setBottomRightCorner(\FedExVendor\FedEx\OpenShipService\ComplexType\CustomLabelPosition $bottomRightCorner)
+    public function setBottomRightCorner(CustomLabelPosition $bottomRightCorner)
     {
         $this->values['BottomRightCorner'] = $bottomRightCorner;
         return $this;

@@ -3,11 +3,11 @@
 namespace FedExVendor\Octolize\Brand\UpsellingBox;
 
 use FedExVendor\WPDesk\ShowDecision\AndStrategy;
-class ShippingMethodAndConstantDisplayStrategy extends \FedExVendor\WPDesk\ShowDecision\AndStrategy
+class ShippingMethodAndConstantDisplayStrategy extends AndStrategy
 {
     public function __construct(string $method_id, string $constant)
     {
-        parent::__construct(new \FedExVendor\Octolize\Brand\UpsellingBox\ConstantShouldShowStrategy($constant));
-        $this->addCondition(new \FedExVendor\Octolize\Brand\UpsellingBox\ShippingMethodShouldShowStrategy($method_id));
+        parent::__construct(new ConstantShouldShowStrategy($constant));
+        $this->addCondition(new ShippingMethodShouldShowStrategy($method_id));
     }
 }

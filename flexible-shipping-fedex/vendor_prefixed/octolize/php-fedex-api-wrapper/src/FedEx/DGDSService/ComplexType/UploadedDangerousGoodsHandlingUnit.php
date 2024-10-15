@@ -14,7 +14,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property RadioactiveDangerousGoodsHandlingUnitDetail $RadioactiveDetail
  * @property UploadedDangerousGoodsContainerGroup[] $ContainerGroups
  */
-class UploadedDangerousGoodsHandlingUnit extends \FedExVendor\FedEx\AbstractComplexType
+class UploadedDangerousGoodsHandlingUnit extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -39,7 +39,7 @@ class UploadedDangerousGoodsHandlingUnit extends \FedExVendor\FedEx\AbstractComp
      * @param RadioactiveDangerousGoodsHandlingUnitDetail $radioactiveDetail
      * @return $this
      */
-    public function setRadioactiveDetail(\FedExVendor\FedEx\DGDSService\ComplexType\RadioactiveDangerousGoodsHandlingUnitDetail $radioactiveDetail)
+    public function setRadioactiveDetail(RadioactiveDangerousGoodsHandlingUnitDetail $radioactiveDetail)
     {
         $this->values['RadioactiveDetail'] = $radioactiveDetail;
         return $this;

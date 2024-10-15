@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $Code
  * @property string $Description
  */
-class TrackInformationNoteDetail extends \FedExVendor\FedEx\AbstractComplexType
+class TrackInformationNoteDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

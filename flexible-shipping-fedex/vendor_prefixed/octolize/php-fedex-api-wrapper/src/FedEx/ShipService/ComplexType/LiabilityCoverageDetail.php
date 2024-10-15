@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property \FedEx\ShipService\SimpleType\LiabilityCoverageType|string $CoverageType
  * @property Money $CoverageAmount
  */
-class LiabilityCoverageDetail extends \FedExVendor\FedEx\AbstractComplexType
+class LiabilityCoverageDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -38,7 +38,7 @@ class LiabilityCoverageDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param Money $coverageAmount
      * @return $this
      */
-    public function setCoverageAmount(\FedExVendor\FedEx\ShipService\ComplexType\Money $coverageAmount)
+    public function setCoverageAmount(Money $coverageAmount)
     {
         $this->values['CoverageAmount'] = $coverageAmount;
         return $this;

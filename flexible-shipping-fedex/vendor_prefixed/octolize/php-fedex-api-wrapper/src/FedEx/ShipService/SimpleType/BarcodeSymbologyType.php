@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
  */
-class BarcodeSymbologyType extends \FedExVendor\FedEx\AbstractSimpleType
+class BarcodeSymbologyType extends AbstractSimpleType
 {
     const _CODABAR = 'CODABAR';
     const _CODE128 = 'CODE128';

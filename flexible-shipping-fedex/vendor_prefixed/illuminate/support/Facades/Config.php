@@ -12,7 +12,7 @@ namespace FedExVendor\Illuminate\Support\Facades;
  *
  * @see \Illuminate\Config\Repository
  */
-class Config extends \FedExVendor\Illuminate\Support\Facades\Facade
+class Config extends Facade
 {
     /**
      * Get the registered name of the component.

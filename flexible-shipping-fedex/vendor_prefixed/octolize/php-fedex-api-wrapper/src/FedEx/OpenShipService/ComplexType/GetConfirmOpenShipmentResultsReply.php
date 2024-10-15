@@ -18,7 +18,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property ShippingDocument[] $ErrorLabels
  * @property ShipmentAdvisoryDetail $AdvisoryDetail
  */
-class GetConfirmOpenShipmentResultsReply extends \FedExVendor\FedEx\AbstractComplexType
+class GetConfirmOpenShipmentResultsReply extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -54,7 +54,7 @@ class GetConfirmOpenShipmentResultsReply extends \FedExVendor\FedEx\AbstractComp
      * @param TransactionDetail $transactionDetail
      * @return $this
      */
-    public function setTransactionDetail(\FedExVendor\FedEx\OpenShipService\ComplexType\TransactionDetail $transactionDetail)
+    public function setTransactionDetail(TransactionDetail $transactionDetail)
     {
         $this->values['TransactionDetail'] = $transactionDetail;
         return $this;
@@ -65,7 +65,7 @@ class GetConfirmOpenShipmentResultsReply extends \FedExVendor\FedEx\AbstractComp
      * @param VersionId $version
      * @return $this
      */
-    public function setVersion(\FedExVendor\FedEx\OpenShipService\ComplexType\VersionId $version)
+    public function setVersion(VersionId $version)
     {
         $this->values['Version'] = $version;
         return $this;
@@ -76,7 +76,7 @@ class GetConfirmOpenShipmentResultsReply extends \FedExVendor\FedEx\AbstractComp
      * @param CompletedShipmentDetail $completedShipmentDetail
      * @return $this
      */
-    public function setCompletedShipmentDetail(\FedExVendor\FedEx\OpenShipService\ComplexType\CompletedShipmentDetail $completedShipmentDetail)
+    public function setCompletedShipmentDetail(CompletedShipmentDetail $completedShipmentDetail)
     {
         $this->values['CompletedShipmentDetail'] = $completedShipmentDetail;
         return $this;
@@ -98,7 +98,7 @@ class GetConfirmOpenShipmentResultsReply extends \FedExVendor\FedEx\AbstractComp
      * @param ShipmentAdvisoryDetail $advisoryDetail
      * @return $this
      */
-    public function setAdvisoryDetail(\FedExVendor\FedEx\OpenShipService\ComplexType\ShipmentAdvisoryDetail $advisoryDetail)
+    public function setAdvisoryDetail(ShipmentAdvisoryDetail $advisoryDetail)
     {
         $this->values['AdvisoryDetail'] = $advisoryDetail;
         return $this;

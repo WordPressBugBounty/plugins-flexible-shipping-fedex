@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property \FedEx\DGDSService\SimpleType\CustomerReferenceType|string $Type
  * @property string $Value
  */
-class ManifestReferenceDetail extends \FedExVendor\FedEx\AbstractComplexType
+class ManifestReferenceDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

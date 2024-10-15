@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  */
-class PriorityAlertEnhancementType extends \FedExVendor\FedEx\AbstractSimpleType
+class PriorityAlertEnhancementType extends AbstractSimpleType
 {
     const _PRIORITY_ALERT_PLUS = 'PRIORITY_ALERT_PLUS';
 }

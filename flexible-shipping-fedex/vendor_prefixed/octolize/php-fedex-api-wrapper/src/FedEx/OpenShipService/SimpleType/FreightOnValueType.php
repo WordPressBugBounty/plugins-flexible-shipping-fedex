@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  OpenShip Service
  */
-class FreightOnValueType extends \FedExVendor\FedEx\AbstractSimpleType
+class FreightOnValueType extends AbstractSimpleType
 {
     const _CARRIER_RISK = 'CARRIER_RISK';
     const _OWN_RISK = 'OWN_RISK';

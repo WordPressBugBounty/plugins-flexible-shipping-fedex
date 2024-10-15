@@ -22,7 +22,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property \FedEx\LocationsService\SimpleType\LocationContentOptionType|string[] $LocationContentOptions
  * @property \FedEx\LocationsService\SimpleType\FedExLocationType|string[] $LocationTypesToInclude
  */
-class SearchLocationConstraints extends \FedExVendor\FedEx\AbstractComplexType
+class SearchLocationConstraints extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -36,7 +36,7 @@ class SearchLocationConstraints extends \FedExVendor\FedEx\AbstractComplexType
      * @param Distance $radiusDistance
      * @return $this
      */
-    public function setRadiusDistance(\FedExVendor\FedEx\LocationsService\ComplexType\Distance $radiusDistance)
+    public function setRadiusDistance(Distance $radiusDistance)
     {
         $this->values['RadiusDistance'] = $radiusDistance;
         return $this;
@@ -102,7 +102,7 @@ class SearchLocationConstraints extends \FedExVendor\FedEx\AbstractComplexType
      * @param LocationSupportedShipmentDetail $shipmentDetail
      * @return $this
      */
-    public function setShipmentDetail(\FedExVendor\FedEx\LocationsService\ComplexType\LocationSupportedShipmentDetail $shipmentDetail)
+    public function setShipmentDetail(LocationSupportedShipmentDetail $shipmentDetail)
     {
         $this->values['ShipmentDetail'] = $shipmentDetail;
         return $this;

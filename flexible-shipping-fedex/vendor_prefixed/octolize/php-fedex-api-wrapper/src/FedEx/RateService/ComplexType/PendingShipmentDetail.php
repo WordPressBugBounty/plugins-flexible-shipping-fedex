@@ -15,7 +15,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property PendingShipmentProcessingOptionsRequested $ProcessingOptions
  * @property RecommendedDocumentSpecification $RecommendedDocumentSpecification
  */
-class PendingShipmentDetail extends \FedExVendor\FedEx\AbstractComplexType
+class PendingShipmentDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -51,7 +51,7 @@ class PendingShipmentDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param PendingShipmentProcessingOptionsRequested $processingOptions
      * @return $this
      */
-    public function setProcessingOptions(\FedExVendor\FedEx\RateService\ComplexType\PendingShipmentProcessingOptionsRequested $processingOptions)
+    public function setProcessingOptions(PendingShipmentProcessingOptionsRequested $processingOptions)
     {
         $this->values['ProcessingOptions'] = $processingOptions;
         return $this;
@@ -62,7 +62,7 @@ class PendingShipmentDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param RecommendedDocumentSpecification $recommendedDocumentSpecification
      * @return $this
      */
-    public function setRecommendedDocumentSpecification(\FedExVendor\FedEx\RateService\ComplexType\RecommendedDocumentSpecification $recommendedDocumentSpecification)
+    public function setRecommendedDocumentSpecification(RecommendedDocumentSpecification $recommendedDocumentSpecification)
     {
         $this->values['RecommendedDocumentSpecification'] = $recommendedDocumentSpecification;
         return $this;

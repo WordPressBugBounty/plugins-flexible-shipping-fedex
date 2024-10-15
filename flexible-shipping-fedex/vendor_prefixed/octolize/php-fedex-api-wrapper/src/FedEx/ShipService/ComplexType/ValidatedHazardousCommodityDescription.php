@@ -26,7 +26,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $Authorization
  * @property string $LabelText
  */
-class ValidatedHazardousCommodityDescription extends \FedExVendor\FedEx\AbstractComplexType
+class ValidatedHazardousCommodityDescription extends AbstractComplexType
 {
     /**
      * Name of this complex type

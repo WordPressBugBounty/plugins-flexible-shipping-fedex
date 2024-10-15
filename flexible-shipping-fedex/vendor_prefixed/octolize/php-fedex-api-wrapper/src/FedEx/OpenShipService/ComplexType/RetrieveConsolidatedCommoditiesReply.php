@@ -16,7 +16,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property VersionId $Version
  * @property ConsolidatedCommoditiesSummaryDetail $ConsolidatedCommoditiesSummary
  */
-class RetrieveConsolidatedCommoditiesReply extends \FedExVendor\FedEx\AbstractComplexType
+class RetrieveConsolidatedCommoditiesReply extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -52,7 +52,7 @@ class RetrieveConsolidatedCommoditiesReply extends \FedExVendor\FedEx\AbstractCo
      * @param TransactionDetail $transactionDetail
      * @return $this
      */
-    public function setTransactionDetail(\FedExVendor\FedEx\OpenShipService\ComplexType\TransactionDetail $transactionDetail)
+    public function setTransactionDetail(TransactionDetail $transactionDetail)
     {
         $this->values['TransactionDetail'] = $transactionDetail;
         return $this;
@@ -63,7 +63,7 @@ class RetrieveConsolidatedCommoditiesReply extends \FedExVendor\FedEx\AbstractCo
      * @param VersionId $version
      * @return $this
      */
-    public function setVersion(\FedExVendor\FedEx\OpenShipService\ComplexType\VersionId $version)
+    public function setVersion(VersionId $version)
     {
         $this->values['Version'] = $version;
         return $this;
@@ -74,7 +74,7 @@ class RetrieveConsolidatedCommoditiesReply extends \FedExVendor\FedEx\AbstractCo
      * @param ConsolidatedCommoditiesSummaryDetail $consolidatedCommoditiesSummary
      * @return $this
      */
-    public function setConsolidatedCommoditiesSummary(\FedExVendor\FedEx\OpenShipService\ComplexType\ConsolidatedCommoditiesSummaryDetail $consolidatedCommoditiesSummary)
+    public function setConsolidatedCommoditiesSummary(ConsolidatedCommoditiesSummaryDetail $consolidatedCommoditiesSummary)
     {
         $this->values['ConsolidatedCommoditiesSummary'] = $consolidatedCommoditiesSummary;
         return $this;

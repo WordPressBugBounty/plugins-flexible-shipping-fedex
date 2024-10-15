@@ -20,7 +20,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property ContactAndAddress $PrintedLabelOrigin
  * @property CustomerSpecifiedLabelDetail $CustomerSpecifiedDetail
  */
-class LabelSpecification extends \FedExVendor\FedEx\AbstractComplexType
+class LabelSpecification extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -111,7 +111,7 @@ class LabelSpecification extends \FedExVendor\FedEx\AbstractComplexType
      * @param ContactAndAddress $printedLabelOrigin
      * @return $this
      */
-    public function setPrintedLabelOrigin(\FedExVendor\FedEx\ShipService\ComplexType\ContactAndAddress $printedLabelOrigin)
+    public function setPrintedLabelOrigin(ContactAndAddress $printedLabelOrigin)
     {
         $this->values['PrintedLabelOrigin'] = $printedLabelOrigin;
         return $this;
@@ -122,7 +122,7 @@ class LabelSpecification extends \FedExVendor\FedEx\AbstractComplexType
      * @param CustomerSpecifiedLabelDetail $customerSpecifiedDetail
      * @return $this
      */
-    public function setCustomerSpecifiedDetail(\FedExVendor\FedEx\ShipService\ComplexType\CustomerSpecifiedLabelDetail $customerSpecifiedDetail)
+    public function setCustomerSpecifiedDetail(CustomerSpecifiedLabelDetail $customerSpecifiedDetail)
     {
         $this->values['CustomerSpecifiedDetail'] = $customerSpecifiedDetail;
         return $this;

@@ -15,7 +15,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property ReturnEMailDetail $ReturnEMailDetail
  * @property ReturnAssociationDetail $ReturnAssociation
  */
-class ReturnShipmentDetail extends \FedExVendor\FedEx\AbstractComplexType
+class ReturnShipmentDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -40,7 +40,7 @@ class ReturnShipmentDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param Rma $rma
      * @return $this
      */
-    public function setRma(\FedExVendor\FedEx\RateService\ComplexType\Rma $rma)
+    public function setRma(Rma $rma)
     {
         $this->values['Rma'] = $rma;
         return $this;
@@ -51,7 +51,7 @@ class ReturnShipmentDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param ReturnEMailDetail $returnEMailDetail
      * @return $this
      */
-    public function setReturnEMailDetail(\FedExVendor\FedEx\RateService\ComplexType\ReturnEMailDetail $returnEMailDetail)
+    public function setReturnEMailDetail(ReturnEMailDetail $returnEMailDetail)
     {
         $this->values['ReturnEMailDetail'] = $returnEMailDetail;
         return $this;
@@ -62,7 +62,7 @@ class ReturnShipmentDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param ReturnAssociationDetail $returnAssociation
      * @return $this
      */
-    public function setReturnAssociation(\FedExVendor\FedEx\RateService\ComplexType\ReturnAssociationDetail $returnAssociation)
+    public function setReturnAssociation(ReturnAssociationDetail $returnAssociation)
     {
         $this->values['ReturnAssociation'] = $returnAssociation;
         return $this;

@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  */
-class PickupEventType extends \FedExVendor\FedEx\AbstractSimpleType
+class PickupEventType extends AbstractSimpleType
 {
     const _ASSIGNED_TO_DRIVER = 'ASSIGNED_TO_DRIVER';
     const _CANCELED = 'CANCELED';

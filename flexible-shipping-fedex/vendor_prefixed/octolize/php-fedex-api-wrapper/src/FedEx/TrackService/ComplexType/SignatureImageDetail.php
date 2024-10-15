@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $Image
  * @property Notification[] $Notifications
  */
-class SignatureImageDetail extends \FedExVendor\FedEx\AbstractComplexType
+class SignatureImageDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

@@ -19,7 +19,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property int $PackageCount
  * @property string $EstimatedDeliveryTimestamp
  */
-class ProcessDeliveryReply extends \FedExVendor\FedEx\AbstractComplexType
+class ProcessDeliveryReply extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -55,7 +55,7 @@ class ProcessDeliveryReply extends \FedExVendor\FedEx\AbstractComplexType
      * @param TransactionDetail $transactionDetail
      * @return $this
      */
-    public function setTransactionDetail(\FedExVendor\FedEx\InFlightShipmentService\ComplexType\TransactionDetail $transactionDetail)
+    public function setTransactionDetail(TransactionDetail $transactionDetail)
     {
         $this->values['TransactionDetail'] = $transactionDetail;
         return $this;
@@ -66,7 +66,7 @@ class ProcessDeliveryReply extends \FedExVendor\FedEx\AbstractComplexType
      * @param VersionId $version
      * @return $this
      */
-    public function setVersion(\FedExVendor\FedEx\InFlightShipmentService\ComplexType\VersionId $version)
+    public function setVersion(VersionId $version)
     {
         $this->values['Version'] = $version;
         return $this;
@@ -88,7 +88,7 @@ class ProcessDeliveryReply extends \FedExVendor\FedEx\AbstractComplexType
      * @param TrackingId $masterTrackingNumber
      * @return $this
      */
-    public function setMasterTrackingNumber(\FedExVendor\FedEx\InFlightShipmentService\ComplexType\TrackingId $masterTrackingNumber)
+    public function setMasterTrackingNumber(TrackingId $masterTrackingNumber)
     {
         $this->values['MasterTrackingNumber'] = $masterTrackingNumber;
         return $this;

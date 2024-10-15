@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Validation Availability And Commitment Service Service
  */
-class CustomerAccountManagementStatusType extends \FedExVendor\FedEx\AbstractSimpleType
+class CustomerAccountManagementStatusType extends AbstractSimpleType
 {
     const _ABUSED = 'ABUSED';
     const _ACCOUNT_EXCEPTION = 'ACCOUNT_EXCEPTION';

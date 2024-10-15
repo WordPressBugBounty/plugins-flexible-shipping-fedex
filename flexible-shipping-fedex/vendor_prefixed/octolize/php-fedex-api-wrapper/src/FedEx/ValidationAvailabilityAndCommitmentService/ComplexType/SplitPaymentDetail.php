@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property \FedEx\ValidationAvailabilityAndCommitmentService\SimpleType\SplitPaymentType|string $Type
  * @property Payment $Payment
  */
-class SplitPaymentDetail extends \FedExVendor\FedEx\AbstractComplexType
+class SplitPaymentDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -38,7 +38,7 @@ class SplitPaymentDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param Payment $payment
      * @return $this
      */
-    public function setPayment(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\Payment $payment)
+    public function setPayment(Payment $payment)
     {
         $this->values['Payment'] = $payment;
         return $this;

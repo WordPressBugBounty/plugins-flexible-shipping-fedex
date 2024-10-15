@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property boolean $IsRequested
  * @property string $PromotionCode
  */
-class WelcomeKitDetail extends \FedExVendor\FedEx\AbstractComplexType
+class WelcomeKitDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

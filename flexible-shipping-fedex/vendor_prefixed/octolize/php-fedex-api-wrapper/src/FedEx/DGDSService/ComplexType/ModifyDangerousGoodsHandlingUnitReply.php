@@ -17,7 +17,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property CompletedDangerousGoodsShipmentDetail $CompletedShipmentDetail
  * @property CompletedDangerousGoodsHandlingUnitGroup $CompletedHandlingUnitGroup
  */
-class ModifyDangerousGoodsHandlingUnitReply extends \FedExVendor\FedEx\AbstractComplexType
+class ModifyDangerousGoodsHandlingUnitReply extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -53,7 +53,7 @@ class ModifyDangerousGoodsHandlingUnitReply extends \FedExVendor\FedEx\AbstractC
      * @param TransactionDetail $transactionDetail
      * @return $this
      */
-    public function setTransactionDetail(\FedExVendor\FedEx\DGDSService\ComplexType\TransactionDetail $transactionDetail)
+    public function setTransactionDetail(TransactionDetail $transactionDetail)
     {
         $this->values['TransactionDetail'] = $transactionDetail;
         return $this;
@@ -64,7 +64,7 @@ class ModifyDangerousGoodsHandlingUnitReply extends \FedExVendor\FedEx\AbstractC
      * @param VersionId $version
      * @return $this
      */
-    public function setVersion(\FedExVendor\FedEx\DGDSService\ComplexType\VersionId $version)
+    public function setVersion(VersionId $version)
     {
         $this->values['Version'] = $version;
         return $this;
@@ -75,7 +75,7 @@ class ModifyDangerousGoodsHandlingUnitReply extends \FedExVendor\FedEx\AbstractC
      * @param CompletedDangerousGoodsShipmentDetail $completedShipmentDetail
      * @return $this
      */
-    public function setCompletedShipmentDetail(\FedExVendor\FedEx\DGDSService\ComplexType\CompletedDangerousGoodsShipmentDetail $completedShipmentDetail)
+    public function setCompletedShipmentDetail(CompletedDangerousGoodsShipmentDetail $completedShipmentDetail)
     {
         $this->values['CompletedShipmentDetail'] = $completedShipmentDetail;
         return $this;
@@ -86,7 +86,7 @@ class ModifyDangerousGoodsHandlingUnitReply extends \FedExVendor\FedEx\AbstractC
      * @param CompletedDangerousGoodsHandlingUnitGroup $completedHandlingUnitGroup
      * @return $this
      */
-    public function setCompletedHandlingUnitGroup(\FedExVendor\FedEx\DGDSService\ComplexType\CompletedDangerousGoodsHandlingUnitGroup $completedHandlingUnitGroup)
+    public function setCompletedHandlingUnitGroup(CompletedDangerousGoodsHandlingUnitGroup $completedHandlingUnitGroup)
     {
         $this->values['CompletedHandlingUnitGroup'] = $completedHandlingUnitGroup;
         return $this;

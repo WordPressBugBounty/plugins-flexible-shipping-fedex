@@ -14,7 +14,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $GroupId
  * @property AccountGroupMasterAccountDetail $MasterAccountDetail
  */
-class AccountGroupDetail extends \FedExVendor\FedEx\AbstractComplexType
+class AccountGroupDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -50,7 +50,7 @@ class AccountGroupDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param AccountGroupMasterAccountDetail $masterAccountDetail
      * @return $this
      */
-    public function setMasterAccountDetail(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\AccountGroupMasterAccountDetail $masterAccountDetail)
+    public function setMasterAccountDetail(AccountGroupMasterAccountDetail $masterAccountDetail)
     {
         $this->values['MasterAccountDetail'] = $masterAccountDetail;
         return $this;

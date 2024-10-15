@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Upload Document Service
  */
-class UploadImageStatusInfoType extends \FedExVendor\FedEx\AbstractSimpleType
+class UploadImageStatusInfoType extends AbstractSimpleType
 {
     const _IMAGE_EXCEEDS_MAX_RESOLUTION = 'IMAGE_EXCEEDS_MAX_RESOLUTION';
     const _IMAGE_EXCEEDS_MAX_SIZE = 'IMAGE_EXCEEDS_MAX_SIZE';

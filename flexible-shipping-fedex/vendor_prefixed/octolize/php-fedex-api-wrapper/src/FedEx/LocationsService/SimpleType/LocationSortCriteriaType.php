@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Locations Service
  */
-class LocationSortCriteriaType extends \FedExVendor\FedEx\AbstractSimpleType
+class LocationSortCriteriaType extends AbstractSimpleType
 {
     const _DISTANCE = 'DISTANCE';
     const _LATEST_EXPRESS_DROPOFF_TIME = 'LATEST_EXPRESS_DROPOFF_TIME';

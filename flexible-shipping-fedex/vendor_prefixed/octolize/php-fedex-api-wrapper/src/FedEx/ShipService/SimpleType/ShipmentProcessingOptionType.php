@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
  */
-class ShipmentProcessingOptionType extends \FedExVendor\FedEx\AbstractSimpleType
+class ShipmentProcessingOptionType extends AbstractSimpleType
 {
     const _BYPASS_REGULATORY_VALIDATION = 'BYPASS_REGULATORY_VALIDATION';
     const _CONVENIENCE_MULTIPLE_PACKAGES = 'CONVENIENCE_MULTIPLE_PACKAGES';

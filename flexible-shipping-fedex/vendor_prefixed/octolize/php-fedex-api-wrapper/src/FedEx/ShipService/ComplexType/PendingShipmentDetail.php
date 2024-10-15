@@ -17,7 +17,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property RecommendedDocumentSpecification $RecommendedDocumentSpecification
  * @property UploadDocumentReferenceDetail[] $DocumentReferences
  */
-class PendingShipmentDetail extends \FedExVendor\FedEx\AbstractComplexType
+class PendingShipmentDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -53,7 +53,7 @@ class PendingShipmentDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param EMailLabelDetail $emailLabelDetail
      * @return $this
      */
-    public function setEmailLabelDetail(\FedExVendor\FedEx\ShipService\ComplexType\EMailLabelDetail $emailLabelDetail)
+    public function setEmailLabelDetail(EMailLabelDetail $emailLabelDetail)
     {
         $this->values['EmailLabelDetail'] = $emailLabelDetail;
         return $this;
@@ -64,7 +64,7 @@ class PendingShipmentDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param PendingShipmentProcessingOptionsRequested $processingOptions
      * @return $this
      */
-    public function setProcessingOptions(\FedExVendor\FedEx\ShipService\ComplexType\PendingShipmentProcessingOptionsRequested $processingOptions)
+    public function setProcessingOptions(PendingShipmentProcessingOptionsRequested $processingOptions)
     {
         $this->values['ProcessingOptions'] = $processingOptions;
         return $this;
@@ -75,7 +75,7 @@ class PendingShipmentDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param RecommendedDocumentSpecification $recommendedDocumentSpecification
      * @return $this
      */
-    public function setRecommendedDocumentSpecification(\FedExVendor\FedEx\ShipService\ComplexType\RecommendedDocumentSpecification $recommendedDocumentSpecification)
+    public function setRecommendedDocumentSpecification(RecommendedDocumentSpecification $recommendedDocumentSpecification)
     {
         $this->values['RecommendedDocumentSpecification'] = $recommendedDocumentSpecification;
         return $this;

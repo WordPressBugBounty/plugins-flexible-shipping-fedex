@@ -14,7 +14,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property ShipmentDryIceDetail $DryIceDetail
  * @property AdrLicenseDetail $AdrLicense
  */
-class CompletedHazardousShipmentDetail extends \FedExVendor\FedEx\AbstractComplexType
+class CompletedHazardousShipmentDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -28,7 +28,7 @@ class CompletedHazardousShipmentDetail extends \FedExVendor\FedEx\AbstractComple
      * @param CompletedHazardousSummaryDetail $hazardousSummaryDetail
      * @return $this
      */
-    public function setHazardousSummaryDetail(\FedExVendor\FedEx\UploadDocumentService\ComplexType\CompletedHazardousSummaryDetail $hazardousSummaryDetail)
+    public function setHazardousSummaryDetail(CompletedHazardousSummaryDetail $hazardousSummaryDetail)
     {
         $this->values['HazardousSummaryDetail'] = $hazardousSummaryDetail;
         return $this;
@@ -39,7 +39,7 @@ class CompletedHazardousShipmentDetail extends \FedExVendor\FedEx\AbstractComple
      * @param ShipmentDryIceDetail $dryIceDetail
      * @return $this
      */
-    public function setDryIceDetail(\FedExVendor\FedEx\UploadDocumentService\ComplexType\ShipmentDryIceDetail $dryIceDetail)
+    public function setDryIceDetail(ShipmentDryIceDetail $dryIceDetail)
     {
         $this->values['DryIceDetail'] = $dryIceDetail;
         return $this;
@@ -50,7 +50,7 @@ class CompletedHazardousShipmentDetail extends \FedExVendor\FedEx\AbstractComple
      * @param AdrLicenseDetail $adrLicense
      * @return $this
      */
-    public function setAdrLicense(\FedExVendor\FedEx\UploadDocumentService\ComplexType\AdrLicenseDetail $adrLicense)
+    public function setAdrLicense(AdrLicenseDetail $adrLicense)
     {
         $this->values['AdrLicense'] = $adrLicense;
         return $this;

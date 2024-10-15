@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $Key
  * @property string $Password
  */
-class WebAuthenticationCredential extends \FedExVendor\FedEx\AbstractComplexType
+class WebAuthenticationCredential extends AbstractComplexType
 {
     /**
      * Name of this complex type

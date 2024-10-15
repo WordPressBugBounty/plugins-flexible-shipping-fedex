@@ -14,7 +14,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property PolicyGridManifest[] $PolicyGridManifests
  * @property EnterprisePrivilegeDetail[] $PrivilegeDetails
  */
-class RestrictionsAndPrivilegesPolicyDetail extends \FedExVendor\FedEx\AbstractComplexType
+class RestrictionsAndPrivilegesPolicyDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

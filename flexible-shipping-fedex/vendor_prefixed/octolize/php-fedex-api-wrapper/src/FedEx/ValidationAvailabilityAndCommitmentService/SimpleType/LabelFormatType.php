@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Validation Availability And Commitment Service Service
  */
-class LabelFormatType extends \FedExVendor\FedEx\AbstractSimpleType
+class LabelFormatType extends AbstractSimpleType
 {
     const _COMMON2D = 'COMMON2D';
     const _ERROR = 'ERROR';

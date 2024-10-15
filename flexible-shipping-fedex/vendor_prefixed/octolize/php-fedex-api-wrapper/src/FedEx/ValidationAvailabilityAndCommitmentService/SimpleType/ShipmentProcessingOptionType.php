@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Validation Availability And Commitment Service Service
  */
-class ShipmentProcessingOptionType extends \FedExVendor\FedEx\AbstractSimpleType
+class ShipmentProcessingOptionType extends AbstractSimpleType
 {
     const _ALLOW_PREVIOUS_SHIP_DATE = 'ALLOW_PREVIOUS_SHIP_DATE';
     const _BYPASS_REGULATORY_VALIDATION = 'BYPASS_REGULATORY_VALIDATION';

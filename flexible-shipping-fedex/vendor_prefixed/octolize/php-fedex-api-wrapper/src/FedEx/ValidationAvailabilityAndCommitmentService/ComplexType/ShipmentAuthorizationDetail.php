@@ -12,7 +12,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  *
  * @property string $AccountNumber
  */
-class ShipmentAuthorizationDetail extends \FedExVendor\FedEx\AbstractComplexType
+class ShipmentAuthorizationDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  OpenShip Service
  */
-class TaxType extends \FedExVendor\FedEx\AbstractSimpleType
+class TaxType extends AbstractSimpleType
 {
     const _EXPORT = 'EXPORT';
     const _GST = 'GST';

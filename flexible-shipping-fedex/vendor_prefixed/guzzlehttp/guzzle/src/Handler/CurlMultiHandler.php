@@ -2,6 +2,7 @@
 
 namespace FedExVendor\GuzzleHttp\Handler;
 
+use Closure;
 use FedExVendor\GuzzleHttp\Promise as P;
 use FedExVendor\GuzzleHttp\Promise\Promise;
 use FedExVendor\GuzzleHttp\Promise\PromiseInterface;
@@ -59,11 +60,11 @@ class CurlMultiHandler
      */
     public function __construct(array $options = [])
     {
-        $this->factory = $options['handle_factory'] ?? new \FedExVendor\GuzzleHttp\Handler\CurlFactory(50);
+        $this->factory = $options['handle_factory'] ?? new CurlFactory(50);
         if (isset($options['select_timeout'])) {
             $this->selectTimeout = $options['select_timeout'];
-        } elseif ($selectTimeout = \FedExVendor\GuzzleHttp\Utils::getenv('GUZZLE_CURL_SELECT_TIMEOUT')) {
-            @\trigger_error('Since guzzlehttp/guzzle 7.2.0: Using environment variable GUZZLE_CURL_SELECT_TIMEOUT is deprecated. Use option "select_timeout" instead.', \E_USER_DEPRECATED);
+        } elseif ($selectTimeout = Utils::getenv('GUZZLE_CURL_SELECT_TIMEOUT')) {
+            @trigger_error('Since guzzlehttp/guzzle 7.2.0: Using environment variable GUZZLE_CURL_SELECT_TIMEOUT is deprecated. Use option "select_timeout" instead.', \E_USER_DEPRECATED);
             $this->selectTimeout = (int) $selectTimeout;
         } else {
             $this->selectTimeout = 1;
@@ -93,7 +94,7 @@ class CurlMultiHandler
         $this->_mh = $multiHandle;
         foreach ($this->options as $option => $value) {
             // A warning is raised in case of a wrong option.
-            \curl_multi_setopt($this->_mh, $option, $value);
+            curl_multi_setopt($this->_mh, $option, $value);
         }
         return $this->_mh;
     }
@@ -104,11 +105,11 @@ class CurlMultiHandler
             unset($this->_mh);
         }
     }
-    public function __invoke(\FedExVendor\Psr\Http\Message\RequestInterface $request, array $options) : \FedExVendor\GuzzleHttp\Promise\PromiseInterface
+    public function __invoke(RequestInterface $request, array $options): PromiseInterface
     {
         $easy = $this->factory->create($request, $options);
         $id = (int) $easy->handle;
-        $promise = new \FedExVendor\GuzzleHttp\Promise\Promise([$this, 'execute'], function () use($id) {
+        $promise = new Promise([$this, 'execute'], function () use ($id) {
             return $this->cancel($id);
         });
         $this->addRequest(['easy' => $easy, 'deferred' => $promise]);
@@ -117,11 +118,11 @@ class CurlMultiHandler
     /**
      * Ticks the curl event loop.
      */
-    public function tick() : void
+    public function tick(): void
     {
         // Add any delayed handles if needed.
         if ($this->delays) {
-            $currentTime = \FedExVendor\GuzzleHttp\Utils::currentTime();
+            $currentTime = Utils::currentTime();
             foreach ($this->delays as $id => $delay) {
                 if ($currentTime >= $delay) {
                     unset($this->delays[$id]);
@@ -129,23 +130,37 @@ class CurlMultiHandler
                 }
             }
         }
+        // Run curl_multi_exec in the queue to enable other async tasks to run
+        P\Utils::queue()->add(Closure::fromCallable([$this, 'tickInQueue']));
         // Step through the task queue which may add additional requests.
-        \FedExVendor\GuzzleHttp\Promise\Utils::queue()->run();
+        P\Utils::queue()->run();
         if ($this->active && \curl_multi_select($this->_mh, $this->selectTimeout) === -1) {
             // Perform a usleep if a select returns -1.
             // See: https://bugs.php.net/bug.php?id=61141
             \usleep(250);
         }
         while (\curl_multi_exec($this->_mh, $this->active) === \CURLM_CALL_MULTI_PERFORM) {
+            // Prevent busy looping for slow HTTP requests.
+            \curl_multi_select($this->_mh, $this->selectTimeout);
         }
         $this->processMessages();
     }
     /**
+     * Runs \curl_multi_exec() inside the event loop, to prevent busy looping
+     */
+    private function tickInQueue(): void
+    {
+        if (\curl_multi_exec($this->_mh, $this->active) === \CURLM_CALL_MULTI_PERFORM) {
+            \curl_multi_select($this->_mh, 0);
+            P\Utils::queue()->add(Closure::fromCallable([$this, 'tickInQueue']));
+        }
+    }
+    /**
      * Runs until all outstanding connections have completed.
      */
-    public function execute() : void
+    public function execute(): void
     {
-        $queue = \FedExVendor\GuzzleHttp\Promise\Utils::queue();
+        $queue = P\Utils::queue();
         while ($this->handles || !$queue->isEmpty()) {
             // If there are no transfers, then sleep for the next delay
             if (!$this->active && $this->delays) {
@@ -154,7 +169,7 @@ class CurlMultiHandler
             $this->tick();
         }
     }
-    private function addRequest(array $entry) : void
+    private function addRequest(array $entry): void
     {
         $easy = $entry['easy'];
         $id = (int) $easy->handle;
@@ -162,7 +177,7 @@ class CurlMultiHandler
         if (empty($easy->options['delay'])) {
             \curl_multi_add_handle($this->_mh, $easy->handle);
         } else {
-            $this->delays[$id] = \FedExVendor\GuzzleHttp\Utils::currentTime() + $easy->options['delay'] / 1000;
+            $this->delays[$id] = Utils::currentTime() + $easy->options['delay'] / 1000;
         }
     }
     /**
@@ -172,9 +187,9 @@ class CurlMultiHandler
      *
      * @return bool True on success, false on failure.
      */
-    private function cancel($id) : bool
+    private function cancel($id): bool
     {
-        if (!\is_int($id)) {
+        if (!is_int($id)) {
             trigger_deprecation('guzzlehttp/guzzle', '7.4', 'Not passing an integer to %s::%s() is deprecated and will cause an error in 8.0.', __CLASS__, __FUNCTION__);
         }
         // Cannot cancel if it has been processed.
@@ -187,7 +202,7 @@ class CurlMultiHandler
         \curl_close($handle);
         return \true;
     }
-    private function processMessages() : void
+    private function processMessages(): void
     {
         while ($done = \curl_multi_info_read($this->_mh)) {
             if ($done['msg'] !== \CURLMSG_DONE) {
@@ -203,12 +218,12 @@ class CurlMultiHandler
             $entry = $this->handles[$id];
             unset($this->handles[$id], $this->delays[$id]);
             $entry['easy']->errno = $done['result'];
-            $entry['deferred']->resolve(\FedExVendor\GuzzleHttp\Handler\CurlFactory::finish($this, $entry['easy'], $this->factory));
+            $entry['deferred']->resolve(CurlFactory::finish($this, $entry['easy'], $this->factory));
         }
     }
-    private function timeToNext() : int
+    private function timeToNext(): int
     {
-        $currentTime = \FedExVendor\GuzzleHttp\Utils::currentTime();
+        $currentTime = Utils::currentTime();
         $nextTime = \PHP_INT_MAX;
         foreach ($this->delays as $time) {
             if ($time < $nextTime) {

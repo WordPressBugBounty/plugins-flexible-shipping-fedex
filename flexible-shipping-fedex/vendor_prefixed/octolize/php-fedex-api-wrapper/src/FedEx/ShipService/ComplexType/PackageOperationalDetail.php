@@ -15,7 +15,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property PackageBarcodes $Barcodes
  * @property string $GroundServiceCode
  */
-class PackageOperationalDetail extends \FedExVendor\FedEx\AbstractComplexType
+class PackageOperationalDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -51,7 +51,7 @@ class PackageOperationalDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param PackageBarcodes $barcodes
      * @return $this
      */
-    public function setBarcodes(\FedExVendor\FedEx\ShipService\ComplexType\PackageBarcodes $barcodes)
+    public function setBarcodes(PackageBarcodes $barcodes)
     {
         $this->values['Barcodes'] = $barcodes;
         return $this;

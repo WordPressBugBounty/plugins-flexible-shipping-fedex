@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property \FedEx\PickupService\SimpleType\SpecialEquipmentType|string $Type
  * @property string $Duration
  */
-class SpecialEquipmentLineItem extends \FedExVendor\FedEx\AbstractComplexType
+class SpecialEquipmentLineItem extends AbstractComplexType
 {
     /**
      * Name of this complex type

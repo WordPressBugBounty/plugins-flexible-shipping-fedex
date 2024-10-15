@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property \FedEx\UploadDocumentService\SimpleType\TransborderDistributionSpecialServiceType|string[] $SpecialServiceTypes
  * @property TransborderDistributionLtlDetail $TransborderDistributionLtlDetail
  */
-class TransborderDistributionSpecialServicesRequested extends \FedExVendor\FedEx\AbstractComplexType
+class TransborderDistributionSpecialServicesRequested extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -38,7 +38,7 @@ class TransborderDistributionSpecialServicesRequested extends \FedExVendor\FedEx
      * @param TransborderDistributionLtlDetail $transborderDistributionLtlDetail
      * @return $this
      */
-    public function setTransborderDistributionLtlDetail(\FedExVendor\FedEx\UploadDocumentService\ComplexType\TransborderDistributionLtlDetail $transborderDistributionLtlDetail)
+    public function setTransborderDistributionLtlDetail(TransborderDistributionLtlDetail $transborderDistributionLtlDetail)
     {
         $this->values['TransborderDistributionLtlDetail'] = $transborderDistributionLtlDetail;
         return $this;

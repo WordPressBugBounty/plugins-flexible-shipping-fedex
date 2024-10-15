@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Courier Dispatch Service
  */
-class NotificationSeverityType extends \FedExVendor\FedEx\AbstractSimpleType
+class NotificationSeverityType extends AbstractSimpleType
 {
     const _SUCCESS = 'SUCCESS';
     const _NOTE = 'NOTE';

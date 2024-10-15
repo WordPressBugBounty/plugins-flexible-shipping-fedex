@@ -25,7 +25,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property LocationSortDetail $SortDetail
  * @property SearchLocationConstraints $Constraints
  */
-class SearchLocationsRequest extends \FedExVendor\FedEx\AbstractComplexType
+class SearchLocationsRequest extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -39,7 +39,7 @@ class SearchLocationsRequest extends \FedExVendor\FedEx\AbstractComplexType
      * @param WebAuthenticationDetail $webAuthenticationDetail
      * @return $this
      */
-    public function setWebAuthenticationDetail(\FedExVendor\FedEx\LocationsService\ComplexType\WebAuthenticationDetail $webAuthenticationDetail)
+    public function setWebAuthenticationDetail(WebAuthenticationDetail $webAuthenticationDetail)
     {
         $this->values['WebAuthenticationDetail'] = $webAuthenticationDetail;
         return $this;
@@ -50,7 +50,7 @@ class SearchLocationsRequest extends \FedExVendor\FedEx\AbstractComplexType
      * @param ClientDetail $clientDetail
      * @return $this
      */
-    public function setClientDetail(\FedExVendor\FedEx\LocationsService\ComplexType\ClientDetail $clientDetail)
+    public function setClientDetail(ClientDetail $clientDetail)
     {
         $this->values['ClientDetail'] = $clientDetail;
         return $this;
@@ -61,7 +61,7 @@ class SearchLocationsRequest extends \FedExVendor\FedEx\AbstractComplexType
      * @param TransactionDetail $transactionDetail
      * @return $this
      */
-    public function setTransactionDetail(\FedExVendor\FedEx\LocationsService\ComplexType\TransactionDetail $transactionDetail)
+    public function setTransactionDetail(TransactionDetail $transactionDetail)
     {
         $this->values['TransactionDetail'] = $transactionDetail;
         return $this;
@@ -72,7 +72,7 @@ class SearchLocationsRequest extends \FedExVendor\FedEx\AbstractComplexType
      * @param VersionId $version
      * @return $this
      */
-    public function setVersion(\FedExVendor\FedEx\LocationsService\ComplexType\VersionId $version)
+    public function setVersion(VersionId $version)
     {
         $this->values['Version'] = $version;
         return $this;
@@ -116,7 +116,7 @@ class SearchLocationsRequest extends \FedExVendor\FedEx\AbstractComplexType
      * @param UniqueTrackingNumber $uniqueTrackingNumber
      * @return $this
      */
-    public function setUniqueTrackingNumber(\FedExVendor\FedEx\LocationsService\ComplexType\UniqueTrackingNumber $uniqueTrackingNumber)
+    public function setUniqueTrackingNumber(UniqueTrackingNumber $uniqueTrackingNumber)
     {
         $this->values['UniqueTrackingNumber'] = $uniqueTrackingNumber;
         return $this;
@@ -127,7 +127,7 @@ class SearchLocationsRequest extends \FedExVendor\FedEx\AbstractComplexType
      * @param Address $address
      * @return $this
      */
-    public function setAddress(\FedExVendor\FedEx\LocationsService\ComplexType\Address $address)
+    public function setAddress(Address $address)
     {
         $this->values['Address'] = $address;
         return $this;
@@ -171,7 +171,7 @@ class SearchLocationsRequest extends \FedExVendor\FedEx\AbstractComplexType
      * @param LocationSortDetail $sortDetail
      * @return $this
      */
-    public function setSortDetail(\FedExVendor\FedEx\LocationsService\ComplexType\LocationSortDetail $sortDetail)
+    public function setSortDetail(LocationSortDetail $sortDetail)
     {
         $this->values['SortDetail'] = $sortDetail;
         return $this;
@@ -182,7 +182,7 @@ class SearchLocationsRequest extends \FedExVendor\FedEx\AbstractComplexType
      * @param SearchLocationConstraints $constraints
      * @return $this
      */
-    public function setConstraints(\FedExVendor\FedEx\LocationsService\ComplexType\SearchLocationConstraints $constraints)
+    public function setConstraints(SearchLocationConstraints $constraints)
     {
         $this->values['Constraints'] = $constraints;
         return $this;

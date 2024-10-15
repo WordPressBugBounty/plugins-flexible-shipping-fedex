@@ -14,7 +14,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property PickupDangerousGoodsDetail $DangerousGoodsDetail
  * @property PriorityAlertDetail $PriorityAlertDetail
  */
-class PickupPackageSpecialServicesRequested extends \FedExVendor\FedEx\AbstractComplexType
+class PickupPackageSpecialServicesRequested extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -39,7 +39,7 @@ class PickupPackageSpecialServicesRequested extends \FedExVendor\FedEx\AbstractC
      * @param PickupDangerousGoodsDetail $dangerousGoodsDetail
      * @return $this
      */
-    public function setDangerousGoodsDetail(\FedExVendor\FedEx\PickupService\ComplexType\PickupDangerousGoodsDetail $dangerousGoodsDetail)
+    public function setDangerousGoodsDetail(PickupDangerousGoodsDetail $dangerousGoodsDetail)
     {
         $this->values['DangerousGoodsDetail'] = $dangerousGoodsDetail;
         return $this;
@@ -50,7 +50,7 @@ class PickupPackageSpecialServicesRequested extends \FedExVendor\FedEx\AbstractC
      * @param PriorityAlertDetail $priorityAlertDetail
      * @return $this
      */
-    public function setPriorityAlertDetail(\FedExVendor\FedEx\PickupService\ComplexType\PriorityAlertDetail $priorityAlertDetail)
+    public function setPriorityAlertDetail(PriorityAlertDetail $priorityAlertDetail)
     {
         $this->values['PriorityAlertDetail'] = $priorityAlertDetail;
         return $this;

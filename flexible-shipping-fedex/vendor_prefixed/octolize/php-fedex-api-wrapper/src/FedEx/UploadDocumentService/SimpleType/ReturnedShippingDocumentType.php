@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Upload Document Service
  */
-class ReturnedShippingDocumentType extends \FedExVendor\FedEx\AbstractSimpleType
+class ReturnedShippingDocumentType extends AbstractSimpleType
 {
     const _AUXILIARY_LABEL = 'AUXILIARY_LABEL';
     const _CERTIFICATE_OF_ORIGIN = 'CERTIFICATE_OF_ORIGIN';

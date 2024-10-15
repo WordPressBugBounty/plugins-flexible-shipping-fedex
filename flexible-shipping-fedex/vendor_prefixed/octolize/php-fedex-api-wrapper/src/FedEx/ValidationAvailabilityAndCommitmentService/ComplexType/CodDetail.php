@@ -19,7 +19,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property \FedEx\ValidationAvailabilityAndCommitmentService\SimpleType\CodReturnReferenceIndicatorType|string $ReferenceIndicator
  * @property TrackingId $ReturnTrackingId
  */
-class CodDetail extends \FedExVendor\FedEx\AbstractComplexType
+class CodDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -33,7 +33,7 @@ class CodDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param Money $codCollectionAmount
      * @return $this
      */
-    public function setCodCollectionAmount(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\Money $codCollectionAmount)
+    public function setCodCollectionAmount(Money $codCollectionAmount)
     {
         $this->values['CodCollectionAmount'] = $codCollectionAmount;
         return $this;
@@ -44,7 +44,7 @@ class CodDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param CodAddTransportationChargesDetail $addTransportationChargesDetail
      * @return $this
      */
-    public function setAddTransportationChargesDetail(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\CodAddTransportationChargesDetail $addTransportationChargesDetail)
+    public function setAddTransportationChargesDetail(CodAddTransportationChargesDetail $addTransportationChargesDetail)
     {
         $this->values['AddTransportationChargesDetail'] = $addTransportationChargesDetail;
         return $this;
@@ -66,7 +66,7 @@ class CodDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param Party $codRecipient
      * @return $this
      */
-    public function setCodRecipient(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\Party $codRecipient)
+    public function setCodRecipient(Party $codRecipient)
     {
         $this->values['CodRecipient'] = $codRecipient;
         return $this;
@@ -77,7 +77,7 @@ class CodDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param ContactAndAddress $financialInstitutionContactAndAddress
      * @return $this
      */
-    public function setFinancialInstitutionContactAndAddress(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\ContactAndAddress $financialInstitutionContactAndAddress)
+    public function setFinancialInstitutionContactAndAddress(ContactAndAddress $financialInstitutionContactAndAddress)
     {
         $this->values['FinancialInstitutionContactAndAddress'] = $financialInstitutionContactAndAddress;
         return $this;
@@ -110,7 +110,7 @@ class CodDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param TrackingId $returnTrackingId
      * @return $this
      */
-    public function setReturnTrackingId(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\TrackingId $returnTrackingId)
+    public function setReturnTrackingId(TrackingId $returnTrackingId)
     {
         $this->values['ReturnTrackingId'] = $returnTrackingId;
         return $this;

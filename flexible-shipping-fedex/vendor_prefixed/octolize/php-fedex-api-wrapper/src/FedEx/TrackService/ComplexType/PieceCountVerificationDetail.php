@@ -14,7 +14,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property int $Count
  * @property string $Description
  */
-class PieceCountVerificationDetail extends \FedExVendor\FedEx\AbstractComplexType
+class PieceCountVerificationDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

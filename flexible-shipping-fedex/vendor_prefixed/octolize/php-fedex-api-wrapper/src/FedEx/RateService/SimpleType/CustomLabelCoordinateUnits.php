@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
  */
-class CustomLabelCoordinateUnits extends \FedExVendor\FedEx\AbstractSimpleType
+class CustomLabelCoordinateUnits extends AbstractSimpleType
 {
     const _MILS = 'MILS';
     const _PIXELS = 'PIXELS';

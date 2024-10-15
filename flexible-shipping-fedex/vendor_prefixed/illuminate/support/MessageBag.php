@@ -7,7 +7,7 @@ use FedExVendor\Illuminate\Contracts\Support\Jsonable;
 use FedExVendor\Illuminate\Contracts\Support\MessageBag as MessageBagContract;
 use FedExVendor\Illuminate\Contracts\Support\MessageProvider;
 use JsonSerializable;
-class MessageBag implements \FedExVendor\Illuminate\Contracts\Support\Jsonable, \JsonSerializable, \FedExVendor\Illuminate\Contracts\Support\MessageBag, \FedExVendor\Illuminate\Contracts\Support\MessageProvider
+class MessageBag implements Jsonable, JsonSerializable, MessageBagContract, MessageProvider
 {
     /**
      * All of the registered messages.
@@ -30,8 +30,8 @@ class MessageBag implements \FedExVendor\Illuminate\Contracts\Support\Jsonable, 
     public function __construct(array $messages = [])
     {
         foreach ($messages as $key => $value) {
-            $value = $value instanceof \FedExVendor\Illuminate\Contracts\Support\Arrayable ? $value->toArray() : (array) $value;
-            $this->messages[$key] = \array_unique($value);
+            $value = $value instanceof Arrayable ? $value->toArray() : (array) $value;
+            $this->messages[$key] = array_unique($value);
         }
     }
     /**
@@ -41,7 +41,7 @@ class MessageBag implements \FedExVendor\Illuminate\Contracts\Support\Jsonable, 
      */
     public function keys()
     {
-        return \array_keys($this->messages);
+        return array_keys($this->messages);
     }
     /**
      * Add a message to the message bag.
@@ -79,7 +79,7 @@ class MessageBag implements \FedExVendor\Illuminate\Contracts\Support\Jsonable, 
     protected function isUnique($key, $message)
     {
         $messages = (array) $this->messages;
-        return !isset($messages[$key]) || !\in_array($message, $messages[$key]);
+        return !isset($messages[$key]) || !in_array($message, $messages[$key]);
     }
     /**
      * Merge a new array of messages into the message bag.
@@ -89,10 +89,10 @@ class MessageBag implements \FedExVendor\Illuminate\Contracts\Support\Jsonable, 
      */
     public function merge($messages)
     {
-        if ($messages instanceof \FedExVendor\Illuminate\Contracts\Support\MessageProvider) {
+        if ($messages instanceof MessageProvider) {
             $messages = $messages->getMessageBag()->getMessages();
         }
-        $this->messages = \array_merge_recursive($this->messages, $messages);
+        $this->messages = array_merge_recursive($this->messages, $messages);
         return $this;
     }
     /**
@@ -106,10 +106,10 @@ class MessageBag implements \FedExVendor\Illuminate\Contracts\Support\Jsonable, 
         if ($this->isEmpty()) {
             return \false;
         }
-        if (\is_null($key)) {
+        if (is_null($key)) {
             return $this->any();
         }
-        $keys = \is_array($key) ? $key : \func_get_args();
+        $keys = is_array($key) ? $key : func_get_args();
         foreach ($keys as $key) {
             if ($this->first($key) === '') {
                 return \false;
@@ -128,7 +128,7 @@ class MessageBag implements \FedExVendor\Illuminate\Contracts\Support\Jsonable, 
         if ($this->isEmpty()) {
             return \false;
         }
-        $keys = \is_array($keys) ? $keys : \func_get_args();
+        $keys = is_array($keys) ? $keys : func_get_args();
         foreach ($keys as $key) {
             if ($this->has($key)) {
                 return \true;
@@ -145,9 +145,9 @@ class MessageBag implements \FedExVendor\Illuminate\Contracts\Support\Jsonable, 
      */
     public function first($key = null, $format = null)
     {
-        $messages = \is_null($key) ? $this->all($format) : $this->get($key, $format);
-        $firstMessage = \FedExVendor\Illuminate\Support\Arr::first($messages, null, '');
-        return \is_array($firstMessage) ? \FedExVendor\Illuminate\Support\Arr::first($firstMessage) : $firstMessage;
+        $messages = is_null($key) ? $this->all($format) : $this->get($key, $format);
+        $firstMessage = Arr::first($messages, null, '');
+        return is_array($firstMessage) ? Arr::first($firstMessage) : $firstMessage;
     }
     /**
      * Get all of the messages from the message bag for a given key.
@@ -161,10 +161,10 @@ class MessageBag implements \FedExVendor\Illuminate\Contracts\Support\Jsonable, 
         // If the message exists in the message bag, we will transform it and return
         // the message. Otherwise, we will check if the key is implicit & collect
         // all the messages that match the given key and output it as an array.
-        if (\array_key_exists($key, $this->messages)) {
+        if (array_key_exists($key, $this->messages)) {
             return $this->transform($this->messages[$key], $this->checkFormat($format), $key);
         }
-        if (\FedExVendor\Illuminate\Support\Str::contains($key, '*')) {
+        if (Str::contains($key, '*')) {
             return $this->getMessagesForWildcardKey($key, $format);
         }
         return [];
@@ -178,9 +178,9 @@ class MessageBag implements \FedExVendor\Illuminate\Contracts\Support\Jsonable, 
      */
     protected function getMessagesForWildcardKey($key, $format)
     {
-        return collect($this->messages)->filter(function ($messages, $messageKey) use($key) {
-            return \FedExVendor\Illuminate\Support\Str::is($key, $messageKey);
-        })->map(function ($messages, $messageKey) use($format) {
+        return collect($this->messages)->filter(function ($messages, $messageKey) use ($key) {
+            return Str::is($key, $messageKey);
+        })->map(function ($messages, $messageKey) use ($format) {
             return $this->transform($messages, $this->checkFormat($format), $messageKey);
         })->all();
     }
@@ -195,7 +195,7 @@ class MessageBag implements \FedExVendor\Illuminate\Contracts\Support\Jsonable, 
         $format = $this->checkFormat($format);
         $all = [];
         foreach ($this->messages as $key => $messages) {
-            $all = \array_merge($all, $this->transform($messages, $format, $key));
+            $all = array_merge($all, $this->transform($messages, $format, $key));
         }
         return $all;
     }
@@ -207,7 +207,7 @@ class MessageBag implements \FedExVendor\Illuminate\Contracts\Support\Jsonable, 
      */
     public function unique($format = null)
     {
-        return \array_unique($this->all($format));
+        return array_unique($this->all($format));
     }
     /**
      * Format an array of messages.
@@ -219,11 +219,11 @@ class MessageBag implements \FedExVendor\Illuminate\Contracts\Support\Jsonable, 
      */
     protected function transform($messages, $format, $messageKey)
     {
-        return collect((array) $messages)->map(function ($message) use($format, $messageKey) {
+        return collect((array) $messages)->map(function ($message) use ($format, $messageKey) {
             // We will simply spin through the given messages and transform each one
             // replacing the :message place holder with the real message allowing
             // the messages to be easily formatted to each developer's desires.
-            return \str_replace([':message', ':key'], [$message, $messageKey], $format);
+            return str_replace([':message', ':key'], [$message, $messageKey], $format);
         })->all();
     }
     /**
@@ -318,7 +318,7 @@ class MessageBag implements \FedExVendor\Illuminate\Contracts\Support\Jsonable, 
     #[\ReturnTypeWillChange]
     public function count()
     {
-        return \count($this->messages, \COUNT_RECURSIVE) - \count($this->messages);
+        return count($this->messages, \COUNT_RECURSIVE) - count($this->messages);
     }
     /**
      * Get the instance as an array.
@@ -347,7 +347,7 @@ class MessageBag implements \FedExVendor\Illuminate\Contracts\Support\Jsonable, 
      */
     public function toJson($options = 0)
     {
-        return \json_encode($this->jsonSerialize(), $options);
+        return json_encode($this->jsonSerialize(), $options);
     }
     /**
      * Convert the message bag to its string representation.

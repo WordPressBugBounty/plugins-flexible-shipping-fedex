@@ -19,7 +19,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property LatestDropOffDetail $EffectiveLatestDropOffDetails
  * @property ShippingHoliday[] $ShippingHolidays
  */
-class CarrierDetail extends \FedExVendor\FedEx\AbstractComplexType
+class CarrierDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -99,7 +99,7 @@ class CarrierDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param LatestDropOffDetail $effectiveLatestDropOffDetails
      * @return $this
      */
-    public function setEffectiveLatestDropOffDetails(\FedExVendor\FedEx\LocationsService\ComplexType\LatestDropOffDetail $effectiveLatestDropOffDetails)
+    public function setEffectiveLatestDropOffDetails(LatestDropOffDetail $effectiveLatestDropOffDetails)
     {
         $this->values['EffectiveLatestDropOffDetails'] = $effectiveLatestDropOffDetails;
         return $this;

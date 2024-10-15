@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Upload Document Service
  */
-class ErrorLabelBehaviorType extends \FedExVendor\FedEx\AbstractSimpleType
+class ErrorLabelBehaviorType extends AbstractSimpleType
 {
     const _PACKAGE_ERROR_LABELS = 'PACKAGE_ERROR_LABELS';
     const _STANDARD = 'STANDARD';

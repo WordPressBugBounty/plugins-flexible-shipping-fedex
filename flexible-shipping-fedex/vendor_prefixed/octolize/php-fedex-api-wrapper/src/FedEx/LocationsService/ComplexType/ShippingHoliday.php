@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property Holiday $Holiday
  * @property \FedEx\LocationsService\SimpleType\ShippingActionType|string[] $UnavailableActions
  */
-class ShippingHoliday extends \FedExVendor\FedEx\AbstractComplexType
+class ShippingHoliday extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -27,7 +27,7 @@ class ShippingHoliday extends \FedExVendor\FedEx\AbstractComplexType
      * @param Holiday $holiday
      * @return $this
      */
-    public function setHoliday(\FedExVendor\FedEx\LocationsService\ComplexType\Holiday $holiday)
+    public function setHoliday(Holiday $holiday)
     {
         $this->values['Holiday'] = $holiday;
         return $this;

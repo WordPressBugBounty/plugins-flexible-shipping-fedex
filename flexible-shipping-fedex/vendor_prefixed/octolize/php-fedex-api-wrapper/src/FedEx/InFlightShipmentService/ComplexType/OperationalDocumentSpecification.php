@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property \FedEx\InFlightShipmentService\SimpleType\OperationalDocumentType|string[] $DocumentTypes
  * @property SignatureReleaseDocumentDetail $SignatureReleaseDocumentDetail
  */
-class OperationalDocumentSpecification extends \FedExVendor\FedEx\AbstractComplexType
+class OperationalDocumentSpecification extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -38,7 +38,7 @@ class OperationalDocumentSpecification extends \FedExVendor\FedEx\AbstractComple
      * @param SignatureReleaseDocumentDetail $signatureReleaseDocumentDetail
      * @return $this
      */
-    public function setSignatureReleaseDocumentDetail(\FedExVendor\FedEx\InFlightShipmentService\ComplexType\SignatureReleaseDocumentDetail $signatureReleaseDocumentDetail)
+    public function setSignatureReleaseDocumentDetail(SignatureReleaseDocumentDetail $signatureReleaseDocumentDetail)
     {
         $this->values['SignatureReleaseDocumentDetail'] = $signatureReleaseDocumentDetail;
         return $this;

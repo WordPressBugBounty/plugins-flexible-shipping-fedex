@@ -17,7 +17,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $UploadId
  * @property UploadedDangerousGoodsHandlingUnitGroup $HandlingUnitGroup
  */
-class AddDangerousGoodsHandlingUnitRequest extends \FedExVendor\FedEx\AbstractComplexType
+class AddDangerousGoodsHandlingUnitRequest extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -31,7 +31,7 @@ class AddDangerousGoodsHandlingUnitRequest extends \FedExVendor\FedEx\AbstractCo
      * @param WebAuthenticationDetail $webAuthenticationDetail
      * @return $this
      */
-    public function setWebAuthenticationDetail(\FedExVendor\FedEx\DGDSService\ComplexType\WebAuthenticationDetail $webAuthenticationDetail)
+    public function setWebAuthenticationDetail(WebAuthenticationDetail $webAuthenticationDetail)
     {
         $this->values['WebAuthenticationDetail'] = $webAuthenticationDetail;
         return $this;
@@ -42,7 +42,7 @@ class AddDangerousGoodsHandlingUnitRequest extends \FedExVendor\FedEx\AbstractCo
      * @param ClientDetail $clientDetail
      * @return $this
      */
-    public function setClientDetail(\FedExVendor\FedEx\DGDSService\ComplexType\ClientDetail $clientDetail)
+    public function setClientDetail(ClientDetail $clientDetail)
     {
         $this->values['ClientDetail'] = $clientDetail;
         return $this;
@@ -53,7 +53,7 @@ class AddDangerousGoodsHandlingUnitRequest extends \FedExVendor\FedEx\AbstractCo
      * @param TransactionDetail $transactionDetail
      * @return $this
      */
-    public function setTransactionDetail(\FedExVendor\FedEx\DGDSService\ComplexType\TransactionDetail $transactionDetail)
+    public function setTransactionDetail(TransactionDetail $transactionDetail)
     {
         $this->values['TransactionDetail'] = $transactionDetail;
         return $this;
@@ -64,7 +64,7 @@ class AddDangerousGoodsHandlingUnitRequest extends \FedExVendor\FedEx\AbstractCo
      * @param VersionId $version
      * @return $this
      */
-    public function setVersion(\FedExVendor\FedEx\DGDSService\ComplexType\VersionId $version)
+    public function setVersion(VersionId $version)
     {
         $this->values['Version'] = $version;
         return $this;
@@ -86,7 +86,7 @@ class AddDangerousGoodsHandlingUnitRequest extends \FedExVendor\FedEx\AbstractCo
      * @param UploadedDangerousGoodsHandlingUnitGroup $handlingUnitGroup
      * @return $this
      */
-    public function setHandlingUnitGroup(\FedExVendor\FedEx\DGDSService\ComplexType\UploadedDangerousGoodsHandlingUnitGroup $handlingUnitGroup)
+    public function setHandlingUnitGroup(UploadedDangerousGoodsHandlingUnitGroup $handlingUnitGroup)
     {
         $this->values['HandlingUnitGroup'] = $handlingUnitGroup;
         return $this;

@@ -14,7 +14,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property DocumentGenerationDetail[] $GenerationDetails
  * @property \FedEx\ShipService\SimpleType\EnterpriseDocumentType|string[] $ProhibitedDocuments
  */
-class DocumentRequirementsDetail extends \FedExVendor\FedEx\AbstractComplexType
+class DocumentRequirementsDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

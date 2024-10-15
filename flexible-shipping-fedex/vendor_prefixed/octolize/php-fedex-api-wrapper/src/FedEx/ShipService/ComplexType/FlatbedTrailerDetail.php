@@ -12,7 +12,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  *
  * @property \FedEx\ShipService\SimpleType\FlatbedTrailerOption|string[] $Options
  */
-class FlatbedTrailerDetail extends \FedExVendor\FedEx\AbstractComplexType
+class FlatbedTrailerDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

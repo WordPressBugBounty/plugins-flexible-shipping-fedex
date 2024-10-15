@@ -34,7 +34,7 @@ use FedExVendor\Psr\Http\Message\ResponseInterface;
  *
  * @final
  */
-class MessageFormatter implements \FedExVendor\GuzzleHttp\MessageFormatterInterface
+class MessageFormatter implements MessageFormatterInterface
 {
     /**
      * Apache Common Log Format.
@@ -64,21 +64,21 @@ class MessageFormatter implements \FedExVendor\GuzzleHttp\MessageFormatterInterf
      * @param ResponseInterface|null $response Response that was received
      * @param \Throwable|null        $error    Exception that was received
      */
-    public function format(\FedExVendor\Psr\Http\Message\RequestInterface $request, \FedExVendor\Psr\Http\Message\ResponseInterface $response = null, \Throwable $error = null) : string
+    public function format(RequestInterface $request, ?ResponseInterface $response = null, ?\Throwable $error = null): string
     {
         $cache = [];
         /** @var string */
-        return \preg_replace_callback('/{\\s*([A-Za-z_\\-\\.0-9]+)\\s*}/', function (array $matches) use($request, $response, $error, &$cache) {
+        return \preg_replace_callback('/{\s*([A-Za-z_\-\.0-9]+)\s*}/', function (array $matches) use ($request, $response, $error, &$cache) {
             if (isset($cache[$matches[1]])) {
                 return $cache[$matches[1]];
             }
             $result = '';
             switch ($matches[1]) {
                 case 'request':
-                    $result = \FedExVendor\GuzzleHttp\Psr7\Message::toString($request);
+                    $result = Psr7\Message::toString($request);
                     break;
                 case 'response':
-                    $result = $response ? \FedExVendor\GuzzleHttp\Psr7\Message::toString($response) : '';
+                    $result = $response ? Psr7\Message::toString($response) : '';
                     break;
                 case 'req_headers':
                     $result = \trim($request->getMethod() . ' ' . $request->getRequestTarget()) . ' HTTP/' . $request->getProtocolVersion() . "\r\n" . $this->headers($request);
@@ -90,7 +90,7 @@ class MessageFormatter implements \FedExVendor\GuzzleHttp\MessageFormatterInterf
                     $result = $request->getBody()->__toString();
                     break;
                 case 'res_body':
-                    if (!$response instanceof \FedExVendor\Psr\Http\Message\ResponseInterface) {
+                    if (!$response instanceof ResponseInterface) {
                         $result = 'NULL';
                         break;
                     }
@@ -157,7 +157,7 @@ class MessageFormatter implements \FedExVendor\GuzzleHttp\MessageFormatterInterf
     /**
      * Get headers from message as string
      */
-    private function headers(\FedExVendor\Psr\Http\Message\MessageInterface $message) : string
+    private function headers(MessageInterface $message): string
     {
         $result = '';
         foreach ($message->getHeaders() as $name => $values) {

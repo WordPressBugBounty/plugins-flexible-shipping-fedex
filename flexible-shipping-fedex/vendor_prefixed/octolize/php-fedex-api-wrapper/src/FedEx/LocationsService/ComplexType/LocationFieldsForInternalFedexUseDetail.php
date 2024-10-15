@@ -19,7 +19,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $LocalAirportId
  * @property string $RegionalAirportId
  */
-class LocationFieldsForInternalFedexUseDetail extends \FedExVendor\FedEx\AbstractComplexType
+class LocationFieldsForInternalFedexUseDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -88,7 +88,7 @@ class LocationFieldsForInternalFedexUseDetail extends \FedExVendor\FedEx\Abstrac
      * @param Contact $operationalContact
      * @return $this
      */
-    public function setOperationalContact(\FedExVendor\FedEx\LocationsService\ComplexType\Contact $operationalContact)
+    public function setOperationalContact(Contact $operationalContact)
     {
         $this->values['OperationalContact'] = $operationalContact;
         return $this;

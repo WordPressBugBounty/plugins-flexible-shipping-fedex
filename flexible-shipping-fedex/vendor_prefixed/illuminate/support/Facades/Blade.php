@@ -32,7 +32,7 @@ namespace FedExVendor\Illuminate\Support\Facades;
  *
  * @see \Illuminate\View\Compilers\BladeCompiler
  */
-class Blade extends \FedExVendor\Illuminate\Support\Facades\Facade
+class Blade extends Facade
 {
     /**
      * Get the registered name of the component.

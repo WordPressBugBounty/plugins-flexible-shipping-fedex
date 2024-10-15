@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  */
-class TrailerSizeType extends \FedExVendor\FedEx\AbstractSimpleType
+class TrailerSizeType extends AbstractSimpleType
 {
     const _TRAILER_28_FT = 'TRAILER_28_FT';
     const _TRAILER_48_FT = 'TRAILER_48_FT';

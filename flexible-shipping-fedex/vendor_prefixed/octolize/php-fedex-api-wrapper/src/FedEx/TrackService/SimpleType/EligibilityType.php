@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Package Movement Information Service
  */
-class EligibilityType extends \FedExVendor\FedEx\AbstractSimpleType
+class EligibilityType extends AbstractSimpleType
 {
     const _ELIGIBLE = 'ELIGIBLE';
     const _INELIGIBLE = 'INELIGIBLE';

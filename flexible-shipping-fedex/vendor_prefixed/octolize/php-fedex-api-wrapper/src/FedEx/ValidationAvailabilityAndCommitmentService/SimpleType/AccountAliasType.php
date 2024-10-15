@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Validation Availability And Commitment Service Service
  */
-class AccountAliasType extends \FedExVendor\FedEx\AbstractSimpleType
+class AccountAliasType extends AbstractSimpleType
 {
     const _BILLING = 'BILLING';
     const _ENTERPRISE = 'ENTERPRISE';

@@ -14,7 +14,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $Description
  * @property Message[] $Advisories
  */
-class RegulatoryWaiver extends \FedExVendor\FedEx\AbstractComplexType
+class RegulatoryWaiver extends AbstractComplexType
 {
     /**
      * Name of this complex type

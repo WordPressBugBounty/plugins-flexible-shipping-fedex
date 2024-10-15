@@ -39,7 +39,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $PackagingCode
  * @property string $Scac
  */
-class ShipmentOperationalDetail extends \FedExVendor\FedEx\AbstractComplexType
+class ShipmentOperationalDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

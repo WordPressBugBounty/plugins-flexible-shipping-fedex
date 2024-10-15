@@ -11,13 +11,13 @@ use FedExVendor\WPDesk\FedexShippingService\FedexSettingsDefinition;
  *
  * @package WPDesk\FedexShippingService\FedexApi
  */
-class FedexRateCustomServicesFilter implements \FedExVendor\WPDesk\AbstractShipping\Rate\ShipmentRating
+class FedexRateCustomServicesFilter implements ShipmentRating
 {
     /** @var ShipmentRating */
     private $rating;
     /** @var SettingsValues */
     private $settings;
-    public function __construct(\FedExVendor\WPDesk\AbstractShipping\Rate\ShipmentRating $rating, \FedExVendor\WPDesk\AbstractShipping\Settings\SettingsValues $settings)
+    public function __construct(ShipmentRating $rating, SettingsValues $settings)
     {
         $this->rating = $rating;
         $this->settings = $settings;
@@ -32,7 +32,7 @@ class FedexRateCustomServicesFilter implements \FedExVendor\WPDesk\AbstractShipp
         $rates = [];
         $ratings = $this->rating->get_ratings();
         if (!empty($ratings)) {
-            $services = $this->settings->get_value(\FedExVendor\WPDesk\FedexShippingService\FedexSettingsDefinition::FIELD_SERVICES_TABLE);
+            $services = $this->settings->get_value(FedexSettingsDefinition::FIELD_SERVICES_TABLE);
             if ($this->is_custom_services_enable($this->settings)) {
                 foreach ($ratings as $service_id => $service) {
                     if (isset($service->service_type) && isset($services[$service->service_type]) && !empty($services[$service->service_type]['enabled'])) {
@@ -42,10 +42,10 @@ class FedexRateCustomServicesFilter implements \FedExVendor\WPDesk\AbstractShipp
                 }
                 $rates = $this->sort_services($rates, $services);
             } else {
-                $possible_services = \FedExVendor\WPDesk\FedexShippingService\FedexSettingsDefinition::SERVICES;
+                $possible_services = FedexSettingsDefinition::SERVICES;
                 foreach ($ratings as $service_id => $service) {
                     if (isset($service->service_type) && isset($possible_services[$service->service_type])) {
-                        $service->service_name = \FedExVendor\WPDesk\FedexShippingService\FedexSettingsDefinition::SERVICES[$service->service_type];
+                        $service->service_name = FedexSettingsDefinition::SERVICES[$service->service_type];
                         $rates[$service->service_type] = $service;
                     }
                 }
@@ -81,8 +81,8 @@ class FedexRateCustomServicesFilter implements \FedExVendor\WPDesk\AbstractShipp
      *
      * @return bool
      */
-    private function is_custom_services_enable(\FedExVendor\WPDesk\AbstractShipping\Settings\SettingsValues $settings)
+    private function is_custom_services_enable(SettingsValues $settings)
     {
-        return $settings->has_value(\FedExVendor\WPDesk\FedexShippingService\FedexSettingsDefinition::FIELD_ENABLE_CUSTOM_SERVICES) && 'yes' === $settings->get_value(\FedExVendor\WPDesk\FedexShippingService\FedexSettingsDefinition::FIELD_ENABLE_CUSTOM_SERVICES);
+        return $settings->has_value(FedexSettingsDefinition::FIELD_ENABLE_CUSTOM_SERVICES) && 'yes' === $settings->get_value(FedexSettingsDefinition::FIELD_ENABLE_CUSTOM_SERVICES);
     }
 }

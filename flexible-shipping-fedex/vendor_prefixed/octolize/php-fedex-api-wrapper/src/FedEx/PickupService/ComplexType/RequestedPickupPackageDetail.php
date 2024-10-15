@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property PickupPackageSpecialServicesRequested $PackageSpecialServices
  * @property Weight $Weight
  */
-class RequestedPickupPackageDetail extends \FedExVendor\FedEx\AbstractComplexType
+class RequestedPickupPackageDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -27,7 +27,7 @@ class RequestedPickupPackageDetail extends \FedExVendor\FedEx\AbstractComplexTyp
      * @param PickupPackageSpecialServicesRequested $packageSpecialServices
      * @return $this
      */
-    public function setPackageSpecialServices(\FedExVendor\FedEx\PickupService\ComplexType\PickupPackageSpecialServicesRequested $packageSpecialServices)
+    public function setPackageSpecialServices(PickupPackageSpecialServicesRequested $packageSpecialServices)
     {
         $this->values['PackageSpecialServices'] = $packageSpecialServices;
         return $this;
@@ -38,7 +38,7 @@ class RequestedPickupPackageDetail extends \FedExVendor\FedEx\AbstractComplexTyp
      * @param Weight $weight
      * @return $this
      */
-    public function setWeight(\FedExVendor\FedEx\PickupService\ComplexType\Weight $weight)
+    public function setWeight(Weight $weight)
     {
         $this->values['Weight'] = $weight;
         return $this;

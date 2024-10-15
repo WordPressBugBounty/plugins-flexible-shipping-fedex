@@ -52,7 +52,7 @@ abstract class AbstractRequest
      */
     public static function getWsdlPath()
     {
-        return \realpath(__DIR__ . '/../FedEx/_wsdl/' . static::$wsdlFileName);
+        return realpath(__DIR__ . '/../FedEx/_wsdl/' . static::$wsdlFileName);
     }
     /**
      * Returns the SoapClient instance

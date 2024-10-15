@@ -84,9 +84,9 @@ use FedExVendor\Illuminate\Support\DateFactory;
  * @method static void useMonthsOverflow($monthsOverflow = true)
  * @method static void useYearsOverflow($yearsOverflow = true)
  */
-class Date extends \FedExVendor\Illuminate\Support\Facades\Facade
+class Date extends Facade
 {
-    const DEFAULT_FACADE = \FedExVendor\Illuminate\Support\DateFactory::class;
+    const DEFAULT_FACADE = DateFactory::class;
     /**
      * Get the registered name of the component.
      *

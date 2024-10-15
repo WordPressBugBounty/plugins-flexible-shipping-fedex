@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Dangerous Goods Data Service
  */
-class DangerousGoodsPackingGroupType extends \FedExVendor\FedEx\AbstractSimpleType
+class DangerousGoodsPackingGroupType extends AbstractSimpleType
 {
     const _I = 'I';
     const _II = 'II';

@@ -15,7 +15,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property \FedEx\DGLDService\SimpleType\DangerousGoodsAccessibilityType|string $Accessibility
  * @property \FedEx\DGLDService\SimpleType\HazardousCommodityOptionType|string[] $Options
  */
-class ListDangerousGoodsDetail extends \FedExVendor\FedEx\AbstractComplexType
+class ListDangerousGoodsDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

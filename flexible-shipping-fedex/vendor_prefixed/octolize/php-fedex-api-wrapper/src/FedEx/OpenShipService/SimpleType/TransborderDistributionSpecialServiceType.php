@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  OpenShip Service
  */
-class TransborderDistributionSpecialServiceType extends \FedExVendor\FedEx\AbstractSimpleType
+class TransborderDistributionSpecialServiceType extends AbstractSimpleType
 {
     const _FEDEX_LTL = 'FEDEX_LTL';
 }

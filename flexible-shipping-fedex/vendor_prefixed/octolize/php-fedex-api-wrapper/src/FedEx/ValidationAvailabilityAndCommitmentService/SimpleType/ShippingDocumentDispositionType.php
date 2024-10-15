@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Validation Availability And Commitment Service Service
  */
-class ShippingDocumentDispositionType extends \FedExVendor\FedEx\AbstractSimpleType
+class ShippingDocumentDispositionType extends AbstractSimpleType
 {
     const _CONFIRMED = 'CONFIRMED';
     const _DEFERRED_QUEUED = 'DEFERRED_QUEUED';

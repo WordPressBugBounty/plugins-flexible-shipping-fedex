@@ -15,7 +15,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property Dimensions $Dimensions
  * @property Weight $Weight
  */
-class PickupShipmentAttributes extends \FedExVendor\FedEx\AbstractComplexType
+class PickupShipmentAttributes extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -51,7 +51,7 @@ class PickupShipmentAttributes extends \FedExVendor\FedEx\AbstractComplexType
      * @param Dimensions $dimensions
      * @return $this
      */
-    public function setDimensions(\FedExVendor\FedEx\PickupService\ComplexType\Dimensions $dimensions)
+    public function setDimensions(Dimensions $dimensions)
     {
         $this->values['Dimensions'] = $dimensions;
         return $this;
@@ -62,7 +62,7 @@ class PickupShipmentAttributes extends \FedExVendor\FedEx\AbstractComplexType
      * @param Weight $weight
      * @return $this
      */
-    public function setWeight(\FedExVendor\FedEx\PickupService\ComplexType\Weight $weight)
+    public function setWeight(Weight $weight)
     {
         $this->values['Weight'] = $weight;
         return $this;

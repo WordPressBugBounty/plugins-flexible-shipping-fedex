@@ -12,7 +12,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  *
  * @property \FedEx\OpenShipService\SimpleType\AsynchronousProcessingOptionType|string[] $Options
  */
-class AsynchronousProcessingOptionsRequested extends \FedExVendor\FedEx\AbstractComplexType
+class AsynchronousProcessingOptionsRequested extends AbstractComplexType
 {
     /**
      * Name of this complex type

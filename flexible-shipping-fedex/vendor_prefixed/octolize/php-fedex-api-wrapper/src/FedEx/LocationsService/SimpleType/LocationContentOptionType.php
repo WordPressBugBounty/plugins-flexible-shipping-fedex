@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Locations Service
  */
-class LocationContentOptionType extends \FedExVendor\FedEx\AbstractSimpleType
+class LocationContentOptionType extends AbstractSimpleType
 {
     const _HOLIDAYS = 'HOLIDAYS';
     const _LOCATION_DROPOFF_TIMES = 'LOCATION_DROPOFF_TIMES';

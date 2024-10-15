@@ -28,7 +28,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $NationalDiscountAccount
  * @property string $DebutCompanyId
  */
-class CustomerShippingVolumeDetail extends \FedExVendor\FedEx\AbstractComplexType
+class CustomerShippingVolumeDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -97,7 +97,7 @@ class CustomerShippingVolumeDetail extends \FedExVendor\FedEx\AbstractComplexTyp
      * @param Money $totalRevenue
      * @return $this
      */
-    public function setTotalRevenue(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\Money $totalRevenue)
+    public function setTotalRevenue(Money $totalRevenue)
     {
         $this->values['TotalRevenue'] = $totalRevenue;
         return $this;
@@ -108,7 +108,7 @@ class CustomerShippingVolumeDetail extends \FedExVendor\FedEx\AbstractComplexTyp
      * @param Money $domesticRevenue
      * @return $this
      */
-    public function setDomesticRevenue(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\Money $domesticRevenue)
+    public function setDomesticRevenue(Money $domesticRevenue)
     {
         $this->values['DomesticRevenue'] = $domesticRevenue;
         return $this;
@@ -119,7 +119,7 @@ class CustomerShippingVolumeDetail extends \FedExVendor\FedEx\AbstractComplexTyp
      * @param Money $internationalRevenue
      * @return $this
      */
-    public function setInternationalRevenue(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\Money $internationalRevenue)
+    public function setInternationalRevenue(Money $internationalRevenue)
     {
         $this->values['InternationalRevenue'] = $internationalRevenue;
         return $this;
@@ -152,7 +152,7 @@ class CustomerShippingVolumeDetail extends \FedExVendor\FedEx\AbstractComplexTyp
      * @param Money $averageDomesticRevenue
      * @return $this
      */
-    public function setAverageDomesticRevenue(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\Money $averageDomesticRevenue)
+    public function setAverageDomesticRevenue(Money $averageDomesticRevenue)
     {
         $this->values['AverageDomesticRevenue'] = $averageDomesticRevenue;
         return $this;
@@ -163,7 +163,7 @@ class CustomerShippingVolumeDetail extends \FedExVendor\FedEx\AbstractComplexTyp
      * @param Money $averageRevenue
      * @return $this
      */
-    public function setAverageRevenue(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\Money $averageRevenue)
+    public function setAverageRevenue(Money $averageRevenue)
     {
         $this->values['AverageRevenue'] = $averageRevenue;
         return $this;
@@ -174,7 +174,7 @@ class CustomerShippingVolumeDetail extends \FedExVendor\FedEx\AbstractComplexTyp
      * @param Money $domesticAverageRevenue
      * @return $this
      */
-    public function setDomesticAverageRevenue(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\Money $domesticAverageRevenue)
+    public function setDomesticAverageRevenue(Money $domesticAverageRevenue)
     {
         $this->values['DomesticAverageRevenue'] = $domesticAverageRevenue;
         return $this;
@@ -185,7 +185,7 @@ class CustomerShippingVolumeDetail extends \FedExVendor\FedEx\AbstractComplexTyp
      * @param Money $internationalAverageRevenue
      * @return $this
      */
-    public function setInternationalAverageRevenue(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\Money $internationalAverageRevenue)
+    public function setInternationalAverageRevenue(Money $internationalAverageRevenue)
     {
         $this->values['InternationalAverageRevenue'] = $internationalAverageRevenue;
         return $this;
@@ -196,7 +196,7 @@ class CustomerShippingVolumeDetail extends \FedExVendor\FedEx\AbstractComplexTyp
      * @param Money $nationalDomesticRevenue
      * @return $this
      */
-    public function setNationalDomesticRevenue(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\Money $nationalDomesticRevenue)
+    public function setNationalDomesticRevenue(Money $nationalDomesticRevenue)
     {
         $this->values['NationalDomesticRevenue'] = $nationalDomesticRevenue;
         return $this;

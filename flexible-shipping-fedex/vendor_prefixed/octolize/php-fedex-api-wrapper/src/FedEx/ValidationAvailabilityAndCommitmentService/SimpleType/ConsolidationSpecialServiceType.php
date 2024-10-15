@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Validation Availability And Commitment Service Service
  */
-class ConsolidationSpecialServiceType extends \FedExVendor\FedEx\AbstractSimpleType
+class ConsolidationSpecialServiceType extends AbstractSimpleType
 {
     const _BROKER_SELECT_OPTION = 'BROKER_SELECT_OPTION';
     const _PRIORITY_ALERT = 'PRIORITY_ALERT';

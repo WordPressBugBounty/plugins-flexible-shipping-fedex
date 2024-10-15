@@ -20,7 +20,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property PriorityAlertDetail $PriorityAlertDetail
  * @property AlcoholDetail $AlcoholDetail
  */
-class PackageSpecialServicesRequested extends \FedExVendor\FedEx\AbstractComplexType
+class PackageSpecialServicesRequested extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -45,7 +45,7 @@ class PackageSpecialServicesRequested extends \FedExVendor\FedEx\AbstractComplex
      * @param CodDetail $codDetail
      * @return $this
      */
-    public function setCodDetail(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\CodDetail $codDetail)
+    public function setCodDetail(CodDetail $codDetail)
     {
         $this->values['CodDetail'] = $codDetail;
         return $this;
@@ -56,7 +56,7 @@ class PackageSpecialServicesRequested extends \FedExVendor\FedEx\AbstractComplex
      * @param DangerousGoodsDetail $dangerousGoodsDetail
      * @return $this
      */
-    public function setDangerousGoodsDetail(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\DangerousGoodsDetail $dangerousGoodsDetail)
+    public function setDangerousGoodsDetail(DangerousGoodsDetail $dangerousGoodsDetail)
     {
         $this->values['DangerousGoodsDetail'] = $dangerousGoodsDetail;
         return $this;
@@ -78,7 +78,7 @@ class PackageSpecialServicesRequested extends \FedExVendor\FedEx\AbstractComplex
      * @param Weight $dryIceWeight
      * @return $this
      */
-    public function setDryIceWeight(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\Weight $dryIceWeight)
+    public function setDryIceWeight(Weight $dryIceWeight)
     {
         $this->values['DryIceWeight'] = $dryIceWeight;
         return $this;
@@ -89,7 +89,7 @@ class PackageSpecialServicesRequested extends \FedExVendor\FedEx\AbstractComplex
      * @param SignatureOptionDetail $signatureOptionDetail
      * @return $this
      */
-    public function setSignatureOptionDetail(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\SignatureOptionDetail $signatureOptionDetail)
+    public function setSignatureOptionDetail(SignatureOptionDetail $signatureOptionDetail)
     {
         $this->values['SignatureOptionDetail'] = $signatureOptionDetail;
         return $this;
@@ -111,7 +111,7 @@ class PackageSpecialServicesRequested extends \FedExVendor\FedEx\AbstractComplex
      * @param PriorityAlertDetail $priorityAlertDetail
      * @return $this
      */
-    public function setPriorityAlertDetail(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\PriorityAlertDetail $priorityAlertDetail)
+    public function setPriorityAlertDetail(PriorityAlertDetail $priorityAlertDetail)
     {
         $this->values['PriorityAlertDetail'] = $priorityAlertDetail;
         return $this;
@@ -122,7 +122,7 @@ class PackageSpecialServicesRequested extends \FedExVendor\FedEx\AbstractComplex
      * @param AlcoholDetail $alcoholDetail
      * @return $this
      */
-    public function setAlcoholDetail(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\AlcoholDetail $alcoholDetail)
+    public function setAlcoholDetail(AlcoholDetail $alcoholDetail)
     {
         $this->values['AlcoholDetail'] = $alcoholDetail;
         return $this;

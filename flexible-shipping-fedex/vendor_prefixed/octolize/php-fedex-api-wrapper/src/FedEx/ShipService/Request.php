@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractRequest;
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
  */
-class Request extends \FedExVendor\FedEx\AbstractRequest
+class Request extends AbstractRequest
 {
     const PRODUCTION_URL = 'https://ws.fedex.com:443/web-services/ship';
     const TESTING_URL = 'https://wsbeta.fedex.com:443/web-services/ship';
@@ -22,13 +22,13 @@ class Request extends \FedExVendor\FedEx\AbstractRequest
      * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
      * @return ComplexType\ProcessTagReply|stdClass
      */
-    public function getProcessTagReply(\FedExVendor\FedEx\ShipService\ComplexType\ProcessTagRequest $processTagRequest, $returnStdClass = \false)
+    public function getProcessTagReply(ComplexType\ProcessTagRequest $processTagRequest, $returnStdClass = \false)
     {
         $response = $this->getSoapClient()->processTag($processTagRequest->toArray());
         if ($returnStdClass) {
             return $response;
         }
-        $processTagReply = new \FedExVendor\FedEx\ShipService\ComplexType\ProcessTagReply();
+        $processTagReply = new ComplexType\ProcessTagReply();
         $processTagReply->populateFromStdClass($response);
         return $processTagReply;
     }
@@ -39,13 +39,13 @@ class Request extends \FedExVendor\FedEx\AbstractRequest
      * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
      * @return ComplexType\ProcessShipmentReply|stdClass
      */
-    public function getProcessShipmentReply(\FedExVendor\FedEx\ShipService\ComplexType\ProcessShipmentRequest $processShipmentRequest, $returnStdClass = \false)
+    public function getProcessShipmentReply(ComplexType\ProcessShipmentRequest $processShipmentRequest, $returnStdClass = \false)
     {
         $response = $this->getSoapClient()->processShipment($processShipmentRequest->toArray());
         if ($returnStdClass) {
             return $response;
         }
-        $processShipmentReply = new \FedExVendor\FedEx\ShipService\ComplexType\ProcessShipmentReply();
+        $processShipmentReply = new ComplexType\ProcessShipmentReply();
         $processShipmentReply->populateFromStdClass($response);
         return $processShipmentReply;
     }
@@ -56,13 +56,13 @@ class Request extends \FedExVendor\FedEx\AbstractRequest
      * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
      * @return ComplexType\ShipmentReply|stdClass
      */
-    public function getDeleteTagReply(\FedExVendor\FedEx\ShipService\ComplexType\DeleteTagRequest $deleteTagRequest, $returnStdClass = \false)
+    public function getDeleteTagReply(ComplexType\DeleteTagRequest $deleteTagRequest, $returnStdClass = \false)
     {
         $response = $this->getSoapClient()->deleteTag($deleteTagRequest->toArray());
         if ($returnStdClass) {
             return $response;
         }
-        $shipmentReply = new \FedExVendor\FedEx\ShipService\ComplexType\ShipmentReply();
+        $shipmentReply = new ComplexType\ShipmentReply();
         $shipmentReply->populateFromStdClass($response);
         return $shipmentReply;
     }
@@ -73,13 +73,13 @@ class Request extends \FedExVendor\FedEx\AbstractRequest
      * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
      * @return ComplexType\ShipmentReply|stdClass
      */
-    public function getDeleteShipmentReply(\FedExVendor\FedEx\ShipService\ComplexType\DeleteShipmentRequest $deleteShipmentRequest, $returnStdClass = \false)
+    public function getDeleteShipmentReply(ComplexType\DeleteShipmentRequest $deleteShipmentRequest, $returnStdClass = \false)
     {
         $response = $this->getSoapClient()->deleteShipment($deleteShipmentRequest->toArray());
         if ($returnStdClass) {
             return $response;
         }
-        $shipmentReply = new \FedExVendor\FedEx\ShipService\ComplexType\ShipmentReply();
+        $shipmentReply = new ComplexType\ShipmentReply();
         $shipmentReply->populateFromStdClass($response);
         return $shipmentReply;
     }
@@ -90,13 +90,13 @@ class Request extends \FedExVendor\FedEx\AbstractRequest
      * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
      * @return ComplexType\ShipmentReply|stdClass
      */
-    public function getValidateShipmentReply(\FedExVendor\FedEx\ShipService\ComplexType\ValidateShipmentRequest $validateShipmentRequest, $returnStdClass = \false)
+    public function getValidateShipmentReply(ComplexType\ValidateShipmentRequest $validateShipmentRequest, $returnStdClass = \false)
     {
         $response = $this->getSoapClient()->validateShipment($validateShipmentRequest->toArray());
         if ($returnStdClass) {
             return $response;
         }
-        $shipmentReply = new \FedExVendor\FedEx\ShipService\ComplexType\ShipmentReply();
+        $shipmentReply = new ComplexType\ShipmentReply();
         $shipmentReply->populateFromStdClass($response);
         return $shipmentReply;
     }

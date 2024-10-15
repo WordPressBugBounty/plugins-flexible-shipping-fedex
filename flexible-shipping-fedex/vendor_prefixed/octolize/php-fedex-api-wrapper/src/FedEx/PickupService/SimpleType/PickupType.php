@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  */
-class PickupType extends \FedExVendor\FedEx\AbstractSimpleType
+class PickupType extends AbstractSimpleType
 {
     const _ON_CALL = 'ON_CALL';
     const _PACKAGE_RETURN_PROGRAM = 'PACKAGE_RETURN_PROGRAM';

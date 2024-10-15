@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
  */
-class DelayLevelType extends \FedExVendor\FedEx\AbstractSimpleType
+class DelayLevelType extends AbstractSimpleType
 {
     const _CITY = 'CITY';
     const _COUNTRY = 'COUNTRY';

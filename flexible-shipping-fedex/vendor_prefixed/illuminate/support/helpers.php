@@ -8,7 +8,7 @@ use FedExVendor\Illuminate\Support\Arr;
 use FedExVendor\Illuminate\Support\Env;
 use FedExVendor\Illuminate\Support\HigherOrderTapProxy;
 use FedExVendor\Illuminate\Support\Optional;
-if (!\function_exists('FedExVendor\\append_config')) {
+if (!\function_exists('FedExVendor\append_config')) {
     /**
      * Assign high numeric IDs to a config item to force appending.
      *
@@ -21,13 +21,13 @@ if (!\function_exists('FedExVendor\\append_config')) {
         foreach ($array as $key => $value) {
             if (\is_numeric($key)) {
                 $start++;
-                $array[$start] = \FedExVendor\Illuminate\Support\Arr::pull($array, $key);
+                $array[$start] = Arr::pull($array, $key);
             }
         }
         return $array;
     }
 }
-if (!\function_exists('FedExVendor\\blank')) {
+if (!\function_exists('FedExVendor\blank')) {
     /**
      * Determine if the given value is "blank".
      *
@@ -51,7 +51,7 @@ if (!\function_exists('FedExVendor\\blank')) {
         return empty($value);
     }
 }
-if (!\function_exists('FedExVendor\\class_basename')) {
+if (!\function_exists('FedExVendor\class_basename')) {
     /**
      * Get the class "basename" of the given object / class.
      *
@@ -64,7 +64,7 @@ if (!\function_exists('FedExVendor\\class_basename')) {
         return \basename(\str_replace('\\', '/', $class));
     }
 }
-if (!\function_exists('FedExVendor\\class_uses_recursive')) {
+if (!\function_exists('FedExVendor\class_uses_recursive')) {
     /**
      * Returns all traits used by a class, its parent classes and trait of their traits.
      *
@@ -78,12 +78,12 @@ if (!\function_exists('FedExVendor\\class_uses_recursive')) {
         }
         $results = [];
         foreach (\array_reverse(\class_parents($class)) + [$class => $class] as $class) {
-            $results += \FedExVendor\trait_uses_recursive($class);
+            $results += trait_uses_recursive($class);
         }
         return \array_unique($results);
     }
 }
-if (!\function_exists('FedExVendor\\e')) {
+if (!\function_exists('FedExVendor\e')) {
     /**
      * Encode HTML special characters in a string.
      *
@@ -93,16 +93,16 @@ if (!\function_exists('FedExVendor\\e')) {
      */
     function e($value, $doubleEncode = \true)
     {
-        if ($value instanceof \FedExVendor\Illuminate\Contracts\Support\DeferringDisplayableValue) {
+        if ($value instanceof DeferringDisplayableValue) {
             $value = $value->resolveDisplayableValue();
         }
-        if ($value instanceof \FedExVendor\Illuminate\Contracts\Support\Htmlable) {
+        if ($value instanceof Htmlable) {
             return $value->toHtml();
         }
         return \htmlspecialchars($value ?? '', \ENT_QUOTES, 'UTF-8', $doubleEncode);
     }
 }
-if (!\function_exists('FedExVendor\\env')) {
+if (!\function_exists('FedExVendor\env')) {
     /**
      * Gets the value of an environment variable.
      *
@@ -112,10 +112,10 @@ if (!\function_exists('FedExVendor\\env')) {
      */
     function env($key, $default = null)
     {
-        return \FedExVendor\Illuminate\Support\Env::get($key, $default);
+        return Env::get($key, $default);
     }
 }
-if (!\function_exists('FedExVendor\\filled')) {
+if (!\function_exists('FedExVendor\filled')) {
     /**
      * Determine if a value is "filled".
      *
@@ -124,10 +124,10 @@ if (!\function_exists('FedExVendor\\filled')) {
      */
     function filled($value)
     {
-        return !\FedExVendor\blank($value);
+        return !blank($value);
     }
 }
-if (!\function_exists('FedExVendor\\object_get')) {
+if (!\function_exists('FedExVendor\object_get')) {
     /**
      * Get an item from an object using "dot" notation.
      *
@@ -143,14 +143,14 @@ if (!\function_exists('FedExVendor\\object_get')) {
         }
         foreach (\explode('.', $key) as $segment) {
             if (!\is_object($object) || !isset($object->{$segment})) {
-                return \FedExVendor\value($default);
+                return value($default);
             }
             $object = $object->{$segment};
         }
         return $object;
     }
 }
-if (!\function_exists('FedExVendor\\optional')) {
+if (!\function_exists('FedExVendor\optional')) {
     /**
      * Provide access to optional objects.
      *
@@ -161,13 +161,13 @@ if (!\function_exists('FedExVendor\\optional')) {
     function optional($value = null, callable $callback = null)
     {
         if (\is_null($callback)) {
-            return new \FedExVendor\Illuminate\Support\Optional($value);
+            return new Optional($value);
         } elseif (!\is_null($value)) {
             return $callback($value);
         }
     }
 }
-if (!\function_exists('FedExVendor\\preg_replace_array')) {
+if (!\function_exists('FedExVendor\preg_replace_array')) {
     /**
      * Replace a given pattern with each value in the array in sequentially.
      *
@@ -178,14 +178,14 @@ if (!\function_exists('FedExVendor\\preg_replace_array')) {
      */
     function preg_replace_array($pattern, array $replacements, $subject)
     {
-        return \preg_replace_callback($pattern, function () use(&$replacements) {
+        return \preg_replace_callback($pattern, function () use (&$replacements) {
             foreach ($replacements as $key => $value) {
                 return \array_shift($replacements);
             }
         }, $subject);
     }
 }
-if (!\function_exists('FedExVendor\\retry')) {
+if (!\function_exists('FedExVendor\retry')) {
     /**
      * Retry an operation a given number of times.
      *
@@ -210,13 +210,13 @@ if (!\function_exists('FedExVendor\\retry')) {
                 throw $e;
             }
             if ($sleepMilliseconds) {
-                \usleep(\FedExVendor\value($sleepMilliseconds, $attempts) * 1000);
+                \usleep(value($sleepMilliseconds, $attempts) * 1000);
             }
             goto beginning;
         }
     }
 }
-if (!\function_exists('FedExVendor\\tap')) {
+if (!\function_exists('FedExVendor\tap')) {
     /**
      * Call the given Closure with the given value then return the value.
      *
@@ -227,13 +227,13 @@ if (!\function_exists('FedExVendor\\tap')) {
     function tap($value, $callback = null)
     {
         if (\is_null($callback)) {
-            return new \FedExVendor\Illuminate\Support\HigherOrderTapProxy($value);
+            return new HigherOrderTapProxy($value);
         }
         $callback($value);
         return $value;
     }
 }
-if (!\function_exists('FedExVendor\\throw_if')) {
+if (!\function_exists('FedExVendor\throw_if')) {
     /**
      * Throw the given exception if the given condition is true.
      *
@@ -255,7 +255,7 @@ if (!\function_exists('FedExVendor\\throw_if')) {
         return $condition;
     }
 }
-if (!\function_exists('FedExVendor\\throw_unless')) {
+if (!\function_exists('FedExVendor\throw_unless')) {
     /**
      * Throw the given exception unless the given condition is true.
      *
@@ -268,11 +268,11 @@ if (!\function_exists('FedExVendor\\throw_unless')) {
      */
     function throw_unless($condition, $exception = 'RuntimeException', ...$parameters)
     {
-        \FedExVendor\throw_if(!$condition, $exception, ...$parameters);
+        throw_if(!$condition, $exception, ...$parameters);
         return $condition;
     }
 }
-if (!\function_exists('FedExVendor\\trait_uses_recursive')) {
+if (!\function_exists('FedExVendor\trait_uses_recursive')) {
     /**
      * Returns all traits used by a trait and its traits.
      *
@@ -283,12 +283,12 @@ if (!\function_exists('FedExVendor\\trait_uses_recursive')) {
     {
         $traits = \class_uses($trait) ?: [];
         foreach ($traits as $trait) {
-            $traits += \FedExVendor\trait_uses_recursive($trait);
+            $traits += trait_uses_recursive($trait);
         }
         return $traits;
     }
 }
-if (!\function_exists('FedExVendor\\transform')) {
+if (!\function_exists('FedExVendor\transform')) {
     /**
      * Transform the given value if it is present.
      *
@@ -299,7 +299,7 @@ if (!\function_exists('FedExVendor\\transform')) {
      */
     function transform($value, callable $callback, $default = null)
     {
-        if (\FedExVendor\filled($value)) {
+        if (filled($value)) {
             return $callback($value);
         }
         if (\is_callable($default)) {
@@ -308,7 +308,7 @@ if (!\function_exists('FedExVendor\\transform')) {
         return $default;
     }
 }
-if (!\function_exists('FedExVendor\\windows_os')) {
+if (!\function_exists('FedExVendor\windows_os')) {
     /**
      * Determine whether the current environment is Windows based.
      *
@@ -319,7 +319,7 @@ if (!\function_exists('FedExVendor\\windows_os')) {
         return \PHP_OS_FAMILY === 'Windows';
     }
 }
-if (!\function_exists('FedExVendor\\with')) {
+if (!\function_exists('FedExVendor\with')) {
     /**
      * Return the given value, optionally passed through the given callback.
      *

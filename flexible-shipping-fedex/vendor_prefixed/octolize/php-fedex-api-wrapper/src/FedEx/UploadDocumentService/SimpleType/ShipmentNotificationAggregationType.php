@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Upload Document Service
  */
-class ShipmentNotificationAggregationType extends \FedExVendor\FedEx\AbstractSimpleType
+class ShipmentNotificationAggregationType extends AbstractSimpleType
 {
     const _PER_PACKAGE = 'PER_PACKAGE';
     const _PER_SHIPMENT = 'PER_SHIPMENT';

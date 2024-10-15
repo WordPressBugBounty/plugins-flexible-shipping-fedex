@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property \FedEx\CloseService\SimpleType\EMailNotificationRecipientType|string $RecipientType
  * @property string $Address
  */
-class ShippingDocumentEMailRecipient extends \FedExVendor\FedEx\AbstractComplexType
+class ShippingDocumentEMailRecipient extends AbstractComplexType
 {
     /**
      * Name of this complex type

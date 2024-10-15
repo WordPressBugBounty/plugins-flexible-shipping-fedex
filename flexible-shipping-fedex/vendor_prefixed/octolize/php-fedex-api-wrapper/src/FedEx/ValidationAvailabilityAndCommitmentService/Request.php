@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractRequest;
  * @package     PHP FedEx API wrapper
  * @subpackage  Validation Availability And Commitment Service Service
  */
-class Request extends \FedExVendor\FedEx\AbstractRequest
+class Request extends AbstractRequest
 {
     const PRODUCTION_URL = 'https://ws.fedex.com:443/web-services/vacs';
     const TESTING_URL = 'https://wsbeta.fedex.com:443/web-services/vacs';
@@ -22,13 +22,13 @@ class Request extends \FedExVendor\FedEx\AbstractRequest
      * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
      * @return ComplexType\GetAllServicesAndPackagingReply|stdClass
      */
-    public function getGetAllServicesAndPackagingReply(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\GetAllServicesAndPackagingRequest $getAllServicesAndPackagingRequest, $returnStdClass = \false)
+    public function getGetAllServicesAndPackagingReply(ComplexType\GetAllServicesAndPackagingRequest $getAllServicesAndPackagingRequest, $returnStdClass = \false)
     {
         $response = $this->getSoapClient()->getAllServicesAndPackaging($getAllServicesAndPackagingRequest->toArray());
         if ($returnStdClass) {
             return $response;
         }
-        $getAllServicesAndPackagingReply = new \FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\GetAllServicesAndPackagingReply();
+        $getAllServicesAndPackagingReply = new ComplexType\GetAllServicesAndPackagingReply();
         $getAllServicesAndPackagingReply->populateFromStdClass($response);
         return $getAllServicesAndPackagingReply;
     }
@@ -39,13 +39,13 @@ class Request extends \FedExVendor\FedEx\AbstractRequest
      * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
      * @return ComplexType\GetAllSpecialServicesReply|stdClass
      */
-    public function getGetAllSpecialServicesReply(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\GetAllSpecialServicesRequest $getAllSpecialServicesRequest, $returnStdClass = \false)
+    public function getGetAllSpecialServicesReply(ComplexType\GetAllSpecialServicesRequest $getAllSpecialServicesRequest, $returnStdClass = \false)
     {
         $response = $this->getSoapClient()->getAllSpecialServices($getAllSpecialServicesRequest->toArray());
         if ($returnStdClass) {
             return $response;
         }
-        $getAllSpecialServicesReply = new \FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\GetAllSpecialServicesReply();
+        $getAllSpecialServicesReply = new ComplexType\GetAllSpecialServicesReply();
         $getAllSpecialServicesReply->populateFromStdClass($response);
         return $getAllSpecialServicesReply;
     }
@@ -56,13 +56,13 @@ class Request extends \FedExVendor\FedEx\AbstractRequest
      * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
      * @return ComplexType\ServiceAvailabilityReply|stdClass
      */
-    public function getServiceAvailabilityReply(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\ServiceAvailabilityRequest $serviceAvailabilityRequest, $returnStdClass = \false)
+    public function getServiceAvailabilityReply(ComplexType\ServiceAvailabilityRequest $serviceAvailabilityRequest, $returnStdClass = \false)
     {
         $response = $this->getSoapClient()->serviceAvailability($serviceAvailabilityRequest->toArray());
         if ($returnStdClass) {
             return $response;
         }
-        $serviceAvailabilityReply = new \FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\ServiceAvailabilityReply();
+        $serviceAvailabilityReply = new ComplexType\ServiceAvailabilityReply();
         $serviceAvailabilityReply->populateFromStdClass($response);
         return $serviceAvailabilityReply;
     }

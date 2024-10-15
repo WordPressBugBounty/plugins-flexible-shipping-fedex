@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  In Flight Shipment Service
  */
-class TrackingIdType extends \FedExVendor\FedEx\AbstractSimpleType
+class TrackingIdType extends AbstractSimpleType
 {
     const _EXPRESS = 'EXPRESS';
     const _FEDEX = 'FEDEX';

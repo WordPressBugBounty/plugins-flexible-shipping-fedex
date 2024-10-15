@@ -17,7 +17,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property Contact $SubmittedBy
  * @property FreightPickupLineItem[] $LineItems
  */
-class FreightPickupDetail extends \FedExVendor\FedEx\AbstractComplexType
+class FreightPickupDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -31,7 +31,7 @@ class FreightPickupDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param Contact $approvedBy
      * @return $this
      */
-    public function setApprovedBy(\FedExVendor\FedEx\PickupService\ComplexType\Contact $approvedBy)
+    public function setApprovedBy(Contact $approvedBy)
     {
         $this->values['ApprovedBy'] = $approvedBy;
         return $this;
@@ -64,7 +64,7 @@ class FreightPickupDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param Party $alternateBilling
      * @return $this
      */
-    public function setAlternateBilling(\FedExVendor\FedEx\PickupService\ComplexType\Party $alternateBilling)
+    public function setAlternateBilling(Party $alternateBilling)
     {
         $this->values['AlternateBilling'] = $alternateBilling;
         return $this;
@@ -75,7 +75,7 @@ class FreightPickupDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param Contact $submittedBy
      * @return $this
      */
-    public function setSubmittedBy(\FedExVendor\FedEx\PickupService\ComplexType\Contact $submittedBy)
+    public function setSubmittedBy(Contact $submittedBy)
     {
         $this->values['SubmittedBy'] = $submittedBy;
         return $this;

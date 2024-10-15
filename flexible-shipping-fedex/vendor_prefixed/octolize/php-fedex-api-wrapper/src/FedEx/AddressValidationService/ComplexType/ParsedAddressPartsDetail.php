@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property ParsedStreetLineDetail $ParsedStreetLine
  * @property ParsedPostalCodeDetail $ParsedPostalCode
  */
-class ParsedAddressPartsDetail extends \FedExVendor\FedEx\AbstractComplexType
+class ParsedAddressPartsDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -27,7 +27,7 @@ class ParsedAddressPartsDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param ParsedStreetLineDetail $parsedStreetLine
      * @return $this
      */
-    public function setParsedStreetLine(\FedExVendor\FedEx\AddressValidationService\ComplexType\ParsedStreetLineDetail $parsedStreetLine)
+    public function setParsedStreetLine(ParsedStreetLineDetail $parsedStreetLine)
     {
         $this->values['ParsedStreetLine'] = $parsedStreetLine;
         return $this;
@@ -38,7 +38,7 @@ class ParsedAddressPartsDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param ParsedPostalCodeDetail $parsedPostalCode
      * @return $this
      */
-    public function setParsedPostalCode(\FedExVendor\FedEx\AddressValidationService\ComplexType\ParsedPostalCodeDetail $parsedPostalCode)
+    public function setParsedPostalCode(ParsedPostalCodeDetail $parsedPostalCode)
     {
         $this->values['ParsedPostalCode'] = $parsedPostalCode;
         return $this;

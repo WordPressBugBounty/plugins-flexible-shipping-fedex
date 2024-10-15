@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  OpenShip Service
  */
-class EdtTaxType extends \FedExVendor\FedEx\AbstractSimpleType
+class EdtTaxType extends AbstractSimpleType
 {
     const _ADDITIONAL_TAXES = 'ADDITIONAL_TAXES';
     const _CONSULAR_INVOICE_FEE = 'CONSULAR_INVOICE_FEE';

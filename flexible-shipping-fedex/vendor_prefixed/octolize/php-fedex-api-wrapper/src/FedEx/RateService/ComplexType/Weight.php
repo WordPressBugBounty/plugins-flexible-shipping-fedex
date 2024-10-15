@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property \FedEx\RateService\SimpleType\WeightUnits|string $Units
  * @property float $Value
  */
-class Weight extends \FedExVendor\FedEx\AbstractComplexType
+class Weight extends AbstractComplexType
 {
     /**
      * Name of this complex type

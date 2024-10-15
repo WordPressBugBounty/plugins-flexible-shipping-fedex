@@ -9,7 +9,7 @@ use FedExVendor\Illuminate\Support\Arr;
 use FedExVendor\Illuminate\Support\Collection;
 use FedExVendor\Illuminate\Support\Traits\ReflectsClosures;
 use FedExVendor\PHPUnit\Framework\Assert as PHPUnit;
-class BusFake implements \FedExVendor\Illuminate\Contracts\Bus\QueueingDispatcher
+class BusFake implements QueueingDispatcher
 {
     use ReflectsClosures;
     /**
@@ -55,10 +55,10 @@ class BusFake implements \FedExVendor\Illuminate\Contracts\Bus\QueueingDispatche
      * @param  array|string  $jobsToFake
      * @return void
      */
-    public function __construct(\FedExVendor\Illuminate\Contracts\Bus\QueueingDispatcher $dispatcher, $jobsToFake = [])
+    public function __construct(QueueingDispatcher $dispatcher, $jobsToFake = [])
     {
         $this->dispatcher = $dispatcher;
-        $this->jobsToFake = \FedExVendor\Illuminate\Support\Arr::wrap($jobsToFake);
+        $this->jobsToFake = Arr::wrap($jobsToFake);
     }
     /**
      * Assert if a job was dispatched based on a truth-test callback.
@@ -69,13 +69,13 @@ class BusFake implements \FedExVendor\Illuminate\Contracts\Bus\QueueingDispatche
      */
     public function assertDispatched($command, $callback = null)
     {
-        if ($command instanceof \Closure) {
+        if ($command instanceof Closure) {
             [$command, $callback] = [$this->firstClosureParameterType($command), $command];
         }
-        if (\is_numeric($callback)) {
+        if (is_numeric($callback)) {
             return $this->assertDispatchedTimes($command, $callback);
         }
-        \FedExVendor\PHPUnit\Framework\Assert::assertTrue($this->dispatched($command, $callback)->count() > 0 || $this->dispatchedAfterResponse($command, $callback)->count() > 0 || $this->dispatchedSync($command, $callback)->count() > 0, "The expected [{$command}] job was not dispatched.");
+        PHPUnit::assertTrue($this->dispatched($command, $callback)->count() > 0 || $this->dispatchedAfterResponse($command, $callback)->count() > 0 || $this->dispatchedSync($command, $callback)->count() > 0, "The expected [{$command}] job was not dispatched.");
     }
     /**
      * Assert if a job was pushed a number of times.
@@ -87,7 +87,7 @@ class BusFake implements \FedExVendor\Illuminate\Contracts\Bus\QueueingDispatche
     public function assertDispatchedTimes($command, $times = 1)
     {
         $count = $this->dispatched($command)->count() + $this->dispatchedAfterResponse($command)->count() + $this->dispatchedSync($command)->count();
-        \FedExVendor\PHPUnit\Framework\Assert::assertSame($times, $count, "The expected [{$command}] job was pushed {$count} times instead of {$times} times.");
+        PHPUnit::assertSame($times, $count, "The expected [{$command}] job was pushed {$count} times instead of {$times} times.");
     }
     /**
      * Determine if a job was dispatched based on a truth-test callback.
@@ -98,10 +98,10 @@ class BusFake implements \FedExVendor\Illuminate\Contracts\Bus\QueueingDispatche
      */
     public function assertNotDispatched($command, $callback = null)
     {
-        if ($command instanceof \Closure) {
+        if ($command instanceof Closure) {
             [$command, $callback] = [$this->firstClosureParameterType($command), $command];
         }
-        \FedExVendor\PHPUnit\Framework\Assert::assertTrue($this->dispatched($command, $callback)->count() === 0 && $this->dispatchedAfterResponse($command, $callback)->count() === 0 && $this->dispatchedSync($command, $callback)->count() === 0, "The unexpected [{$command}] job was dispatched.");
+        PHPUnit::assertTrue($this->dispatched($command, $callback)->count() === 0 && $this->dispatchedAfterResponse($command, $callback)->count() === 0 && $this->dispatchedSync($command, $callback)->count() === 0, "The unexpected [{$command}] job was dispatched.");
     }
     /**
      * Assert that no jobs were dispatched.
@@ -110,7 +110,7 @@ class BusFake implements \FedExVendor\Illuminate\Contracts\Bus\QueueingDispatche
      */
     public function assertNothingDispatched()
     {
-        \FedExVendor\PHPUnit\Framework\Assert::assertEmpty($this->commands, 'Jobs were dispatched unexpectedly.');
+        PHPUnit::assertEmpty($this->commands, 'Jobs were dispatched unexpectedly.');
     }
     /**
      * Assert if a job was explicitly dispatched synchronously based on a truth-test callback.
@@ -121,13 +121,13 @@ class BusFake implements \FedExVendor\Illuminate\Contracts\Bus\QueueingDispatche
      */
     public function assertDispatchedSync($command, $callback = null)
     {
-        if ($command instanceof \Closure) {
+        if ($command instanceof Closure) {
             [$command, $callback] = [$this->firstClosureParameterType($command), $command];
         }
-        if (\is_numeric($callback)) {
+        if (is_numeric($callback)) {
             return $this->assertDispatchedSyncTimes($command, $callback);
         }
-        \FedExVendor\PHPUnit\Framework\Assert::assertTrue($this->dispatchedSync($command, $callback)->count() > 0, "The expected [{$command}] job was not dispatched synchronously.");
+        PHPUnit::assertTrue($this->dispatchedSync($command, $callback)->count() > 0, "The expected [{$command}] job was not dispatched synchronously.");
     }
     /**
      * Assert if a job was pushed synchronously a number of times.
@@ -139,7 +139,7 @@ class BusFake implements \FedExVendor\Illuminate\Contracts\Bus\QueueingDispatche
     public function assertDispatchedSyncTimes($command, $times = 1)
     {
         $count = $this->dispatchedSync($command)->count();
-        \FedExVendor\PHPUnit\Framework\Assert::assertSame($times, $count, "The expected [{$command}] job was synchronously pushed {$count} times instead of {$times} times.");
+        PHPUnit::assertSame($times, $count, "The expected [{$command}] job was synchronously pushed {$count} times instead of {$times} times.");
     }
     /**
      * Determine if a job was dispatched based on a truth-test callback.
@@ -150,10 +150,10 @@ class BusFake implements \FedExVendor\Illuminate\Contracts\Bus\QueueingDispatche
      */
     public function assertNotDispatchedSync($command, $callback = null)
     {
-        if ($command instanceof \Closure) {
+        if ($command instanceof Closure) {
             [$command, $callback] = [$this->firstClosureParameterType($command), $command];
         }
-        \FedExVendor\PHPUnit\Framework\Assert::assertCount(0, $this->dispatchedSync($command, $callback), "The unexpected [{$command}] job was dispatched synchronously.");
+        PHPUnit::assertCount(0, $this->dispatchedSync($command, $callback), "The unexpected [{$command}] job was dispatched synchronously.");
     }
     /**
      * Assert if a job was dispatched after the response was sent based on a truth-test callback.
@@ -164,13 +164,13 @@ class BusFake implements \FedExVendor\Illuminate\Contracts\Bus\QueueingDispatche
      */
     public function assertDispatchedAfterResponse($command, $callback = null)
     {
-        if ($command instanceof \Closure) {
+        if ($command instanceof Closure) {
             [$command, $callback] = [$this->firstClosureParameterType($command), $command];
         }
-        if (\is_numeric($callback)) {
+        if (is_numeric($callback)) {
             return $this->assertDispatchedAfterResponseTimes($command, $callback);
         }
-        \FedExVendor\PHPUnit\Framework\Assert::assertTrue($this->dispatchedAfterResponse($command, $callback)->count() > 0, "The expected [{$command}] job was not dispatched after sending the response.");
+        PHPUnit::assertTrue($this->dispatchedAfterResponse($command, $callback)->count() > 0, "The expected [{$command}] job was not dispatched after sending the response.");
     }
     /**
      * Assert if a job was pushed after the response was sent a number of times.
@@ -182,7 +182,7 @@ class BusFake implements \FedExVendor\Illuminate\Contracts\Bus\QueueingDispatche
     public function assertDispatchedAfterResponseTimes($command, $times = 1)
     {
         $count = $this->dispatchedAfterResponse($command)->count();
-        \FedExVendor\PHPUnit\Framework\Assert::assertSame($times, $count, "The expected [{$command}] job was pushed {$count} times instead of {$times} times.");
+        PHPUnit::assertSame($times, $count, "The expected [{$command}] job was pushed {$count} times instead of {$times} times.");
     }
     /**
      * Determine if a job was dispatched based on a truth-test callback.
@@ -193,10 +193,10 @@ class BusFake implements \FedExVendor\Illuminate\Contracts\Bus\QueueingDispatche
      */
     public function assertNotDispatchedAfterResponse($command, $callback = null)
     {
-        if ($command instanceof \Closure) {
+        if ($command instanceof Closure) {
             [$command, $callback] = [$this->firstClosureParameterType($command), $command];
         }
-        \FedExVendor\PHPUnit\Framework\Assert::assertCount(0, $this->dispatchedAfterResponse($command, $callback), "The unexpected [{$command}] job was dispatched after sending the response.");
+        PHPUnit::assertCount(0, $this->dispatchedAfterResponse($command, $callback), "The unexpected [{$command}] job was dispatched after sending the response.");
     }
     /**
      * Assert if a chain of jobs was dispatched.
@@ -207,19 +207,19 @@ class BusFake implements \FedExVendor\Illuminate\Contracts\Bus\QueueingDispatche
     public function assertChained(array $expectedChain)
     {
         $command = $expectedChain[0];
-        $expectedChain = \array_slice($expectedChain, 1);
+        $expectedChain = array_slice($expectedChain, 1);
         $callback = null;
-        if ($command instanceof \Closure) {
+        if ($command instanceof Closure) {
             [$command, $callback] = [$this->firstClosureParameterType($command), $command];
-        } elseif (!\is_string($command)) {
+        } elseif (!is_string($command)) {
             $instance = $command;
-            $command = \get_class($instance);
-            $callback = function ($job) use($instance) {
-                return \serialize($this->resetChainPropertiesToDefaults($job)) === \serialize($instance);
+            $command = get_class($instance);
+            $callback = function ($job) use ($instance) {
+                return serialize($this->resetChainPropertiesToDefaults($job)) === serialize($instance);
             };
         }
-        \FedExVendor\PHPUnit\Framework\Assert::assertTrue($this->dispatched($command, $callback)->isNotEmpty(), "The expected [{$command}] job was not dispatched.");
-        \FedExVendor\PHPUnit\Framework\Assert::assertTrue(collect($expectedChain)->isNotEmpty(), 'The expected chain can not be empty.');
+        PHPUnit::assertTrue($this->dispatched($command, $callback)->isNotEmpty(), "The expected [{$command}] job was not dispatched.");
+        PHPUnit::assertTrue(collect($expectedChain)->isNotEmpty(), 'The expected chain can not be empty.');
         $this->isChainOfObjects($expectedChain) ? $this->assertDispatchedWithChainOfObjects($command, $expectedChain, $callback) : $this->assertDispatchedWithChainOfClasses($command, $expectedChain, $callback);
     }
     /**
@@ -246,10 +246,10 @@ class BusFake implements \FedExVendor\Illuminate\Contracts\Bus\QueueingDispatche
      */
     public function assertDispatchedWithoutChain($command, $callback = null)
     {
-        if ($command instanceof \Closure) {
+        if ($command instanceof Closure) {
             [$command, $callback] = [$this->firstClosureParameterType($command), $command];
         }
-        \FedExVendor\PHPUnit\Framework\Assert::assertTrue($this->dispatched($command, $callback)->isNotEmpty(), "The expected [{$command}] job was not dispatched.");
+        PHPUnit::assertTrue($this->dispatched($command, $callback)->isNotEmpty(), "The expected [{$command}] job was not dispatched.");
         $this->assertDispatchedWithChainOfClasses($command, [], $callback);
     }
     /**
@@ -263,9 +263,9 @@ class BusFake implements \FedExVendor\Illuminate\Contracts\Bus\QueueingDispatche
     protected function assertDispatchedWithChainOfObjects($command, $expectedChain, $callback)
     {
         $chain = collect($expectedChain)->map(function ($job) {
-            return \serialize($job);
+            return serialize($job);
         })->all();
-        \FedExVendor\PHPUnit\Framework\Assert::assertTrue($this->dispatched($command, $callback)->filter(function ($job) use($chain) {
+        PHPUnit::assertTrue($this->dispatched($command, $callback)->filter(function ($job) use ($chain) {
             return $job->chained == $chain;
         })->isNotEmpty(), 'The expected chain was not dispatched.');
     }
@@ -281,12 +281,12 @@ class BusFake implements \FedExVendor\Illuminate\Contracts\Bus\QueueingDispatche
     {
         $matching = $this->dispatched($command, $callback)->map->chained->map(function ($chain) {
             return collect($chain)->map(function ($job) {
-                return \get_class(\unserialize($job));
+                return get_class(unserialize($job));
             });
-        })->filter(function ($chain) use($expectedChain) {
+        })->filter(function ($chain) use ($expectedChain) {
             return $chain->all() === $expectedChain;
         });
-        \FedExVendor\PHPUnit\Framework\Assert::assertTrue($matching->isNotEmpty(), 'The expected chain was not dispatched.');
+        PHPUnit::assertTrue($matching->isNotEmpty(), 'The expected chain was not dispatched.');
     }
     /**
      * Determine if the given chain is entirely composed of objects.
@@ -297,7 +297,7 @@ class BusFake implements \FedExVendor\Illuminate\Contracts\Bus\QueueingDispatche
     protected function isChainOfObjects($chain)
     {
         return !collect($chain)->contains(function ($job) {
-            return !\is_object($job);
+            return !is_object($job);
         });
     }
     /**
@@ -308,7 +308,7 @@ class BusFake implements \FedExVendor\Illuminate\Contracts\Bus\QueueingDispatche
      */
     public function assertBatched(callable $callback)
     {
-        \FedExVendor\PHPUnit\Framework\Assert::assertTrue($this->batched($callback)->count() > 0, 'The expected batch was not dispatched.');
+        PHPUnit::assertTrue($this->batched($callback)->count() > 0, 'The expected batch was not dispatched.');
     }
     /**
      * Assert the number of batches that have been dispatched.
@@ -318,7 +318,7 @@ class BusFake implements \FedExVendor\Illuminate\Contracts\Bus\QueueingDispatche
      */
     public function assertBatchCount($count)
     {
-        \FedExVendor\PHPUnit\Framework\Assert::assertCount($count, $this->batches);
+        PHPUnit::assertCount($count, $this->batches);
     }
     /**
      * Get all of the jobs matching a truth-test callback.
@@ -335,7 +335,7 @@ class BusFake implements \FedExVendor\Illuminate\Contracts\Bus\QueueingDispatche
         $callback = $callback ?: function () {
             return \true;
         };
-        return collect($this->commands[$command])->filter(function ($command) use($callback) {
+        return collect($this->commands[$command])->filter(function ($command) use ($callback) {
             return $callback($command);
         });
     }
@@ -354,7 +354,7 @@ class BusFake implements \FedExVendor\Illuminate\Contracts\Bus\QueueingDispatche
         $callback = $callback ?: function () {
             return \true;
         };
-        return collect($this->commandsSync[$command])->filter(function ($command) use($callback) {
+        return collect($this->commandsSync[$command])->filter(function ($command) use ($callback) {
             return $callback($command);
         });
     }
@@ -373,7 +373,7 @@ class BusFake implements \FedExVendor\Illuminate\Contracts\Bus\QueueingDispatche
         $callback = $callback ?: function () {
             return \true;
         };
-        return collect($this->commandsAfterResponse[$command])->filter(function ($command) use($callback) {
+        return collect($this->commandsAfterResponse[$command])->filter(function ($command) use ($callback) {
             return $callback($command);
         });
     }
@@ -388,7 +388,7 @@ class BusFake implements \FedExVendor\Illuminate\Contracts\Bus\QueueingDispatche
         if (empty($this->batches)) {
             return collect();
         }
-        return collect($this->batches)->filter(function ($batch) use($callback) {
+        return collect($this->batches)->filter(function ($batch) use ($callback) {
             return $callback($batch);
         });
     }
@@ -431,7 +431,7 @@ class BusFake implements \FedExVendor\Illuminate\Contracts\Bus\QueueingDispatche
     public function dispatch($command)
     {
         if ($this->shouldFakeJob($command)) {
-            $this->commands[\get_class($command)][] = $command;
+            $this->commands[get_class($command)][] = $command;
         } else {
             return $this->dispatcher->dispatch($command);
         }
@@ -448,7 +448,7 @@ class BusFake implements \FedExVendor\Illuminate\Contracts\Bus\QueueingDispatche
     public function dispatchSync($command, $handler = null)
     {
         if ($this->shouldFakeJob($command)) {
-            $this->commandsSync[\get_class($command)][] = $command;
+            $this->commandsSync[get_class($command)][] = $command;
         } else {
             return $this->dispatcher->dispatchSync($command, $handler);
         }
@@ -463,7 +463,7 @@ class BusFake implements \FedExVendor\Illuminate\Contracts\Bus\QueueingDispatche
     public function dispatchNow($command, $handler = null)
     {
         if ($this->shouldFakeJob($command)) {
-            $this->commands[\get_class($command)][] = $command;
+            $this->commands[get_class($command)][] = $command;
         } else {
             return $this->dispatcher->dispatchNow($command, $handler);
         }
@@ -477,7 +477,7 @@ class BusFake implements \FedExVendor\Illuminate\Contracts\Bus\QueueingDispatche
     public function dispatchToQueue($command)
     {
         if ($this->shouldFakeJob($command)) {
-            $this->commands[\get_class($command)][] = $command;
+            $this->commands[get_class($command)][] = $command;
         } else {
             return $this->dispatcher->dispatchToQueue($command);
         }
@@ -491,7 +491,7 @@ class BusFake implements \FedExVendor\Illuminate\Contracts\Bus\QueueingDispatche
     public function dispatchAfterResponse($command)
     {
         if ($this->shouldFakeJob($command)) {
-            $this->commandsAfterResponse[\get_class($command)][] = $command;
+            $this->commandsAfterResponse[get_class($command)][] = $command;
         } else {
             return $this->dispatcher->dispatch($command);
         }
@@ -504,8 +504,8 @@ class BusFake implements \FedExVendor\Illuminate\Contracts\Bus\QueueingDispatche
      */
     public function chain($jobs)
     {
-        $jobs = \FedExVendor\Illuminate\Support\Collection::wrap($jobs);
-        return new \FedExVendor\Illuminate\Support\Testing\Fakes\PendingChainFake($this, $jobs->shift(), $jobs->toArray());
+        $jobs = Collection::wrap($jobs);
+        return new PendingChainFake($this, $jobs->shift(), $jobs->toArray());
     }
     /**
      * Attempt to find the batch with the given ID.
@@ -525,7 +525,7 @@ class BusFake implements \FedExVendor\Illuminate\Contracts\Bus\QueueingDispatche
      */
     public function batch($jobs)
     {
-        return new \FedExVendor\Illuminate\Support\Testing\Fakes\PendingBatchFake($this, \FedExVendor\Illuminate\Support\Collection::wrap($jobs));
+        return new PendingBatchFake($this, Collection::wrap($jobs));
     }
     /**
      * Record the fake pending batch dispatch.
@@ -533,10 +533,10 @@ class BusFake implements \FedExVendor\Illuminate\Contracts\Bus\QueueingDispatche
      * @param  \Illuminate\Bus\PendingBatch  $pendingBatch
      * @return \Illuminate\Bus\Batch
      */
-    public function recordPendingBatch(\FedExVendor\Illuminate\Bus\PendingBatch $pendingBatch)
+    public function recordPendingBatch(PendingBatch $pendingBatch)
     {
         $this->batches[] = $pendingBatch;
-        return (new \FedExVendor\Illuminate\Support\Testing\Fakes\BatchRepositoryFake())->store($pendingBatch);
+        return (new BatchRepositoryFake())->store($pendingBatch);
     }
     /**
      * Determine if a command should be faked or actually dispatched.
@@ -549,8 +549,8 @@ class BusFake implements \FedExVendor\Illuminate\Contracts\Bus\QueueingDispatche
         if (empty($this->jobsToFake)) {
             return \true;
         }
-        return collect($this->jobsToFake)->filter(function ($job) use($command) {
-            return $job instanceof \Closure ? $job($command) : $job === \get_class($command);
+        return collect($this->jobsToFake)->filter(function ($job) use ($command) {
+            return $job instanceof Closure ? $job($command) : $job === get_class($command);
         })->isNotEmpty();
     }
     /**

@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property int $SequenceNumber
  * @property string $Contents
  */
-class ArtifactPart extends \FedExVendor\FedEx\AbstractComplexType
+class ArtifactPart extends AbstractComplexType
 {
     /**
      * Name of this complex type

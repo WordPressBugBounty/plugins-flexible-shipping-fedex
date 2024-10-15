@@ -10,7 +10,7 @@ use FedExVendor\Psr\Http\Message\UriInterface;
 /**
  * PSR-7 request implementation.
  */
-class Request implements \FedExVendor\Psr\Http\Message\RequestInterface
+class Request implements RequestInterface
 {
     use MessageTrait;
     /** @var string */
@@ -29,10 +29,10 @@ class Request implements \FedExVendor\Psr\Http\Message\RequestInterface
     public function __construct(string $method, $uri, array $headers = [], $body = null, string $version = '1.1')
     {
         $this->assertMethod($method);
-        if (!$uri instanceof \FedExVendor\Psr\Http\Message\UriInterface) {
-            $uri = new \FedExVendor\GuzzleHttp\Psr7\Uri($uri);
+        if (!$uri instanceof UriInterface) {
+            $uri = new Uri($uri);
         }
-        $this->method = \strtoupper($method);
+        $this->method = strtoupper($method);
         $this->uri = $uri;
         $this->setHeaders($headers);
         $this->protocol = $version;
@@ -40,10 +40,10 @@ class Request implements \FedExVendor\Psr\Http\Message\RequestInterface
             $this->updateHostFromUri();
         }
         if ($body !== '' && $body !== null) {
-            $this->stream = \FedExVendor\GuzzleHttp\Psr7\Utils::streamFor($body);
+            $this->stream = Utils::streamFor($body);
         }
     }
-    public function getRequestTarget() : string
+    public function getRequestTarget(): string
     {
         if ($this->requestTarget !== null) {
             return $this->requestTarget;
@@ -57,31 +57,31 @@ class Request implements \FedExVendor\Psr\Http\Message\RequestInterface
         }
         return $target;
     }
-    public function withRequestTarget($requestTarget) : \FedExVendor\Psr\Http\Message\RequestInterface
+    public function withRequestTarget($requestTarget): RequestInterface
     {
-        if (\preg_match('#\\s#', $requestTarget)) {
-            throw new \InvalidArgumentException('Invalid request target provided; cannot contain whitespace');
+        if (preg_match('#\s#', $requestTarget)) {
+            throw new InvalidArgumentException('Invalid request target provided; cannot contain whitespace');
         }
         $new = clone $this;
         $new->requestTarget = $requestTarget;
         return $new;
     }
-    public function getMethod() : string
+    public function getMethod(): string
     {
         return $this->method;
     }
-    public function withMethod($method) : \FedExVendor\Psr\Http\Message\RequestInterface
+    public function withMethod($method): RequestInterface
     {
         $this->assertMethod($method);
         $new = clone $this;
-        $new->method = \strtoupper($method);
+        $new->method = strtoupper($method);
         return $new;
     }
-    public function getUri() : \FedExVendor\Psr\Http\Message\UriInterface
+    public function getUri(): UriInterface
     {
         return $this->uri;
     }
-    public function withUri(\FedExVendor\Psr\Http\Message\UriInterface $uri, $preserveHost = \false) : \FedExVendor\Psr\Http\Message\RequestInterface
+    public function withUri(UriInterface $uri, $preserveHost = \false): RequestInterface
     {
         if ($uri === $this->uri) {
             return $this;
@@ -93,7 +93,7 @@ class Request implements \FedExVendor\Psr\Http\Message\RequestInterface
         }
         return $new;
     }
-    private function updateHostFromUri() : void
+    private function updateHostFromUri(): void
     {
         $host = $this->uri->getHost();
         if ($host == '') {
@@ -115,10 +115,10 @@ class Request implements \FedExVendor\Psr\Http\Message\RequestInterface
     /**
      * @param mixed $method
      */
-    private function assertMethod($method) : void
+    private function assertMethod($method): void
     {
-        if (!\is_string($method) || $method === '') {
-            throw new \InvalidArgumentException('Method must be a non-empty string.');
+        if (!is_string($method) || $method === '') {
+            throw new InvalidArgumentException('Method must be a non-empty string.');
         }
     }
 }

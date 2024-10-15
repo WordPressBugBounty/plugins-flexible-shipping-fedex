@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Upload Document Service
  */
-class ServiceCategoryType extends \FedExVendor\FedEx\AbstractSimpleType
+class ServiceCategoryType extends AbstractSimpleType
 {
     const _EXPRESS_FREIGHT = 'EXPRESS_FREIGHT';
     const _EXPRESS_PARCEL = 'EXPRESS_PARCEL';

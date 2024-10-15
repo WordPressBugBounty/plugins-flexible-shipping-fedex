@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  */
-class UpdatePickupRequestProcessingOptionType extends \FedExVendor\FedEx\AbstractSimpleType
+class UpdatePickupRequestProcessingOptionType extends AbstractSimpleType
 {
     const _OVERRIDE_CUTOFF = 'OVERRIDE_CUTOFF';
     const _REACTIVATE_CANCELLED_PICKUP = 'REACTIVATE_CANCELLED_PICKUP';

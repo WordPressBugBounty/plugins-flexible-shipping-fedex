@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property Payment $Payment
  * @property string $LtlScacCode
  */
-class TransborderDistributionLtlDetail extends \FedExVendor\FedEx\AbstractComplexType
+class TransborderDistributionLtlDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -27,7 +27,7 @@ class TransborderDistributionLtlDetail extends \FedExVendor\FedEx\AbstractComple
      * @param Payment $payment
      * @return $this
      */
-    public function setPayment(\FedExVendor\FedEx\UploadDocumentService\ComplexType\Payment $payment)
+    public function setPayment(Payment $payment)
     {
         $this->values['Payment'] = $payment;
         return $this;

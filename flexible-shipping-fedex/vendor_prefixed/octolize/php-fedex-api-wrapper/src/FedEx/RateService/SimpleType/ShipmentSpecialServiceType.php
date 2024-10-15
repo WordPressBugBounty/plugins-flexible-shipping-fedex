@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
  */
-class ShipmentSpecialServiceType extends \FedExVendor\FedEx\AbstractSimpleType
+class ShipmentSpecialServiceType extends AbstractSimpleType
 {
     const _BROKER_SELECT_OPTION = 'BROKER_SELECT_OPTION';
     const _CALL_BEFORE_DELIVERY = 'CALL_BEFORE_DELIVERY';

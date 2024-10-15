@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property \FedEx\OpenShipService\SimpleType\AssociatedTrackingIdType|string $Type
  * @property TrackingId $TrackingId
  */
-class AssociatedTrackingId extends \FedExVendor\FedEx\AbstractComplexType
+class AssociatedTrackingId extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -38,7 +38,7 @@ class AssociatedTrackingId extends \FedExVendor\FedEx\AbstractComplexType
      * @param TrackingId $trackingId
      * @return $this
      */
-    public function setTrackingId(\FedExVendor\FedEx\OpenShipService\ComplexType\TrackingId $trackingId)
+    public function setTrackingId(TrackingId $trackingId)
     {
         $this->values['TrackingId'] = $trackingId;
         return $this;

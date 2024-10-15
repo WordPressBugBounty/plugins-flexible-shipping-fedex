@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property Party $Recipient
  * @property TrackingId $TrackingId
  */
-class DeliveryOnInvoiceAcceptanceDetail extends \FedExVendor\FedEx\AbstractComplexType
+class DeliveryOnInvoiceAcceptanceDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -27,7 +27,7 @@ class DeliveryOnInvoiceAcceptanceDetail extends \FedExVendor\FedEx\AbstractCompl
      * @param Party $recipient
      * @return $this
      */
-    public function setRecipient(\FedExVendor\FedEx\UploadDocumentService\ComplexType\Party $recipient)
+    public function setRecipient(Party $recipient)
     {
         $this->values['Recipient'] = $recipient;
         return $this;
@@ -38,7 +38,7 @@ class DeliveryOnInvoiceAcceptanceDetail extends \FedExVendor\FedEx\AbstractCompl
      * @param TrackingId $trackingId
      * @return $this
      */
-    public function setTrackingId(\FedExVendor\FedEx\UploadDocumentService\ComplexType\TrackingId $trackingId)
+    public function setTrackingId(TrackingId $trackingId)
     {
         $this->values['TrackingId'] = $trackingId;
         return $this;

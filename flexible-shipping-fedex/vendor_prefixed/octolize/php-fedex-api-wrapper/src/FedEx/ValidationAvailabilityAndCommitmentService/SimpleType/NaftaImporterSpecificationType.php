@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Validation Availability And Commitment Service Service
  */
-class NaftaImporterSpecificationType extends \FedExVendor\FedEx\AbstractSimpleType
+class NaftaImporterSpecificationType extends AbstractSimpleType
 {
     const _IMPORTER_OF_RECORD = 'IMPORTER_OF_RECORD';
     const _RECIPIENT = 'RECIPIENT';

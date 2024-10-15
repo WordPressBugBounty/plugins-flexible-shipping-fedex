@@ -32,7 +32,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property LocationHours[] $HoursForEffectiveDate
  * @property CarrierDetail[] $CarrierDetails
  */
-class LocationDetail extends \FedExVendor\FedEx\AbstractComplexType
+class LocationDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -68,7 +68,7 @@ class LocationDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param LocationContactAndAddress $locationContactAndAddress
      * @return $this
      */
-    public function setLocationContactAndAddress(\FedExVendor\FedEx\LocationsService\ComplexType\LocationContactAndAddress $locationContactAndAddress)
+    public function setLocationContactAndAddress(LocationContactAndAddress $locationContactAndAddress)
     {
         $this->values['LocationContactAndAddress'] = $locationContactAndAddress;
         return $this;
@@ -123,7 +123,7 @@ class LocationDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param LocationFieldsForInternalFedexUseDetail $internalFieldsDetail
      * @return $this
      */
-    public function setInternalFieldsDetail(\FedExVendor\FedEx\LocationsService\ComplexType\LocationFieldsForInternalFedexUseDetail $internalFieldsDetail)
+    public function setInternalFieldsDetail(LocationFieldsForInternalFedexUseDetail $internalFieldsDetail)
     {
         $this->values['InternalFieldsDetail'] = $internalFieldsDetail;
         return $this;
@@ -156,7 +156,7 @@ class LocationDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param LocationPackageLimitsDetail $packageMaximumLimits
      * @return $this
      */
-    public function setPackageMaximumLimits(\FedExVendor\FedEx\LocationsService\ComplexType\LocationPackageLimitsDetail $packageMaximumLimits)
+    public function setPackageMaximumLimits(LocationPackageLimitsDetail $packageMaximumLimits)
     {
         $this->values['PackageMaximumLimits'] = $packageMaximumLimits;
         return $this;
@@ -167,7 +167,7 @@ class LocationDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param ClearanceLocationDetail $clearanceLocationDetail
      * @return $this
      */
-    public function setClearanceLocationDetail(\FedExVendor\FedEx\LocationsService\ComplexType\ClearanceLocationDetail $clearanceLocationDetail)
+    public function setClearanceLocationDetail(ClearanceLocationDetail $clearanceLocationDetail)
     {
         $this->values['ClearanceLocationDetail'] = $clearanceLocationDetail;
         return $this;

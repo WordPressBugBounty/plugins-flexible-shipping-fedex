@@ -17,7 +17,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property CreditCardTransactionDetail $CreditCardTransactionDetail
  * @property Money $Amount
  */
-class Payment extends \FedExVendor\FedEx\AbstractComplexType
+class Payment extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -42,7 +42,7 @@ class Payment extends \FedExVendor\FedEx\AbstractComplexType
      * @param Payor $payor
      * @return $this
      */
-    public function setPayor(\FedExVendor\FedEx\ShipService\ComplexType\Payor $payor)
+    public function setPayor(Payor $payor)
     {
         $this->values['Payor'] = $payor;
         return $this;
@@ -53,7 +53,7 @@ class Payment extends \FedExVendor\FedEx\AbstractComplexType
      * @param EPaymentDetail $ePaymentDetail
      * @return $this
      */
-    public function setEPaymentDetail(\FedExVendor\FedEx\ShipService\ComplexType\EPaymentDetail $ePaymentDetail)
+    public function setEPaymentDetail(EPaymentDetail $ePaymentDetail)
     {
         $this->values['EPaymentDetail'] = $ePaymentDetail;
         return $this;
@@ -64,7 +64,7 @@ class Payment extends \FedExVendor\FedEx\AbstractComplexType
      * @param CreditCard $creditCard
      * @return $this
      */
-    public function setCreditCard(\FedExVendor\FedEx\ShipService\ComplexType\CreditCard $creditCard)
+    public function setCreditCard(CreditCard $creditCard)
     {
         $this->values['CreditCard'] = $creditCard;
         return $this;
@@ -75,7 +75,7 @@ class Payment extends \FedExVendor\FedEx\AbstractComplexType
      * @param CreditCardTransactionDetail $creditCardTransactionDetail
      * @return $this
      */
-    public function setCreditCardTransactionDetail(\FedExVendor\FedEx\ShipService\ComplexType\CreditCardTransactionDetail $creditCardTransactionDetail)
+    public function setCreditCardTransactionDetail(CreditCardTransactionDetail $creditCardTransactionDetail)
     {
         $this->values['CreditCardTransactionDetail'] = $creditCardTransactionDetail;
         return $this;
@@ -86,7 +86,7 @@ class Payment extends \FedExVendor\FedEx\AbstractComplexType
      * @param Money $amount
      * @return $this
      */
-    public function setAmount(\FedExVendor\FedEx\ShipService\ComplexType\Money $amount)
+    public function setAmount(Money $amount)
     {
         $this->values['Amount'] = $amount;
         return $this;

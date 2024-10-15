@@ -24,7 +24,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property Money $MaximumInsuredValue
  * @property \FedEx\ValidationAvailabilityAndCommitmentService\SimpleType\CompletedEtdType|string $DerivedEtdType
  */
-class ProductDetail extends \FedExVendor\FedEx\AbstractComplexType
+class ProductDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -38,7 +38,7 @@ class ProductDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param ServiceDescription $serviceDescription
      * @return $this
      */
-    public function setServiceDescription(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\ServiceDescription $serviceDescription)
+    public function setServiceDescription(ServiceDescription $serviceDescription)
     {
         $this->values['ServiceDescription'] = $serviceDescription;
         return $this;
@@ -49,7 +49,7 @@ class ProductDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param PackagingDescription $packagingDescription
      * @return $this
      */
-    public function setPackagingDescription(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\PackagingDescription $packagingDescription)
+    public function setPackagingDescription(PackagingDescription $packagingDescription)
     {
         $this->values['PackagingDescription'] = $packagingDescription;
         return $this;
@@ -93,7 +93,7 @@ class ProductDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param ServiceSubOptionDetail $appliedSubOptions
      * @return $this
      */
-    public function setAppliedSubOptions(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\ServiceSubOptionDetail $appliedSubOptions)
+    public function setAppliedSubOptions(ServiceSubOptionDetail $appliedSubOptions)
     {
         $this->values['AppliedSubOptions'] = $appliedSubOptions;
         return $this;
@@ -104,7 +104,7 @@ class ProductDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param SignatureOptionDetail $derivedShipmentSignatureOption
      * @return $this
      */
-    public function setDerivedShipmentSignatureOption(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\SignatureOptionDetail $derivedShipmentSignatureOption)
+    public function setDerivedShipmentSignatureOption(SignatureOptionDetail $derivedShipmentSignatureOption)
     {
         $this->values['DerivedShipmentSignatureOption'] = $derivedShipmentSignatureOption;
         return $this;
@@ -159,7 +159,7 @@ class ProductDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param Money $maximumInsuredValue
      * @return $this
      */
-    public function setMaximumInsuredValue(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\Money $maximumInsuredValue)
+    public function setMaximumInsuredValue(Money $maximumInsuredValue)
     {
         $this->values['MaximumInsuredValue'] = $maximumInsuredValue;
         return $this;

@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Locations Service
  */
-class LocationAttributesType extends \FedExVendor\FedEx\AbstractSimpleType
+class LocationAttributesType extends AbstractSimpleType
 {
     const _ACCEPTS_CASH = 'ACCEPTS_CASH';
     const _ALREADY_OPEN = 'ALREADY_OPEN';

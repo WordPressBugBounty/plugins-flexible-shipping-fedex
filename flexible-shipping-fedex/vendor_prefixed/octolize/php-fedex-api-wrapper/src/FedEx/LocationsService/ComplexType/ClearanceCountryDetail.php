@@ -14,7 +14,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string[] $ServicesSupported
  * @property string[] $SpecialServicesSupported
  */
-class ClearanceCountryDetail extends \FedExVendor\FedEx\AbstractComplexType
+class ClearanceCountryDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

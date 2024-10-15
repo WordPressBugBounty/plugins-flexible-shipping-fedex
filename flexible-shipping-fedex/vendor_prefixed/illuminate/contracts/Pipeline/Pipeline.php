@@ -32,5 +32,5 @@ interface Pipeline
      * @param  \Closure  $destination
      * @return mixed
      */
-    public function then(\Closure $destination);
+    public function then(Closure $destination);
 }

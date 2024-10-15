@@ -4,7 +4,7 @@ namespace FedExVendor\Illuminate\Contracts\Container;
 
 use Closure;
 use FedExVendor\Psr\Container\ContainerInterface;
-interface Container extends \FedExVendor\Psr\Container\ContainerInterface
+interface Container extends ContainerInterface
 {
     /**
      * Determine if the given abstract type has been bound.
@@ -81,7 +81,7 @@ interface Container extends \FedExVendor\Psr\Container\ContainerInterface
      *
      * @throws \InvalidArgumentException
      */
-    public function extend($abstract, \Closure $closure);
+    public function extend($abstract, Closure $closure);
     /**
      * Register an existing instance as shared in the container.
      *
@@ -152,7 +152,7 @@ interface Container extends \FedExVendor\Psr\Container\ContainerInterface
      * @param  \Closure|null  $callback
      * @return void
      */
-    public function resolving($abstract, \Closure $callback = null);
+    public function resolving($abstract, Closure $callback = null);
     /**
      * Register a new after resolving callback.
      *
@@ -160,5 +160,5 @@ interface Container extends \FedExVendor\Psr\Container\ContainerInterface
      * @param  \Closure|null  $callback
      * @return void
      */
-    public function afterResolving($abstract, \Closure $callback = null);
+    public function afterResolving($abstract, Closure $callback = null);
 }

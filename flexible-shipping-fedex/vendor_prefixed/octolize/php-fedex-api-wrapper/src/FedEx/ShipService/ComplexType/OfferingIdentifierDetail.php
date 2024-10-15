@@ -14,7 +14,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $Type
  * @property string $Code
  */
-class OfferingIdentifierDetail extends \FedExVendor\FedEx\AbstractComplexType
+class OfferingIdentifierDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  OpenShip Service
  */
-class BatteryMaterialType extends \FedExVendor\FedEx\AbstractSimpleType
+class BatteryMaterialType extends AbstractSimpleType
 {
     const _LITHIUM_ION = 'LITHIUM_ION';
     const _LITHIUM_METAL = 'LITHIUM_METAL';

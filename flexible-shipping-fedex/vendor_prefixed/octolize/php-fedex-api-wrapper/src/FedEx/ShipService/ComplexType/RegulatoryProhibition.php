@@ -19,7 +19,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property Message $Advisory
  * @property RegulatoryWaiver $Waiver
  */
-class RegulatoryProhibition extends \FedExVendor\FedEx\AbstractComplexType
+class RegulatoryProhibition extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -99,7 +99,7 @@ class RegulatoryProhibition extends \FedExVendor\FedEx\AbstractComplexType
      * @param Message $advisory
      * @return $this
      */
-    public function setAdvisory(\FedExVendor\FedEx\ShipService\ComplexType\Message $advisory)
+    public function setAdvisory(Message $advisory)
     {
         $this->values['Advisory'] = $advisory;
         return $this;
@@ -110,7 +110,7 @@ class RegulatoryProhibition extends \FedExVendor\FedEx\AbstractComplexType
      * @param RegulatoryWaiver $waiver
      * @return $this
      */
-    public function setWaiver(\FedExVendor\FedEx\ShipService\ComplexType\RegulatoryWaiver $waiver)
+    public function setWaiver(RegulatoryWaiver $waiver)
     {
         $this->values['Waiver'] = $waiver;
         return $this;

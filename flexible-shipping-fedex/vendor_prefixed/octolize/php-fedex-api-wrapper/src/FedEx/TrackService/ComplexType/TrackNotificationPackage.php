@@ -17,7 +17,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property Address $Destination
  * @property TrackNotificationRecipientDetail[] $RecipientDetails
  */
-class TrackNotificationPackage extends \FedExVendor\FedEx\AbstractComplexType
+class TrackNotificationPackage extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -75,7 +75,7 @@ class TrackNotificationPackage extends \FedExVendor\FedEx\AbstractComplexType
      * @param Address $destination
      * @return $this
      */
-    public function setDestination(\FedExVendor\FedEx\TrackService\ComplexType\Address $destination)
+    public function setDestination(Address $destination)
     {
         $this->values['Destination'] = $destination;
         return $this;

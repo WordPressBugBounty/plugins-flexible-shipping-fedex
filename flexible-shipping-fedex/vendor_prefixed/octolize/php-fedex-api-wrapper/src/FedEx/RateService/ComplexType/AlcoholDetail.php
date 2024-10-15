@@ -12,7 +12,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  *
  * @property \FedEx\RateService\SimpleType\AlcoholRecipientType|string $RecipientType
  */
-class AlcoholDetail extends \FedExVendor\FedEx\AbstractComplexType
+class AlcoholDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

@@ -17,7 +17,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property boolean $ProvideInstructions
  * @property Localization $Localization
  */
-class CloseDocumentFormat extends \FedExVendor\FedEx\AbstractComplexType
+class CloseDocumentFormat extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -42,7 +42,7 @@ class CloseDocumentFormat extends \FedExVendor\FedEx\AbstractComplexType
      * @param LinearMeasure $topOfPageOffset
      * @return $this
      */
-    public function setTopOfPageOffset(\FedExVendor\FedEx\CloseService\ComplexType\LinearMeasure $topOfPageOffset)
+    public function setTopOfPageOffset(LinearMeasure $topOfPageOffset)
     {
         $this->values['TopOfPageOffset'] = $topOfPageOffset;
         return $this;
@@ -86,7 +86,7 @@ class CloseDocumentFormat extends \FedExVendor\FedEx\AbstractComplexType
      * @param Localization $localization
      * @return $this
      */
-    public function setLocalization(\FedExVendor\FedEx\CloseService\ComplexType\Localization $localization)
+    public function setLocalization(Localization $localization)
     {
         $this->values['Localization'] = $localization;
         return $this;

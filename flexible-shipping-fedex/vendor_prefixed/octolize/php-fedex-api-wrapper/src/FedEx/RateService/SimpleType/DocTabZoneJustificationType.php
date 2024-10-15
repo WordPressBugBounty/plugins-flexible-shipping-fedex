@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
  */
-class DocTabZoneJustificationType extends \FedExVendor\FedEx\AbstractSimpleType
+class DocTabZoneJustificationType extends AbstractSimpleType
 {
     const _LEFT = 'LEFT';
     const _RIGHT = 'RIGHT';

@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property int $PersonDays
  * @property int $PersonHours
  */
-class NonBusinessTimeDetail extends \FedExVendor\FedEx\AbstractComplexType
+class NonBusinessTimeDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

@@ -17,7 +17,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $OriginalRequestTime
  * @property AppointmentDetail $RequestedAppointmentTime
  */
-class TrackSpecialInstruction extends \FedExVendor\FedEx\AbstractComplexType
+class TrackSpecialInstruction extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -53,7 +53,7 @@ class TrackSpecialInstruction extends \FedExVendor\FedEx\AbstractComplexType
      * @param SpecialInstructionStatusDetail $statusDetail
      * @return $this
      */
-    public function setStatusDetail(\FedExVendor\FedEx\TrackService\ComplexType\SpecialInstructionStatusDetail $statusDetail)
+    public function setStatusDetail(SpecialInstructionStatusDetail $statusDetail)
     {
         $this->values['StatusDetail'] = $statusDetail;
         return $this;
@@ -86,7 +86,7 @@ class TrackSpecialInstruction extends \FedExVendor\FedEx\AbstractComplexType
      * @param AppointmentDetail $requestedAppointmentTime
      * @return $this
      */
-    public function setRequestedAppointmentTime(\FedExVendor\FedEx\TrackService\ComplexType\AppointmentDetail $requestedAppointmentTime)
+    public function setRequestedAppointmentTime(AppointmentDetail $requestedAppointmentTime)
     {
         $this->values['RequestedAppointmentTime'] = $requestedAppointmentTime;
         return $this;

@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $Id
  * @property string $AuthenticationDate
  */
-class DirectDebitMandateDetail extends \FedExVendor\FedEx\AbstractComplexType
+class DirectDebitMandateDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
  */
-class FreightBaseChargeCalculationType extends \FedExVendor\FedEx\AbstractSimpleType
+class FreightBaseChargeCalculationType extends AbstractSimpleType
 {
     const _LINE_ITEMS = 'LINE_ITEMS';
     const _UNIT_PRICING = 'UNIT_PRICING';

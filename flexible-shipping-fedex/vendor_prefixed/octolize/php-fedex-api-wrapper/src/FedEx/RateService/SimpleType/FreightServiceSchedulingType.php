@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
  */
-class FreightServiceSchedulingType extends \FedExVendor\FedEx\AbstractSimpleType
+class FreightServiceSchedulingType extends AbstractSimpleType
 {
     const _LIMITED = 'LIMITED';
     const _STANDARD = 'STANDARD';

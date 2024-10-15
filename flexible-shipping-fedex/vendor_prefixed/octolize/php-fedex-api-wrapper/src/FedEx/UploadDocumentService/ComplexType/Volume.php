@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property \FedEx\UploadDocumentService\SimpleType\VolumeUnits|string $Units
  * @property float $Value
  */
-class Volume extends \FedExVendor\FedEx\AbstractComplexType
+class Volume extends AbstractComplexType
 {
     /**
      * Name of this complex type

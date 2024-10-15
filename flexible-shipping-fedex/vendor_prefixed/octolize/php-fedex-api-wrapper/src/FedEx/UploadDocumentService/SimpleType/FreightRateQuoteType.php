@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Upload Document Service
  */
-class FreightRateQuoteType extends \FedExVendor\FedEx\AbstractSimpleType
+class FreightRateQuoteType extends AbstractSimpleType
 {
     const _AUTOMATED = 'AUTOMATED';
     const _MANUAL = 'MANUAL';

@@ -30,7 +30,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $HazardousMaterialsOfferor
  * @property FreightShipmentLineItem[] $LineItems
  */
-class FreightShipmentDetail extends \FedExVendor\FedEx\AbstractComplexType
+class FreightShipmentDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -55,7 +55,7 @@ class FreightShipmentDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param ContactAndAddress $fedExFreightBillingContactAndAddress
      * @return $this
      */
-    public function setFedExFreightBillingContactAndAddress(\FedExVendor\FedEx\UploadDocumentService\ComplexType\ContactAndAddress $fedExFreightBillingContactAndAddress)
+    public function setFedExFreightBillingContactAndAddress(ContactAndAddress $fedExFreightBillingContactAndAddress)
     {
         $this->values['FedExFreightBillingContactAndAddress'] = $fedExFreightBillingContactAndAddress;
         return $this;
@@ -66,7 +66,7 @@ class FreightShipmentDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param Party $alternateBilling
      * @return $this
      */
-    public function setAlternateBilling(\FedExVendor\FedEx\UploadDocumentService\ComplexType\Party $alternateBilling)
+    public function setAlternateBilling(Party $alternateBilling)
     {
         $this->values['AlternateBilling'] = $alternateBilling;
         return $this;
@@ -110,7 +110,7 @@ class FreightShipmentDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param Money $declaredValuePerUnit
      * @return $this
      */
-    public function setDeclaredValuePerUnit(\FedExVendor\FedEx\UploadDocumentService\ComplexType\Money $declaredValuePerUnit)
+    public function setDeclaredValuePerUnit(Money $declaredValuePerUnit)
     {
         $this->values['DeclaredValuePerUnit'] = $declaredValuePerUnit;
         return $this;
@@ -132,7 +132,7 @@ class FreightShipmentDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param LiabilityCoverageDetail $liabilityCoverageDetail
      * @return $this
      */
-    public function setLiabilityCoverageDetail(\FedExVendor\FedEx\UploadDocumentService\ComplexType\LiabilityCoverageDetail $liabilityCoverageDetail)
+    public function setLiabilityCoverageDetail(LiabilityCoverageDetail $liabilityCoverageDetail)
     {
         $this->values['LiabilityCoverageDetail'] = $liabilityCoverageDetail;
         return $this;
@@ -176,7 +176,7 @@ class FreightShipmentDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param Weight $palletWeight
      * @return $this
      */
-    public function setPalletWeight(\FedExVendor\FedEx\UploadDocumentService\ComplexType\Weight $palletWeight)
+    public function setPalletWeight(Weight $palletWeight)
     {
         $this->values['PalletWeight'] = $palletWeight;
         return $this;
@@ -187,7 +187,7 @@ class FreightShipmentDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param Dimensions $shipmentDimensions
      * @return $this
      */
-    public function setShipmentDimensions(\FedExVendor\FedEx\UploadDocumentService\ComplexType\Dimensions $shipmentDimensions)
+    public function setShipmentDimensions(Dimensions $shipmentDimensions)
     {
         $this->values['ShipmentDimensions'] = $shipmentDimensions;
         return $this;

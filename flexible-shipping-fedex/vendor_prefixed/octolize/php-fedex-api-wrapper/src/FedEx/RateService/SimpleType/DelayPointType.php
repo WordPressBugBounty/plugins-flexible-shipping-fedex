@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
  */
-class DelayPointType extends \FedExVendor\FedEx\AbstractSimpleType
+class DelayPointType extends AbstractSimpleType
 {
     const _BROKER = 'BROKER';
     const _DESTINATION = 'DESTINATION';

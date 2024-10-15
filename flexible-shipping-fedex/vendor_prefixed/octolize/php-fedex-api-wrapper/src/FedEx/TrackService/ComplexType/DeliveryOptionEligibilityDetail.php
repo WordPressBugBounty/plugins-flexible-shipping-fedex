@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property \FedEx\TrackService\SimpleType\DeliveryOptionType|string $Option
  * @property \FedEx\TrackService\SimpleType\EligibilityType|string $Eligibility
  */
-class DeliveryOptionEligibilityDetail extends \FedExVendor\FedEx\AbstractComplexType
+class DeliveryOptionEligibilityDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

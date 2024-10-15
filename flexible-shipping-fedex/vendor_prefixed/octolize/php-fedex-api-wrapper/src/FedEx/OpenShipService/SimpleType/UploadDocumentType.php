@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  OpenShip Service
  */
-class UploadDocumentType extends \FedExVendor\FedEx\AbstractSimpleType
+class UploadDocumentType extends AbstractSimpleType
 {
     const _CERTIFICATE_OF_ORIGIN = 'CERTIFICATE_OF_ORIGIN';
     const _COMMERCIAL_INVOICE = 'COMMERCIAL_INVOICE';

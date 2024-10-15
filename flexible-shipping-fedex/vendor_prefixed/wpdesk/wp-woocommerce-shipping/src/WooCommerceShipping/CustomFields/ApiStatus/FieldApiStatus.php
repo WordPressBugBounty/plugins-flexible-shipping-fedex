@@ -14,7 +14,7 @@ use FedExVendor\WPDesk\WooCommerceShipping\CustomFields\CustomField;
  *
  * @package WPDesk\CustomFields
  */
-class FieldApiStatus implements \FedExVendor\WPDesk\WooCommerceShipping\CustomFields\CustomField
+class FieldApiStatus implements CustomField
 {
     const SECURITY_NONCE = 'security_nonce';
     const SHIPPING_SERVICE_ID = 'shipping_service_id';
@@ -85,10 +85,10 @@ class FieldApiStatus implements \FedExVendor\WPDesk\WooCommerceShipping\CustomFi
         $css = $params['css'];
         $security_nonce = $this->security_nonce;
         $shipping_service_id = $this->shipping_service_id;
-        $ajax_url = \admin_url('admin-ajax.php');
-        \ob_start();
+        $ajax_url = admin_url('admin-ajax.php');
+        ob_start();
         include __DIR__ . '/views/api-status.php';
-        return \ob_get_clean();
+        return ob_get_clean();
     }
     /**
      * Field can render some data after all fields was successfully rendered.

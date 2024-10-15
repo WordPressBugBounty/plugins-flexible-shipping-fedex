@@ -12,7 +12,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  *
  * @property int $SmallQuantityExceptionPackageCount
  */
-class CompletedHazardousSummaryDetail extends \FedExVendor\FedEx\AbstractComplexType
+class CompletedHazardousSummaryDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

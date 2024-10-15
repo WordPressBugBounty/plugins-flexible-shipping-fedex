@@ -29,7 +29,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property \FedEx\PickupService\SimpleType\CountryRelationshipType|string $CountryRelationship
  * @property \FedEx\PickupService\SimpleType\PickupType|string $PickupType
  */
-class PickupHistoryDetailReply extends \FedExVendor\FedEx\AbstractComplexType
+class PickupHistoryDetailReply extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -65,7 +65,7 @@ class PickupHistoryDetailReply extends \FedExVendor\FedEx\AbstractComplexType
      * @param TransactionDetail $transactionDetail
      * @return $this
      */
-    public function setTransactionDetail(\FedExVendor\FedEx\PickupService\ComplexType\TransactionDetail $transactionDetail)
+    public function setTransactionDetail(TransactionDetail $transactionDetail)
     {
         $this->values['TransactionDetail'] = $transactionDetail;
         return $this;
@@ -76,7 +76,7 @@ class PickupHistoryDetailReply extends \FedExVendor\FedEx\AbstractComplexType
      * @param VersionId $version
      * @return $this
      */
-    public function setVersion(\FedExVendor\FedEx\PickupService\ComplexType\VersionId $version)
+    public function setVersion(VersionId $version)
     {
         $this->values['Version'] = $version;
         return $this;
@@ -98,7 +98,7 @@ class PickupHistoryDetailReply extends \FedExVendor\FedEx\AbstractComplexType
      * @param PickupOriginDetail $originDetail
      * @return $this
      */
-    public function setOriginDetail(\FedExVendor\FedEx\PickupService\ComplexType\PickupOriginDetail $originDetail)
+    public function setOriginDetail(PickupOriginDetail $originDetail)
     {
         $this->values['OriginDetail'] = $originDetail;
         return $this;
@@ -109,7 +109,7 @@ class PickupHistoryDetailReply extends \FedExVendor\FedEx\AbstractComplexType
      * @param ExpressFreightPickupDetail $expressFreightDetail
      * @return $this
      */
-    public function setExpressFreightDetail(\FedExVendor\FedEx\PickupService\ComplexType\ExpressFreightPickupDetail $expressFreightDetail)
+    public function setExpressFreightDetail(ExpressFreightPickupDetail $expressFreightDetail)
     {
         $this->values['ExpressFreightDetail'] = $expressFreightDetail;
         return $this;
@@ -131,7 +131,7 @@ class PickupHistoryDetailReply extends \FedExVendor\FedEx\AbstractComplexType
      * @param Weight $totalWeight
      * @return $this
      */
-    public function setTotalWeight(\FedExVendor\FedEx\PickupService\ComplexType\Weight $totalWeight)
+    public function setTotalWeight(Weight $totalWeight)
     {
         $this->values['TotalWeight'] = $totalWeight;
         return $this;
@@ -186,7 +186,7 @@ class PickupHistoryDetailReply extends \FedExVendor\FedEx\AbstractComplexType
      * @param PickupHistoryEvent $latestEvent
      * @return $this
      */
-    public function setLatestEvent(\FedExVendor\FedEx\PickupService\ComplexType\PickupHistoryEvent $latestEvent)
+    public function setLatestEvent(PickupHistoryEvent $latestEvent)
     {
         $this->values['LatestEvent'] = $latestEvent;
         return $this;
@@ -197,7 +197,7 @@ class PickupHistoryDetailReply extends \FedExVendor\FedEx\AbstractComplexType
      * @param PickupTagDetail $tagDetail
      * @return $this
      */
-    public function setTagDetail(\FedExVendor\FedEx\PickupService\ComplexType\PickupTagDetail $tagDetail)
+    public function setTagDetail(PickupTagDetail $tagDetail)
     {
         $this->values['TagDetail'] = $tagDetail;
         return $this;
@@ -208,7 +208,7 @@ class PickupHistoryDetailReply extends \FedExVendor\FedEx\AbstractComplexType
      * @param FreightPickupDetail $freightPickupDetail
      * @return $this
      */
-    public function setFreightPickupDetail(\FedExVendor\FedEx\PickupService\ComplexType\FreightPickupDetail $freightPickupDetail)
+    public function setFreightPickupDetail(FreightPickupDetail $freightPickupDetail)
     {
         $this->values['FreightPickupDetail'] = $freightPickupDetail;
         return $this;

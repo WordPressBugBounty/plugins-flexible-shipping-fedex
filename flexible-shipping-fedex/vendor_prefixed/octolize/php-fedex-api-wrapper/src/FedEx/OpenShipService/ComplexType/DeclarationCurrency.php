@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property \FedEx\OpenShipService\SimpleType\DeclarationValueType|string $Value
  * @property string $Currency
  */
-class DeclarationCurrency extends \FedExVendor\FedEx\AbstractComplexType
+class DeclarationCurrency extends AbstractComplexType
 {
     /**
      * Name of this complex type

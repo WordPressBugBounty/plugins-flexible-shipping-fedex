@@ -18,7 +18,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $ReadyTimestamp
  * @property string $CompanyCloseTime
  */
-class CourierDispatchOriginDetail extends \FedExVendor\FedEx\AbstractComplexType
+class CourierDispatchOriginDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -43,7 +43,7 @@ class CourierDispatchOriginDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param ContactAndAddress $pickupLocation
      * @return $this
      */
-    public function setPickupLocation(\FedExVendor\FedEx\CourierDispatchService\ComplexType\ContactAndAddress $pickupLocation)
+    public function setPickupLocation(ContactAndAddress $pickupLocation)
     {
         $this->values['PickupLocation'] = $pickupLocation;
         return $this;

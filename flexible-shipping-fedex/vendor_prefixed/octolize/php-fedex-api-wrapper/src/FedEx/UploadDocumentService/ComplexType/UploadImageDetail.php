@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property \FedEx\UploadDocumentService\SimpleType\ImageId|string $Id
  * @property string $Image
  */
-class UploadImageDetail extends \FedExVendor\FedEx\AbstractComplexType
+class UploadImageDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

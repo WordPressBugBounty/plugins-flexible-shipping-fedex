@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Validation Availability And Commitment Service Service
  */
-class ServiceOptionType extends \FedExVendor\FedEx\AbstractSimpleType
+class ServiceOptionType extends AbstractSimpleType
 {
     const _FEDEX_ONE_RATE = 'FEDEX_ONE_RATE';
     const _FREIGHT_GUARANTEE = 'FREIGHT_GUARANTEE';

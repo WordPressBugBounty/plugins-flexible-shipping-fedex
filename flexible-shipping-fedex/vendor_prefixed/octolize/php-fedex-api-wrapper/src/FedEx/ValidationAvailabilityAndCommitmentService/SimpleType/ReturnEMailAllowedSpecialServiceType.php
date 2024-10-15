@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Validation Availability And Commitment Service Service
  */
-class ReturnEMailAllowedSpecialServiceType extends \FedExVendor\FedEx\AbstractSimpleType
+class ReturnEMailAllowedSpecialServiceType extends AbstractSimpleType
 {
     const _SATURDAY_DELIVERY = 'SATURDAY_DELIVERY';
     const _SATURDAY_PICKUP = 'SATURDAY_PICKUP';

@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Validation Availability And Commitment Service Service
  */
-class ProfileType extends \FedExVendor\FedEx\AbstractSimpleType
+class ProfileType extends AbstractSimpleType
 {
     const _ENTERPRISE = 'ENTERPRISE';
     const _EXPRESS = 'EXPRESS';

@@ -14,7 +14,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property \FedEx\ValidationAvailabilityAndCommitmentService\SimpleType\GroundProfileAttributeType|string[] $Attributes
  * @property string $NationalAccountNumber
  */
-class GroundProfile extends \FedExVendor\FedEx\AbstractComplexType
+class GroundProfile extends AbstractComplexType
 {
     /**
      * Name of this complex type

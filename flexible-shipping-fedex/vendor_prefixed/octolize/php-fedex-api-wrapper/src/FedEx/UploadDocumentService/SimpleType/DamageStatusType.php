@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Upload Document Service
  */
-class DamageStatusType extends \FedExVendor\FedEx\AbstractSimpleType
+class DamageStatusType extends AbstractSimpleType
 {
     const _DAMAGE_KNOWN = 'DAMAGE_KNOWN';
     const _NO_KNOWN_DAMAGE = 'NO_KNOWN_DAMAGE';

@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Upload Document Service
  */
-class InspectionStatusType extends \FedExVendor\FedEx\AbstractSimpleType
+class InspectionStatusType extends AbstractSimpleType
 {
     const _CUSTOMER_REFUSED_INSPECTION = 'CUSTOMER_REFUSED_INSPECTION';
     const _INSPECTED = 'INSPECTED';

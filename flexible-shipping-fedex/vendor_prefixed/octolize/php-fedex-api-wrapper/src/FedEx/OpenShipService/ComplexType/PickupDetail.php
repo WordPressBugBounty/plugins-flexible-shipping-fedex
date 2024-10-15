@@ -16,7 +16,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property \FedEx\OpenShipService\SimpleType\PickupRequestType|string $RequestType
  * @property \FedEx\OpenShipService\SimpleType\PickupRequestSourceType|string $RequestSource
  */
-class PickupDetail extends \FedExVendor\FedEx\AbstractComplexType
+class PickupDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

@@ -14,7 +14,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property \FedEx\UploadDocumentService\SimpleType\FedExLocationType|string $HoldingLocationType
  * @property string $HoldingLocationTypeForDisplay
  */
-class CompletedHoldAtLocationDetail extends \FedExVendor\FedEx\AbstractComplexType
+class CompletedHoldAtLocationDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -28,7 +28,7 @@ class CompletedHoldAtLocationDetail extends \FedExVendor\FedEx\AbstractComplexTy
      * @param ContactAndAddress $holdingLocation
      * @return $this
      */
-    public function setHoldingLocation(\FedExVendor\FedEx\UploadDocumentService\ComplexType\ContactAndAddress $holdingLocation)
+    public function setHoldingLocation(ContactAndAddress $holdingLocation)
     {
         $this->values['HoldingLocation'] = $holdingLocation;
         return $this;

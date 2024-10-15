@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
  */
-class RadioactiveContainerClassType extends \FedExVendor\FedEx\AbstractSimpleType
+class RadioactiveContainerClassType extends AbstractSimpleType
 {
     const _EXCEPTED_PACKAGE = 'EXCEPTED_PACKAGE';
     const _INDUSTRIAL_IP1 = 'INDUSTRIAL_IP1';

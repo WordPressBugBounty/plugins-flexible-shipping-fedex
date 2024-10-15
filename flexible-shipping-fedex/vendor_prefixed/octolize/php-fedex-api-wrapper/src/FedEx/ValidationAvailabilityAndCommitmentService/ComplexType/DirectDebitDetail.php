@@ -16,7 +16,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property BankDetail $BankDetail
  * @property DirectDebitMandateDetail $Mandate
  */
-class DirectDebitDetail extends \FedExVendor\FedEx\AbstractComplexType
+class DirectDebitDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -52,7 +52,7 @@ class DirectDebitDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param BankAccountDetail $bankAccount
      * @return $this
      */
-    public function setBankAccount(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\BankAccountDetail $bankAccount)
+    public function setBankAccount(BankAccountDetail $bankAccount)
     {
         $this->values['BankAccount'] = $bankAccount;
         return $this;
@@ -63,7 +63,7 @@ class DirectDebitDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param BankDetail $bankDetail
      * @return $this
      */
-    public function setBankDetail(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\BankDetail $bankDetail)
+    public function setBankDetail(BankDetail $bankDetail)
     {
         $this->values['BankDetail'] = $bankDetail;
         return $this;
@@ -74,7 +74,7 @@ class DirectDebitDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param DirectDebitMandateDetail $mandate
      * @return $this
      */
-    public function setMandate(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\DirectDebitMandateDetail $mandate)
+    public function setMandate(DirectDebitMandateDetail $mandate)
     {
         $this->values['Mandate'] = $mandate;
         return $this;

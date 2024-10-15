@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Locations Service
  */
-class LocationSearchFilterType extends \FedExVendor\FedEx\AbstractSimpleType
+class LocationSearchFilterType extends AbstractSimpleType
 {
     const _EXCLUDE_LOCATIONS_OUTSIDE_COUNTRY = 'EXCLUDE_LOCATIONS_OUTSIDE_COUNTRY';
     const _EXCLUDE_LOCATIONS_OUTSIDE_STATE_OR_PROVINCE = 'EXCLUDE_LOCATIONS_OUTSIDE_STATE_OR_PROVINCE';

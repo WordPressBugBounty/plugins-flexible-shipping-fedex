@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Package Movement Information Service
  */
-class TrackingDocumentGroupingType extends \FedExVendor\FedEx\AbstractSimpleType
+class TrackingDocumentGroupingType extends AbstractSimpleType
 {
     const _CONSOLIDATED_BY_DOCUMENT_TYPE = 'CONSOLIDATED_BY_DOCUMENT_TYPE';
     const _INDIVIDUAL = 'INDIVIDUAL';

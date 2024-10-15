@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Package Movement Information Service
  */
-class TrackingDocumentType extends \FedExVendor\FedEx\AbstractSimpleType
+class TrackingDocumentType extends AbstractSimpleType
 {
     const _BILL_OF_LADING = 'BILL_OF_LADING';
     const _FREIGHT_BILLING_DOCUMENT = 'FREIGHT_BILLING_DOCUMENT';

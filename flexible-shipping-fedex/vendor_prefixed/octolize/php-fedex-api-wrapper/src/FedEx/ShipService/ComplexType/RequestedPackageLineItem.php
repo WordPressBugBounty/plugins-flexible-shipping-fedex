@@ -28,7 +28,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property ContentRecord[] $ContentRecords
  * @property ShipperConveyanceDetail $ConveyanceDetail
  */
-class RequestedPackageLineItem extends \FedExVendor\FedEx\AbstractComplexType
+class RequestedPackageLineItem extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -86,7 +86,7 @@ class RequestedPackageLineItem extends \FedExVendor\FedEx\AbstractComplexType
      * @param VariableHandlingChargeDetail $variableHandlingChargeDetail
      * @return $this
      */
-    public function setVariableHandlingChargeDetail(\FedExVendor\FedEx\ShipService\ComplexType\VariableHandlingChargeDetail $variableHandlingChargeDetail)
+    public function setVariableHandlingChargeDetail(VariableHandlingChargeDetail $variableHandlingChargeDetail)
     {
         $this->values['VariableHandlingChargeDetail'] = $variableHandlingChargeDetail;
         return $this;
@@ -97,7 +97,7 @@ class RequestedPackageLineItem extends \FedExVendor\FedEx\AbstractComplexType
      * @param Money $insuredValue
      * @return $this
      */
-    public function setInsuredValue(\FedExVendor\FedEx\ShipService\ComplexType\Money $insuredValue)
+    public function setInsuredValue(Money $insuredValue)
     {
         $this->values['InsuredValue'] = $insuredValue;
         return $this;
@@ -108,7 +108,7 @@ class RequestedPackageLineItem extends \FedExVendor\FedEx\AbstractComplexType
      * @param Weight $weight
      * @return $this
      */
-    public function setWeight(\FedExVendor\FedEx\ShipService\ComplexType\Weight $weight)
+    public function setWeight(Weight $weight)
     {
         $this->values['Weight'] = $weight;
         return $this;
@@ -130,7 +130,7 @@ class RequestedPackageLineItem extends \FedExVendor\FedEx\AbstractComplexType
      * @param Dimensions $dimensions
      * @return $this
      */
-    public function setDimensions(\FedExVendor\FedEx\ShipService\ComplexType\Dimensions $dimensions)
+    public function setDimensions(Dimensions $dimensions)
     {
         $this->values['Dimensions'] = $dimensions;
         return $this;
@@ -196,7 +196,7 @@ class RequestedPackageLineItem extends \FedExVendor\FedEx\AbstractComplexType
      * @param PackageSpecialServicesRequested $specialServicesRequested
      * @return $this
      */
-    public function setSpecialServicesRequested(\FedExVendor\FedEx\ShipService\ComplexType\PackageSpecialServicesRequested $specialServicesRequested)
+    public function setSpecialServicesRequested(PackageSpecialServicesRequested $specialServicesRequested)
     {
         $this->values['SpecialServicesRequested'] = $specialServicesRequested;
         return $this;
@@ -218,7 +218,7 @@ class RequestedPackageLineItem extends \FedExVendor\FedEx\AbstractComplexType
      * @param ShipperConveyanceDetail $conveyanceDetail
      * @return $this
      */
-    public function setConveyanceDetail(\FedExVendor\FedEx\ShipService\ComplexType\ShipperConveyanceDetail $conveyanceDetail)
+    public function setConveyanceDetail(ShipperConveyanceDetail $conveyanceDetail)
     {
         $this->values['ConveyanceDetail'] = $conveyanceDetail;
         return $this;

@@ -16,7 +16,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $BusinessIdentifierCode
  * @property string $SortCode
  */
-class BankAccountDetail extends \FedExVendor\FedEx\AbstractComplexType
+class BankAccountDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

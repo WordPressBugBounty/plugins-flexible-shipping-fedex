@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $SpecialService
  * @property \FedEx\UploadDocumentService\SimpleType\FreightShipmentRoleType|string $PaymentType
  */
-class FreightSpecialServicePayment extends \FedExVendor\FedEx\AbstractComplexType
+class FreightSpecialServicePayment extends AbstractComplexType
 {
     /**
      * Name of this complex type

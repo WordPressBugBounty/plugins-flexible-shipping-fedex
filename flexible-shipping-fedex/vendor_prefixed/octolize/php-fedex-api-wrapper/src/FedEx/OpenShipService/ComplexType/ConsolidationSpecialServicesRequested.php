@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property \FedEx\OpenShipService\SimpleType\ConsolidationSpecialServiceType|string[] $SpecialServiceTypes
  * @property PriorityAlertDetail $PriorityAlertDetail
  */
-class ConsolidationSpecialServicesRequested extends \FedExVendor\FedEx\AbstractComplexType
+class ConsolidationSpecialServicesRequested extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -38,7 +38,7 @@ class ConsolidationSpecialServicesRequested extends \FedExVendor\FedEx\AbstractC
      * @param PriorityAlertDetail $priorityAlertDetail
      * @return $this
      */
-    public function setPriorityAlertDetail(\FedExVendor\FedEx\OpenShipService\ComplexType\PriorityAlertDetail $priorityAlertDetail)
+    public function setPriorityAlertDetail(PriorityAlertDetail $priorityAlertDetail)
     {
         $this->values['PriorityAlertDetail'] = $priorityAlertDetail;
         return $this;

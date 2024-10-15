@@ -5,7 +5,7 @@ namespace FedExVendor\Octolize\Tracker\OptInNotice;
 /**
  * Should display $_GET parameter present.
  */
-class ShouldDisplayGetParameterPresent implements \FedExVendor\Octolize\Tracker\OptInNotice\ShouldDisplay
+class ShouldDisplayGetParameterPresent implements ShouldDisplay
 {
     /**
      * @var string

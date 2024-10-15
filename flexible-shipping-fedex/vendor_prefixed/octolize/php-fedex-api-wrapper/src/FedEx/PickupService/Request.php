@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractRequest;
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  */
-class Request extends \FedExVendor\FedEx\AbstractRequest
+class Request extends AbstractRequest
 {
     const PRODUCTION_URL = 'https://ws.fedex.com:443/web-services/pickup';
     const TESTING_URL = 'https://wsbeta.fedex.com:443/web-services/pickup';
@@ -22,13 +22,13 @@ class Request extends \FedExVendor\FedEx\AbstractRequest
      * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
      * @return ComplexType\PickupAvailabilityReply|stdClass
      */
-    public function getGetPickupAvailabilityReply(\FedExVendor\FedEx\PickupService\ComplexType\PickupAvailabilityRequest $pickupAvailabilityRequest, $returnStdClass = \false)
+    public function getGetPickupAvailabilityReply(ComplexType\PickupAvailabilityRequest $pickupAvailabilityRequest, $returnStdClass = \false)
     {
         $response = $this->getSoapClient()->getPickupAvailability($pickupAvailabilityRequest->toArray());
         if ($returnStdClass) {
             return $response;
         }
-        $pickupAvailabilityReply = new \FedExVendor\FedEx\PickupService\ComplexType\PickupAvailabilityReply();
+        $pickupAvailabilityReply = new ComplexType\PickupAvailabilityReply();
         $pickupAvailabilityReply->populateFromStdClass($response);
         return $pickupAvailabilityReply;
     }
@@ -39,13 +39,13 @@ class Request extends \FedExVendor\FedEx\AbstractRequest
      * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
      * @return ComplexType\CreatePickupReply|stdClass
      */
-    public function getCreatePickupReply(\FedExVendor\FedEx\PickupService\ComplexType\CreatePickupRequest $createPickupRequest, $returnStdClass = \false)
+    public function getCreatePickupReply(ComplexType\CreatePickupRequest $createPickupRequest, $returnStdClass = \false)
     {
         $response = $this->getSoapClient()->createPickup($createPickupRequest->toArray());
         if ($returnStdClass) {
             return $response;
         }
-        $createPickupReply = new \FedExVendor\FedEx\PickupService\ComplexType\CreatePickupReply();
+        $createPickupReply = new ComplexType\CreatePickupReply();
         $createPickupReply->populateFromStdClass($response);
         return $createPickupReply;
     }
@@ -56,13 +56,13 @@ class Request extends \FedExVendor\FedEx\AbstractRequest
      * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
      * @return ComplexType\PickupHistorySummaryReply|stdClass
      */
-    public function getPickupHistorySummaryReply(\FedExVendor\FedEx\PickupService\ComplexType\PickupHistorySummaryRequest $pickupHistorySummaryRequest, $returnStdClass = \false)
+    public function getPickupHistorySummaryReply(ComplexType\PickupHistorySummaryRequest $pickupHistorySummaryRequest, $returnStdClass = \false)
     {
         $response = $this->getSoapClient()->pickupHistorySummary($pickupHistorySummaryRequest->toArray());
         if ($returnStdClass) {
             return $response;
         }
-        $pickupHistorySummaryReply = new \FedExVendor\FedEx\PickupService\ComplexType\PickupHistorySummaryReply();
+        $pickupHistorySummaryReply = new ComplexType\PickupHistorySummaryReply();
         $pickupHistorySummaryReply->populateFromStdClass($response);
         return $pickupHistorySummaryReply;
     }
@@ -73,13 +73,13 @@ class Request extends \FedExVendor\FedEx\AbstractRequest
      * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
      * @return ComplexType\UpdatePickupReply|stdClass
      */
-    public function getUpdatePickupReply(\FedExVendor\FedEx\PickupService\ComplexType\UpdatePickupRequest $updatePickupRequest, $returnStdClass = \false)
+    public function getUpdatePickupReply(ComplexType\UpdatePickupRequest $updatePickupRequest, $returnStdClass = \false)
     {
         $response = $this->getSoapClient()->updatePickup($updatePickupRequest->toArray());
         if ($returnStdClass) {
             return $response;
         }
-        $updatePickupReply = new \FedExVendor\FedEx\PickupService\ComplexType\UpdatePickupReply();
+        $updatePickupReply = new ComplexType\UpdatePickupReply();
         $updatePickupReply->populateFromStdClass($response);
         return $updatePickupReply;
     }
@@ -90,13 +90,13 @@ class Request extends \FedExVendor\FedEx\AbstractRequest
      * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
      * @return ComplexType\CancelPickupReply|stdClass
      */
-    public function getCancelPickupReply(\FedExVendor\FedEx\PickupService\ComplexType\CancelPickupRequest $cancelPickupRequest, $returnStdClass = \false)
+    public function getCancelPickupReply(ComplexType\CancelPickupRequest $cancelPickupRequest, $returnStdClass = \false)
     {
         $response = $this->getSoapClient()->cancelPickup($cancelPickupRequest->toArray());
         if ($returnStdClass) {
             return $response;
         }
-        $cancelPickupReply = new \FedExVendor\FedEx\PickupService\ComplexType\CancelPickupReply();
+        $cancelPickupReply = new ComplexType\CancelPickupReply();
         $cancelPickupReply->populateFromStdClass($response);
         return $cancelPickupReply;
     }
@@ -107,13 +107,13 @@ class Request extends \FedExVendor\FedEx\AbstractRequest
      * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
      * @return ComplexType\PickupHistoryDetailReply|stdClass
      */
-    public function getGetPickupHistoryDetailReply(\FedExVendor\FedEx\PickupService\ComplexType\PickupHistoryDetailRequest $pickupHistoryDetailRequest, $returnStdClass = \false)
+    public function getGetPickupHistoryDetailReply(ComplexType\PickupHistoryDetailRequest $pickupHistoryDetailRequest, $returnStdClass = \false)
     {
         $response = $this->getSoapClient()->getPickupHistoryDetail($pickupHistoryDetailRequest->toArray());
         if ($returnStdClass) {
             return $response;
         }
-        $pickupHistoryDetailReply = new \FedExVendor\FedEx\PickupService\ComplexType\PickupHistoryDetailReply();
+        $pickupHistoryDetailReply = new ComplexType\PickupHistoryDetailReply();
         $pickupHistoryDetailReply->populateFromStdClass($response);
         return $pickupHistoryDetailReply;
     }

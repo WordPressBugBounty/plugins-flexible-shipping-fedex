@@ -16,7 +16,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property int $NumberOfContainers
  * @property HazardousCommodityContent[] $HazardousCommodities
  */
-class DangerousGoodsContainer extends \FedExVendor\FedEx\AbstractComplexType
+class DangerousGoodsContainer extends AbstractComplexType
 {
     /**
      * Name of this complex type

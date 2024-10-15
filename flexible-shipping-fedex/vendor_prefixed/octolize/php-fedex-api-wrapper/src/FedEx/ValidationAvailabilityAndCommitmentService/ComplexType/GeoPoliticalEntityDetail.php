@@ -12,7 +12,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  *
  * @property string $CountryCode
  */
-class GeoPoliticalEntityDetail extends \FedExVendor\FedEx\AbstractComplexType
+class GeoPoliticalEntityDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

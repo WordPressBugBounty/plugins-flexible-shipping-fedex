@@ -18,7 +18,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property \FedEx\DGDSService\SimpleType\HazardousCommodityOptionType|string[] $Options
  * @property Weight $DryIceWeight
  */
-class DangerousGoodsHandlingUnitShippingDetail extends \FedExVendor\FedEx\AbstractComplexType
+class DangerousGoodsHandlingUnitShippingDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -98,7 +98,7 @@ class DangerousGoodsHandlingUnitShippingDetail extends \FedExVendor\FedEx\Abstra
      * @param Weight $dryIceWeight
      * @return $this
      */
-    public function setDryIceWeight(\FedExVendor\FedEx\DGDSService\ComplexType\Weight $dryIceWeight)
+    public function setDryIceWeight(Weight $dryIceWeight)
     {
         $this->values['DryIceWeight'] = $dryIceWeight;
         return $this;

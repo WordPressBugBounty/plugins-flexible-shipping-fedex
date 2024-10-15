@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  OpenShip Service
  */
-class AddPackagesToOpenShipmentActionType extends \FedExVendor\FedEx\AbstractSimpleType
+class AddPackagesToOpenShipmentActionType extends AbstractSimpleType
 {
     const _STRONG_VALIDATION = 'STRONG_VALIDATION';
     const _WEAK_VALIDATION = 'WEAK_VALIDATION';

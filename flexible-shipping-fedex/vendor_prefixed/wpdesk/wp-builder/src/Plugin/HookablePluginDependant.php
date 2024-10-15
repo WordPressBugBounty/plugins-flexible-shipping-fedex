@@ -2,7 +2,7 @@
 
 namespace FedExVendor\WPDesk\PluginBuilder\Plugin;
 
-interface HookablePluginDependant extends \FedExVendor\WPDesk\PluginBuilder\Plugin\Hookable
+interface HookablePluginDependant extends Hookable
 {
     /**
      * Set Plugin.
@@ -11,7 +11,7 @@ interface HookablePluginDependant extends \FedExVendor\WPDesk\PluginBuilder\Plug
      *
      * @return null
      */
-    public function set_plugin(\FedExVendor\WPDesk\PluginBuilder\Plugin\AbstractPlugin $plugin);
+    public function set_plugin(AbstractPlugin $plugin);
     /**
      * Get plugin.
      *

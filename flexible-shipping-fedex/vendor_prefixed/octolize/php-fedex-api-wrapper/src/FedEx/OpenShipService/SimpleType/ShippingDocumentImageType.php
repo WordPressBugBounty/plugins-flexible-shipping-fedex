@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  OpenShip Service
  */
-class ShippingDocumentImageType extends \FedExVendor\FedEx\AbstractSimpleType
+class ShippingDocumentImageType extends AbstractSimpleType
 {
     const _DOC = 'DOC';
     const _EPL2 = 'EPL2';

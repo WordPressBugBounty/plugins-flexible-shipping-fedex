@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Upload Document Service
  */
-class PendingShipmentProcessingOptionType extends \FedExVendor\FedEx\AbstractSimpleType
+class PendingShipmentProcessingOptionType extends AbstractSimpleType
 {
     const _ALLOW_MODIFICATIONS = 'ALLOW_MODIFICATIONS';
 }

@@ -15,7 +15,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property EPaymentDetail $EPaymentDetail
  * @property Money $Amount
  */
-class Payment extends \FedExVendor\FedEx\AbstractComplexType
+class Payment extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -40,7 +40,7 @@ class Payment extends \FedExVendor\FedEx\AbstractComplexType
      * @param Payor $payor
      * @return $this
      */
-    public function setPayor(\FedExVendor\FedEx\PickupService\ComplexType\Payor $payor)
+    public function setPayor(Payor $payor)
     {
         $this->values['Payor'] = $payor;
         return $this;
@@ -51,7 +51,7 @@ class Payment extends \FedExVendor\FedEx\AbstractComplexType
      * @param EPaymentDetail $ePaymentDetail
      * @return $this
      */
-    public function setEPaymentDetail(\FedExVendor\FedEx\PickupService\ComplexType\EPaymentDetail $ePaymentDetail)
+    public function setEPaymentDetail(EPaymentDetail $ePaymentDetail)
     {
         $this->values['EPaymentDetail'] = $ePaymentDetail;
         return $this;
@@ -62,7 +62,7 @@ class Payment extends \FedExVendor\FedEx\AbstractComplexType
      * @param Money $amount
      * @return $this
      */
-    public function setAmount(\FedExVendor\FedEx\PickupService\ComplexType\Money $amount)
+    public function setAmount(Money $amount)
     {
         $this->values['Amount'] = $amount;
         return $this;

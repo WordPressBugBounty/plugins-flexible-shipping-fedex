@@ -12,7 +12,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  *
  * @property TrackingId[] $TrackingIds
  */
-class TrackingNumberUnit extends \FedExVendor\FedEx\AbstractComplexType
+class TrackingNumberUnit extends AbstractComplexType
 {
     /**
      * Name of this complex type

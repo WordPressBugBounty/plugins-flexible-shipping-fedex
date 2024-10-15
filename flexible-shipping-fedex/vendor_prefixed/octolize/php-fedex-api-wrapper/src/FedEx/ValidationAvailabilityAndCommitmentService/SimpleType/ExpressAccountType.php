@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Validation Availability And Commitment Service Service
  */
-class ExpressAccountType extends \FedExVendor\FedEx\AbstractSimpleType
+class ExpressAccountType extends AbstractSimpleType
 {
     const _ACTIVATION_DESK = 'ACTIVATION_DESK';
     const _AIR_CARGO = 'AIR_CARGO';

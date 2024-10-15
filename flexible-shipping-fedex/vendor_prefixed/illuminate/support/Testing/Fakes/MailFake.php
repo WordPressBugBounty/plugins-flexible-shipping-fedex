@@ -10,7 +10,7 @@ use FedExVendor\Illuminate\Contracts\Mail\MailQueue;
 use FedExVendor\Illuminate\Contracts\Queue\ShouldQueue;
 use FedExVendor\Illuminate\Support\Traits\ReflectsClosures;
 use FedExVendor\PHPUnit\Framework\Assert as PHPUnit;
-class MailFake implements \FedExVendor\Illuminate\Contracts\Mail\Factory, \FedExVendor\Illuminate\Contracts\Mail\Mailer, \FedExVendor\Illuminate\Contracts\Mail\MailQueue
+class MailFake implements Factory, Mailer, MailQueue
 {
     use ReflectsClosures;
     /**
@@ -41,14 +41,14 @@ class MailFake implements \FedExVendor\Illuminate\Contracts\Mail\Factory, \FedEx
     public function assertSent($mailable, $callback = null)
     {
         [$mailable, $callback] = $this->prepareMailableAndCallback($mailable, $callback);
-        if (\is_numeric($callback)) {
+        if (is_numeric($callback)) {
             return $this->assertSentTimes($mailable, $callback);
         }
         $message = "The expected [{$mailable}] mailable was not sent.";
-        if (\count($this->queuedMailables) > 0) {
+        if (count($this->queuedMailables) > 0) {
             $message .= ' Did you mean to use assertQueued() instead?';
         }
-        \FedExVendor\PHPUnit\Framework\Assert::assertTrue($this->sent($mailable, $callback)->count() > 0, $message);
+        PHPUnit::assertTrue($this->sent($mailable, $callback)->count() > 0, $message);
     }
     /**
      * Assert if a mailable was sent a number of times.
@@ -60,7 +60,7 @@ class MailFake implements \FedExVendor\Illuminate\Contracts\Mail\Factory, \FedEx
     protected function assertSentTimes($mailable, $times = 1)
     {
         $count = $this->sent($mailable)->count();
-        \FedExVendor\PHPUnit\Framework\Assert::assertSame($times, $count, "The expected [{$mailable}] mailable was sent {$count} times instead of {$times} times.");
+        PHPUnit::assertSame($times, $count, "The expected [{$mailable}] mailable was sent {$count} times instead of {$times} times.");
     }
     /**
      * Determine if a mailable was not sent or queued to be sent based on a truth-test callback.
@@ -84,7 +84,7 @@ class MailFake implements \FedExVendor\Illuminate\Contracts\Mail\Factory, \FedEx
     public function assertNotSent($mailable, $callback = null)
     {
         [$mailable, $callback] = $this->prepareMailableAndCallback($mailable, $callback);
-        \FedExVendor\PHPUnit\Framework\Assert::assertCount(0, $this->sent($mailable, $callback), "The unexpected [{$mailable}] mailable was sent.");
+        PHPUnit::assertCount(0, $this->sent($mailable, $callback), "The unexpected [{$mailable}] mailable was sent.");
     }
     /**
      * Assert that no mailables were sent or queued to be sent.
@@ -104,9 +104,9 @@ class MailFake implements \FedExVendor\Illuminate\Contracts\Mail\Factory, \FedEx
     public function assertNothingSent()
     {
         $mailableNames = collect($this->mailables)->map(function ($mailable) {
-            return \get_class($mailable);
+            return get_class($mailable);
         })->join(', ');
-        \FedExVendor\PHPUnit\Framework\Assert::assertEmpty($this->mailables, 'The following mailables were sent unexpectedly: ' . $mailableNames);
+        PHPUnit::assertEmpty($this->mailables, 'The following mailables were sent unexpectedly: ' . $mailableNames);
     }
     /**
      * Assert if a mailable was queued based on a truth-test callback.
@@ -118,10 +118,10 @@ class MailFake implements \FedExVendor\Illuminate\Contracts\Mail\Factory, \FedEx
     public function assertQueued($mailable, $callback = null)
     {
         [$mailable, $callback] = $this->prepareMailableAndCallback($mailable, $callback);
-        if (\is_numeric($callback)) {
+        if (is_numeric($callback)) {
             return $this->assertQueuedTimes($mailable, $callback);
         }
-        \FedExVendor\PHPUnit\Framework\Assert::assertTrue($this->queued($mailable, $callback)->count() > 0, "The expected [{$mailable}] mailable was not queued.");
+        PHPUnit::assertTrue($this->queued($mailable, $callback)->count() > 0, "The expected [{$mailable}] mailable was not queued.");
     }
     /**
      * Assert if a mailable was queued a number of times.
@@ -133,7 +133,7 @@ class MailFake implements \FedExVendor\Illuminate\Contracts\Mail\Factory, \FedEx
     protected function assertQueuedTimes($mailable, $times = 1)
     {
         $count = $this->queued($mailable)->count();
-        \FedExVendor\PHPUnit\Framework\Assert::assertSame($times, $count, "The expected [{$mailable}] mailable was queued {$count} times instead of {$times} times.");
+        PHPUnit::assertSame($times, $count, "The expected [{$mailable}] mailable was queued {$count} times instead of {$times} times.");
     }
     /**
      * Determine if a mailable was not queued based on a truth-test callback.
@@ -145,7 +145,7 @@ class MailFake implements \FedExVendor\Illuminate\Contracts\Mail\Factory, \FedEx
     public function assertNotQueued($mailable, $callback = null)
     {
         [$mailable, $callback] = $this->prepareMailableAndCallback($mailable, $callback);
-        \FedExVendor\PHPUnit\Framework\Assert::assertCount(0, $this->queued($mailable, $callback), "The unexpected [{$mailable}] mailable was queued.");
+        PHPUnit::assertCount(0, $this->queued($mailable, $callback), "The unexpected [{$mailable}] mailable was queued.");
     }
     /**
      * Assert that no mailables were queued.
@@ -155,9 +155,9 @@ class MailFake implements \FedExVendor\Illuminate\Contracts\Mail\Factory, \FedEx
     public function assertNothingQueued()
     {
         $mailableNames = collect($this->queuedMailables)->map(function ($mailable) {
-            return \get_class($mailable);
+            return get_class($mailable);
         })->join(', ');
-        \FedExVendor\PHPUnit\Framework\Assert::assertEmpty($this->queuedMailables, 'The following mailables were queued unexpectedly: ' . $mailableNames);
+        PHPUnit::assertEmpty($this->queuedMailables, 'The following mailables were queued unexpectedly: ' . $mailableNames);
     }
     /**
      * Get all of the mailables matching a truth-test callback.
@@ -175,7 +175,7 @@ class MailFake implements \FedExVendor\Illuminate\Contracts\Mail\Factory, \FedEx
         $callback = $callback ?: function () {
             return \true;
         };
-        return $this->mailablesOf($mailable)->filter(function ($mailable) use($callback) {
+        return $this->mailablesOf($mailable)->filter(function ($mailable) use ($callback) {
             return $callback($mailable);
         });
     }
@@ -205,7 +205,7 @@ class MailFake implements \FedExVendor\Illuminate\Contracts\Mail\Factory, \FedEx
         $callback = $callback ?: function () {
             return \true;
         };
-        return $this->queuedMailablesOf($mailable)->filter(function ($mailable) use($callback) {
+        return $this->queuedMailablesOf($mailable)->filter(function ($mailable) use ($callback) {
             return $callback($mailable);
         });
     }
@@ -227,7 +227,7 @@ class MailFake implements \FedExVendor\Illuminate\Contracts\Mail\Factory, \FedEx
      */
     protected function mailablesOf($type)
     {
-        return collect($this->mailables)->filter(function ($mailable) use($type) {
+        return collect($this->mailables)->filter(function ($mailable) use ($type) {
             return $mailable instanceof $type;
         });
     }
@@ -239,7 +239,7 @@ class MailFake implements \FedExVendor\Illuminate\Contracts\Mail\Factory, \FedEx
      */
     protected function queuedMailablesOf($type)
     {
-        return collect($this->queuedMailables)->filter(function ($mailable) use($type) {
+        return collect($this->queuedMailables)->filter(function ($mailable) use ($type) {
             return $mailable instanceof $type;
         });
     }
@@ -262,7 +262,7 @@ class MailFake implements \FedExVendor\Illuminate\Contracts\Mail\Factory, \FedEx
      */
     public function to($users)
     {
-        return (new \FedExVendor\Illuminate\Support\Testing\Fakes\PendingMailFake($this))->to($users);
+        return (new PendingMailFake($this))->to($users);
     }
     /**
      * Begin the process of mailing a mailable class instance.
@@ -272,7 +272,7 @@ class MailFake implements \FedExVendor\Illuminate\Contracts\Mail\Factory, \FedEx
      */
     public function bcc($users)
     {
-        return (new \FedExVendor\Illuminate\Support\Testing\Fakes\PendingMailFake($this))->bcc($users);
+        return (new PendingMailFake($this))->bcc($users);
     }
     /**
      * Send a new message with only a raw text part.
@@ -295,11 +295,11 @@ class MailFake implements \FedExVendor\Illuminate\Contracts\Mail\Factory, \FedEx
      */
     public function send($view, array $data = [], $callback = null)
     {
-        if (!$view instanceof \FedExVendor\Illuminate\Contracts\Mail\Mailable) {
+        if (!$view instanceof Mailable) {
             return;
         }
         $view->mailer($this->currentMailer);
-        if ($view instanceof \FedExVendor\Illuminate\Contracts\Queue\ShouldQueue) {
+        if ($view instanceof ShouldQueue) {
             return $this->queue($view, $data);
         }
         $this->currentMailer = null;
@@ -314,7 +314,7 @@ class MailFake implements \FedExVendor\Illuminate\Contracts\Mail\Factory, \FedEx
      */
     public function queue($view, $queue = null)
     {
-        if (!$view instanceof \FedExVendor\Illuminate\Contracts\Mail\Mailable) {
+        if (!$view instanceof Mailable) {
             return;
         }
         $view->mailer($this->currentMailer);
@@ -351,7 +351,7 @@ class MailFake implements \FedExVendor\Illuminate\Contracts\Mail\Factory, \FedEx
      */
     protected function prepareMailableAndCallback($mailable, $callback)
     {
-        if ($mailable instanceof \Closure) {
+        if ($mailable instanceof Closure) {
             return [$this->firstClosureParameterType($mailable), $mailable];
         }
         return [$mailable, $callback];

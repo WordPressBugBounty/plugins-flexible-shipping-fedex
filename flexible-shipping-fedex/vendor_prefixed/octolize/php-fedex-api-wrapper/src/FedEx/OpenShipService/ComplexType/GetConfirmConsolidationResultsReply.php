@@ -16,7 +16,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property VersionId $Version
  * @property CompletedConsolidationDetail $CompletedConsolidationDetail
  */
-class GetConfirmConsolidationResultsReply extends \FedExVendor\FedEx\AbstractComplexType
+class GetConfirmConsolidationResultsReply extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -52,7 +52,7 @@ class GetConfirmConsolidationResultsReply extends \FedExVendor\FedEx\AbstractCom
      * @param TransactionDetail $transactionDetail
      * @return $this
      */
-    public function setTransactionDetail(\FedExVendor\FedEx\OpenShipService\ComplexType\TransactionDetail $transactionDetail)
+    public function setTransactionDetail(TransactionDetail $transactionDetail)
     {
         $this->values['TransactionDetail'] = $transactionDetail;
         return $this;
@@ -63,7 +63,7 @@ class GetConfirmConsolidationResultsReply extends \FedExVendor\FedEx\AbstractCom
      * @param VersionId $version
      * @return $this
      */
-    public function setVersion(\FedExVendor\FedEx\OpenShipService\ComplexType\VersionId $version)
+    public function setVersion(VersionId $version)
     {
         $this->values['Version'] = $version;
         return $this;
@@ -74,7 +74,7 @@ class GetConfirmConsolidationResultsReply extends \FedExVendor\FedEx\AbstractCom
      * @param CompletedConsolidationDetail $completedConsolidationDetail
      * @return $this
      */
-    public function setCompletedConsolidationDetail(\FedExVendor\FedEx\OpenShipService\ComplexType\CompletedConsolidationDetail $completedConsolidationDetail)
+    public function setCompletedConsolidationDetail(CompletedConsolidationDetail $completedConsolidationDetail)
     {
         $this->values['CompletedConsolidationDetail'] = $completedConsolidationDetail;
         return $this;

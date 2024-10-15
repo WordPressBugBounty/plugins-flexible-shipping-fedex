@@ -16,7 +16,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $StatusDescription
  * @property string $StatusTime
  */
-class TrackAdvanceNotificationDetail extends \FedExVendor\FedEx\AbstractComplexType
+class TrackAdvanceNotificationDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

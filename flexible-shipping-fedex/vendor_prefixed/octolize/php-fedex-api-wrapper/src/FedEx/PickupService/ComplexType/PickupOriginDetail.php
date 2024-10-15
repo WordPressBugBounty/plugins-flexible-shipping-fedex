@@ -27,7 +27,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $SuppliesRequested
  * @property boolean $EarlyPickup
  */
-class PickupOriginDetail extends \FedExVendor\FedEx\AbstractComplexType
+class PickupOriginDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -63,7 +63,7 @@ class PickupOriginDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param ContactAndAddress $pickupLocation
      * @return $this
      */
-    public function setPickupLocation(\FedExVendor\FedEx\PickupService\ComplexType\ContactAndAddress $pickupLocation)
+    public function setPickupLocation(ContactAndAddress $pickupLocation)
     {
         $this->values['PickupLocation'] = $pickupLocation;
         return $this;

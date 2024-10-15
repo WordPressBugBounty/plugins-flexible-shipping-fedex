@@ -15,7 +15,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property TrackingFreightBillingDocumentDetail $FreightBillingDocumentDetail
  * @property TrackingSignatureProofOfDeliveryDetail $SignatureProofOfDeliveryDetail
  */
-class TrackingDocumentSpecification extends \FedExVendor\FedEx\AbstractComplexType
+class TrackingDocumentSpecification extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -40,7 +40,7 @@ class TrackingDocumentSpecification extends \FedExVendor\FedEx\AbstractComplexTy
      * @param TrackingBillOfLadingDocumentDetail $billOfLadingDocumentDetail
      * @return $this
      */
-    public function setBillOfLadingDocumentDetail(\FedExVendor\FedEx\TrackService\ComplexType\TrackingBillOfLadingDocumentDetail $billOfLadingDocumentDetail)
+    public function setBillOfLadingDocumentDetail(TrackingBillOfLadingDocumentDetail $billOfLadingDocumentDetail)
     {
         $this->values['BillOfLadingDocumentDetail'] = $billOfLadingDocumentDetail;
         return $this;
@@ -51,7 +51,7 @@ class TrackingDocumentSpecification extends \FedExVendor\FedEx\AbstractComplexTy
      * @param TrackingFreightBillingDocumentDetail $freightBillingDocumentDetail
      * @return $this
      */
-    public function setFreightBillingDocumentDetail(\FedExVendor\FedEx\TrackService\ComplexType\TrackingFreightBillingDocumentDetail $freightBillingDocumentDetail)
+    public function setFreightBillingDocumentDetail(TrackingFreightBillingDocumentDetail $freightBillingDocumentDetail)
     {
         $this->values['FreightBillingDocumentDetail'] = $freightBillingDocumentDetail;
         return $this;
@@ -62,7 +62,7 @@ class TrackingDocumentSpecification extends \FedExVendor\FedEx\AbstractComplexTy
      * @param TrackingSignatureProofOfDeliveryDetail $signatureProofOfDeliveryDetail
      * @return $this
      */
-    public function setSignatureProofOfDeliveryDetail(\FedExVendor\FedEx\TrackService\ComplexType\TrackingSignatureProofOfDeliveryDetail $signatureProofOfDeliveryDetail)
+    public function setSignatureProofOfDeliveryDetail(TrackingSignatureProofOfDeliveryDetail $signatureProofOfDeliveryDetail)
     {
         $this->values['SignatureProofOfDeliveryDetail'] = $signatureProofOfDeliveryDetail;
         return $this;

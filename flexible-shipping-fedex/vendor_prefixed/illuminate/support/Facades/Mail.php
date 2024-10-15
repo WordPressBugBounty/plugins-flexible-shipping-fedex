@@ -34,7 +34,7 @@ use FedExVendor\Illuminate\Support\Testing\Fakes\MailFake;
  * @see \Illuminate\Mail\Mailer
  * @see \Illuminate\Support\Testing\Fakes\MailFake
  */
-class Mail extends \FedExVendor\Illuminate\Support\Facades\Facade
+class Mail extends Facade
 {
     /**
      * Replace the bound instance with a fake.
@@ -43,7 +43,7 @@ class Mail extends \FedExVendor\Illuminate\Support\Facades\Facade
      */
     public static function fake()
     {
-        static::swap($fake = new \FedExVendor\Illuminate\Support\Testing\Fakes\MailFake());
+        static::swap($fake = new MailFake());
         return $fake;
     }
     /**

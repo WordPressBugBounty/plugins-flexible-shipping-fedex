@@ -12,7 +12,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  *
  * @property \FedEx\UploadDocumentService\SimpleType\DeleteRecordedShipmentRequestServiceLevel|string $DeleteStatus
  */
-class DeletionDetail extends \FedExVendor\FedEx\AbstractComplexType
+class DeletionDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

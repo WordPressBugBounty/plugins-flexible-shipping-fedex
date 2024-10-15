@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Validation Availability And Commitment Service Service
  */
-class ProfileContactAttribute extends \FedExVendor\FedEx\AbstractSimpleType
+class ProfileContactAttribute extends AbstractSimpleType
 {
     const _PREFERRED_CONTACT = 'PREFERRED_CONTACT';
 }

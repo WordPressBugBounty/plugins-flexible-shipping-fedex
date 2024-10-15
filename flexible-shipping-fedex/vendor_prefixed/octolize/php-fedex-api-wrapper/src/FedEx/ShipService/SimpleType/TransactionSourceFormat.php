@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
  */
-class TransactionSourceFormat extends \FedExVendor\FedEx\AbstractSimpleType
+class TransactionSourceFormat extends AbstractSimpleType
 {
     const _API_CTS = 'API_CTS';
     const _API_XML = 'API_XML';

@@ -12,7 +12,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  *
  * @property \FedEx\CloseService\SimpleType\CloseWithDocumentsProcessingOptionType|string[] $Options
  */
-class CloseWithDocumentsProcessingOptionsRequested extends \FedExVendor\FedEx\AbstractComplexType
+class CloseWithDocumentsProcessingOptionsRequested extends AbstractComplexType
 {
     /**
      * Name of this complex type

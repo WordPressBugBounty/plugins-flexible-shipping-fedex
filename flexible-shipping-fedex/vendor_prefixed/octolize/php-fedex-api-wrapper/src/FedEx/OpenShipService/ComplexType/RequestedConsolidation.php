@@ -30,7 +30,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property ConsolidationDocumentSpecification $ConsolidationDocumentSpecification
  * @property \FedEx\OpenShipService\SimpleType\RequestedShippingDocumentType|string[] $CrnShippingDocumentTypes
  */
-class RequestedConsolidation extends \FedExVendor\FedEx\AbstractComplexType
+class RequestedConsolidation extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -88,7 +88,7 @@ class RequestedConsolidation extends \FedExVendor\FedEx\AbstractComplexType
      * @param Party $shipper
      * @return $this
      */
-    public function setShipper(\FedExVendor\FedEx\OpenShipService\ComplexType\Party $shipper)
+    public function setShipper(Party $shipper)
     {
         $this->values['Shipper'] = $shipper;
         return $this;
@@ -99,7 +99,7 @@ class RequestedConsolidation extends \FedExVendor\FedEx\AbstractComplexType
      * @param ContactAndAddress $origin
      * @return $this
      */
-    public function setOrigin(\FedExVendor\FedEx\OpenShipService\ComplexType\ContactAndAddress $origin)
+    public function setOrigin(ContactAndAddress $origin)
     {
         $this->values['Origin'] = $origin;
         return $this;
@@ -110,7 +110,7 @@ class RequestedConsolidation extends \FedExVendor\FedEx\AbstractComplexType
      * @param Party $soldTo
      * @return $this
      */
-    public function setSoldTo(\FedExVendor\FedEx\OpenShipService\ComplexType\Party $soldTo)
+    public function setSoldTo(Party $soldTo)
     {
         $this->values['SoldTo'] = $soldTo;
         return $this;
@@ -143,7 +143,7 @@ class RequestedConsolidation extends \FedExVendor\FedEx\AbstractComplexType
      * @param ConsolidationSpecialServicesRequested $specialServicesRequested
      * @return $this
      */
-    public function setSpecialServicesRequested(\FedExVendor\FedEx\OpenShipService\ComplexType\ConsolidationSpecialServicesRequested $specialServicesRequested)
+    public function setSpecialServicesRequested(ConsolidationSpecialServicesRequested $specialServicesRequested)
     {
         $this->values['SpecialServicesRequested'] = $specialServicesRequested;
         return $this;
@@ -165,7 +165,7 @@ class RequestedConsolidation extends \FedExVendor\FedEx\AbstractComplexType
      * @param LabelSpecification $labelSpecification
      * @return $this
      */
-    public function setLabelSpecification(\FedExVendor\FedEx\OpenShipService\ComplexType\LabelSpecification $labelSpecification)
+    public function setLabelSpecification(LabelSpecification $labelSpecification)
     {
         $this->values['LabelSpecification'] = $labelSpecification;
         return $this;
@@ -176,7 +176,7 @@ class RequestedConsolidation extends \FedExVendor\FedEx\AbstractComplexType
      * @param InternationalDistributionDetail $internationalDistributionDetail
      * @return $this
      */
-    public function setInternationalDistributionDetail(\FedExVendor\FedEx\OpenShipService\ComplexType\InternationalDistributionDetail $internationalDistributionDetail)
+    public function setInternationalDistributionDetail(InternationalDistributionDetail $internationalDistributionDetail)
     {
         $this->values['InternationalDistributionDetail'] = $internationalDistributionDetail;
         return $this;
@@ -187,7 +187,7 @@ class RequestedConsolidation extends \FedExVendor\FedEx\AbstractComplexType
      * @param ConsolidationTransborderDistributionDetail $transborderDistributionDetail
      * @return $this
      */
-    public function setTransborderDistributionDetail(\FedExVendor\FedEx\OpenShipService\ComplexType\ConsolidationTransborderDistributionDetail $transborderDistributionDetail)
+    public function setTransborderDistributionDetail(ConsolidationTransborderDistributionDetail $transborderDistributionDetail)
     {
         $this->values['TransborderDistributionDetail'] = $transborderDistributionDetail;
         return $this;
@@ -209,7 +209,7 @@ class RequestedConsolidation extends \FedExVendor\FedEx\AbstractComplexType
      * @param CustomsClearanceDetail $customsClearanceDetail
      * @return $this
      */
-    public function setCustomsClearanceDetail(\FedExVendor\FedEx\OpenShipService\ComplexType\CustomsClearanceDetail $customsClearanceDetail)
+    public function setCustomsClearanceDetail(CustomsClearanceDetail $customsClearanceDetail)
     {
         $this->values['CustomsClearanceDetail'] = $customsClearanceDetail;
         return $this;
@@ -220,7 +220,7 @@ class RequestedConsolidation extends \FedExVendor\FedEx\AbstractComplexType
      * @param Payment $shippingChargesPayment
      * @return $this
      */
-    public function setShippingChargesPayment(\FedExVendor\FedEx\OpenShipService\ComplexType\Payment $shippingChargesPayment)
+    public function setShippingChargesPayment(Payment $shippingChargesPayment)
     {
         $this->values['ShippingChargesPayment'] = $shippingChargesPayment;
         return $this;
@@ -231,7 +231,7 @@ class RequestedConsolidation extends \FedExVendor\FedEx\AbstractComplexType
      * @param ConsolidationDocumentSpecification $consolidationDocumentSpecification
      * @return $this
      */
-    public function setConsolidationDocumentSpecification(\FedExVendor\FedEx\OpenShipService\ComplexType\ConsolidationDocumentSpecification $consolidationDocumentSpecification)
+    public function setConsolidationDocumentSpecification(ConsolidationDocumentSpecification $consolidationDocumentSpecification)
     {
         $this->values['ConsolidationDocumentSpecification'] = $consolidationDocumentSpecification;
         return $this;

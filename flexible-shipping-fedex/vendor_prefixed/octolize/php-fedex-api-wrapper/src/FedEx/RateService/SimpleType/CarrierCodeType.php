@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
  */
-class CarrierCodeType extends \FedExVendor\FedEx\AbstractSimpleType
+class CarrierCodeType extends AbstractSimpleType
 {
     const _FDXC = 'FDXC';
     const _FDXE = 'FDXE';

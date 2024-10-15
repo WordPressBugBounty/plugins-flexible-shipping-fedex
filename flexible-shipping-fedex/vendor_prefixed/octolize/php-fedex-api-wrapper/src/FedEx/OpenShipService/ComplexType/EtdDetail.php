@@ -14,7 +14,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property \FedEx\OpenShipService\SimpleType\RequestedShippingDocumentType|string[] $RequestedDocumentCopies
  * @property UploadDocumentReferenceDetail[] $DocumentReferences
  */
-class EtdDetail extends \FedExVendor\FedEx\AbstractComplexType
+class EtdDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

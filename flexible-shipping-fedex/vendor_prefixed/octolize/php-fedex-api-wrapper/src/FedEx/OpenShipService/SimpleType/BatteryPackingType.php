@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  OpenShip Service
  */
-class BatteryPackingType extends \FedExVendor\FedEx\AbstractSimpleType
+class BatteryPackingType extends AbstractSimpleType
 {
     const _CONTAINED_IN_EQUIPMENT = 'CONTAINED_IN_EQUIPMENT';
     const _PACKED_WITH_EQUIPMENT = 'PACKED_WITH_EQUIPMENT';

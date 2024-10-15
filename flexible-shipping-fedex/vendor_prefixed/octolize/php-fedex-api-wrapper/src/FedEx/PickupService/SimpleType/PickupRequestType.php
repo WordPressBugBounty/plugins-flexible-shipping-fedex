@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  */
-class PickupRequestType extends \FedExVendor\FedEx\AbstractSimpleType
+class PickupRequestType extends AbstractSimpleType
 {
     const _FUTURE_DAY = 'FUTURE_DAY';
     const _SAME_DAY = 'SAME_DAY';

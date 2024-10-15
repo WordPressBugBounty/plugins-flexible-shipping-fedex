@@ -12,7 +12,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  *
  * @property DangerousGoodsDetail[] $DangerousGoodsPackageConfigurations
  */
-class ShipmentConfigurationData extends \FedExVendor\FedEx\AbstractComplexType
+class ShipmentConfigurationData extends AbstractComplexType
 {
     /**
      * Name of this complex type

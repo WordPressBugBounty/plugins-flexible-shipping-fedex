@@ -7,7 +7,7 @@ use FedExVendor\WPDesk\RepositoryRating\DisplayStrategy\DisplayDecision;
 /**
  * Can display text petition.
  */
-class TextPetitionDisplayer implements \FedExVendor\WPDesk\PluginBuilder\Plugin\Hookable
+class TextPetitionDisplayer implements Hookable
 {
     const SCRIPTS_VERSION = '2';
     /**
@@ -27,7 +27,7 @@ class TextPetitionDisplayer implements \FedExVendor\WPDesk\PluginBuilder\Plugin\
      * @param DisplayDecision $display_decision
      * @param PetitionText $petition_text_generator
      */
-    public function __construct(string $display_on_action, \FedExVendor\WPDesk\RepositoryRating\DisplayStrategy\DisplayDecision $display_decision, \FedExVendor\WPDesk\RepositoryRating\PetitionText $petition_text_generator)
+    public function __construct(string $display_on_action, DisplayDecision $display_decision, PetitionText $petition_text_generator)
     {
         $this->display_on_action = $display_on_action;
         $this->display_decision = $display_decision;
@@ -35,8 +35,8 @@ class TextPetitionDisplayer implements \FedExVendor\WPDesk\PluginBuilder\Plugin\
     }
     public function hooks()
     {
-        \add_action($this->display_on_action, [$this, 'display_petition_if_should']);
-        \add_action('admin_enqueue_scripts', [$this, 'enqueue_css_if_should']);
+        add_action($this->display_on_action, [$this, 'display_petition_if_should']);
+        add_action('admin_enqueue_scripts', [$this, 'enqueue_css_if_should']);
     }
     /**
      * @internal
@@ -44,7 +44,7 @@ class TextPetitionDisplayer implements \FedExVendor\WPDesk\PluginBuilder\Plugin\
     public function enqueue_css_if_should()
     {
         if ($this->display_decision->should_display()) {
-            \wp_enqueue_style('flexible-shipping-fedex', \plugin_dir_url(__DIR__ . '/../assets/css/style.css') . 'style.css', array(), self::SCRIPTS_VERSION);
+            wp_enqueue_style('flexible-shipping-fedex', plugin_dir_url(__DIR__ . '/../assets/css/style.css') . 'style.css', array(), self::SCRIPTS_VERSION);
         }
     }
     /**
@@ -53,7 +53,7 @@ class TextPetitionDisplayer implements \FedExVendor\WPDesk\PluginBuilder\Plugin\
     public function display_petition_if_should()
     {
         if ($this->display_decision->should_display()) {
-            echo \wp_kses_post($this->petition_text_generator->get_petition_text());
+            echo wp_kses_post($this->petition_text_generator->get_petition_text());
         }
     }
 }

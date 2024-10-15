@@ -11,11 +11,11 @@ class AuthResponse
         $this->token = $token;
         $this->expiresIn = $expiresIn;
     }
-    public function token() : string
+    public function token(): string
     {
         return $this->token;
     }
-    public function expiresIn() : ?int
+    public function expiresIn(): ?int
     {
         return $this->expiresIn;
     }

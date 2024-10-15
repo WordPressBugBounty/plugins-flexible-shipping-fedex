@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractRequest;
  * @package     PHP FedEx API wrapper
  * @subpackage  Courier Dispatch Service
  */
-class Request extends \FedExVendor\FedEx\AbstractRequest
+class Request extends AbstractRequest
 {
     const PRODUCTION_URL = 'https://gateway.fedex.com:443/web-services';
     const TESTING_URL = 'https://gatewaybeta.fedex.com:443/web-services';
@@ -22,13 +22,13 @@ class Request extends \FedExVendor\FedEx\AbstractRequest
      * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
      * @return ComplexType\CourierDispatchReply|stdClass
      */
-    public function getCreateCourierDispatchReply(\FedExVendor\FedEx\CourierDispatchService\ComplexType\CourierDispatchRequest $courierDispatchRequest, $returnStdClass = \false)
+    public function getCreateCourierDispatchReply(ComplexType\CourierDispatchRequest $courierDispatchRequest, $returnStdClass = \false)
     {
         $response = $this->getSoapClient()->createCourierDispatch($courierDispatchRequest->toArray());
         if ($returnStdClass) {
             return $response;
         }
-        $courierDispatchReply = new \FedExVendor\FedEx\CourierDispatchService\ComplexType\CourierDispatchReply();
+        $courierDispatchReply = new ComplexType\CourierDispatchReply();
         $courierDispatchReply->populateFromStdClass($response);
         return $courierDispatchReply;
     }
@@ -39,13 +39,13 @@ class Request extends \FedExVendor\FedEx\AbstractRequest
      * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
      * @return ComplexType\CancelCourierDispatchReply|stdClass
      */
-    public function getCancelCourierDispatchReply(\FedExVendor\FedEx\CourierDispatchService\ComplexType\CancelCourierDispatchRequest $cancelCourierDispatchRequest, $returnStdClass = \false)
+    public function getCancelCourierDispatchReply(ComplexType\CancelCourierDispatchRequest $cancelCourierDispatchRequest, $returnStdClass = \false)
     {
         $response = $this->getSoapClient()->cancelCourierDispatch($cancelCourierDispatchRequest->toArray());
         if ($returnStdClass) {
             return $response;
         }
-        $cancelCourierDispatchReply = new \FedExVendor\FedEx\CourierDispatchService\ComplexType\CancelCourierDispatchReply();
+        $cancelCourierDispatchReply = new ComplexType\CancelCourierDispatchReply();
         $cancelCourierDispatchReply->populateFromStdClass($response);
         return $cancelCourierDispatchReply;
     }
@@ -56,13 +56,13 @@ class Request extends \FedExVendor\FedEx\AbstractRequest
      * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
      * @return ComplexType\PickupAvailabilityReply|stdClass
      */
-    public function getGetPickupAvailabilityReply(\FedExVendor\FedEx\CourierDispatchService\ComplexType\PickupAvailabilityRequest $pickupAvailabilityRequest, $returnStdClass = \false)
+    public function getGetPickupAvailabilityReply(ComplexType\PickupAvailabilityRequest $pickupAvailabilityRequest, $returnStdClass = \false)
     {
         $response = $this->getSoapClient()->getPickupAvailability($pickupAvailabilityRequest->toArray());
         if ($returnStdClass) {
             return $response;
         }
-        $pickupAvailabilityReply = new \FedExVendor\FedEx\CourierDispatchService\ComplexType\PickupAvailabilityReply();
+        $pickupAvailabilityReply = new ComplexType\PickupAvailabilityReply();
         $pickupAvailabilityReply->populateFromStdClass($response);
         return $pickupAvailabilityReply;
     }

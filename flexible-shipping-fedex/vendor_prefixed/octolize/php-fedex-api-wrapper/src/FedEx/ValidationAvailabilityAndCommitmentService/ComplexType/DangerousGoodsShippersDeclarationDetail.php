@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property ShippingDocumentFormat $Format
  * @property CustomerImageUsage[] $CustomerImageUsages
  */
-class DangerousGoodsShippersDeclarationDetail extends \FedExVendor\FedEx\AbstractComplexType
+class DangerousGoodsShippersDeclarationDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -27,7 +27,7 @@ class DangerousGoodsShippersDeclarationDetail extends \FedExVendor\FedEx\Abstrac
      * @param ShippingDocumentFormat $format
      * @return $this
      */
-    public function setFormat(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\ShippingDocumentFormat $format)
+    public function setFormat(ShippingDocumentFormat $format)
     {
         $this->values['Format'] = $format;
         return $this;

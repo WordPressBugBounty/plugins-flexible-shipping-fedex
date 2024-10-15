@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Upload Document Service
  */
-class LabelOrderType extends \FedExVendor\FedEx\AbstractSimpleType
+class LabelOrderType extends AbstractSimpleType
 {
     const _SHIPPING_LABEL_FIRST = 'SHIPPING_LABEL_FIRST';
     const _SHIPPING_LABEL_LAST = 'SHIPPING_LABEL_LAST';

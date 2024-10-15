@@ -15,7 +15,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $PagingToken
  * @property int $TotalResultsAvailable
  */
-class PagingResultsDetail extends \FedExVendor\FedEx\AbstractComplexType
+class PagingResultsDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

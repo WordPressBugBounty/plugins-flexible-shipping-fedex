@@ -12,7 +12,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  *
  * @property int $Count
  */
-class MarkingOrTaggingDetail extends \FedExVendor\FedEx\AbstractComplexType
+class MarkingOrTaggingDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

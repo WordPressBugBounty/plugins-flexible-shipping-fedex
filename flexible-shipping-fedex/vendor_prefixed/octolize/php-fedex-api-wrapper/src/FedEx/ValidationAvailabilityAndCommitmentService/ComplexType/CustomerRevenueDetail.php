@@ -32,7 +32,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property int $NumberOfDaysToPayDuties
  * @property string $AgentTypeCode
  */
-class CustomerRevenueDetail extends \FedExVendor\FedEx\AbstractComplexType
+class CustomerRevenueDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

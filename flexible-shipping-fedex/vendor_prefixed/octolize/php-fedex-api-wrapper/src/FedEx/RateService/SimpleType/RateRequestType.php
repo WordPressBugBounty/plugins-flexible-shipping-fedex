@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
  */
-class RateRequestType extends \FedExVendor\FedEx\AbstractSimpleType
+class RateRequestType extends AbstractSimpleType
 {
     const _LIST = 'LIST';
     const _NONE = 'NONE';

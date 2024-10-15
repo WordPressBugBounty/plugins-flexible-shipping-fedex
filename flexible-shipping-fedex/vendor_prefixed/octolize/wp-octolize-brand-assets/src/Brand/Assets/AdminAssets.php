@@ -8,7 +8,7 @@ use FedExVendor\WPDesk\ShowDecision\ShouldShowStrategy;
  * Loads assets.
  *
  */
-class AdminAssets implements \FedExVendor\WPDesk\PluginBuilder\Plugin\Hookable
+class AdminAssets implements Hookable
 {
     const AFTER_DEFAULT = 11;
     /**
@@ -51,15 +51,15 @@ class AdminAssets implements \FedExVendor\WPDesk\PluginBuilder\Plugin\Hookable
      */
     public function hooks()
     {
-        \add_action('admin_enqueue_scripts', [$this, 'enqueue_style'], self::AFTER_DEFAULT);
+        add_action('admin_enqueue_scripts', [$this, 'enqueue_style'], self::AFTER_DEFAULT);
     }
     /**
      * Enqueue admin scripts.
      */
     public function enqueue_style()
     {
-        if ($this->should_show === null || $this->should_show instanceof \FedExVendor\WPDesk\ShowDecision\ShouldShowStrategy && $this->should_show->shouldDisplay()) {
-            \wp_enqueue_style($this->get_handle(), \trailingslashit($this->assets_url) . 'dist/css/admin.css', [], $this->scripts_version);
+        if ($this->should_show === null || $this->should_show instanceof ShouldShowStrategy && $this->should_show->shouldDisplay()) {
+            wp_enqueue_style($this->get_handle(), trailingslashit($this->assets_url) . 'dist/css/admin.css', [], $this->scripts_version);
         }
     }
     private function get_handle()

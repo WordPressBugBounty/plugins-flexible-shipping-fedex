@@ -4,7 +4,7 @@ namespace FedExVendor\Illuminate\Support;
 
 use FedExVendor\Illuminate\Support\Arr;
 use FedExVendor\Illuminate\Support\Collection;
-if (!\function_exists('FedExVendor\\Illuminate\\Support\\collect')) {
+if (!\function_exists('FedExVendor\collect')) {
     /**
      * Create a collection from the given value.
      *
@@ -13,10 +13,10 @@ if (!\function_exists('FedExVendor\\Illuminate\\Support\\collect')) {
      */
     function collect($value = null)
     {
-        return new \FedExVendor\Illuminate\Support\Collection($value);
+        return new Collection($value);
     }
 }
-if (!\function_exists('FedExVendor\\Illuminate\\Support\\data_fill')) {
+if (!\function_exists('FedExVendor\data_fill')) {
     /**
      * Fill in data where it's missing.
      *
@@ -27,10 +27,10 @@ if (!\function_exists('FedExVendor\\Illuminate\\Support\\data_fill')) {
      */
     function data_fill(&$target, $key, $value)
     {
-        return \FedExVendor\data_set($target, $key, $value, \false);
+        return data_set($target, $key, $value, \false);
     }
 }
-if (!\function_exists('FedExVendor\\Illuminate\\Support\\data_get')) {
+if (!\function_exists('FedExVendor\data_get')) {
     /**
      * Get an item from an array or object using "dot" notation.
      *
@@ -51,29 +51,29 @@ if (!\function_exists('FedExVendor\\Illuminate\\Support\\data_get')) {
                 return $target;
             }
             if ($segment === '*') {
-                if ($target instanceof \FedExVendor\Illuminate\Support\Collection) {
+                if ($target instanceof Collection) {
                     $target = $target->all();
                 } elseif (!\is_array($target)) {
-                    return \FedExVendor\value($default);
+                    return value($default);
                 }
                 $result = [];
                 foreach ($target as $item) {
-                    $result[] = \FedExVendor\data_get($item, $key);
+                    $result[] = data_get($item, $key);
                 }
-                return \in_array('*', $key) ? \FedExVendor\Illuminate\Support\Arr::collapse($result) : $result;
+                return \in_array('*', $key) ? Arr::collapse($result) : $result;
             }
-            if (\FedExVendor\Illuminate\Support\Arr::accessible($target) && \FedExVendor\Illuminate\Support\Arr::exists($target, $segment)) {
+            if (Arr::accessible($target) && Arr::exists($target, $segment)) {
                 $target = $target[$segment];
             } elseif (\is_object($target) && isset($target->{$segment})) {
                 $target = $target->{$segment};
             } else {
-                return \FedExVendor\value($default);
+                return value($default);
             }
         }
         return $target;
     }
 }
-if (!\function_exists('FedExVendor\\Illuminate\\Support\\data_set')) {
+if (!\function_exists('FedExVendor\data_set')) {
     /**
      * Set an item on an array or object using dot notation.
      *
@@ -87,25 +87,25 @@ if (!\function_exists('FedExVendor\\Illuminate\\Support\\data_set')) {
     {
         $segments = \is_array($key) ? $key : \explode('.', $key);
         if (($segment = \array_shift($segments)) === '*') {
-            if (!\FedExVendor\Illuminate\Support\Arr::accessible($target)) {
+            if (!Arr::accessible($target)) {
                 $target = [];
             }
             if ($segments) {
                 foreach ($target as &$inner) {
-                    \FedExVendor\data_set($inner, $segments, $value, $overwrite);
+                    data_set($inner, $segments, $value, $overwrite);
                 }
             } elseif ($overwrite) {
                 foreach ($target as &$inner) {
                     $inner = $value;
                 }
             }
-        } elseif (\FedExVendor\Illuminate\Support\Arr::accessible($target)) {
+        } elseif (Arr::accessible($target)) {
             if ($segments) {
-                if (!\FedExVendor\Illuminate\Support\Arr::exists($target, $segment)) {
+                if (!Arr::exists($target, $segment)) {
                     $target[$segment] = [];
                 }
-                \FedExVendor\data_set($target[$segment], $segments, $value, $overwrite);
-            } elseif ($overwrite || !\FedExVendor\Illuminate\Support\Arr::exists($target, $segment)) {
+                data_set($target[$segment], $segments, $value, $overwrite);
+            } elseif ($overwrite || !Arr::exists($target, $segment)) {
                 $target[$segment] = $value;
             }
         } elseif (\is_object($target)) {
@@ -113,14 +113,14 @@ if (!\function_exists('FedExVendor\\Illuminate\\Support\\data_set')) {
                 if (!isset($target->{$segment})) {
                     $target->{$segment} = [];
                 }
-                \FedExVendor\data_set($target->{$segment}, $segments, $value, $overwrite);
+                data_set($target->{$segment}, $segments, $value, $overwrite);
             } elseif ($overwrite || !isset($target->{$segment})) {
                 $target->{$segment} = $value;
             }
         } else {
             $target = [];
             if ($segments) {
-                \FedExVendor\data_set($target[$segment], $segments, $value, $overwrite);
+                data_set($target[$segment], $segments, $value, $overwrite);
             } elseif ($overwrite) {
                 $target[$segment] = $value;
             }
@@ -128,7 +128,7 @@ if (!\function_exists('FedExVendor\\Illuminate\\Support\\data_set')) {
         return $target;
     }
 }
-if (!\function_exists('FedExVendor\\Illuminate\\Support\\head')) {
+if (!\function_exists('FedExVendor\head')) {
     /**
      * Get the first element of an array. Useful for method chaining.
      *
@@ -140,7 +140,7 @@ if (!\function_exists('FedExVendor\\Illuminate\\Support\\head')) {
         return \reset($array);
     }
 }
-if (!\function_exists('FedExVendor\\Illuminate\\Support\\last')) {
+if (!\function_exists('FedExVendor\last')) {
     /**
      * Get the last element from an array.
      *
@@ -152,7 +152,7 @@ if (!\function_exists('FedExVendor\\Illuminate\\Support\\last')) {
         return \end($array);
     }
 }
-if (!\function_exists('FedExVendor\\Illuminate\\Support\\value')) {
+if (!\function_exists('FedExVendor\value')) {
     /**
      * Return the default value of the given value.
      *

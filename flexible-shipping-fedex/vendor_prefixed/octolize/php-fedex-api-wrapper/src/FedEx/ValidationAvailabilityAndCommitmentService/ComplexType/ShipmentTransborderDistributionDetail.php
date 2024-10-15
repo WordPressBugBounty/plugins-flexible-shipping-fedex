@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property TransborderDistributionSpecialServicesRequested $SpecialServicesRequested
  * @property TransborderDistributionSummaryDetail $SummaryDetail
  */
-class ShipmentTransborderDistributionDetail extends \FedExVendor\FedEx\AbstractComplexType
+class ShipmentTransborderDistributionDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -27,7 +27,7 @@ class ShipmentTransborderDistributionDetail extends \FedExVendor\FedEx\AbstractC
      * @param TransborderDistributionSpecialServicesRequested $specialServicesRequested
      * @return $this
      */
-    public function setSpecialServicesRequested(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\TransborderDistributionSpecialServicesRequested $specialServicesRequested)
+    public function setSpecialServicesRequested(TransborderDistributionSpecialServicesRequested $specialServicesRequested)
     {
         $this->values['SpecialServicesRequested'] = $specialServicesRequested;
         return $this;
@@ -38,7 +38,7 @@ class ShipmentTransborderDistributionDetail extends \FedExVendor\FedEx\AbstractC
      * @param TransborderDistributionSummaryDetail $summaryDetail
      * @return $this
      */
-    public function setSummaryDetail(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\TransborderDistributionSummaryDetail $summaryDetail)
+    public function setSummaryDetail(TransborderDistributionSummaryDetail $summaryDetail)
     {
         $this->values['SummaryDetail'] = $summaryDetail;
         return $this;

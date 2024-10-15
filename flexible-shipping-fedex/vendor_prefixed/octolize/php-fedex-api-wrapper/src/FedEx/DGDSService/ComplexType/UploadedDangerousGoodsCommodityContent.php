@@ -16,7 +16,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property DangerousGoodsRadionuclideDetail $RadionuclideDetail
  * @property NetExplosiveDetail $NetExplosiveDetail
  */
-class UploadedDangerousGoodsCommodityContent extends \FedExVendor\FedEx\AbstractComplexType
+class UploadedDangerousGoodsCommodityContent extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -30,7 +30,7 @@ class UploadedDangerousGoodsCommodityContent extends \FedExVendor\FedEx\Abstract
      * @param UploadedDangerousGoodsCommodityDescription $description
      * @return $this
      */
-    public function setDescription(\FedExVendor\FedEx\DGDSService\ComplexType\UploadedDangerousGoodsCommodityDescription $description)
+    public function setDescription(UploadedDangerousGoodsCommodityDescription $description)
     {
         $this->values['Description'] = $description;
         return $this;
@@ -41,7 +41,7 @@ class UploadedDangerousGoodsCommodityContent extends \FedExVendor\FedEx\Abstract
      * @param PreciseQuantity $quantity
      * @return $this
      */
-    public function setQuantity(\FedExVendor\FedEx\DGDSService\ComplexType\PreciseQuantity $quantity)
+    public function setQuantity(PreciseQuantity $quantity)
     {
         $this->values['Quantity'] = $quantity;
         return $this;
@@ -63,7 +63,7 @@ class UploadedDangerousGoodsCommodityContent extends \FedExVendor\FedEx\Abstract
      * @param DangerousGoodsRadionuclideDetail $radionuclideDetail
      * @return $this
      */
-    public function setRadionuclideDetail(\FedExVendor\FedEx\DGDSService\ComplexType\DangerousGoodsRadionuclideDetail $radionuclideDetail)
+    public function setRadionuclideDetail(DangerousGoodsRadionuclideDetail $radionuclideDetail)
     {
         $this->values['RadionuclideDetail'] = $radionuclideDetail;
         return $this;
@@ -74,7 +74,7 @@ class UploadedDangerousGoodsCommodityContent extends \FedExVendor\FedEx\Abstract
      * @param NetExplosiveDetail $netExplosiveDetail
      * @return $this
      */
-    public function setNetExplosiveDetail(\FedExVendor\FedEx\DGDSService\ComplexType\NetExplosiveDetail $netExplosiveDetail)
+    public function setNetExplosiveDetail(NetExplosiveDetail $netExplosiveDetail)
     {
         $this->values['NetExplosiveDetail'] = $netExplosiveDetail;
         return $this;

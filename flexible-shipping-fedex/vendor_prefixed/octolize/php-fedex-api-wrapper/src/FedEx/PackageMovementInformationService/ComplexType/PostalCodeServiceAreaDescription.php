@@ -15,7 +15,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $PostalCode
  * @property string $ServiceArea
  */
-class PostalCodeServiceAreaDescription extends \FedExVendor\FedEx\AbstractComplexType
+class PostalCodeServiceAreaDescription extends AbstractComplexType
 {
     /**
      * Name of this complex type

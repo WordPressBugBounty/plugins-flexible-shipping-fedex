@@ -12,7 +12,7 @@ namespace FedExVendor\Illuminate\Support\Facades;
  *
  * @see \Illuminate\Translation\Translator
  */
-class Lang extends \FedExVendor\Illuminate\Support\Facades\Facade
+class Lang extends Facade
 {
     /**
      * Get the registered name of the component.

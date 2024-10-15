@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  OpenShip Service
  */
-class ConsolidationDataType extends \FedExVendor\FedEx\AbstractSimpleType
+class ConsolidationDataType extends AbstractSimpleType
 {
     const _TOTAL_CUSTOMS_VALUE = 'TOTAL_CUSTOMS_VALUE';
     const _TOTAL_FREIGHT_CHARGES = 'TOTAL_FREIGHT_CHARGES';

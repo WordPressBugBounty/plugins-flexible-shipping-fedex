@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  */
-class TruckType extends \FedExVendor\FedEx\AbstractSimpleType
+class TruckType extends AbstractSimpleType
 {
     const _DROP_TRAILER_AGREEMENT = 'DROP_TRAILER_AGREEMENT';
     const _LIFTGATE = 'LIFTGATE';

@@ -9,7 +9,7 @@ namespace FedExVendor\Illuminate\Support\Facades;
  *
  * @see \Illuminate\Cookie\CookieJar
  */
-class Cookie extends \FedExVendor\Illuminate\Support\Facades\Facade
+class Cookie extends Facade
 {
     /**
      * Determine if a cookie exists on the request.
@@ -19,7 +19,7 @@ class Cookie extends \FedExVendor\Illuminate\Support\Facades\Facade
      */
     public static function has($key)
     {
-        return !\is_null(static::$app['request']->cookie($key, null));
+        return !is_null(static::$app['request']->cookie($key, null));
     }
     /**
      * Retrieve a cookie from the request.

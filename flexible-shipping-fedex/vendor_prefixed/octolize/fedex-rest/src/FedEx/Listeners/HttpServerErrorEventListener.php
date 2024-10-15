@@ -8,7 +8,7 @@ use FedExVendor\CageA80\FedEx\Events\HttpServerError;
  *
  * @package CageA80\FedEx\Listeners
  */
-class HttpServerErrorEventListener extends \FedExVendor\CageA80\FedEx\Listeners\BaseEventListener
+class HttpServerErrorEventListener extends BaseEventListener
 {
     /**
      * Handle the event.
@@ -16,11 +16,11 @@ class HttpServerErrorEventListener extends \FedExVendor\CageA80\FedEx\Listeners\
      * @param $event
      * @return void
      */
-    public function handle(\FedExVendor\CageA80\FedEx\Events\HttpServerError $event)
+    public function handle(HttpServerError $event)
     {
         if ($logger = $this->getLogger()) {
             $logger->error('FedEx server error (' . $event->code . '): ' . $event->message);
-            $logger->error(\print_r(['url' => $event->url, 'headers' => $event->headers, 'payload' => $event->data], \true));
+            $logger->error(print_r(['url' => $event->url, 'headers' => $event->headers, 'payload' => $event->data], \true));
         }
     }
 }

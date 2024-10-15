@@ -16,7 +16,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $SpecificationId
  * @property CustomLabelDetail $CustomContent
  */
-class CustomDocumentDetail extends \FedExVendor\FedEx\AbstractComplexType
+class CustomDocumentDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -30,7 +30,7 @@ class CustomDocumentDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param ShippingDocumentFormat $format
      * @return $this
      */
-    public function setFormat(\FedExVendor\FedEx\RateService\ComplexType\ShippingDocumentFormat $format)
+    public function setFormat(ShippingDocumentFormat $format)
     {
         $this->values['Format'] = $format;
         return $this;
@@ -74,7 +74,7 @@ class CustomDocumentDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param CustomLabelDetail $customContent
      * @return $this
      */
-    public function setCustomContent(\FedExVendor\FedEx\RateService\ComplexType\CustomLabelDetail $customContent)
+    public function setCustomContent(CustomLabelDetail $customContent)
     {
         $this->values['CustomContent'] = $customContent;
         return $this;

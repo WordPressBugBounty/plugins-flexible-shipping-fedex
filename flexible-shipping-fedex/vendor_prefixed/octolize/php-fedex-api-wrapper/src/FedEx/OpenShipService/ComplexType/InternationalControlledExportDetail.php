@@ -16,7 +16,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $LicenseOrPermitNumber
  * @property string $LicenseOrPermitExpirationDate
  */
-class InternationalControlledExportDetail extends \FedExVendor\FedEx\AbstractComplexType
+class InternationalControlledExportDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

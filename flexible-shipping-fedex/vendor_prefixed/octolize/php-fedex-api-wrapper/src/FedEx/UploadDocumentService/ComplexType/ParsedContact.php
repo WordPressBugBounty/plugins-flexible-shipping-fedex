@@ -21,7 +21,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $FaxNumber
  * @property string $EMailAddress
  */
-class ParsedContact extends \FedExVendor\FedEx\AbstractComplexType
+class ParsedContact extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -35,7 +35,7 @@ class ParsedContact extends \FedExVendor\FedEx\AbstractComplexType
      * @param ParsedPersonName $personName
      * @return $this
      */
-    public function setPersonName(\FedExVendor\FedEx\UploadDocumentService\ComplexType\ParsedPersonName $personName)
+    public function setPersonName(ParsedPersonName $personName)
     {
         $this->values['PersonName'] = $personName;
         return $this;

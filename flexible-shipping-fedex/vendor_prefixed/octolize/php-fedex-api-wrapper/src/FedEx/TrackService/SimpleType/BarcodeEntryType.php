@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Package Movement Information Service
  */
-class BarcodeEntryType extends \FedExVendor\FedEx\AbstractSimpleType
+class BarcodeEntryType extends AbstractSimpleType
 {
     const _MANUAL_ENTRY = 'MANUAL_ENTRY';
     const _SCAN = 'SCAN';

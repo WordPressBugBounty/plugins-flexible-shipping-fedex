@@ -27,7 +27,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property \FedEx\PickupService\SimpleType\AutoConfigurationType|string $AutoConfigurationType
  * @property Localization $Localization
  */
-class ClientDetail extends \FedExVendor\FedEx\AbstractComplexType
+class ClientDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -206,7 +206,7 @@ class ClientDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param Localization $localization
      * @return $this
      */
-    public function setLocalization(\FedExVendor\FedEx\PickupService\ComplexType\Localization $localization)
+    public function setLocalization(Localization $localization)
     {
         $this->values['Localization'] = $localization;
         return $this;

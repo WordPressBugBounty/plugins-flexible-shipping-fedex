@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  OpenShip Service
  */
-class RegulatoryLabelType extends \FedExVendor\FedEx\AbstractSimpleType
+class RegulatoryLabelType extends AbstractSimpleType
 {
     const _ALCOHOL_SHIPMENT_LABEL = 'ALCOHOL_SHIPMENT_LABEL';
 }

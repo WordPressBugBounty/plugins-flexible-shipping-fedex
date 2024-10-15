@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $FileName
  * @property string $File
  */
-class ManifestFile extends \FedExVendor\FedEx\AbstractComplexType
+class ManifestFile extends AbstractComplexType
 {
     /**
      * Name of this complex type

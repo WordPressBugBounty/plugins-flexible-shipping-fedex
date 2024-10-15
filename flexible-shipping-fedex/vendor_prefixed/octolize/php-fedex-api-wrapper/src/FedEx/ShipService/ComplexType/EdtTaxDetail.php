@@ -18,7 +18,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $Formula
  * @property Money $Amount
  */
-class EdtTaxDetail extends \FedExVendor\FedEx\AbstractComplexType
+class EdtTaxDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -65,7 +65,7 @@ class EdtTaxDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param Money $taxableValue
      * @return $this
      */
-    public function setTaxableValue(\FedExVendor\FedEx\ShipService\ComplexType\Money $taxableValue)
+    public function setTaxableValue(Money $taxableValue)
     {
         $this->values['TaxableValue'] = $taxableValue;
         return $this;
@@ -98,7 +98,7 @@ class EdtTaxDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param Money $amount
      * @return $this
      */
-    public function setAmount(\FedExVendor\FedEx\ShipService\ComplexType\Money $amount)
+    public function setAmount(Money $amount)
     {
         $this->values['Amount'] = $amount;
         return $this;

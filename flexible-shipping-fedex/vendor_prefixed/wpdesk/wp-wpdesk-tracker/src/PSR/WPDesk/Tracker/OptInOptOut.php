@@ -4,7 +4,7 @@ namespace FedExVendor\WPDesk\Tracker;
 
 use FedExVendor\WPDesk\PluginBuilder\Plugin\HookableCollection;
 use FedExVendor\WPDesk\PluginBuilder\Plugin\HookableParent;
-class OptInOptOut implements \FedExVendor\WPDesk\PluginBuilder\Plugin\HookableCollection
+class OptInOptOut implements HookableCollection
 {
     use HookableParent;
     /**
@@ -41,10 +41,10 @@ class OptInOptOut implements \FedExVendor\WPDesk\PluginBuilder\Plugin\HookableCo
      */
     public function create_objects()
     {
-        $this->add_hookable(new \FedExVendor\WPDesk\Tracker\PluginActionLinks($this->plugin_file, $this->plugin_slug, $this->shop_url));
-        $this->add_hookable(new \FedExVendor\WPDesk\Tracker\OptInPage($this->plugin_file, $this->plugin_slug));
-        $this->add_hookable(new \FedExVendor\WPDesk\Tracker\OptOut($this->plugin_slug, $this->plugin_name));
-        $this->add_hookable(new \FedExVendor\WPDesk\Tracker\Assets($this->plugin_slug));
+        $this->add_hookable(new PluginActionLinks($this->plugin_file, $this->plugin_slug, $this->shop_url));
+        $this->add_hookable(new OptInPage($this->plugin_file, $this->plugin_slug));
+        $this->add_hookable(new OptOut($this->plugin_slug, $this->plugin_name));
+        $this->add_hookable(new Assets($this->plugin_slug));
     }
     public function hooks()
     {

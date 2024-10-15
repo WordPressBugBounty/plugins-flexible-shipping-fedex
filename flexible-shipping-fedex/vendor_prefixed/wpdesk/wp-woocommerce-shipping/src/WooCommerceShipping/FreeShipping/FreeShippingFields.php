@@ -24,8 +24,8 @@ class FreeShippingFields
         $new_settings = [];
         foreach ($settings as $key => $field) {
             if ($field['type'] === self::FIELD_TYPE_FREE_SHIPPING) {
-                $new_settings[self::FIELD_STATUS] = ['title' => \__('Free Shipping', 'flexible-shipping-fedex'), 'type' => 'checkbox', 'label' => \__('Enable the free shipping over amount', 'flexible-shipping-fedex'), 'description' => \__('Tick this checkbox to enter the order amount above which the shipping becomes free.', 'flexible-shipping-fedex'), 'desc_tip' => \true, 'default' => 'no'];
-                $new_settings[self::FIELD_AMOUNT] = ['title' => \__('Free Shipping Threshold', 'flexible-shipping-fedex'), 'type' => 'number', 'required' => \true, 'default' => '', 'description' => \__('Enter only a numeric value without the currency symbol.', 'flexible-shipping-fedex'), 'desc_tip' => \true, 'custom_attributes' => ['min' => 0, 'step' => 'any']];
+                $new_settings[self::FIELD_STATUS] = ['title' => __('Free Shipping', 'flexible-shipping-fedex'), 'type' => 'checkbox', 'label' => __('Enable the free shipping over amount', 'flexible-shipping-fedex'), 'description' => __('Tick this checkbox to enter the order amount above which the shipping becomes free.', 'flexible-shipping-fedex'), 'desc_tip' => \true, 'default' => 'no'];
+                $new_settings[self::FIELD_AMOUNT] = ['title' => __('Free Shipping Threshold', 'flexible-shipping-fedex'), 'type' => 'number', 'required' => \true, 'default' => '', 'description' => __('Enter only a numeric value without the currency symbol.', 'flexible-shipping-fedex'), 'desc_tip' => \true, 'custom_attributes' => ['min' => 0, 'step' => 'any']];
             } else {
                 $new_settings[$key] = $field;
             }

@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Locations Service
  */
-class MultipleMatchesActionType extends \FedExVendor\FedEx\AbstractSimpleType
+class MultipleMatchesActionType extends AbstractSimpleType
 {
     const _RETURN_ALL = 'RETURN_ALL';
     const _RETURN_ERROR = 'RETURN_ERROR';

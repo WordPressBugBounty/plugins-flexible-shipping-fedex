@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $Name
  * @property string $Value
  */
-class AddressAttribute extends \FedExVendor\FedEx\AbstractComplexType
+class AddressAttribute extends AbstractComplexType
 {
     /**
      * Name of this complex type

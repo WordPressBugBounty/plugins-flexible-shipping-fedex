@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Upload Document Service
  */
-class OversizeClassType extends \FedExVendor\FedEx\AbstractSimpleType
+class OversizeClassType extends AbstractSimpleType
 {
     const _OVERSIZE_1 = 'OVERSIZE_1';
     const _OVERSIZE_2 = 'OVERSIZE_2';

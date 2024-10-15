@@ -12,7 +12,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  *
  * @property \FedEx\DGDSService\SimpleType\ValidateDangerousGoodsProcessingOptionType|string[] $Options
  */
-class ValidateDangerousGoodsProcessingOptionsRequested extends \FedExVendor\FedEx\AbstractComplexType
+class ValidateDangerousGoodsProcessingOptionsRequested extends AbstractComplexType
 {
     /**
      * Name of this complex type

@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  ASync Service
  */
-class ArtifactType extends \FedExVendor\FedEx\AbstractSimpleType
+class ArtifactType extends AbstractSimpleType
 {
     const _AUXILIARY_LABEL = 'AUXILIARY_LABEL';
     const _CERTIFICATE_OF_ORIGIN = 'CERTIFICATE_OF_ORIGIN';

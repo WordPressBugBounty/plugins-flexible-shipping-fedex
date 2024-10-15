@@ -11,11 +11,11 @@ return [
     | Common FedEx web services credentials
     |
     */
-    'environment' => \FedExVendor\env('FEDEX_ENVIRONMENT', \FedExVendor\CageA80\FedEx\Support\EnvironmentType::SANDBOX),
-    'mockEndpoint' => \FedExVendor\env('FEDEX_MOCK_ENDPOINT', '/api/v1/fedex-mock'),
-    'accountNumber' => \FedExVendor\env('FEDEX_ACCOUNT_NUMBER' . (\FedExVendor\env('FEDEX_ENVIRONMENT', \FedExVendor\CageA80\FedEx\Support\EnvironmentType::SANDBOX) == \FedExVendor\CageA80\FedEx\Support\EnvironmentType::SANDBOX ? '_SANDBOX' : '')),
-    'key' => \FedExVendor\env('FEDEX_KEY' . (\FedExVendor\env('FEDEX_ENVIRONMENT', \FedExVendor\CageA80\FedEx\Support\EnvironmentType::SANDBOX) == \FedExVendor\CageA80\FedEx\Support\EnvironmentType::SANDBOX ? '_SANDBOX' : '')),
-    'secret' => \FedExVendor\env('FEDEX_SECRET' . (\FedExVendor\env('FEDEX_ENVIRONMENT', \FedExVendor\CageA80\FedEx\Support\EnvironmentType::SANDBOX) == \FedExVendor\CageA80\FedEx\Support\EnvironmentType::SANDBOX ? '_SANDBOX' : '')),
+    'environment' => env('FEDEX_ENVIRONMENT', \FedExVendor\CageA80\FedEx\Support\EnvironmentType::SANDBOX),
+    'mockEndpoint' => env('FEDEX_MOCK_ENDPOINT', '/api/v1/fedex-mock'),
+    'accountNumber' => env('FEDEX_ACCOUNT_NUMBER' . (env('FEDEX_ENVIRONMENT', \FedExVendor\CageA80\FedEx\Support\EnvironmentType::SANDBOX) == \FedExVendor\CageA80\FedEx\Support\EnvironmentType::SANDBOX ? '_SANDBOX' : '')),
+    'key' => env('FEDEX_KEY' . (env('FEDEX_ENVIRONMENT', \FedExVendor\CageA80\FedEx\Support\EnvironmentType::SANDBOX) == \FedExVendor\CageA80\FedEx\Support\EnvironmentType::SANDBOX ? '_SANDBOX' : '')),
+    'secret' => env('FEDEX_SECRET' . (env('FEDEX_ENVIRONMENT', \FedExVendor\CageA80\FedEx\Support\EnvironmentType::SANDBOX) == \FedExVendor\CageA80\FedEx\Support\EnvironmentType::SANDBOX ? '_SANDBOX' : '')),
     /*
     |--------------------------------------------------------------------------
     | Carrier Codes
@@ -138,7 +138,7 @@ return [
     | Request field: 'dutiesPayment.payor.responsibleParty'
     |
     */
-    'payor' => ['accountNumber' => \FedExVendor\env('FEDEX_ACCOUNT_NUMBER' . (\FedExVendor\env('FEDEX_ENVIRONMENT', \FedExVendor\CageA80\FedEx\Support\EnvironmentType::SANDBOX) == \FedExVendor\CageA80\FedEx\Support\EnvironmentType::SANDBOX ? '_SANDBOX' : '')), 'address' => ['city' => \FedExVendor\env('FEDEX_PAYOR_CITY'), 'stateOrProvinceCode' => \FedExVendor\env('FEDEX_PAYOR_STATE'), 'postalCode' => \FedExVendor\env('FEDEX_PAYOR_ZIP'), 'countryCode' => \FedExVendor\env('FEDEX_PAYOR_COUNTRY', 'US')]],
+    'payor' => ['accountNumber' => env('FEDEX_ACCOUNT_NUMBER' . (env('FEDEX_ENVIRONMENT', \FedExVendor\CageA80\FedEx\Support\EnvironmentType::SANDBOX) == \FedExVendor\CageA80\FedEx\Support\EnvironmentType::SANDBOX ? '_SANDBOX' : '')), 'address' => ['city' => env('FEDEX_PAYOR_CITY'), 'stateOrProvinceCode' => env('FEDEX_PAYOR_STATE'), 'postalCode' => env('FEDEX_PAYOR_ZIP'), 'countryCode' => env('FEDEX_PAYOR_COUNTRY', 'US')]],
     /*
     |--------------------------------------------------------------------------
     | Transit times
@@ -149,7 +149,7 @@ return [
     | Request field: 'rateRequestControlParameters.returnTransitTimes'
     |
     */
-    'returnTransitTimes' => \FedExVendor\env('FEDEX_TRANSIT_TIMES', \false),
+    'returnTransitTimes' => env('FEDEX_TRANSIT_TIMES', \false),
     /*
     |--------------------------------------------------------------------------
     | Timeout
@@ -158,7 +158,7 @@ return [
     | Specify HTTP request timeout in seconds
     |
     */
-    'timeout' => \FedExVendor\env('FEDEX_HTTP_TIMEOUT', 20),
+    'timeout' => env('FEDEX_HTTP_TIMEOUT', 20),
     /*
     |--------------------------------------------------------------------------
     | Request attempts
@@ -167,7 +167,7 @@ return [
     | Specify the number of HTTP request attempts
     |
     */
-    'attempts' => \FedExVendor\env('FEDEX_HTTP_ATTEMPTS', 3),
+    'attempts' => env('FEDEX_HTTP_ATTEMPTS', 3),
     /*
     |--------------------------------------------------------------------------
     | Verify SSL
@@ -176,7 +176,7 @@ return [
     | Specify whether GuzzleHttp should verify SSL cert
     |
     */
-    'verifySSL' => \FedExVendor\env('FEDEX_VERIFY_SSL', \true),
+    'verifySSL' => env('FEDEX_VERIFY_SSL', \true),
     /*
     |--------------------------------------------------------------------------
     | Rates RAW
@@ -194,7 +194,7 @@ return [
     | Use sample data instead of sending real request to FedEx
     |
     */
-    'sampleData' => \FedExVendor\env('FEDEX_SAMPLE_DATA', \false),
+    'sampleData' => env('FEDEX_SAMPLE_DATA', \false),
     /*
     |--------------------------------------------------------------------------
     | Logging
@@ -203,7 +203,7 @@ return [
     | Enabled logging request and response data
     |
     */
-    'log' => \FedExVendor\env('FEDEX_LOG', \false),
+    'log' => env('FEDEX_LOG', \false),
     /*
     |--------------------------------------------------------------------------
     | Logging channel
@@ -212,5 +212,5 @@ return [
     | Specify logging channel
     |
     */
-    'logChannel' => \FedExVendor\env('FEDEX_LOG_CHANNEL'),
+    'logChannel' => env('FEDEX_LOG_CHANNEL'),
 ];

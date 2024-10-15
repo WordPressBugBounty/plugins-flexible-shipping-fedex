@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  In Flight Shipment Service
  */
-class WebServiceEnvironment extends \FedExVendor\FedEx\AbstractSimpleType
+class WebServiceEnvironment extends AbstractSimpleType
 {
     const _PRODUCTION = 'PRODUCTION';
     const _TEST = 'TEST';

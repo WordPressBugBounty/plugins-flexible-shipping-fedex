@@ -16,7 +16,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $DestinationCountryCode
  * @property \FedEx\CloseService\SimpleType\CarrierCodeType|string $PickupCarrier
  */
-class CloseSmartPostDetail extends \FedExVendor\FedEx\AbstractComplexType
+class CloseSmartPostDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

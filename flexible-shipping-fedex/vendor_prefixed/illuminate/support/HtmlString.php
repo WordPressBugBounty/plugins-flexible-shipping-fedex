@@ -3,7 +3,7 @@
 namespace FedExVendor\Illuminate\Support;
 
 use FedExVendor\Illuminate\Contracts\Support\Htmlable;
-class HtmlString implements \FedExVendor\Illuminate\Contracts\Support\Htmlable
+class HtmlString implements Htmlable
 {
     /**
      * The HTML string.

@@ -15,7 +15,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $EventTimestamp
  * @property string $DriverEmployeeId
  */
-class PickupHistoryEvent extends \FedExVendor\FedEx\AbstractComplexType
+class PickupHistoryEvent extends AbstractComplexType
 {
     /**
      * Name of this complex type

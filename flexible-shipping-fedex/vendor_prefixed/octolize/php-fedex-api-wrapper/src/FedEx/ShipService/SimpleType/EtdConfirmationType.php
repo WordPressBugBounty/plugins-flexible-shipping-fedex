@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
  */
-class EtdConfirmationType extends \FedExVendor\FedEx\AbstractSimpleType
+class EtdConfirmationType extends AbstractSimpleType
 {
     const _CONFIRMED = 'CONFIRMED';
     const _DEFERRED = 'DEFERRED';

@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property \FedEx\ValidationAvailabilityAndCommitmentService\SimpleType\CarrierCodeType|string $CarrierCode
  * @property \FedEx\ValidationAvailabilityAndCommitmentService\SimpleType\CustomerReferenceType|string $Reference
  */
-class GroupReferenceDetail extends \FedExVendor\FedEx\AbstractComplexType
+class GroupReferenceDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

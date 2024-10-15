@@ -15,7 +15,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $Password
  * @property string $EmailLabelUrl
  */
-class PendingShipmentAccessorDetail extends \FedExVendor\FedEx\AbstractComplexType
+class PendingShipmentAccessorDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

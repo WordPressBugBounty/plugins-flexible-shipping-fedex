@@ -47,7 +47,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property VariableHandlingCharges $VariableHandlingCharges
  * @property VariableHandlingCharges $TotalVariableHandlingCharges
  */
-class ShipmentRateDetail extends \FedExVendor\FedEx\AbstractComplexType
+class ShipmentRateDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -138,7 +138,7 @@ class ShipmentRateDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param CurrencyExchangeRate $currencyExchangeRate
      * @return $this
      */
-    public function setCurrencyExchangeRate(\FedExVendor\FedEx\ShipService\ComplexType\CurrencyExchangeRate $currencyExchangeRate)
+    public function setCurrencyExchangeRate(CurrencyExchangeRate $currencyExchangeRate)
     {
         $this->values['CurrencyExchangeRate'] = $currencyExchangeRate;
         return $this;
@@ -193,7 +193,7 @@ class ShipmentRateDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param Weight $totalBillingWeight
      * @return $this
      */
-    public function setTotalBillingWeight(\FedExVendor\FedEx\ShipService\ComplexType\Weight $totalBillingWeight)
+    public function setTotalBillingWeight(Weight $totalBillingWeight)
     {
         $this->values['TotalBillingWeight'] = $totalBillingWeight;
         return $this;
@@ -204,7 +204,7 @@ class ShipmentRateDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param Weight $totalDimWeight
      * @return $this
      */
-    public function setTotalDimWeight(\FedExVendor\FedEx\ShipService\ComplexType\Weight $totalDimWeight)
+    public function setTotalDimWeight(Weight $totalDimWeight)
     {
         $this->values['TotalDimWeight'] = $totalDimWeight;
         return $this;
@@ -215,7 +215,7 @@ class ShipmentRateDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param Money $totalBaseCharge
      * @return $this
      */
-    public function setTotalBaseCharge(\FedExVendor\FedEx\ShipService\ComplexType\Money $totalBaseCharge)
+    public function setTotalBaseCharge(Money $totalBaseCharge)
     {
         $this->values['TotalBaseCharge'] = $totalBaseCharge;
         return $this;
@@ -226,7 +226,7 @@ class ShipmentRateDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param Money $totalFreightDiscounts
      * @return $this
      */
-    public function setTotalFreightDiscounts(\FedExVendor\FedEx\ShipService\ComplexType\Money $totalFreightDiscounts)
+    public function setTotalFreightDiscounts(Money $totalFreightDiscounts)
     {
         $this->values['TotalFreightDiscounts'] = $totalFreightDiscounts;
         return $this;
@@ -237,7 +237,7 @@ class ShipmentRateDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param Money $totalNetFreight
      * @return $this
      */
-    public function setTotalNetFreight(\FedExVendor\FedEx\ShipService\ComplexType\Money $totalNetFreight)
+    public function setTotalNetFreight(Money $totalNetFreight)
     {
         $this->values['TotalNetFreight'] = $totalNetFreight;
         return $this;
@@ -248,7 +248,7 @@ class ShipmentRateDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param Money $totalSurcharges
      * @return $this
      */
-    public function setTotalSurcharges(\FedExVendor\FedEx\ShipService\ComplexType\Money $totalSurcharges)
+    public function setTotalSurcharges(Money $totalSurcharges)
     {
         $this->values['TotalSurcharges'] = $totalSurcharges;
         return $this;
@@ -259,7 +259,7 @@ class ShipmentRateDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param Money $totalNetFedExCharge
      * @return $this
      */
-    public function setTotalNetFedExCharge(\FedExVendor\FedEx\ShipService\ComplexType\Money $totalNetFedExCharge)
+    public function setTotalNetFedExCharge(Money $totalNetFedExCharge)
     {
         $this->values['TotalNetFedExCharge'] = $totalNetFedExCharge;
         return $this;
@@ -270,7 +270,7 @@ class ShipmentRateDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param Money $totalTaxes
      * @return $this
      */
-    public function setTotalTaxes(\FedExVendor\FedEx\ShipService\ComplexType\Money $totalTaxes)
+    public function setTotalTaxes(Money $totalTaxes)
     {
         $this->values['TotalTaxes'] = $totalTaxes;
         return $this;
@@ -281,7 +281,7 @@ class ShipmentRateDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param Money $totalNetCharge
      * @return $this
      */
-    public function setTotalNetCharge(\FedExVendor\FedEx\ShipService\ComplexType\Money $totalNetCharge)
+    public function setTotalNetCharge(Money $totalNetCharge)
     {
         $this->values['TotalNetCharge'] = $totalNetCharge;
         return $this;
@@ -292,7 +292,7 @@ class ShipmentRateDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param Money $totalRebates
      * @return $this
      */
-    public function setTotalRebates(\FedExVendor\FedEx\ShipService\ComplexType\Money $totalRebates)
+    public function setTotalRebates(Money $totalRebates)
     {
         $this->values['TotalRebates'] = $totalRebates;
         return $this;
@@ -303,7 +303,7 @@ class ShipmentRateDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param Money $totalDutiesAndTaxes
      * @return $this
      */
-    public function setTotalDutiesAndTaxes(\FedExVendor\FedEx\ShipService\ComplexType\Money $totalDutiesAndTaxes)
+    public function setTotalDutiesAndTaxes(Money $totalDutiesAndTaxes)
     {
         $this->values['TotalDutiesAndTaxes'] = $totalDutiesAndTaxes;
         return $this;
@@ -314,7 +314,7 @@ class ShipmentRateDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param Money $totalAncillaryFeesAndTaxes
      * @return $this
      */
-    public function setTotalAncillaryFeesAndTaxes(\FedExVendor\FedEx\ShipService\ComplexType\Money $totalAncillaryFeesAndTaxes)
+    public function setTotalAncillaryFeesAndTaxes(Money $totalAncillaryFeesAndTaxes)
     {
         $this->values['TotalAncillaryFeesAndTaxes'] = $totalAncillaryFeesAndTaxes;
         return $this;
@@ -325,7 +325,7 @@ class ShipmentRateDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param Money $totalDutiesTaxesAndFees
      * @return $this
      */
-    public function setTotalDutiesTaxesAndFees(\FedExVendor\FedEx\ShipService\ComplexType\Money $totalDutiesTaxesAndFees)
+    public function setTotalDutiesTaxesAndFees(Money $totalDutiesTaxesAndFees)
     {
         $this->values['TotalDutiesTaxesAndFees'] = $totalDutiesTaxesAndFees;
         return $this;
@@ -336,7 +336,7 @@ class ShipmentRateDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param Money $totalNetChargeWithDutiesAndTaxes
      * @return $this
      */
-    public function setTotalNetChargeWithDutiesAndTaxes(\FedExVendor\FedEx\ShipService\ComplexType\Money $totalNetChargeWithDutiesAndTaxes)
+    public function setTotalNetChargeWithDutiesAndTaxes(Money $totalNetChargeWithDutiesAndTaxes)
     {
         $this->values['TotalNetChargeWithDutiesAndTaxes'] = $totalNetChargeWithDutiesAndTaxes;
         return $this;
@@ -358,7 +358,7 @@ class ShipmentRateDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param FreightRateDetail $freightRateDetail
      * @return $this
      */
-    public function setFreightRateDetail(\FedExVendor\FedEx\ShipService\ComplexType\FreightRateDetail $freightRateDetail)
+    public function setFreightRateDetail(FreightRateDetail $freightRateDetail)
     {
         $this->values['FreightRateDetail'] = $freightRateDetail;
         return $this;
@@ -435,7 +435,7 @@ class ShipmentRateDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param VariableHandlingCharges $variableHandlingCharges
      * @return $this
      */
-    public function setVariableHandlingCharges(\FedExVendor\FedEx\ShipService\ComplexType\VariableHandlingCharges $variableHandlingCharges)
+    public function setVariableHandlingCharges(VariableHandlingCharges $variableHandlingCharges)
     {
         $this->values['VariableHandlingCharges'] = $variableHandlingCharges;
         return $this;
@@ -446,7 +446,7 @@ class ShipmentRateDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param VariableHandlingCharges $totalVariableHandlingCharges
      * @return $this
      */
-    public function setTotalVariableHandlingCharges(\FedExVendor\FedEx\ShipService\ComplexType\VariableHandlingCharges $totalVariableHandlingCharges)
+    public function setTotalVariableHandlingCharges(VariableHandlingCharges $totalVariableHandlingCharges)
     {
         $this->values['TotalVariableHandlingCharges'] = $totalVariableHandlingCharges;
         return $this;

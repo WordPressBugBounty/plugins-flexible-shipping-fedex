@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  */
-class PickupStatusType extends \FedExVendor\FedEx\AbstractSimpleType
+class PickupStatusType extends AbstractSimpleType
 {
     const _CANCELLED = 'CANCELLED';
     const _COMPLETED = 'COMPLETED';

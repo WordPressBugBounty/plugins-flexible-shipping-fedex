@@ -8,7 +8,7 @@ use FedExVendor\Psr\Http\Message\StreamInterface;
  * Stream decorator that begins dropping data once the size of the underlying
  * stream becomes too full.
  */
-final class DroppingStream implements \FedExVendor\Psr\Http\Message\StreamInterface
+final class DroppingStream implements StreamInterface
 {
     use StreamDecoratorTrait;
     /** @var int */
@@ -19,12 +19,12 @@ final class DroppingStream implements \FedExVendor\Psr\Http\Message\StreamInterf
      * @param StreamInterface $stream    Underlying stream to decorate.
      * @param int             $maxLength Maximum size before dropping data.
      */
-    public function __construct(\FedExVendor\Psr\Http\Message\StreamInterface $stream, int $maxLength)
+    public function __construct(StreamInterface $stream, int $maxLength)
     {
         $this->stream = $stream;
         $this->maxLength = $maxLength;
     }
-    public function write($string) : int
+    public function write($string): int
     {
         $diff = $this->maxLength - $this->stream->getSize();
         // Begin returning 0 when the underlying stream is too large.
@@ -32,9 +32,9 @@ final class DroppingStream implements \FedExVendor\Psr\Http\Message\StreamInterf
             return 0;
         }
         // Write the stream or a subset of the stream if needed.
-        if (\strlen($string) < $diff) {
+        if (strlen($string) < $diff) {
             return $this->stream->write($string);
         }
-        return $this->stream->write(\substr($string, 0, $diff));
+        return $this->stream->write(substr($string, 0, $diff));
     }
 }

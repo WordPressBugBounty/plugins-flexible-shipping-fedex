@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  OpenShip Service
  */
-class TransborderDistributionRoutingType extends \FedExVendor\FedEx\AbstractSimpleType
+class TransborderDistributionRoutingType extends AbstractSimpleType
 {
     const _BY_METER = 'BY_METER';
     const _BY_ORIGIN = 'BY_ORIGIN';

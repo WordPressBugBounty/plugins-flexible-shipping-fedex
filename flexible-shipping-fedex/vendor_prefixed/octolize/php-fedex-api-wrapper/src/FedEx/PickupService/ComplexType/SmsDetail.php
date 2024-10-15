@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $PhoneNumber
  * @property string $PhoneNumberCountryCode
  */
-class SmsDetail extends \FedExVendor\FedEx\AbstractComplexType
+class SmsDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

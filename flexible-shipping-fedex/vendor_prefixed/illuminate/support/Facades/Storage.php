@@ -44,7 +44,7 @@ use FedExVendor\Illuminate\Filesystem\Filesystem;
  *
  * @see \Illuminate\Filesystem\FilesystemManager
  */
-class Storage extends \FedExVendor\Illuminate\Support\Facades\Facade
+class Storage extends Facade
 {
     /**
      * Replace the given disk with a local testing disk.
@@ -57,11 +57,11 @@ class Storage extends \FedExVendor\Illuminate\Support\Facades\Facade
     {
         $disk = $disk ?: static::$app['config']->get('filesystems.default');
         $root = storage_path('framework/testing/disks/' . $disk);
-        if ($token = \FedExVendor\Illuminate\Support\Facades\ParallelTesting::token()) {
+        if ($token = ParallelTesting::token()) {
             $root = "{$root}_test_{$token}";
         }
-        (new \FedExVendor\Illuminate\Filesystem\Filesystem())->cleanDirectory($root);
-        static::set($disk, $fake = static::createLocalDriver(\array_merge($config, ['root' => $root])));
+        (new Filesystem())->cleanDirectory($root);
+        static::set($disk, $fake = static::createLocalDriver(array_merge($config, ['root' => $root])));
         return $fake;
     }
     /**
@@ -74,7 +74,7 @@ class Storage extends \FedExVendor\Illuminate\Support\Facades\Facade
     public static function persistentFake($disk = null, array $config = [])
     {
         $disk = $disk ?: static::$app['config']->get('filesystems.default');
-        static::set($disk, $fake = static::createLocalDriver(\array_merge($config, ['root' => storage_path('framework/testing/disks/' . $disk)])));
+        static::set($disk, $fake = static::createLocalDriver(array_merge($config, ['root' => storage_path('framework/testing/disks/' . $disk)])));
         return $fake;
     }
     /**

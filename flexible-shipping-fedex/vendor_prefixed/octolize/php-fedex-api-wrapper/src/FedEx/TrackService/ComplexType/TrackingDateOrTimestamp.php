@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property \FedEx\TrackService\SimpleType\TrackingDateOrTimestampType|string $Type
  * @property string $DateOrTimestamp
  */
-class TrackingDateOrTimestamp extends \FedExVendor\FedEx\AbstractComplexType
+class TrackingDateOrTimestamp extends AbstractComplexType
 {
     /**
      * Name of this complex type

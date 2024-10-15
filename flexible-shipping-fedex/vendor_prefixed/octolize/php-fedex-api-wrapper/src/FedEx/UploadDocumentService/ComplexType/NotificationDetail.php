@@ -16,7 +16,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property SmsDetail $SmsDetail
  * @property Localization $Localization
  */
-class NotificationDetail extends \FedExVendor\FedEx\AbstractComplexType
+class NotificationDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -41,7 +41,7 @@ class NotificationDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param EMailDetail $emailDetail
      * @return $this
      */
-    public function setEmailDetail(\FedExVendor\FedEx\UploadDocumentService\ComplexType\EMailDetail $emailDetail)
+    public function setEmailDetail(EMailDetail $emailDetail)
     {
         $this->values['EmailDetail'] = $emailDetail;
         return $this;
@@ -52,7 +52,7 @@ class NotificationDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param FaxDetail $faxDetail
      * @return $this
      */
-    public function setFaxDetail(\FedExVendor\FedEx\UploadDocumentService\ComplexType\FaxDetail $faxDetail)
+    public function setFaxDetail(FaxDetail $faxDetail)
     {
         $this->values['FaxDetail'] = $faxDetail;
         return $this;
@@ -63,7 +63,7 @@ class NotificationDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param SmsDetail $smsDetail
      * @return $this
      */
-    public function setSmsDetail(\FedExVendor\FedEx\UploadDocumentService\ComplexType\SmsDetail $smsDetail)
+    public function setSmsDetail(SmsDetail $smsDetail)
     {
         $this->values['SmsDetail'] = $smsDetail;
         return $this;
@@ -74,7 +74,7 @@ class NotificationDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param Localization $localization
      * @return $this
      */
-    public function setLocalization(\FedExVendor\FedEx\UploadDocumentService\ComplexType\Localization $localization)
+    public function setLocalization(Localization $localization)
     {
         $this->values['Localization'] = $localization;
         return $this;

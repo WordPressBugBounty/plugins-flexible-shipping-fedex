@@ -12,7 +12,7 @@ namespace FedExVendor\WPDesk\AbstractShipping\Exception;
  *
  * @package WPDesk\AbstractShipping\Exception
  */
-class RateException extends \RuntimeException implements \FedExVendor\WPDesk\AbstractShipping\Exception\ShippingException
+class RateException extends \RuntimeException implements ShippingException
 {
     /**
      * Context.

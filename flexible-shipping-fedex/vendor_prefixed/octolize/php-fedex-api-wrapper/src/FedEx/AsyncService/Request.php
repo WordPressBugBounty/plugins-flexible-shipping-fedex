@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractRequest;
  * @package     PHP FedEx API wrapper
  * @subpackage  ASync Service
  */
-class Request extends \FedExVendor\FedEx\AbstractRequest
+class Request extends AbstractRequest
 {
     const PRODUCTION_URL = 'https://ws.fedex.com:443/web-services/async';
     const TESTING_URL = 'https://wsbeta.fedex.com:443/web-services/async';
@@ -22,13 +22,13 @@ class Request extends \FedExVendor\FedEx\AbstractRequest
      * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
      * @return ComplexType\RetrieveJobResultsReply|stdClass
      */
-    public function getRetrieveJobResultsReply(\FedExVendor\FedEx\AsyncService\ComplexType\RetrieveJobResultsRequest $retrieveJobResultsRequest, $returnStdClass = \false)
+    public function getRetrieveJobResultsReply(ComplexType\RetrieveJobResultsRequest $retrieveJobResultsRequest, $returnStdClass = \false)
     {
         $response = $this->getSoapClient()->retrieveJobResults($retrieveJobResultsRequest->toArray());
         if ($returnStdClass) {
             return $response;
         }
-        $retrieveJobResultsReply = new \FedExVendor\FedEx\AsyncService\ComplexType\RetrieveJobResultsReply();
+        $retrieveJobResultsReply = new ComplexType\RetrieveJobResultsReply();
         $retrieveJobResultsReply->populateFromStdClass($response);
         return $retrieveJobResultsReply;
     }

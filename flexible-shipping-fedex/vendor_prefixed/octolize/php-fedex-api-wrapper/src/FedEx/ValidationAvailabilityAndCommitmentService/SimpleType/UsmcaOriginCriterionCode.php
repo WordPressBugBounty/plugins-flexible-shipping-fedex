@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Validation Availability And Commitment Service Service
  */
-class UsmcaOriginCriterionCode extends \FedExVendor\FedEx\AbstractSimpleType
+class UsmcaOriginCriterionCode extends AbstractSimpleType
 {
     const _A = 'A';
     const _B = 'B';

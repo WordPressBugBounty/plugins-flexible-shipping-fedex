@@ -12,7 +12,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  *
  * @property SpecialEquipmentLineItem[] $LineItems
  */
-class SpecialEquipmentDetail extends \FedExVendor\FedEx\AbstractComplexType
+class SpecialEquipmentDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

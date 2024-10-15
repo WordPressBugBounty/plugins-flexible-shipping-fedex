@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
  */
-class B13AFilingOptionType extends \FedExVendor\FedEx\AbstractSimpleType
+class B13AFilingOptionType extends AbstractSimpleType
 {
     const _FEDEX_TO_STAMP = 'FEDEX_TO_STAMP';
     const _FILED_ELECTRONICALLY = 'FILED_ELECTRONICALLY';

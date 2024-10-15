@@ -15,7 +15,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property Money $Amount
  * @property float $Percent
  */
-class RateDiscount extends \FedExVendor\FedEx\AbstractComplexType
+class RateDiscount extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -51,7 +51,7 @@ class RateDiscount extends \FedExVendor\FedEx\AbstractComplexType
      * @param Money $amount
      * @return $this
      */
-    public function setAmount(\FedExVendor\FedEx\UploadDocumentService\ComplexType\Money $amount)
+    public function setAmount(Money $amount)
     {
         $this->values['Amount'] = $amount;
         return $this;

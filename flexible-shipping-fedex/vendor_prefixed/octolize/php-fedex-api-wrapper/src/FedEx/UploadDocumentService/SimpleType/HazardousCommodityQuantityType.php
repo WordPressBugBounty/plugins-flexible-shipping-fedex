@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Upload Document Service
  */
-class HazardousCommodityQuantityType extends \FedExVendor\FedEx\AbstractSimpleType
+class HazardousCommodityQuantityType extends AbstractSimpleType
 {
     const _GROSS = 'GROSS';
     const _NET = 'NET';

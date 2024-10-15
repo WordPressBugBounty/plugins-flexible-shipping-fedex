@@ -15,7 +15,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property InternationalDistributionSummaryDetail $SummaryDetail
  * @property SplitPaymentSpecification $SplitPaymentSpecification
  */
-class ShipmentInternationalDistributionDetail extends \FedExVendor\FedEx\AbstractComplexType
+class ShipmentInternationalDistributionDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -51,7 +51,7 @@ class ShipmentInternationalDistributionDetail extends \FedExVendor\FedEx\Abstrac
      * @param InternationalDistributionSummaryDetail $summaryDetail
      * @return $this
      */
-    public function setSummaryDetail(\FedExVendor\FedEx\UploadDocumentService\ComplexType\InternationalDistributionSummaryDetail $summaryDetail)
+    public function setSummaryDetail(InternationalDistributionSummaryDetail $summaryDetail)
     {
         $this->values['SummaryDetail'] = $summaryDetail;
         return $this;
@@ -62,7 +62,7 @@ class ShipmentInternationalDistributionDetail extends \FedExVendor\FedEx\Abstrac
      * @param SplitPaymentSpecification $splitPaymentSpecification
      * @return $this
      */
-    public function setSplitPaymentSpecification(\FedExVendor\FedEx\UploadDocumentService\ComplexType\SplitPaymentSpecification $splitPaymentSpecification)
+    public function setSplitPaymentSpecification(SplitPaymentSpecification $splitPaymentSpecification)
     {
         $this->values['SplitPaymentSpecification'] = $splitPaymentSpecification;
         return $this;

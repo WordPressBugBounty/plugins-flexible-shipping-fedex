@@ -15,7 +15,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $DataField
  * @property string $LiteralValue
  */
-class ConfigurableLabelReferenceEntry extends \FedExVendor\FedEx\AbstractComplexType
+class ConfigurableLabelReferenceEntry extends AbstractComplexType
 {
     /**
      * Name of this complex type

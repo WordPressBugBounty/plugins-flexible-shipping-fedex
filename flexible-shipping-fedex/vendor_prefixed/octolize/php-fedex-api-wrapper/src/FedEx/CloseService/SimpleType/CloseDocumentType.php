@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Close Service
  */
-class CloseDocumentType extends \FedExVendor\FedEx\AbstractSimpleType
+class CloseDocumentType extends AbstractSimpleType
 {
     const _COD_REPORT = 'COD_REPORT';
     const _DETAILED_DELIVERY_MANIFEST = 'DETAILED_DELIVERY_MANIFEST';

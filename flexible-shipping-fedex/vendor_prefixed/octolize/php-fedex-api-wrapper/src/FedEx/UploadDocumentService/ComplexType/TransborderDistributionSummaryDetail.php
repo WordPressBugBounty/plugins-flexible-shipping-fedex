@@ -21,7 +21,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property Weight $GroundTotalPackageAdjustedWeight
  * @property int $NumberOfUnconsolidatedCommodities
  */
-class TransborderDistributionSummaryDetail extends \FedExVendor\FedEx\AbstractComplexType
+class TransborderDistributionSummaryDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -46,7 +46,7 @@ class TransborderDistributionSummaryDetail extends \FedExVendor\FedEx\AbstractCo
      * @param Weight $expressTotalPackageWeight
      * @return $this
      */
-    public function setExpressTotalPackageWeight(\FedExVendor\FedEx\UploadDocumentService\ComplexType\Weight $expressTotalPackageWeight)
+    public function setExpressTotalPackageWeight(Weight $expressTotalPackageWeight)
     {
         $this->values['ExpressTotalPackageWeight'] = $expressTotalPackageWeight;
         return $this;
@@ -57,7 +57,7 @@ class TransborderDistributionSummaryDetail extends \FedExVendor\FedEx\AbstractCo
      * @param Weight $expressTotalPackageAdjustedWeight
      * @return $this
      */
-    public function setExpressTotalPackageAdjustedWeight(\FedExVendor\FedEx\UploadDocumentService\ComplexType\Weight $expressTotalPackageAdjustedWeight)
+    public function setExpressTotalPackageAdjustedWeight(Weight $expressTotalPackageAdjustedWeight)
     {
         $this->values['ExpressTotalPackageAdjustedWeight'] = $expressTotalPackageAdjustedWeight;
         return $this;
@@ -79,7 +79,7 @@ class TransborderDistributionSummaryDetail extends \FedExVendor\FedEx\AbstractCo
      * @param Weight $expressTotalFreightWeight
      * @return $this
      */
-    public function setExpressTotalFreightWeight(\FedExVendor\FedEx\UploadDocumentService\ComplexType\Weight $expressTotalFreightWeight)
+    public function setExpressTotalFreightWeight(Weight $expressTotalFreightWeight)
     {
         $this->values['ExpressTotalFreightWeight'] = $expressTotalFreightWeight;
         return $this;
@@ -90,7 +90,7 @@ class TransborderDistributionSummaryDetail extends \FedExVendor\FedEx\AbstractCo
      * @param Weight $expressTotalFreightAdjustedWeight
      * @return $this
      */
-    public function setExpressTotalFreightAdjustedWeight(\FedExVendor\FedEx\UploadDocumentService\ComplexType\Weight $expressTotalFreightAdjustedWeight)
+    public function setExpressTotalFreightAdjustedWeight(Weight $expressTotalFreightAdjustedWeight)
     {
         $this->values['ExpressTotalFreightAdjustedWeight'] = $expressTotalFreightAdjustedWeight;
         return $this;
@@ -112,7 +112,7 @@ class TransborderDistributionSummaryDetail extends \FedExVendor\FedEx\AbstractCo
      * @param Weight $groundTotalPackageWeight
      * @return $this
      */
-    public function setGroundTotalPackageWeight(\FedExVendor\FedEx\UploadDocumentService\ComplexType\Weight $groundTotalPackageWeight)
+    public function setGroundTotalPackageWeight(Weight $groundTotalPackageWeight)
     {
         $this->values['GroundTotalPackageWeight'] = $groundTotalPackageWeight;
         return $this;
@@ -123,7 +123,7 @@ class TransborderDistributionSummaryDetail extends \FedExVendor\FedEx\AbstractCo
      * @param Weight $groundTotalPackageAdjustedWeight
      * @return $this
      */
-    public function setGroundTotalPackageAdjustedWeight(\FedExVendor\FedEx\UploadDocumentService\ComplexType\Weight $groundTotalPackageAdjustedWeight)
+    public function setGroundTotalPackageAdjustedWeight(Weight $groundTotalPackageAdjustedWeight)
     {
         $this->values['GroundTotalPackageAdjustedWeight'] = $groundTotalPackageAdjustedWeight;
         return $this;

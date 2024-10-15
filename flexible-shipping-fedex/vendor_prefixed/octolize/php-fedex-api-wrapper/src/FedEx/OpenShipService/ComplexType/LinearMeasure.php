@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property float $Value
  * @property \FedEx\OpenShipService\SimpleType\LinearUnits|string $Units
  */
-class LinearMeasure extends \FedExVendor\FedEx\AbstractComplexType
+class LinearMeasure extends AbstractComplexType
 {
     /**
      * Name of this complex type

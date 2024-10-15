@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  OpenShip Service
  */
-class UnitSystemType extends \FedExVendor\FedEx\AbstractSimpleType
+class UnitSystemType extends AbstractSimpleType
 {
     const _ENGLISH = 'ENGLISH';
     const _METRIC = 'METRIC';

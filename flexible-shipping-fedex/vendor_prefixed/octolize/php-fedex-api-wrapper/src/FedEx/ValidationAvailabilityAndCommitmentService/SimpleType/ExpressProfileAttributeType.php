@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Validation Availability And Commitment Service Service
  */
-class ExpressProfileAttributeType extends \FedExVendor\FedEx\AbstractSimpleType
+class ExpressProfileAttributeType extends AbstractSimpleType
 {
     const _ACCEPT_CREDIT = 'ACCEPT_CREDIT';
     const _EDI_CHILD = 'EDI_CHILD';

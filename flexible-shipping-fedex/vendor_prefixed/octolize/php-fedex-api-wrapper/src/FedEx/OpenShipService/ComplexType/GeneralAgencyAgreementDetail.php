@@ -12,7 +12,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  *
  * @property ShippingDocumentFormat $Format
  */
-class GeneralAgencyAgreementDetail extends \FedExVendor\FedEx\AbstractComplexType
+class GeneralAgencyAgreementDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -26,7 +26,7 @@ class GeneralAgencyAgreementDetail extends \FedExVendor\FedEx\AbstractComplexTyp
      * @param ShippingDocumentFormat $format
      * @return $this
      */
-    public function setFormat(\FedExVendor\FedEx\OpenShipService\ComplexType\ShippingDocumentFormat $format)
+    public function setFormat(ShippingDocumentFormat $format)
     {
         $this->values['Format'] = $format;
         return $this;

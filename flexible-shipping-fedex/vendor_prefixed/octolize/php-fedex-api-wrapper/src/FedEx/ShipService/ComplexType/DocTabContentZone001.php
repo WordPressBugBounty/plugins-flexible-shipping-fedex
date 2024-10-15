@@ -12,7 +12,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  *
  * @property DocTabZoneSpecification[] $DocTabZoneSpecifications
  */
-class DocTabContentZone001 extends \FedExVendor\FedEx\AbstractComplexType
+class DocTabContentZone001 extends AbstractComplexType
 {
     /**
      * Name of this complex type

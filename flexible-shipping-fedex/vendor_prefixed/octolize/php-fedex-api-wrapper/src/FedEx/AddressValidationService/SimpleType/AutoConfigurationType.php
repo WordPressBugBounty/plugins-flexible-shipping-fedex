@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Address Validation Service
  */
-class AutoConfigurationType extends \FedExVendor\FedEx\AbstractSimpleType
+class AutoConfigurationType extends AbstractSimpleType
 {
     const _ENTERPRISE = 'ENTERPRISE';
     const _SHIPPING_SERVICE_PROVIDER = 'SHIPPING_SERVICE_PROVIDER';

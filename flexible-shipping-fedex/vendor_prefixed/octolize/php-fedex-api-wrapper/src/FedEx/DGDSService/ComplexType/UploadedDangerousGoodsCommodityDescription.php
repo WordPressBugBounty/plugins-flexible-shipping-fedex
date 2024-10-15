@@ -24,7 +24,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property float $Percentage
  * @property string $AuthorizationInformation
  */
-class UploadedDangerousGoodsCommodityDescription extends \FedExVendor\FedEx\AbstractComplexType
+class UploadedDangerousGoodsCommodityDescription extends AbstractComplexType
 {
     /**
      * Name of this complex type

@@ -15,7 +15,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $TotalTravelTime
  * @property string $EtaDeliveryTimestamp
  */
-class CompletedFreightPickupLineItem extends \FedExVendor\FedEx\AbstractComplexType
+class CompletedFreightPickupLineItem extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -40,7 +40,7 @@ class CompletedFreightPickupLineItem extends \FedExVendor\FedEx\AbstractComplexT
      * @param FreightServiceCenterDetail $destination
      * @return $this
      */
-    public function setDestination(\FedExVendor\FedEx\PickupService\ComplexType\FreightServiceCenterDetail $destination)
+    public function setDestination(FreightServiceCenterDetail $destination)
     {
         $this->values['Destination'] = $destination;
         return $this;

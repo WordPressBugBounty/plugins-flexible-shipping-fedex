@@ -12,7 +12,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  *
  * @property string $Duration
  */
-class ExtraLaborDetail extends \FedExVendor\FedEx\AbstractComplexType
+class ExtraLaborDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

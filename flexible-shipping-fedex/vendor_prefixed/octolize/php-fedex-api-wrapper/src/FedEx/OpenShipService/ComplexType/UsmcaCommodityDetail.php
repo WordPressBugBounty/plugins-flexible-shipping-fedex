@@ -12,7 +12,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  *
  * @property \FedEx\OpenShipService\SimpleType\UsmcaOriginCriterionCode|string $OriginCriterion
  */
-class UsmcaCommodityDetail extends \FedExVendor\FedEx\AbstractComplexType
+class UsmcaCommodityDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

@@ -16,7 +16,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $LiteralValue
  * @property \FedEx\UploadDocumentService\SimpleType\DocTabZoneJustificationType|string $Justification
  */
-class DocTabZoneSpecification extends \FedExVendor\FedEx\AbstractComplexType
+class DocTabZoneSpecification extends AbstractComplexType
 {
     /**
      * Name of this complex type

@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Close Service
  */
-class CloseActionType extends \FedExVendor\FedEx\AbstractSimpleType
+class CloseActionType extends AbstractSimpleType
 {
     const _CLOSE = 'CLOSE';
     const _PREVIEW_CLOSE_DOCUMENTS = 'PREVIEW_CLOSE_DOCUMENTS';

@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
  */
-class PendingShipmentType extends \FedExVendor\FedEx\AbstractSimpleType
+class PendingShipmentType extends AbstractSimpleType
 {
     const _EMAIL = 'EMAIL';
 }

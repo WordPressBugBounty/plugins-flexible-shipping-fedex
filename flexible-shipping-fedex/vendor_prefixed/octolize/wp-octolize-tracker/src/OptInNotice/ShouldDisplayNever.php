@@ -5,7 +5,7 @@ namespace FedExVendor\Octolize\Tracker\OptInNotice;
 /**
  * Should display never.
  */
-class ShouldDisplayNever implements \FedExVendor\Octolize\Tracker\OptInNotice\ShouldDisplay
+class ShouldDisplayNever implements ShouldDisplay
 {
     /**
      * @inheritDoc

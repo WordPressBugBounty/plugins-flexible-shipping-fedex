@@ -3,7 +3,7 @@
 namespace FedExVendor\Illuminate\Contracts\Queue;
 
 use InvalidArgumentException;
-class EntityNotFoundException extends \InvalidArgumentException
+class EntityNotFoundException extends InvalidArgumentException
 {
     /**
      * Create a new exception instance.

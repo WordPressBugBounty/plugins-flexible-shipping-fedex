@@ -16,10 +16,10 @@ use FedExVendor\WPDesk\WooCommerceShipping\ShippingMethod\RateMethod\Fallback\Fa
 /**
  * Can handle global and instance settings for WooCommerce shipping method.
  */
-class FedexSettingsDefinitionWooCommerce extends \FedExVendor\WPDesk\FedexShippingService\FedexSettingsDefinition
+class FedexSettingsDefinitionWooCommerce extends FedexSettingsDefinition
 {
-    protected $global_method_fields = [\FedExVendor\WPDesk\FedexShippingService\FedexSettingsDefinition::FEDEX_HEADER, \FedExVendor\WPDesk\FedexShippingService\FedexSettingsDefinition::CREDENTIALS_HEADER, \FedExVendor\WPDesk\FedexShippingService\FedexSettingsDefinition::API_TYPE, \FedExVendor\WPDesk\FedexShippingService\FedexSettingsDefinition::FIELD_REST_API_KEY, \FedExVendor\WPDesk\FedexShippingService\FedexSettingsDefinition::FIELD_REST_SECRET_KEY, \FedExVendor\WPDesk\FedexShippingService\FedexSettingsDefinition::FIELD_ACCOUNT_NUMBER, \FedExVendor\WPDesk\FedexShippingService\FedexSettingsDefinition::FIELD_METER_NUMBER, \FedExVendor\WPDesk\FedexShippingService\FedexSettingsDefinition::FIELD_API_KEY, \FedExVendor\WPDesk\FedexShippingService\FedexSettingsDefinition::FIELD_API_PASSWORD, \FedExVendor\WPDesk\FedexShippingService\FedexSettingsDefinition::TESTING, \FedExVendor\WPDesk\FedexShippingService\FedexSettingsDefinition::SHIPPING_METHOD_HEADER, \FedExVendor\WPDesk\FedexShippingService\FedexSettingsDefinition::ENABLE_SHIPPING_METHOD, \FedExVendor\WPDesk\FedexShippingService\FedexSettingsDefinition::METHOD_TITLE, \FedExVendor\WPDesk\FedexShippingService\FedexSettingsDefinition::ADVANCED_OPTIONS_HEADER, \FedExVendor\WPDesk\FedexShippingService\FedexSettingsDefinition::DEBUG_MODE, \FedExVendor\WPDesk\FedexShippingService\FedexSettingsDefinition::FIELD_UNITS, \FedExVendor\WPDesk\WooCommerceShipping\ApiStatus\ApiStatusSettingsDefinitionDecorator::API_STATUS];
-    private $instance_and_method_fields = [\FedExVendor\WPDesk\FedexShippingService\FedexSettingsDefinition::METHOD_TITLE];
+    protected $global_method_fields = [FedexSettingsDefinition::FEDEX_HEADER, FedexSettingsDefinition::CREDENTIALS_HEADER, FedexSettingsDefinition::API_TYPE, FedexSettingsDefinition::FIELD_REST_API_KEY, FedexSettingsDefinition::FIELD_REST_SECRET_KEY, FedexSettingsDefinition::FIELD_ACCOUNT_NUMBER, FedexSettingsDefinition::FIELD_METER_NUMBER, FedexSettingsDefinition::FIELD_API_KEY, FedexSettingsDefinition::FIELD_API_PASSWORD, FedexSettingsDefinition::TESTING, FedexSettingsDefinition::SHIPPING_METHOD_HEADER, FedexSettingsDefinition::ENABLE_SHIPPING_METHOD, FedexSettingsDefinition::METHOD_TITLE, FedexSettingsDefinition::ADVANCED_OPTIONS_HEADER, FedexSettingsDefinition::DEBUG_MODE, FedexSettingsDefinition::FIELD_UNITS, ApiStatusSettingsDefinitionDecorator::API_STATUS];
+    private $instance_and_method_fields = [FedexSettingsDefinition::METHOD_TITLE];
     /**
      * Form fields.
      *
@@ -35,7 +35,7 @@ class FedexSettingsDefinitionWooCommerce extends \FedExVendor\WPDesk\FedexShippi
     {
         $this->form_fields = $form_fields;
         if ($default_api_type_soap) {
-            $this->form_fields[\FedExVendor\WPDesk\FedexShippingService\FedexSettingsDefinition::API_TYPE]['default'] = \FedExVendor\WPDesk\FedexShippingService\FedexSettingsDefinition::API_TYPE_SOAP;
+            $this->form_fields[FedexSettingsDefinition::API_TYPE]['default'] = FedexSettingsDefinition::API_TYPE_SOAP;
         }
     }
     /**
@@ -77,7 +77,7 @@ class FedexSettingsDefinitionWooCommerce extends \FedExVendor\WPDesk\FedexShippi
     {
         $fields = array();
         foreach ($all_fields as $key => $field) {
-            $is_instance_field = !\in_array($key, $this->get_global_method_fields(), \true) || \in_array($key, $this->instance_and_method_fields, \true);
+            $is_instance_field = !in_array($key, $this->get_global_method_fields(), \true) || in_array($key, $this->instance_and_method_fields, \true);
             if ($instance_fields === $is_instance_field) {
                 $fields[$key] = $field;
             }

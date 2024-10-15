@@ -20,13 +20,13 @@ final class Utils
      *
      * @param TaskQueueInterface|null $assign Optionally specify a new queue instance.
      */
-    public static function queue(\FedExVendor\GuzzleHttp\Promise\TaskQueueInterface $assign = null) : \FedExVendor\GuzzleHttp\Promise\TaskQueueInterface
+    public static function queue(?TaskQueueInterface $assign = null): TaskQueueInterface
     {
         static $queue;
         if ($assign) {
             $queue = $assign;
         } elseif (!$queue) {
-            $queue = new \FedExVendor\GuzzleHttp\Promise\TaskQueue();
+            $queue = new TaskQueue();
         }
         return $queue;
     }
@@ -36,13 +36,13 @@ final class Utils
      *
      * @param callable $task Task function to run.
      */
-    public static function task(callable $task) : \FedExVendor\GuzzleHttp\Promise\PromiseInterface
+    public static function task(callable $task): PromiseInterface
     {
         $queue = self::queue();
-        $promise = new \FedExVendor\GuzzleHttp\Promise\Promise([$queue, 'run']);
-        $queue->add(function () use($task, $promise) : void {
+        $promise = new Promise([$queue, 'run']);
+        $queue->add(function () use ($task, $promise): void {
             try {
-                if (\FedExVendor\GuzzleHttp\Promise\Is::pending($promise)) {
+                if (Is::pending($promise)) {
                     $promise->resolve($task());
                 }
             } catch (\Throwable $e) {
@@ -63,14 +63,14 @@ final class Utils
      *
      * @param PromiseInterface $promise Promise or value.
      */
-    public static function inspect(\FedExVendor\GuzzleHttp\Promise\PromiseInterface $promise) : array
+    public static function inspect(PromiseInterface $promise): array
     {
         try {
-            return ['state' => \FedExVendor\GuzzleHttp\Promise\PromiseInterface::FULFILLED, 'value' => $promise->wait()];
-        } catch (\FedExVendor\GuzzleHttp\Promise\RejectionException $e) {
-            return ['state' => \FedExVendor\GuzzleHttp\Promise\PromiseInterface::REJECTED, 'reason' => $e->getReason()];
+            return ['state' => PromiseInterface::FULFILLED, 'value' => $promise->wait()];
+        } catch (RejectionException $e) {
+            return ['state' => PromiseInterface::REJECTED, 'reason' => $e->getReason()];
         } catch (\Throwable $e) {
-            return ['state' => \FedExVendor\GuzzleHttp\Promise\PromiseInterface::REJECTED, 'reason' => $e];
+            return ['state' => PromiseInterface::REJECTED, 'reason' => $e];
         }
     }
     /**
@@ -83,7 +83,7 @@ final class Utils
      *
      * @param PromiseInterface[] $promises Traversable of promises to wait upon.
      */
-    public static function inspectAll($promises) : array
+    public static function inspectAll($promises): array
     {
         $results = [];
         foreach ($promises as $key => $promise) {
@@ -102,7 +102,7 @@ final class Utils
      *
      * @throws \Throwable on error
      */
-    public static function unwrap($promises) : array
+    public static function unwrap($promises): array
     {
         $results = [];
         foreach ($promises as $key => $promise) {
@@ -121,21 +121,21 @@ final class Utils
      * @param mixed $promises  Promises or values.
      * @param bool  $recursive If true, resolves new promises that might have been added to the stack during its own resolution.
      */
-    public static function all($promises, bool $recursive = \false) : \FedExVendor\GuzzleHttp\Promise\PromiseInterface
+    public static function all($promises, bool $recursive = \false): PromiseInterface
     {
         $results = [];
-        $promise = \FedExVendor\GuzzleHttp\Promise\Each::of($promises, function ($value, $idx) use(&$results) : void {
+        $promise = Each::of($promises, function ($value, $idx) use (&$results): void {
             $results[$idx] = $value;
-        }, function ($reason, $idx, \FedExVendor\GuzzleHttp\Promise\Promise $aggregate) : void {
+        }, function ($reason, $idx, Promise $aggregate): void {
             $aggregate->reject($reason);
-        })->then(function () use(&$results) {
-            \ksort($results);
+        })->then(function () use (&$results) {
+            ksort($results);
             return $results;
         });
         if (\true === $recursive) {
-            $promise = $promise->then(function ($results) use($recursive, &$promises) {
+            $promise = $promise->then(function ($results) use ($recursive, &$promises) {
                 foreach ($promises as $promise) {
-                    if (\FedExVendor\GuzzleHttp\Promise\Is::pending($promise)) {
+                    if (Is::pending($promise)) {
                         return self::all($promises, $recursive);
                     }
                 }
@@ -158,26 +158,26 @@ final class Utils
      * @param int   $count    Total number of promises.
      * @param mixed $promises Promises or values.
      */
-    public static function some(int $count, $promises) : \FedExVendor\GuzzleHttp\Promise\PromiseInterface
+    public static function some(int $count, $promises): PromiseInterface
     {
         $results = [];
         $rejections = [];
-        return \FedExVendor\GuzzleHttp\Promise\Each::of($promises, function ($value, $idx, \FedExVendor\GuzzleHttp\Promise\PromiseInterface $p) use(&$results, $count) : void {
-            if (\FedExVendor\GuzzleHttp\Promise\Is::settled($p)) {
+        return Each::of($promises, function ($value, $idx, PromiseInterface $p) use (&$results, $count): void {
+            if (Is::settled($p)) {
                 return;
             }
             $results[$idx] = $value;
-            if (\count($results) >= $count) {
+            if (count($results) >= $count) {
                 $p->resolve(null);
             }
-        }, function ($reason) use(&$rejections) : void {
+        }, function ($reason) use (&$rejections): void {
             $rejections[] = $reason;
-        })->then(function () use(&$results, &$rejections, $count) {
-            if (\count($results) !== $count) {
-                throw new \FedExVendor\GuzzleHttp\Promise\AggregateException('Not enough promises to fulfill count', $rejections);
+        })->then(function () use (&$results, &$rejections, $count) {
+            if (count($results) !== $count) {
+                throw new AggregateException('Not enough promises to fulfill count', $rejections);
             }
-            \ksort($results);
-            return \array_values($results);
+            ksort($results);
+            return array_values($results);
         });
     }
     /**
@@ -186,7 +186,7 @@ final class Utils
      *
      * @param mixed $promises Promises or values.
      */
-    public static function any($promises) : \FedExVendor\GuzzleHttp\Promise\PromiseInterface
+    public static function any($promises): PromiseInterface
     {
         return self::some(1, $promises)->then(function ($values) {
             return $values[0];
@@ -202,15 +202,15 @@ final class Utils
      *
      * @param mixed $promises Promises or values.
      */
-    public static function settle($promises) : \FedExVendor\GuzzleHttp\Promise\PromiseInterface
+    public static function settle($promises): PromiseInterface
     {
         $results = [];
-        return \FedExVendor\GuzzleHttp\Promise\Each::of($promises, function ($value, $idx) use(&$results) : void {
-            $results[$idx] = ['state' => \FedExVendor\GuzzleHttp\Promise\PromiseInterface::FULFILLED, 'value' => $value];
-        }, function ($reason, $idx) use(&$results) : void {
-            $results[$idx] = ['state' => \FedExVendor\GuzzleHttp\Promise\PromiseInterface::REJECTED, 'reason' => $reason];
-        })->then(function () use(&$results) {
-            \ksort($results);
+        return Each::of($promises, function ($value, $idx) use (&$results): void {
+            $results[$idx] = ['state' => PromiseInterface::FULFILLED, 'value' => $value];
+        }, function ($reason, $idx) use (&$results): void {
+            $results[$idx] = ['state' => PromiseInterface::REJECTED, 'reason' => $reason];
+        })->then(function () use (&$results) {
+            ksort($results);
             return $results;
         });
     }

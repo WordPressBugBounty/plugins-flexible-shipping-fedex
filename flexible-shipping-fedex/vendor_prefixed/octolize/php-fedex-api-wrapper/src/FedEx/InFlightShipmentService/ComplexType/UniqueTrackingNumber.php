@@ -14,7 +14,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $TrackingNumberUniqueIdentifier
  * @property string $ShipDate
  */
-class UniqueTrackingNumber extends \FedExVendor\FedEx\AbstractComplexType
+class UniqueTrackingNumber extends AbstractComplexType
 {
     /**
      * Name of this complex type

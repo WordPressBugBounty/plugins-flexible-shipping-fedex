@@ -13,7 +13,7 @@ use FedExVendor\WPDesk\WooCommerceShipping\ShippingMethod;
 /**
  * Fedex Shipping Method.
  */
-class FedexShippingMethod extends \FedExVendor\WPDesk\WooCommerceShipping\ShippingMethod implements \FedExVendor\WPDesk\WooCommerceShipping\ShippingMethod\HasRateCache
+class FedexShippingMethod extends ShippingMethod implements ShippingMethod\HasRateCache
 {
     const UNIQUE_ID = 'flexible_shipping_fedex';
     /**
@@ -36,7 +36,7 @@ class FedexShippingMethod extends \FedExVendor\WPDesk\WooCommerceShipping\Shippi
     {
         parent::process_admin_options();
         if (!$this->instance_id) {
-            (new \FedExVendor\WPDesk\WooCommerceShipping\Fedex\RestApiAuthProvider())->flush();
+            (new RestApiAuthProvider())->flush();
         }
     }
     /**
@@ -44,8 +44,8 @@ class FedexShippingMethod extends \FedExVendor\WPDesk\WooCommerceShipping\Shippi
      */
     public function build_form_fields()
     {
-        $default_api_type_soap = empty($this->get_option(\FedExVendor\WPDesk\FedexShippingService\FedexSettingsDefinition::API_TYPE, '')) && !empty($this->get_option(\FedExVendor\WPDesk\FedexShippingService\FedexSettingsDefinition::FIELD_API_KEY, ''));
-        $settings_definition = new \FedExVendor\WPDesk\WooCommerceShipping\Fedex\FedexSettingsDefinitionWooCommerce($this->form_fields, $default_api_type_soap);
+        $default_api_type_soap = empty($this->get_option(FedexSettingsDefinition::API_TYPE, '')) && !empty($this->get_option(FedexSettingsDefinition::FIELD_API_KEY, ''));
+        $settings_definition = new FedexSettingsDefinitionWooCommerce($this->form_fields, $default_api_type_soap);
         $this->form_fields = $settings_definition->get_form_fields();
         $this->instance_form_fields = $settings_definition->get_instance_form_fields();
     }

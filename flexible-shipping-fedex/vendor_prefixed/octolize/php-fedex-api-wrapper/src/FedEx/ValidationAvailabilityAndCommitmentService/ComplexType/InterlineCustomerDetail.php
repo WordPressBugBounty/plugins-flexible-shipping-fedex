@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $InterlineCode
  * @property string $InterlineEmployeeId
  */
-class InterlineCustomerDetail extends \FedExVendor\FedEx\AbstractComplexType
+class InterlineCustomerDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

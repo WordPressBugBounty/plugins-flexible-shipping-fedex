@@ -15,7 +15,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property DateRange $RequestRange
  * @property string $RequestDate
  */
-class CustomDeliveryWindowDetail extends \FedExVendor\FedEx\AbstractComplexType
+class CustomDeliveryWindowDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -51,7 +51,7 @@ class CustomDeliveryWindowDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param DateRange $requestRange
      * @return $this
      */
-    public function setRequestRange(\FedExVendor\FedEx\UploadDocumentService\ComplexType\DateRange $requestRange)
+    public function setRequestRange(DateRange $requestRange)
     {
         $this->values['RequestRange'] = $requestRange;
         return $this;

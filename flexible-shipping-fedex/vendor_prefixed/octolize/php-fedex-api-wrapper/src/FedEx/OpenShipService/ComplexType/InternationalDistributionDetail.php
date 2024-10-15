@@ -17,7 +17,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property DeclarationCurrency[] $DeclarationCurrencies
  * @property string $ClearanceFacilityLocationId
  */
-class InternationalDistributionDetail extends \FedExVendor\FedEx\AbstractComplexType
+class InternationalDistributionDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -42,7 +42,7 @@ class InternationalDistributionDetail extends \FedExVendor\FedEx\AbstractComplex
      * @param Dimensions $totalDimensions
      * @return $this
      */
-    public function setTotalDimensions(\FedExVendor\FedEx\OpenShipService\ComplexType\Dimensions $totalDimensions)
+    public function setTotalDimensions(Dimensions $totalDimensions)
     {
         $this->values['TotalDimensions'] = $totalDimensions;
         return $this;
@@ -53,7 +53,7 @@ class InternationalDistributionDetail extends \FedExVendor\FedEx\AbstractComplex
      * @param Money $totalInsuredValue
      * @return $this
      */
-    public function setTotalInsuredValue(\FedExVendor\FedEx\OpenShipService\ComplexType\Money $totalInsuredValue)
+    public function setTotalInsuredValue(Money $totalInsuredValue)
     {
         $this->values['TotalInsuredValue'] = $totalInsuredValue;
         return $this;

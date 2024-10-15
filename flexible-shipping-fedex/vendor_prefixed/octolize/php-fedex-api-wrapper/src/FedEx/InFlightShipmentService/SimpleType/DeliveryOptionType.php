@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  In Flight Shipment Service
  */
-class DeliveryOptionType extends \FedExVendor\FedEx\AbstractSimpleType
+class DeliveryOptionType extends AbstractSimpleType
 {
     const _REDIRECT_TO_HOLD_AT_LOCATION = 'REDIRECT_TO_HOLD_AT_LOCATION';
 }

@@ -32,7 +32,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property PickupHistoryServiceSummary[] $ServiceSummaries
  * @property \FedEx\PickupService\SimpleType\PickupStatusType|string $Status
  */
-class PickupHistorySummary extends \FedExVendor\FedEx\AbstractComplexType
+class PickupHistorySummary extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -46,7 +46,7 @@ class PickupHistorySummary extends \FedExVendor\FedEx\AbstractComplexType
      * @param Address $address
      * @return $this
      */
-    public function setAddress(\FedExVendor\FedEx\PickupService\ComplexType\Address $address)
+    public function setAddress(Address $address)
     {
         $this->values['Address'] = $address;
         return $this;
@@ -222,7 +222,7 @@ class PickupHistorySummary extends \FedExVendor\FedEx\AbstractComplexType
      * @param Contact $contact
      * @return $this
      */
-    public function setContact(\FedExVendor\FedEx\PickupService\ComplexType\Contact $contact)
+    public function setContact(Contact $contact)
     {
         $this->values['Contact'] = $contact;
         return $this;

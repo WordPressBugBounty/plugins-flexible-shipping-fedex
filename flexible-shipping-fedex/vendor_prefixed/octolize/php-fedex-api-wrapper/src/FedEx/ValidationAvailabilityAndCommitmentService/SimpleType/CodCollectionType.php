@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Validation Availability And Commitment Service Service
  */
-class CodCollectionType extends \FedExVendor\FedEx\AbstractSimpleType
+class CodCollectionType extends AbstractSimpleType
 {
     const _ANY = 'ANY';
     const _CASH = 'CASH';

@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Validation Availability And Commitment Service Service
  */
-class NetExplosiveClassificationType extends \FedExVendor\FedEx\AbstractSimpleType
+class NetExplosiveClassificationType extends AbstractSimpleType
 {
     const _NET_EXPLOSIVE_CONTENT = 'NET_EXPLOSIVE_CONTENT';
     const _NET_EXPLOSIVE_MASS = 'NET_EXPLOSIVE_MASS';

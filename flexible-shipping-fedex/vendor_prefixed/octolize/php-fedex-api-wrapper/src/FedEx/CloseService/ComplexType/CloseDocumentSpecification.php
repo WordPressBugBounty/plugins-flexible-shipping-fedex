@@ -16,7 +16,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property ManifestDetail $ManifestDetail
  * @property Op950Detail $Op950Detail
  */
-class CloseDocumentSpecification extends \FedExVendor\FedEx\AbstractComplexType
+class CloseDocumentSpecification extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -41,7 +41,7 @@ class CloseDocumentSpecification extends \FedExVendor\FedEx\AbstractComplexType
      * @param DetailedDeliveryManifestDetail $detailedDeliveryManifestDetail
      * @return $this
      */
-    public function setDetailedDeliveryManifestDetail(\FedExVendor\FedEx\CloseService\ComplexType\DetailedDeliveryManifestDetail $detailedDeliveryManifestDetail)
+    public function setDetailedDeliveryManifestDetail(DetailedDeliveryManifestDetail $detailedDeliveryManifestDetail)
     {
         $this->values['DetailedDeliveryManifestDetail'] = $detailedDeliveryManifestDetail;
         return $this;
@@ -52,7 +52,7 @@ class CloseDocumentSpecification extends \FedExVendor\FedEx\AbstractComplexType
      * @param HazardousMaterialsCertificationDetail $hazardousMaterialsCertificationDetail
      * @return $this
      */
-    public function setHazardousMaterialsCertificationDetail(\FedExVendor\FedEx\CloseService\ComplexType\HazardousMaterialsCertificationDetail $hazardousMaterialsCertificationDetail)
+    public function setHazardousMaterialsCertificationDetail(HazardousMaterialsCertificationDetail $hazardousMaterialsCertificationDetail)
     {
         $this->values['HazardousMaterialsCertificationDetail'] = $hazardousMaterialsCertificationDetail;
         return $this;
@@ -63,7 +63,7 @@ class CloseDocumentSpecification extends \FedExVendor\FedEx\AbstractComplexType
      * @param ManifestDetail $manifestDetail
      * @return $this
      */
-    public function setManifestDetail(\FedExVendor\FedEx\CloseService\ComplexType\ManifestDetail $manifestDetail)
+    public function setManifestDetail(ManifestDetail $manifestDetail)
     {
         $this->values['ManifestDetail'] = $manifestDetail;
         return $this;
@@ -74,7 +74,7 @@ class CloseDocumentSpecification extends \FedExVendor\FedEx\AbstractComplexType
      * @param Op950Detail $op950Detail
      * @return $this
      */
-    public function setOp950Detail(\FedExVendor\FedEx\CloseService\ComplexType\Op950Detail $op950Detail)
+    public function setOp950Detail(Op950Detail $op950Detail)
     {
         $this->values['Op950Detail'] = $op950Detail;
         return $this;

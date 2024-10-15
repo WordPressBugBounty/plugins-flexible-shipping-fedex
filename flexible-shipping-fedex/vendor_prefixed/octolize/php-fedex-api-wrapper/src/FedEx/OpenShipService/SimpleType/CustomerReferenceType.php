@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  OpenShip Service
  */
-class CustomerReferenceType extends \FedExVendor\FedEx\AbstractSimpleType
+class CustomerReferenceType extends AbstractSimpleType
 {
     const _CUSTOMER_REFERENCE = 'CUSTOMER_REFERENCE';
     const _DEPARTMENT_NUMBER = 'DEPARTMENT_NUMBER';

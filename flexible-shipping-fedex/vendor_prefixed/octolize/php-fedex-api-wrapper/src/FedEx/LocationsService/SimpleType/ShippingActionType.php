@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Locations Service
  */
-class ShippingActionType extends \FedExVendor\FedEx\AbstractSimpleType
+class ShippingActionType extends AbstractSimpleType
 {
     const _DELIVERIES = 'DELIVERIES';
     const _PICKUPS = 'PICKUPS';

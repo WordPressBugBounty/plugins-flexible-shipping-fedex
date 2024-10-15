@@ -14,7 +14,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property EdtTaxDetail[] $Taxes
  * @property Money $Total
  */
-class EdtCommodityTax extends \FedExVendor\FedEx\AbstractComplexType
+class EdtCommodityTax extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -50,7 +50,7 @@ class EdtCommodityTax extends \FedExVendor\FedEx\AbstractComplexType
      * @param Money $total
      * @return $this
      */
-    public function setTotal(\FedExVendor\FedEx\RateService\ComplexType\Money $total)
+    public function setTotal(Money $total)
     {
         $this->values['Total'] = $total;
         return $this;

@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property \FedEx\RateService\SimpleType\CustomerImageUsageType|string $Type
  * @property \FedEx\RateService\SimpleType\ImageId|string $Id
  */
-class CustomerImageUsage extends \FedExVendor\FedEx\AbstractComplexType
+class CustomerImageUsage extends AbstractComplexType
 {
     /**
      * Name of this complex type

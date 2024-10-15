@@ -14,7 +14,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property \FedEx\TrackService\SimpleType\TrackSubDelayType|string $SubDelayType
  * @property \FedEx\TrackService\SimpleType\ServiceDelayType|string $ServiceDelayStatus
  */
-class TrackDelayDetail extends \FedExVendor\FedEx\AbstractComplexType
+class TrackDelayDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

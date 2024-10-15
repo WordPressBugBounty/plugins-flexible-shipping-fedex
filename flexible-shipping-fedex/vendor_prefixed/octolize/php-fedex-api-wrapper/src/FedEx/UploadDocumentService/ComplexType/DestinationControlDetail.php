@@ -14,7 +14,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $DestinationCountries
  * @property string $EndUser
  */
-class DestinationControlDetail extends \FedExVendor\FedEx\AbstractComplexType
+class DestinationControlDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

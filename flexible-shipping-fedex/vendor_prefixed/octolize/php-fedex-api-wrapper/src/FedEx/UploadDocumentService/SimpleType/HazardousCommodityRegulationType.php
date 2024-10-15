@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Upload Document Service
  */
-class HazardousCommodityRegulationType extends \FedExVendor\FedEx\AbstractSimpleType
+class HazardousCommodityRegulationType extends AbstractSimpleType
 {
     const _ADR = 'ADR';
     const _DOT = 'DOT';

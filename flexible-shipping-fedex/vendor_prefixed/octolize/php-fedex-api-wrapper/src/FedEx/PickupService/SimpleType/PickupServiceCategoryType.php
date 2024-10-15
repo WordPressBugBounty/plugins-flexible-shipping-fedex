@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  */
-class PickupServiceCategoryType extends \FedExVendor\FedEx\AbstractSimpleType
+class PickupServiceCategoryType extends AbstractSimpleType
 {
     const _FEDEX_DISTANCE_DEFERRED = 'FEDEX_DISTANCE_DEFERRED';
     const _FEDEX_NEXT_DAY_AFTERNOON = 'FEDEX_NEXT_DAY_AFTERNOON';

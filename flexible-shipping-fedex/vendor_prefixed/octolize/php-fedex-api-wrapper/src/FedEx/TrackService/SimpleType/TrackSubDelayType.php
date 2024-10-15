@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Package Movement Information Service
  */
-class TrackSubDelayType extends \FedExVendor\FedEx\AbstractSimpleType
+class TrackSubDelayType extends AbstractSimpleType
 {
     const _AIRPORT_CLOSED = 'AIRPORT_CLOSED';
     const _AIR_TRAFFIC_CONTROL = 'AIR_TRAFFIC_CONTROL';

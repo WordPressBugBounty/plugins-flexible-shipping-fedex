@@ -26,7 +26,7 @@ namespace FedExVendor\Illuminate\Support\Facades;
  * @see \Illuminate\Cache\CacheManager
  * @see \Illuminate\Cache\Repository
  */
-class Cache extends \FedExVendor\Illuminate\Support\Facades\Facade
+class Cache extends Facade
 {
     /**
      * Get the registered name of the component.

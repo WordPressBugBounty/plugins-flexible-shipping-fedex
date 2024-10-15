@@ -12,7 +12,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  *
  * @property PolicyGridManifest[] $PolicyGridManifests
  */
-class CustomerShippingEnablementDetail extends \FedExVendor\FedEx\AbstractComplexType
+class CustomerShippingEnablementDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

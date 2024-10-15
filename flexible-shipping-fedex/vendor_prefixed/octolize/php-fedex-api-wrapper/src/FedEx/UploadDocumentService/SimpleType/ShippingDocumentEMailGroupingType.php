@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Upload Document Service
  */
-class ShippingDocumentEMailGroupingType extends \FedExVendor\FedEx\AbstractSimpleType
+class ShippingDocumentEMailGroupingType extends AbstractSimpleType
 {
     const _BY_RECIPIENT = 'BY_RECIPIENT';
     const _NONE = 'NONE';

@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Package Movement Information Service
  */
-class TrackingDateOrTimestampType extends \FedExVendor\FedEx\AbstractSimpleType
+class TrackingDateOrTimestampType extends AbstractSimpleType
 {
     const _ACTUAL_DELIVERY = 'ACTUAL_DELIVERY';
     const _ACTUAL_PICKUP = 'ACTUAL_PICKUP';

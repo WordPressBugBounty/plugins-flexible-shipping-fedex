@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
  */
-class UsmcaCertifierSpecificationType extends \FedExVendor\FedEx\AbstractSimpleType
+class UsmcaCertifierSpecificationType extends AbstractSimpleType
 {
     const _EXPORTER = 'EXPORTER';
     const _IMPORTER = 'IMPORTER';

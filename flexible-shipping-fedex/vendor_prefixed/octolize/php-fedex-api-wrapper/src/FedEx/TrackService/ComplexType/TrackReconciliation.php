@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $Status
  * @property string $Description
  */
-class TrackReconciliation extends \FedExVendor\FedEx\AbstractComplexType
+class TrackReconciliation extends AbstractComplexType
 {
     /**
      * Name of this complex type

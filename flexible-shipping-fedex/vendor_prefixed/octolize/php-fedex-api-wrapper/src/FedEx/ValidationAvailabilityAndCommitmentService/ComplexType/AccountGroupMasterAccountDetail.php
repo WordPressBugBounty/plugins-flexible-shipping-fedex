@@ -15,7 +15,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $PricingSubGroupCode
  * @property \FedEx\ValidationAvailabilityAndCommitmentService\SimpleType\NationalAccountType|string $NationalAccountType
  */
-class AccountGroupMasterAccountDetail extends \FedExVendor\FedEx\AbstractComplexType
+class AccountGroupMasterAccountDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

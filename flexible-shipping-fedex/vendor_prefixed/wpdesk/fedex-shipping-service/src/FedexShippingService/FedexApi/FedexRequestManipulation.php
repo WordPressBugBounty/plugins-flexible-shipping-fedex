@@ -32,7 +32,7 @@ class FedexRequestManipulation
     {
         $canada_provinces = ['AB', 'BC', 'MB', 'NB', 'NL', 'NT', 'NS', 'NU', 'ON', 'PE', 'QC', 'SK', 'YT'];
         $usa_provinces = ['AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'DC', 'FL', 'GA', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'OH', 'OK', 'OR', 'PA', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VT', 'VA', 'WA', 'WV', 'WI', 'WY', 'AA', 'AE', 'AP'];
-        if (empty($province) || !\in_array($province, \array_merge($canada_provinces, $usa_provinces), \true)) {
+        if (empty($province) || !in_array($province, array_merge($canada_provinces, $usa_provinces), \true)) {
             return '';
         }
         return $province;
@@ -49,7 +49,7 @@ class FedexRequestManipulation
         if (empty($string)) {
             return '';
         }
-        return \mb_convert_encoding($string, 'UTF-7');
+        return mb_convert_encoding($string, 'UTF-7');
     }
     /**
      * Convert weight unit.
@@ -62,7 +62,7 @@ class FedexRequestManipulation
      */
     public static function convert_weight_unit($weight_unit)
     {
-        $weight_unit = \str_replace('S', '', \strtoupper($weight_unit));
+        $weight_unit = str_replace('S', '', strtoupper($weight_unit));
         return $weight_unit;
     }
     /**
@@ -74,7 +74,7 @@ class FedexRequestManipulation
      */
     public static function convert_dimension_unit($dimension_unit)
     {
-        return \strtoupper($dimension_unit);
+        return strtoupper($dimension_unit);
     }
     /**
      * Convert currency from Unicode CLDR to FedEx.
@@ -100,7 +100,7 @@ class FedexRequestManipulation
      */
     public static function convert_currency_from_fedex($fedex_currency)
     {
-        $convert = \array_flip(self::CURRENCY_MAPPING);
+        $convert = array_flip(self::CURRENCY_MAPPING);
         return isset($convert[$fedex_currency]) ? $convert[$fedex_currency] : $fedex_currency;
     }
 }

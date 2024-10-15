@@ -12,7 +12,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  *
  * @property RegulatoryProhibition[] $Prohibitions
  */
-class RegulatoryAdvisoryDetail extends \FedExVendor\FedEx\AbstractComplexType
+class RegulatoryAdvisoryDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

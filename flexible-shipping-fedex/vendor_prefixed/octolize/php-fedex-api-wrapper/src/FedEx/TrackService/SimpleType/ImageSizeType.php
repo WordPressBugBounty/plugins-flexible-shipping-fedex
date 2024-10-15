@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Package Movement Information Service
  */
-class ImageSizeType extends \FedExVendor\FedEx\AbstractSimpleType
+class ImageSizeType extends AbstractSimpleType
 {
     const _LARGE = 'LARGE';
     const _SMALL = 'SMALL';

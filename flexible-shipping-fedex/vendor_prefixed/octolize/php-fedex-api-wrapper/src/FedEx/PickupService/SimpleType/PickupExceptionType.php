@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Pickup Service
  */
-class PickupExceptionType extends \FedExVendor\FedEx\AbstractSimpleType
+class PickupExceptionType extends AbstractSimpleType
 {
     const _ATTEMPTED_AFTER_CLOSE_TIME = 'ATTEMPTED_AFTER_CLOSE_TIME';
     const _ATTEMPTED_OUT_OF_WINDOW = 'ATTEMPTED_OUT_OF_WINDOW';

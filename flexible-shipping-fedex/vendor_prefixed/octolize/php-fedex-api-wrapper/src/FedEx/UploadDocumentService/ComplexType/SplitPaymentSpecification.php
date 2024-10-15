@@ -12,7 +12,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  *
  * @property SplitPaymentDetail[] $Payments
  */
-class SplitPaymentSpecification extends \FedExVendor\FedEx\AbstractComplexType
+class SplitPaymentSpecification extends AbstractComplexType
 {
     /**
      * Name of this complex type

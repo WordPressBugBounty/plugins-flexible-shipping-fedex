@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractRequest;
  * @package     PHP FedEx API wrapper
  * @subpackage  Dangerous Goods Data Service
  */
-class Request extends \FedExVendor\FedEx\AbstractRequest
+class Request extends AbstractRequest
 {
     const PRODUCTION_URL = 'https://ws.fedex.com:443/web-services/dgds';
     const TESTING_URL = 'https://wsbeta.fedex.com:443/web-services/dgds';
@@ -22,13 +22,13 @@ class Request extends \FedExVendor\FedEx\AbstractRequest
      * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
      * @return ComplexType\AddDangerousGoodsHandlingUnitReply|stdClass
      */
-    public function getAddDangerousGoodsHandlingUnitReply(\FedExVendor\FedEx\DGDSService\ComplexType\AddDangerousGoodsHandlingUnitRequest $addDangerousGoodsHandlingUnitRequest, $returnStdClass = \false)
+    public function getAddDangerousGoodsHandlingUnitReply(ComplexType\AddDangerousGoodsHandlingUnitRequest $addDangerousGoodsHandlingUnitRequest, $returnStdClass = \false)
     {
         $response = $this->getSoapClient()->addDangerousGoodsHandlingUnit($addDangerousGoodsHandlingUnitRequest->toArray());
         if ($returnStdClass) {
             return $response;
         }
-        $addDangerousGoodsHandlingUnitReply = new \FedExVendor\FedEx\DGDSService\ComplexType\AddDangerousGoodsHandlingUnitReply();
+        $addDangerousGoodsHandlingUnitReply = new ComplexType\AddDangerousGoodsHandlingUnitReply();
         $addDangerousGoodsHandlingUnitReply->populateFromStdClass($response);
         return $addDangerousGoodsHandlingUnitReply;
     }
@@ -39,13 +39,13 @@ class Request extends \FedExVendor\FedEx\AbstractRequest
      * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
      * @return ComplexType\ModifyDangerousGoodsShipmentReply|stdClass
      */
-    public function getModifyDangerousGoodsShipmentReply(\FedExVendor\FedEx\DGDSService\ComplexType\ModifyDangerousGoodsShipmentRequest $modifyDangerousGoodsShipmentRequest, $returnStdClass = \false)
+    public function getModifyDangerousGoodsShipmentReply(ComplexType\ModifyDangerousGoodsShipmentRequest $modifyDangerousGoodsShipmentRequest, $returnStdClass = \false)
     {
         $response = $this->getSoapClient()->modifyDangerousGoodsShipment($modifyDangerousGoodsShipmentRequest->toArray());
         if ($returnStdClass) {
             return $response;
         }
-        $modifyDangerousGoodsShipmentReply = new \FedExVendor\FedEx\DGDSService\ComplexType\ModifyDangerousGoodsShipmentReply();
+        $modifyDangerousGoodsShipmentReply = new ComplexType\ModifyDangerousGoodsShipmentReply();
         $modifyDangerousGoodsShipmentReply->populateFromStdClass($response);
         return $modifyDangerousGoodsShipmentReply;
     }
@@ -56,13 +56,13 @@ class Request extends \FedExVendor\FedEx\AbstractRequest
      * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
      * @return ComplexType\UploadDangerousGoodsReply|stdClass
      */
-    public function getUploadDangerousGoodsReply(\FedExVendor\FedEx\DGDSService\ComplexType\UploadDangerousGoodsRequest $uploadDangerousGoodsRequest, $returnStdClass = \false)
+    public function getUploadDangerousGoodsReply(ComplexType\UploadDangerousGoodsRequest $uploadDangerousGoodsRequest, $returnStdClass = \false)
     {
         $response = $this->getSoapClient()->uploadDangerousGoods($uploadDangerousGoodsRequest->toArray());
         if ($returnStdClass) {
             return $response;
         }
-        $uploadDangerousGoodsReply = new \FedExVendor\FedEx\DGDSService\ComplexType\UploadDangerousGoodsReply();
+        $uploadDangerousGoodsReply = new ComplexType\UploadDangerousGoodsReply();
         $uploadDangerousGoodsReply->populateFromStdClass($response);
         return $uploadDangerousGoodsReply;
     }
@@ -73,13 +73,13 @@ class Request extends \FedExVendor\FedEx\AbstractRequest
      * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
      * @return ComplexType\ModifyDangerousGoodsHandlingUnitReply|stdClass
      */
-    public function getModifyDangerousGoodsHandlingUnitReply(\FedExVendor\FedEx\DGDSService\ComplexType\ModifyDangerousGoodsHandlingUnitRequest $modifyDangerousGoodsHandlingUnitRequest, $returnStdClass = \false)
+    public function getModifyDangerousGoodsHandlingUnitReply(ComplexType\ModifyDangerousGoodsHandlingUnitRequest $modifyDangerousGoodsHandlingUnitRequest, $returnStdClass = \false)
     {
         $response = $this->getSoapClient()->modifyDangerousGoodsHandlingUnit($modifyDangerousGoodsHandlingUnitRequest->toArray());
         if ($returnStdClass) {
             return $response;
         }
-        $modifyDangerousGoodsHandlingUnitReply = new \FedExVendor\FedEx\DGDSService\ComplexType\ModifyDangerousGoodsHandlingUnitReply();
+        $modifyDangerousGoodsHandlingUnitReply = new ComplexType\ModifyDangerousGoodsHandlingUnitReply();
         $modifyDangerousGoodsHandlingUnitReply->populateFromStdClass($response);
         return $modifyDangerousGoodsHandlingUnitReply;
     }
@@ -90,13 +90,13 @@ class Request extends \FedExVendor\FedEx\AbstractRequest
      * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
      * @return ComplexType\DeleteDangerousGoodsHandlingUnitReply|stdClass
      */
-    public function getDeleteDangerousGoodsHandlingUnitReply(\FedExVendor\FedEx\DGDSService\ComplexType\DeleteDangerousGoodsHandlingUnitRequest $deleteDangerousGoodsHandlingUnitRequest, $returnStdClass = \false)
+    public function getDeleteDangerousGoodsHandlingUnitReply(ComplexType\DeleteDangerousGoodsHandlingUnitRequest $deleteDangerousGoodsHandlingUnitRequest, $returnStdClass = \false)
     {
         $response = $this->getSoapClient()->deleteDangerousGoodsHandlingUnit($deleteDangerousGoodsHandlingUnitRequest->toArray());
         if ($returnStdClass) {
             return $response;
         }
-        $deleteDangerousGoodsHandlingUnitReply = new \FedExVendor\FedEx\DGDSService\ComplexType\DeleteDangerousGoodsHandlingUnitReply();
+        $deleteDangerousGoodsHandlingUnitReply = new ComplexType\DeleteDangerousGoodsHandlingUnitReply();
         $deleteDangerousGoodsHandlingUnitReply->populateFromStdClass($response);
         return $deleteDangerousGoodsHandlingUnitReply;
     }
@@ -107,13 +107,13 @@ class Request extends \FedExVendor\FedEx\AbstractRequest
      * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
      * @return ComplexType\DeleteDangerousGoodsReply|stdClass
      */
-    public function getDeleteDangerousGoodsReply(\FedExVendor\FedEx\DGDSService\ComplexType\DeleteDangerousGoodsRequest $deleteDangerousGoodsRequest, $returnStdClass = \false)
+    public function getDeleteDangerousGoodsReply(ComplexType\DeleteDangerousGoodsRequest $deleteDangerousGoodsRequest, $returnStdClass = \false)
     {
         $response = $this->getSoapClient()->deleteDangerousGoods($deleteDangerousGoodsRequest->toArray());
         if ($returnStdClass) {
             return $response;
         }
-        $deleteDangerousGoodsReply = new \FedExVendor\FedEx\DGDSService\ComplexType\DeleteDangerousGoodsReply();
+        $deleteDangerousGoodsReply = new ComplexType\DeleteDangerousGoodsReply();
         $deleteDangerousGoodsReply->populateFromStdClass($response);
         return $deleteDangerousGoodsReply;
     }
@@ -124,13 +124,13 @@ class Request extends \FedExVendor\FedEx\AbstractRequest
      * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
      * @return ComplexType\RetrieveDangerousGoodsReply|stdClass
      */
-    public function getRetrieveDangerousGoodsReply(\FedExVendor\FedEx\DGDSService\ComplexType\RetrieveDangerousGoodsRequest $retrieveDangerousGoodsRequest, $returnStdClass = \false)
+    public function getRetrieveDangerousGoodsReply(ComplexType\RetrieveDangerousGoodsRequest $retrieveDangerousGoodsRequest, $returnStdClass = \false)
     {
         $response = $this->getSoapClient()->retrieveDangerousGoods($retrieveDangerousGoodsRequest->toArray());
         if ($returnStdClass) {
             return $response;
         }
-        $retrieveDangerousGoodsReply = new \FedExVendor\FedEx\DGDSService\ComplexType\RetrieveDangerousGoodsReply();
+        $retrieveDangerousGoodsReply = new ComplexType\RetrieveDangerousGoodsReply();
         $retrieveDangerousGoodsReply->populateFromStdClass($response);
         return $retrieveDangerousGoodsReply;
     }
@@ -141,13 +141,13 @@ class Request extends \FedExVendor\FedEx\AbstractRequest
      * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
      * @return ComplexType\ValidateDangerousGoodsReply|stdClass
      */
-    public function getValidateDangerousGoodsReply(\FedExVendor\FedEx\DGDSService\ComplexType\ValidateDangerousGoodsRequest $validateDangerousGoodsRequest, $returnStdClass = \false)
+    public function getValidateDangerousGoodsReply(ComplexType\ValidateDangerousGoodsRequest $validateDangerousGoodsRequest, $returnStdClass = \false)
     {
         $response = $this->getSoapClient()->validateDangerousGoods($validateDangerousGoodsRequest->toArray());
         if ($returnStdClass) {
             return $response;
         }
-        $validateDangerousGoodsReply = new \FedExVendor\FedEx\DGDSService\ComplexType\ValidateDangerousGoodsReply();
+        $validateDangerousGoodsReply = new ComplexType\ValidateDangerousGoodsReply();
         $validateDangerousGoodsReply->populateFromStdClass($response);
         return $validateDangerousGoodsReply;
     }

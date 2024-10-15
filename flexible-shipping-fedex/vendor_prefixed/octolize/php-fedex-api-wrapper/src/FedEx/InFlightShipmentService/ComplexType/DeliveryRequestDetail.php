@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property \FedEx\InFlightShipmentService\SimpleType\DeliveryOptionType|string $Type
  * @property RedirectToHoldAtLocationRequestDetail $RedirectToHoldAtLocationDetail
  */
-class DeliveryRequestDetail extends \FedExVendor\FedEx\AbstractComplexType
+class DeliveryRequestDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -38,7 +38,7 @@ class DeliveryRequestDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param RedirectToHoldAtLocationRequestDetail $redirectToHoldAtLocationDetail
      * @return $this
      */
-    public function setRedirectToHoldAtLocationDetail(\FedExVendor\FedEx\InFlightShipmentService\ComplexType\RedirectToHoldAtLocationRequestDetail $redirectToHoldAtLocationDetail)
+    public function setRedirectToHoldAtLocationDetail(RedirectToHoldAtLocationRequestDetail $redirectToHoldAtLocationDetail)
     {
         $this->values['RedirectToHoldAtLocationDetail'] = $redirectToHoldAtLocationDetail;
         return $this;

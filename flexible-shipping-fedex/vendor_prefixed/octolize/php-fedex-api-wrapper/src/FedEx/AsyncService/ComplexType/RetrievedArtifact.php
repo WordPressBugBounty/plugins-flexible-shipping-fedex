@@ -19,7 +19,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $ReferenceId
  * @property ArtifactPart[] $Parts
  */
-class RetrievedArtifact extends \FedExVendor\FedEx\AbstractComplexType
+class RetrievedArtifact extends AbstractComplexType
 {
     /**
      * Name of this complex type

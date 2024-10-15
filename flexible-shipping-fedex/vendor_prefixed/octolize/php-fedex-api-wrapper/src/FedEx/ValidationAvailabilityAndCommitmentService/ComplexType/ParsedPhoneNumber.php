@@ -15,7 +15,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $PhoneNumber
  * @property string $Extension
  */
-class ParsedPhoneNumber extends \FedExVendor\FedEx\AbstractComplexType
+class ParsedPhoneNumber extends AbstractComplexType
 {
     /**
      * Name of this complex type

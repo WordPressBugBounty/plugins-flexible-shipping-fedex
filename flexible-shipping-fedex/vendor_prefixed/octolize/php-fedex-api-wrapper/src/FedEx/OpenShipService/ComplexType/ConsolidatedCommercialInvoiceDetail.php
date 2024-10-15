@@ -14,7 +14,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property CustomerImageUsage[] $CustomerImageUsages
  * @property string $SignatureName
  */
-class ConsolidatedCommercialInvoiceDetail extends \FedExVendor\FedEx\AbstractComplexType
+class ConsolidatedCommercialInvoiceDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -28,7 +28,7 @@ class ConsolidatedCommercialInvoiceDetail extends \FedExVendor\FedEx\AbstractCom
      * @param ShippingDocumentFormat $format
      * @return $this
      */
-    public function setFormat(\FedExVendor\FedEx\OpenShipService\ComplexType\ShippingDocumentFormat $format)
+    public function setFormat(ShippingDocumentFormat $format)
     {
         $this->values['Format'] = $format;
         return $this;

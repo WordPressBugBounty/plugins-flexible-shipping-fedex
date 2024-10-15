@@ -4,7 +4,7 @@ namespace FedExVendor\Illuminate\Contracts\Cache;
 
 use Closure;
 use FedExVendor\Psr\SimpleCache\CacheInterface;
-interface Repository extends \FedExVendor\Psr\SimpleCache\CacheInterface
+interface Repository extends CacheInterface
 {
     /**
      * Retrieve an item from the cache and delete it.
@@ -64,7 +64,7 @@ interface Repository extends \FedExVendor\Psr\SimpleCache\CacheInterface
      * @param  \Closure  $callback
      * @return mixed
      */
-    public function remember($key, $ttl, \Closure $callback);
+    public function remember($key, $ttl, Closure $callback);
     /**
      * Get an item from the cache, or execute the given Closure and store the result forever.
      *
@@ -72,7 +72,7 @@ interface Repository extends \FedExVendor\Psr\SimpleCache\CacheInterface
      * @param  \Closure  $callback
      * @return mixed
      */
-    public function sear($key, \Closure $callback);
+    public function sear($key, Closure $callback);
     /**
      * Get an item from the cache, or execute the given Closure and store the result forever.
      *
@@ -80,7 +80,7 @@ interface Repository extends \FedExVendor\Psr\SimpleCache\CacheInterface
      * @param  \Closure  $callback
      * @return mixed
      */
-    public function rememberForever($key, \Closure $callback);
+    public function rememberForever($key, Closure $callback);
     /**
      * Remove an item from the cache.
      *

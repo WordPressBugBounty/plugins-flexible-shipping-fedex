@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property boolean $CargoAircraftOnly
  * @property string $PackingInstructions
  */
-class HazardousCommodityPackingDetail extends \FedExVendor\FedEx\AbstractComplexType
+class HazardousCommodityPackingDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

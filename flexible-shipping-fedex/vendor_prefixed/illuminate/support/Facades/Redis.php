@@ -10,7 +10,7 @@ namespace FedExVendor\Illuminate\Support\Facades;
  * @see \Illuminate\Redis\RedisManager
  * @see \Illuminate\Contracts\Redis\Factory
  */
-class Redis extends \FedExVendor\Illuminate\Support\Facades\Facade
+class Redis extends Facade
 {
     /**
      * Get the registered name of the component.

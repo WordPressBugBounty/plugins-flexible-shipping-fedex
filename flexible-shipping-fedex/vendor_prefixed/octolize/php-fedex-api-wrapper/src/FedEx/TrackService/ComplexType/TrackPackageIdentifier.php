@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property \FedEx\TrackService\SimpleType\TrackIdentifierType|string $Type
  * @property string $Value
  */
-class TrackPackageIdentifier extends \FedExVendor\FedEx\AbstractComplexType
+class TrackPackageIdentifier extends AbstractComplexType
 {
     /**
      * Name of this complex type

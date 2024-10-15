@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  OpenShip Service
  */
-class AsynchronousProcessingOptionType extends \FedExVendor\FedEx\AbstractSimpleType
+class AsynchronousProcessingOptionType extends AbstractSimpleType
 {
     const _ALLOW_ASYNCHRONOUS = 'ALLOW_ASYNCHRONOUS';
     const _ASYNCHRONOUS_ONLY = 'ASYNCHRONOUS_ONLY';

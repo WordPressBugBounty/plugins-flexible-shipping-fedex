@@ -16,7 +16,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property FreightBaseCharge[] $BaseCharges
  * @property FreightRateNotation[] $Notations
  */
-class FreightRateDetail extends \FedExVendor\FedEx\AbstractComplexType
+class FreightRateDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

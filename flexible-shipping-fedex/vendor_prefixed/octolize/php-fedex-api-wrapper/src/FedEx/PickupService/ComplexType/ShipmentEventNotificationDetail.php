@@ -14,7 +14,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $PersonalMessage
  * @property ShipmentEventNotificationSpecification[] $EventNotifications
  */
-class ShipmentEventNotificationDetail extends \FedExVendor\FedEx\AbstractComplexType
+class ShipmentEventNotificationDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

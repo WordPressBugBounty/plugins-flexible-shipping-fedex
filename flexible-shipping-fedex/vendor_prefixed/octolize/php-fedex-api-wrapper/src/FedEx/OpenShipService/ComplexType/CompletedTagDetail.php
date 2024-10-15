@@ -17,7 +17,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $DeliveryCommitment
  * @property string $DispatchDate
  */
-class CompletedTagDetail extends \FedExVendor\FedEx\AbstractComplexType
+class CompletedTagDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

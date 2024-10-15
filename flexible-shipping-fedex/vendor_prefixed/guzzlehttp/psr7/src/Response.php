@@ -8,7 +8,7 @@ use FedExVendor\Psr\Http\Message\StreamInterface;
 /**
  * PSR-7 response implementation.
  */
-class Response implements \FedExVendor\Psr\Http\Message\ResponseInterface
+class Response implements ResponseInterface
 {
     use MessageTrait;
     /** Map of standard HTTP status code/reason phrases */
@@ -24,12 +24,12 @@ class Response implements \FedExVendor\Psr\Http\Message\ResponseInterface
      * @param string                               $version Protocol version
      * @param string|null                          $reason  Reason phrase (when empty a default will be used based on the status code)
      */
-    public function __construct(int $status = 200, array $headers = [], $body = null, string $version = '1.1', string $reason = null)
+    public function __construct(int $status = 200, array $headers = [], $body = null, string $version = '1.1', ?string $reason = null)
     {
         $this->assertStatusCodeRange($status);
         $this->statusCode = $status;
         if ($body !== '' && $body !== null) {
-            $this->stream = \FedExVendor\GuzzleHttp\Psr7\Utils::streamFor($body);
+            $this->stream = Utils::streamFor($body);
         }
         $this->setHeaders($headers);
         if ($reason == '' && isset(self::PHRASES[$this->statusCode])) {
@@ -39,15 +39,15 @@ class Response implements \FedExVendor\Psr\Http\Message\ResponseInterface
         }
         $this->protocol = $version;
     }
-    public function getStatusCode() : int
+    public function getStatusCode(): int
     {
         return $this->statusCode;
     }
-    public function getReasonPhrase() : string
+    public function getReasonPhrase(): string
     {
         return $this->reasonPhrase;
     }
-    public function withStatus($code, $reasonPhrase = '') : \FedExVendor\Psr\Http\Message\ResponseInterface
+    public function withStatus($code, $reasonPhrase = ''): ResponseInterface
     {
         $this->assertStatusCodeIsInteger($code);
         $code = (int) $code;
@@ -63,13 +63,13 @@ class Response implements \FedExVendor\Psr\Http\Message\ResponseInterface
     /**
      * @param mixed $statusCode
      */
-    private function assertStatusCodeIsInteger($statusCode) : void
+    private function assertStatusCodeIsInteger($statusCode): void
     {
-        if (\filter_var($statusCode, \FILTER_VALIDATE_INT) === \false) {
+        if (filter_var($statusCode, \FILTER_VALIDATE_INT) === \false) {
             throw new \InvalidArgumentException('Status code must be an integer value.');
         }
     }
-    private function assertStatusCodeRange(int $statusCode) : void
+    private function assertStatusCodeRange(int $statusCode): void
     {
         if ($statusCode < 100 || $statusCode >= 600) {
             throw new \InvalidArgumentException('Status code must be an integer value between 1xx and 5xx.');

@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Package Movement Information Service
  */
-class PhysicalPackagingType extends \FedExVendor\FedEx\AbstractSimpleType
+class PhysicalPackagingType extends AbstractSimpleType
 {
     const _BAG = 'BAG';
     const _BARREL = 'BARREL';

@@ -23,7 +23,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $Building
  * @property string $Organization
  */
-class ParsedStreetLineDetail extends \FedExVendor\FedEx\AbstractComplexType
+class ParsedStreetLineDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

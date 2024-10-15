@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
  */
-class NaftaProducerDeterminationCode extends \FedExVendor\FedEx\AbstractSimpleType
+class NaftaProducerDeterminationCode extends AbstractSimpleType
 {
     const _NO_1 = 'NO_1';
     const _NO_2 = 'NO_2';

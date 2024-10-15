@@ -12,7 +12,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  *
  * @property PreciseQuantity $Quantity
  */
-class DangerousGoodsInnerReceptacleDetail extends \FedExVendor\FedEx\AbstractComplexType
+class DangerousGoodsInnerReceptacleDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -26,7 +26,7 @@ class DangerousGoodsInnerReceptacleDetail extends \FedExVendor\FedEx\AbstractCom
      * @param PreciseQuantity $quantity
      * @return $this
      */
-    public function setQuantity(\FedExVendor\FedEx\DGDSService\ComplexType\PreciseQuantity $quantity)
+    public function setQuantity(PreciseQuantity $quantity)
     {
         $this->values['Quantity'] = $quantity;
         return $this;

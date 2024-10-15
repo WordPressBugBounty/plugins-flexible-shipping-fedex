@@ -16,7 +16,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $DestinationStationId
  * @property string $DestinationAirportId
  */
-class ServiceAvailabilityOption extends \FedExVendor\FedEx\AbstractComplexType
+class ServiceAvailabilityOption extends AbstractComplexType
 {
     /**
      * Name of this complex type

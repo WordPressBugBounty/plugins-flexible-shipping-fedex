@@ -12,7 +12,7 @@ namespace FedExVendor\Illuminate\Support\Facades;
  *
  * @see \Illuminate\Validation\Factory
  */
-class Validator extends \FedExVendor\Illuminate\Support\Facades\Facade
+class Validator extends Facade
 {
     /**
      * Get the registered name of the component.

@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $Image
  * @property ImageReferenceDetail $ImageReferenceDetail
  */
-class CustomerProvidedImage extends \FedExVendor\FedEx\AbstractComplexType
+class CustomerProvidedImage extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -38,7 +38,7 @@ class CustomerProvidedImage extends \FedExVendor\FedEx\AbstractComplexType
      * @param ImageReferenceDetail $imageReferenceDetail
      * @return $this
      */
-    public function setImageReferenceDetail(\FedExVendor\FedEx\UploadDocumentService\ComplexType\ImageReferenceDetail $imageReferenceDetail)
+    public function setImageReferenceDetail(ImageReferenceDetail $imageReferenceDetail)
     {
         $this->values['ImageReferenceDetail'] = $imageReferenceDetail;
         return $this;

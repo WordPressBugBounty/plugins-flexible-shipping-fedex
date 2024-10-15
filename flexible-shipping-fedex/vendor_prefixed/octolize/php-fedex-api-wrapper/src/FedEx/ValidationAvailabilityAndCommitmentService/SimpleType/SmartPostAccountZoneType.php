@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Validation Availability And Commitment Service Service
  */
-class SmartPostAccountZoneType extends \FedExVendor\FedEx\AbstractSimpleType
+class SmartPostAccountZoneType extends AbstractSimpleType
 {
     const _DISTRIBUTION_CENTER = 'DISTRIBUTION_CENTER';
     const _ORIGIN_PICKUP = 'ORIGIN_PICKUP';

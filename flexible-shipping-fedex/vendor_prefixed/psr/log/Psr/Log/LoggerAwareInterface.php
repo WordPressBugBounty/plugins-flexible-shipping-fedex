@@ -14,5 +14,5 @@ interface LoggerAwareInterface
      *
      * @return void
      */
-    public function setLogger(\FedExVendor\Psr\Log\LoggerInterface $logger);
+    public function setLogger(LoggerInterface $logger);
 }

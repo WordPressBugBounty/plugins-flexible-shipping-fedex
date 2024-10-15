@@ -16,7 +16,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $CleanedPostalCode
  * @property LocationDescription[] $LocationDescriptions
  */
-class PostalDetail extends \FedExVendor\FedEx\AbstractComplexType
+class PostalDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

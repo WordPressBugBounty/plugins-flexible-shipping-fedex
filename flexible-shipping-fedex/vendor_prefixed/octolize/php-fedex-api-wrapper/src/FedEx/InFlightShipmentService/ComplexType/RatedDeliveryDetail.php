@@ -15,7 +15,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property Money $TotalSurcharges
  * @property Surcharge[] $Surcharges
  */
-class RatedDeliveryDetail extends \FedExVendor\FedEx\AbstractComplexType
+class RatedDeliveryDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -40,7 +40,7 @@ class RatedDeliveryDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param Money $totalNetCharge
      * @return $this
      */
-    public function setTotalNetCharge(\FedExVendor\FedEx\InFlightShipmentService\ComplexType\Money $totalNetCharge)
+    public function setTotalNetCharge(Money $totalNetCharge)
     {
         $this->values['TotalNetCharge'] = $totalNetCharge;
         return $this;
@@ -51,7 +51,7 @@ class RatedDeliveryDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param Money $totalSurcharges
      * @return $this
      */
-    public function setTotalSurcharges(\FedExVendor\FedEx\InFlightShipmentService\ComplexType\Money $totalSurcharges)
+    public function setTotalSurcharges(Money $totalSurcharges)
     {
         $this->values['TotalSurcharges'] = $totalSurcharges;
         return $this;

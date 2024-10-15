@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Validation Availability And Commitment Service Service
  */
-class ImageId extends \FedExVendor\FedEx\AbstractSimpleType
+class ImageId extends AbstractSimpleType
 {
     const _IMAGE_1 = 'IMAGE_1';
     const _IMAGE_2 = 'IMAGE_2';

@@ -12,7 +12,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  *
  * @property string[] $SpecialServiceTypes
  */
-class PickupShipmentSpecialServicesRequested extends \FedExVendor\FedEx\AbstractComplexType
+class PickupShipmentSpecialServicesRequested extends AbstractComplexType
 {
     /**
      * Name of this complex type

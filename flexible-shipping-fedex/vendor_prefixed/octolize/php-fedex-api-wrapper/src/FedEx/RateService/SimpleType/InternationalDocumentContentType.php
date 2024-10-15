@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Rate Service
  */
-class InternationalDocumentContentType extends \FedExVendor\FedEx\AbstractSimpleType
+class InternationalDocumentContentType extends AbstractSimpleType
 {
     const _DOCUMENTS_ONLY = 'DOCUMENTS_ONLY';
     const _NON_DOCUMENTS = 'NON_DOCUMENTS';

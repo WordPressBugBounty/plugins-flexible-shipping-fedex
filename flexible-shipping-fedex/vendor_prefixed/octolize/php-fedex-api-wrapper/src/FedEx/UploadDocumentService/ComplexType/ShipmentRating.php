@@ -14,7 +14,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property Money $EffectiveNetDiscount
  * @property ShipmentRateDetail[] $ShipmentRateDetails
  */
-class ShipmentRating extends \FedExVendor\FedEx\AbstractComplexType
+class ShipmentRating extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -39,7 +39,7 @@ class ShipmentRating extends \FedExVendor\FedEx\AbstractComplexType
      * @param Money $effectiveNetDiscount
      * @return $this
      */
-    public function setEffectiveNetDiscount(\FedExVendor\FedEx\UploadDocumentService\ComplexType\Money $effectiveNetDiscount)
+    public function setEffectiveNetDiscount(Money $effectiveNetDiscount)
     {
         $this->values['EffectiveNetDiscount'] = $effectiveNetDiscount;
         return $this;

@@ -4,7 +4,7 @@ namespace FedExVendor\Illuminate\Support\Testing\Fakes;
 
 use FedExVendor\Illuminate\Contracts\Mail\Mailable;
 use FedExVendor\Illuminate\Mail\PendingMail;
-class PendingMailFake extends \FedExVendor\Illuminate\Mail\PendingMail
+class PendingMailFake extends PendingMail
 {
     /**
      * Create a new instance.
@@ -22,7 +22,7 @@ class PendingMailFake extends \FedExVendor\Illuminate\Mail\PendingMail
      * @param  \Illuminate\Contracts\Mail\Mailable  $mailable
      * @return void
      */
-    public function send(\FedExVendor\Illuminate\Contracts\Mail\Mailable $mailable)
+    public function send(Mailable $mailable)
     {
         $this->mailer->send($this->fill($mailable));
     }
@@ -32,7 +32,7 @@ class PendingMailFake extends \FedExVendor\Illuminate\Mail\PendingMail
      * @param  \Illuminate\Contracts\Mail\Mailable  $mailable
      * @return mixed
      */
-    public function queue(\FedExVendor\Illuminate\Contracts\Mail\Mailable $mailable)
+    public function queue(Mailable $mailable)
     {
         return $this->mailer->queue($this->fill($mailable));
     }

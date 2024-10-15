@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Address Validation Service
  */
-class OperationalAddressStateType extends \FedExVendor\FedEx\AbstractSimpleType
+class OperationalAddressStateType extends AbstractSimpleType
 {
     const _NORMALIZED = 'NORMALIZED';
     const _RAW = 'RAW';

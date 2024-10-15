@@ -87,7 +87,7 @@ class DateFactory
      *
      * @var string
      */
-    const DEFAULT_CLASS_NAME = \FedExVendor\Illuminate\Support\Carbon::class;
+    const DEFAULT_CLASS_NAME = Carbon::class;
     /**
      * The type (class) of dates that should be created.
      *
@@ -116,14 +116,14 @@ class DateFactory
      */
     public static function use($handler)
     {
-        if (\is_callable($handler) && \is_object($handler)) {
+        if (is_callable($handler) && is_object($handler)) {
             return static::useCallable($handler);
-        } elseif (\is_string($handler)) {
+        } elseif (is_string($handler)) {
             return static::useClass($handler);
-        } elseif ($handler instanceof \FedExVendor\Carbon\Factory) {
+        } elseif ($handler instanceof Factory) {
             return static::useFactory($handler);
         }
-        throw new \InvalidArgumentException('Invalid date creation handler. Please provide a class name, callable, or Carbon factory.');
+        throw new InvalidArgumentException('Invalid date creation handler. Please provide a class name, callable, or Carbon factory.');
     }
     /**
      * Use the default date class when generating dates.
@@ -186,7 +186,7 @@ class DateFactory
         $defaultClassName = static::DEFAULT_CLASS_NAME;
         // Using callable to generate dates...
         if (static::$callable) {
-            return \call_user_func(static::$callable, $defaultClassName::$method(...$parameters));
+            return call_user_func(static::$callable, $defaultClassName::$method(...$parameters));
         }
         // Using Carbon factory to generate dates...
         if (static::$factory) {
@@ -194,13 +194,13 @@ class DateFactory
         }
         $dateClass = static::$dateClass ?: $defaultClassName;
         // Check if date can be created using public class method...
-        if (\method_exists($dateClass, $method) || \method_exists($dateClass, 'hasMacro') && $dateClass::hasMacro($method)) {
+        if (method_exists($dateClass, $method) || method_exists($dateClass, 'hasMacro') && $dateClass::hasMacro($method)) {
             return $dateClass::$method(...$parameters);
         }
         // If that fails, create the date with the default class...
         $date = $defaultClassName::$method(...$parameters);
         // If the configured class has an "instance" method, we'll try to pass our date into there...
-        if (\method_exists($dateClass, 'instance')) {
+        if (method_exists($dateClass, 'instance')) {
             return $dateClass::instance($date);
         }
         // Otherwise, assume the configured class has a DateTime compatible constructor...

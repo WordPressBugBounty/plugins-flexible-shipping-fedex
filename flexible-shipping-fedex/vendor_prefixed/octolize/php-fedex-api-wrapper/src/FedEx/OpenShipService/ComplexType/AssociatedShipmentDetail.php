@@ -21,7 +21,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property PackageOperationalDetail $PackageOperationalDetail
  * @property ShippingDocument $Label
  */
-class AssociatedShipmentDetail extends \FedExVendor\FedEx\AbstractComplexType
+class AssociatedShipmentDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -46,7 +46,7 @@ class AssociatedShipmentDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param Party $sender
      * @return $this
      */
-    public function setSender(\FedExVendor\FedEx\OpenShipService\ComplexType\Party $sender)
+    public function setSender(Party $sender)
     {
         $this->values['Sender'] = $sender;
         return $this;
@@ -57,7 +57,7 @@ class AssociatedShipmentDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param Party $recipient
      * @return $this
      */
-    public function setRecipient(\FedExVendor\FedEx\OpenShipService\ComplexType\Party $recipient)
+    public function setRecipient(Party $recipient)
     {
         $this->values['Recipient'] = $recipient;
         return $this;
@@ -90,7 +90,7 @@ class AssociatedShipmentDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param TrackingId $trackingId
      * @return $this
      */
-    public function setTrackingId(\FedExVendor\FedEx\OpenShipService\ComplexType\TrackingId $trackingId)
+    public function setTrackingId(TrackingId $trackingId)
     {
         $this->values['TrackingId'] = $trackingId;
         return $this;
@@ -112,7 +112,7 @@ class AssociatedShipmentDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param ShipmentOperationalDetail $shipmentOperationalDetail
      * @return $this
      */
-    public function setShipmentOperationalDetail(\FedExVendor\FedEx\OpenShipService\ComplexType\ShipmentOperationalDetail $shipmentOperationalDetail)
+    public function setShipmentOperationalDetail(ShipmentOperationalDetail $shipmentOperationalDetail)
     {
         $this->values['ShipmentOperationalDetail'] = $shipmentOperationalDetail;
         return $this;
@@ -123,7 +123,7 @@ class AssociatedShipmentDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param PackageOperationalDetail $packageOperationalDetail
      * @return $this
      */
-    public function setPackageOperationalDetail(\FedExVendor\FedEx\OpenShipService\ComplexType\PackageOperationalDetail $packageOperationalDetail)
+    public function setPackageOperationalDetail(PackageOperationalDetail $packageOperationalDetail)
     {
         $this->values['PackageOperationalDetail'] = $packageOperationalDetail;
         return $this;
@@ -134,7 +134,7 @@ class AssociatedShipmentDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param ShippingDocument $label
      * @return $this
      */
-    public function setLabel(\FedExVendor\FedEx\OpenShipService\ComplexType\ShippingDocument $label)
+    public function setLabel(ShippingDocument $label)
     {
         $this->values['Label'] = $label;
         return $this;

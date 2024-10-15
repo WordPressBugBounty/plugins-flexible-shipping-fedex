@@ -8,7 +8,7 @@ use FedExVendor\CageA80\FedEx\Events\ReceiveHttpRequest;
  *
  * @package CageA80\FedEx\Listeners
  */
-class ReceiveHttpRequestEventListener extends \FedExVendor\CageA80\FedEx\Listeners\BaseEventListener
+class ReceiveHttpRequestEventListener extends BaseEventListener
 {
     /**
      * Handle the event.
@@ -16,11 +16,11 @@ class ReceiveHttpRequestEventListener extends \FedExVendor\CageA80\FedEx\Listene
      * @param $event
      * @return void
      */
-    public function handle(\FedExVendor\CageA80\FedEx\Events\ReceiveHttpRequest $event)
+    public function handle(ReceiveHttpRequest $event)
     {
         if ($logger = $this->getLogger()) {
             $logger->info('FedEx response: ' . $event->url);
-            $logger->info(\print_r(['response' => $event->response], \true));
+            $logger->info(print_r(['response' => $event->response], \true));
         }
     }
 }

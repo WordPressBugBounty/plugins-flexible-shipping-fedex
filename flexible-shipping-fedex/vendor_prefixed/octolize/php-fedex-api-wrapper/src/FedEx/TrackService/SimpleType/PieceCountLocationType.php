@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Package Movement Information Service
  */
-class PieceCountLocationType extends \FedExVendor\FedEx\AbstractSimpleType
+class PieceCountLocationType extends AbstractSimpleType
 {
     const _DESTINATION = 'DESTINATION';
     const _ORIGIN = 'ORIGIN';

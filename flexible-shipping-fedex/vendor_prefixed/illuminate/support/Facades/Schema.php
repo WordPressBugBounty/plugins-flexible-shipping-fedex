@@ -26,7 +26,7 @@ namespace FedExVendor\Illuminate\Support\Facades;
  *
  * @see \Illuminate\Database\Schema\Builder
  */
-class Schema extends \FedExVendor\Illuminate\Support\Facades\Facade
+class Schema extends Facade
 {
     /**
      * Get a schema builder instance for a connection.

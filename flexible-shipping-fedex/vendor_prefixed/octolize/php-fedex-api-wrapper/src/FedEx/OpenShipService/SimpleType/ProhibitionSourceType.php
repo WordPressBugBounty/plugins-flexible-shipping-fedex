@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  OpenShip Service
  */
-class ProhibitionSourceType extends \FedExVendor\FedEx\AbstractSimpleType
+class ProhibitionSourceType extends AbstractSimpleType
 {
     const _FEDEX = 'FEDEX';
     const _GOVERNMENT = 'GOVERNMENT';

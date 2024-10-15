@@ -32,7 +32,7 @@ use FedExVendor\Illuminate\Support\Testing\Fakes\BusFake;
  *
  * @see \Illuminate\Contracts\Bus\Dispatcher
  */
-class Bus extends \FedExVendor\Illuminate\Support\Facades\Facade
+class Bus extends Facade
 {
     /**
      * Replace the bound instance with a fake.
@@ -42,7 +42,7 @@ class Bus extends \FedExVendor\Illuminate\Support\Facades\Facade
      */
     public static function fake($jobsToFake = [])
     {
-        static::swap($fake = new \FedExVendor\Illuminate\Support\Testing\Fakes\BusFake(static::getFacadeRoot(), $jobsToFake));
+        static::swap($fake = new BusFake(static::getFacadeRoot(), $jobsToFake));
         return $fake;
     }
     /**
@@ -53,8 +53,8 @@ class Bus extends \FedExVendor\Illuminate\Support\Facades\Facade
      */
     public static function dispatchChain($jobs)
     {
-        $jobs = \is_array($jobs) ? $jobs : \func_get_args();
-        return (new \FedExVendor\Illuminate\Foundation\Bus\PendingChain(\array_shift($jobs), $jobs))->dispatch();
+        $jobs = is_array($jobs) ? $jobs : func_get_args();
+        return (new PendingChain(array_shift($jobs), $jobs))->dispatch();
     }
     /**
      * Get the registered name of the component.
@@ -63,6 +63,6 @@ class Bus extends \FedExVendor\Illuminate\Support\Facades\Facade
      */
     protected static function getFacadeAccessor()
     {
-        return \FedExVendor\Illuminate\Contracts\Bus\Dispatcher::class;
+        return BusDispatcherContract::class;
     }
 }

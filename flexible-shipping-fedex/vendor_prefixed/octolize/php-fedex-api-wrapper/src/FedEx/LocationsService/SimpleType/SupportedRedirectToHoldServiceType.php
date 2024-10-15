@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Locations Service
  */
-class SupportedRedirectToHoldServiceType extends \FedExVendor\FedEx\AbstractSimpleType
+class SupportedRedirectToHoldServiceType extends AbstractSimpleType
 {
     const _FEDEX_EXPRESS = 'FEDEX_EXPRESS';
     const _FEDEX_GROUND = 'FEDEX_GROUND';

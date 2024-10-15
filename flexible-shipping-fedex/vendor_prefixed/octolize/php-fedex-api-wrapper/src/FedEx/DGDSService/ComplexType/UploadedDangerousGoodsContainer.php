@@ -16,7 +16,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property Weight $GrossWeight
  * @property UploadedDangerousGoodsCommodityContent[] $Commodities
  */
-class UploadedDangerousGoodsContainer extends \FedExVendor\FedEx\AbstractComplexType
+class UploadedDangerousGoodsContainer extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -63,7 +63,7 @@ class UploadedDangerousGoodsContainer extends \FedExVendor\FedEx\AbstractComplex
      * @param Weight $grossWeight
      * @return $this
      */
-    public function setGrossWeight(\FedExVendor\FedEx\DGDSService\ComplexType\Weight $grossWeight)
+    public function setGrossWeight(Weight $grossWeight)
     {
         $this->values['GrossWeight'] = $grossWeight;
         return $this;

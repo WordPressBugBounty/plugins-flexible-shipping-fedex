@@ -12,7 +12,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  *
  * @property \FedEx\TrackService\SimpleType\NotificationFormatType|string $Type
  */
-class ShipmentNotificationFormatSpecification extends \FedExVendor\FedEx\AbstractComplexType
+class ShipmentNotificationFormatSpecification extends AbstractComplexType
 {
     /**
      * Name of this complex type

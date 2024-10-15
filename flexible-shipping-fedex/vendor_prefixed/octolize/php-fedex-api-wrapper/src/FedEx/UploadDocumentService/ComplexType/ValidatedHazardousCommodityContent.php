@@ -16,7 +16,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property HazardousCommodityOptionDetail $Options
  * @property NetExplosiveDetail $NetExplosiveDetail
  */
-class ValidatedHazardousCommodityContent extends \FedExVendor\FedEx\AbstractComplexType
+class ValidatedHazardousCommodityContent extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -30,7 +30,7 @@ class ValidatedHazardousCommodityContent extends \FedExVendor\FedEx\AbstractComp
      * @param ValidatedHazardousCommodityDescription $description
      * @return $this
      */
-    public function setDescription(\FedExVendor\FedEx\UploadDocumentService\ComplexType\ValidatedHazardousCommodityDescription $description)
+    public function setDescription(ValidatedHazardousCommodityDescription $description)
     {
         $this->values['Description'] = $description;
         return $this;
@@ -41,7 +41,7 @@ class ValidatedHazardousCommodityContent extends \FedExVendor\FedEx\AbstractComp
      * @param HazardousCommodityQuantityDetail $quantity
      * @return $this
      */
-    public function setQuantity(\FedExVendor\FedEx\UploadDocumentService\ComplexType\HazardousCommodityQuantityDetail $quantity)
+    public function setQuantity(HazardousCommodityQuantityDetail $quantity)
     {
         $this->values['Quantity'] = $quantity;
         return $this;
@@ -63,7 +63,7 @@ class ValidatedHazardousCommodityContent extends \FedExVendor\FedEx\AbstractComp
      * @param HazardousCommodityOptionDetail $options
      * @return $this
      */
-    public function setOptions(\FedExVendor\FedEx\UploadDocumentService\ComplexType\HazardousCommodityOptionDetail $options)
+    public function setOptions(HazardousCommodityOptionDetail $options)
     {
         $this->values['Options'] = $options;
         return $this;
@@ -74,7 +74,7 @@ class ValidatedHazardousCommodityContent extends \FedExVendor\FedEx\AbstractComp
      * @param NetExplosiveDetail $netExplosiveDetail
      * @return $this
      */
-    public function setNetExplosiveDetail(\FedExVendor\FedEx\UploadDocumentService\ComplexType\NetExplosiveDetail $netExplosiveDetail)
+    public function setNetExplosiveDetail(NetExplosiveDetail $netExplosiveDetail)
     {
         $this->values['NetExplosiveDetail'] = $netExplosiveDetail;
         return $this;

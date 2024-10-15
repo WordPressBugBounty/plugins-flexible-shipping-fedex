@@ -16,7 +16,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property PackageBarcodes $Barcodes
  * @property ShippingDocument $Label
  */
-class CodReturnPackageDetail extends \FedExVendor\FedEx\AbstractComplexType
+class CodReturnPackageDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -30,7 +30,7 @@ class CodReturnPackageDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param Money $collectionAmount
      * @return $this
      */
-    public function setCollectionAmount(\FedExVendor\FedEx\OpenShipService\ComplexType\Money $collectionAmount)
+    public function setCollectionAmount(Money $collectionAmount)
     {
         $this->values['CollectionAmount'] = $collectionAmount;
         return $this;
@@ -63,7 +63,7 @@ class CodReturnPackageDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param PackageBarcodes $barcodes
      * @return $this
      */
-    public function setBarcodes(\FedExVendor\FedEx\OpenShipService\ComplexType\PackageBarcodes $barcodes)
+    public function setBarcodes(PackageBarcodes $barcodes)
     {
         $this->values['Barcodes'] = $barcodes;
         return $this;
@@ -74,7 +74,7 @@ class CodReturnPackageDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param ShippingDocument $label
      * @return $this
      */
-    public function setLabel(\FedExVendor\FedEx\OpenShipService\ComplexType\ShippingDocument $label)
+    public function setLabel(ShippingDocument $label)
     {
         $this->values['Label'] = $label;
         return $this;

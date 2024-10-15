@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Package Movement Information Service
  */
-class TrackReturnMovementStatusType extends \FedExVendor\FedEx\AbstractSimpleType
+class TrackReturnMovementStatusType extends AbstractSimpleType
 {
     const _MOVEMENT_OCCURRED = 'MOVEMENT_OCCURRED';
     const _NO_MOVEMENT = 'NO_MOVEMENT';

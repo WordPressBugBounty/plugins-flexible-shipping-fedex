@@ -14,7 +14,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property EMailDetail $EmailDetail
  * @property Localization $Localization
  */
-class NotificationDetail extends \FedExVendor\FedEx\AbstractComplexType
+class NotificationDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -39,7 +39,7 @@ class NotificationDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param EMailDetail $emailDetail
      * @return $this
      */
-    public function setEmailDetail(\FedExVendor\FedEx\TrackService\ComplexType\EMailDetail $emailDetail)
+    public function setEmailDetail(EMailDetail $emailDetail)
     {
         $this->values['EmailDetail'] = $emailDetail;
         return $this;
@@ -50,7 +50,7 @@ class NotificationDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param Localization $localization
      * @return $this
      */
-    public function setLocalization(\FedExVendor\FedEx\TrackService\ComplexType\Localization $localization)
+    public function setLocalization(Localization $localization)
     {
         $this->values['Localization'] = $localization;
         return $this;

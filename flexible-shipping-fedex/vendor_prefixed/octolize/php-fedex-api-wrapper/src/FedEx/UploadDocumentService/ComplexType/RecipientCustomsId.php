@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property \FedEx\UploadDocumentService\SimpleType\RecipientCustomsIdType|string $Type
  * @property string $Value
  */
-class RecipientCustomsId extends \FedExVendor\FedEx\AbstractComplexType
+class RecipientCustomsId extends AbstractComplexType
 {
     /**
      * Name of this complex type

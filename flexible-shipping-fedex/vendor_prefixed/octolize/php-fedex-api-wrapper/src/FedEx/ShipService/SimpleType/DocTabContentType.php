@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
  */
-class DocTabContentType extends \FedExVendor\FedEx\AbstractSimpleType
+class DocTabContentType extends AbstractSimpleType
 {
     const _BARCODED = 'BARCODED';
     const _CUSTOM = 'CUSTOM';

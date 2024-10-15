@@ -14,7 +14,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property LocalTimeRange $Window
  * @property string $Description
  */
-class AppointmentTimeDetail extends \FedExVendor\FedEx\AbstractComplexType
+class AppointmentTimeDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -39,7 +39,7 @@ class AppointmentTimeDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param LocalTimeRange $window
      * @return $this
      */
-    public function setWindow(\FedExVendor\FedEx\InFlightShipmentService\ComplexType\LocalTimeRange $window)
+    public function setWindow(LocalTimeRange $window)
     {
         $this->values['Window'] = $window;
         return $this;

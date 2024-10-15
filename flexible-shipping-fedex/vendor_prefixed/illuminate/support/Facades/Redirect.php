@@ -21,7 +21,7 @@ namespace FedExVendor\Illuminate\Support\Facades;
  *
  * @see \Illuminate\Routing\Redirector
  */
-class Redirect extends \FedExVendor\Illuminate\Support\Facades\Facade
+class Redirect extends Facade
 {
     /**
      * Get the registered name of the component.

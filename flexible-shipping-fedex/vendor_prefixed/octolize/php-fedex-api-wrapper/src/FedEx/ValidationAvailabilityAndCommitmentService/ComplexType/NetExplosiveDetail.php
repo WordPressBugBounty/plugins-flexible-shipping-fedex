@@ -14,7 +14,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property float $Amount
  * @property string $Units
  */
-class NetExplosiveDetail extends \FedExVendor\FedEx\AbstractComplexType
+class NetExplosiveDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

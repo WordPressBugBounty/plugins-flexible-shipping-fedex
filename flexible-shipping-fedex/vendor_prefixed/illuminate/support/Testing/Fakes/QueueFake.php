@@ -8,7 +8,7 @@ use FedExVendor\Illuminate\Contracts\Queue\Queue;
 use FedExVendor\Illuminate\Queue\QueueManager;
 use FedExVendor\Illuminate\Support\Traits\ReflectsClosures;
 use FedExVendor\PHPUnit\Framework\Assert as PHPUnit;
-class QueueFake extends \FedExVendor\Illuminate\Queue\QueueManager implements \FedExVendor\Illuminate\Contracts\Queue\Queue
+class QueueFake extends QueueManager implements Queue
 {
     use ReflectsClosures;
     /**
@@ -26,13 +26,13 @@ class QueueFake extends \FedExVendor\Illuminate\Queue\QueueManager implements \F
      */
     public function assertPushed($job, $callback = null)
     {
-        if ($job instanceof \Closure) {
+        if ($job instanceof Closure) {
             [$job, $callback] = [$this->firstClosureParameterType($job), $job];
         }
-        if (\is_numeric($callback)) {
+        if (is_numeric($callback)) {
             return $this->assertPushedTimes($job, $callback);
         }
-        \FedExVendor\PHPUnit\Framework\Assert::assertTrue($this->pushed($job, $callback)->count() > 0, "The expected [{$job}] job was not pushed.");
+        PHPUnit::assertTrue($this->pushed($job, $callback)->count() > 0, "The expected [{$job}] job was not pushed.");
     }
     /**
      * Assert if a job was pushed a number of times.
@@ -44,7 +44,7 @@ class QueueFake extends \FedExVendor\Illuminate\Queue\QueueManager implements \F
     protected function assertPushedTimes($job, $times = 1)
     {
         $count = $this->pushed($job)->count();
-        \FedExVendor\PHPUnit\Framework\Assert::assertSame($times, $count, "The expected [{$job}] job was pushed {$count} times instead of {$times} times.");
+        PHPUnit::assertSame($times, $count, "The expected [{$job}] job was pushed {$count} times instead of {$times} times.");
     }
     /**
      * Assert if a job was pushed based on a truth-test callback.
@@ -56,14 +56,14 @@ class QueueFake extends \FedExVendor\Illuminate\Queue\QueueManager implements \F
      */
     public function assertPushedOn($queue, $job, $callback = null)
     {
-        if ($job instanceof \Closure) {
+        if ($job instanceof Closure) {
             [$job, $callback] = [$this->firstClosureParameterType($job), $job];
         }
-        $this->assertPushed($job, function ($job, $pushedQueue) use($callback, $queue) {
+        $this->assertPushed($job, function ($job, $pushedQueue) use ($callback, $queue) {
             if ($pushedQueue !== $queue) {
                 return \false;
             }
-            return $callback ? $callback(...\func_get_args()) : \true;
+            return $callback ? $callback(...func_get_args()) : \true;
         });
     }
     /**
@@ -76,8 +76,8 @@ class QueueFake extends \FedExVendor\Illuminate\Queue\QueueManager implements \F
      */
     public function assertPushedWithChain($job, $expectedChain = [], $callback = null)
     {
-        \FedExVendor\PHPUnit\Framework\Assert::assertTrue($this->pushed($job, $callback)->isNotEmpty(), "The expected [{$job}] job was not pushed.");
-        \FedExVendor\PHPUnit\Framework\Assert::assertTrue(collect($expectedChain)->isNotEmpty(), 'The expected chain can not be empty.');
+        PHPUnit::assertTrue($this->pushed($job, $callback)->isNotEmpty(), "The expected [{$job}] job was not pushed.");
+        PHPUnit::assertTrue(collect($expectedChain)->isNotEmpty(), 'The expected chain can not be empty.');
         $this->isChainOfObjects($expectedChain) ? $this->assertPushedWithChainOfObjects($job, $expectedChain, $callback) : $this->assertPushedWithChainOfClasses($job, $expectedChain, $callback);
     }
     /**
@@ -89,7 +89,7 @@ class QueueFake extends \FedExVendor\Illuminate\Queue\QueueManager implements \F
      */
     public function assertPushedWithoutChain($job, $callback = null)
     {
-        \FedExVendor\PHPUnit\Framework\Assert::assertTrue($this->pushed($job, $callback)->isNotEmpty(), "The expected [{$job}] job was not pushed.");
+        PHPUnit::assertTrue($this->pushed($job, $callback)->isNotEmpty(), "The expected [{$job}] job was not pushed.");
         $this->assertPushedWithChainOfClasses($job, [], $callback);
     }
     /**
@@ -103,9 +103,9 @@ class QueueFake extends \FedExVendor\Illuminate\Queue\QueueManager implements \F
     protected function assertPushedWithChainOfObjects($job, $expectedChain, $callback)
     {
         $chain = collect($expectedChain)->map(function ($job) {
-            return \serialize($job);
+            return serialize($job);
         })->all();
-        \FedExVendor\PHPUnit\Framework\Assert::assertTrue($this->pushed($job, $callback)->filter(function ($job) use($chain) {
+        PHPUnit::assertTrue($this->pushed($job, $callback)->filter(function ($job) use ($chain) {
             return $job->chained == $chain;
         })->isNotEmpty(), 'The expected chain was not pushed.');
     }
@@ -121,12 +121,12 @@ class QueueFake extends \FedExVendor\Illuminate\Queue\QueueManager implements \F
     {
         $matching = $this->pushed($job, $callback)->map->chained->map(function ($chain) {
             return collect($chain)->map(function ($job) {
-                return \get_class(\unserialize($job));
+                return get_class(unserialize($job));
             });
-        })->filter(function ($chain) use($expectedChain) {
+        })->filter(function ($chain) use ($expectedChain) {
             return $chain->all() === $expectedChain;
         });
-        \FedExVendor\PHPUnit\Framework\Assert::assertTrue($matching->isNotEmpty(), 'The expected chain was not pushed.');
+        PHPUnit::assertTrue($matching->isNotEmpty(), 'The expected chain was not pushed.');
     }
     /**
      * Determine if the given chain is entirely composed of objects.
@@ -137,7 +137,7 @@ class QueueFake extends \FedExVendor\Illuminate\Queue\QueueManager implements \F
     protected function isChainOfObjects($chain)
     {
         return !collect($chain)->contains(function ($job) {
-            return !\is_object($job);
+            return !is_object($job);
         });
     }
     /**
@@ -149,10 +149,10 @@ class QueueFake extends \FedExVendor\Illuminate\Queue\QueueManager implements \F
      */
     public function assertNotPushed($job, $callback = null)
     {
-        if ($job instanceof \Closure) {
+        if ($job instanceof Closure) {
             [$job, $callback] = [$this->firstClosureParameterType($job), $job];
         }
-        \FedExVendor\PHPUnit\Framework\Assert::assertCount(0, $this->pushed($job, $callback), "The unexpected [{$job}] job was pushed.");
+        PHPUnit::assertCount(0, $this->pushed($job, $callback), "The unexpected [{$job}] job was pushed.");
     }
     /**
      * Assert that no jobs were pushed.
@@ -161,7 +161,7 @@ class QueueFake extends \FedExVendor\Illuminate\Queue\QueueManager implements \F
      */
     public function assertNothingPushed()
     {
-        \FedExVendor\PHPUnit\Framework\Assert::assertEmpty($this->jobs, 'Jobs were pushed unexpectedly.');
+        PHPUnit::assertEmpty($this->jobs, 'Jobs were pushed unexpectedly.');
     }
     /**
      * Get all of the jobs matching a truth-test callback.
@@ -178,7 +178,7 @@ class QueueFake extends \FedExVendor\Illuminate\Queue\QueueManager implements \F
         $callback = $callback ?: function () {
             return \true;
         };
-        return collect($this->jobs[$job])->filter(function ($data) use($callback) {
+        return collect($this->jobs[$job])->filter(function ($data) use ($callback) {
             return $callback($data['job'], $data['queue']);
         })->pluck('job');
     }
@@ -210,7 +210,7 @@ class QueueFake extends \FedExVendor\Illuminate\Queue\QueueManager implements \F
      */
     public function size($queue = null)
     {
-        return collect($this->jobs)->flatten(1)->filter(function ($job) use($queue) {
+        return collect($this->jobs)->flatten(1)->filter(function ($job) use ($queue) {
             return $job['queue'] === $queue;
         })->count();
     }
@@ -224,7 +224,7 @@ class QueueFake extends \FedExVendor\Illuminate\Queue\QueueManager implements \F
      */
     public function push($job, $data = '', $queue = null)
     {
-        $this->jobs[\is_object($job) ? \get_class($job) : $job][] = ['job' => $job, 'queue' => $queue];
+        $this->jobs[is_object($job) ? get_class($job) : $job][] = ['job' => $job, 'queue' => $queue];
     }
     /**
      * Push a raw payload onto the queue.
@@ -339,6 +339,6 @@ class QueueFake extends \FedExVendor\Illuminate\Queue\QueueManager implements \F
      */
     public function __call($method, $parameters)
     {
-        throw new \BadMethodCallException(\sprintf('Call to undefined method %s::%s()', static::class, $method));
+        throw new BadMethodCallException(sprintf('Call to undefined method %s::%s()', static::class, $method));
     }
 }

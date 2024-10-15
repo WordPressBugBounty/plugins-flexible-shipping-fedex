@@ -14,7 +14,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property Party $Broker
  * @property Payment $BrokerageProcessingChargesPayment
  */
-class BrokerDetail extends \FedExVendor\FedEx\AbstractComplexType
+class BrokerDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -39,7 +39,7 @@ class BrokerDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param Party $broker
      * @return $this
      */
-    public function setBroker(\FedExVendor\FedEx\UploadDocumentService\ComplexType\Party $broker)
+    public function setBroker(Party $broker)
     {
         $this->values['Broker'] = $broker;
         return $this;
@@ -50,7 +50,7 @@ class BrokerDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param Payment $brokerageProcessingChargesPayment
      * @return $this
      */
-    public function setBrokerageProcessingChargesPayment(\FedExVendor\FedEx\UploadDocumentService\ComplexType\Payment $brokerageProcessingChargesPayment)
+    public function setBrokerageProcessingChargesPayment(Payment $brokerageProcessingChargesPayment)
     {
         $this->values['BrokerageProcessingChargesPayment'] = $brokerageProcessingChargesPayment;
         return $this;

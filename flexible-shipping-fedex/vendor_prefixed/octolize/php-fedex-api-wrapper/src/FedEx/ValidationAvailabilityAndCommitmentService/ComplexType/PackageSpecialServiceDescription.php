@@ -22,7 +22,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $AstraDescription
  * @property \FedEx\ValidationAvailabilityAndCommitmentService\SimpleType\CustomerIntegrationModeType|string $CustomerIntegrationMode
  */
-class PackageSpecialServiceDescription extends \FedExVendor\FedEx\AbstractComplexType
+class PackageSpecialServiceDescription extends AbstractComplexType
 {
     /**
      * Name of this complex type

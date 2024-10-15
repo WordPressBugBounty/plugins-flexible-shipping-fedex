@@ -15,7 +15,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $StatusCode
  * @property string $StatusDescription
  */
-class TrackSplitShipmentPart extends \FedExVendor\FedEx\AbstractComplexType
+class TrackSplitShipmentPart extends AbstractComplexType
 {
     /**
      * Name of this complex type

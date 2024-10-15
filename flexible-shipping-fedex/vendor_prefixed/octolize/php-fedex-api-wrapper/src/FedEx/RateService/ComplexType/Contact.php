@@ -21,7 +21,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $FaxNumber
  * @property string $EMailAddress
  */
-class Contact extends \FedExVendor\FedEx\AbstractComplexType
+class Contact extends AbstractComplexType
 {
     /**
      * Name of this complex type

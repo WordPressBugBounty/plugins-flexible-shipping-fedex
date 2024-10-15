@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Package Movement Information Service
  */
-class TrackSpecialHandlingType extends \FedExVendor\FedEx\AbstractSimpleType
+class TrackSpecialHandlingType extends AbstractSimpleType
 {
     const _ACCESSIBLE_DANGEROUS_GOODS = 'ACCESSIBLE_DANGEROUS_GOODS';
     const _ADULT_SIGNATURE_OPTION = 'ADULT_SIGNATURE_OPTION';

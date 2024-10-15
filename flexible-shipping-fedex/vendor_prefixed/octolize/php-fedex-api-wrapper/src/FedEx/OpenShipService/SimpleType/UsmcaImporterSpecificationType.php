@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  OpenShip Service
  */
-class UsmcaImporterSpecificationType extends \FedExVendor\FedEx\AbstractSimpleType
+class UsmcaImporterSpecificationType extends AbstractSimpleType
 {
     const _UNKNOWN = 'UNKNOWN';
     const _VARIOUS = 'VARIOUS';

@@ -15,7 +15,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property ContactAndAddress $HoldingLocationContactAndAddress
  * @property string $Comments
  */
-class RedirectToHoldAtLocationRequestDetail extends \FedExVendor\FedEx\AbstractComplexType
+class RedirectToHoldAtLocationRequestDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -51,7 +51,7 @@ class RedirectToHoldAtLocationRequestDetail extends \FedExVendor\FedEx\AbstractC
      * @param ContactAndAddress $holdingLocationContactAndAddress
      * @return $this
      */
-    public function setHoldingLocationContactAndAddress(\FedExVendor\FedEx\InFlightShipmentService\ComplexType\ContactAndAddress $holdingLocationContactAndAddress)
+    public function setHoldingLocationContactAndAddress(ContactAndAddress $holdingLocationContactAndAddress)
     {
         $this->values['HoldingLocationContactAndAddress'] = $holdingLocationContactAndAddress;
         return $this;

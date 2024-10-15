@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property int $X
  * @property int $Y
  */
-class CustomLabelPosition extends \FedExVendor\FedEx\AbstractComplexType
+class CustomLabelPosition extends AbstractComplexType
 {
     /**
      * Name of this complex type

@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Package Movement Information Service
  */
-class TrackDelayType extends \FedExVendor\FedEx\AbstractSimpleType
+class TrackDelayType extends AbstractSimpleType
 {
     const _CUSTOMS = 'CUSTOMS';
     const _GENERAL = 'GENERAL';

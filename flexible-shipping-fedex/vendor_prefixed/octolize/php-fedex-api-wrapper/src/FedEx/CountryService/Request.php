@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractRequest;
  * @package     PHP FedEx API wrapper
  * @subpackage  Country Service
  */
-class Request extends \FedExVendor\FedEx\AbstractRequest
+class Request extends AbstractRequest
 {
     const PRODUCTION_URL = 'https://ws.fedex.com:443/web-services/cnty';
     const TESTING_URL = 'https://wsbeta.fedex.com:443/web-services/cnty';
@@ -22,13 +22,13 @@ class Request extends \FedExVendor\FedEx\AbstractRequest
      * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
      * @return ComplexType\ValidatePostalReply|stdClass
      */
-    public function getValidatePostalReply(\FedExVendor\FedEx\CountryService\ComplexType\ValidatePostalRequest $validatePostalRequest, $returnStdClass = \false)
+    public function getValidatePostalReply(ComplexType\ValidatePostalRequest $validatePostalRequest, $returnStdClass = \false)
     {
         $response = $this->getSoapClient()->validatePostal($validatePostalRequest->toArray());
         if ($returnStdClass) {
             return $response;
         }
-        $validatePostalReply = new \FedExVendor\FedEx\CountryService\ComplexType\ValidatePostalReply();
+        $validatePostalReply = new ComplexType\ValidatePostalReply();
         $validatePostalReply->populateFromStdClass($response);
         return $validatePostalReply;
     }

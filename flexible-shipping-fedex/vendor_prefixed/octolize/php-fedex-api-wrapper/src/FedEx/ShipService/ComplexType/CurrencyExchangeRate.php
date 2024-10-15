@@ -14,7 +14,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $IntoCurrency
  * @property float $Rate
  */
-class CurrencyExchangeRate extends \FedExVendor\FedEx\AbstractComplexType
+class CurrencyExchangeRate extends AbstractComplexType
 {
     /**
      * Name of this complex type

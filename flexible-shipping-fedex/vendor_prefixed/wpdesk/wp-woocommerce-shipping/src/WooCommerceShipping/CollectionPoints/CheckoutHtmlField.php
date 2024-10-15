@@ -12,7 +12,7 @@ namespace FedExVendor\WPDesk\WooCommerceShipping\CollectionPoints;
  *
  * @package WPDesk\CustomFields
  */
-class CheckoutHtmlField extends \FedExVendor\WPDesk\WooCommerceShipping\CollectionPoints\CheckoutField
+class CheckoutHtmlField extends CheckoutField
 {
     protected $template_name = 'shipping-method-after-access-point-single';
 }

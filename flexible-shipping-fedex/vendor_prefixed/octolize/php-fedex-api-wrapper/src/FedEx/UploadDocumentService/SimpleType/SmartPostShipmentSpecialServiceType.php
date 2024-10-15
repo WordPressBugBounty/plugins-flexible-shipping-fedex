@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Upload Document Service
  */
-class SmartPostShipmentSpecialServiceType extends \FedExVendor\FedEx\AbstractSimpleType
+class SmartPostShipmentSpecialServiceType extends AbstractSimpleType
 {
     const _USPS_DELIVERY_CONFIRMATION = 'USPS_DELIVERY_CONFIRMATION';
 }

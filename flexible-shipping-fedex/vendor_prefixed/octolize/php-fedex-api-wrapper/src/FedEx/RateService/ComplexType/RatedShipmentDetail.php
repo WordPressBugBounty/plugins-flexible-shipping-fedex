@@ -15,7 +15,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property ShipmentRateDetail $ShipmentRateDetail
  * @property RatedPackageDetail[] $RatedPackages
  */
-class RatedShipmentDetail extends \FedExVendor\FedEx\AbstractComplexType
+class RatedShipmentDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -29,7 +29,7 @@ class RatedShipmentDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param Money $effectiveNetDiscount
      * @return $this
      */
-    public function setEffectiveNetDiscount(\FedExVendor\FedEx\RateService\ComplexType\Money $effectiveNetDiscount)
+    public function setEffectiveNetDiscount(Money $effectiveNetDiscount)
     {
         $this->values['EffectiveNetDiscount'] = $effectiveNetDiscount;
         return $this;
@@ -40,7 +40,7 @@ class RatedShipmentDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param Money $adjustedCodCollectionAmount
      * @return $this
      */
-    public function setAdjustedCodCollectionAmount(\FedExVendor\FedEx\RateService\ComplexType\Money $adjustedCodCollectionAmount)
+    public function setAdjustedCodCollectionAmount(Money $adjustedCodCollectionAmount)
     {
         $this->values['AdjustedCodCollectionAmount'] = $adjustedCodCollectionAmount;
         return $this;
@@ -51,7 +51,7 @@ class RatedShipmentDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param ShipmentRateDetail $shipmentRateDetail
      * @return $this
      */
-    public function setShipmentRateDetail(\FedExVendor\FedEx\RateService\ComplexType\ShipmentRateDetail $shipmentRateDetail)
+    public function setShipmentRateDetail(ShipmentRateDetail $shipmentRateDetail)
     {
         $this->values['ShipmentRateDetail'] = $shipmentRateDetail;
         return $this;

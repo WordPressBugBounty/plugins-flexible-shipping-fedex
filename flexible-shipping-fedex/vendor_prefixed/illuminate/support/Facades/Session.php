@@ -31,7 +31,7 @@ namespace FedExVendor\Illuminate\Support\Facades;
  * @see \Illuminate\Session\SessionManager
  * @see \Illuminate\Session\Store
  */
-class Session extends \FedExVendor\Illuminate\Support\Facades\Facade
+class Session extends Facade
 {
     /**
      * Get the registered name of the component.

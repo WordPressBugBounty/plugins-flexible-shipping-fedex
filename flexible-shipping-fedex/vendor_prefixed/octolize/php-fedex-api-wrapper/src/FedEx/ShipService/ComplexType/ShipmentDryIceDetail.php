@@ -14,7 +14,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property Weight $TotalWeight
  * @property ShipmentDryIceProcessingOptionsRequested $ProcessingOptions
  */
-class ShipmentDryIceDetail extends \FedExVendor\FedEx\AbstractComplexType
+class ShipmentDryIceDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -39,7 +39,7 @@ class ShipmentDryIceDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param Weight $totalWeight
      * @return $this
      */
-    public function setTotalWeight(\FedExVendor\FedEx\ShipService\ComplexType\Weight $totalWeight)
+    public function setTotalWeight(Weight $totalWeight)
     {
         $this->values['TotalWeight'] = $totalWeight;
         return $this;
@@ -50,7 +50,7 @@ class ShipmentDryIceDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param ShipmentDryIceProcessingOptionsRequested $processingOptions
      * @return $this
      */
-    public function setProcessingOptions(\FedExVendor\FedEx\ShipService\ComplexType\ShipmentDryIceProcessingOptionsRequested $processingOptions)
+    public function setProcessingOptions(ShipmentDryIceProcessingOptionsRequested $processingOptions)
     {
         $this->values['ProcessingOptions'] = $processingOptions;
         return $this;

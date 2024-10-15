@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractRequest;
  * @package     PHP FedEx API wrapper
  * @subpackage  List Dangerous Goods Service
  */
-class Request extends \FedExVendor\FedEx\AbstractRequest
+class Request extends AbstractRequest
 {
     const PRODUCTION_URL = 'https://ws.fedex.com:443/web-services/dgld';
     const TESTING_URL = 'https://wsbeta.fedex.com:443/web-services/dgld';
@@ -22,13 +22,13 @@ class Request extends \FedExVendor\FedEx\AbstractRequest
      * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
      * @return ComplexType\ListDangerousGoodsReply|stdClass
      */
-    public function getListDangerousGoodsReply(\FedExVendor\FedEx\DGLDService\ComplexType\ListDangerousGoodsRequest $listDangerousGoodsRequest, $returnStdClass = \false)
+    public function getListDangerousGoodsReply(ComplexType\ListDangerousGoodsRequest $listDangerousGoodsRequest, $returnStdClass = \false)
     {
         $response = $this->getSoapClient()->listDangerousGoods($listDangerousGoodsRequest->toArray());
         if ($returnStdClass) {
             return $response;
         }
-        $listDangerousGoodsReply = new \FedExVendor\FedEx\DGLDService\ComplexType\ListDangerousGoodsReply();
+        $listDangerousGoodsReply = new ComplexType\ListDangerousGoodsReply();
         $listDangerousGoodsReply->populateFromStdClass($response);
         return $listDangerousGoodsReply;
     }

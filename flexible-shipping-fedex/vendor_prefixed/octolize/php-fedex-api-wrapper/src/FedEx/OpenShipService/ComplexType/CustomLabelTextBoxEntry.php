@@ -20,7 +20,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property int $FontSize
  * @property \FedEx\OpenShipService\SimpleType\RotationType|string $Rotation
  */
-class CustomLabelTextBoxEntry extends \FedExVendor\FedEx\AbstractComplexType
+class CustomLabelTextBoxEntry extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -34,7 +34,7 @@ class CustomLabelTextBoxEntry extends \FedExVendor\FedEx\AbstractComplexType
      * @param CustomLabelPosition $topLeftCorner
      * @return $this
      */
-    public function setTopLeftCorner(\FedExVendor\FedEx\OpenShipService\ComplexType\CustomLabelPosition $topLeftCorner)
+    public function setTopLeftCorner(CustomLabelPosition $topLeftCorner)
     {
         $this->values['TopLeftCorner'] = $topLeftCorner;
         return $this;
@@ -45,7 +45,7 @@ class CustomLabelTextBoxEntry extends \FedExVendor\FedEx\AbstractComplexType
      * @param CustomLabelPosition $bottomRightCorner
      * @return $this
      */
-    public function setBottomRightCorner(\FedExVendor\FedEx\OpenShipService\ComplexType\CustomLabelPosition $bottomRightCorner)
+    public function setBottomRightCorner(CustomLabelPosition $bottomRightCorner)
     {
         $this->values['BottomRightCorner'] = $bottomRightCorner;
         return $this;
@@ -56,7 +56,7 @@ class CustomLabelTextBoxEntry extends \FedExVendor\FedEx\AbstractComplexType
      * @param CustomLabelPosition $position
      * @return $this
      */
-    public function setPosition(\FedExVendor\FedEx\OpenShipService\ComplexType\CustomLabelPosition $position)
+    public function setPosition(CustomLabelPosition $position)
     {
         $this->values['Position'] = $position;
         return $this;

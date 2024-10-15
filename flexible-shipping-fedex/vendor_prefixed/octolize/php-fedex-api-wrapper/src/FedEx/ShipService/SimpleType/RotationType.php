@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
  */
-class RotationType extends \FedExVendor\FedEx\AbstractSimpleType
+class RotationType extends AbstractSimpleType
 {
     const _LEFT = 'LEFT';
     const _NONE = 'NONE';

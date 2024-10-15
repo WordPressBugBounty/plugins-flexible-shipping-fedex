@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Validation Availability And Commitment Service Service
  */
-class SpecialEquipmentType extends \FedExVendor\FedEx\AbstractSimpleType
+class SpecialEquipmentType extends AbstractSimpleType
 {
     const _FORK_LIFT = 'FORK_LIFT';
 }

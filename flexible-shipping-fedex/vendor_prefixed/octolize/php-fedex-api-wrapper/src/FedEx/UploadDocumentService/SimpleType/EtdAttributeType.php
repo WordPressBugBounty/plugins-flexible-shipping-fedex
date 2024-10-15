@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Upload Document Service
  */
-class EtdAttributeType extends \FedExVendor\FedEx\AbstractSimpleType
+class EtdAttributeType extends AbstractSimpleType
 {
     const _POST_SHIPMENT_UPLOAD_REQUESTED = 'POST_SHIPMENT_UPLOAD_REQUESTED';
 }

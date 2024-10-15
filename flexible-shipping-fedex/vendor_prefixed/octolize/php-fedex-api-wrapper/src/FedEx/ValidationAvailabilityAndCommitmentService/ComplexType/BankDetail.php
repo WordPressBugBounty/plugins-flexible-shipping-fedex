@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $BankName
  * @property Address $BankAddress
  */
-class BankDetail extends \FedExVendor\FedEx\AbstractComplexType
+class BankDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -38,7 +38,7 @@ class BankDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param Address $bankAddress
      * @return $this
      */
-    public function setBankAddress(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\Address $bankAddress)
+    public function setBankAddress(Address $bankAddress)
     {
         $this->values['BankAddress'] = $bankAddress;
         return $this;

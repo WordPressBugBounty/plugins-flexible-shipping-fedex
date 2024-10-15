@@ -15,7 +15,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $UspsApplicationId
  * @property string $TrackingNumber
  */
-class TrackingId extends \FedExVendor\FedEx\AbstractComplexType
+class TrackingId extends AbstractComplexType
 {
     /**
      * Name of this complex type

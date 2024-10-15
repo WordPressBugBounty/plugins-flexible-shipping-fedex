@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $Code
  * @property string $Description
  */
-class FreightRateNotation extends \FedExVendor\FedEx\AbstractComplexType
+class FreightRateNotation extends AbstractComplexType
 {
     /**
      * Name of this complex type

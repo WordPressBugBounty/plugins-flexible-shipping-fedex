@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property float $QValue
  * @property ValidatedHazardousCommodityContent[] $HazardousCommodities
  */
-class ValidatedHazardousContainer extends \FedExVendor\FedEx\AbstractComplexType
+class ValidatedHazardousContainer extends AbstractComplexType
 {
     /**
      * Name of this complex type

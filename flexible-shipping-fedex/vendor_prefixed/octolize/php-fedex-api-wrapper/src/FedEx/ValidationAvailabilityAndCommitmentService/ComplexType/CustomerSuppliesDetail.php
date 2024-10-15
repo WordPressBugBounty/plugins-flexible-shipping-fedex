@@ -12,7 +12,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  *
  * @property \FedEx\ValidationAvailabilityAndCommitmentService\SimpleType\SuppliesTypes|string[] $EligibleSupplies
  */
-class CustomerSuppliesDetail extends \FedExVendor\FedEx\AbstractComplexType
+class CustomerSuppliesDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

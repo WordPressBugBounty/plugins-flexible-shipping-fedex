@@ -18,7 +18,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property int $CopiesToPrint
  * @property ShippingDocumentPart[] $Parts
  */
-class ConsolidationDocument extends \FedExVendor\FedEx\AbstractComplexType
+class ConsolidationDocument extends AbstractComplexType
 {
     /**
      * Name of this complex type

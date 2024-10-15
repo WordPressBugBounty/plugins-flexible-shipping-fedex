@@ -14,7 +14,7 @@ namespace FedExVendor;
 if (!\defined('ABSPATH')) {
     exit;
 }
-if (!\class_exists('FedExVendor\\WPDesk_Tracker_Data_Provider_Shipping_Methods')) {
+if (!\class_exists('FedExVendor\WPDesk_Tracker_Data_Provider_Shipping_Methods')) {
     /**
      * Class WPDesk_Tracker_Data_Provider_Shipping_Methods
      */

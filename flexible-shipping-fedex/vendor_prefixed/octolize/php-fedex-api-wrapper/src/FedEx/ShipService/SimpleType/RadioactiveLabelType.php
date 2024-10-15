@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Ship Service
  */
-class RadioactiveLabelType extends \FedExVendor\FedEx\AbstractSimpleType
+class RadioactiveLabelType extends AbstractSimpleType
 {
     const _III_YELLOW = 'III_YELLOW';
     const _II_YELLOW = 'II_YELLOW';

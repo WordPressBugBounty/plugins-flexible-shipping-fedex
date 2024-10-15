@@ -72,12 +72,12 @@ class FedexSoapRateRequestBuilder
      * @param Shipment $shipment Shipment.
      * @param ShopSettings $helper Helper.
      */
-    public function __construct(\FedExVendor\WPDesk\AbstractShipping\Settings\SettingsValues $settings, \FedExVendor\WPDesk\AbstractShipping\Shipment\Shipment $shipment, \FedExVendor\WPDesk\AbstractShipping\Shop\ShopSettings $helper)
+    public function __construct(SettingsValues $settings, Shipment $shipment, ShopSettings $helper)
     {
         $this->settings = $settings;
         $this->shipment = $shipment;
         $this->shop_settings = $helper;
-        $this->request = new \FedExVendor\FedEx\RateService\ComplexType\RateRequest();
+        $this->request = new ComplexType\RateRequest();
     }
     /**
      * Set authentication FedEx credentials
@@ -106,11 +106,11 @@ class FedexSoapRateRequestBuilder
      */
     private function set_shipper_address()
     {
-        if ($this->shipment->ship_from->address instanceof \FedExVendor\WPDesk\AbstractShipping\Shipment\Address) {
+        if ($this->shipment->ship_from->address instanceof Address) {
             $ship_from = $this->shipment->ship_from->address;
-            $this->request->RequestedShipment->Shipper->Address->StreetLines = [\FedExVendor\WPDesk\FedexShippingService\FedexApi\FedexRequestManipulation::convert_to_utf7($ship_from->address_line1), \FedExVendor\WPDesk\FedexShippingService\FedexApi\FedexRequestManipulation::convert_to_utf7($ship_from->address_line2)];
-            $this->request->RequestedShipment->Shipper->Address->City = \FedExVendor\WPDesk\FedexShippingService\FedexApi\FedexRequestManipulation::convert_to_utf7($ship_from->city);
-            $this->request->RequestedShipment->Shipper->Address->StateOrProvinceCode = \FedExVendor\WPDesk\FedexShippingService\FedexApi\FedexRequestManipulation::filter_province_for_fedex($ship_from->state_code);
+            $this->request->RequestedShipment->Shipper->Address->StreetLines = [FedexRequestManipulation::convert_to_utf7($ship_from->address_line1), FedexRequestManipulation::convert_to_utf7($ship_from->address_line2)];
+            $this->request->RequestedShipment->Shipper->Address->City = FedexRequestManipulation::convert_to_utf7($ship_from->city);
+            $this->request->RequestedShipment->Shipper->Address->StateOrProvinceCode = FedexRequestManipulation::filter_province_for_fedex($ship_from->state_code);
             $this->request->RequestedShipment->Shipper->Address->PostalCode = $ship_from->postal_code;
             $this->request->RequestedShipment->Shipper->Address->CountryCode = $ship_from->country_code;
         }
@@ -129,11 +129,11 @@ class FedexSoapRateRequestBuilder
      */
     private function set_recipient_address()
     {
-        if ($this->shipment->ship_to->address instanceof \FedExVendor\WPDesk\AbstractShipping\Shipment\Address) {
+        if ($this->shipment->ship_to->address instanceof Address) {
             $ship_to = $this->shipment->ship_to->address;
-            $this->request->RequestedShipment->Recipient->Address->StreetLines = [\FedExVendor\WPDesk\FedexShippingService\FedexApi\FedexRequestManipulation::convert_to_utf7($ship_to->address_line1), \FedExVendor\WPDesk\FedexShippingService\FedexApi\FedexRequestManipulation::convert_to_utf7($ship_to->address_line2)];
-            $this->request->RequestedShipment->Recipient->Address->City = \FedExVendor\WPDesk\FedexShippingService\FedexApi\FedexRequestManipulation::convert_to_utf7($ship_to->city);
-            $this->request->RequestedShipment->Recipient->Address->StateOrProvinceCode = \FedExVendor\WPDesk\FedexShippingService\FedexApi\FedexRequestManipulation::filter_province_for_fedex($ship_to->state_code);
+            $this->request->RequestedShipment->Recipient->Address->StreetLines = [FedexRequestManipulation::convert_to_utf7($ship_to->address_line1), FedexRequestManipulation::convert_to_utf7($ship_to->address_line2)];
+            $this->request->RequestedShipment->Recipient->Address->City = FedexRequestManipulation::convert_to_utf7($ship_to->city);
+            $this->request->RequestedShipment->Recipient->Address->StateOrProvinceCode = FedexRequestManipulation::filter_province_for_fedex($ship_to->state_code);
             $this->request->RequestedShipment->Recipient->Address->PostalCode = $ship_to->postal_code;
             $this->request->RequestedShipment->Recipient->Address->CountryCode = $ship_to->country_code;
             $this->request->RequestedShipment->Recipient->Address->Residential = $this->is_residential();
@@ -147,11 +147,11 @@ class FedexSoapRateRequestBuilder
      *
      * @return RequestedPackageLineItem
      */
-    private function handle_insurance(\FedExVendor\FedEx\RateService\ComplexType\RequestedPackageLineItem $requested_package, \FedExVendor\WPDesk\AbstractShipping\Rate\Money $money)
+    private function handle_insurance(RequestedPackageLineItem $requested_package, Money $money)
     {
-        if ('yes' === $this->settings->get_value(\FedExVendor\WPDesk\FedexShippingService\FedexSettingsDefinition::FIELD_INSURANCE)) {
+        if ('yes' === $this->settings->get_value(FedexSettingsDefinition::FIELD_INSURANCE)) {
             $requested_package->InsuredValue->Amount = $money->amount;
-            $requested_package->InsuredValue->Currency = \FedExVendor\WPDesk\FedexShippingService\FedexApi\FedexRequestManipulation::convert_currency_to_fedex($money->currency);
+            $requested_package->InsuredValue->Currency = FedexRequestManipulation::convert_currency_to_fedex($money->currency);
         }
         return $requested_package;
     }
@@ -165,11 +165,11 @@ class FedexSoapRateRequestBuilder
      */
     private function sum_items_value(array $items)
     {
-        $value = new \FedExVendor\WPDesk\AbstractShipping\Rate\Money();
+        $value = new Money();
         $value->amount = 0;
         foreach ($items as $item) {
-            if ($item->declared_value instanceof \FedExVendor\WPDesk\AbstractShipping\Rate\Money) {
-                $value->amount += \round($item->declared_value->amount, $this->shop_settings->get_price_rounding_precision());
+            if ($item->declared_value instanceof Money) {
+                $value->amount += round($item->declared_value->amount, $this->shop_settings->get_price_rounding_precision());
                 $value->currency = $item->declared_value->currency;
             }
         }
@@ -184,19 +184,19 @@ class FedexSoapRateRequestBuilder
      * @return RequestedPackageLineItem
      * @throws UnitConversionException
      */
-    private function create_package_from_package(\FedExVendor\WPDesk\AbstractShipping\Shipment\Package $package, $number)
+    private function create_package_from_package(Package $package, $number)
     {
-        $requested_package = new \FedExVendor\FedEx\RateService\ComplexType\RequestedPackageLineItem();
+        $requested_package = new RequestedPackageLineItem();
         $requested_package->SequenceNumber = $number;
-        if ($package->weight instanceof \FedExVendor\WPDesk\AbstractShipping\Shipment\Weight) {
+        if ($package->weight instanceof Weight) {
             $this->set_weight($requested_package, $package->weight);
         }
-        if ($package->dimensions instanceof \FedExVendor\WPDesk\AbstractShipping\Shipment\Dimensions) {
+        if ($package->dimensions instanceof Dimensions) {
             $dimension = new \FedExVendor\FedEx\RateService\ComplexType\Dimensions();
-            $dimension->Height = \ceil($package->dimensions->height);
-            $dimension->Length = \ceil($package->dimensions->length);
-            $dimension->Width = \ceil($package->dimensions->width);
-            $dimension->Units = \FedExVendor\WPDesk\FedexShippingService\FedexApi\FedexRequestManipulation::convert_dimension_unit($package->dimensions->dimensions_unit);
+            $dimension->Height = ceil($package->dimensions->height);
+            $dimension->Length = ceil($package->dimensions->length);
+            $dimension->Width = ceil($package->dimensions->width);
+            $dimension->Units = FedexRequestManipulation::convert_dimension_unit($package->dimensions->dimensions_unit);
             $requested_package->setDimensions($dimension);
         }
         $value = $this->sum_items_value($package->items);
@@ -219,7 +219,7 @@ class FedexSoapRateRequestBuilder
             $line_items[] = $this->create_package_from_package($package, $counter++);
         }
         $this->request->RequestedShipment->RequestedPackageLineItems = $line_items;
-        $this->request->RequestedShipment->PackageCount = \count($line_items);
+        $this->request->RequestedShipment->PackageCount = count($line_items);
     }
     /**
      * Returns weight unit in which FedEx request would be sent.
@@ -228,8 +228,8 @@ class FedexSoapRateRequestBuilder
      */
     private function get_target_weight_unit()
     {
-        $unit = $this->settings->get_value(\FedExVendor\WPDesk\FedexShippingService\FedexSettingsDefinition::FIELD_UNITS, \FedExVendor\WPDesk\FedexShippingService\FedexSettingsDefinition::UNITS_METRIC);
-        return $unit === \FedExVendor\WPDesk\FedexShippingService\FedexSettingsDefinition::UNITS_METRIC ? \FedExVendor\WPDesk\AbstractShipping\Shipment\Weight::WEIGHT_UNIT_KG : \FedExVendor\WPDesk\AbstractShipping\Shipment\Weight::WEIGHT_UNIT_LB;
+        $unit = $this->settings->get_value(FedexSettingsDefinition::FIELD_UNITS, FedexSettingsDefinition::UNITS_METRIC);
+        return $unit === FedexSettingsDefinition::UNITS_METRIC ? Weight::WEIGHT_UNIT_KG : Weight::WEIGHT_UNIT_LB;
     }
     /**
      * Returns dimension unit in which FedEx request would be sent.
@@ -238,8 +238,8 @@ class FedexSoapRateRequestBuilder
      */
     private function get_target_dimension_unit()
     {
-        $unit = $this->settings->get_value(\FedExVendor\WPDesk\FedexShippingService\FedexSettingsDefinition::FIELD_UNITS, \FedExVendor\WPDesk\FedexShippingService\FedexSettingsDefinition::UNITS_METRIC);
-        return $unit === \FedExVendor\WPDesk\FedexShippingService\FedexSettingsDefinition::UNITS_METRIC ? \FedExVendor\WPDesk\AbstractShipping\Shipment\Dimensions::DIMENSION_UNIT_CM : \FedExVendor\WPDesk\AbstractShipping\Shipment\Dimensions::DIMENSION_UNIT_IN;
+        $unit = $this->settings->get_value(FedexSettingsDefinition::FIELD_UNITS, FedexSettingsDefinition::UNITS_METRIC);
+        return $unit === FedexSettingsDefinition::UNITS_METRIC ? Dimensions::DIMENSION_UNIT_CM : Dimensions::DIMENSION_UNIT_IN;
     }
     /**
      * Set weight.
@@ -250,18 +250,18 @@ class FedexSoapRateRequestBuilder
      * @return RequestedPackageLineItem
      * @throws UnitConversionException Unit conversion exception.
      */
-    private function set_weight(\FedExVendor\FedEx\RateService\ComplexType\RequestedPackageLineItem $requested_package, \FedExVendor\WPDesk\AbstractShipping\Shipment\Weight $itemWeight)
+    private function set_weight(RequestedPackageLineItem $requested_package, Weight $itemWeight)
     {
         $target_weight_unit = $this->get_target_weight_unit();
         try {
-            $weight = (new \FedExVendor\WPDesk\AbstractShipping\UnitConversion\UniversalWeight($itemWeight->weight, $itemWeight->weight_unit))->as_unit_rounded($target_weight_unit, 3);
-            $requested_package->Weight->Value = \max($weight, 0.001);
-            $requested_package->Weight->Units = \FedExVendor\WPDesk\FedexShippingService\FedexApi\FedexRequestManipulation::convert_weight_unit($target_weight_unit);
+            $weight = (new UniversalWeight($itemWeight->weight, $itemWeight->weight_unit))->as_unit_rounded($target_weight_unit, 3);
+            $requested_package->Weight->Value = max($weight, 0.001);
+            $requested_package->Weight->Units = FedexRequestManipulation::convert_weight_unit($target_weight_unit);
         } catch (\Throwable $e) {
-            throw new \FedExVendor\WPDesk\AbstractShipping\Exception\UnitConversionException($e->getMessage());
+            throw new UnitConversionException($e->getMessage());
         } catch (\Exception $e) {
             // required fallback from Throwable in PHP 5.6
-            throw new \FedExVendor\WPDesk\AbstractShipping\Exception\UnitConversionException($e->getMessage());
+            throw new UnitConversionException($e->getMessage());
         }
         return $requested_package;
     }
@@ -271,16 +271,16 @@ class FedexSoapRateRequestBuilder
      *
      * @param RequestedShipment $shipment
      */
-    private function set_rate_type(\FedExVendor\FedEx\RateService\ComplexType\RequestedShipment $shipment)
+    private function set_rate_type(RequestedShipment $shipment)
     {
-        $rate_type = $this->settings->get_value(\FedExVendor\WPDesk\FedexShippingService\FedexSettingsDefinition::FIELD_REQUEST_TYPE, \FedExVendor\WPDesk\FedexShippingService\FedexSettingsDefinition::FIELD_REQUEST_TYPE_VALUE_ALL);
+        $rate_type = $this->settings->get_value(FedexSettingsDefinition::FIELD_REQUEST_TYPE, FedexSettingsDefinition::FIELD_REQUEST_TYPE_VALUE_ALL);
         switch ($rate_type) {
-            case \FedExVendor\FedEx\RateService\SimpleType\RateRequestType::_LIST:
-                $shipment->RateRequestTypes = [\FedExVendor\FedEx\RateService\SimpleType\RateRequestType::_LIST];
+            case SimpleType\RateRequestType::_LIST:
+                $shipment->RateRequestTypes = [SimpleType\RateRequestType::_LIST];
                 break;
-            case \FedExVendor\WPDesk\FedexShippingService\FedexSettingsDefinition::FIELD_REQUEST_TYPE_VALUE_ALL:
+            case FedexSettingsDefinition::FIELD_REQUEST_TYPE_VALUE_ALL:
             default:
-                $shipment->RateRequestTypes = [\FedExVendor\FedEx\RateService\SimpleType\RateRequestType::_NONE];
+                $shipment->RateRequestTypes = [SimpleType\RateRequestType::_NONE];
                 break;
         }
     }
@@ -289,7 +289,7 @@ class FedexSoapRateRequestBuilder
      */
     private function set_purpose_of_shipment()
     {
-        $this->request->RequestedShipment->CustomsClearanceDetail->CommercialInvoice->Purpose = \FedExVendor\FedEx\RateService\SimpleType\PurposeOfShipmentType::_SOLD;
+        $this->request->RequestedShipment->CustomsClearanceDetail->CommercialInvoice->Purpose = SimpleType\PurposeOfShipmentType::_SOLD;
     }
     /**
      * Set additional request data.
@@ -297,9 +297,9 @@ class FedexSoapRateRequestBuilder
     private function set_additional_data()
     {
         $this->request->RequestedShipment->PackagingType = $this->prepare_packaging_type();
-        $this->request->RequestedShipment->ShippingChargesPayment->PaymentType = \FedExVendor\FedEx\RateService\SimpleType\PaymentType::_SENDER;
-        $this->request->RequestedShipment->DropoffType = \FedExVendor\FedEx\RateService\SimpleType\DropoffType::_REGULAR_PICKUP;
-        $this->request->RequestedShipment->ShipTimestamp = (new \DateTime())->format('c');
+        $this->request->RequestedShipment->ShippingChargesPayment->PaymentType = SimpleType\PaymentType::_SENDER;
+        $this->request->RequestedShipment->DropoffType = SimpleType\DropoffType::_REGULAR_PICKUP;
+        $this->request->RequestedShipment->ShipTimestamp = (new DateTime())->format('c');
         $this->set_rate_type($this->request->RequestedShipment);
     }
     /**
@@ -309,14 +309,14 @@ class FedexSoapRateRequestBuilder
     {
         $package_type = '';
         foreach ($this->shipment->packages as $package) {
-            $package_pack_type = \trim($package->package_type ?? '', '_');
+            $package_pack_type = trim($package->package_type ?? '', '_');
             $package_type = '' === $package_type ? $package_pack_type : $package_type;
             if ($package_type !== $package_pack_type) {
                 $package_type = 'custom';
             }
         }
-        if (!\in_array($package_type, $this->get_built_in_packaging_types(), \true)) {
-            $package_type = \FedExVendor\FedEx\ShipService\SimpleType\PackagingType::_YOUR_PACKAGING;
+        if (!in_array($package_type, $this->get_built_in_packaging_types(), \true)) {
+            $package_type = PackagingType::_YOUR_PACKAGING;
         }
         return $package_type;
     }
@@ -325,7 +325,7 @@ class FedexSoapRateRequestBuilder
      */
     private function get_built_in_packaging_types()
     {
-        return array(\FedExVendor\FedEx\ShipService\SimpleType\PackagingType::_FEDEX_TUBE, \FedExVendor\FedEx\ShipService\SimpleType\PackagingType::_FEDEX_PAK, \FedExVendor\FedEx\ShipService\SimpleType\PackagingType::_FEDEX_LARGE_BOX, \FedExVendor\FedEx\ShipService\SimpleType\PackagingType::_FEDEX_SMALL_BOX, \FedExVendor\FedEx\ShipService\SimpleType\PackagingType::_FEDEX_10KG_BOX, \FedExVendor\FedEx\ShipService\SimpleType\PackagingType::_FEDEX_BOX, \FedExVendor\FedEx\ShipService\SimpleType\PackagingType::_FEDEX_25KG_BOX, \FedExVendor\FedEx\ShipService\SimpleType\PackagingType::_FEDEX_ENVELOPE, \FedExVendor\FedEx\ShipService\SimpleType\PackagingType::_FEDEX_EXTRA_LARGE_BOX, \FedExVendor\FedEx\ShipService\SimpleType\PackagingType::_FEDEX_MEDIUM_BOX);
+        return array(PackagingType::_FEDEX_TUBE, PackagingType::_FEDEX_PAK, PackagingType::_FEDEX_LARGE_BOX, PackagingType::_FEDEX_SMALL_BOX, PackagingType::_FEDEX_10KG_BOX, PackagingType::_FEDEX_BOX, PackagingType::_FEDEX_25KG_BOX, PackagingType::_FEDEX_ENVELOPE, PackagingType::_FEDEX_EXTRA_LARGE_BOX, PackagingType::_FEDEX_MEDIUM_BOX);
     }
     /**
      * Build request.

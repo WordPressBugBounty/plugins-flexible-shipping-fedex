@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property TransborderDistributionSpecialServicesRequested $SpecialServicesRequested
  * @property \FedEx\OpenShipService\SimpleType\TransborderDistributionRoutingType|string $Routing
  */
-class ConsolidationTransborderDistributionDetail extends \FedExVendor\FedEx\AbstractComplexType
+class ConsolidationTransborderDistributionDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -27,7 +27,7 @@ class ConsolidationTransborderDistributionDetail extends \FedExVendor\FedEx\Abst
      * @param TransborderDistributionSpecialServicesRequested $specialServicesRequested
      * @return $this
      */
-    public function setSpecialServicesRequested(\FedExVendor\FedEx\OpenShipService\ComplexType\TransborderDistributionSpecialServicesRequested $specialServicesRequested)
+    public function setSpecialServicesRequested(TransborderDistributionSpecialServicesRequested $specialServicesRequested)
     {
         $this->values['SpecialServicesRequested'] = $specialServicesRequested;
         return $this;

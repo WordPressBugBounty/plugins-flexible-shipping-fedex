@@ -12,7 +12,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  *
  * @property \FedEx\RateService\SimpleType\RecommendedDocumentType|string[] $Types
  */
-class RecommendedDocumentSpecification extends \FedExVendor\FedEx\AbstractComplexType
+class RecommendedDocumentSpecification extends AbstractComplexType
 {
     /**
      * Name of this complex type

@@ -19,7 +19,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property Money $TotalInsuredValue
  * @property PickupPackageDetail[] $PackageDetails
  */
-class PickupTagDetail extends \FedExVendor\FedEx\AbstractComplexType
+class PickupTagDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -66,7 +66,7 @@ class PickupTagDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param Payment $shippingChargesPayment
      * @return $this
      */
-    public function setShippingChargesPayment(\FedExVendor\FedEx\PickupService\ComplexType\Payment $shippingChargesPayment)
+    public function setShippingChargesPayment(Payment $shippingChargesPayment)
     {
         $this->values['ShippingChargesPayment'] = $shippingChargesPayment;
         return $this;
@@ -77,7 +77,7 @@ class PickupTagDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param ContactAndAddress $recipientLocation
      * @return $this
      */
-    public function setRecipientLocation(\FedExVendor\FedEx\PickupService\ComplexType\ContactAndAddress $recipientLocation)
+    public function setRecipientLocation(ContactAndAddress $recipientLocation)
     {
         $this->values['RecipientLocation'] = $recipientLocation;
         return $this;
@@ -99,7 +99,7 @@ class PickupTagDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param Money $totalInsuredValue
      * @return $this
      */
-    public function setTotalInsuredValue(\FedExVendor\FedEx\PickupService\ComplexType\Money $totalInsuredValue)
+    public function setTotalInsuredValue(Money $totalInsuredValue)
     {
         $this->values['TotalInsuredValue'] = $totalInsuredValue;
         return $this;

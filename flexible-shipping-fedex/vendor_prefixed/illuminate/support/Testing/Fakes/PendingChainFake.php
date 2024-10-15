@@ -5,7 +5,7 @@ namespace FedExVendor\Illuminate\Support\Testing\Fakes;
 use Closure;
 use FedExVendor\Illuminate\Foundation\Bus\PendingChain;
 use FedExVendor\Illuminate\Queue\CallQueuedClosure;
-class PendingChainFake extends \FedExVendor\Illuminate\Foundation\Bus\PendingChain
+class PendingChainFake extends PendingChain
 {
     /**
      * The fake bus instance.
@@ -21,7 +21,7 @@ class PendingChainFake extends \FedExVendor\Illuminate\Foundation\Bus\PendingCha
      * @param  array  $chain
      * @return void
      */
-    public function __construct(\FedExVendor\Illuminate\Support\Testing\Fakes\BusFake $bus, $job, $chain)
+    public function __construct(BusFake $bus, $job, $chain)
     {
         $this->bus = $bus;
         $this->job = $job;
@@ -34,10 +34,10 @@ class PendingChainFake extends \FedExVendor\Illuminate\Foundation\Bus\PendingCha
      */
     public function dispatch()
     {
-        if (\is_string($this->job)) {
-            $firstJob = new $this->job(...\func_get_args());
-        } elseif ($this->job instanceof \Closure) {
-            $firstJob = \FedExVendor\Illuminate\Queue\CallQueuedClosure::create($this->job);
+        if (is_string($this->job)) {
+            $firstJob = new $this->job(...func_get_args());
+        } elseif ($this->job instanceof Closure) {
+            $firstJob = CallQueuedClosure::create($this->job);
         } else {
             $firstJob = $this->job;
         }

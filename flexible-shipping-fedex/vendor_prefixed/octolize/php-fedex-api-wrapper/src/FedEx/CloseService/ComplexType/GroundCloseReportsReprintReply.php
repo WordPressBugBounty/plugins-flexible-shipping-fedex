@@ -18,7 +18,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $HazMatCertificate
  * @property ManifestFile[] $Manifests
  */
-class GroundCloseReportsReprintReply extends \FedExVendor\FedEx\AbstractComplexType
+class GroundCloseReportsReprintReply extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -54,7 +54,7 @@ class GroundCloseReportsReprintReply extends \FedExVendor\FedEx\AbstractComplexT
      * @param TransactionDetail $transactionDetail
      * @return $this
      */
-    public function setTransactionDetail(\FedExVendor\FedEx\CloseService\ComplexType\TransactionDetail $transactionDetail)
+    public function setTransactionDetail(TransactionDetail $transactionDetail)
     {
         $this->values['TransactionDetail'] = $transactionDetail;
         return $this;
@@ -65,7 +65,7 @@ class GroundCloseReportsReprintReply extends \FedExVendor\FedEx\AbstractComplexT
      * @param VersionId $version
      * @return $this
      */
-    public function setVersion(\FedExVendor\FedEx\CloseService\ComplexType\VersionId $version)
+    public function setVersion(VersionId $version)
     {
         $this->values['Version'] = $version;
         return $this;

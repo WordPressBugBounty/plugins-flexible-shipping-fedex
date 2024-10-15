@@ -16,7 +16,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property \FedEx\LocationsService\SimpleType\LocationTransferOfPossessionType|string $TransferOfPossessionType
  * @property \FedEx\LocationsService\SimpleType\DayOfWeekType|string[] $DaysOfWeek
  */
-class LocationCapabilityDetail extends \FedExVendor\FedEx\AbstractComplexType
+class LocationCapabilityDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

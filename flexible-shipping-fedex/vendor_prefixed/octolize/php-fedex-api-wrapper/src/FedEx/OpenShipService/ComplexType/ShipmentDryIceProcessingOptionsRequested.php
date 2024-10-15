@@ -12,7 +12,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  *
  * @property \FedEx\OpenShipService\SimpleType\ShipmentDryIceProcessingOptionType|string[] $Options
  */
-class ShipmentDryIceProcessingOptionsRequested extends \FedExVendor\FedEx\AbstractComplexType
+class ShipmentDryIceProcessingOptionsRequested extends AbstractComplexType
 {
     /**
      * Name of this complex type

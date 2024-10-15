@@ -6,6 +6,6 @@ namespace FedExVendor\GuzzleHttp\Promise;
 /**
  * Exception that is set as the reason for a promise that has been cancelled.
  */
-class CancellationException extends \FedExVendor\GuzzleHttp\Promise\RejectionException
+class CancellationException extends RejectionException
 {
 }

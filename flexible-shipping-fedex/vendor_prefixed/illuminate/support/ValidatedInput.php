@@ -5,7 +5,7 @@ namespace FedExVendor\Illuminate\Support;
 use ArrayIterator;
 use FedExVendor\Illuminate\Contracts\Support\ValidatedData;
 use stdClass;
-class ValidatedInput implements \FedExVendor\Illuminate\Contracts\Support\ValidatedData
+class ValidatedInput implements ValidatedData
 {
     /**
      * The underlying input.
@@ -33,11 +33,11 @@ class ValidatedInput implements \FedExVendor\Illuminate\Contracts\Support\Valida
     {
         $results = [];
         $input = $this->input;
-        $placeholder = new \stdClass();
-        foreach (\is_array($keys) ? $keys : \func_get_args() as $key) {
+        $placeholder = new stdClass();
+        foreach (is_array($keys) ? $keys : func_get_args() as $key) {
             $value = data_get($input, $key, $placeholder);
             if ($value !== $placeholder) {
-                \FedExVendor\Illuminate\Support\Arr::set($results, $key, $value);
+                Arr::set($results, $key, $value);
             }
         }
         return $results;
@@ -50,9 +50,9 @@ class ValidatedInput implements \FedExVendor\Illuminate\Contracts\Support\Valida
      */
     public function except($keys)
     {
-        $keys = \is_array($keys) ? $keys : \func_get_args();
+        $keys = is_array($keys) ? $keys : func_get_args();
         $results = $this->input;
-        \FedExVendor\Illuminate\Support\Arr::forget($results, $keys);
+        Arr::forget($results, $keys);
         return $results;
     }
     /**
@@ -63,7 +63,7 @@ class ValidatedInput implements \FedExVendor\Illuminate\Contracts\Support\Valida
      */
     public function merge(array $items)
     {
-        return new static(\array_merge($this->input, $items));
+        return new static(array_merge($this->input, $items));
     }
     /**
      * Get the input as a collection.
@@ -72,7 +72,7 @@ class ValidatedInput implements \FedExVendor\Illuminate\Contracts\Support\Valida
      */
     public function collect()
     {
-        return new \FedExVendor\Illuminate\Support\Collection($this->input);
+        return new Collection($this->input);
     }
     /**
      * Get the raw, underlying input array.
@@ -164,7 +164,7 @@ class ValidatedInput implements \FedExVendor\Illuminate\Contracts\Support\Valida
     #[\ReturnTypeWillChange]
     public function offsetSet($key, $value)
     {
-        if (\is_null($key)) {
+        if (is_null($key)) {
             $this->input[] = $value;
         } else {
             $this->input[$key] = $value;
@@ -189,6 +189,6 @@ class ValidatedInput implements \FedExVendor\Illuminate\Contracts\Support\Valida
     #[\ReturnTypeWillChange]
     public function getIterator()
     {
-        return new \ArrayIterator($this->input);
+        return new ArrayIterator($this->input);
     }
 }

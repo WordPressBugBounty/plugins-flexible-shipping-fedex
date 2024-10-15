@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Dangerous Goods Data Service
  */
-class DangerousGoodsRegulationAttributeType extends \FedExVendor\FedEx\AbstractSimpleType
+class DangerousGoodsRegulationAttributeType extends AbstractSimpleType
 {
     const _DRY_ICE_DECLARATION_REQUIRED = 'DRY_ICE_DECLARATION_REQUIRED';
 }

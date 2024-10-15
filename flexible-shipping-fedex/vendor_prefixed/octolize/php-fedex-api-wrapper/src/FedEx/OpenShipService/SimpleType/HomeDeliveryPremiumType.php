@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  OpenShip Service
  */
-class HomeDeliveryPremiumType extends \FedExVendor\FedEx\AbstractSimpleType
+class HomeDeliveryPremiumType extends AbstractSimpleType
 {
     const _APPOINTMENT = 'APPOINTMENT';
     const _DATE_CERTAIN = 'DATE_CERTAIN';

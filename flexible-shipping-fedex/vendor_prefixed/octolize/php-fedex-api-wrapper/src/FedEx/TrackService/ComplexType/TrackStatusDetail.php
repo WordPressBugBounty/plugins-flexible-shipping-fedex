@@ -17,7 +17,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property TrackStatusAncillaryDetail[] $AncillaryDetails
  * @property TrackDelayDetail $DelayDetail
  */
-class TrackStatusDetail extends \FedExVendor\FedEx\AbstractComplexType
+class TrackStatusDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -64,7 +64,7 @@ class TrackStatusDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param Address $location
      * @return $this
      */
-    public function setLocation(\FedExVendor\FedEx\TrackService\ComplexType\Address $location)
+    public function setLocation(Address $location)
     {
         $this->values['Location'] = $location;
         return $this;
@@ -86,7 +86,7 @@ class TrackStatusDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param TrackDelayDetail $delayDetail
      * @return $this
      */
-    public function setDelayDetail(\FedExVendor\FedEx\TrackService\ComplexType\TrackDelayDetail $delayDetail)
+    public function setDelayDetail(TrackDelayDetail $delayDetail)
     {
         $this->values['DelayDetail'] = $delayDetail;
         return $this;

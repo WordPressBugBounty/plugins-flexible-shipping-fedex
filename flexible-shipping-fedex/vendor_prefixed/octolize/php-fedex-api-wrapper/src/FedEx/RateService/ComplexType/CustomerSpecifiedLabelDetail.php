@@ -21,7 +21,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property AdditionalLabelsDetail[] $AdditionalLabels
  * @property int $AirWaybillSuppressionCount
  */
-class CustomerSpecifiedLabelDetail extends \FedExVendor\FedEx\AbstractComplexType
+class CustomerSpecifiedLabelDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -35,7 +35,7 @@ class CustomerSpecifiedLabelDetail extends \FedExVendor\FedEx\AbstractComplexTyp
      * @param DocTabContent $docTabContent
      * @return $this
      */
-    public function setDocTabContent(\FedExVendor\FedEx\RateService\ComplexType\DocTabContent $docTabContent)
+    public function setDocTabContent(DocTabContent $docTabContent)
     {
         $this->values['DocTabContent'] = $docTabContent;
         return $this;
@@ -57,7 +57,7 @@ class CustomerSpecifiedLabelDetail extends \FedExVendor\FedEx\AbstractComplexTyp
      * @param CustomLabelDetail $customContent
      * @return $this
      */
-    public function setCustomContent(\FedExVendor\FedEx\RateService\ComplexType\CustomLabelDetail $customContent)
+    public function setCustomContent(CustomLabelDetail $customContent)
     {
         $this->values['CustomContent'] = $customContent;
         return $this;
@@ -101,7 +101,7 @@ class CustomerSpecifiedLabelDetail extends \FedExVendor\FedEx\AbstractComplexTyp
      * @param Localization $termsAndConditionsLocalization
      * @return $this
      */
-    public function setTermsAndConditionsLocalization(\FedExVendor\FedEx\RateService\ComplexType\Localization $termsAndConditionsLocalization)
+    public function setTermsAndConditionsLocalization(Localization $termsAndConditionsLocalization)
     {
         $this->values['TermsAndConditionsLocalization'] = $termsAndConditionsLocalization;
         return $this;

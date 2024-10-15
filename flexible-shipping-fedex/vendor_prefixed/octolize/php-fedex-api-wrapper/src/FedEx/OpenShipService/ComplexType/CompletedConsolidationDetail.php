@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property ConsolidationShipment[] $ConsolidationShipments
  * @property ConsolidationDocument[] $Documents
  */
-class CompletedConsolidationDetail extends \FedExVendor\FedEx\AbstractComplexType
+class CompletedConsolidationDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

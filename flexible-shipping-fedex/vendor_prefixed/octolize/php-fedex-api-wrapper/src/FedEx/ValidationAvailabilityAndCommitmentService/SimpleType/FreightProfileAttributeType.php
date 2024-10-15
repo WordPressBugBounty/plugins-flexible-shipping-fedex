@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Validation Availability And Commitment Service Service
  */
-class FreightProfileAttributeType extends \FedExVendor\FedEx\AbstractSimpleType
+class FreightProfileAttributeType extends AbstractSimpleType
 {
     const _AUDIT_OR_INVOICE_SERVICE = 'AUDIT_OR_INVOICE_SERVICE';
     const _BANK_DEBTOR_INVOICING = 'BANK_DEBTOR_INVOICING';

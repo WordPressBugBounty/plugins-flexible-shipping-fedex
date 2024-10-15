@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property float $Value
  * @property \FedEx\LocationsService\SimpleType\DistanceUnits|string $Units
  */
-class Distance extends \FedExVendor\FedEx\AbstractComplexType
+class Distance extends AbstractComplexType
 {
     /**
      * Name of this complex type

@@ -11,7 +11,7 @@ namespace FedExVendor\GuzzleHttp\Promise;
  *
  * @final
  */
-class FulfilledPromise implements \FedExVendor\GuzzleHttp\Promise\PromiseInterface
+class FulfilledPromise implements PromiseInterface
 {
     private $value;
     /**
@@ -19,22 +19,22 @@ class FulfilledPromise implements \FedExVendor\GuzzleHttp\Promise\PromiseInterfa
      */
     public function __construct($value)
     {
-        if (\is_object($value) && \method_exists($value, 'then')) {
+        if (is_object($value) && method_exists($value, 'then')) {
             throw new \InvalidArgumentException('You cannot create a FulfilledPromise with a promise.');
         }
         $this->value = $value;
     }
-    public function then(callable $onFulfilled = null, callable $onRejected = null) : \FedExVendor\GuzzleHttp\Promise\PromiseInterface
+    public function then(?callable $onFulfilled = null, ?callable $onRejected = null): PromiseInterface
     {
         // Return itself if there is no onFulfilled function.
         if (!$onFulfilled) {
             return $this;
         }
-        $queue = \FedExVendor\GuzzleHttp\Promise\Utils::queue();
-        $p = new \FedExVendor\GuzzleHttp\Promise\Promise([$queue, 'run']);
+        $queue = Utils::queue();
+        $p = new Promise([$queue, 'run']);
         $value = $this->value;
-        $queue->add(static function () use($p, $value, $onFulfilled) : void {
-            if (\FedExVendor\GuzzleHttp\Promise\Is::pending($p)) {
+        $queue->add(static function () use ($p, $value, $onFulfilled): void {
+            if (Is::pending($p)) {
                 try {
                     $p->resolve($onFulfilled($value));
                 } catch (\Throwable $e) {
@@ -44,7 +44,7 @@ class FulfilledPromise implements \FedExVendor\GuzzleHttp\Promise\PromiseInterfa
         });
         return $p;
     }
-    public function otherwise(callable $onRejected) : \FedExVendor\GuzzleHttp\Promise\PromiseInterface
+    public function otherwise(callable $onRejected): PromiseInterface
     {
         return $this->then(null, $onRejected);
     }
@@ -52,21 +52,21 @@ class FulfilledPromise implements \FedExVendor\GuzzleHttp\Promise\PromiseInterfa
     {
         return $unwrap ? $this->value : null;
     }
-    public function getState() : string
+    public function getState(): string
     {
         return self::FULFILLED;
     }
-    public function resolve($value) : void
+    public function resolve($value): void
     {
         if ($value !== $this->value) {
             throw new \LogicException('Cannot resolve a fulfilled promise');
         }
     }
-    public function reject($reason) : void
+    public function reject($reason): void
     {
         throw new \LogicException('Cannot reject a fulfilled promise');
     }
-    public function cancel() : void
+    public function cancel(): void
     {
         // pass
     }

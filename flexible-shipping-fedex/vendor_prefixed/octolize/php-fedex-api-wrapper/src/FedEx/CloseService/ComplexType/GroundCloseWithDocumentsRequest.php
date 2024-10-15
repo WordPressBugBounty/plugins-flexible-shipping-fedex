@@ -17,7 +17,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $CloseDate
  * @property CloseDocumentSpecification $CloseDocumentSpecification
  */
-class GroundCloseWithDocumentsRequest extends \FedExVendor\FedEx\AbstractComplexType
+class GroundCloseWithDocumentsRequest extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -31,7 +31,7 @@ class GroundCloseWithDocumentsRequest extends \FedExVendor\FedEx\AbstractComplex
      * @param WebAuthenticationDetail $webAuthenticationDetail
      * @return $this
      */
-    public function setWebAuthenticationDetail(\FedExVendor\FedEx\CloseService\ComplexType\WebAuthenticationDetail $webAuthenticationDetail)
+    public function setWebAuthenticationDetail(WebAuthenticationDetail $webAuthenticationDetail)
     {
         $this->values['WebAuthenticationDetail'] = $webAuthenticationDetail;
         return $this;
@@ -42,7 +42,7 @@ class GroundCloseWithDocumentsRequest extends \FedExVendor\FedEx\AbstractComplex
      * @param ClientDetail $clientDetail
      * @return $this
      */
-    public function setClientDetail(\FedExVendor\FedEx\CloseService\ComplexType\ClientDetail $clientDetail)
+    public function setClientDetail(ClientDetail $clientDetail)
     {
         $this->values['ClientDetail'] = $clientDetail;
         return $this;
@@ -53,7 +53,7 @@ class GroundCloseWithDocumentsRequest extends \FedExVendor\FedEx\AbstractComplex
      * @param TransactionDetail $transactionDetail
      * @return $this
      */
-    public function setTransactionDetail(\FedExVendor\FedEx\CloseService\ComplexType\TransactionDetail $transactionDetail)
+    public function setTransactionDetail(TransactionDetail $transactionDetail)
     {
         $this->values['TransactionDetail'] = $transactionDetail;
         return $this;
@@ -64,7 +64,7 @@ class GroundCloseWithDocumentsRequest extends \FedExVendor\FedEx\AbstractComplex
      * @param VersionId $version
      * @return $this
      */
-    public function setVersion(\FedExVendor\FedEx\CloseService\ComplexType\VersionId $version)
+    public function setVersion(VersionId $version)
     {
         $this->values['Version'] = $version;
         return $this;
@@ -86,7 +86,7 @@ class GroundCloseWithDocumentsRequest extends \FedExVendor\FedEx\AbstractComplex
      * @param CloseDocumentSpecification $closeDocumentSpecification
      * @return $this
      */
-    public function setCloseDocumentSpecification(\FedExVendor\FedEx\CloseService\ComplexType\CloseDocumentSpecification $closeDocumentSpecification)
+    public function setCloseDocumentSpecification(CloseDocumentSpecification $closeDocumentSpecification)
     {
         $this->values['CloseDocumentSpecification'] = $closeDocumentSpecification;
         return $this;

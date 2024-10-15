@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Upload Document Service
  */
-class NotificationSeverityType extends \FedExVendor\FedEx\AbstractSimpleType
+class NotificationSeverityType extends AbstractSimpleType
 {
     const _ERROR = 'ERROR';
     const _FAILURE = 'FAILURE';

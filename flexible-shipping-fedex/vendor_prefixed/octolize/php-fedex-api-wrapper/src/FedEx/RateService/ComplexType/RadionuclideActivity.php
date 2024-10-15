@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property float $Value
  * @property \FedEx\RateService\SimpleType\RadioactivityUnitOfMeasure|string $UnitOfMeasure
  */
-class RadionuclideActivity extends \FedExVendor\FedEx\AbstractComplexType
+class RadionuclideActivity extends AbstractComplexType
 {
     /**
      * Name of this complex type

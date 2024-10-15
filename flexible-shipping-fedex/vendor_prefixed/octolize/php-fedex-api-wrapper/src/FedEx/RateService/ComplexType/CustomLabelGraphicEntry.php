@@ -14,7 +14,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $PrinterGraphicId
  * @property string $FileGraphicFullName
  */
-class CustomLabelGraphicEntry extends \FedExVendor\FedEx\AbstractComplexType
+class CustomLabelGraphicEntry extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -28,7 +28,7 @@ class CustomLabelGraphicEntry extends \FedExVendor\FedEx\AbstractComplexType
      * @param CustomLabelPosition $position
      * @return $this
      */
-    public function setPosition(\FedExVendor\FedEx\RateService\ComplexType\CustomLabelPosition $position)
+    public function setPosition(CustomLabelPosition $position)
     {
         $this->values['Position'] = $position;
         return $this;

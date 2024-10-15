@@ -17,7 +17,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property FreightProfile $FreightProfile
  * @property RecipientProfile $RecipientProfile
  */
-class EnterpriseCustomer extends \FedExVendor\FedEx\AbstractComplexType
+class EnterpriseCustomer extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -42,7 +42,7 @@ class EnterpriseCustomer extends \FedExVendor\FedEx\AbstractComplexType
      * @param CustomerShippingEnablementDetail $shippingEnablementDetail
      * @return $this
      */
-    public function setShippingEnablementDetail(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\CustomerShippingEnablementDetail $shippingEnablementDetail)
+    public function setShippingEnablementDetail(CustomerShippingEnablementDetail $shippingEnablementDetail)
     {
         $this->values['ShippingEnablementDetail'] = $shippingEnablementDetail;
         return $this;
@@ -53,7 +53,7 @@ class EnterpriseCustomer extends \FedExVendor\FedEx\AbstractComplexType
      * @param EnterpriseProfile $enterpriseProfile
      * @return $this
      */
-    public function setEnterpriseProfile(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\EnterpriseProfile $enterpriseProfile)
+    public function setEnterpriseProfile(EnterpriseProfile $enterpriseProfile)
     {
         $this->values['EnterpriseProfile'] = $enterpriseProfile;
         return $this;
@@ -64,7 +64,7 @@ class EnterpriseCustomer extends \FedExVendor\FedEx\AbstractComplexType
      * @param ExpressProfile $expressProfile
      * @return $this
      */
-    public function setExpressProfile(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\ExpressProfile $expressProfile)
+    public function setExpressProfile(ExpressProfile $expressProfile)
     {
         $this->values['ExpressProfile'] = $expressProfile;
         return $this;
@@ -75,7 +75,7 @@ class EnterpriseCustomer extends \FedExVendor\FedEx\AbstractComplexType
      * @param FreightProfile $freightProfile
      * @return $this
      */
-    public function setFreightProfile(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\FreightProfile $freightProfile)
+    public function setFreightProfile(FreightProfile $freightProfile)
     {
         $this->values['FreightProfile'] = $freightProfile;
         return $this;
@@ -86,7 +86,7 @@ class EnterpriseCustomer extends \FedExVendor\FedEx\AbstractComplexType
      * @param RecipientProfile $recipientProfile
      * @return $this
      */
-    public function setRecipientProfile(\FedExVendor\FedEx\ValidationAvailabilityAndCommitmentService\ComplexType\RecipientProfile $recipientProfile)
+    public function setRecipientProfile(RecipientProfile $recipientProfile)
     {
         $this->values['RecipientProfile'] = $recipientProfile;
         return $this;

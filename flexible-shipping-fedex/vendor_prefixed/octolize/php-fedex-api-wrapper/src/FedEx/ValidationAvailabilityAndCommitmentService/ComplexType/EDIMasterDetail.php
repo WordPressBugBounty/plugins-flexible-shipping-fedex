@@ -12,7 +12,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  *
  * @property string $EdiMasterAccountNumber
  */
-class EDIMasterDetail extends \FedExVendor\FedEx\AbstractComplexType
+class EDIMasterDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

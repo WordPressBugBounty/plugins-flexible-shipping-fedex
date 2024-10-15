@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Country Service
  */
-class ShipmentSpecialServiceType extends \FedExVendor\FedEx\AbstractSimpleType
+class ShipmentSpecialServiceType extends AbstractSimpleType
 {
     const _BLIND_SHIPMENT = 'BLIND_SHIPMENT';
     const _BROKER_SELECT_OPTION = 'BROKER_SELECT_OPTION';

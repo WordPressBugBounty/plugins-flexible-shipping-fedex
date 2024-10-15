@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property Party $ResponsibleParty
  * @property AssociatedAccount[] $AssociatedAccounts
  */
-class Payor extends \FedExVendor\FedEx\AbstractComplexType
+class Payor extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -27,7 +27,7 @@ class Payor extends \FedExVendor\FedEx\AbstractComplexType
      * @param Party $responsibleParty
      * @return $this
      */
-    public function setResponsibleParty(\FedExVendor\FedEx\OpenShipService\ComplexType\Party $responsibleParty)
+    public function setResponsibleParty(Party $responsibleParty)
     {
         $this->values['ResponsibleParty'] = $responsibleParty;
         return $this;

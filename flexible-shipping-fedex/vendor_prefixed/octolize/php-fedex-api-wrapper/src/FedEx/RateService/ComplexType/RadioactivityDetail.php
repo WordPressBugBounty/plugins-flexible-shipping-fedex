@@ -15,7 +15,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property float $CriticalitySafetyIndex
  * @property Dimensions $Dimensions
  */
-class RadioactivityDetail extends \FedExVendor\FedEx\AbstractComplexType
+class RadioactivityDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -62,7 +62,7 @@ class RadioactivityDetail extends \FedExVendor\FedEx\AbstractComplexType
      * @param Dimensions $dimensions
      * @return $this
      */
-    public function setDimensions(\FedExVendor\FedEx\RateService\ComplexType\Dimensions $dimensions)
+    public function setDimensions(Dimensions $dimensions)
     {
         $this->values['Dimensions'] = $dimensions;
         return $this;

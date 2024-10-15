@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property \FedEx\UploadDocumentService\SimpleType\PriorityAlertEnhancementType|string[] $EnhancementTypes
  * @property string[] $Content
  */
-class PriorityAlertDetail extends \FedExVendor\FedEx\AbstractComplexType
+class PriorityAlertDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

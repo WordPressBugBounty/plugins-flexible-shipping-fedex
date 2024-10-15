@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property \FedEx\TrackService\SimpleType\AvailableImageType|string $Type
  * @property \FedEx\TrackService\SimpleType\ImageSizeType|string $Size
  */
-class AvailableImagesDetail extends \FedExVendor\FedEx\AbstractComplexType
+class AvailableImagesDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

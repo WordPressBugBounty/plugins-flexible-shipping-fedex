@@ -22,7 +22,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $CrossStreet
  * @property string[] $AdditionalDescriptions
  */
-class AddressAncillaryDetail extends \FedExVendor\FedEx\AbstractComplexType
+class AddressAncillaryDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

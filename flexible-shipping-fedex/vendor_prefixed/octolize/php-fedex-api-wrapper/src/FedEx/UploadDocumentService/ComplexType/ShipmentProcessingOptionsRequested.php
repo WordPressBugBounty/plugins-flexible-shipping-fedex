@@ -13,7 +13,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property \FedEx\UploadDocumentService\SimpleType\ShipmentProcessingOptionType|string[] $Options
  * @property CustomTransitTimeDetail $CustomTransitTimeDetail
  */
-class ShipmentProcessingOptionsRequested extends \FedExVendor\FedEx\AbstractComplexType
+class ShipmentProcessingOptionsRequested extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -38,7 +38,7 @@ class ShipmentProcessingOptionsRequested extends \FedExVendor\FedEx\AbstractComp
      * @param CustomTransitTimeDetail $customTransitTimeDetail
      * @return $this
      */
-    public function setCustomTransitTimeDetail(\FedExVendor\FedEx\UploadDocumentService\ComplexType\CustomTransitTimeDetail $customTransitTimeDetail)
+    public function setCustomTransitTimeDetail(CustomTransitTimeDetail $customTransitTimeDetail)
     {
         $this->values['CustomTransitTimeDetail'] = $customTransitTimeDetail;
         return $this;

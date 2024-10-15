@@ -10,11 +10,11 @@ class RateRequestControlParameters
     {
         $this->data = [self::RETURN_TRANSIT_TIMES => \false];
     }
-    public function setReturnTransitAndCommit(bool $value) : void
+    public function setReturnTransitAndCommit(bool $value): void
     {
         $this->data[self::RETURN_TRANSIT_TIMES] = $value;
     }
-    public function getData() : array
+    public function getData(): array
     {
         return $this->data;
     }

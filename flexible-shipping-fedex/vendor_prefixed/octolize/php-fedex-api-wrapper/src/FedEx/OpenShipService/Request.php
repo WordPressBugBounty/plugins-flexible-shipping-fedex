@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractRequest;
  * @package     PHP FedEx API wrapper
  * @subpackage  OpenShip Service
  */
-class Request extends \FedExVendor\FedEx\AbstractRequest
+class Request extends AbstractRequest
 {
     const PRODUCTION_URL = 'https://ws.fedex.com:443/web-services/openship';
     const TESTING_URL = 'https://wsbeta.fedex.com:443/web-services/openship';
@@ -22,13 +22,13 @@ class Request extends \FedExVendor\FedEx\AbstractRequest
      * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
      * @return ComplexType\ModifyConsolidationReply|stdClass
      */
-    public function getModifyConsolidationReply(\FedExVendor\FedEx\OpenShipService\ComplexType\ModifyConsolidationRequest $modifyConsolidationRequest, $returnStdClass = \false)
+    public function getModifyConsolidationReply(ComplexType\ModifyConsolidationRequest $modifyConsolidationRequest, $returnStdClass = \false)
     {
         $response = $this->getSoapClient()->modifyConsolidation($modifyConsolidationRequest->toArray());
         if ($returnStdClass) {
             return $response;
         }
-        $modifyConsolidationReply = new \FedExVendor\FedEx\OpenShipService\ComplexType\ModifyConsolidationReply();
+        $modifyConsolidationReply = new ComplexType\ModifyConsolidationReply();
         $modifyConsolidationReply->populateFromStdClass($response);
         return $modifyConsolidationReply;
     }
@@ -39,13 +39,13 @@ class Request extends \FedExVendor\FedEx\AbstractRequest
      * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
      * @return ComplexType\ValidateOpenShipmentReply|stdClass
      */
-    public function getValidateOpenShipmentReply(\FedExVendor\FedEx\OpenShipService\ComplexType\ValidateOpenShipmentRequest $validateOpenShipmentRequest, $returnStdClass = \false)
+    public function getValidateOpenShipmentReply(ComplexType\ValidateOpenShipmentRequest $validateOpenShipmentRequest, $returnStdClass = \false)
     {
         $response = $this->getSoapClient()->validateOpenShipment($validateOpenShipmentRequest->toArray());
         if ($returnStdClass) {
             return $response;
         }
-        $validateOpenShipmentReply = new \FedExVendor\FedEx\OpenShipService\ComplexType\ValidateOpenShipmentReply();
+        $validateOpenShipmentReply = new ComplexType\ValidateOpenShipmentReply();
         $validateOpenShipmentReply->populateFromStdClass($response);
         return $validateOpenShipmentReply;
     }
@@ -56,13 +56,13 @@ class Request extends \FedExVendor\FedEx\AbstractRequest
      * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
      * @return ComplexType\RetrieveOpenShipmentReply|stdClass
      */
-    public function getRetrieveOpenShipmentReply(\FedExVendor\FedEx\OpenShipService\ComplexType\RetrieveOpenShipmentRequest $retrieveOpenShipmentRequest, $returnStdClass = \false)
+    public function getRetrieveOpenShipmentReply(ComplexType\RetrieveOpenShipmentRequest $retrieveOpenShipmentRequest, $returnStdClass = \false)
     {
         $response = $this->getSoapClient()->retrieveOpenShipment($retrieveOpenShipmentRequest->toArray());
         if ($returnStdClass) {
             return $response;
         }
-        $retrieveOpenShipmentReply = new \FedExVendor\FedEx\OpenShipService\ComplexType\RetrieveOpenShipmentReply();
+        $retrieveOpenShipmentReply = new ComplexType\RetrieveOpenShipmentReply();
         $retrieveOpenShipmentReply->populateFromStdClass($response);
         return $retrieveOpenShipmentReply;
     }
@@ -73,13 +73,13 @@ class Request extends \FedExVendor\FedEx\AbstractRequest
      * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
      * @return ComplexType\DeleteOpenConsolidationReply|stdClass
      */
-    public function getDeleteOpenConsolidationReply(\FedExVendor\FedEx\OpenShipService\ComplexType\DeleteOpenConsolidationRequest $deleteOpenConsolidationRequest, $returnStdClass = \false)
+    public function getDeleteOpenConsolidationReply(ComplexType\DeleteOpenConsolidationRequest $deleteOpenConsolidationRequest, $returnStdClass = \false)
     {
         $response = $this->getSoapClient()->deleteOpenConsolidation($deleteOpenConsolidationRequest->toArray());
         if ($returnStdClass) {
             return $response;
         }
-        $deleteOpenConsolidationReply = new \FedExVendor\FedEx\OpenShipService\ComplexType\DeleteOpenConsolidationReply();
+        $deleteOpenConsolidationReply = new ComplexType\DeleteOpenConsolidationReply();
         $deleteOpenConsolidationReply->populateFromStdClass($response);
         return $deleteOpenConsolidationReply;
     }
@@ -90,13 +90,13 @@ class Request extends \FedExVendor\FedEx\AbstractRequest
      * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
      * @return ComplexType\CreateConsolidationReply|stdClass
      */
-    public function getCreateConsolidationReply(\FedExVendor\FedEx\OpenShipService\ComplexType\CreateConsolidationRequest $createConsolidationRequest, $returnStdClass = \false)
+    public function getCreateConsolidationReply(ComplexType\CreateConsolidationRequest $createConsolidationRequest, $returnStdClass = \false)
     {
         $response = $this->getSoapClient()->createConsolidation($createConsolidationRequest->toArray());
         if ($returnStdClass) {
             return $response;
         }
-        $createConsolidationReply = new \FedExVendor\FedEx\OpenShipService\ComplexType\CreateConsolidationReply();
+        $createConsolidationReply = new ComplexType\CreateConsolidationReply();
         $createConsolidationReply->populateFromStdClass($response);
         return $createConsolidationReply;
     }
@@ -107,13 +107,13 @@ class Request extends \FedExVendor\FedEx\AbstractRequest
      * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
      * @return ComplexType\RetrievePackageInOpenShipmentReply|stdClass
      */
-    public function getRetrievePackageInOpenShipmentReply(\FedExVendor\FedEx\OpenShipService\ComplexType\RetrievePackageInOpenShipmentRequest $retrievePackageInOpenShipmentRequest, $returnStdClass = \false)
+    public function getRetrievePackageInOpenShipmentReply(ComplexType\RetrievePackageInOpenShipmentRequest $retrievePackageInOpenShipmentRequest, $returnStdClass = \false)
     {
         $response = $this->getSoapClient()->retrievePackageInOpenShipment($retrievePackageInOpenShipmentRequest->toArray());
         if ($returnStdClass) {
             return $response;
         }
-        $retrievePackageInOpenShipmentReply = new \FedExVendor\FedEx\OpenShipService\ComplexType\RetrievePackageInOpenShipmentReply();
+        $retrievePackageInOpenShipmentReply = new ComplexType\RetrievePackageInOpenShipmentReply();
         $retrievePackageInOpenShipmentReply->populateFromStdClass($response);
         return $retrievePackageInOpenShipmentReply;
     }
@@ -124,13 +124,13 @@ class Request extends \FedExVendor\FedEx\AbstractRequest
      * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
      * @return ComplexType\RetrieveConsolidatedCommoditiesReply|stdClass
      */
-    public function getRetrieveConsolidatedCommoditiesReply(\FedExVendor\FedEx\OpenShipService\ComplexType\RetrieveConsolidatedCommoditiesRequest $retrieveConsolidatedCommoditiesRequest, $returnStdClass = \false)
+    public function getRetrieveConsolidatedCommoditiesReply(ComplexType\RetrieveConsolidatedCommoditiesRequest $retrieveConsolidatedCommoditiesRequest, $returnStdClass = \false)
     {
         $response = $this->getSoapClient()->retrieveConsolidatedCommodities($retrieveConsolidatedCommoditiesRequest->toArray());
         if ($returnStdClass) {
             return $response;
         }
-        $retrieveConsolidatedCommoditiesReply = new \FedExVendor\FedEx\OpenShipService\ComplexType\RetrieveConsolidatedCommoditiesReply();
+        $retrieveConsolidatedCommoditiesReply = new ComplexType\RetrieveConsolidatedCommoditiesReply();
         $retrieveConsolidatedCommoditiesReply->populateFromStdClass($response);
         return $retrieveConsolidatedCommoditiesReply;
     }
@@ -141,13 +141,13 @@ class Request extends \FedExVendor\FedEx\AbstractRequest
      * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
      * @return ComplexType\ModifyPackageInOpenShipmentReply|stdClass
      */
-    public function getModifyPackageInOpenShipmentReply(\FedExVendor\FedEx\OpenShipService\ComplexType\ModifyPackageInOpenShipmentRequest $modifyPackageInOpenShipmentRequest, $returnStdClass = \false)
+    public function getModifyPackageInOpenShipmentReply(ComplexType\ModifyPackageInOpenShipmentRequest $modifyPackageInOpenShipmentRequest, $returnStdClass = \false)
     {
         $response = $this->getSoapClient()->modifyPackageInOpenShipment($modifyPackageInOpenShipmentRequest->toArray());
         if ($returnStdClass) {
             return $response;
         }
-        $modifyPackageInOpenShipmentReply = new \FedExVendor\FedEx\OpenShipService\ComplexType\ModifyPackageInOpenShipmentReply();
+        $modifyPackageInOpenShipmentReply = new ComplexType\ModifyPackageInOpenShipmentReply();
         $modifyPackageInOpenShipmentReply->populateFromStdClass($response);
         return $modifyPackageInOpenShipmentReply;
     }
@@ -158,13 +158,13 @@ class Request extends \FedExVendor\FedEx\AbstractRequest
      * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
      * @return ComplexType\ShipmentReply|stdClass
      */
-    public function getDeleteShipmentReply(\FedExVendor\FedEx\OpenShipService\ComplexType\DeleteShipmentRequest $deleteShipmentRequest, $returnStdClass = \false)
+    public function getDeleteShipmentReply(ComplexType\DeleteShipmentRequest $deleteShipmentRequest, $returnStdClass = \false)
     {
         $response = $this->getSoapClient()->deleteShipment($deleteShipmentRequest->toArray());
         if ($returnStdClass) {
             return $response;
         }
-        $shipmentReply = new \FedExVendor\FedEx\OpenShipService\ComplexType\ShipmentReply();
+        $shipmentReply = new ComplexType\ShipmentReply();
         $shipmentReply->populateFromStdClass($response);
         return $shipmentReply;
     }
@@ -175,13 +175,13 @@ class Request extends \FedExVendor\FedEx\AbstractRequest
      * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
      * @return ComplexType\CreateOpenShipmentReply|stdClass
      */
-    public function getCreateOpenShipmentReply(\FedExVendor\FedEx\OpenShipService\ComplexType\CreateOpenShipmentRequest $createOpenShipmentRequest, $returnStdClass = \false)
+    public function getCreateOpenShipmentReply(ComplexType\CreateOpenShipmentRequest $createOpenShipmentRequest, $returnStdClass = \false)
     {
         $response = $this->getSoapClient()->createOpenShipment($createOpenShipmentRequest->toArray());
         if ($returnStdClass) {
             return $response;
         }
-        $createOpenShipmentReply = new \FedExVendor\FedEx\OpenShipService\ComplexType\CreateOpenShipmentReply();
+        $createOpenShipmentReply = new ComplexType\CreateOpenShipmentReply();
         $createOpenShipmentReply->populateFromStdClass($response);
         return $createOpenShipmentReply;
     }
@@ -192,13 +192,13 @@ class Request extends \FedExVendor\FedEx\AbstractRequest
      * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
      * @return ComplexType\DeletePendingShipmentReply|stdClass
      */
-    public function getDeletePendingShipmentReply(\FedExVendor\FedEx\OpenShipService\ComplexType\DeletePendingShipmentRequest $deletePendingShipmentRequest, $returnStdClass = \false)
+    public function getDeletePendingShipmentReply(ComplexType\DeletePendingShipmentRequest $deletePendingShipmentRequest, $returnStdClass = \false)
     {
         $response = $this->getSoapClient()->deletePendingShipment($deletePendingShipmentRequest->toArray());
         if ($returnStdClass) {
             return $response;
         }
-        $deletePendingShipmentReply = new \FedExVendor\FedEx\OpenShipService\ComplexType\DeletePendingShipmentReply();
+        $deletePendingShipmentReply = new ComplexType\DeletePendingShipmentReply();
         $deletePendingShipmentReply->populateFromStdClass($response);
         return $deletePendingShipmentReply;
     }
@@ -209,13 +209,13 @@ class Request extends \FedExVendor\FedEx\AbstractRequest
      * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
      * @return ComplexType\ConfirmOpenShipmentReply|stdClass
      */
-    public function getConfirmOpenShipmentReply(\FedExVendor\FedEx\OpenShipService\ComplexType\ConfirmOpenShipmentRequest $confirmOpenShipmentRequest, $returnStdClass = \false)
+    public function getConfirmOpenShipmentReply(ComplexType\ConfirmOpenShipmentRequest $confirmOpenShipmentRequest, $returnStdClass = \false)
     {
         $response = $this->getSoapClient()->confirmOpenShipment($confirmOpenShipmentRequest->toArray());
         if ($returnStdClass) {
             return $response;
         }
-        $confirmOpenShipmentReply = new \FedExVendor\FedEx\OpenShipService\ComplexType\ConfirmOpenShipmentReply();
+        $confirmOpenShipmentReply = new ComplexType\ConfirmOpenShipmentReply();
         $confirmOpenShipmentReply->populateFromStdClass($response);
         return $confirmOpenShipmentReply;
     }
@@ -226,13 +226,13 @@ class Request extends \FedExVendor\FedEx\AbstractRequest
      * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
      * @return ComplexType\GetConfirmOpenShipmentResultsReply|stdClass
      */
-    public function getGetConfirmOpenShipmentResultsReply(\FedExVendor\FedEx\OpenShipService\ComplexType\GetConfirmOpenShipmentResultsRequest $getConfirmOpenShipmentResultsRequest, $returnStdClass = \false)
+    public function getGetConfirmOpenShipmentResultsReply(ComplexType\GetConfirmOpenShipmentResultsRequest $getConfirmOpenShipmentResultsRequest, $returnStdClass = \false)
     {
         $response = $this->getSoapClient()->getConfirmOpenShipmentResults($getConfirmOpenShipmentResultsRequest->toArray());
         if ($returnStdClass) {
             return $response;
         }
-        $getConfirmOpenShipmentResultsReply = new \FedExVendor\FedEx\OpenShipService\ComplexType\GetConfirmOpenShipmentResultsReply();
+        $getConfirmOpenShipmentResultsReply = new ComplexType\GetConfirmOpenShipmentResultsReply();
         $getConfirmOpenShipmentResultsReply->populateFromStdClass($response);
         return $getConfirmOpenShipmentResultsReply;
     }
@@ -243,13 +243,13 @@ class Request extends \FedExVendor\FedEx\AbstractRequest
      * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
      * @return ComplexType\GetConfirmConsolidationResultsReply|stdClass
      */
-    public function getGetConfirmConsolidationResultsReply(\FedExVendor\FedEx\OpenShipService\ComplexType\GetConfirmConsolidationResultsRequest $getConfirmConsolidationResultsRequest, $returnStdClass = \false)
+    public function getGetConfirmConsolidationResultsReply(ComplexType\GetConfirmConsolidationResultsRequest $getConfirmConsolidationResultsRequest, $returnStdClass = \false)
     {
         $response = $this->getSoapClient()->getConfirmConsolidationResults($getConfirmConsolidationResultsRequest->toArray());
         if ($returnStdClass) {
             return $response;
         }
-        $getConfirmConsolidationResultsReply = new \FedExVendor\FedEx\OpenShipService\ComplexType\GetConfirmConsolidationResultsReply();
+        $getConfirmConsolidationResultsReply = new ComplexType\GetConfirmConsolidationResultsReply();
         $getConfirmConsolidationResultsReply->populateFromStdClass($response);
         return $getConfirmConsolidationResultsReply;
     }
@@ -260,13 +260,13 @@ class Request extends \FedExVendor\FedEx\AbstractRequest
      * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
      * @return ComplexType\ModifyOpenShipmentReply|stdClass
      */
-    public function getModifyOpenShipmentReply(\FedExVendor\FedEx\OpenShipService\ComplexType\ModifyOpenShipmentRequest $modifyOpenShipmentRequest, $returnStdClass = \false)
+    public function getModifyOpenShipmentReply(ComplexType\ModifyOpenShipmentRequest $modifyOpenShipmentRequest, $returnStdClass = \false)
     {
         $response = $this->getSoapClient()->modifyOpenShipment($modifyOpenShipmentRequest->toArray());
         if ($returnStdClass) {
             return $response;
         }
-        $modifyOpenShipmentReply = new \FedExVendor\FedEx\OpenShipService\ComplexType\ModifyOpenShipmentReply();
+        $modifyOpenShipmentReply = new ComplexType\ModifyOpenShipmentReply();
         $modifyOpenShipmentReply->populateFromStdClass($response);
         return $modifyOpenShipmentReply;
     }
@@ -277,13 +277,13 @@ class Request extends \FedExVendor\FedEx\AbstractRequest
      * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
      * @return ComplexType\ConfirmConsolidationReply|stdClass
      */
-    public function getConfirmConsolidationReply(\FedExVendor\FedEx\OpenShipService\ComplexType\ConfirmConsolidationRequest $confirmConsolidationRequest, $returnStdClass = \false)
+    public function getConfirmConsolidationReply(ComplexType\ConfirmConsolidationRequest $confirmConsolidationRequest, $returnStdClass = \false)
     {
         $response = $this->getSoapClient()->confirmConsolidation($confirmConsolidationRequest->toArray());
         if ($returnStdClass) {
             return $response;
         }
-        $confirmConsolidationReply = new \FedExVendor\FedEx\OpenShipService\ComplexType\ConfirmConsolidationReply();
+        $confirmConsolidationReply = new ComplexType\ConfirmConsolidationReply();
         $confirmConsolidationReply->populateFromStdClass($response);
         return $confirmConsolidationReply;
     }
@@ -294,13 +294,13 @@ class Request extends \FedExVendor\FedEx\AbstractRequest
      * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
      * @return ComplexType\GetModifyOpenShipmentResultsReply|stdClass
      */
-    public function getGetModifyOpenShipmentResultsReply(\FedExVendor\FedEx\OpenShipService\ComplexType\GetModifyOpenShipmentResultsRequest $getModifyOpenShipmentResultsRequest, $returnStdClass = \false)
+    public function getGetModifyOpenShipmentResultsReply(ComplexType\GetModifyOpenShipmentResultsRequest $getModifyOpenShipmentResultsRequest, $returnStdClass = \false)
     {
         $response = $this->getSoapClient()->getModifyOpenShipmentResults($getModifyOpenShipmentResultsRequest->toArray());
         if ($returnStdClass) {
             return $response;
         }
-        $getModifyOpenShipmentResultsReply = new \FedExVendor\FedEx\OpenShipService\ComplexType\GetModifyOpenShipmentResultsReply();
+        $getModifyOpenShipmentResultsReply = new ComplexType\GetModifyOpenShipmentResultsReply();
         $getModifyOpenShipmentResultsReply->populateFromStdClass($response);
         return $getModifyOpenShipmentResultsReply;
     }
@@ -311,13 +311,13 @@ class Request extends \FedExVendor\FedEx\AbstractRequest
      * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
      * @return ComplexType\DeletePackagesFromOpenShipmentReply|stdClass
      */
-    public function getDeletePackagesFromOpenShipmentReply(\FedExVendor\FedEx\OpenShipService\ComplexType\DeletePackagesFromOpenShipmentRequest $deletePackagesFromOpenShipmentRequest, $returnStdClass = \false)
+    public function getDeletePackagesFromOpenShipmentReply(ComplexType\DeletePackagesFromOpenShipmentRequest $deletePackagesFromOpenShipmentRequest, $returnStdClass = \false)
     {
         $response = $this->getSoapClient()->deletePackagesFromOpenShipment($deletePackagesFromOpenShipmentRequest->toArray());
         if ($returnStdClass) {
             return $response;
         }
-        $deletePackagesFromOpenShipmentReply = new \FedExVendor\FedEx\OpenShipService\ComplexType\DeletePackagesFromOpenShipmentReply();
+        $deletePackagesFromOpenShipmentReply = new ComplexType\DeletePackagesFromOpenShipmentReply();
         $deletePackagesFromOpenShipmentReply->populateFromStdClass($response);
         return $deletePackagesFromOpenShipmentReply;
     }
@@ -328,13 +328,13 @@ class Request extends \FedExVendor\FedEx\AbstractRequest
      * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
      * @return ComplexType\ReprintShippingDocumentsReply|stdClass
      */
-    public function getReprintShippingDocumentsReply(\FedExVendor\FedEx\OpenShipService\ComplexType\ReprintShippingDocumentsRequest $reprintShippingDocumentsRequest, $returnStdClass = \false)
+    public function getReprintShippingDocumentsReply(ComplexType\ReprintShippingDocumentsRequest $reprintShippingDocumentsRequest, $returnStdClass = \false)
     {
         $response = $this->getSoapClient()->reprintShippingDocuments($reprintShippingDocumentsRequest->toArray());
         if ($returnStdClass) {
             return $response;
         }
-        $reprintShippingDocumentsReply = new \FedExVendor\FedEx\OpenShipService\ComplexType\ReprintShippingDocumentsReply();
+        $reprintShippingDocumentsReply = new ComplexType\ReprintShippingDocumentsReply();
         $reprintShippingDocumentsReply->populateFromStdClass($response);
         return $reprintShippingDocumentsReply;
     }
@@ -345,13 +345,13 @@ class Request extends \FedExVendor\FedEx\AbstractRequest
      * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
      * @return ComplexType\AddPackagesToOpenShipmentReply|stdClass
      */
-    public function getAddPackagesToOpenShipmentReply(\FedExVendor\FedEx\OpenShipService\ComplexType\AddPackagesToOpenShipmentRequest $addPackagesToOpenShipmentRequest, $returnStdClass = \false)
+    public function getAddPackagesToOpenShipmentReply(ComplexType\AddPackagesToOpenShipmentRequest $addPackagesToOpenShipmentRequest, $returnStdClass = \false)
     {
         $response = $this->getSoapClient()->addPackagesToOpenShipment($addPackagesToOpenShipmentRequest->toArray());
         if ($returnStdClass) {
             return $response;
         }
-        $addPackagesToOpenShipmentReply = new \FedExVendor\FedEx\OpenShipService\ComplexType\AddPackagesToOpenShipmentReply();
+        $addPackagesToOpenShipmentReply = new ComplexType\AddPackagesToOpenShipmentReply();
         $addPackagesToOpenShipmentReply->populateFromStdClass($response);
         return $addPackagesToOpenShipmentReply;
     }
@@ -362,13 +362,13 @@ class Request extends \FedExVendor\FedEx\AbstractRequest
      * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
      * @return ComplexType\GetCreateOpenShipmentResultsReply|stdClass
      */
-    public function getGetCreateOpenShipmentResultsReply(\FedExVendor\FedEx\OpenShipService\ComplexType\GetCreateOpenShipmentResultsRequest $getCreateOpenShipmentResultsRequest, $returnStdClass = \false)
+    public function getGetCreateOpenShipmentResultsReply(ComplexType\GetCreateOpenShipmentResultsRequest $getCreateOpenShipmentResultsRequest, $returnStdClass = \false)
     {
         $response = $this->getSoapClient()->getCreateOpenShipmentResults($getCreateOpenShipmentResultsRequest->toArray());
         if ($returnStdClass) {
             return $response;
         }
-        $getCreateOpenShipmentResultsReply = new \FedExVendor\FedEx\OpenShipService\ComplexType\GetCreateOpenShipmentResultsReply();
+        $getCreateOpenShipmentResultsReply = new ComplexType\GetCreateOpenShipmentResultsReply();
         $getCreateOpenShipmentResultsReply->populateFromStdClass($response);
         return $getCreateOpenShipmentResultsReply;
     }
@@ -379,13 +379,13 @@ class Request extends \FedExVendor\FedEx\AbstractRequest
      * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
      * @return ComplexType\RetrieveConsolidationReply|stdClass
      */
-    public function getRetrieveConsolidationReply(\FedExVendor\FedEx\OpenShipService\ComplexType\RetrieveConsolidationRequest $retrieveConsolidationRequest, $returnStdClass = \false)
+    public function getRetrieveConsolidationReply(ComplexType\RetrieveConsolidationRequest $retrieveConsolidationRequest, $returnStdClass = \false)
     {
         $response = $this->getSoapClient()->retrieveConsolidation($retrieveConsolidationRequest->toArray());
         if ($returnStdClass) {
             return $response;
         }
-        $retrieveConsolidationReply = new \FedExVendor\FedEx\OpenShipService\ComplexType\RetrieveConsolidationReply();
+        $retrieveConsolidationReply = new ComplexType\RetrieveConsolidationReply();
         $retrieveConsolidationReply->populateFromStdClass($response);
         return $retrieveConsolidationReply;
     }
@@ -396,13 +396,13 @@ class Request extends \FedExVendor\FedEx\AbstractRequest
      * @param bool $returnStdClass Return the $stdClass response directly from \SoapClient
      * @return ComplexType\DeleteOpenShipmentReply|stdClass
      */
-    public function getDeleteOpenShipmentReply(\FedExVendor\FedEx\OpenShipService\ComplexType\DeleteOpenShipmentRequest $deleteOpenShipmentRequest, $returnStdClass = \false)
+    public function getDeleteOpenShipmentReply(ComplexType\DeleteOpenShipmentRequest $deleteOpenShipmentRequest, $returnStdClass = \false)
     {
         $response = $this->getSoapClient()->deleteOpenShipment($deleteOpenShipmentRequest->toArray());
         if ($returnStdClass) {
             return $response;
         }
-        $deleteOpenShipmentReply = new \FedExVendor\FedEx\OpenShipService\ComplexType\DeleteOpenShipmentReply();
+        $deleteOpenShipmentReply = new ComplexType\DeleteOpenShipmentReply();
         $deleteOpenShipmentReply->populateFromStdClass($response);
         return $deleteOpenShipmentReply;
     }

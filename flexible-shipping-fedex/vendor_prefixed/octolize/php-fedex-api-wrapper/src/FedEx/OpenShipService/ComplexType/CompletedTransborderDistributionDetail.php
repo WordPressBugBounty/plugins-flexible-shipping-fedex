@@ -12,7 +12,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  *
  * @property string $DeconsolidationLocationPostalCode
  */
-class CompletedTransborderDistributionDetail extends \FedExVendor\FedEx\AbstractComplexType
+class CompletedTransborderDistributionDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

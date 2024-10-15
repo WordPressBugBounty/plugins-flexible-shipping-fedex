@@ -15,7 +15,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property NotificationDetail $NotificationDetail
  * @property ShipmentNotificationFormatSpecification $FormatSpecification
  */
-class ShipmentEventNotificationSpecification extends \FedExVendor\FedEx\AbstractComplexType
+class ShipmentEventNotificationSpecification extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -51,7 +51,7 @@ class ShipmentEventNotificationSpecification extends \FedExVendor\FedEx\Abstract
      * @param NotificationDetail $notificationDetail
      * @return $this
      */
-    public function setNotificationDetail(\FedExVendor\FedEx\UploadDocumentService\ComplexType\NotificationDetail $notificationDetail)
+    public function setNotificationDetail(NotificationDetail $notificationDetail)
     {
         $this->values['NotificationDetail'] = $notificationDetail;
         return $this;
@@ -62,7 +62,7 @@ class ShipmentEventNotificationSpecification extends \FedExVendor\FedEx\Abstract
      * @param ShipmentNotificationFormatSpecification $formatSpecification
      * @return $this
      */
-    public function setFormatSpecification(\FedExVendor\FedEx\UploadDocumentService\ComplexType\ShipmentNotificationFormatSpecification $formatSpecification)
+    public function setFormatSpecification(ShipmentNotificationFormatSpecification $formatSpecification)
     {
         $this->values['FormatSpecification'] = $formatSpecification;
         return $this;

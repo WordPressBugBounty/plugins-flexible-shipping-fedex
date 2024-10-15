@@ -17,7 +17,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property ConsolidationKey $ConsolidationKey
  * @property TrackingId $TrackingId
  */
-class DeleteOpenConsolidationRequest extends \FedExVendor\FedEx\AbstractComplexType
+class DeleteOpenConsolidationRequest extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -31,7 +31,7 @@ class DeleteOpenConsolidationRequest extends \FedExVendor\FedEx\AbstractComplexT
      * @param WebAuthenticationDetail $webAuthenticationDetail
      * @return $this
      */
-    public function setWebAuthenticationDetail(\FedExVendor\FedEx\OpenShipService\ComplexType\WebAuthenticationDetail $webAuthenticationDetail)
+    public function setWebAuthenticationDetail(WebAuthenticationDetail $webAuthenticationDetail)
     {
         $this->values['WebAuthenticationDetail'] = $webAuthenticationDetail;
         return $this;
@@ -42,7 +42,7 @@ class DeleteOpenConsolidationRequest extends \FedExVendor\FedEx\AbstractComplexT
      * @param ClientDetail $clientDetail
      * @return $this
      */
-    public function setClientDetail(\FedExVendor\FedEx\OpenShipService\ComplexType\ClientDetail $clientDetail)
+    public function setClientDetail(ClientDetail $clientDetail)
     {
         $this->values['ClientDetail'] = $clientDetail;
         return $this;
@@ -53,7 +53,7 @@ class DeleteOpenConsolidationRequest extends \FedExVendor\FedEx\AbstractComplexT
      * @param TransactionDetail $transactionDetail
      * @return $this
      */
-    public function setTransactionDetail(\FedExVendor\FedEx\OpenShipService\ComplexType\TransactionDetail $transactionDetail)
+    public function setTransactionDetail(TransactionDetail $transactionDetail)
     {
         $this->values['TransactionDetail'] = $transactionDetail;
         return $this;
@@ -64,7 +64,7 @@ class DeleteOpenConsolidationRequest extends \FedExVendor\FedEx\AbstractComplexT
      * @param VersionId $version
      * @return $this
      */
-    public function setVersion(\FedExVendor\FedEx\OpenShipService\ComplexType\VersionId $version)
+    public function setVersion(VersionId $version)
     {
         $this->values['Version'] = $version;
         return $this;
@@ -75,7 +75,7 @@ class DeleteOpenConsolidationRequest extends \FedExVendor\FedEx\AbstractComplexT
      * @param ConsolidationKey $consolidationKey
      * @return $this
      */
-    public function setConsolidationKey(\FedExVendor\FedEx\OpenShipService\ComplexType\ConsolidationKey $consolidationKey)
+    public function setConsolidationKey(ConsolidationKey $consolidationKey)
     {
         $this->values['ConsolidationKey'] = $consolidationKey;
         return $this;
@@ -86,7 +86,7 @@ class DeleteOpenConsolidationRequest extends \FedExVendor\FedEx\AbstractComplexT
      * @param TrackingId $trackingId
      * @return $this
      */
-    public function setTrackingId(\FedExVendor\FedEx\OpenShipService\ComplexType\TrackingId $trackingId)
+    public function setTrackingId(TrackingId $trackingId)
     {
         $this->values['TrackingId'] = $trackingId;
         return $this;

@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Upload Document Service
  */
-class ConsolidationShipmentRoleType extends \FedExVendor\FedEx\AbstractSimpleType
+class ConsolidationShipmentRoleType extends AbstractSimpleType
 {
     const _CONSOLIDATION_DOCUMENTS_SHIPMENT = 'CONSOLIDATION_DOCUMENTS_SHIPMENT';
     const _CRN_SHIPMENT = 'CRN_SHIPMENT';

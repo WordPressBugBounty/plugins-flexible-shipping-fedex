@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Package Movement Information Service
  */
-class TrackDetailAttributeType extends \FedExVendor\FedEx\AbstractSimpleType
+class TrackDetailAttributeType extends AbstractSimpleType
 {
     const _INCLUDED_IN_WATCHLIST = 'INCLUDED_IN_WATCHLIST';
 }

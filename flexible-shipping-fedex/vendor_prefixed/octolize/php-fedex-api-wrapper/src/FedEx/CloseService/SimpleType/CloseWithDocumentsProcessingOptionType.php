@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Close Service
  */
-class CloseWithDocumentsProcessingOptionType extends \FedExVendor\FedEx\AbstractSimpleType
+class CloseWithDocumentsProcessingOptionType extends AbstractSimpleType
 {
     const _ERROR_IF_OPEN_SHIPMENTS_FOUND = 'ERROR_IF_OPEN_SHIPMENTS_FOUND';
     const _WARNING_IF_OPEN_SHIPMENTS_FOUND = 'WARNING_IF_OPEN_SHIPMENTS_FOUND';

@@ -18,7 +18,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property TrackSelectionDetail[] $SelectionDetails
  * @property TrackingDocumentSpecification $TrackingDocumentSpecification
  */
-class GetTrackingDocumentsRequest extends \FedExVendor\FedEx\AbstractComplexType
+class GetTrackingDocumentsRequest extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -32,7 +32,7 @@ class GetTrackingDocumentsRequest extends \FedExVendor\FedEx\AbstractComplexType
      * @param WebAuthenticationDetail $webAuthenticationDetail
      * @return $this
      */
-    public function setWebAuthenticationDetail(\FedExVendor\FedEx\TrackService\ComplexType\WebAuthenticationDetail $webAuthenticationDetail)
+    public function setWebAuthenticationDetail(WebAuthenticationDetail $webAuthenticationDetail)
     {
         $this->values['WebAuthenticationDetail'] = $webAuthenticationDetail;
         return $this;
@@ -43,7 +43,7 @@ class GetTrackingDocumentsRequest extends \FedExVendor\FedEx\AbstractComplexType
      * @param ClientDetail $clientDetail
      * @return $this
      */
-    public function setClientDetail(\FedExVendor\FedEx\TrackService\ComplexType\ClientDetail $clientDetail)
+    public function setClientDetail(ClientDetail $clientDetail)
     {
         $this->values['ClientDetail'] = $clientDetail;
         return $this;
@@ -54,7 +54,7 @@ class GetTrackingDocumentsRequest extends \FedExVendor\FedEx\AbstractComplexType
      * @param UserDetail $userDetail
      * @return $this
      */
-    public function setUserDetail(\FedExVendor\FedEx\TrackService\ComplexType\UserDetail $userDetail)
+    public function setUserDetail(UserDetail $userDetail)
     {
         $this->values['UserDetail'] = $userDetail;
         return $this;
@@ -65,7 +65,7 @@ class GetTrackingDocumentsRequest extends \FedExVendor\FedEx\AbstractComplexType
      * @param TransactionDetail $transactionDetail
      * @return $this
      */
-    public function setTransactionDetail(\FedExVendor\FedEx\TrackService\ComplexType\TransactionDetail $transactionDetail)
+    public function setTransactionDetail(TransactionDetail $transactionDetail)
     {
         $this->values['TransactionDetail'] = $transactionDetail;
         return $this;
@@ -76,7 +76,7 @@ class GetTrackingDocumentsRequest extends \FedExVendor\FedEx\AbstractComplexType
      * @param VersionId $version
      * @return $this
      */
-    public function setVersion(\FedExVendor\FedEx\TrackService\ComplexType\VersionId $version)
+    public function setVersion(VersionId $version)
     {
         $this->values['Version'] = $version;
         return $this;
@@ -98,7 +98,7 @@ class GetTrackingDocumentsRequest extends \FedExVendor\FedEx\AbstractComplexType
      * @param TrackingDocumentSpecification $trackingDocumentSpecification
      * @return $this
      */
-    public function setTrackingDocumentSpecification(\FedExVendor\FedEx\TrackService\ComplexType\TrackingDocumentSpecification $trackingDocumentSpecification)
+    public function setTrackingDocumentSpecification(TrackingDocumentSpecification $trackingDocumentSpecification)
     {
         $this->values['TrackingDocumentSpecification'] = $trackingDocumentSpecification;
         return $this;

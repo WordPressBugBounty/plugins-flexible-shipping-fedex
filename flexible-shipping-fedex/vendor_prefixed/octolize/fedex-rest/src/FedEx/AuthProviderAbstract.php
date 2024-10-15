@@ -10,6 +10,6 @@ abstract class AuthProviderAbstract implements \FedExVendor\CageA80\FedEx\Contra
     {
         $this->config = $config;
     }
-    public abstract function getToken() : string;
-    public abstract function flush() : void;
+    abstract public function getToken(): string;
+    abstract public function flush(): void;
 }

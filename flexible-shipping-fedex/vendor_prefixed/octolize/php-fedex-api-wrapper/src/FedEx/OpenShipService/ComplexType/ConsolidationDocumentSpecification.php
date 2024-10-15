@@ -21,7 +21,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property CrnReportDetail $CrnReportDetail
  * @property CommoditiesByTrackingNumberReportDetail $CommoditiesByTrackingNumberDetail
  */
-class ConsolidationDocumentSpecification extends \FedExVendor\FedEx\AbstractComplexType
+class ConsolidationDocumentSpecification extends AbstractComplexType
 {
     /**
      * Name of this complex type
@@ -46,7 +46,7 @@ class ConsolidationDocumentSpecification extends \FedExVendor\FedEx\AbstractComp
      * @param CondensedCrnReportDetail $condensedCrnReportDetail
      * @return $this
      */
-    public function setCondensedCrnReportDetail(\FedExVendor\FedEx\OpenShipService\ComplexType\CondensedCrnReportDetail $condensedCrnReportDetail)
+    public function setCondensedCrnReportDetail(CondensedCrnReportDetail $condensedCrnReportDetail)
     {
         $this->values['CondensedCrnReportDetail'] = $condensedCrnReportDetail;
         return $this;
@@ -57,7 +57,7 @@ class ConsolidationDocumentSpecification extends \FedExVendor\FedEx\AbstractComp
      * @param ConsolidatedCommercialInvoiceDetail $consolidatedCommercialInvoiceDetail
      * @return $this
      */
-    public function setConsolidatedCommercialInvoiceDetail(\FedExVendor\FedEx\OpenShipService\ComplexType\ConsolidatedCommercialInvoiceDetail $consolidatedCommercialInvoiceDetail)
+    public function setConsolidatedCommercialInvoiceDetail(ConsolidatedCommercialInvoiceDetail $consolidatedCommercialInvoiceDetail)
     {
         $this->values['ConsolidatedCommercialInvoiceDetail'] = $consolidatedCommercialInvoiceDetail;
         return $this;
@@ -79,7 +79,7 @@ class ConsolidationDocumentSpecification extends \FedExVendor\FedEx\AbstractComp
      * @param ConsolidationCustomsLinehaulReportDetail $consolidatedCustomsLinehaulReportDetail
      * @return $this
      */
-    public function setConsolidatedCustomsLinehaulReportDetail(\FedExVendor\FedEx\OpenShipService\ComplexType\ConsolidationCustomsLinehaulReportDetail $consolidatedCustomsLinehaulReportDetail)
+    public function setConsolidatedCustomsLinehaulReportDetail(ConsolidationCustomsLinehaulReportDetail $consolidatedCustomsLinehaulReportDetail)
     {
         $this->values['ConsolidatedCustomsLinehaulReportDetail'] = $consolidatedCustomsLinehaulReportDetail;
         return $this;
@@ -90,7 +90,7 @@ class ConsolidationDocumentSpecification extends \FedExVendor\FedEx\AbstractComp
      * @param ConsolidatedPartyReportDetail $consolidatedPartyReportDetail
      * @return $this
      */
-    public function setConsolidatedPartyReportDetail(\FedExVendor\FedEx\OpenShipService\ComplexType\ConsolidatedPartyReportDetail $consolidatedPartyReportDetail)
+    public function setConsolidatedPartyReportDetail(ConsolidatedPartyReportDetail $consolidatedPartyReportDetail)
     {
         $this->values['ConsolidatedPartyReportDetail'] = $consolidatedPartyReportDetail;
         return $this;
@@ -101,7 +101,7 @@ class ConsolidationDocumentSpecification extends \FedExVendor\FedEx\AbstractComp
      * @param ConsolidatedSoldToSummaryReportDetail $consolidatedSoldToSummaryReportDetail
      * @return $this
      */
-    public function setConsolidatedSoldToSummaryReportDetail(\FedExVendor\FedEx\OpenShipService\ComplexType\ConsolidatedSoldToSummaryReportDetail $consolidatedSoldToSummaryReportDetail)
+    public function setConsolidatedSoldToSummaryReportDetail(ConsolidatedSoldToSummaryReportDetail $consolidatedSoldToSummaryReportDetail)
     {
         $this->values['ConsolidatedSoldToSummaryReportDetail'] = $consolidatedSoldToSummaryReportDetail;
         return $this;
@@ -112,7 +112,7 @@ class ConsolidationDocumentSpecification extends \FedExVendor\FedEx\AbstractComp
      * @param CustomsPackingListDetail $customsPackingListDetail
      * @return $this
      */
-    public function setCustomsPackingListDetail(\FedExVendor\FedEx\OpenShipService\ComplexType\CustomsPackingListDetail $customsPackingListDetail)
+    public function setCustomsPackingListDetail(CustomsPackingListDetail $customsPackingListDetail)
     {
         $this->values['CustomsPackingListDetail'] = $customsPackingListDetail;
         return $this;
@@ -123,7 +123,7 @@ class ConsolidationDocumentSpecification extends \FedExVendor\FedEx\AbstractComp
      * @param CrnReportDetail $crnReportDetail
      * @return $this
      */
-    public function setCrnReportDetail(\FedExVendor\FedEx\OpenShipService\ComplexType\CrnReportDetail $crnReportDetail)
+    public function setCrnReportDetail(CrnReportDetail $crnReportDetail)
     {
         $this->values['CrnReportDetail'] = $crnReportDetail;
         return $this;
@@ -134,7 +134,7 @@ class ConsolidationDocumentSpecification extends \FedExVendor\FedEx\AbstractComp
      * @param CommoditiesByTrackingNumberReportDetail $commoditiesByTrackingNumberDetail
      * @return $this
      */
-    public function setCommoditiesByTrackingNumberDetail(\FedExVendor\FedEx\OpenShipService\ComplexType\CommoditiesByTrackingNumberReportDetail $commoditiesByTrackingNumberDetail)
+    public function setCommoditiesByTrackingNumberDetail(CommoditiesByTrackingNumberReportDetail $commoditiesByTrackingNumberDetail)
     {
         $this->values['CommoditiesByTrackingNumberDetail'] = $commoditiesByTrackingNumberDetail;
         return $this;

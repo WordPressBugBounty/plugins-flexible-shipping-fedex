@@ -10,7 +10,7 @@ use FedExVendor\FedEx\AbstractSimpleType;
  * @package     PHP FedEx API wrapper
  * @subpackage  Validation Availability And Commitment Service Service
  */
-class CreditCardSettlementScheduleType extends \FedExVendor\FedEx\AbstractSimpleType
+class CreditCardSettlementScheduleType extends AbstractSimpleType
 {
     const _SETTLE_IMMEDIATELY = 'SETTLE_IMMEDIATELY';
     const _SETTLE_NEXT_DAY = 'SETTLE_NEXT_DAY';

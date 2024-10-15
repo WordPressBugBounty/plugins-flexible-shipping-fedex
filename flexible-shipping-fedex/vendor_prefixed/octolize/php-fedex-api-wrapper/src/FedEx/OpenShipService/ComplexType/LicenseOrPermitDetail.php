@@ -14,7 +14,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property string $EffectiveDate
  * @property string $ExpirationDate
  */
-class LicenseOrPermitDetail extends \FedExVendor\FedEx\AbstractComplexType
+class LicenseOrPermitDetail extends AbstractComplexType
 {
     /**
      * Name of this complex type

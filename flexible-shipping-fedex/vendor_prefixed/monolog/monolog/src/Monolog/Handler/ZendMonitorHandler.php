@@ -22,7 +22,7 @@ use FedExVendor\Monolog\Logger;
  *
  * @phpstan-import-type FormattedRecord from AbstractProcessingHandler
  */
-class ZendMonitorHandler extends \FedExVendor\Monolog\Handler\AbstractProcessingHandler
+class ZendMonitorHandler extends AbstractProcessingHandler
 {
     /**
      * Monolog level / ZendMonitor Custom Event priority map
@@ -33,21 +33,21 @@ class ZendMonitorHandler extends \FedExVendor\Monolog\Handler\AbstractProcessing
     /**
      * @throws MissingExtensionException
      */
-    public function __construct($level = \FedExVendor\Monolog\Logger::DEBUG, bool $bubble = \true)
+    public function __construct($level = Logger::DEBUG, bool $bubble = \true)
     {
-        if (!\function_exists('FedExVendor\\zend_monitor_custom_event')) {
-            throw new \FedExVendor\Monolog\Handler\MissingExtensionException('You must have Zend Server installed with Zend Monitor enabled in order to use this handler');
+        if (!function_exists('FedExVendor\zend_monitor_custom_event')) {
+            throw new MissingExtensionException('You must have Zend Server installed with Zend Monitor enabled in order to use this handler');
         }
         //zend monitor constants are not defined if zend monitor is not enabled.
-        $this->levelMap = [\FedExVendor\Monolog\Logger::DEBUG => \FedExVendor\ZEND_MONITOR_EVENT_SEVERITY_INFO, \FedExVendor\Monolog\Logger::INFO => \FedExVendor\ZEND_MONITOR_EVENT_SEVERITY_INFO, \FedExVendor\Monolog\Logger::NOTICE => \FedExVendor\ZEND_MONITOR_EVENT_SEVERITY_INFO, \FedExVendor\Monolog\Logger::WARNING => \FedExVendor\ZEND_MONITOR_EVENT_SEVERITY_WARNING, \FedExVendor\Monolog\Logger::ERROR => \FedExVendor\ZEND_MONITOR_EVENT_SEVERITY_ERROR, \FedExVendor\Monolog\Logger::CRITICAL => \FedExVendor\ZEND_MONITOR_EVENT_SEVERITY_ERROR, \FedExVendor\Monolog\Logger::ALERT => \FedExVendor\ZEND_MONITOR_EVENT_SEVERITY_ERROR, \FedExVendor\Monolog\Logger::EMERGENCY => \FedExVendor\ZEND_MONITOR_EVENT_SEVERITY_ERROR];
+        $this->levelMap = [Logger::DEBUG => \FedExVendor\ZEND_MONITOR_EVENT_SEVERITY_INFO, Logger::INFO => \FedExVendor\ZEND_MONITOR_EVENT_SEVERITY_INFO, Logger::NOTICE => \FedExVendor\ZEND_MONITOR_EVENT_SEVERITY_INFO, Logger::WARNING => \FedExVendor\ZEND_MONITOR_EVENT_SEVERITY_WARNING, Logger::ERROR => \FedExVendor\ZEND_MONITOR_EVENT_SEVERITY_ERROR, Logger::CRITICAL => \FedExVendor\ZEND_MONITOR_EVENT_SEVERITY_ERROR, Logger::ALERT => \FedExVendor\ZEND_MONITOR_EVENT_SEVERITY_ERROR, Logger::EMERGENCY => \FedExVendor\ZEND_MONITOR_EVENT_SEVERITY_ERROR];
         parent::__construct($level, $bubble);
     }
     /**
      * {@inheritDoc}
      */
-    protected function write(array $record) : void
+    protected function write(array $record): void
     {
-        $this->writeZendMonitorCustomEvent(\FedExVendor\Monolog\Logger::getLevelName($record['level']), $record['message'], $record['formatted'], $this->levelMap[$record['level']]);
+        $this->writeZendMonitorCustomEvent(Logger::getLevelName($record['level']), $record['message'], $record['formatted'], $this->levelMap[$record['level']]);
     }
     /**
      * Write to Zend Monitor Events
@@ -58,21 +58,21 @@ class ZendMonitorHandler extends \FedExVendor\Monolog\Handler\AbstractProcessing
      *
      * @phpstan-param FormattedRecord $formatted
      */
-    protected function writeZendMonitorCustomEvent(string $type, string $message, array $formatted, int $severity) : void
+    protected function writeZendMonitorCustomEvent(string $type, string $message, array $formatted, int $severity): void
     {
         zend_monitor_custom_event($type, $message, $formatted, $severity);
     }
     /**
      * {@inheritDoc}
      */
-    public function getDefaultFormatter() : \FedExVendor\Monolog\Formatter\FormatterInterface
+    public function getDefaultFormatter(): FormatterInterface
     {
-        return new \FedExVendor\Monolog\Formatter\NormalizerFormatter();
+        return new NormalizerFormatter();
     }
     /**
      * @return array<int, int>
      */
-    public function getLevelMap() : array
+    public function getLevelMap(): array
     {
         return $this->levelMap;
     }

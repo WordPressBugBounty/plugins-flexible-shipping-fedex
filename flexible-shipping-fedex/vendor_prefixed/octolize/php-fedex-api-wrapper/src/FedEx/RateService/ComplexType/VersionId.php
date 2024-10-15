@@ -15,7 +15,7 @@ use FedExVendor\FedEx\AbstractComplexType;
  * @property int $Intermediate
  * @property int $Minor
  */
-class VersionId extends \FedExVendor\FedEx\AbstractComplexType
+class VersionId extends AbstractComplexType
 {
     /**
      * Name of this complex type
