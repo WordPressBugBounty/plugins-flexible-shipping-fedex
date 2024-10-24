@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the FedEx Live Rates plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: FedEx Live Rates 3.1.0\n"
+"Project-Id-Version: FedEx Live Rates 4.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/flexible-shipping-fedex\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-10-15T16:25:22+00:00\n"
+"POT-Creation-Date: 2024-10-24T16:44:49+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: flexible-shipping-fedex\n"
@@ -40,32 +40,32 @@ msgstr ""
 msgid "https://octol.io/fedex-author"
 msgstr ""
 
-#: src/Plugin/Plugin.php:122
+#: src/Plugin/Plugin.php:135
 msgid "Service Code"
 msgstr ""
 
-#: src/Plugin/Plugin.php:171
+#: src/Plugin/Plugin.php:184
 msgid "We have added new services"
 msgstr ""
 
-#: src/Plugin/Plugin.php:172
+#: src/Plugin/Plugin.php:185
 msgid "We're thrilled to announce that our FedEx Live Rates plugin now offers FedEx First, FedEx Priority Express, and FedEx Economy rates at checkout, in addition to previously available services. This wider selection of FedEx services allows you to offer customers more tailored shipping options to meet their needs. We're glad to be a part of your success!"
 msgstr ""
 
-#: src/Plugin/Plugin.php:181
+#: src/Plugin/Plugin.php:194
 msgid "New FedEx API introduced"
 msgstr ""
 
-#: src/Plugin/Plugin.php:182
+#: src/Plugin/Plugin.php:195
 msgid "We're thrilled to announce that we've upgraded FedEx Live Rates plugin to use the latest FedEx API. This enhancement allows for seamless retrieval of shipping costs directly from FedEx, streamlining your shipping process and ensuring accurate rates for your customers."
 msgstr ""
 
-#: src/Plugin/Plugin.php:272
+#: src/Plugin/Plugin.php:288
 #: vendor_prefixed/wpdesk/wp-builder/src/Plugin/AbstractPlugin.php:198
 msgid "Settings"
 msgstr ""
 
-#: src/Plugin/Plugin.php:277
+#: src/Plugin/Plugin.php:293
 msgid "Buy PRO"
 msgstr ""
 
@@ -215,6 +215,15 @@ msgstr ""
 
 #: vendor_prefixed/octolize/wp-octolize-tracker/src/OptInNotice/views/html-notice.php:22
 msgid "Allow"
+msgstr ""
+
+#: vendor_prefixed/octolize/wp-onboarding/src/Onboarding/PluginUpgrade/MessageFactory/LiveRatesFsRulesTable.php:10
+msgid "We've added integration with Flexible Shipping Table Rate"
+msgstr ""
+
+#. Translators: %1$s - <br/><br/>, %2$s - <a href="https://octol.io/fs-tr-adv-live-rates-popup-free" target="_blank">, %3$s - </a>, %4$s - <a href="https://octol.io/fs-tr-adv-live-rates-popup-pro" target="_blank">, %5$s - </a>.
+#: vendor_prefixed/octolize/wp-onboarding/src/Onboarding/PluginUpgrade/MessageFactory/LiveRatesFsRulesTable.php:12
+msgid "The new feature allows you to combine Live Rates and Table Rate, providing the ability to use automatically calculated Live Rates while also adjusting shipping costs using Table Rate with the free version of %1$sFlexible Shipping%2$s or %3$sFlexible Shipping PRO%4$s.%5$sThis way, you can now have greater control over the final delivery cost, precisely defining additional charges or discounts for each shipping method."
 msgstr ""
 
 #: vendor_prefixed/octolize/wp-onboarding/src/Onboarding/PluginUpgrade/PluginUpgradeOnboardingFactory.php:105
@@ -981,7 +990,7 @@ msgid "Free Shipping Threshold"
 msgstr ""
 
 #: vendor_prefixed/wpdesk/wp-woocommerce-shipping/src/WooCommerceShipping/FreeShipping/FreeShippingFields.php:28
-#: vendor_prefixed/wpdesk/wp-woocommerce-shipping/src/WooCommerceShipping/ShippingMethod/Traits/SettingsTrait.php:246
+#: vendor_prefixed/wpdesk/wp-woocommerce-shipping/src/WooCommerceShipping/ShippingMethod/Traits/SettingsTrait.php:268
 msgid "Enter only a numeric value without the currency symbol."
 msgstr ""
 
@@ -1017,19 +1026,63 @@ msgstr ""
 msgid "No rates added from standard service rates!"
 msgstr ""
 
-#: vendor_prefixed/wpdesk/wp-woocommerce-shipping/src/WooCommerceShipping/ShippingMethod/Traits/SettingsTrait.php:245
+#: vendor_prefixed/wpdesk/wp-woocommerce-shipping/src/WooCommerceShipping/ShippingMethod/RulesTableAdv.php:13
+msgid "Additional costs by Flexible Shipping Table Rate"
+msgstr ""
+
+#: vendor_prefixed/wpdesk/wp-woocommerce-shipping/src/WooCommerceShipping/ShippingMethod/RulesTableAdv.php:14
+msgid "Additional costs"
+msgstr ""
+
+#: vendor_prefixed/wpdesk/wp-woocommerce-shipping/src/WooCommerceShipping/ShippingMethod/RulesTableAdv.php:14
+msgid "Enable Flexible Shipping Rules Table"
+msgstr ""
+
+#: vendor_prefixed/wpdesk/wp-woocommerce-shipping/src/WooCommerceShipping/ShippingMethod/RulesTableAdv.php:14
+msgid "Enabling this option will allow you to adjust the calculated shipping cost, with additional charges applied according to the shipping cost calculation rules."
+msgstr ""
+
+#: vendor_prefixed/wpdesk/wp-woocommerce-shipping/src/WooCommerceShipping/ShippingMethod/RulesTableAdv.php:15
+msgid "Shipping Cost Calculation Rules"
+msgstr ""
+
+#: vendor_prefixed/wpdesk/wp-woocommerce-shipping/src/WooCommerceShipping/ShippingMethod/RulesTableAdv.php:34
+msgid "You can update %1$sFlexible Shipping%2$s plugin to define additional costs for this shipping method. %3$s"
+msgstr ""
+
+#: vendor_prefixed/wpdesk/wp-woocommerce-shipping/src/WooCommerceShipping/ShippingMethod/RulesTableAdv.php:34
+msgid "Update Now"
+msgstr ""
+
+#: vendor_prefixed/wpdesk/wp-woocommerce-shipping/src/WooCommerceShipping/ShippingMethod/RulesTableAdv.php:36
+msgid "You can activate %1$sFlexible Shipping%2$s plugin to define additional costs for this shipping method. %3$s"
+msgstr ""
+
+#: vendor_prefixed/wpdesk/wp-woocommerce-shipping/src/WooCommerceShipping/ShippingMethod/RulesTableAdv.php:36
+msgid "Activate Now"
+msgstr ""
+
+#: vendor_prefixed/wpdesk/wp-woocommerce-shipping/src/WooCommerceShipping/ShippingMethod/RulesTableAdv.php:38
+msgid "You can install %1$sFlexible Shipping%2$s plugin to define additional costs for this shipping method. %3$s"
+msgstr ""
+
+#: vendor_prefixed/wpdesk/wp-woocommerce-shipping/src/WooCommerceShipping/ShippingMethod/RulesTableAdv.php:38
+msgid "Install Now"
+msgstr ""
+
+#: vendor_prefixed/wpdesk/wp-woocommerce-shipping/src/WooCommerceShipping/ShippingMethod/Traits/SettingsTrait.php:267
 msgid "Fallback"
 msgstr ""
 
-#: vendor_prefixed/wpdesk/wp-woocommerce-shipping/src/WooCommerceShipping/ShippingMethod/Traits/SettingsTrait.php:245
+#: vendor_prefixed/wpdesk/wp-woocommerce-shipping/src/WooCommerceShipping/ShippingMethod/Traits/SettingsTrait.php:267
 msgid "Enable fallback"
 msgstr ""
 
-#: vendor_prefixed/wpdesk/wp-woocommerce-shipping/src/WooCommerceShipping/ShippingMethod/Traits/SettingsTrait.php:245
+#: vendor_prefixed/wpdesk/wp-woocommerce-shipping/src/WooCommerceShipping/ShippingMethod/Traits/SettingsTrait.php:267
 msgid "Enable to offer flat rate cost for shipping so that the user can still checkout, if API for some reason returns no matching rates."
 msgstr ""
 
-#: vendor_prefixed/wpdesk/wp-woocommerce-shipping/src/WooCommerceShipping/ShippingMethod/Traits/SettingsTrait.php:246
+#: vendor_prefixed/wpdesk/wp-woocommerce-shipping/src/WooCommerceShipping/ShippingMethod/Traits/SettingsTrait.php:268
 msgid "Fallback Cost"
 msgstr ""
 

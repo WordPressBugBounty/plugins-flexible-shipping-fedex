@@ -7,6 +7,7 @@
 
 namespace WPDesk\FlexibleShippingFedex;
 
+use FedExVendor\Octolize\Onboarding\PluginUpgrade\MessageFactory\LiveRatesFsRulesTable;
 use FedExVendor\Octolize\Onboarding\PluginUpgrade\PluginUpgradeMessage;
 use FedExVendor\Octolize\Onboarding\PluginUpgrade\PluginUpgradeOnboardingFactory;
 use FedExVendor\Octolize\ShippingExtensions\ShippingExtensions;
@@ -103,6 +104,18 @@ class Plugin extends AbstractPlugin implements LoggerAwareInterface, HookableCol
 	public function init() {
 		$this->global_fedex_settings = new SettingsValuesAsArray( $this->get_global_fedex_settings() );
 
+		// Rules table in shipping method settings.
+		add_filter(
+			'flexible-shipping/integration/allowed-shipping-methods-global-settings',
+			function ( $methods ) {
+				if ( is_array( $methods ) ) {
+					$methods[] = FedexShippingService::UNIQUE_ID;
+				}
+
+				return $methods;
+			}
+		);
+
 		// @phpstan-ignore-next-line.
 		$fedex_service = apply_filters(
 			'flexible_shipping_fedex_shipping_service',
@@ -183,6 +196,9 @@ class Plugin extends AbstractPlugin implements LoggerAwareInterface, HookableCol
 				'Open FedEx Settings',
 				admin_url( 'admin.php?page=wc-settings&tab=shipping&section=flexible_shipping_fedex' )
 			)
+		);
+		$upgrade_onboarding->add_upgrade_message(
+			( new LiveRatesFsRulesTable() )->create_message( '4.0.0', $this->plugin_info->get_plugin_url() )
 		);
 		$upgrade_onboarding->create_onboarding();
 	}

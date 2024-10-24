@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'wpdesk/flexible-shipping-fedex',
-        'pretty_version' => '3.1.0',
-        'version' => '3.1.0.0',
-        'reference' => 'cb3a6f6915f47053086c00c12eefc601541f9510',
+        'pretty_version' => '4.0.0',
+        'version' => '4.0.0.0',
+        'reference' => 'dc7be8f0763fb31c09c341b2d7b79d732f477ac8',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -11,9 +11,9 @@
     ),
     'versions' => array(
         'wpdesk/flexible-shipping-fedex' => array(
-            'pretty_version' => '3.1.0',
-            'version' => '3.1.0.0',
-            'reference' => 'cb3a6f6915f47053086c00c12eefc601541f9510',
+            'pretty_version' => '4.0.0',
+            'version' => '4.0.0.0',
+            'reference' => 'dc7be8f0763fb31c09c341b2d7b79d732f477ac8',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
