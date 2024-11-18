@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the FedEx Live Rates plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: FedEx Live Rates 4.0.0\n"
+"Project-Id-Version: FedEx Live Rates 4.0.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/flexible-shipping-fedex\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-10-24T16:44:49+00:00\n"
+"POT-Creation-Date: 2024-11-18T00:07:41+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: flexible-shipping-fedex\n"
@@ -576,52 +576,42 @@ msgstr ""
 msgid "You need to provide FedEx account credentials to get live rates. Check out our tutorial on %1$show to obtain FedEx credentials →%2$s"
 msgstr ""
 
-#. translators: %1$s: fedex open URL, %2$s: fedex close URL.
 #: vendor_prefixed/wpdesk/fedex-shipping-service/src/FedexShippingService/FedexSettingsDefinition.php:126
 msgid "API Type"
 msgstr ""
 
-#. translators: %1$s: fedex open URL, %2$s: fedex close URL.
 #: vendor_prefixed/wpdesk/fedex-shipping-service/src/FedexShippingService/FedexSettingsDefinition.php:126
 msgid "Select API type."
 msgstr ""
 
-#. translators: %1$s: fedex open URL, %2$s: fedex close URL.
 #: vendor_prefixed/wpdesk/fedex-shipping-service/src/FedexShippingService/FedexSettingsDefinition.php:126
 msgid "REST API"
 msgstr ""
 
-#. translators: %1$s: fedex open URL, %2$s: fedex close URL.
 #: vendor_prefixed/wpdesk/fedex-shipping-service/src/FedexShippingService/FedexSettingsDefinition.php:126
 msgid "SOAP Web Services"
 msgstr ""
 
-#. translators: %1$s: fedex open URL, %2$s: fedex close URL.
 #: vendor_prefixed/wpdesk/fedex-shipping-service/src/FedexShippingService/FedexSettingsDefinition.php:126
 msgid "API Key"
 msgstr ""
 
-#. translators: %1$s: fedex open URL, %2$s: fedex close URL.
 #: vendor_prefixed/wpdesk/fedex-shipping-service/src/FedexShippingService/FedexSettingsDefinition.php:126
 msgid "Secret Key"
 msgstr ""
 
-#. translators: %1$s: fedex open URL, %2$s: fedex close URL.
 #: vendor_prefixed/wpdesk/fedex-shipping-service/src/FedexShippingService/FedexSettingsDefinition.php:126
 msgid "FedEx Account Number "
 msgstr ""
 
-#. translators: %1$s: fedex open URL, %2$s: fedex close URL.
 #: vendor_prefixed/wpdesk/fedex-shipping-service/src/FedexShippingService/FedexSettingsDefinition.php:126
 msgid "FedEx Meter Number"
 msgstr ""
 
-#. translators: %1$s: fedex open URL, %2$s: fedex close URL.
 #: vendor_prefixed/wpdesk/fedex-shipping-service/src/FedexShippingService/FedexSettingsDefinition.php:126
 msgid "FedEx Web Services Key"
 msgstr ""
 
-#. translators: %1$s: fedex open URL, %2$s: fedex close URL.
 #: vendor_prefixed/wpdesk/fedex-shipping-service/src/FedexShippingService/FedexSettingsDefinition.php:126
 msgid "FedEx Web Services Password "
 msgstr ""
