@@ -10,9 +10,9 @@ class RulesTableAdv
     public function add_fields(array $fields): array
     {
         if (empty($fields[self::FS_METHOD_RULES_TITLE])) {
-            $fields[self::FS_METHOD_RULES_TITLE] = ['type' => 'title', 'title' => __('Additional costs by Flexible Shipping Table Rate', 'flexible-shipping-fedex')];
+            $fields[self::FS_METHOD_RULES_TITLE] = ['type' => 'title', 'title' => __('Additional costs by Flexible Shipping Table Rate', 'flexible-shipping-fedex'), 'default' => ''];
             $fields[self::FS_CALCULATION_ENABLED] = ['title' => __('Additional costs', 'flexible-shipping-fedex'), 'type' => 'checkbox', 'label' => __('Enable Flexible Shipping Rules Table', 'flexible-shipping-fedex'), 'desc_tip' => __('Enabling this option will allow you to adjust the calculated shipping cost, with additional charges applied according to the shipping cost calculation rules.', 'flexible-shipping-fedex'), 'default' => 'no', 'class' => 'fs-costs-calculation-enabled-adv'];
-            $fields[self::FS_METHOD_RULES] = ['title' => __('Shipping Cost Calculation Rules', 'flexible-shipping-fedex'), 'type' => 'text', 'class' => 'hidden fs-method-rules', 'description' => ''];
+            $fields[self::FS_METHOD_RULES] = ['title' => __('Shipping Cost Calculation Rules', 'flexible-shipping-fedex'), 'type' => 'text', 'class' => 'hidden fs-method-rules', 'description' => '', 'default' => ''];
         }
         return $fields;
     }

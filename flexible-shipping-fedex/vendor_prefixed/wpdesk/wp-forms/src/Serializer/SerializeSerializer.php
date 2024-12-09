@@ -1,5 +1,6 @@
 <?php
 
+// phpcs:disable WordPress.PHP.DiscouragedPHPFunctions
 namespace FedExVendor\WPDesk\Forms\Serializer;
 
 use FedExVendor\WPDesk\Forms\Serializer;

@@ -90,10 +90,10 @@ class Plugin extends AbstractPlugin implements LoggerAwareInterface, HookableCol
 	 * @return string[]
 	 */
 	private function get_global_fedex_settings() {
-		$global_settings = get_option( 'woocommerce_' . FedexShippingService::UNIQUE_ID . '_settings', array() );
+		$global_settings = get_option( 'woocommerce_' . FedexShippingService::UNIQUE_ID . '_settings', [] );
 
 		// @phpstan-ignore-next-line.
-		return is_array( $global_settings ) ? $global_settings : array();
+		return is_array( $global_settings ) ? $global_settings : [];
 	}
 
 	/**
@@ -125,22 +125,32 @@ class Plugin extends AbstractPlugin implements LoggerAwareInterface, HookableCol
 		$this->add_hookable(
 			new Assets( $this->get_plugin_url() . 'vendor_prefixed/wpdesk/wp-woocommerce-shipping/assets', 'fedex' )
 		);
-		$this->add_hookable( new SettingsSidebar( $this->get_plugin_assets_url() . '../vendor_prefixed/octolize/wp-octolize-brand-assets/assets/' ) );
+		add_action(
+			'init',
+			function () {
+				( new SettingsSidebar( $this->get_plugin_assets_url() . '../vendor_prefixed/octolize/wp-octolize-brand-assets/assets/' ) )->hooks();
+			}
+		);
 		$this->init_repository_rating();
 
-		$admin_meta_data_interpreter = new AdminOrderMetaDataDisplay( FedexShippingMethod::UNIQUE_ID );
-		$admin_meta_data_interpreter->add_interpreter(
-			new SingleAdminOrderMetaDataInterpreterImplementation(
-				WooCommerceShippingMetaDataBuilder::SERVICE_TYPE,
-				__( 'Service Code', 'flexible-shipping-fedex' )
-			)
-		);
-		$admin_meta_data_interpreter->add_interpreter( new FallbackAdminMetaDataInterpreter() );
-		$admin_meta_data_interpreter->add_hidden_order_item_meta_key( WooCommerceShippingMetaDataBuilder::COLLECTION_POINT );
-		$this->add_hookable( $admin_meta_data_interpreter );
+		add_action(
+			'init',
+			function () {
+				$admin_meta_data_interpreter = new AdminOrderMetaDataDisplay( FedexShippingMethod::UNIQUE_ID );
+				$admin_meta_data_interpreter->add_interpreter(
+					new SingleAdminOrderMetaDataInterpreterImplementation(
+						WooCommerceShippingMetaDataBuilder::SERVICE_TYPE,
+						__( 'Service Code', 'flexible-shipping-fedex' )
+					)
+				);
+				$admin_meta_data_interpreter->add_interpreter( new FallbackAdminMetaDataInterpreter() );
+				$admin_meta_data_interpreter->add_hidden_order_item_meta_key( WooCommerceShippingMetaDataBuilder::COLLECTION_POINT );
+				$admin_meta_data_interpreter->hooks();
 
-		$meta_data_interpreter = new FrontOrderMetaDataDisplay( FedexShippingMethod::UNIQUE_ID );
-		$this->add_hookable( $meta_data_interpreter );
+				$meta_data_interpreter = new FrontOrderMetaDataDisplay( FedexShippingMethod::UNIQUE_ID );
+				$meta_data_interpreter->hooks();
+			}
+		);
 
 		/**
 		 * Handles API Status AJAX requests.
@@ -166,12 +176,12 @@ class Plugin extends AbstractPlugin implements LoggerAwareInterface, HookableCol
 
 		$this->init_tracker();
 
-		$this->init_upgrade_onboarding();
+		add_action( 'init', [ $this, 'init_upgrade_onboarding' ] );
 
 		parent::init();
 	}
 
-	private function init_upgrade_onboarding(): void {
+	public function init_upgrade_onboarding(): void {
 		$upgrade_onboarding = new PluginUpgradeOnboardingFactory(
 			$this->plugin_info->get_plugin_name(),
 			$this->plugin_info->get_version(),
@@ -253,7 +263,7 @@ class Plugin extends AbstractPlugin implements LoggerAwareInterface, HookableCol
 	public function hooks() {
 		parent::hooks();
 
-		add_filter( 'woocommerce_shipping_methods', array( $this, 'woocommerce_shipping_methods_filter' ), 20, 1 );
+		add_filter( 'woocommerce_shipping_methods', [ $this, 'woocommerce_shipping_methods_filter' ], 20, 1 );
 
 		$this->hooks_on_hookable_objects();
 	}
@@ -279,14 +289,14 @@ class Plugin extends AbstractPlugin implements LoggerAwareInterface, HookableCol
 	 * @return string[]
 	 */
 	public function links_filter( $links ) {
-		$is_pl           = 'pl_PL' === get_locale();
-		$settings_url    = admin_url( 'admin.php?page=wc-settings&tab=shipping&section=flexible_shipping_fedex' );
+		$is_pl        = 'pl_PL' === get_locale();
+		$settings_url = admin_url( 'admin.php?page=wc-settings&tab=shipping&section=flexible_shipping_fedex' );
 
 		$external_attributes = ' target="_blank" ';
 
-		$plugin_links = array(
+		$plugin_links = [
 			'<a href="' . $settings_url . '">' . __( 'Settings', 'flexible-shipping-fedex' ) . '</a>',
-		);
+		];
 
 		if ( ! defined( 'FLEXIBLE_SHIPPING_FEDEX_PRO_VERSION' ) ) {
 			$upgrade_link   = $is_pl ? 'https://octol.io/fedex-upgrade-pl' : 'https://octol.io/fedex-upgrade';
