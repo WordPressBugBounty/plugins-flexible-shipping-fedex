@@ -54,7 +54,7 @@
 		"octolize/wp-onboarding": "^1.6",
 		"octolize/wp-shipping-extensions": "^1.2.0",
 		"phpunit/phpunit": "^7||^8||^9",
-		"wpdesk/wp-codeception": "^2.4.5",
+		"wpdesk/wp-codeception": "^2.12.6",
 		"wpdesk/wp-fedex-shipping-method": "^1.3.0",
 		"wpdesk/wp-fedex-tracker": "^1.2.0",
 		"wpdesk/wp-logs": "^1.7",

@@ -3537,6 +3537,7 @@ return array(
     'FedExVendor\\WPDesk\\Forms\\Field\\SubmitField' => $baseDir . '/vendor_prefixed/wpdesk/wp-forms/src/Field/SubmitField.php',
     'FedExVendor\\WPDesk\\Forms\\Field\\TextAreaField' => $baseDir . '/vendor_prefixed/wpdesk/wp-forms/src/Field/TextAreaField.php',
     'FedExVendor\\WPDesk\\Forms\\Field\\TimepickerField' => $baseDir . '/vendor_prefixed/wpdesk/wp-forms/src/Field/TimepickerField.php',
+    'FedExVendor\\WPDesk\\Forms\\Field\\ToggleField' => $baseDir . '/vendor_prefixed/wpdesk/wp-forms/src/Field/ToggleField.php',
     'FedExVendor\\WPDesk\\Forms\\Field\\Traits\\HtmlAttributes' => $baseDir . '/vendor_prefixed/wpdesk/wp-forms/src/Field/Traits/HtmlAttributes.php',
     'FedExVendor\\WPDesk\\Forms\\Field\\WPEditorField' => $baseDir . '/vendor_prefixed/wpdesk/wp-forms/src/Field/WPEditorField.php',
     'FedExVendor\\WPDesk\\Forms\\Field\\WooSelect' => $baseDir . '/vendor_prefixed/wpdesk/wp-forms/src/Field/WooSelect.php',

@@ -3557,6 +3557,7 @@ class ComposerStaticInitFSFedex
         'FedExVendor\\WPDesk\\Forms\\Field\\SubmitField' => __DIR__ . '/../..' . '/vendor_prefixed/wpdesk/wp-forms/src/Field/SubmitField.php',
         'FedExVendor\\WPDesk\\Forms\\Field\\TextAreaField' => __DIR__ . '/../..' . '/vendor_prefixed/wpdesk/wp-forms/src/Field/TextAreaField.php',
         'FedExVendor\\WPDesk\\Forms\\Field\\TimepickerField' => __DIR__ . '/../..' . '/vendor_prefixed/wpdesk/wp-forms/src/Field/TimepickerField.php',
+        'FedExVendor\\WPDesk\\Forms\\Field\\ToggleField' => __DIR__ . '/../..' . '/vendor_prefixed/wpdesk/wp-forms/src/Field/ToggleField.php',
         'FedExVendor\\WPDesk\\Forms\\Field\\Traits\\HtmlAttributes' => __DIR__ . '/../..' . '/vendor_prefixed/wpdesk/wp-forms/src/Field/Traits/HtmlAttributes.php',
         'FedExVendor\\WPDesk\\Forms\\Field\\WPEditorField' => __DIR__ . '/../..' . '/vendor_prefixed/wpdesk/wp-forms/src/Field/WPEditorField.php',
         'FedExVendor\\WPDesk\\Forms\\Field\\WooSelect' => __DIR__ . '/../..' . '/vendor_prefixed/wpdesk/wp-forms/src/Field/WooSelect.php',
