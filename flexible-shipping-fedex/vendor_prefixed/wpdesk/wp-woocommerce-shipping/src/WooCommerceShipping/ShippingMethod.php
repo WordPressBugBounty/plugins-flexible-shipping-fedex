@@ -7,7 +7,6 @@
  */
 namespace FedExVendor\WPDesk\WooCommerceShipping;
 
-use FedExVendor\WPDesk\AbstractShipping\ShippingService;
 use FedExVendor\WPDesk\AbstractShipping\ShippingServiceCapability\CanRate;
 use FedExVendor\WPDesk\AbstractShipping\ShippingServiceCapability\CanRateToCollectionPoint;
 use FedExVendor\WPDesk\WooCommerceShipping\ShippingBuilder\WooCommerceShippingMetaDataBuilder;

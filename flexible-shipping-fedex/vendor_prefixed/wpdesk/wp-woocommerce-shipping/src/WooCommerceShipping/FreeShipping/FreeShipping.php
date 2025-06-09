@@ -10,7 +10,7 @@ namespace FedExVendor\WPDesk\WooCommerceShipping\FreeShipping;
 use FedExVendor\Psr\Log\LoggerInterface;
 use WC_Cart;
 use WC_Shipping_Method;
-use FedExVendor\WPDesk\WooCommerceShipping\DisplayNoticeLogger;
+use FedExVendor\WPDesk\WooCommerceShipping\Logger\DisplayNoticeLogger;
 /**
  * Can apply handling fees to price.
  */

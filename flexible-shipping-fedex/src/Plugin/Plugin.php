@@ -7,17 +7,29 @@
 
 namespace WPDesk\FlexibleShippingFedex;
 
+use FedExVendor\Octolize\Brand\UpsellingBox\ShippingMethodShouldShowStrategy;
+use FedExVendor\Octolize\Csat\Csat;
+use FedExVendor\Octolize\Csat\CsatCodeFromFile;
 use FedExVendor\Octolize\Onboarding\PluginUpgrade\MessageFactory\LiveRatesFsRulesTable;
 use FedExVendor\Octolize\Onboarding\PluginUpgrade\PluginUpgradeMessage;
 use FedExVendor\Octolize\Onboarding\PluginUpgrade\PluginUpgradeOnboardingFactory;
 use FedExVendor\Octolize\ShippingExtensions\ShippingExtensions;
 use FedExVendor\Octolize\Tracker\TrackerInitializer;
+use FedExVendor\Psr\Log\LoggerAwareInterface;
+use FedExVendor\Psr\Log\LoggerAwareTrait;
+use FedExVendor\Psr\Log\NullLogger;
 use FedExVendor\WPDesk\AbstractShipping\Settings\SettingsValuesAsArray;
+use FedExVendor\WPDesk\FedexShippingService\FedexShippingService;
 use FedExVendor\WPDesk\Logger\SimpleLoggerFactory;
 use FedExVendor\WPDesk\Notice\AjaxHandler;
+use FedExVendor\WPDesk\PluginBuilder\Plugin\AbstractPlugin;
+use FedExVendor\WPDesk\PluginBuilder\Plugin\HookableCollection;
+use FedExVendor\WPDesk\PluginBuilder\Plugin\HookableParent;
 use FedExVendor\WPDesk\RepositoryRating\DisplayStrategy\ShippingMethodDisplayDecision;
+use FedExVendor\WPDesk\RepositoryRating\RatingPetitionNotice;
 use FedExVendor\WPDesk\RepositoryRating\RepositoryRatingPetitionText;
 use FedExVendor\WPDesk\RepositoryRating\TextPetitionDisplayer;
+use FedExVendor\WPDesk\RepositoryRating\TimeWatcher\ShippingMethodGlobalSettingsWatcher;
 use FedExVendor\WPDesk\WooCommerceShipping\ActivePayments;
 use FedExVendor\WPDesk\WooCommerceShipping\Assets;
 use FedExVendor\WPDesk\WooCommerceShipping\CustomFields\ApiStatus\FieldApiStatusAjax;
@@ -30,18 +42,10 @@ use FedExVendor\WPDesk\WooCommerceShipping\OrderMetaData\FrontOrderMetaDataDispl
 use FedExVendor\WPDesk\WooCommerceShipping\OrderMetaData\SingleAdminOrderMetaDataInterpreterImplementation;
 use FedExVendor\WPDesk\WooCommerceShipping\PluginShippingDecisions;
 use FedExVendor\WPDesk\WooCommerceShipping\ShippingBuilder\WooCommerceShippingMetaDataBuilder;
+use FedExVendor\WPDesk\WooCommerceShipping\ShopSettings;
 use FedExVendor\WPDesk\WooCommerceShipping\Ups\MetaDataInterpreters\FallbackAdminMetaDataInterpreter;
 use FedExVendor\WPDesk_Plugin_Info;
-use FedExVendor\Psr\Log\LoggerAwareInterface;
-use FedExVendor\Psr\Log\LoggerAwareTrait;
-use FedExVendor\Psr\Log\NullLogger;
-use FedExVendor\WPDesk\PluginBuilder\Plugin\AbstractPlugin;
-use FedExVendor\WPDesk\PluginBuilder\Plugin\HookableCollection;
-use FedExVendor\WPDesk\PluginBuilder\Plugin\HookableParent;
-use FedExVendor\WPDesk\FedexShippingService\FedexShippingService;
-use FedExVendor\WPDesk\WooCommerceShipping\ShopSettings;
-use FedExVendor\WPDesk\RepositoryRating\RatingPetitionNotice;
-use FedExVendor\WPDesk\RepositoryRating\TimeWatcher\ShippingMethodGlobalSettingsWatcher;
+use WPDesk\FlexibleShippingFedex\Csat\CsatOptionDependedOnGlobalShippingMethod;
 
 /**
  * Main plugin class. The most important flow decisions are made here.
@@ -173,6 +177,15 @@ class Plugin extends AbstractPlugin implements LoggerAwareInterface, HookableCol
 		$this->add_hookable( new ShippingExtensions( $this->plugin_info ) );
 
 		$this->add_hookable( new PluginLinks( $this->plugin_info->get_plugin_file_name() ) );
+
+		$this->add_hookable(
+			new Csat(
+				new CsatOptionDependedOnGlobalShippingMethod( 'csat_flexible_shipping_fedex', FedexShippingService::UNIQUE_ID ),
+				new CsatCodeFromFile( __DIR__ . '/../Csat/views/csat.php' ),
+				'woocommerce_after_settings_shipping',
+				new ShippingMethodShouldShowStrategy( FedexShippingService::UNIQUE_ID )
+			)
+		);
 
 		$this->init_tracker();
 

@@ -9,15 +9,15 @@ class ComposerStaticInitFSFedex
     public static $prefixLengthsPsr4 = array (
         'W' => 
         array (
-            'WPDesk\\FlexibleShippingFedex\\ApiStatus\\' => 39,
+            'WPDesk\\FlexibleShippingFedex\\Csat\\' => 34,
             'WPDesk\\FlexibleShippingFedex\\' => 29,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'WPDesk\\FlexibleShippingFedex\\ApiStatus\\' => 
+        'WPDesk\\FlexibleShippingFedex\\Csat\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/src/ApiStatus',
+            0 => __DIR__ . '/../..' . '/src/Csat',
         ),
         'WPDesk\\FlexibleShippingFedex\\' => 
         array (
@@ -3394,6 +3394,12 @@ class ComposerStaticInitFSFedex
         'FedExVendor\\Octolize\\Brand\\UpsellingBox\\ShippingMethodAndConstantDisplayStrategy' => __DIR__ . '/../..' . '/vendor_prefixed/octolize/wp-octolize-brand-assets/src/Brand/UpsellingBox/ShippingMethodAndConstantDisplayStrategy.php',
         'FedExVendor\\Octolize\\Brand\\UpsellingBox\\ShippingMethodInstanceShouldShowStrategy' => __DIR__ . '/../..' . '/vendor_prefixed/octolize/wp-octolize-brand-assets/src/Brand/UpsellingBox/ShippingMethodInstanceShouldShowStrategy.php',
         'FedExVendor\\Octolize\\Brand\\UpsellingBox\\ShippingMethodShouldShowStrategy' => __DIR__ . '/../..' . '/vendor_prefixed/octolize/wp-octolize-brand-assets/src/Brand/UpsellingBox/ShippingMethodShouldShowStrategy.php',
+        'FedExVendor\\Octolize\\Csat\\Csat' => __DIR__ . '/../..' . '/vendor_prefixed/octolize/wp-csat-petition/src/Csat.php',
+        'FedExVendor\\Octolize\\Csat\\CsatCode' => __DIR__ . '/../..' . '/vendor_prefixed/octolize/wp-csat-petition/src/CsatCode.php',
+        'FedExVendor\\Octolize\\Csat\\CsatCodeFromFile' => __DIR__ . '/../..' . '/vendor_prefixed/octolize/wp-csat-petition/src/CsatCodeFromFile.php',
+        'FedExVendor\\Octolize\\Csat\\CsatCodeFromString' => __DIR__ . '/../..' . '/vendor_prefixed/octolize/wp-csat-petition/src/CsatCodeFromString.php',
+        'FedExVendor\\Octolize\\Csat\\CsatOption' => __DIR__ . '/../..' . '/vendor_prefixed/octolize/wp-csat-petition/src/CsatOption.php',
+        'FedExVendor\\Octolize\\Csat\\CsatOptionDependedOnShippingMethod' => __DIR__ . '/../..' . '/vendor_prefixed/octolize/wp-csat-petition/src/CsatOptionDependedOnShippingMethod.php',
         'FedExVendor\\Octolize\\Onboarding\\Field\\Html' => __DIR__ . '/../..' . '/vendor_prefixed/octolize/wp-onboarding/src/Onboarding/Field/Html.php',
         'FedExVendor\\Octolize\\Onboarding\\Onboarding' => __DIR__ . '/../..' . '/vendor_prefixed/octolize/wp-onboarding/src/Onboarding/Onboarding.php',
         'FedExVendor\\Octolize\\Onboarding\\OnboardingAjax' => __DIR__ . '/../..' . '/vendor_prefixed/octolize/wp-onboarding/src/Onboarding/OnboardingAjax.php',
@@ -3722,7 +3728,6 @@ class ComposerStaticInitFSFedex
         'FedExVendor\\WPDesk\\WooCommerceShipping\\CustomFields\\Services\\FieldServicesSanitizer' => __DIR__ . '/../..' . '/vendor_prefixed/wpdesk/wp-woocommerce-shipping/src/WooCommerceShipping/CustomFields/Services/FieldServicesSanitizer.php',
         'FedExVendor\\WPDesk\\WooCommerceShipping\\CustomOrigin\\CustomOriginFields' => __DIR__ . '/../..' . '/vendor_prefixed/wpdesk/wp-woocommerce-shipping/src/WooCommerceShipping/CustomOrigin/CustomOriginFields.php',
         'FedExVendor\\WPDesk\\WooCommerceShipping\\CustomOrigin\\InstanceCustomOriginFields' => __DIR__ . '/../..' . '/vendor_prefixed/wpdesk/wp-woocommerce-shipping/src/WooCommerceShipping/CustomOrigin/InstanceCustomOriginFields.php',
-        'FedExVendor\\WPDesk\\WooCommerceShipping\\DisplayNoticeLogger' => __DIR__ . '/../..' . '/vendor_prefixed/wpdesk/wp-woocommerce-shipping/src/WooCommerceShipping/DisplayNoticeLogger.php',
         'FedExVendor\\WPDesk\\WooCommerceShipping\\EstimatedDelivery\\EstimatedDeliveryDatesDisplay' => __DIR__ . '/../..' . '/vendor_prefixed/wpdesk/wp-woocommerce-shipping/src/WooCommerceShipping/EstimatedDelivery/EstimatedDeliveryDatesDisplay.php',
         'FedExVendor\\WPDesk\\WooCommerceShipping\\EstimatedDelivery\\EstimatedDeliveryMetaDataBuilder' => __DIR__ . '/../..' . '/vendor_prefixed/wpdesk/wp-woocommerce-shipping/src/WooCommerceShipping/EstimatedDelivery/EstimatedDeliveryMetaDataBuilder.php',
         'FedExVendor\\WPDesk\\WooCommerceShipping\\Fedex\\FedexSettingsDefinitionWooCommerce' => __DIR__ . '/../..' . '/vendor_prefixed/wpdesk/wp-fedex-shipping-method/src/WooCommerceShipping/FedexSettingsDefinitionWooCommerce.php',
@@ -3737,6 +3742,7 @@ class ComposerStaticInitFSFedex
         'FedExVendor\\WPDesk\\WooCommerceShipping\\HandlingFees\\PriceAdjustmentFixed' => __DIR__ . '/../..' . '/vendor_prefixed/wpdesk/wp-woocommerce-shipping/src/WooCommerceShipping/HandlingFees/PriceAdjustmentFixed.php',
         'FedExVendor\\WPDesk\\WooCommerceShipping\\HandlingFees\\PriceAdjustmentNone' => __DIR__ . '/../..' . '/vendor_prefixed/wpdesk/wp-woocommerce-shipping/src/WooCommerceShipping/HandlingFees/PriceAdjustmentNone.php',
         'FedExVendor\\WPDesk\\WooCommerceShipping\\HandlingFees\\PriceAdjustmentPercentage' => __DIR__ . '/../..' . '/vendor_prefixed/wpdesk/wp-woocommerce-shipping/src/WooCommerceShipping/HandlingFees/PriceAdjustmentPercentage.php',
+        'FedExVendor\\WPDesk\\WooCommerceShipping\\Logger\\DisplayNoticeLogger' => __DIR__ . '/../..' . '/vendor_prefixed/wpdesk/wp-woocommerce-shipping/src/WooCommerceShipping/Logger/DisplayNoticeLogger.php',
         'FedExVendor\\WPDesk\\WooCommerceShipping\\OrderMetaData\\AdminMetaDataUnchangedTrait' => __DIR__ . '/../..' . '/vendor_prefixed/wpdesk/wp-woocommerce-shipping/src/WooCommerceShipping/OrderMetaData/AdminMetaDataUnchangedTrait.php',
         'FedExVendor\\WPDesk\\WooCommerceShipping\\OrderMetaData\\AdminOrderMetaDataDisplay' => __DIR__ . '/../..' . '/vendor_prefixed/wpdesk/wp-woocommerce-shipping/src/WooCommerceShipping/OrderMetaData/AdminOrderMetaDataDisplay.php',
         'FedExVendor\\WPDesk\\WooCommerceShipping\\OrderMetaData\\FrontOrderMetaDataDisplay' => __DIR__ . '/../..' . '/vendor_prefixed/wpdesk/wp-woocommerce-shipping/src/WooCommerceShipping/OrderMetaData/FrontOrderMetaDataDisplay.php',
@@ -3823,6 +3829,7 @@ class ComposerStaticInitFSFedex
         'FedExVendor\\WPDesk_Tracker_Sender_Wordpress_To_WPDesk' => __DIR__ . '/../..' . '/vendor_prefixed/wpdesk/wp-wpdesk-tracker/src/sender/class-wpdesk-tracker-sender-wordpress-to-wpdesk.php',
         'FedExVendor\\WPDesk_Translable' => __DIR__ . '/../..' . '/vendor_prefixed/wpdesk/wp-builder/src/Plugin/WithoutNamespace/Translable.php',
         'FedExVendor\\WPDesk_Translatable' => __DIR__ . '/../..' . '/vendor_prefixed/wpdesk/wp-builder/src/Plugin/WithoutNamespace/Translatable.php',
+        'WPDesk\\FlexibleShippingFedex\\Csat\\CsatOptionDependedOnGlobalShippingMethod' => __DIR__ . '/../..' . '/src/Csat/CsatOptionDependedOnGlobalShippingMethod.php',
         'WPDesk\\FlexibleShippingFedex\\Plugin' => __DIR__ . '/../..' . '/src/Plugin/Plugin.php',
         'WPDesk\\FlexibleShippingFedex\\PluginLinks' => __DIR__ . '/../..' . '/src/Plugin/PluginLinks.php',
         'WPDesk\\FlexibleShippingFedex\\SettingsSidebar' => __DIR__ . '/../..' . '/src/Plugin/SettingsSidebar.php',

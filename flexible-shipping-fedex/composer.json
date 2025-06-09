@@ -9,7 +9,7 @@
 	"autoload": {
 		"psr-4": {
 			"WPDesk\\FlexibleShippingFedex\\": "src/Plugin",
-			"WPDesk\\FlexibleShippingFedex\\ApiStatus\\": "src/ApiStatus"
+			"WPDesk\\FlexibleShippingFedex\\Csat\\": "src/Csat"
 		},
 		"classmap": [
 			"vendor_prefixed"
@@ -49,6 +49,7 @@
 	"require-dev": {
 		"10up/wp_mock": "*",
 		"octolize/fedex-rest": "^1.0.0",
+		"octolize/wp-csat-petition": "^1.0",
 		"octolize/wp-octolize-brand-assets": "^1.3",
 		"octolize/wp-octolize-tracker": "^1.2",
 		"octolize/wp-onboarding": "^1.6",

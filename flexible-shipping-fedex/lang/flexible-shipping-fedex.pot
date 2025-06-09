@@ -2,16 +2,16 @@
 # This file is distributed under the same license as the Shipping Live Rates for FedEx for WooCommerce plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Shipping Live Rates for FedEx for WooCommerce 4.0.7\n"
+"Project-Id-Version: Shipping Live Rates for FedEx for WooCommerce 4.0.8\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/flexible-shipping-fedex\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-05-04T23:05:38+00:00\n"
+"POT-Creation-Date: 2025-06-09T12:01:22+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.11.0\n"
+"X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: flexible-shipping-fedex\n"
 
 #. Plugin Name of the plugin
@@ -39,32 +39,32 @@ msgstr ""
 msgid "https://octol.io/fedex-author"
 msgstr ""
 
-#: src/Plugin/Plugin.php:143
+#: src/Plugin/Plugin.php:147
 msgid "Service Code"
 msgstr ""
 
-#: src/Plugin/Plugin.php:194
+#: src/Plugin/Plugin.php:207
 msgid "We have added new services"
 msgstr ""
 
-#: src/Plugin/Plugin.php:195
+#: src/Plugin/Plugin.php:208
 msgid "We're thrilled to announce that our FedEx Live Rates plugin now offers FedEx First, FedEx Priority Express, and FedEx Economy rates at checkout, in addition to previously available services. This wider selection of FedEx services allows you to offer customers more tailored shipping options to meet their needs. We're glad to be a part of your success!"
 msgstr ""
 
-#: src/Plugin/Plugin.php:204
+#: src/Plugin/Plugin.php:217
 msgid "New FedEx API introduced"
 msgstr ""
 
-#: src/Plugin/Plugin.php:205
+#: src/Plugin/Plugin.php:218
 msgid "We're thrilled to announce that we've upgraded FedEx Live Rates plugin to use the latest FedEx API. This enhancement allows for seamless retrieval of shipping costs directly from FedEx, streamlining your shipping process and ensuring accurate rates for your customers."
 msgstr ""
 
-#: src/Plugin/Plugin.php:298
+#: src/Plugin/Plugin.php:311
 #: vendor_prefixed/wpdesk/wp-builder/src/Plugin/AbstractPlugin.php:188
 msgid "Settings"
 msgstr ""
 
-#: src/Plugin/Plugin.php:303
+#: src/Plugin/Plugin.php:316
 msgid "Buy PRO"
 msgstr ""
 
@@ -121,10 +121,12 @@ msgid "I had difficulties configuring the plugin"
 msgstr ""
 
 #: vendor_prefixed/octolize/wp-octolize-tracker/src/DeactivationTracker/OctolizeReasonsFactory.php:36
+#, php-format
 msgid "Sorry to hear that! We're certain that with a little help, configuring the plugin will be a breeze. Before you deactivate, try to find a solution in our %1$sdocumentation%2$s%3$s."
 msgstr ""
 
 #: vendor_prefixed/octolize/wp-octolize-tracker/src/DeactivationTracker/OctolizeReasonsFactory.php:36
+#, php-format
 msgid " or post a question on the %1$sforum%2$s"
 msgstr ""
 
@@ -133,10 +135,12 @@ msgid "The plugin stopped working"
 msgstr ""
 
 #: vendor_prefixed/octolize/wp-octolize-tracker/src/DeactivationTracker/OctolizeReasonsFactory.php:36
+#, php-format
 msgid "We take any issues with our plugins very seriously. Try to find a reason in our %1$sdocumentation%2$s%3$s."
 msgstr ""
 
 #: vendor_prefixed/octolize/wp-octolize-tracker/src/DeactivationTracker/OctolizeReasonsFactory.php:36
+#, php-format
 msgid " or post the problem on the %1$sforum%2$s"
 msgstr ""
 
@@ -157,6 +161,7 @@ msgid "The plugin doesn't have the functionality I need"
 msgstr ""
 
 #: vendor_prefixed/octolize/wp-octolize-tracker/src/DeactivationTracker/OctolizeReasonsFactory.php:36
+#, php-format
 msgid "Good news! There's a great chance that the functionality you need is already implemented in the PRO version of the plugin. %1$sContact us%2$s to receive a discount for %3$s. Also, can you describe what functionality you're looking for?"
 msgstr ""
 
@@ -173,6 +178,7 @@ msgid "I'm moving my shop from WooCommerce to Shopify"
 msgstr ""
 
 #: vendor_prefixed/octolize/wp-octolize-tracker/src/DeactivationTracker/OctolizeReasonsFactory.php:36
+#, php-format
 msgid "Switching to Shopify? We've got you covered! %1$sExplore our Shopify apps%2$s and see how they can help you make the most of your new platform!"
 msgstr ""
 
@@ -209,6 +215,7 @@ msgid "Help us improve Octolize plugins' experience"
 msgstr ""
 
 #: vendor_prefixed/octolize/wp-octolize-tracker/src/OptInNotice/views/html-notice.php:15
+#, php-format
 msgid "Hi %1$s, with your helping hand we can build effective solutions, launch the new features and shape better plugins experience. By agreeing to anonymously share non-sensitive %2$susage data%3$s of our plugins, you will help us develop them in the right direction. No personal data is tracked or stored and you can opt-out any time. Will you give the thumbs up to our efforts?"
 msgstr ""
 
@@ -222,10 +229,12 @@ msgstr ""
 
 #. Translators: %1$s - <br/><br/>, %2$s - <a href="https://octol.io/fs-tr-adv-live-rates-popup-free" target="_blank">, %3$s - </a>, %4$s - <a href="https://octol.io/fs-tr-adv-live-rates-popup-pro" target="_blank">, %5$s - </a>.
 #: vendor_prefixed/octolize/wp-onboarding/src/Onboarding/PluginUpgrade/MessageFactory/LiveRatesFsRulesTable.php:12
+#, php-format
 msgid "The new feature allows you to combine Live Rates and Table Rate, providing the ability to use automatically calculated Live Rates while also adjusting shipping costs using Table Rate with the free version of %1$sFlexible Shipping%2$s or %3$sFlexible Shipping PRO%4$s.%5$sThis way, you can now have greater control over the final delivery cost, precisely defining additional charges or discounts for each shipping method."
 msgstr ""
 
 #: vendor_prefixed/octolize/wp-onboarding/src/Onboarding/PluginUpgrade/PluginUpgradeOnboardingFactory.php:107
+#, php-format
 msgid "Thank you for updating %1$s!"
 msgstr ""
 
@@ -541,18 +550,22 @@ msgid "Can't convert weight to target unit."
 msgstr ""
 
 #: vendor_prefixed/wpdesk/fedex-shipping-service/src/FedexShippingService/Exception/CurrencySwitcherException.php:21
+#, php-format
 msgid "Multicurrency is supported by %1$sFlexible Shipping FedEx PRO →%2$s"
 msgstr ""
 
 #: vendor_prefixed/wpdesk/fedex-shipping-service/src/FedexShippingService/Exception/NoRatesInCurrencyInRatingsException.php:21
+#, php-format
 msgid "The shop's currency is other than set on the FedEx account. Preferred currency live rates are supported by %1$sFlexible Shipping FedEx PRO →%2$s"
 msgstr ""
 
 #: vendor_prefixed/wpdesk/fedex-shipping-service/src/FedexShippingService/FedexSettingsDefinition.php:114
+#, php-format
 msgid "If you have encountered any issues with calculating or displaying the live rates properly enable the debug mode to be able to analyse the FedEx API requests and responses and to find out what's causing the problem. %1$sLearn more about the debug mode →%2$s"
 msgstr ""
 
 #: vendor_prefixed/wpdesk/fedex-shipping-service/src/FedexShippingService/FedexSettingsDefinition.php:115
+#, php-format
 msgid "Services %1$s are available only for UK domestic shipments."
 msgstr ""
 
@@ -563,6 +576,7 @@ msgstr ""
 
 #. translators: %1$s: fedex open URL, %2$s: fedex close URL.
 #: vendor_prefixed/wpdesk/fedex-shipping-service/src/FedexShippingService/FedexSettingsDefinition.php:120
+#, php-format
 msgid "These are a general settings of Flexible Shipping FedEx plugin. To learn more about configuration go to the %1$sinstruction manual →%2$s"
 msgstr ""
 
@@ -572,6 +586,7 @@ msgstr ""
 
 #. translators: %1$s: fedex open URL, %2$s: fedex close URL.
 #: vendor_prefixed/wpdesk/fedex-shipping-service/src/FedexShippingService/FedexSettingsDefinition.php:125
+#, php-format
 msgid "You need to provide FedEx account credentials to get live rates. Check out our tutorial on %1$show to obtain FedEx credentials →%2$s"
 msgstr ""
 
@@ -644,6 +659,7 @@ msgid "If you need to turn off FedEx rates display in the shop, just uncheck thi
 msgstr ""
 
 #: vendor_prefixed/wpdesk/fedex-shipping-service/src/FedexShippingService/FedexSettingsDefinition.php:130
+#, php-format
 msgid "Gain even more flexibility and add the FedEx Live Rates within specific shipping zones instead of using the Global shipping method. %1$sUpgrade your FedEx WooCommerce Live Rates plugin to PRO now →%2$s"
 msgstr ""
 
@@ -760,11 +776,13 @@ msgid "FedEx Live Rates"
 msgstr ""
 
 #: vendor_prefixed/wpdesk/fedex-shipping-service/src/FedexShippingService/FedexShippingService.php:281
+#, php-format
 msgid "Dynamically calculated FedEx live rates based on the established FedEx API connection. %1$sLearn more →%2$s"
 msgstr ""
 
 #. translators: %1$s weight unit. %2$s number of max weight in kg or lb.
 #: vendor_prefixed/wpdesk/fedex-shipping-service/src/FedexShippingService/FedexValidateShipment.php:90
+#, php-format
 msgid "The maximum package weight has been exceeded. Maximum package weight is: %1$s %2$s."
 msgstr ""
 
@@ -826,15 +844,18 @@ msgstr ""
 
 #. Translators: directory.
 #: vendor_prefixed/wpdesk/wp-logs/src/WP/WPCapture.php:23
+#, php-format
 msgid "Can not enable WP Desk Debug log! Cannot create directory %s or this directory is not writeable!"
 msgstr ""
 
 #. Translators: directory.
 #: vendor_prefixed/wpdesk/wp-logs/src/WP/WPCapture.php:36
+#, php-format
 msgid "Can not enable WP Desk Debug log! Cannot create file %s!"
 msgstr ""
 
 #: vendor_prefixed/wpdesk/wp-woocommerce-shipping/src/WooCommerceShipping/AddMethodReminder/AddMethodReminder.php:53
+#, php-format
 msgid "%1$sPlease add now the %2$s shipping method within the shipping zone you want it to be available in →%3$s"
 msgstr ""
 
@@ -855,6 +876,7 @@ msgid "OK"
 msgstr ""
 
 #: vendor_prefixed/wpdesk/wp-woocommerce-shipping/src/WooCommerceShipping/CustomFields/CouldNotFindService.php:21
+#, php-format
 msgid "Not found HTML view for custom field %1$s."
 msgstr ""
 
@@ -882,19 +904,19 @@ msgstr ""
 msgid "Enter a positive value to charge your customers additionally or a negative one to apply the discount. If you use the currency switcher, the final price incl. Handling Fee will be automatically converted to the currently active currency in your shop. The rates will also include the taxes based on your current Tax settings."
 msgstr ""
 
-#: vendor_prefixed/wpdesk/wp-woocommerce-shipping/src/WooCommerceShipping/CustomFields/Services/views/services.php:39
+#: vendor_prefixed/wpdesk/wp-woocommerce-shipping/src/WooCommerceShipping/CustomFields/Services/views/services.php:40
 msgid "Code"
 msgstr ""
 
-#: vendor_prefixed/wpdesk/wp-woocommerce-shipping/src/WooCommerceShipping/CustomFields/Services/views/services.php:42
+#: vendor_prefixed/wpdesk/wp-woocommerce-shipping/src/WooCommerceShipping/CustomFields/Services/views/services.php:43
 msgid "Name"
 msgstr ""
 
-#: vendor_prefixed/wpdesk/wp-woocommerce-shipping/src/WooCommerceShipping/CustomFields/Services/views/services.php:47
+#: vendor_prefixed/wpdesk/wp-woocommerce-shipping/src/WooCommerceShipping/CustomFields/Services/views/services.php:48
 msgid "Enabled"
 msgstr ""
 
-#: vendor_prefixed/wpdesk/wp-woocommerce-shipping/src/WooCommerceShipping/CustomFields/Services/views/services.php:103
+#: vendor_prefixed/wpdesk/wp-woocommerce-shipping/src/WooCommerceShipping/CustomFields/Services/views/services.php:104
 msgid "Drag and drop the services to control their display order. Confirm by clicking Save changes button below."
 msgstr ""
 
@@ -951,10 +973,12 @@ msgid "Use this option to use a different shipper's address for this shipping me
 msgstr ""
 
 #: vendor_prefixed/wpdesk/wp-woocommerce-shipping/src/WooCommerceShipping/FreeShipping/FreeShipping.php:55
+#, php-format
 msgid "Cart value exceeds %s. Free shipping has been applied."
 msgstr ""
 
 #: vendor_prefixed/wpdesk/wp-woocommerce-shipping/src/WooCommerceShipping/FreeShipping/FreeShipping.php:55
+#, php-format
 msgid "Cart value doesn't exceed %s. Free shipping hasn't been applied."
 msgstr ""
 
@@ -987,6 +1011,21 @@ msgstr ""
 msgid "Enter only a numeric value without the currency symbol."
 msgstr ""
 
+#: vendor_prefixed/wpdesk/wp-woocommerce-shipping/src/WooCommerceShipping/Logger/view/display-notice-context-single-value.php:12
+#, php-format
+msgid "Show %1$s"
+msgstr ""
+
+#: vendor_prefixed/wpdesk/wp-woocommerce-shipping/src/WooCommerceShipping/Logger/view/display-notice-context-single-value.php:15
+#, php-format
+msgid "Hide %1$s"
+msgstr ""
+
+#: vendor_prefixed/wpdesk/wp-woocommerce-shipping/src/WooCommerceShipping/Logger/view/display-notice-context-single-value.php:18
+#, php-format
+msgid "Copy %1$s to clipboard"
+msgstr ""
+
 #: vendor_prefixed/wpdesk/wp-woocommerce-shipping/src/WooCommerceShipping/OrderMetaData/FallbackAdminMetaDataInterpreter.php:31
 msgid "Fallback reason"
 msgstr ""
@@ -1012,6 +1051,7 @@ msgid "There was no valid services available."
 msgstr ""
 
 #: vendor_prefixed/wpdesk/wp-woocommerce-shipping/src/WooCommerceShipping/ShippingMethod/RateMethod/Fallback/FallbackRateMethod.php:58
+#, php-format
 msgid "Fallback rate added with reason: %1$s"
 msgstr ""
 
@@ -1040,6 +1080,7 @@ msgid "Shipping Cost Calculation Rules"
 msgstr ""
 
 #: vendor_prefixed/wpdesk/wp-woocommerce-shipping/src/WooCommerceShipping/ShippingMethod/RulesTableAdv.php:34
+#, php-format
 msgid "You can update %1$sFlexible Shipping%2$s plugin to define additional costs for this shipping method. %3$s"
 msgstr ""
 
@@ -1048,6 +1089,7 @@ msgid "Update Now"
 msgstr ""
 
 #: vendor_prefixed/wpdesk/wp-woocommerce-shipping/src/WooCommerceShipping/ShippingMethod/RulesTableAdv.php:36
+#, php-format
 msgid "You can activate %1$sFlexible Shipping%2$s plugin to define additional costs for this shipping method. %3$s"
 msgstr ""
 
@@ -1056,6 +1098,7 @@ msgid "Activate Now"
 msgstr ""
 
 #: vendor_prefixed/wpdesk/wp-woocommerce-shipping/src/WooCommerceShipping/ShippingMethod/RulesTableAdv.php:38
+#, php-format
 msgid "You can install %1$sFlexible Shipping%2$s plugin to define additional costs for this shipping method. %3$s"
 msgstr ""
 
@@ -1080,19 +1123,8 @@ msgid "Fallback Cost"
 msgstr ""
 
 #: vendor_prefixed/wpdesk/wp-woocommerce-shipping/src/WooCommerceShipping/ThirdParty/Germanized/TaxSettingsNotice.php:33
+#, php-format
 msgid "We noticed that you are using the Germanized plugin along with %1$s. In order to display the accurate rates, please select the WooCommerce default option in the Germanized Taxes > Additional Costs > Tax calculation mode settings. %2$sNeed assistance? Get in touch →%3$s"
-msgstr ""
-
-#: vendor_prefixed/wpdesk/wp-woocommerce-shipping/src/WooCommerceShipping/view/display-notice-context-single-value.php:12
-msgid "Show %1$s"
-msgstr ""
-
-#: vendor_prefixed/wpdesk/wp-woocommerce-shipping/src/WooCommerceShipping/view/display-notice-context-single-value.php:15
-msgid "Hide %1$s"
-msgstr ""
-
-#: vendor_prefixed/wpdesk/wp-woocommerce-shipping/src/WooCommerceShipping/view/display-notice-context-single-value.php:18
-msgid "Copy %1$s to clipboard"
 msgstr ""
 
 #: vendor_prefixed/wpdesk/wp-woocommerce-shipping/templates/after-shipping-rate-days-to-arrival.php:16
@@ -1101,6 +1133,7 @@ msgstr ""
 
 #. Translators: time in transit.
 #: vendor_prefixed/wpdesk/wp-woocommerce-shipping/templates/after-shipping-rate-days-to-arrival.php:20
+#, php-format
 msgid "(Delivery Days: %1$d day)"
 msgid_plural "(Delivery Days: %1$d days)"
 msgstr[0] ""
@@ -1108,30 +1141,36 @@ msgstr[1] ""
 
 #. Translators: delivery date.
 #: vendor_prefixed/wpdesk/wp-woocommerce-shipping/templates/after-shipping-rate-delivery-date.php:16
+#, php-format
 msgid "(Delivery Date: %1$s)"
 msgstr ""
 
 #. Translators: plugin name.
 #: vendor_prefixed/wpdesk/wp-wpdesk-rating-petition/src/RatingPetitionNotice.php:151
+#, php-format
 msgid "Awesome, you've been using %s for more than 2 weeks. Could you please do me a BIG favor and give it a 5-star rating on WordPress? ~ Peter"
 msgstr ""
 
 #. Translators: link.
 #: vendor_prefixed/wpdesk/wp-wpdesk-rating-petition/src/RatingPetitionNotice.php:166
+#, php-format
 msgid "%1$sOk, you deserved it%2$s"
 msgstr ""
 
 #. Translators: link.
 #: vendor_prefixed/wpdesk/wp-wpdesk-rating-petition/src/RatingPetitionNotice.php:172
+#, php-format
 msgid "%1$sNope, maybe later%2$s"
 msgstr ""
 
 #. Translators: link.
 #: vendor_prefixed/wpdesk/wp-wpdesk-rating-petition/src/RatingPetitionNotice.php:178
+#, php-format
 msgid "%1$sI already did%2$s"
 msgstr ""
 
 #: vendor_prefixed/wpdesk/wp-wpdesk-rating-petition/src/views/html-text-petition.php:15
+#, php-format
 msgid "Created with %1$s by %2$s - If you like %3$s you can %4$srate us %5$s in plugins repository &rarr;%6$s"
 msgstr ""
 
@@ -1184,6 +1223,7 @@ msgstr ""
 
 #: vendor_prefixed/wpdesk/wp-wpdesk-tracker-deactivation/src/WPDesk/Tracker/Deactivation/views/thickbox.php:23
 #: vendor_prefixed/wpdesk/wp-wpdesk-tracker/src/views/tracker-deactivate.php:11
+#, php-format
 msgid "You are deactivating %s plugin."
 msgstr ""
 
@@ -1197,7 +1237,7 @@ msgid "Skip &amp; Deactivate"
 msgstr ""
 
 #: vendor_prefixed/wpdesk/wp-wpdesk-tracker-deactivation/src/WPDesk/Tracker/Deactivation/views/thickbox.php:99
-#: vendor_prefixed/wpdesk/wp-wpdesk-tracker/src/views/tracker-deactivate.php:126
+#: vendor_prefixed/wpdesk/wp-wpdesk-tracker/src/class-wpdesk-tracker.php:160
 msgid "Submit &amp; Deactivate"
 msgstr ""
 
@@ -1206,7 +1246,8 @@ msgstr ""
 msgid "Cancel"
 msgstr ""
 
-#: vendor_prefixed/wpdesk/wp-wpdesk-tracker/src/PSR/WPDesk/Tracker/OptOut.php:41
+#: vendor_prefixed/wpdesk/wp-wpdesk-tracker/src/PSR/WPDesk/Tracker/OptOut.php:42
+#, php-format
 msgid "You successfully opted out of collecting usage data by %1$s. If you change your mind, you can always opt in later in the plugin's quick links."
 msgstr ""
 
@@ -1222,6 +1263,7 @@ msgstr ""
 #: vendor_prefixed/wpdesk/wp-wpdesk-tracker/src/PSR/WPDesk/Tracker/views/tracker-connect.php:23
 #: vendor_prefixed/wpdesk/wp-wpdesk-tracker/src/views/tracker-connect.php:15
 #: vendor_prefixed/wpdesk/wp-wpdesk-tracker/src/views/tracker-notice.php:19
+#, php-format
 msgid "Hey %s,"
 msgstr ""
 
@@ -1261,6 +1303,7 @@ msgid "Plugin Usage"
 msgstr ""
 
 #: vendor_prefixed/wpdesk/wp-wpdesk-tracker/src/PSR/WPDesk/Tracker/views/tracker-connect.php:70
+#, php-format
 msgid "Current settings and usage information of %1$s plugins"
 msgstr ""
 
