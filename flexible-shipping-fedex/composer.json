@@ -1,5 +1,5 @@
 {
-	"name": "wpdesk/flexible-shipping-fedex",
+	"name": "octolize-plugin/flexible-shipping-fedex",
 	"authors": [
 		{
 			"name": "Krzysiek",
@@ -94,5 +94,7 @@
 		"phpunit-unit": "phpunit --configuration phpunit-unit.xml --coverage-text --colors=never",
 		"phpunit-integration": "phpunit --configuration phpunit-integration.xml --coverage-text --colors=never",
 		"docs": "apigen generate"
-	}
+	},
+	"version": "4.0.10",
+	"type": "wordpress-plugin"
 }

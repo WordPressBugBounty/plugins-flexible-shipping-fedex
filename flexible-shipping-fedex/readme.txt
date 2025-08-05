@@ -4,7 +4,7 @@ Contributors: octolize,grola,sebastianpisula
 Tags: fedex, fedex shipping, fedex shipping rates, fedex api, woocommerce fedex
 Requires at least: 4.5
 Tested up to: 6.8
-Stable tag: 4.0.9
+Stable tag: 4.0.10
 Requires PHP: 7.4
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -14,6 +14,8 @@ Offer FedEx shipping in WooCommerce with real-time rates via FedEx API. Show liv
 == Description ==
 
 = The first free plugin to display FedEx live rates =
+
+[youtube https://www.youtube.com/watch?v=-QAzjKiFbPY]
 
 Use this free FedEx WooCommerce plugin to offer FedEx shipping options to your customers. Don't waste your time and integrate it with your shop in less than 5 minutes! Let your clients see FedEx shipping services with their real prices at the checkout. The shipping costs are calculated dynamically based on the products' weight and addresses using the FedEx API connection. Flexible Shipping for FedEx and WooCommerce uses the global shipping method. It means once it is activated it will display live shipping rates for all the products within all the shipping zones.
 
@@ -138,6 +140,9 @@ Please mind that even if you decide to use the **Custom Services** option and ch
 3. FedEx Live Rates shipping methods in the checkout.
 
 == Changelog ==
+
+= 4.0.10 - 2025-08-04 =
+* Added support for WooCommerce 10.1
 
 = 4.0.9 - 2025-06-23 =
 * Added support for WooCommerce 10.0
