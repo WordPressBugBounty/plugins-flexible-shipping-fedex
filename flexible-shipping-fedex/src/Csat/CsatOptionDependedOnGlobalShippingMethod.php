@@ -13,6 +13,10 @@ class CsatOptionDependedOnGlobalShippingMethod extends CsatOptionDependedOnShipp
 		$this->shipping_method_id = $shipping_method_id;
 	}
 
+	public function is_value_to_display(): bool {
+		return $this->get_value() >= 1;
+	}
+
 	public function hooks(): void {
 		add_filter( 'woocommerce_settings_api_sanitized_fields_' . $this->shipping_method_id, [ $this, 'update_settings' ] );
 	}
