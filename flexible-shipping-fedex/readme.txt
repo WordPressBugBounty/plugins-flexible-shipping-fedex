@@ -1,38 +1,42 @@
 === Shipping Live Rates for FedEx for WooCommerce ===
 
 Contributors: octolize,grola,sebastianpisula
-Tags: fedex, fedex shipping, fedex shipping rates, fedex api, woocommerce fedex
+Tags: fedex, fedex rates, fedex shipping, fedex woocommerce, fedex live rates
 Requires at least: 4.5
-Tested up to: 6.8
-Stable tag: 4.1.0
+Tested up to: 6.9
+Stable tag: 4.1.4
 Requires PHP: 7.4
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-Offer FedEx shipping in WooCommerce with real-time rates via FedEx API. Show live rates at checkout based on weight and addresses.
+Offer FedEx shipping for WooCommerce with real-time rates via FedEx API. Show live rates at checkout based on weight and addresses.
 
 == Description ==
 
-= The first free plugin to display FedEx live rates =
+= The best free plugin to display the FedEx live rates in your WooCommerce store =
+
+Use this free FedEx plugin for WooCommerce to offer FedEx shipping options to your customers. Save time and integrate it with your shop in less than 5 minutes!
 
 [youtube https://www.youtube.com/watch?v=-QAzjKiFbPY]
 
-Use this free FedEx WooCommerce plugin to offer FedEx shipping options to your customers. Don't waste your time and integrate it with your shop in less than 5 minutes! Let your clients see FedEx shipping services with their real prices at the checkout. The shipping costs are calculated dynamically based on the products' weight and addresses using the FedEx API connection. Flexible Shipping for FedEx and WooCommerce uses the global shipping method. It means once it is activated it will display live shipping rates for all the products within all the shipping zones.
+Let your clients see FedEx shipping services with their real prices at checkout. The shipping costs are calculated dynamically based on the products’ weight and addresses using the FedEx API connection.
 
-> **Upgrade to FedEx WooCommerce Live Rates PRO**<br />
-> Get priority e-mail support and access all PRO features, upgrade to [FedEx WooCommerce Live Rates PRO now &rarr;](https://octol.io/fedex-repo-upgrade)
+The FedEx Live Rates plugin uses the global shipping method. It means that once activated, it will display live shipping rates for all products across all shipping zones.
+
+**Upgrade to FedEx Live Rates PRO for WooCommerce**
+Get priority e-mail support and access all PRO features, upgrade to [FedEx WooCommerce Live Rates PRO now →](https://octol.io/fedex-repo-upgrade)
 
 = Features =
 
 * Automatic shipping costs calculation and displaying FedEx live rates
-* FedEx services' shipping costs based on cart weight and shipping address
-* Limiting services only for those available for the customer's address
-* Limiting manually the FedEx services which the customers may choose
+* FedEx services’ shipping costs based on cart weight and shipping address
+* Limiting services only to those available for the customer’s address
+* Limiting manually the FedEx services available to the customer
 * List and Account rates type support
-* Possibility to add the shipment insurance
+* Possibility to add shipment insurance
 * All currencies supported by FedEx
-* Possibility to set the fixed fallback amount in case no rates were returned
-* Debug mode allowing to diagnose the live rates' problems
+* Possibility to set a fixed fallback amount in case no rates were returned
+* Debug mode allowing to diagnose issues with live rates’ configuration
 * FedEx REST API support
 
 = PRO Features =
@@ -41,14 +45,14 @@ Use this free FedEx WooCommerce plugin to offer FedEx shipping options to your c
 * Custom boxes with box weight and padding
 * Packing items separately
 * Fixed value and percentage handling fees/discounts for FedEx rates
-* Estimated delivery date displayed in the checkout
+* Estimated delivery date displayed at checkout
 * Advanced estimated delivery date with maximum time in transit, cutoff and lead time
-* Excluding certain days of the week from estimated delivery date
+* Excluding certain days of the week from the estimated delivery date
 * Custom Origin
 * Multicurrency support
 * Single FedEx Live Rates shipping methods
 
-[Upgrade to PRO Now &rarr;](https://octol.io/fedex-repo-upgrade)
+[Upgrade to PRO Now →](https://octol.io/fedex-repo-upgrade)
 
 = Available FedEx services =
 
@@ -77,15 +81,17 @@ Use this free FedEx WooCommerce plugin to offer FedEx shipping options to your c
 
 = Actively developed and supported =
 
-The Flexible Shipping for FedEx plugin is constantly being developed by Octolize. Our plugins are used by over **250.000 WooCommerce stores worldwide**. Over the years we proved to have become not only the authors of stable and high-quality plugins, but also as a team providing excellent technical support. Join the community of our satisfied plugins’ users. Bet on quality and let our plugins do the rest.
+Over **250.000 WooCommerce stores worldwide** use our plugins. We constantly develop them, earning the reputation of authors of stable and high-quality solutions. We are also praised for providing excellent technical support. Join the community of our satisfied plugin users: bet on quality and let our plugins do the rest.
 
-= Power of Table Rate =
+= The power of Table Rate =
 
-The FedEx WooCommerce Live Rates plugin is now compatible with [Flexible Shipping](https://wordpress.org/plugins/flexible-shipping/) - the most powerful Table Rate shipping plugin for WooCommerce. This provides greater control over delivery costs and allows you to take advantage of both live rates and condition-based shipping costs. You can now combine rates returned by FedEx WooCommerce Live Rates with cost calculated based on price and weight. Moreover, when using [Flexible Shipping PRO](https://octol.io/fs-repo-up), you get access to 15+ conditions, such as shipping class or product categories. Try for free with [Flexible Shipping](https://wordpress.org/plugins/flexible-shipping/)!
+The FedEx Live Rates plugin for WooCommerce is now compatible with [Flexible Shipping](https://wordpress.org/plugins/flexible-shipping/) – the most powerful Table Rate shipping plugin for WooCommerce. This provides greater control over delivery costs and allows you to take advantage of both live rates and condition-based shipping costs.
+
+You can now combine the prices from the FedEx Live Rates plugin with costs calculated based on price and weight. Moreover, when using [Flexible Shipping PRO](https://octol.io/fs-repo-up), you get access to **15+ conditions**, such as shipping class or product categories. Try for free with [Flexible Shipping](https://wordpress.org/plugins/flexible-shipping/)!
 
 = Conditional Shipping Methods =
 
-Extend the default functionalities and **conditionally display or hide the FedEx shipping methods** in your WooCommerce store with Conditional Shipping Methods plugin. Define the rules when the specific shipping methods should be available to pick by your customers and when not to.
+Extend the default functionalities and **conditionally display or hide the FedEx shipping methods** in your WooCommerce store with the Conditional Shipping Methods plugin. Define the rules when the specific shipping methods should be available to pick by your customers and when not to.
 
 Hide the FedEx shipping methods based on numerous conditions:
 
@@ -94,7 +100,7 @@ Hide the FedEx shipping methods based on numerous conditions:
 * Destination & Time (Day of the week, Time of the day, Location)
 * Other shipping methods and shipping methods with zero cost.
 
-[Buy Conditional Shipping Methods now &rarr;](https://octol.io/csm-repo-fedex)
+[Buy Conditional Shipping Methods now →](https://octol.io/csm-repo-fedex)
 
 = Docs =
 
@@ -102,15 +108,15 @@ View [Flexible Shipping for FedEx documentation](https://octol.io/fedex-repo-doc
 
 = Why should you choose our FedEx for WooCommerce plugin as a shipping integration in your shop? =
 
-Our FedEx for WooCommerce plugin is the first free FedEx integration on the market allowing to display live rates for FedEx services in your shop. It combines the powerful and useful features with FedEx's quality and reliability as a world-known trademark. Trust our experience and move your business forward with our latest plugin!
+Our FedEx for WooCommerce plugin is the first free FedEx integration on the market allowing you to display live rates for FedEx services in your shop. It combines the powerful and useful features with FedEx’s quality and reliability as a world-renowned trademark. Trust our experience and move your business forward with our latest plugin!
 
 = Interested in plugin translations? =
 
-We are actively looking for contributors to translate this and [other Octolize plugins](https://profiles.wordpress.org/octolize/#content-plugins). Each supported language tremendously help store owners to conveniently manage shipping operations.
+We are actively looking for contributors to translate this and [other Octolize plugins](https://profiles.wordpress.org/octolize/#content-plugins). Each supported language tremendously helps store owners to conveniently manage shipping operations.
 
-Your translations contribute to the WordPress community at large. Moreover, we're glad to offer you discounts for our PRO plugins and establish long-term collaboration. If you have any translation related questions, please email us at [translations@octolize.com](mailto:translations@octolize.com).
+Your translations contribute to the WordPress community at large. Moreover, **we’re glad to offer you discounts** for our PRO plugins and establish long-term collaboration. If you have any translation-related questions, please email us at translations@octolize.com.
 
-Head over here and help us to translate this plugin:
+Head over here and help us translate this plugin:
 [https://translate.wordpress.org/projects/wp-plugins/flexible-shipping-fedex/](https://translate.wordpress.org/projects/wp-plugins/flexible-shipping-fedex/)
 
 == Installation	 ==
@@ -140,6 +146,18 @@ Please mind that even if you decide to use the **Custom Services** option and ch
 3. FedEx Live Rates shipping methods in the checkout.
 
 == Changelog ==
+
+= 4.1.4 - 2026-01-20 =
+* Added support for WooCommerce 10.5
+
+= 4.1.3 - 2025-12-02 =
+* Added support for WordPress 6.9
+
+= 4.1.2 - 2025-11-25 =
+* Added support for WooCommerce 10.4
+
+= 4.1.1 - 2025-10-06 =
+* Added support for WooCommerce 10.3
 
 = 4.1.0 - 2025-08-25 =
 * Changed the notice type in debug mode

@@ -95,6 +95,6 @@
 		"phpunit-integration": "phpunit --configuration phpunit-integration.xml --coverage-text --colors=never",
 		"docs": "apigen generate"
 	},
-	"version": "4.1.0",
+	"version": "4.1.4",
 	"type": "wordpress-plugin"
 }

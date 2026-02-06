@@ -7,7 +7,7 @@ namespace Composer\Autoload;
 class ComposerStaticInitFSFedex
 {
     public static $prefixLengthsPsr4 = array (
-        'W' => 
+        'W' =>
         array (
             'WPDesk\\FlexibleShippingFedex\\Csat\\' => 34,
             'WPDesk\\FlexibleShippingFedex\\' => 29,
@@ -15,11 +15,11 @@ class ComposerStaticInitFSFedex
     );
 
     public static $prefixDirsPsr4 = array (
-        'WPDesk\\FlexibleShippingFedex\\Csat\\' => 
+        'WPDesk\\FlexibleShippingFedex\\Csat\\' =>
         array (
             0 => __DIR__ . '/../..' . '/src/Csat',
         ),
-        'WPDesk\\FlexibleShippingFedex\\' => 
+        'WPDesk\\FlexibleShippingFedex\\' =>
         array (
             0 => __DIR__ . '/../..' . '/src/Plugin',
         ),
