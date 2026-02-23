@@ -19,6 +19,7 @@ use FedExVendor\Psr\Log\LoggerAwareInterface;
 use FedExVendor\Psr\Log\LoggerAwareTrait;
 use FedExVendor\Psr\Log\NullLogger;
 use FedExVendor\WPDesk\AbstractShipping\Settings\SettingsValuesAsArray;
+use FedExVendor\WPDesk\FedexShippingService\FedexSettingsDefinition;
 use FedExVendor\WPDesk\FedexShippingService\FedexShippingService;
 use FedExVendor\WPDesk\Logger\SimpleLoggerFactory;
 use FedExVendor\WPDesk\Notice\AjaxHandler;
@@ -36,6 +37,7 @@ use FedExVendor\WPDesk\WooCommerceShipping\CustomFields\ApiStatus\FieldApiStatus
 use FedExVendor\WPDesk\WooCommerceShipping\Fedex\FedexShippingMethod;
 use FedExVendor\WPDesk\WooCommerceShipping\Fedex\RestApiAuthProvider;
 use FedExVendor\WPDesk\WooCommerceShipping\Fedex\ShippingZoneMethods;
+use FedExVendor\WPDesk\WooCommerceShipping\Fedex\SoapApiDeprecationNotice;
 use FedExVendor\WPDesk\WooCommerceShipping\Fedex\Tracker;
 use FedExVendor\WPDesk\WooCommerceShipping\OrderMetaData\AdminOrderMetaDataDisplay;
 use FedExVendor\WPDesk\WooCommerceShipping\OrderMetaData\FrontOrderMetaDataDisplay;
@@ -188,6 +190,12 @@ class Plugin extends AbstractPlugin implements LoggerAwareInterface, HookableCol
 		);
 
 		$this->init_tracker();
+
+		$this->add_hookable(
+			new SoapApiDeprecationNotice(
+				$this->global_fedex_settings->get_value( FedexSettingsDefinition::API_TYPE, '' ) === FedexSettingsDefinition::API_TYPE_SOAP
+			)
+		);
 
 		add_action( 'init', [ $this, 'init_upgrade_onboarding' ] );
 

@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the Shipping Live Rates for FedEx for WooCommerce plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Shipping Live Rates for FedEx for WooCommerce 4.1.4\n"
+"Project-Id-Version: Shipping Live Rates for FedEx for WooCommerce 4.2.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/flexible-shipping-fedex\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-01-20T00:09:02+00:00\n"
+"POT-Creation-Date: 2026-02-23T11:29:26+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: flexible-shipping-fedex\n"
@@ -39,32 +39,32 @@ msgstr ""
 msgid "https://octol.io/fedex-author"
 msgstr ""
 
-#: src/Plugin/Plugin.php:147
+#: src/Plugin/Plugin.php:149
 msgid "Service Code"
 msgstr ""
 
-#: src/Plugin/Plugin.php:207
+#: src/Plugin/Plugin.php:215
 msgid "We have added new services"
 msgstr ""
 
-#: src/Plugin/Plugin.php:208
+#: src/Plugin/Plugin.php:216
 msgid "We're thrilled to announce that our FedEx Live Rates plugin now offers FedEx First, FedEx Priority Express, and FedEx Economy rates at checkout, in addition to previously available services. This wider selection of FedEx services allows you to offer customers more tailored shipping options to meet their needs. We're glad to be a part of your success!"
 msgstr ""
 
-#: src/Plugin/Plugin.php:217
+#: src/Plugin/Plugin.php:225
 msgid "New FedEx API introduced"
 msgstr ""
 
-#: src/Plugin/Plugin.php:218
+#: src/Plugin/Plugin.php:226
 msgid "We're thrilled to announce that we've upgraded FedEx Live Rates plugin to use the latest FedEx API. This enhancement allows for seamless retrieval of shipping costs directly from FedEx, streamlining your shipping process and ensuring accurate rates for your customers."
 msgstr ""
 
-#: src/Plugin/Plugin.php:311
+#: src/Plugin/Plugin.php:319
 #: vendor_prefixed/wpdesk/wp-builder/src/Plugin/AbstractPlugin.php:188
 msgid "Settings"
 msgstr ""
 
-#: src/Plugin/Plugin.php:316
+#: src/Plugin/Plugin.php:324
 msgid "Buy PRO"
 msgstr ""
 
@@ -786,52 +786,52 @@ msgstr ""
 msgid "The maximum package weight has been exceeded. Maximum package weight is: %1$s %2$s."
 msgstr ""
 
-#: vendor_prefixed/wpdesk/wp-basic-requirements/src/Basic_Requirement_Checker.php:189
+#: vendor_prefixed/wpdesk/wp-basic-requirements/src/Basic_Requirement_Checker.php:206
 #, php-format
 msgid "The &#8220;%s&#8221; plugin cannot run on PHP versions older than %s. Please contact your host and ask them to upgrade."
 msgstr ""
 
-#: vendor_prefixed/wpdesk/wp-basic-requirements/src/Basic_Requirement_Checker.php:192
+#: vendor_prefixed/wpdesk/wp-basic-requirements/src/Basic_Requirement_Checker.php:209
 #, php-format
 msgid "The &#8220;%s&#8221; plugin cannot run on WordPress versions older than %s. Please update WordPress."
 msgstr ""
 
-#: vendor_prefixed/wpdesk/wp-basic-requirements/src/Basic_Requirement_Checker.php:195
+#: vendor_prefixed/wpdesk/wp-basic-requirements/src/Basic_Requirement_Checker.php:212
 #, php-format
 msgid "The &#8220;%s&#8221; plugin cannot run on WooCommerce versions older than %s. Please update WooCommerce."
 msgstr ""
 
-#: vendor_prefixed/wpdesk/wp-basic-requirements/src/Basic_Requirement_Checker.php:198
+#: vendor_prefixed/wpdesk/wp-basic-requirements/src/Basic_Requirement_Checker.php:215
 #, php-format
 msgid "The &#8220;%s&#8221; plugin cannot run without OpenSSL module version at least %s. Please update OpenSSL module."
 msgstr ""
 
-#: vendor_prefixed/wpdesk/wp-basic-requirements/src/Basic_Requirement_Checker.php:285
+#: vendor_prefixed/wpdesk/wp-basic-requirements/src/Basic_Requirement_Checker.php:310
 #, php-format
 msgid "The &#8220;%1$s&#8221; plugin requires at least %2$s version of %3$s to work correctly. Please update it to its latest release."
 msgstr ""
 
-#: vendor_prefixed/wpdesk/wp-basic-requirements/src/Basic_Requirement_Checker.php:391
+#: vendor_prefixed/wpdesk/wp-basic-requirements/src/Basic_Requirement_Checker.php:416
 #, php-format
 msgid "The &#8220;%s&#8221; plugin cannot run without %s active. Please install and activate %s plugin."
 msgstr ""
 
-#: vendor_prefixed/wpdesk/wp-basic-requirements/src/Basic_Requirement_Checker.php:428
+#: vendor_prefixed/wpdesk/wp-basic-requirements/src/Basic_Requirement_Checker.php:468
 #, php-format
 msgid "The &#8220;%s&#8221; plugin requires free %s plugin. <a href=\"%s\">Install %s</a>"
 msgstr ""
 
-#: vendor_prefixed/wpdesk/wp-basic-requirements/src/Basic_Requirement_Checker.php:434
+#: vendor_prefixed/wpdesk/wp-basic-requirements/src/Basic_Requirement_Checker.php:474
 #, php-format
 msgid "The &#8220;%s&#8221; plugin requires activating %s plugin. <a href=\"%s\">Activate %s</a>"
 msgstr ""
 
-#: vendor_prefixed/wpdesk/wp-basic-requirements/src/Basic_Requirement_Checker.php:476
+#: vendor_prefixed/wpdesk/wp-basic-requirements/src/Basic_Requirement_Checker.php:516
 #, php-format
 msgid "The &#8220;%s&#8221; plugin cannot run without %s PHP module installed. Please contact your host and ask them to install %s."
 msgstr ""
 
-#: vendor_prefixed/wpdesk/wp-basic-requirements/src/Basic_Requirement_Checker.php:501
+#: vendor_prefixed/wpdesk/wp-basic-requirements/src/Basic_Requirement_Checker.php:541
 #, php-format
 msgid "The &#8220;%s&#8221; plugin cannot run without %s PHP setting set to %s. Please contact your host and ask them to set %s."
 msgstr ""
@@ -839,6 +839,57 @@ msgstr ""
 #: vendor_prefixed/wpdesk/wp-basic-requirements/src/Basic_Requirement_Checker_With_Update_Disable.php:29
 #, php-format
 msgid "The &#8220;%s&#8221; plugin is temporarily disabled since the required %s plugin is being upgraded."
+msgstr ""
+
+#: vendor_prefixed/wpdesk/wp-fedex-shipping-method/src/WooCommerceShipping/views/soap-api-deprecation-notice.php:10
+msgid "FedEx SOAP Web Services are being retired — action required"
+msgstr ""
+
+#: vendor_prefixed/wpdesk/wp-fedex-shipping-method/src/WooCommerceShipping/views/soap-api-deprecation-notice.php:13
+msgid "FedEx will retire its legacy SOAP Web Services in June 2026. Our plugin fully supports the new FedEx REST API."
+msgstr ""
+
+#: vendor_prefixed/wpdesk/wp-fedex-shipping-method/src/WooCommerceShipping/views/soap-api-deprecation-notice.php:16
+msgid "You are currently using FedEx SOAP Web Services credentials. To avoid any disruption of service, you need to update your configuration."
+msgstr ""
+
+#: vendor_prefixed/wpdesk/wp-fedex-shipping-method/src/WooCommerceShipping/views/soap-api-deprecation-notice.php:21
+msgid "What you need to do:"
+msgstr ""
+
+#: vendor_prefixed/wpdesk/wp-fedex-shipping-method/src/WooCommerceShipping/views/soap-api-deprecation-notice.php:24
+#, php-format
+msgid " - Go to %1$splugin settings%2$s,"
+msgstr ""
+
+#: vendor_prefixed/wpdesk/wp-fedex-shipping-method/src/WooCommerceShipping/views/soap-api-deprecation-notice.php:27
+#, php-format
+msgid " - Switch API Type to use %1$sFedEx REST API%2$s,"
+msgstr ""
+
+#: vendor_prefixed/wpdesk/wp-fedex-shipping-method/src/WooCommerceShipping/views/soap-api-deprecation-notice.php:30
+msgid " - Generate your REST API credentials by following this guide:"
+msgstr ""
+
+#: vendor_prefixed/wpdesk/wp-fedex-shipping-method/src/WooCommerceShipping/views/soap-api-deprecation-notice.php:33
+#, php-format
+msgid " - %1$shttps://octolize.com/docs/article/fedex-how-to-get-the-api-key/%2$s"
+msgstr ""
+
+#: vendor_prefixed/wpdesk/wp-fedex-shipping-method/src/WooCommerceShipping/views/soap-api-deprecation-notice.php:36
+msgid " - Enter the REST API credentials,"
+msgstr ""
+
+#: vendor_prefixed/wpdesk/wp-fedex-shipping-method/src/WooCommerceShipping/views/soap-api-deprecation-notice.php:39
+msgid " - Save the settings."
+msgstr ""
+
+#: vendor_prefixed/wpdesk/wp-fedex-shipping-method/src/WooCommerceShipping/views/soap-api-deprecation-notice.php:42
+msgid " - Please complete the update before June 2026 to ensure uninterrupted FedEx live rates at checkout."
+msgstr ""
+
+#: vendor_prefixed/wpdesk/wp-fedex-shipping-method/src/WooCommerceShipping/views/soap-api-deprecation-notice.php:47
+msgid "Thank you for using FedEx Live Rates!"
 msgstr ""
 
 #: vendor_prefixed/wpdesk/wp-forms/templates/input-image.php:46
@@ -1202,6 +1253,98 @@ msgstr[1] ""
 #: vendor_prefixed/wpdesk/wp-woocommerce-shipping/templates/after-shipping-rate-delivery-date.php:16
 #, php-format
 msgid "(Delivery Date: %1$s)"
+msgstr ""
+
+#: vendor_prefixed/wpdesk/wp-wpdesk-rating-petition/src/PopupPetition/PopupPetitionAjax.php:32
+msgid "Invalid nonce."
+msgstr ""
+
+#: vendor_prefixed/wpdesk/wp-wpdesk-rating-petition/src/PopupPetition/PopupPetitionAjax.php:46
+msgid "Unknown action."
+msgstr ""
+
+#: vendor_prefixed/wpdesk/wp-wpdesk-rating-petition/src/PopupPetition/PopupPetitionAjax.php:53
+msgid "Invalid rating value."
+msgstr ""
+
+#: vendor_prefixed/wpdesk/wp-wpdesk-rating-petition/src/PopupPetition/PopupPetitionAjax.php:68
+#: vendor_prefixed/wpdesk/wp-wpdesk-rating-petition/src/PopupPetition/PopupPetitionAjax.php:78
+msgid "Message is required."
+msgstr ""
+
+#: vendor_prefixed/wpdesk/wp-wpdesk-rating-petition/src/PopupPetition/PopupPetitionAjax.php:70
+#, php-format
+msgid "Feedback for %s"
+msgstr ""
+
+#: vendor_prefixed/wpdesk/wp-wpdesk-rating-petition/src/PopupPetition/PopupPetitionAjax.php:83
+msgid "Thank you for your feedback!"
+msgstr ""
+
+#: vendor_prefixed/wpdesk/wp-wpdesk-rating-petition/src/PopupPetition/PopupPetitionAjax.php:85
+msgid "Could not send email. Please try again later."
+msgstr ""
+
+#: vendor_prefixed/wpdesk/wp-wpdesk-rating-petition/src/PopupPetition/PopupPetitionAjax.php:99
+msgid "Postponed."
+msgstr ""
+
+#: vendor_prefixed/wpdesk/wp-wpdesk-rating-petition/src/PopupPetition/PopupPetitionDisplayer.php:44
+msgid "Unexpected server response."
+msgstr ""
+
+#: vendor_prefixed/wpdesk/wp-wpdesk-rating-petition/src/PopupPetition/PopupPetitionDisplayer.php:44
+msgid "Request failed"
+msgstr ""
+
+#: vendor_prefixed/wpdesk/wp-wpdesk-rating-petition/src/PopupPetition/PopupPetitionDisplayer.php:44
+msgid "Message cannot be empty."
+msgstr ""
+
+#: vendor_prefixed/wpdesk/wp-wpdesk-rating-petition/src/PopupPetition/PopupPetitionDisplayer.php:44
+msgid "Your feedback"
+msgstr ""
+
+#: vendor_prefixed/wpdesk/wp-wpdesk-rating-petition/src/PopupPetition/PopupPetitionDisplayer.php:44
+msgid "Email"
+msgstr ""
+
+#: vendor_prefixed/wpdesk/wp-wpdesk-rating-petition/src/PopupPetition/PopupPetitionDisplayer.php:44
+msgid "Email (optional)"
+msgstr ""
+
+#: vendor_prefixed/wpdesk/wp-wpdesk-rating-petition/src/PopupPetition/PopupPetitionDisplayer.php:44
+msgid "Send"
+msgstr ""
+
+#: vendor_prefixed/wpdesk/wp-wpdesk-rating-petition/src/PopupPetition/PopupPetitionDisplayer.php:44
+msgid "Later"
+msgstr ""
+
+#: vendor_prefixed/wpdesk/wp-wpdesk-rating-petition/src/PopupPetition/PopupPetitionDisplayer.php:44
+msgid "Close"
+msgstr ""
+
+#: vendor_prefixed/wpdesk/wp-wpdesk-rating-petition/src/PopupPetition/PopupPetitionDisplayer.php:44
+msgid "Thank you!"
+msgstr ""
+
+#: vendor_prefixed/wpdesk/wp-wpdesk-rating-petition/src/PopupPetition/PopupPetitionDisplayer.php:44
+#, php-format
+msgid "%d star"
+msgstr ""
+
+#: vendor_prefixed/wpdesk/wp-wpdesk-rating-petition/src/PopupPetition/PopupPetitionDisplayer.php:44
+msgid "you@example.com"
+msgstr ""
+
+#: vendor_prefixed/wpdesk/wp-wpdesk-rating-petition/src/PopupPetition/RepositoryPopupPetitionText.php:18
+#, php-format
+msgid "How's %1$s so far?"
+msgstr ""
+
+#: vendor_prefixed/wpdesk/wp-wpdesk-rating-petition/src/PopupPetition/RepositoryPopupRatingText.php:18
+msgid "Rate us clicking on the stars:"
 msgstr ""
 
 #. Translators: plugin name.
