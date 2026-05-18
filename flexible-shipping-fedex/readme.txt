@@ -3,8 +3,8 @@
 Contributors: octolize,grola,sebastianpisula
 Tags: fedex, fedex rates, fedex shipping, fedex woocommerce, fedex live rates
 Requires at least: 4.5
-Tested up to: 6.9
-Stable tag: 4.2.3
+Tested up to: 7.0
+Stable tag: 4.2.4
 Requires PHP: 7.4
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -51,6 +51,7 @@ Get priority e-mail support and access all PRO features, upgrade to [FedEx WooCo
 * Custom Origin
 * Multicurrency support
 * Single FedEx Live Rates shipping methods
+* FedEx Freight LTL support
 
 [Upgrade to PRO Now →](https://octol.io/fedex-repo-upgrade)
 
@@ -146,6 +147,10 @@ Please mind that even if you decide to use the **Custom Services** option and ch
 3. FedEx Live Rates shipping methods in the checkout.
 
 == Changelog ==
+
+= 4.2.4 - 2026-05-18 =
+* Added support for WordPress 7.0
+* Added info about FedEx Freight LTL support in PRO version
 
 = 4.2.3 - 2026-05-11 =
 * Added support for WooCommerce 10.8

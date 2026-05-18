@@ -47,6 +47,7 @@ class SettingsSidebar implements Hookable, HookableCollection {
 				__( 'Handling Fees', 'flexible-shipping-fedex' ),
 				__( 'Multicurrency Support', 'flexible-shipping-fedex' ),
 				__( 'Delivery Dates', 'flexible-shipping-fedex' ),
+				__( 'FedEx Freight LTL Support', 'flexible-shipping-fedex' ),
 			],
 			'pl_PL' === get_locale() ? 'https://octol.io/fedex-upgrade-box-pl' : 'https://octol.io/fedex-upgrade-box',
 			__( 'Upgrade Now', 'flexible-shipping-fedex' ),
