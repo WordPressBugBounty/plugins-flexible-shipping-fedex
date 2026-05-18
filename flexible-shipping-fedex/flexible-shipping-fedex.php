@@ -3,13 +3,13 @@
  * Plugin Name: Shipping Live Rates for FedEx for WooCommerce
  * Plugin URI: https://wordpress.org/plugins/flexible-shipping-fedex/
  * Description: FedEx WooCommerce shipping methods with real-time calculated shipping rates based on the established FedEx API connection.
- * Version: 4.2.4
+ * Version: 4.2.5
  * Author: Octolize
  * Author URI: https://octol.io/fedex-author
  * Text Domain: flexible-shipping-fedex
  * Domain Path: /lang/
  * Requires at least: 6.4
- * Tested up to: 6.9
+ * Tested up to: 7.0
  * WC requires at least: 10.4
  * WC tested up to: 10.8
  * Requires PHP: 7.4
@@ -38,7 +38,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 } // Exit if accessed directly
 
 /* THIS VARIABLE CAN BE CHANGED AUTOMATICALLY */
-$plugin_version = '4.2.4';
+$plugin_version = '4.2.5';
 
 $plugin_name        = 'Flexible Shipping FedEx';
 $plugin_class_name  = '\WPDesk\FlexibleShippingFedex\Plugin';
