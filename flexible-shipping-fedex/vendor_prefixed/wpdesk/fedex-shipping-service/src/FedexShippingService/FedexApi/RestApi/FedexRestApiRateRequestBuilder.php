@@ -229,7 +229,7 @@ class FedexRestApiRateRequestBuilder
      */
     private function get_built_in_packaging_types(): array
     {
-        return array(PackagingType::FEDEX_TUBE, PackagingType::FEDEX_PAK, PackagingType::FEDEX_LARGE_BOX, PackagingType::FEDEX_SMALL_BOX, PackagingType::FEDEX_10KG_BOX, PackagingType::FEDEX_BOX, PackagingType::FEDEX_25KG_BOX, PackagingType::FEDEX_ENVELOPE, PackagingType::FEDEX_EXTRA_LARGE_BOX, PackagingType::FEDEX_MEDIUM_BOX);
+        return array(PackagingType::FEDEX_TUBE, PackagingType::FEDEX_PAK, PackagingType::FEDEX_LARGE_BOX, PackagingType::FEDEX_SMALL_BOX, PackagingType::FEDEX_10KG_BOX, PackagingType::FEDEX_BOX, PackagingType::FEDEX_25KG_BOX, PackagingType::FEDEX_ENVELOPE, PackagingType::FEDEX_EXTRA_LARGE_BOX, PackagingType::FEDEX_MEDIUM_BOX, PackagingType::FEDEX_EXTRA_SMALL_BOX);
     }
     private function create_shipment(): void
     {
