@@ -7,7 +7,6 @@ use FedExVendor\GuzzleHttp\HandlerStack;
 use FedExVendor\GuzzleHttp\Promise as P;
 use FedExVendor\GuzzleHttp\Promise\PromiseInterface;
 use FedExVendor\GuzzleHttp\TransferStats;
-use FedExVendor\GuzzleHttp\Utils;
 use FedExVendor\Psr\Http\Message\RequestInterface;
 use FedExVendor\Psr\Http\Message\ResponseInterface;
 use FedExVendor\Psr\Http\Message\StreamInterface;
@@ -131,7 +130,7 @@ class MockHandler implements \Countable
             if ($value instanceof ResponseInterface || $value instanceof \Throwable || $value instanceof PromiseInterface || \is_callable($value)) {
                 $this->queue[] = $value;
             } else {
-                throw new \TypeError('Expected a Response, Promise, Throwable or callable. Found ' . Utils::describeType($value));
+                throw new \TypeError('Expected a Response, Promise, Throwable or callable. Found ' . \get_debug_type($value));
             }
         }
     }

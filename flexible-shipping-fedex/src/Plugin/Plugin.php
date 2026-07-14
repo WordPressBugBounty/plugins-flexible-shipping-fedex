@@ -10,6 +10,7 @@ namespace WPDesk\FlexibleShippingFedex;
 use FedExVendor\Octolize\Brand\UpsellingBox\ShippingMethodShouldShowStrategy;
 use FedExVendor\Octolize\Csat\Csat;
 use FedExVendor\Octolize\Csat\CsatCodeFromFile;
+use FedExVendor\Octolize\Docs\Chat\DocsChat;
 use FedExVendor\Octolize\Onboarding\PluginUpgrade\MessageFactory\LiveRatesFsRulesTable;
 use FedExVendor\Octolize\Onboarding\PluginUpgrade\PluginUpgradeMessage;
 use FedExVendor\Octolize\Onboarding\PluginUpgrade\PluginUpgradeOnboardingFactory;
@@ -31,6 +32,9 @@ use FedExVendor\WPDesk\RepositoryRating\RatingPetitionNotice;
 use FedExVendor\WPDesk\RepositoryRating\RepositoryRatingPetitionText;
 use FedExVendor\WPDesk\RepositoryRating\TextPetitionDisplayer;
 use FedExVendor\WPDesk\RepositoryRating\TimeWatcher\ShippingMethodGlobalSettingsWatcher;
+use FedExVendor\WPDesk\ShowDecision\OrStrategy;
+use FedExVendor\WPDesk\ShowDecision\WooCommerce\ShippingMethodInstanceStrategy;
+use FedExVendor\WPDesk\ShowDecision\WooCommerce\ShippingMethodStrategy;
 use FedExVendor\WPDesk\WooCommerceShipping\ActivePayments;
 use FedExVendor\WPDesk\WooCommerceShipping\Assets;
 use FedExVendor\WPDesk\WooCommerceShipping\CustomFields\ApiStatus\FieldApiStatusAjax;
@@ -48,6 +52,7 @@ use FedExVendor\WPDesk\WooCommerceShipping\ShopSettings;
 use FedExVendor\WPDesk\WooCommerceShipping\Ups\MetaDataInterpreters\FallbackAdminMetaDataInterpreter;
 use FedExVendor\WPDesk_Plugin_Info;
 use WPDesk\FlexibleShippingFedex\Csat\CsatOptionDependedOnGlobalShippingMethod;
+use WPDesk\FlexibleShippingFedex\HookProvider\Admin\DocsChatSettingsProvider;
 
 /**
  * Main plugin class. The most important flow decisions are made here.
@@ -199,7 +204,34 @@ class Plugin extends AbstractPlugin implements LoggerAwareInterface, HookableCol
 
 		add_action( 'init', [ $this, 'init_upgrade_onboarding' ] );
 
+		$this->initialize_docs_chat();
+
 		parent::init();
+	}
+
+	private function initialize_docs_chat(): void {
+		$plugin_slug = 'flexible-shipping-fedex';
+		$plugin_name = 'Flexible Shipping FedEx';
+
+		$show_strategy = new OrStrategy(
+			new ShippingMethodStrategy( FedexShippingService::UNIQUE_ID )
+		);
+		$show_strategy->addCondition(
+			new ShippingMethodInstanceStrategy(
+				new \WC_Shipping_Zones(),
+				FedexShippingService::UNIQUE_ID
+			)
+		);
+
+		$this->add_hookable(
+			new DocsChat(
+				$plugin_slug,
+				$this->get_plugin_url(),
+				$this->plugin_info->get_version(),
+				$show_strategy,
+				new DocsChatSettingsProvider( $plugin_name )
+			)
+		);
 	}
 
 	public function init_upgrade_onboarding(): void {

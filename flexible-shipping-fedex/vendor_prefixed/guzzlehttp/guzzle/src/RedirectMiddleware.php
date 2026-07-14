@@ -3,6 +3,7 @@
 namespace FedExVendor\GuzzleHttp;
 
 use FedExVendor\GuzzleHttp\Exception\BadResponseException;
+use FedExVendor\GuzzleHttp\Exception\RequestException;
 use FedExVendor\GuzzleHttp\Exception\TooManyRedirectsException;
 use FedExVendor\GuzzleHttp\Promise\PromiseInterface;
 use FedExVendor\Psr\Http\Message\RequestInterface;
@@ -120,10 +121,11 @@ class RedirectMiddleware
         // would do.
         $statusCode = $response->getStatusCode();
         if ($statusCode == 303 || $statusCode <= 302 && !$options['allow_redirects']['strict']) {
-            $safeMethods = ['GET', 'HEAD', 'OPTIONS'];
             $requestMethod = $request->getMethod();
-            $modify['method'] = in_array($requestMethod, $safeMethods) ? $requestMethod : 'GET';
-            $modify['body'] = '';
+            if ($requestMethod !== 'QUERY' || !\in_array($statusCode, [301, 302], \true)) {
+                $modify['method'] = \in_array($requestMethod, ['GET', 'HEAD', 'OPTIONS'], \true) ? $requestMethod : 'GET';
+                $modify['body'] = '';
+            }
         }
         $uri = self::redirectUri($request, $response, $protocols);
         $idnOptions = Utils::normalizeIdnConversionOption($options['idn_conversion'] ?? null);
@@ -131,7 +133,14 @@ class RedirectMiddleware
             $uri = Utils::idnUriConvert($uri, $idnOptions);
         }
         $modify['uri'] = $uri;
-        Psr7\Message::rewindBody($request);
+        // The body only needs to be rewound when the next request reuses it.
+        if (!isset($modify['body'])) {
+            try {
+                Psr7\Message::rewindBody($request);
+            } catch (\RuntimeException $e) {
+                throw new RequestException('Redirect failed because the request body could not be rewound: ' . $e->getMessage(), $request, $response, $e);
+            }
+        }
         // Add the Referer header if it is told to do so and only
         // add the header if we are not redirecting from https to http.
         if ($options['allow_redirects']['referer'] && $modify['uri']->getScheme() === $request->getUri()->getScheme()) {

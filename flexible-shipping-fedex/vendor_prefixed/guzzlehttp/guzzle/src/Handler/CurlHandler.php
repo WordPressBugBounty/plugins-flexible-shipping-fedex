@@ -16,6 +16,7 @@ use FedExVendor\Psr\Http\Message\RequestInterface;
  */
 class CurlHandler
 {
+    private const KNOWN_CONSTRUCTOR_OPTIONS = ['handle_factory' => \true, 'transport_sharing' => \true];
     /**
      * @var CurlFactoryInterface
      */
@@ -34,6 +35,11 @@ class CurlHandler
      */
     public function __construct(array $options = [])
     {
+        foreach ($options as $name => $_) {
+            if (!isset(self::KNOWN_CONSTRUCTOR_OPTIONS[$name])) {
+                \FedExVendor\trigger_deprecation('guzzlehttp/guzzle', '7.14', \sprintf('The "%s" CurlHandler constructor option is unknown; guzzlehttp/guzzle 8.0 will reject unknown constructor options.', (string) $name));
+            }
+        }
         CurlShareHandleState::assertNoRequiredSharingCustomFactoryConflict($options, 'CurlHandler');
         $transportSharing = $options['transport_sharing'] ?? null;
         $sharingMode = CurlShareHandleState::normalizeMode($transportSharing, 'transport_sharing');

@@ -29,6 +29,7 @@ class Request implements RequestInterface
     public function __construct(string $method, $uri, array $headers = [], $body = null, string $version = '1.1')
     {
         $this->assertMethod($method);
+        $this->assertProtocolVersion($version);
         if (!$uri instanceof UriInterface) {
             $uri = new Uri($uri);
         }
@@ -60,7 +61,11 @@ class Request implements RequestInterface
     }
     public function withRequestTarget($requestTarget): RequestInterface
     {
-        if (preg_match('#\s#', $requestTarget)) {
+        $hasWhitespace = preg_match('#\s#', $requestTarget);
+        if ($hasWhitespace === \false) {
+            throw new \RuntimeException('Unable to validate request target: ' . preg_last_error_msg());
+        }
+        if ($hasWhitespace === 1) {
             throw new InvalidArgumentException('Invalid request target provided; cannot contain whitespace');
         }
         $new = clone $this;
@@ -127,6 +132,7 @@ class Request implements RequestInterface
         if (!is_string($method) || $method === '') {
             throw new InvalidArgumentException('Method must be a non-empty string.');
         }
+        $this->assertNoLineSeparators($method, 'Method');
     }
     private static function warnOnMethodCasingChange(string $method): void
     {

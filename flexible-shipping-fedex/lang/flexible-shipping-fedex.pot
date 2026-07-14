@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the Shipping Live Rates for FedEx for WooCommerce plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Shipping Live Rates for FedEx for WooCommerce 4.3.0\n"
+"Project-Id-Version: Shipping Live Rates for FedEx for WooCommerce 4.4.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/flexible-shipping-fedex\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-06-11T16:41:27+00:00\n"
+"POT-Creation-Date: 2026-07-14T09:25:26+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: flexible-shipping-fedex\n"
@@ -39,32 +39,59 @@ msgstr ""
 msgid "https://octol.io/fedex-author"
 msgstr ""
 
-#: src/Plugin/Plugin.php:149
+#: src/Plugin/HookProvider/Admin/DocsChatSettingsProvider.php:81
+#: vendor_prefixed/octolize/wp-octolize-docs-chat/src/Chat/ConsentSettings.php:77
+msgid "Do you consent to sending data to the chat?"
+msgstr ""
+
+#: src/Plugin/HookProvider/Admin/DocsChatSettingsProvider.php:82
+msgid "To start the chat, we need to send your inputs and technical data to the chat service."
+msgstr ""
+
+#: src/Plugin/HookProvider/Admin/DocsChatSettingsProvider.php:83
+#: vendor_prefixed/octolize/wp-octolize-docs-chat/src/Chat/ConsentSettings.php:77
+msgid "Accept"
+msgstr ""
+
+#: src/Plugin/HookProvider/Admin/DocsChatSettingsProvider.php:84
+#: vendor_prefixed/octolize/wp-octolize-docs-chat/src/Chat/ConsentSettings.php:77
+msgid "Decline"
+msgstr ""
+
+#: src/Plugin/HookProvider/Admin/DocsChatSettingsProvider.php:88
+msgid "If you don’t want to give consent, you can contact our support using this: "
+msgstr ""
+
+#: src/Plugin/HookProvider/Admin/DocsChatSettingsProvider.php:89
+msgid "support forum"
+msgstr ""
+
+#: src/Plugin/Plugin.php:154
 msgid "Service Code"
 msgstr ""
 
-#: src/Plugin/Plugin.php:215
+#: src/Plugin/Plugin.php:247
 msgid "We have added new services"
 msgstr ""
 
-#: src/Plugin/Plugin.php:216
+#: src/Plugin/Plugin.php:248
 msgid "We're thrilled to announce that our FedEx Live Rates plugin now offers FedEx First, FedEx Priority Express, and FedEx Economy rates at checkout, in addition to previously available services. This wider selection of FedEx services allows you to offer customers more tailored shipping options to meet their needs. We're glad to be a part of your success!"
 msgstr ""
 
-#: src/Plugin/Plugin.php:225
+#: src/Plugin/Plugin.php:257
 msgid "New FedEx API introduced"
 msgstr ""
 
-#: src/Plugin/Plugin.php:226
+#: src/Plugin/Plugin.php:258
 msgid "We're thrilled to announce that we've upgraded FedEx Live Rates plugin to use the latest FedEx API. This enhancement allows for seamless retrieval of shipping costs directly from FedEx, streamlining your shipping process and ensuring accurate rates for your customers."
 msgstr ""
 
-#: src/Plugin/Plugin.php:319
+#: src/Plugin/Plugin.php:351
 #: vendor_prefixed/wpdesk/wp-builder/src/Plugin/AbstractPlugin.php:188
 msgid "Settings"
 msgstr ""
 
-#: src/Plugin/Plugin.php:324
+#: src/Plugin/Plugin.php:356
 msgid "Buy PRO"
 msgstr ""
 
@@ -114,6 +141,56 @@ msgstr ""
 
 #: src/Plugin/SettingsSidebar.php:53
 msgid "Upgrade Now"
+msgstr ""
+
+#: vendor_prefixed/octolize/wp-octolize-docs-chat/src/Chat/ChatSettings.php:121
+msgid "Hi there! 👋 I’m here to help you set up and use the plugin."
+msgstr ""
+
+#: vendor_prefixed/octolize/wp-octolize-docs-chat/src/Chat/ChatSettings.php:121
+msgid ""
+"You can ask me about:\n"
+"- settings and configuration,\n"
+"- common errors and how to fix them,\n"
+"- integrations with other tools.\n"
+"\n"
+"Just tell me what you need help with 🙂"
+msgstr ""
+
+#: vendor_prefixed/octolize/wp-octolize-docs-chat/src/Chat/ChatSettings.php:129
+msgid "Hi there! 👋"
+msgstr ""
+
+#: vendor_prefixed/octolize/wp-octolize-docs-chat/src/Chat/ChatSettings.php:132
+msgid "I’m your AI Assistant. I’ll help you quickly configure the plugin and solve any issues."
+msgstr ""
+
+#: vendor_prefixed/octolize/wp-octolize-docs-chat/src/Chat/ChatSettings.php:135
+msgid "Type your question to get instant answer.."
+msgstr ""
+
+#: vendor_prefixed/octolize/wp-octolize-docs-chat/src/Chat/ChatSettings.php:138
+msgid "AI can make mistakes. Octolize has access to the conversation held in this chat."
+msgstr ""
+
+#: vendor_prefixed/octolize/wp-octolize-docs-chat/src/Chat/ChatSettings.php:141
+msgid "New conversation"
+msgstr ""
+
+#: vendor_prefixed/octolize/wp-octolize-docs-chat/src/Chat/ConsentSettings.php:77
+msgid "To start the chat, we need to send your inputs and technical data to the chat service. Read more in our Privacy Policy."
+msgstr ""
+
+#: vendor_prefixed/octolize/wp-octolize-docs-chat/src/Chat/ConsentSettings.php:77
+msgid "Privacy Policy"
+msgstr ""
+
+#: vendor_prefixed/octolize/wp-octolize-docs-chat/src/Chat/ConsentSettings.php:77
+msgid "If you don’t want to give consent, you can contact our support using this form:"
+msgstr ""
+
+#: vendor_prefixed/octolize/wp-octolize-docs-chat/src/Chat/ConsentSettings.php:77
+msgid "Support form"
 msgstr ""
 
 #: vendor_prefixed/octolize/wp-octolize-tracker/src/DeactivationTracker/OctolizeProReasonsFactory.php:22
@@ -343,11 +420,11 @@ msgid "WooCommerce UPS integration packed with many advanced features. Display t
 msgstr ""
 
 #: vendor_prefixed/octolize/wp-shipping-extensions/src/ShippingExtensions/Plugin/PluginFactory.php:48
-msgid "FedEx WooCommerce Live Rates PRO"
+msgid "FedEx WooCommerce Live Rates PRO<br>(with LTL Freight)"
 msgstr ""
 
 #: vendor_prefixed/octolize/wp-shipping-extensions/src/ShippingExtensions/Plugin/PluginFactory.php:48
-msgid "Enable the FedEx live rates for international delivery and integrate it with your shop in less than 5 minutes. Save your time and money – let the shipping cost be calculated automatically."
+msgid "Enable the FedEx live rates for international delivery and integrate it with your shop in less than 5 minutes. Save your time and money – let the shipping cost be calculated automatically. Now with LTL Freight support!"
 msgstr ""
 
 #: vendor_prefixed/octolize/wp-shipping-extensions/src/ShippingExtensions/Plugin/PluginFactory.php:51
