@@ -30,7 +30,7 @@
 			"php": "7.4"
 		},
 		"gitlab-domains": [
-			"gitlab.wpdesk.dev"
+			"gitlab.octolize.dev"
 		],
 		"allow-plugins": {
 			"dealerdirect/phpcodesniffer-composer-installer": true,
@@ -82,11 +82,11 @@
 	"repositories": {
 		"octolize": {
 			"type": "composer",
-			"url": "https://gitlab.wpdesk.dev/api/v4/group/wpdesk/-/packages/composer/"
+			"url": "https://gitlab.octolize.dev/api/v4/group/wpdesk/-/packages/composer/"
 		},
 		"wpdesk": {
 			"type": "composer",
-			"url": "https://gitlab.wpdesk.dev/api/v4/group/wpdesk/-/packages/composer/"
+			"url": "https://gitlab.octolize.dev/api/v4/group/wpdesk/-/packages/composer/"
 		}
 	},
 	"scripts": {
@@ -96,6 +96,6 @@
 		"phpunit-integration": "phpunit --configuration phpunit-integration.xml --coverage-text --colors=never",
 		"docs": "apigen generate"
 	},
-	"version": "4.4.1",
+	"version": "4.4.2",
 	"type": "wordpress-plugin"
 }

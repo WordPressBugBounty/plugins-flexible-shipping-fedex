@@ -2989,6 +2989,7 @@ return array(
     'FedExVendor\\GuzzleHttp\\Handler\\CurlVersion' => $baseDir . '/vendor_prefixed/guzzlehttp/guzzle/src/Handler/CurlVersion.php',
     'FedExVendor\\GuzzleHttp\\Handler\\EasyHandle' => $baseDir . '/vendor_prefixed/guzzlehttp/guzzle/src/Handler/EasyHandle.php',
     'FedExVendor\\GuzzleHttp\\Handler\\HeaderProcessor' => $baseDir . '/vendor_prefixed/guzzlehttp/guzzle/src/Handler/HeaderProcessor.php',
+    'FedExVendor\\GuzzleHttp\\Handler\\HostValidator' => $baseDir . '/vendor_prefixed/guzzlehttp/guzzle/src/Handler/HostValidator.php',
     'FedExVendor\\GuzzleHttp\\Handler\\MockHandler' => $baseDir . '/vendor_prefixed/guzzlehttp/guzzle/src/Handler/MockHandler.php',
     'FedExVendor\\GuzzleHttp\\Handler\\Proxy' => $baseDir . '/vendor_prefixed/guzzlehttp/guzzle/src/Handler/Proxy.php',
     'FedExVendor\\GuzzleHttp\\Handler\\ProxyEnvironment' => $baseDir . '/vendor_prefixed/guzzlehttp/guzzle/src/Handler/ProxyEnvironment.php',

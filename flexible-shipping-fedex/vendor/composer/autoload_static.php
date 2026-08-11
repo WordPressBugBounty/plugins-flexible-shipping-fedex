@@ -3009,6 +3009,7 @@ class ComposerStaticInitFSFedex
         'FedExVendor\\GuzzleHttp\\Handler\\CurlVersion' => __DIR__ . '/../..' . '/vendor_prefixed/guzzlehttp/guzzle/src/Handler/CurlVersion.php',
         'FedExVendor\\GuzzleHttp\\Handler\\EasyHandle' => __DIR__ . '/../..' . '/vendor_prefixed/guzzlehttp/guzzle/src/Handler/EasyHandle.php',
         'FedExVendor\\GuzzleHttp\\Handler\\HeaderProcessor' => __DIR__ . '/../..' . '/vendor_prefixed/guzzlehttp/guzzle/src/Handler/HeaderProcessor.php',
+        'FedExVendor\\GuzzleHttp\\Handler\\HostValidator' => __DIR__ . '/../..' . '/vendor_prefixed/guzzlehttp/guzzle/src/Handler/HostValidator.php',
         'FedExVendor\\GuzzleHttp\\Handler\\MockHandler' => __DIR__ . '/../..' . '/vendor_prefixed/guzzlehttp/guzzle/src/Handler/MockHandler.php',
         'FedExVendor\\GuzzleHttp\\Handler\\Proxy' => __DIR__ . '/../..' . '/vendor_prefixed/guzzlehttp/guzzle/src/Handler/Proxy.php',
         'FedExVendor\\GuzzleHttp\\Handler\\ProxyEnvironment' => __DIR__ . '/../..' . '/vendor_prefixed/guzzlehttp/guzzle/src/Handler/ProxyEnvironment.php',
