@@ -353,7 +353,7 @@ class Plugin extends AbstractPlugin implements LoggerAwareInterface, HookableCol
 
 		if ( ! defined( 'FLEXIBLE_SHIPPING_FEDEX_PRO_VERSION' ) ) {
 			$upgrade_link   = $is_pl ? 'https://octol.io/fedex-upgrade-pl' : 'https://octol.io/fedex-upgrade';
-			$plugin_links[] = '<a target="_blank" href="' . $upgrade_link . '" style="color:#00B62E;font-weight:bold;">' . __( 'Buy PRO', 'flexible-shipping-fedex' ) . '</a>';
+			$plugin_links[] = '<a href="' . esc_url( $upgrade_link ) . '" target="_blank" style="color:#00e3c0;font-weight:bold;">' . __( 'Buy FedEx Live Rates PRO', 'flexible-shipping-fedex' ) . '</a>';
 		}
 
 		return array_merge( $plugin_links, $links );

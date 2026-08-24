@@ -13,7 +13,7 @@ class PluginLinks implements Hookable {
 	}
 
 	public function hooks() {
-		add_filter( 'plugin_row_meta', array( $this, 'plugin_row_meta' ), 10, 4 );
+		add_filter( 'plugin_row_meta', [ $this, 'plugin_row_meta' ], 10, 4 );
 	}
 
 	public function plugin_row_meta( $plugin_meta, $plugin_file, $plugin_data, $status ) {
@@ -23,6 +23,7 @@ class PluginLinks implements Hookable {
 			$support_link = $is_pl ? 'https://octol.io/fedex-support-pl' : 'https://octol.io/fedex-support';
 
 			$plugin_links = [
+				'<a target="_blank" rel="noopener noreferrer" href="' . esc_url( 'https://octol.io/fedex-rate' ) . '" aria-label="' . esc_attr__( 'Rate FedEx Live Rates', 'flexible-shipping-fedex' ) . '" style="color:#ffb900;font-size:20px;text-decoration:none;">★★★★★</a>',
 				'<a href="' . $docs_link . '" target="_blank">' . __( 'Docs', 'flexible-shipping-fedex' ) . '</a>',
 				'<a href="' . $support_link . '" target="_blank">' . __( 'Support', 'flexible-shipping-fedex' ) . '</a>',
 			];
@@ -32,5 +33,4 @@ class PluginLinks implements Hookable {
 
 		return $plugin_meta;
 	}
-
 }
