@@ -50,7 +50,7 @@
 		"10up/wp_mock": "*",
 		"octolize/fedex-rest": "^1.0.0",
 		"octolize/wp-csat-petition": "^1.0",
-		"octolize/wp-octolize-brand-assets": "^1.3",
+		"octolize/wp-octolize-brand-assets": "^1.4",
 		"octolize/wp-octolize-docs-chat": "^1.6.0",
 		"octolize/wp-octolize-tracker": "^1.2",
 		"octolize/wp-onboarding": "^1.6",
@@ -96,6 +96,6 @@
 		"phpunit-integration": "phpunit --configuration phpunit-integration.xml --coverage-text --colors=never",
 		"docs": "apigen generate"
 	},
-	"version": "4.4.6",
+	"version": "4.5.0",
 	"type": "wordpress-plugin"
 }

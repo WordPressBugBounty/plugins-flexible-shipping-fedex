@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the Shipping Live Rates for FedEx for WooCommerce plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Shipping Live Rates for FedEx for WooCommerce 4.4.6\n"
+"Project-Id-Version: Shipping Live Rates for FedEx for WooCommerce 4.5.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/flexible-shipping-fedex\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-09-21T23:06:18+00:00\n"
+"POT-Creation-Date: 2026-09-29T07:06:19+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: flexible-shipping-fedex\n"
@@ -109,42 +109,56 @@ msgstr ""
 msgid "Support"
 msgstr ""
 
-#: src/Plugin/SettingsSidebar.php:42
-msgid "Get FedEx WooCommerce Live Rates PRO!"
+#: src/Plugin/Upselling/FedexProOffer.php:26
+msgid "FedEx PRO"
 msgstr ""
 
-#: src/Plugin/SettingsSidebar.php:44
-msgid "Different ways of packing products"
+#: src/Plugin/Upselling/FedexProOffer.php:27
+msgid "Know exactly when the FedEx parcel will arrive"
 msgstr ""
 
-#: src/Plugin/SettingsSidebar.php:45
-msgid "Premium Support"
+#: src/Plugin/Upselling/FedexProOffer.php:28
+msgid "The free version calculates live FedEx rates. PRO adds an estimated delivery date and FedEx Freight LTL support."
 msgstr ""
 
-#: src/Plugin/SettingsSidebar.php:46
-#: vendor_prefixed/wpdesk/wp-woocommerce-shipping/src/WooCommerceShipping/CustomOrigin/CustomOriginFields.php:42
-msgid "Custom Origin"
+#: src/Plugin/Upselling/FedexProOffer.php:30
+msgid "Price only"
 msgstr ""
 
-#: src/Plugin/SettingsSidebar.php:47
-#: vendor_prefixed/wpdesk/wp-woocommerce-shipping/src/WooCommerceShipping/CustomFields/FieldHandlingFees.php:33
-msgid "Handling Fees"
+#: src/Plugin/Upselling/FedexProOffer.php:31
+msgid "NOW"
 msgstr ""
 
-#: src/Plugin/SettingsSidebar.php:48
-msgid "Multicurrency Support"
+#: src/Plugin/Upselling/FedexProOffer.php:34
+msgid "Price + delivery estimate"
 msgstr ""
 
-#: src/Plugin/SettingsSidebar.php:49
-msgid "Delivery Dates"
+#: src/Plugin/Upselling/FedexProOffer.php:35
+msgid "PRO"
 msgstr ""
 
-#: src/Plugin/SettingsSidebar.php:50
-msgid "FedEx Freight LTL Support"
+#: src/Plugin/Upselling/FedexProOffer.php:40
+msgid "Show a delivery estimate that accounts for transit time and cutoff"
 msgstr ""
 
-#: src/Plugin/SettingsSidebar.php:53
-msgid "Upgrade Now"
+#: src/Plugin/Upselling/FedexProOffer.php:44
+msgid "Handle heavier shipments with FedEx Freight LTL support"
+msgstr ""
+
+#: src/Plugin/Upselling/FedexProOffer.php:48
+msgid "Automatic carton packing based on weight and volume"
+msgstr ""
+
+#: src/Plugin/Upselling/FedexProOffer.php:51
+msgid "Trusted by 250,000+ WooCommerce stores"
+msgstr ""
+
+#: src/Plugin/Upselling/FedexProOffer.php:52
+msgid "30-day money-back guarantee - risk-free"
+msgstr ""
+
+#: src/Plugin/Upselling/FedexProOffer.php:53
+msgid "Unlock freight"
 msgstr ""
 
 #: vendor_prefixed/octolize/wp-octolize-docs-chat/src/Chat/ChatSettings.php:121
@@ -1084,6 +1098,10 @@ msgid "Not found HTML view for custom field %1$s."
 msgstr ""
 
 #: vendor_prefixed/wpdesk/wp-woocommerce-shipping/src/WooCommerceShipping/CustomFields/FieldHandlingFees.php:33
+msgid "Handling Fees"
+msgstr ""
+
+#: vendor_prefixed/wpdesk/wp-woocommerce-shipping/src/WooCommerceShipping/CustomFields/FieldHandlingFees.php:33
 msgid "None"
 msgstr ""
 
@@ -1121,6 +1139,10 @@ msgstr ""
 
 #: vendor_prefixed/wpdesk/wp-woocommerce-shipping/src/WooCommerceShipping/CustomFields/Services/views/services.php:104
 msgid "Drag and drop the services to control their display order. Confirm by clicking Save changes button below."
+msgstr ""
+
+#: vendor_prefixed/wpdesk/wp-woocommerce-shipping/src/WooCommerceShipping/CustomOrigin/CustomOriginFields.php:42
+msgid "Custom Origin"
 msgstr ""
 
 #: vendor_prefixed/wpdesk/wp-woocommerce-shipping/src/WooCommerceShipping/CustomOrigin/CustomOriginFields.php:43
