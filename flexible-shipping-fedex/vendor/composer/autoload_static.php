@@ -63,6 +63,7 @@ class ComposerStaticInitFSFedex
         'FedExVendor\\CageA80\\FedEx\\Support\\PackagingType' => __DIR__ . '/../..' . '/vendor_prefixed/octolize/fedex-rest/src/FedEx/Support/PackagingType.php',
         'FedExVendor\\CageA80\\FedEx\\Support\\PaymentMethod' => __DIR__ . '/../..' . '/vendor_prefixed/octolize/fedex-rest/src/FedEx/Support/PaymentMethod.php',
         'FedExVendor\\CageA80\\FedEx\\Support\\PickupType' => __DIR__ . '/../..' . '/vendor_prefixed/octolize/fedex-rest/src/FedEx/Support/PickupType.php',
+        'FedExVendor\\CageA80\\FedEx\\Support\\PostalCodeRequirements' => __DIR__ . '/../..' . '/vendor_prefixed/octolize/fedex-rest/src/FedEx/Support/PostalCodeRequirements.php',
         'FedExVendor\\CageA80\\FedEx\\Support\\RateRequestType' => __DIR__ . '/../..' . '/vendor_prefixed/octolize/fedex-rest/src/FedEx/Support/RateRequestType.php',
         'FedExVendor\\CageA80\\FedEx\\Support\\ServiceType' => __DIR__ . '/../..' . '/vendor_prefixed/octolize/fedex-rest/src/FedEx/Support/ServiceType.php',
         'FedExVendor\\CageA80\\FedEx\\Support\\SeverityType' => __DIR__ . '/../..' . '/vendor_prefixed/octolize/fedex-rest/src/FedEx/Support/SeverityType.php',

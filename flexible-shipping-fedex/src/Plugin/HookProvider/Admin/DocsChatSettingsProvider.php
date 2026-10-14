@@ -38,7 +38,7 @@ final class DocsChatSettingsProvider implements ChatSettingsProviderInterface {
 		$instance_id = $request_data['instance_id'] ?? '';
 		$chat_settings->set_current_page( $instance_id ? 'Shipping method' : 'Plugin Settings' );
 
-		if ( $instance_id ) {
+		if ( $instance_id && is_scalar( $instance_id ) ) {
 			$shipping_method = \WC_Shipping_Zones::get_shipping_method( (int) $instance_id );
 			if ( $shipping_method instanceof \WC_Shipping_Method ) {
 				$chat_settings->set_shipping_method_settings( $shipping_method->instance_settings );
@@ -48,7 +48,7 @@ final class DocsChatSettingsProvider implements ChatSettingsProviderInterface {
 		return array_merge( $settings, $chat_settings->get_settings() );
 	}
 
-	/** @return array<string, mixed> */
+	/** @return array<array-key, mixed> */
 	private function get_masked_plugin_settings(): array {
 		$settings = get_option( 'woocommerce_' . FedexShippingService::UNIQUE_ID . '_settings', [] );
 		if ( ! is_array( $settings ) ) {

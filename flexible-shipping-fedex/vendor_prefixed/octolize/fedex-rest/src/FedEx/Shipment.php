@@ -9,6 +9,7 @@ use FedExVendor\CageA80\FedEx\Support\DimensionUnit;
 use FedExVendor\CageA80\FedEx\Support\EdtRequestType;
 use FedExVendor\CageA80\FedEx\Support\PaymentMethod;
 use FedExVendor\CageA80\FedEx\Support\PickupType;
+use FedExVendor\CageA80\FedEx\Support\PostalCodeRequirements;
 use FedExVendor\CageA80\FedEx\Support\RateRequestType;
 use FedExVendor\CageA80\FedEx\Support\ShipmentPurpose;
 use FedExVendor\CageA80\FedEx\Support\WeightUnit;
@@ -100,7 +101,7 @@ class Shipment
      */
     public function from(array $address): self
     {
-        $this->validateAddress($address, 'shipper')->data['shipper'] = ['address' => $address];
+        $this->data['shipper'] = ['address' => $this->prepareAddress($address, 'shipper')];
         return $this;
     }
     /**
@@ -112,7 +113,7 @@ class Shipment
      */
     public function to(array $address): self
     {
-        $this->validateAddress($address, 'recipient')->data['recipient'] = ['address' => $address];
+        $this->data['recipient'] = ['address' => $this->prepareAddress($address, 'recipient')];
         return $this;
     }
     /**
@@ -198,14 +199,28 @@ class Shipment
         $ratesService = new RatesRequest($this->config);
         return $ratesService->getRates($this, $rateRequestControlParameters);
     }
+    private function prepareAddress(array $address, string $type): array
+    {
+        $this->validateAddress($address, $type);
+        if ('' === trim((string) ($address['postalCode'] ?? ''))) {
+            // FedEx accepts an empty string for non-postal countries but rejects a missing field.
+            $address['postalCode'] = '';
+        }
+        return $address;
+    }
     // region [VALIDATION]
     protected function validateAddress(array $address, string $type): self
     {
-        if (empty($address['postalCode'])) {
-            throw new ValidationException(ucfirst($type) . ' postal code is required');
-        }
-        if (empty($address['countryCode'])) {
+        if ('' === trim((string) ($address['countryCode'] ?? ''))) {
             throw new ValidationException(ucfirst($type) . ' country code is required');
+        }
+        if ('' === trim((string) ($address['postalCode'] ?? ''))) {
+            if (PostalCodeRequirements::isRequired($address['countryCode'])) {
+                throw new ValidationException(ucfirst($type) . ' postal code is required');
+            }
+            if ('' === trim((string) ($address['city'] ?? '')) && '' === trim((string) ($address['stateOrProvinceCode'] ?? ''))) {
+                throw new ValidationException(ucfirst($type) . ' city or state code is required');
+            }
         }
         return $this;
     }

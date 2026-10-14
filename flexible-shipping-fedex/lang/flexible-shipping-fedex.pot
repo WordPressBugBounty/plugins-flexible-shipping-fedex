@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the Shipping Live Rates for FedEx for WooCommerce plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Shipping Live Rates for FedEx for WooCommerce 4.5.0\n"
+"Project-Id-Version: Shipping Live Rates for FedEx for WooCommerce 4.6.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/flexible-shipping-fedex\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-09-29T07:06:19+00:00\n"
+"POT-Creation-Date: 2026-10-14T13:48:19+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: flexible-shipping-fedex\n"
@@ -66,45 +66,45 @@ msgstr ""
 msgid "support forum"
 msgstr ""
 
-#: src/Plugin/Plugin.php:154
+#: src/Plugin/Plugin.php:161
 msgid "Service Code"
 msgstr ""
 
-#: src/Plugin/Plugin.php:247
+#: src/Plugin/Plugin.php:254
 msgid "We have added new services"
 msgstr ""
 
-#: src/Plugin/Plugin.php:248
+#: src/Plugin/Plugin.php:255
 msgid "We're thrilled to announce that our FedEx Live Rates plugin now offers FedEx First, FedEx Priority Express, and FedEx Economy rates at checkout, in addition to previously available services. This wider selection of FedEx services allows you to offer customers more tailored shipping options to meet their needs. We're glad to be a part of your success!"
 msgstr ""
 
-#: src/Plugin/Plugin.php:257
+#: src/Plugin/Plugin.php:264
 msgid "New FedEx API introduced"
 msgstr ""
 
-#: src/Plugin/Plugin.php:258
+#: src/Plugin/Plugin.php:265
 msgid "We're thrilled to announce that we've upgraded FedEx Live Rates plugin to use the latest FedEx API. This enhancement allows for seamless retrieval of shipping costs directly from FedEx, streamlining your shipping process and ensuring accurate rates for your customers."
 msgstr ""
 
-#: src/Plugin/Plugin.php:351
+#: src/Plugin/Plugin.php:358
 #: vendor_prefixed/wpdesk/wp-builder/src/Plugin/AbstractPlugin.php:188
 msgid "Settings"
 msgstr ""
 
-#: src/Plugin/Plugin.php:356
+#: src/Plugin/Plugin.php:363
 msgid "Buy FedEx Live Rates PRO"
 msgstr ""
 
-#: src/Plugin/PluginLinks.php:26
+#: src/Plugin/PluginLinks.php:36
 msgid "Rate FedEx Live Rates"
 msgstr ""
 
-#: src/Plugin/PluginLinks.php:27
+#: src/Plugin/PluginLinks.php:37
 #: vendor_prefixed/wpdesk/wp-builder/src/Plugin/AbstractPlugin.php:184
 msgid "Docs"
 msgstr ""
 
-#: src/Plugin/PluginLinks.php:28
+#: src/Plugin/PluginLinks.php:38
 #: vendor_prefixed/wpdesk/wp-builder/src/Plugin/AbstractPlugin.php:181
 msgid "Support"
 msgstr ""
@@ -1069,6 +1069,10 @@ msgstr ""
 #: vendor_prefixed/wpdesk/wp-logs/src/WP/WPCapture.php:36
 #, php-format
 msgid "Can not enable WP Desk Debug log! Cannot create file %s!"
+msgstr ""
+
+#: vendor_prefixed/wpdesk/wp-plugin-flow-common/src/php52-functions.php:13
+msgid "<p><strong style=\"color: red;\">PHP version is older than 5.3 so no WP Desk plugins will work. Please contact your host and ask them to upgrade. </strong></p>"
 msgstr ""
 
 #: vendor_prefixed/wpdesk/wp-woocommerce-shipping/src/WooCommerceShipping/AddMethodReminder/AddMethodReminder.php:53

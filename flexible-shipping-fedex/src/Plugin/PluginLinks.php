@@ -6,9 +6,9 @@ use FedExVendor\WPDesk\PluginBuilder\Plugin\Hookable;
 
 class PluginLinks implements Hookable {
 
-	private $plugin_file;
+	private string $plugin_file;
 
-	public function __construct( $plugin_file ) {
+	public function __construct( string $plugin_file ) {
 		$this->plugin_file = $plugin_file;
 	}
 
@@ -16,6 +16,16 @@ class PluginLinks implements Hookable {
 		add_filter( 'plugin_row_meta', [ $this, 'plugin_row_meta' ], 10, 4 );
 	}
 
+	/**
+	 * Append links to the WordPress plugin metadata.
+	 *
+	 * @param string[]             $plugin_meta Existing metadata links.
+	 * @param string               $plugin_file Plugin file name.
+	 * @param array<string, mixed> $plugin_data Plugin information.
+	 * @param string               $status      Current plugin list filter.
+	 *
+	 * @return string[]
+	 */
 	public function plugin_row_meta( $plugin_meta, $plugin_file, $plugin_data, $status ) {
 		if ( $plugin_file === $this->plugin_file ) {
 			$is_pl        = 'pl_PL' === get_locale();

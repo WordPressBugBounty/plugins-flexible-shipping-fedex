@@ -18,6 +18,7 @@ use FedExVendor\Octolize\ShippingExtensions\ShippingExtensions;
 use FedExVendor\Octolize\Tracker\TrackerInitializer;
 use FedExVendor\Psr\Log\LoggerAwareInterface;
 use FedExVendor\Psr\Log\LoggerAwareTrait;
+use FedExVendor\Psr\Log\LoggerInterface;
 use FedExVendor\Psr\Log\NullLogger;
 use FedExVendor\WPDesk\AbstractShipping\Settings\SettingsValuesAsArray;
 use FedExVendor\WPDesk\FedexShippingService\FedexSettingsDefinition;
@@ -63,6 +64,13 @@ class Plugin extends AbstractPlugin implements LoggerAwareInterface, HookableCol
 
 	use LoggerAwareTrait;
 	use HookableParent;
+
+	/**
+	 * Logger initialized by the constructor before the plugin is used.
+	 *
+	 * @var LoggerInterface
+	 */
+	protected $logger;
 
 	/**
 	 * Fedex settings.
@@ -127,7 +135,6 @@ class Plugin extends AbstractPlugin implements LoggerAwareInterface, HookableCol
 			}
 		);
 
-		// @phpstan-ignore-next-line.
 		$fedex_service = apply_filters(
 			'flexible_shipping_fedex_shipping_service',
 			new FedexShippingService( $this->logger, new ShopSettings( FedexShippingService::UNIQUE_ID ), RestApiAuthProvider::class )
@@ -188,7 +195,7 @@ class Plugin extends AbstractPlugin implements LoggerAwareInterface, HookableCol
 		$this->add_hookable(
 			new Csat(
 				new CsatOptionDependedOnGlobalShippingMethod( 'csat_flexible_shipping_fedex', FedexShippingService::UNIQUE_ID ),
-				new CsatCodeFromFile( __DIR__ . '/../Csat/views/csat.php' ),
+				new CsatCodeFromFile( __DIR__ . '/../Csat/views/csat.html' ),
 				'woocommerce_after_settings_shipping',
 				new ShippingMethodShouldShowStrategy( FedexShippingService::UNIQUE_ID )
 			)
@@ -353,7 +360,7 @@ class Plugin extends AbstractPlugin implements LoggerAwareInterface, HookableCol
 
 		if ( ! defined( 'FLEXIBLE_SHIPPING_FEDEX_PRO_VERSION' ) ) {
 			$upgrade_link   = $is_pl ? 'https://octol.io/fedex-upgrade-pl' : 'https://octol.io/fedex-upgrade';
-			$plugin_links[] = '<a href="' . esc_url( $upgrade_link ) . '" target="_blank" style="color:#00e3c0;font-weight:bold;">' . __( 'Buy FedEx Live Rates PRO', 'flexible-shipping-fedex' ) . '</a>';
+			$plugin_links[] = '<a href="' . esc_url( $upgrade_link ) . '" target="_blank" style="color:#5e51a6;font-weight:bold;">' . __( 'Buy FedEx Live Rates PRO', 'flexible-shipping-fedex' ) . '</a>';
 		}
 
 		return array_merge( $plugin_links, $links );

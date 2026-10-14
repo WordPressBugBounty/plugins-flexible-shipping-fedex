@@ -4,7 +4,7 @@ Contributors: octolize,grola,sebastianpisula
 Tags: fedex, fedex rates, fedex shipping, fedex woocommerce, fedex live rates
 Requires at least: 4.5
 Tested up to: 7.1
-Stable tag: 4.5.0
+Stable tag: 4.6.0
 Requires PHP: 7.4
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -148,6 +148,11 @@ Please mind that even if you decide to use the **Custom Services** option and ch
 3. FedEx Live Rates shipping methods in the checkout.
 
 == Changelog ==
+
+= 4.6.0 - 2026-10-13 =
+* Fixed missing FedEx REST rates for destinations without postal codes, including Hong Kong
+* Updated dependencies
+* Improved the contrast of the FedEx PRO purchase link on the Plugins screen
 
 = 4.5.0 - 2026-09-25 =
 * Updated the FedEx PRO upgrade boxes in the global and shipping method settings

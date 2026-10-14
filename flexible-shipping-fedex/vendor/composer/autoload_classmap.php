@@ -43,6 +43,7 @@ return array(
     'FedExVendor\\CageA80\\FedEx\\Support\\PackagingType' => $baseDir . '/vendor_prefixed/octolize/fedex-rest/src/FedEx/Support/PackagingType.php',
     'FedExVendor\\CageA80\\FedEx\\Support\\PaymentMethod' => $baseDir . '/vendor_prefixed/octolize/fedex-rest/src/FedEx/Support/PaymentMethod.php',
     'FedExVendor\\CageA80\\FedEx\\Support\\PickupType' => $baseDir . '/vendor_prefixed/octolize/fedex-rest/src/FedEx/Support/PickupType.php',
+    'FedExVendor\\CageA80\\FedEx\\Support\\PostalCodeRequirements' => $baseDir . '/vendor_prefixed/octolize/fedex-rest/src/FedEx/Support/PostalCodeRequirements.php',
     'FedExVendor\\CageA80\\FedEx\\Support\\RateRequestType' => $baseDir . '/vendor_prefixed/octolize/fedex-rest/src/FedEx/Support/RateRequestType.php',
     'FedExVendor\\CageA80\\FedEx\\Support\\ServiceType' => $baseDir . '/vendor_prefixed/octolize/fedex-rest/src/FedEx/Support/ServiceType.php',
     'FedExVendor\\CageA80\\FedEx\\Support\\SeverityType' => $baseDir . '/vendor_prefixed/octolize/fedex-rest/src/FedEx/Support/SeverityType.php',
